@@ -4,8 +4,6 @@ import PredictionsSection from "@/components/PredictionsSection";
 import LiveScoresSection from "@/components/LiveScoresSection";
 import BookmakersSection from "@/components/BookmakersSection";
 import NewsSection from "@/components/NewsSection";
-import AIEngineSection from "@/components/AIEngineSection";
-import BettingToolsSection from "@/components/BettingToolsSection";
 import TrustSection from "@/components/TrustSection";
 import ConversionSection from "@/components/ConversionSection";
 import Footer from "@/components/Footer";
@@ -19,8 +17,6 @@ const Index = () => (
       <LiveScoresSection />
       <BookmakersSection />
       <NewsSection />
-      <AIEngineSection />
-      <BettingToolsSection />
       <TrustSection />
       <ConversionSection />
     </main>

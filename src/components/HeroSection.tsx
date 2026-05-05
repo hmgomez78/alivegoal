@@ -31,9 +31,6 @@ const HeroSection = () => {
             <Button size="lg" className="glow-emerald" asChild>
               <a href="#predictions">Ver Previsões</a>
             </Button>
-            <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10" asChild>
-              <a href="#bookmakers">Comparar Casas de Apostas</a>
-            </Button>
           </div>
         </div>
 
