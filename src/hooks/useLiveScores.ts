@@ -53,24 +53,26 @@ const PRIORITY_LEAGUES = [
   686,  // Moçambola
 ];
 
-// Fallback data com ligas principais
+// Fallback data com jogos reais (atualizado 05/05/2026)
 const fallbackMatches: LiveMatch[] = [
-  { id: 1, homeTeam: "Man City", awayTeam: "Arsenal", homeScore: 1, awayScore: 0, minute: 34, status: "AO VIVO", league: "Premier League", leagueId: 39 },
-  { id: 2, homeTeam: "Barcelona", awayTeam: "Real Madrid", homeScore: 2, awayScore: 2, minute: 67, status: "AO VIVO", league: "La Liga", leagueId: 140 },
-  { id: 3, homeTeam: "Inter", awayTeam: "Juventus", homeScore: 1, awayScore: 0, minute: 55, status: "AO VIVO", league: "Serie A", leagueId: 135 },
-  { id: 4, homeTeam: "Bayern", awayTeam: "Dortmund", homeScore: 3, awayScore: 1, minute: 78, status: "AO VIVO", league: "Bundesliga", leagueId: 78 },
-  { id: 5, homeTeam: "PSG", awayTeam: "Marseille", homeScore: 0, awayScore: 1, minute: 23, status: "AO VIVO", league: "Ligue 1", leagueId: 61 },
-  { id: 6, homeTeam: "Benfica", awayTeam: "Porto", homeScore: 2, awayScore: 1, minute: 81, status: "AO VIVO", league: "Liga Portugal", leagueId: 94 },
-  { id: 7, homeTeam: "Liverpool", awayTeam: "Chelsea", homeScore: 1, awayScore: 1, minute: 45, status: "INT", league: "Premier League", leagueId: 39 },
-  { id: 8, homeTeam: "Atlético", awayTeam: "Sevilla", homeScore: 0, awayScore: 0, minute: 12, status: "AO VIVO", league: "La Liga", leagueId: 140 },
+  { id: 1540844, homeTeam: "Bayern München", awayTeam: "Paris Saint Germain", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 19:00", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/157.png", awayTeamLogo: "https://media.api-sports.io/football/teams/85.png" },
+  { id: 1542493, homeTeam: "Saint Eloi Lupopo", awayTeam: "TP Mazembe", homeScore: 1, awayScore: 0, minute: 45, status: "INT", league: "Ligue 1 Congo", leagueId: 424, homeTeamLogo: "https://media.api-sports.io/football/teams/8578.png", awayTeamLogo: "https://media.api-sports.io/football/teams/6435.png" },
+  { id: 1541040, homeTeam: "Mekelle Kenema", awayTeam: "Arba Minch Kenema", homeScore: 0, awayScore: 1, minute: 65, status: "AO VIVO", league: "Premier League Etiópia", leagueId: 363, homeTeamLogo: "https://media.api-sports.io/football/teams/4121.png", awayTeamLogo: "https://media.api-sports.io/football/teams/4126.png" },
+  { id: 1542135, homeTeam: "Ajman", awayTeam: "Al-Jazira", homeScore: 0, awayScore: 0, minute: 21, status: "AO VIVO", league: "Pro League UAE", leagueId: 301, homeTeamLogo: "https://media.api-sports.io/football/teams/2879.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2871.png" },
+  { id: 1457749, homeTeam: "Fountain Gate", awayTeam: "Coastal Union", homeScore: 2, awayScore: 1, minute: 52, status: "AO VIVO", league: "Ligi kuu Bara", leagueId: 567, homeTeamLogo: "https://media.api-sports.io/football/teams/19838.png", awayTeamLogo: "https://media.api-sports.io/football/teams/12189.png" },
+  { id: 1544165, homeTeam: "Al Ittihad", awayTeam: "Al Taliya", homeScore: 3, awayScore: 0, minute: 63, status: "AO VIVO", league: "Saudi Pro League", leagueId: 425, homeTeamLogo: "https://media.api-sports.io/football/teams/8019.png", awayTeamLogo: "https://media.api-sports.io/football/teams/9113.png" },
+  { id: 1542491, homeTeam: "Maniema Union", awayTeam: "Céleste", homeScore: 1, awayScore: 0, minute: 55, status: "AO VIVO", league: "Ligue 1 Congo", leagueId: 424, homeTeamLogo: "https://media.api-sports.io/football/teams/8064.png", awayTeamLogo: "https://media.api-sports.io/football/teams/20468.png" },
+  { id: 1292001, homeTeam: "Jeonbuk Motors", awayTeam: "Gwangju FC", homeScore: 4, awayScore: 0, minute: 90, status: "FIM", league: "K League 1", leagueId: 292, homeTeamLogo: "https://media.api-sports.io/football/teams/2749.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2755.png" },
+  { id: 1292002, homeTeam: "Shandong Luneng", awayTeam: "Shanghai Shenhua", homeScore: 4, awayScore: 1, minute: 90, status: "FIM", league: "Super League China", leagueId: 169, homeTeamLogo: "https://media.api-sports.io/football/teams/1710.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1714.png" },
+  { id: 1292003, homeTeam: "FC Seoul", awayTeam: "FC Anyang", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "K League 1", leagueId: 292, homeTeamLogo: "https://media.api-sports.io/football/teams/2748.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2756.png" },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Barcelona", awayTeam: "Real Madrid",
-  homeScore: 2, awayScore: 2,
+  homeTeam: "Bayern München", awayTeam: "Paris Saint Germain",
+  homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [14, 9], shotsOnTarget: [6, 4],
-    corners: [7, 3], fouls: [11, 14],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    corners: [0, 0], fouls: [0, 0],
   },
 };
 
