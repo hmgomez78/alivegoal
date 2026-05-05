@@ -144,7 +144,7 @@ const PredictionsSection = () => {
 
                   {/* CTA Button */}
                   <Button size="sm" className="mt-4 w-full glow-emerald" asChild>
-                    <a href={bk?.url || "#bookmakers"} target="_blank" rel="noopener noreferrer">
+                    <a href="https://vvegas-promo.com/l/69f9bb9318f911bfd0029492?sub_id={sub_id_1}&click_id={click_id}" target="_blank" rel="noopener noreferrer">
                       <TrendingUp size={14} /> Apostar Agora
                     </a>
                   </Button>
