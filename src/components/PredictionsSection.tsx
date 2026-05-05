@@ -35,10 +35,10 @@ const PredictionsSection = () => {
   return (
     <section id="predictions" className="py-16 md:py-24">
       <div className="container">
-        {/* SEO-optimized header */}
+        {/* Header com título, badge AO VIVO, redes sociais e botão atualizar */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <h2 className="font-display text-3xl font-bold">Palpites e Prognósticos de Futebol Hoje</h2>
               <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
                 <Zap size={10} />
@@ -46,8 +46,50 @@ const PredictionsSection = () => {
               </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              Dicas de apostas grátis com análise detalhada — publicadas no <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @AliveGoal</a> e atualizadas todos os dias
+              Dicas de apostas grátis com análise detalhada — atualizadas todos os dias
             </p>
+            {/* Redes Sociais */}
+            <div className="mt-3 flex items-center gap-3">
+              {/* Telegram */}
+              <a
+                href="https://t.me/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Telegram AliveGoal"
+                className="flex items-center gap-1.5 rounded-lg bg-[#0088cc]/10 px-3 py-1.5 text-xs font-semibold text-[#0088cc] transition-all hover:bg-[#0088cc]/20"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                </svg>
+                Telegram
+              </a>
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="X (Twitter) AliveGoal"
+                className="flex items-center gap-1.5 rounded-lg bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/70 transition-all hover:bg-foreground/10 hover:text-foreground"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.737-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                X
+              </a>
+              {/* Facebook */}
+              <a
+                href="https://facebook.com/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook AliveGoal"
+                className="flex items-center gap-1.5 rounded-lg bg-[#1877f2]/10 px-3 py-1.5 text-xs font-semibold text-[#1877f2] transition-all hover:bg-[#1877f2]/20"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+                Facebook
+              </a>
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -172,28 +214,13 @@ const PredictionsSection = () => {
           )}
         </div>
 
-        {/* CTA para o canal Telegram */}
-        <div className="mt-8 text-center">
-          <a
-            href="https://t.me/alivegoal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0088cc]/10 px-6 py-3 text-sm font-semibold text-[#0088cc] transition-all hover:bg-[#0088cc]/20"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
-            </svg>
-            Junta-te ao Canal AliveGoal no Telegram para mais tips
-          </a>
-        </div>
-
-        {/* SEO content block — rich indexable text */}
-        <div className="mt-10 space-y-6">
-          <div className="rounded-xl border border-border bg-secondary/20 p-6">
-            <h3 className="font-display text-lg font-bold mb-3">Palpites de Futebol Grátis para Hoje — Como Funcionam os Nossos Prognósticos</h3>
-            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+        {/* SEO content block — movido para o fundo, visualmente discreto mas indexável */}
+        <div className="mt-16 space-y-6 opacity-80">
+          <div className="rounded-xl border border-border/50 bg-secondary/10 p-6">
+            <h3 className="font-display text-base font-bold mb-3 text-muted-foreground">Palpites de Futebol Grátis para Hoje — Como Funcionam os Nossos Prognósticos</h3>
+            <div className="space-y-3 text-sm text-muted-foreground/80 leading-relaxed">
               <p>
-                Os <strong>palpites de futebol</strong> do AliveGoal são publicados diariamente no nosso canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @alivegoal</a> e atualizados automaticamente neste site. Cada <strong>prognóstico</strong> é acompanhado de uma análise detalhada que explica o raciocínio por trás da aposta — incluindo estatísticas de confronto direto, forma recente, médias de golos e tendências de mercado.
+                Os <strong>palpites de futebol</strong> do AliveGoal são publicados diariamente no nosso canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary hover:underline">Telegram @alivegoal</a> e atualizados automaticamente neste site. Cada <strong>prognóstico</strong> é acompanhado de uma análise detalhada que explica o raciocínio por trás da aposta — incluindo estatísticas de confronto direto, forma recente, médias de golos e tendências de mercado.
               </p>
               <p>
                 Ao contrário de outros sites de <strong>dicas de apostas</strong>, não nos limitamos a dar um palpite: explicamos <em>porquê</em>. Cada tip inclui o mercado recomendado, a odd sugerida, o nível de confiança e uma justificação baseada em dados. Isto permite-te tomar decisões informadas e gerir a tua banca de forma inteligente.
@@ -201,9 +228,9 @@ const PredictionsSection = () => {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-secondary/20 p-6">
-            <h3 className="font-display text-lg font-bold mb-3">Que Ligas e Mercados Cobrimos</h3>
-            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+          <div className="rounded-xl border border-border/50 bg-secondary/10 p-6">
+            <h3 className="font-display text-base font-bold mb-3 text-muted-foreground">Que Ligas e Mercados Cobrimos</h3>
+            <div className="space-y-3 text-sm text-muted-foreground/80 leading-relaxed">
               <p>
                 Publicamos <strong>previsões de futebol</strong> para as principais competições europeias: <strong>Champions League</strong>, <strong>Europa League</strong>, <strong>Premier League</strong>, <strong>La Liga</strong>, <strong>Serie A</strong>, <strong>Bundesliga</strong>, <strong>Ligue 1</strong> e <strong>Liga Portugal</strong>. Também cobrimos ligas africanas como a <strong>Moçambola</strong> (Moçambique), <strong>Girabola</strong> (Angola), <strong>Premier Soccer League</strong> (África do Sul) e <strong>NPFL</strong> (Nigéria).
               </p>
@@ -213,9 +240,9 @@ const PredictionsSection = () => {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-secondary/20 p-6">
-            <h3 className="font-display text-lg font-bold mb-3">Porquê Seguir os Palpites do AliveGoal</h3>
-            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+          <div className="rounded-xl border border-border/50 bg-secondary/10 p-6">
+            <h3 className="font-display text-base font-bold mb-3 text-muted-foreground">Porquê Seguir os Palpites do AliveGoal</h3>
+            <div className="space-y-3 text-sm text-muted-foreground/80 leading-relaxed">
               <p>
                 O AliveGoal destaca-se como uma plataforma de <strong>tips de apostas grátis</strong> porque cada previsão vem com uma explicação transparente. Não vendemos picks premium nem cobramos por acesso — todas as <strong>dicas de apostas de futebol</strong> são completamente gratuitas e acessíveis no Telegram e no site.
               </p>
