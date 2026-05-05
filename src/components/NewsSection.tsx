@@ -1,23 +1,25 @@
-import { Clock, ExternalLink, RefreshCw, Flame } from "lucide-react";
+import { Clock, RefreshCw, Flame, ChevronRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useNews } from "@/hooks/useNews";
+import { useNavigate } from "react-router-dom";
 
 const categoryColors: Record<string, string> = {
   "ÚLTIMA HORA": "bg-destructive/20 text-destructive",
   "ANÁLISE TÁTICA": "bg-accent/20 text-accent",
-  "TIPS DE APOSTAS": "bg-emerald/20 text-emerald",
-  "TRANSFERÊNCIAS": "bg-lavender/20 text-lavender",
+  "TIPS DE APOSTAS": "bg-emerald-500/20 text-emerald-400",
+  "TRANSFERÊNCIAS": "bg-purple-500/20 text-purple-400",
   "LESÕES": "bg-orange-500/20 text-orange-400",
   "ESCÂNDALO": "bg-red-500/20 text-red-400",
   "Antevisão": "bg-primary/20 text-primary",
   "Análise Tática": "bg-accent/20 text-accent",
-  "Tips de Apostas": "bg-emerald/20 text-emerald",
-  "Transferências": "bg-lavender/20 text-lavender",
+  "Tips de Apostas": "bg-emerald-500/20 text-emerald-400",
+  "Transferências": "bg-purple-500/20 text-purple-400",
   "Lesões": "bg-destructive/20 text-destructive",
 };
 
 const NewsSection = () => {
   const { news, loading, refresh } = useNews();
+  const navigate = useNavigate();
 
   return (
     <section id="news" className="border-y border-border bg-secondary/30 py-16 md:py-24">
@@ -58,6 +60,7 @@ const NewsSection = () => {
             : news.map((a) => (
                 <div
                   key={a.id}
+                  onClick={() => navigate(`/noticias/${a.id}`)}
                   className="gradient-card group cursor-pointer rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
                 >
                   <div className="mb-3 flex items-center gap-2">
@@ -85,6 +88,9 @@ const NewsSection = () => {
                       </span>
                       <span>{a.date}</span>
                     </div>
+                    <span className="flex items-center gap-1 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                      Ler mais <ChevronRight size={12} />
+                    </span>
                   </div>
                 </div>
               ))}
