@@ -9,6 +9,7 @@ export interface LiveMatch {
   minute: number | string;
   status: string;
   league: string;
+  leagueId?: number;
   homeTeamLogo?: string;
   awayTeamLogo?: string;
 }
@@ -29,21 +30,47 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// Fallback data when API is unavailable
+// IDs das ligas principais na API-Football
+const PRIORITY_LEAGUES = [
+  39,   // Premier League (Inglaterra)
+  140,  // La Liga (Espanha)
+  135,  // Serie A (Itália)
+  78,   // Bundesliga (Alemanha)
+  61,   // Ligue 1 (França)
+  94,   // Liga Portugal
+  2,    // Champions League
+  3,    // Europa League
+  848,  // Conference League
+  71,   // Brasileirão Serie A
+  253,  // MLS
+  1,    // World Cup
+  4,    // Euro
+  6,    // Copa África
+  10,   // Nations League
+  307,  // Saudi Pro League
+  233,  // Premier League Egito
+  551,  // Girabola (Angola)
+  686,  // Moçambola
+];
+
+// Fallback data com ligas principais
 const fallbackMatches: LiveMatch[] = [
-  { id: 1, homeTeam: "Benfica", awayTeam: "Porto", homeScore: 2, awayScore: 1, minute: 67, status: "AO VIVO", league: "Liga Portugal" },
-  { id: 2, homeTeam: "Al Ahly", awayTeam: "Zamalek", homeScore: 0, awayScore: 0, minute: 23, status: "AO VIVO", league: "Liga Egípcia" },
-  { id: 3, homeTeam: "Flamengo", awayTeam: "Palmeiras", homeScore: 1, awayScore: 2, minute: 81, status: "AO VIVO", league: "Brasileirão" },
-  { id: 4, homeTeam: "Celtic", awayTeam: "Rangers", homeScore: 3, awayScore: 1, minute: 55, status: "AO VIVO", league: "Liga Escocesa" },
-  { id: 5, homeTeam: "Ajax", awayTeam: "Feyenoord", homeScore: 1, awayScore: 1, minute: 42, status: "AO VIVO", league: "Eredivisie" },
+  { id: 1, homeTeam: "Man City", awayTeam: "Arsenal", homeScore: 1, awayScore: 0, minute: 34, status: "AO VIVO", league: "Premier League", leagueId: 39 },
+  { id: 2, homeTeam: "Barcelona", awayTeam: "Real Madrid", homeScore: 2, awayScore: 2, minute: 67, status: "AO VIVO", league: "La Liga", leagueId: 140 },
+  { id: 3, homeTeam: "Inter", awayTeam: "Juventus", homeScore: 1, awayScore: 0, minute: 55, status: "AO VIVO", league: "Serie A", leagueId: 135 },
+  { id: 4, homeTeam: "Bayern", awayTeam: "Dortmund", homeScore: 3, awayScore: 1, minute: 78, status: "AO VIVO", league: "Bundesliga", leagueId: 78 },
+  { id: 5, homeTeam: "PSG", awayTeam: "Marseille", homeScore: 0, awayScore: 1, minute: 23, status: "AO VIVO", league: "Ligue 1", leagueId: 61 },
+  { id: 6, homeTeam: "Benfica", awayTeam: "Porto", homeScore: 2, awayScore: 1, minute: 81, status: "AO VIVO", league: "Liga Portugal", leagueId: 94 },
+  { id: 7, homeTeam: "Liverpool", awayTeam: "Chelsea", homeScore: 1, awayScore: 1, minute: 45, status: "INT", league: "Premier League", leagueId: 39 },
+  { id: 8, homeTeam: "Atlético", awayTeam: "Sevilla", homeScore: 0, awayScore: 0, minute: 12, status: "AO VIVO", league: "La Liga", leagueId: 140 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Benfica", awayTeam: "Porto",
-  homeScore: 2, awayScore: 1,
+  homeTeam: "Barcelona", awayTeam: "Real Madrid",
+  homeScore: 2, awayScore: 2,
   stats: {
-    possession: [58, 42], shots: [12, 7], shotsOnTarget: [5, 3],
-    corners: [6, 3], fouls: [9, 14],
+    possession: [58, 42], shots: [14, 9], shotsOnTarget: [6, 4],
+    corners: [7, 3], fouls: [11, 14],
   },
 };
 
@@ -76,7 +103,6 @@ export function useLiveScores(apiKey?: string) {
   const [error, setError] = useState<string | null>(null);
 
   const fetchLiveScores = useCallback(async () => {
-    // If no API key, use fallback data
     const key = apiKey || import.meta.env.VITE_API_FOOTBALL_KEY;
     if (!key) {
       setMatches(fallbackMatches);
@@ -88,30 +114,44 @@ export function useLiveScores(apiKey?: string) {
 
     setLoading(true);
     try {
+      // Primeiro tentar jogos ao vivo
       const url = `${CORS_PROXY}${encodeURIComponent(`${API_BASE}/fixtures?live=all`)}`;
       const res = await fetch(url, {
-        headers: {
-          "x-apisports-key": key,
-        },
+        headers: { "x-apisports-key": key },
       });
 
       if (!res.ok) throw new Error(`API error: ${res.status}`);
 
       const data = await res.json();
-      const fixtures = data?.response;
+      let fixtures = data?.response || [];
 
-      if (!fixtures || fixtures.length === 0) {
-        // No live matches right now, try today's fixtures
+      // Filtrar apenas ligas principais
+      let filteredFixtures = fixtures.filter((f: any) =>
+        PRIORITY_LEAGUES.includes(f.league.id)
+      );
+
+      // Se não há jogos ao vivo das ligas principais, buscar jogos de hoje
+      if (filteredFixtures.length === 0) {
         const today = new Date().toISOString().split("T")[0];
         const todayUrl = `${CORS_PROXY}${encodeURIComponent(`${API_BASE}/fixtures?date=${today}`)}`;
         const todayRes = await fetch(todayUrl, {
           headers: { "x-apisports-key": key },
         });
         const todayData = await todayRes.json();
-        const todayFixtures = todayData?.response;
+        const todayFixtures = todayData?.response || [];
 
-        if (todayFixtures && todayFixtures.length > 0) {
-          const mapped = todayFixtures.slice(0, 10).map((f: any, idx: number) => ({
+        // Filtrar ligas principais
+        filteredFixtures = todayFixtures.filter((f: any) =>
+          PRIORITY_LEAGUES.includes(f.league.id)
+        );
+
+        // Se ainda não há jogos, usar todos os de hoje (top 15)
+        if (filteredFixtures.length === 0) {
+          filteredFixtures = todayFixtures.slice(0, 15);
+        }
+
+        if (filteredFixtures.length > 0) {
+          const mapped = filteredFixtures.slice(0, 15).map((f: any, idx: number) => ({
             id: f.fixture.id || idx,
             homeTeam: f.teams.home.name,
             awayTeam: f.teams.away.name,
@@ -120,6 +160,7 @@ export function useLiveScores(apiKey?: string) {
             minute: f.fixture.status.elapsed || 0,
             status: mapStatus(f.fixture.status.short, f.fixture.status.elapsed),
             league: f.league.name,
+            leagueId: f.league.id,
             homeTeamLogo: f.teams.home.logo,
             awayTeamLogo: f.teams.away.logo,
           }));
@@ -133,8 +174,8 @@ export function useLiveScores(apiKey?: string) {
         return;
       }
 
-      // Map live fixtures
-      const mapped: LiveMatch[] = fixtures.slice(0, 10).map((f: any, idx: number) => ({
+      // Mapear jogos ao vivo das ligas principais
+      const mapped: LiveMatch[] = filteredFixtures.slice(0, 15).map((f: any, idx: number) => ({
         id: f.fixture.id || idx,
         homeTeam: f.teams.home.name,
         awayTeam: f.teams.away.name,
@@ -143,6 +184,7 @@ export function useLiveScores(apiKey?: string) {
         minute: f.fixture.status.elapsed || 0,
         status: mapStatus(f.fixture.status.short, f.fixture.status.elapsed),
         league: f.league.name,
+        leagueId: f.league.id,
         homeTeamLogo: f.teams.home.logo,
         awayTeamLogo: f.teams.away.logo,
       }));
@@ -150,14 +192,13 @@ export function useLiveScores(apiKey?: string) {
       setMatches(mapped);
       setIsLive(true);
 
-      // Set featured match (first match with most goals)
-      const sorted = [...fixtures].sort((a: any, b: any) =>
+      // Set featured match (primeiro jogo com mais golos)
+      const sorted = [...filteredFixtures].sort((a: any, b: any) =>
         ((b.goals.home || 0) + (b.goals.away || 0)) - ((a.goals.home || 0) + (a.goals.away || 0))
       );
       const feat = sorted[0];
       if (feat) {
         const stats = feat.statistics;
-        // Try to extract stats if available
         let featuredStats: MatchStats = fallbackFeatured.stats;
         if (stats && stats.length >= 2) {
           const homeStats = stats[0]?.statistics || [];
