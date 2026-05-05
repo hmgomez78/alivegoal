@@ -39,14 +39,14 @@ const PredictionsSection = () => {
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="font-display text-3xl font-bold">Tips de Hoje</h2>
+              <h2 className="font-display text-3xl font-bold">Palpites e Prognósticos de Futebol Hoje</h2>
               <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
                 <Zap size={10} />
                 AO VIVO
               </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              Tips publicadas no canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@AliveGoal</a> — atualizadas diariamente
+              Dicas de apostas grátis com análise detalhada — publicadas no <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @AliveGoal</a> e atualizadas todos os dias
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -187,19 +187,42 @@ const PredictionsSection = () => {
           </a>
         </div>
 
-        {/* SEO content block */}
-        <div className="mt-8 rounded-xl border border-border bg-secondary/20 p-6">
-          <h3 className="font-display text-lg font-bold mb-3">Tips de Apostas de Futebol Grátis — Como Funcionam</h3>
-          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-            <p>
-              As tips de apostas do AliveGoal são publicadas diariamente no nosso canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @alivegoal</a> e atualizadas automaticamente neste site. Cada previsão é baseada em análise estatística detalhada, incluindo percentagens de Over/Under, BTTS (Ambas Marcam), médias de golos e forma recente das equipas.
-            </p>
-            <p>
-              Cobrimos as principais competições de futebol: <strong>Champions League</strong>, <strong>Premier League</strong>, <strong>La Liga</strong>, <strong>Serie A</strong>, <strong>Bundesliga</strong>, <strong>Ligue 1</strong>, <strong>Liga Portugal</strong> e ligas africanas como a <strong>Moçambola</strong>, <strong>Premier Soccer League</strong> e <strong>NPFL</strong>. Todas as tips incluem nível de confiança, odd sugerida e tipo de aposta (single ou acumulada).
-            </p>
-            <p>
-              Os mercados mais populares nas nossas previsões incluem: <strong>Resultado Final</strong>, <strong>BTTS (Ambas Marcam)</strong>, <strong>Over 2.5 Golos</strong>, <strong>Over 1.5 Golos</strong>, <strong>Dupla Hipótese</strong> e <strong>Acumuladas</strong>. Joga sempre com responsabilidade e gere a tua banca de forma inteligente.
-            </p>
+        {/* SEO content block — rich indexable text */}
+        <div className="mt-10 space-y-6">
+          <div className="rounded-xl border border-border bg-secondary/20 p-6">
+            <h3 className="font-display text-lg font-bold mb-3">Palpites de Futebol Grátis para Hoje — Como Funcionam os Nossos Prognósticos</h3>
+            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                Os <strong>palpites de futebol</strong> do AliveGoal são publicados diariamente no nosso canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @alivegoal</a> e atualizados automaticamente neste site. Cada <strong>prognóstico</strong> é acompanhado de uma análise detalhada que explica o raciocínio por trás da aposta — incluindo estatísticas de confronto direto, forma recente, médias de golos e tendências de mercado.
+              </p>
+              <p>
+                Ao contrário de outros sites de <strong>dicas de apostas</strong>, não nos limitamos a dar um palpite: explicamos <em>porquê</em>. Cada tip inclui o mercado recomendado, a odd sugerida, o nível de confiança e uma justificação baseada em dados. Isto permite-te tomar decisões informadas e gerir a tua banca de forma inteligente.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-border bg-secondary/20 p-6">
+            <h3 className="font-display text-lg font-bold mb-3">Que Ligas e Mercados Cobrimos</h3>
+            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                Publicamos <strong>previsões de futebol</strong> para as principais competições europeias: <strong>Champions League</strong>, <strong>Europa League</strong>, <strong>Premier League</strong>, <strong>La Liga</strong>, <strong>Serie A</strong>, <strong>Bundesliga</strong>, <strong>Ligue 1</strong> e <strong>Liga Portugal</strong>. Também cobrimos ligas africanas como a <strong>Moçambola</strong> (Moçambique), <strong>Girabola</strong> (Angola), <strong>Premier Soccer League</strong> (África do Sul) e <strong>NPFL</strong> (Nigéria).
+              </p>
+              <p>
+                Os mercados mais populares nos nossos <strong>palpites de hoje</strong> incluem: <strong>Resultado Final</strong> (1X2), <strong>BTTS / Ambas Marcam</strong>, <strong>Over 2.5 Golos</strong>, <strong>Over 1.5 Golos</strong>, <strong>Dupla Hipótese</strong>, <strong>Handicap Asiático</strong> e <strong>Acumuladas</strong>. Cada mercado é escolhido com base na análise estatística do jogo específico.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-border bg-secondary/20 p-6">
+            <h3 className="font-display text-lg font-bold mb-3">Porquê Seguir os Palpites do AliveGoal</h3>
+            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                O AliveGoal destaca-se como uma plataforma de <strong>tips de apostas grátis</strong> porque cada previsão vem com uma explicação transparente. Não vendemos picks premium nem cobramos por acesso — todas as <strong>dicas de apostas de futebol</strong> são completamente gratuitas e acessíveis no Telegram e no site.
+              </p>
+              <p>
+                As nossas tips são ideais tanto para apostadores iniciantes que querem aprender a analisar jogos, como para apostadores experientes que procuram uma segunda opinião fundamentada. Publicamos entre 3 a 6 <strong>prognósticos por dia</strong>, focando-nos na qualidade e não na quantidade. Joga sempre com responsabilidade — as apostas desportivas envolvem risco.
+              </p>
+            </div>
           </div>
         </div>
       </div>

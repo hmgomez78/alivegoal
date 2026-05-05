@@ -21,15 +21,15 @@ const HeroSection = () => {
         {/* Top section with text */}
         <div className="mb-10 max-w-3xl">
           <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            <span className="text-primary">Tips de Apostas</span> Grátis Hoje —
-            <span className="text-accent"> Previsões</span> de Futebol com IA
+            <span className="text-primary">Palpites de Futebol</span> Grátis Hoje —
+            <span className="text-accent"> Prognósticos</span> com Análise
           </h1>
           <p className="mt-4 max-w-lg text-lg text-muted-foreground">
-            Tips diárias com análise estatística para Champions League, Premier League, Moçambola e mais. Odds, BTTS, Over/Under e acumuladas — tudo grátis no AliveGoal.
+            Dicas de apostas diárias com análise detalhada e odds atualizadas. Prognósticos para Champions League, Premier League, Moçambola, Girabola e mais — tudo grátis no AliveGoal.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Button size="lg" className="glow-emerald" asChild>
-              <a href="#predictions">Ver Previsões</a>
+              <a href="#predictions">Ver Palpites de Hoje</a>
             </Button>
           </div>
         </div>
