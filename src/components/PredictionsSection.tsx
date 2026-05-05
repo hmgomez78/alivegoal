@@ -1,16 +1,11 @@
 import { useState } from "react";
-import { bookmakers } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TrendingUp, RefreshCw, Zap } from "lucide-react";
+import { TrendingUp, RefreshCw, Zap, Trophy, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePredictions } from "@/hooks/usePredictions";
 
-const tabs = ["Hoje", "Amanhã", "Esta Semana"] as const;
-
 const PredictionsSection = () => {
-  const [activeTab, setActiveTab] = useState<'Hoje' | 'Amanhã' | 'Esta Semana'>("Hoje");
-  const { predictions, loading, refresh } = usePredictions(activeTab);
+  const { predictions, loading, refresh } = usePredictions("Hoje");
 
   const getConfidenceColor = (confidence: number) => {
     if (confidence >= 75) return 'bg-green-500';
@@ -22,27 +17,36 @@ const PredictionsSection = () => {
     switch (market) {
       case 'Resultado Final': return 'bg-blue-500/20 text-blue-400';
       case 'Mais de 2.5': return 'bg-purple-500/20 text-purple-400';
+      case 'Mais de 1.5': return 'bg-violet-500/20 text-violet-400';
       case 'Menos de 2.5': return 'bg-indigo-500/20 text-indigo-400';
       case 'Ambas Marcam': return 'bg-pink-500/20 text-pink-400';
+      case 'Golo 1ª Parte': return 'bg-amber-500/20 text-amber-400';
+      case 'Combinada': return 'bg-red-500/20 text-red-400';
       case 'Dupla Hipótese': return 'bg-cyan-500/20 text-cyan-400';
       default: return 'bg-green-500/20 text-green-400';
     }
   };
 
+  const getBetTypeBadge = (betType?: string) => {
+    if (betType === 'DOUBLE') return 'bg-red-500/20 text-red-400';
+    return 'bg-emerald-500/20 text-emerald-400';
+  };
+
   return (
     <section id="predictions" className="py-16 md:py-24">
       <div className="container">
+        {/* SEO-optimized header */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="font-display text-3xl font-bold">Previsões de Futebol</h2>
+              <h2 className="font-display text-3xl font-bold">Tips de Hoje</h2>
               <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
                 <Zap size={10} />
                 AO VIVO
               </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              Previsões geradas por IA com dados em tempo real — atualizadas a cada 30 minutos
+              Tips publicadas no canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@AliveGoal</a> — atualizadas diariamente
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -54,19 +58,13 @@ const PredictionsSection = () => {
               <RefreshCw size={12} className={loading ? "animate-spin" : ""} />
               Atualizar
             </button>
-            <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)}>
-              <TabsList className="bg-secondary">
-                {tabs.map((t) => (
-                  <TabsTrigger key={t} value={t} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{t}</TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Tips grid */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {loading ? (
-            Array.from({ length: 6 }).map((_, i) => (
+            Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="gradient-card rounded-xl border border-border p-5">
                 <Skeleton className="mb-2 h-3 w-20" />
                 <Skeleton className="mb-2 h-5 w-full" />
@@ -75,89 +73,99 @@ const PredictionsSection = () => {
                 <Skeleton className="h-8 w-full" />
               </div>
             ))
+          ) : predictions.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <Trophy size={48} className="mx-auto mb-4 text-muted-foreground/50" />
+              <h3 className="font-display text-xl font-bold">Sem tips para este período</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                As tips são publicadas diariamente no canal Telegram. Volta mais tarde ou junta-te ao canal para notificações.
+              </p>
+            </div>
           ) : (
-            predictions.map((pred) => {
-              const bk = bookmakers[0]; // Default bookmaker for CTA
-              return (
-                <div key={pred.id} className="gradient-card rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:glow-emerald">
-                  {/* Header - Liga & Market */}
-                  <div className="mb-3 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      {pred.leagueLogo && (
-                        <img src={pred.leagueLogo} alt={pred.league} className="w-4 h-4 rounded-sm" />
-                      )}
-                      <span className="text-xs text-muted-foreground">{pred.league}</span>
-                    </div>
+            predictions.map((pred) => (
+              <div key={pred.id} className="gradient-card rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:glow-emerald">
+                {/* Header - Liga, Bet Number & Market */}
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground font-medium">{pred.league}</span>
+                    {pred.betNumber && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-muted-foreground font-mono">
+                        #{pred.betNumber}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    {pred.betType && (
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${getBetTypeBadge(pred.betType)}`}>
+                        {pred.betType}
+                      </span>
+                    )}
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${getMarketBadgeColor(pred.market)}`}>
                       {pred.market}
                     </span>
                   </div>
-
-                  {/* Teams */}
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      {pred.homeLogo && (
-                        <img src={pred.homeLogo} alt={pred.homeTeam} className="w-6 h-6" />
-                      )}
-                      <span className="font-semibold text-sm">{pred.homeTeam}</span>
-                    </div>
-                    <span className="text-xs text-muted-foreground">vs</span>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-right">{pred.awayTeam}</span>
-                      {pred.awayLogo && (
-                        <img src={pred.awayLogo} alt={pred.awayTeam} className="w-6 h-6" />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Date/Time */}
-                  <div className="mt-2 text-xs text-muted-foreground">{pred.date}, {pred.time}</div>
-
-                  {/* Prediction & Odds */}
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="rounded bg-accent/20 px-2 py-1 text-xs font-semibold text-accent">
-                      {pred.prediction}
-                    </span>
-                    <span className="text-sm font-bold text-primary">{pred.odds.toFixed(2)}</span>
-                  </div>
-
-                  {/* Confidence Bar */}
-                  <div className="mt-3">
-                    <div className="mb-1 flex justify-between text-xs text-muted-foreground">
-                      <span>Confiança</span>
-                      <span>{pred.confidence}%</span>
-                    </div>
-                    <div className="h-2 rounded-full bg-secondary">
-                      <div
-                        className={`h-2 rounded-full transition-all ${getConfidenceColor(pred.confidence)}`}
-                        style={{ width: `${pred.confidence}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Percentages */}
-                  <div className="mt-2 flex justify-between text-[10px] text-muted-foreground">
-                    <span>Casa {pred.homePercent}%</span>
-                    <span>Empate {pred.drawPercent}%</span>
-                    <span>Fora {pred.awayPercent}%</span>
-                  </div>
-
-                  {/* CTA Button */}
-                  <Button size="sm" className="mt-4 w-full glow-emerald" asChild>
-                    <a href="https://vvegas-promo.com/l/69f9bb9318f911bfd0029492?sub_id={sub_id_1}&click_id={click_id}" target="_blank" rel="noopener noreferrer">
-                      <TrendingUp size={14} /> Apostar Agora
-                    </a>
-                  </Button>
                 </div>
-              );
-            })
+
+                {/* Teams */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    {pred.homeLogo && (
+                      <img src={pred.homeLogo} alt={pred.homeTeam} className="w-6 h-6" />
+                    )}
+                    <span className="font-semibold text-sm">{pred.homeTeam}</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">vs</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-sm text-right">{pred.awayTeam}</span>
+                    {pred.awayLogo && (
+                      <img src={pred.awayLogo} alt={pred.awayTeam} className="w-6 h-6" />
+                    )}
+                  </div>
+                </div>
+
+                {/* Date/Time */}
+                <div className="mt-2 text-xs text-muted-foreground">
+                  {pred.date}, {pred.time} BST
+                </div>
+
+                {/* Prediction & Odds */}
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="rounded bg-accent/20 px-2 py-1 text-xs font-semibold text-accent flex items-center gap-1">
+                    <Target size={10} />
+                    {pred.prediction}
+                  </span>
+                  <span className="text-lg font-bold text-primary">{pred.odds.toFixed(2)}</span>
+                </div>
+
+                {/* Confidence Bar */}
+                <div className="mt-3">
+                  <div className="mb-1 flex justify-between text-xs text-muted-foreground">
+                    <span>Confiança</span>
+                    <span>{pred.confidence}%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-secondary">
+                    <div
+                      className={`h-2 rounded-full transition-all ${getConfidenceColor(pred.confidence)}`}
+                      style={{ width: `${pred.confidence}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <Button size="sm" className="mt-4 w-full glow-emerald" asChild>
+                  <a href="https://vvegas-promo.com/l/69f9bb9318f911bfd0029492?sub_id={sub_id_1}&click_id={click_id}" target="_blank" rel="noopener noreferrer">
+                    <TrendingUp size={14} /> Apostar Agora
+                  </a>
+                </Button>
+              </div>
+            ))
           )}
         </div>
 
         {/* CTA para o canal Telegram */}
         <div className="mt-8 text-center">
           <a
-            href="https://t.me/NewsForTipsIQ"
+            href="https://t.me/alivegoal"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-[#0088cc]/10 px-6 py-3 text-sm font-semibold text-[#0088cc] transition-all hover:bg-[#0088cc]/20"
@@ -167,6 +175,17 @@ const PredictionsSection = () => {
             </svg>
             Junta-te ao Canal AliveGoal no Telegram para mais tips
           </a>
+        </div>
+
+        {/* SEO content block (hidden visually but indexable) */}
+        <div className="mt-8 rounded-xl border border-border bg-secondary/20 p-6">
+          <h3 className="font-display text-lg font-bold mb-2">Sobre as Nossas Previsões de Futebol</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            As previsões do AliveGoal são publicadas diariamente no nosso canal Telegram por analistas especializados em apostas desportivas. 
+            Cada tip é baseada em análise estatística detalhada, incluindo percentagens de Over/Under, BTTS, médias de golos e forma recente das equipas. 
+            Cobrimos as principais competições europeias — Champions League, Premier League, La Liga, Serie A — bem como ligas africanas como o Moçambola. 
+            Todas as apostas incluem nível de confiança, odd sugerida e stake recomendada para uma gestão de banca responsável.
+          </p>
         </div>
       </div>
     </section>
