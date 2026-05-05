@@ -232,7 +232,7 @@ const NewsArticlePage = () => {
             </div>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
-                href="https://t.me/NewsForTipsIQ"
+                href="https://t.me/alivegoal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg bg-[#0088cc] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"

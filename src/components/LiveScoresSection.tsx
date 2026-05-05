@@ -21,7 +21,7 @@ const LiveScoresSection = () => {
           <div>
             <h2 className="font-display text-3xl font-bold">
               <Activity size={28} className="mr-2 inline text-primary animate-pulse-glow" />
-              Centro de Resultados ao Vivo
+              Resultados de Futebol ao Vivo Hoje
               {isLive && (
                 <span className="ml-3 inline-flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary align-middle">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />

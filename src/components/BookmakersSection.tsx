@@ -18,8 +18,8 @@ const BookmakersSection = () => {
       <div className="container">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="font-display text-3xl font-bold">Comparar Casas de Apostas</h2>
-            <p className="mt-1 text-muted-foreground">Encontra as melhores ofertas de bónus e funcionalidades</p>
+            <h2 className="font-display text-3xl font-bold">Melhores Casas de Apostas 2026</h2>
+            <p className="mt-1 text-muted-foreground">Compara bónus de boas-vindas, odds e funcionalidades das melhores casas de apostas online</p>
             {country && (
               <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground/70">
                 <MapPin size={10} /> Ofertas para {country}

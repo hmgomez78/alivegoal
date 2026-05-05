@@ -27,14 +27,14 @@ const NewsSection = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="font-display text-3xl font-bold">Notícias &amp; Análises</h2>
+              <h2 className="font-display text-3xl font-bold">Notícias de Futebol Hoje</h2>
               <span className="flex items-center gap-1 rounded-full bg-destructive/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-destructive">
                 <Flame size={10} />
                 TRENDING
               </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              As notícias mais quentes do futebol mundial — atualizadas em tempo real
+              Transferências, análises táticas e tips de apostas — atualizado em tempo real
             </p>
           </div>
           <button

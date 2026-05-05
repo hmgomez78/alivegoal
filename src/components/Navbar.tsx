@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Ao Vivo", href: "#live" },
   { label: "Casas de Apostas", href: "#bookmakers" },
   { label: "Notícias", href: "#news" },
-  { label: "Guias", href: "#tools" },
   { label: "Promoções", href: "#conversion" },
 ];
 

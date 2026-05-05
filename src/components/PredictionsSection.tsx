@@ -177,15 +177,20 @@ const PredictionsSection = () => {
           </a>
         </div>
 
-        {/* SEO content block (hidden visually but indexable) */}
+        {/* SEO content block */}
         <div className="mt-8 rounded-xl border border-border bg-secondary/20 p-6">
-          <h3 className="font-display text-lg font-bold mb-2">Sobre as Nossas Previsões de Futebol</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            As previsões do AliveGoal são publicadas diariamente no nosso canal Telegram por analistas especializados em apostas desportivas. 
-            Cada tip é baseada em análise estatística detalhada, incluindo percentagens de Over/Under, BTTS, médias de golos e forma recente das equipas. 
-            Cobrimos as principais competições europeias — Champions League, Premier League, La Liga, Serie A — bem como ligas africanas como o Moçambola. 
-            Todas as apostas incluem nível de confiança, odd sugerida e stake recomendada para uma gestão de banca responsável.
-          </p>
+          <h3 className="font-display text-lg font-bold mb-3">Tips de Apostas de Futebol Grátis — Como Funcionam</h3>
+          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+            <p>
+              As tips de apostas do AliveGoal são publicadas diariamente no nosso canal <a href="https://t.me/alivegoal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Telegram @alivegoal</a> e atualizadas automaticamente neste site. Cada previsão é baseada em análise estatística detalhada, incluindo percentagens de Over/Under, BTTS (Ambas Marcam), médias de golos e forma recente das equipas.
+            </p>
+            <p>
+              Cobrimos as principais competições de futebol: <strong>Champions League</strong>, <strong>Premier League</strong>, <strong>La Liga</strong>, <strong>Serie A</strong>, <strong>Bundesliga</strong>, <strong>Ligue 1</strong>, <strong>Liga Portugal</strong> e ligas africanas como a <strong>Moçambola</strong>, <strong>Premier Soccer League</strong> e <strong>NPFL</strong>. Todas as tips incluem nível de confiança, odd sugerida e tipo de aposta (single ou acumulada).
+            </p>
+            <p>
+              Os mercados mais populares nas nossas previsões incluem: <strong>Resultado Final</strong>, <strong>BTTS (Ambas Marcam)</strong>, <strong>Over 2.5 Golos</strong>, <strong>Over 1.5 Golos</strong>, <strong>Dupla Hipótese</strong> e <strong>Acumuladas</strong>. Joga sempre com responsabilidade e gere a tua banca de forma inteligente.
+            </p>
+          </div>
         </div>
       </div>
     </section>
