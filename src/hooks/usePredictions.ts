@@ -16,6 +16,7 @@ export interface Prediction {
   odds: number;
   market: string;
   winner: string;
+  analysis?: string;
   homePercent: number;
   drawPercent: number;
   awayPercent: number;
@@ -46,6 +47,7 @@ function getFallbackTips(): Prediction[] {
       awayPercent: 30,
       betNumber: '169',
       betType: 'SINGLE',
+      analysis: 'A 1ª mão teve BTTS! Arsenal ataca em casa, Álvarez é mortífero no contra-ataque. Bué provável!',
     },
     {
       id: 170,
@@ -64,6 +66,7 @@ function getFallbackTips(): Prediction[] {
       awayPercent: 30,
       betNumber: '170',
       betType: 'SINGLE',
+      analysis: 'Semi-final decisiva — ambas PRECISAM de marcar. Seguro como o banco!',
     },
     {
       id: 171,
@@ -82,6 +85,7 @@ function getFallbackTips(): Prediction[] {
       awayPercent: 25,
       betNumber: '171',
       betType: 'SINGLE',
+      analysis: 'Arsenal em casa, com a sua gente, PRECISA de vencer. Emirates vai empurrar os Gunners!',
     },
     {
       id: 172,
@@ -100,6 +104,7 @@ function getFallbackTips(): Prediction[] {
       awayPercent: 30,
       betNumber: '172',
       betType: 'DOUBLE',
+      analysis: 'A combinação explosiva da noite! Stake: 10 MZN → Retorno: 28.30 MZN',
     },
   ];
 }
@@ -137,6 +142,7 @@ async function fetchTipsFromAPI(): Promise<Prediction[]> {
         awayPercent: tip.awayPercent || 30,
         betNumber: tip.betNumber,
         betType: tip.betType,
+        analysis: tip.analysis || '',
       }));
     }
     

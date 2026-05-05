@@ -16,6 +16,7 @@ interface Tip {
   odds: number;
   market: string;
   winner: string;
+  analysis: string;
   homePercent: number;
   drawPercent: number;
   awayPercent: number;
@@ -130,6 +131,10 @@ function parseTipsFromHTML(html: string): Tip[] {
       const oddsMatch = section.match(/(?:Odd|ODD)\s*:?\s*@?([\d.]+)/i);
       const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 1.50;
 
+      // Match analysis text: "📌 ..." line
+      const analysisMatch = section.match(/📌\s*(.+?)(?:\n|$)/);
+      const analysis = analysisMatch ? analysisMatch[1].trim() : '';
+
       // Match market line: "⚽ BTTS (Ambas Marcam) — Arsenal vs Atlético"
       // or "⚽ Over 1.5 Golos — Arsenal vs Atlético"
       // or "⚽ Arsenal to Win"
@@ -205,6 +210,7 @@ function parseTipsFromHTML(html: string): Tip[] {
           odds,
           market,
           winner,
+          analysis,
           homePercent: winner === homeTeam ? 50 : 40,
           drawPercent: 25,
           awayPercent: winner === awayTeam ? 50 : 30,
@@ -236,6 +242,9 @@ function parseTipsFromHTML(html: string): Tip[] {
         const { market, prediction } = parseMarket(marketLine);
         const odds = parseFloat(oddsMatch[1]);
         const today = new Date();
+        // Extract analysis from individual tip format
+        const analysisMatch = msg.match(/📌\s*(.+?)(?:\n|$)/);
+        const analysis = analysisMatch ? analysisMatch[1].trim() : '';
 
         tips.push({
           id: parseInt(betNumber),
@@ -251,6 +260,7 @@ function parseTipsFromHTML(html: string): Tip[] {
           odds,
           market,
           winner: '',
+          analysis,
           homePercent: 40,
           drawPercent: 30,
           awayPercent: 30,
@@ -282,6 +292,7 @@ function getFallbackTips(): Tip[] {
       odds: 1.95,
       market: 'Ambas Marcam',
       winner: '',
+      analysis: 'A 1ª mão teve BTTS! Arsenal ataca em casa, Álvarez é mortífero no contra-ataque. Bué provável!',
       homePercent: 45,
       drawPercent: 25,
       awayPercent: 30,
@@ -300,6 +311,7 @@ function getFallbackTips(): Tip[] {
       odds: 1.45,
       market: 'Mais de 1.5',
       winner: '',
+      analysis: 'Semi-final decisiva — ambas PRECISAM de marcar. Seguro como o banco!',
       homePercent: 45,
       drawPercent: 25,
       awayPercent: 30,
@@ -318,6 +330,7 @@ function getFallbackTips(): Tip[] {
       odds: 1.70,
       market: 'Resultado Final',
       winner: 'Arsenal',
+      analysis: 'Arsenal em casa, com a sua gente, PRECISA de vencer. Emirates vai empurrar os Gunners!',
       homePercent: 50,
       drawPercent: 25,
       awayPercent: 25,
@@ -336,6 +349,7 @@ function getFallbackTips(): Tip[] {
       odds: 2.83,
       market: 'Combinada',
       winner: '',
+      analysis: 'A combinação explosiva da noite! Stake: 10 MZN → Retorno: 28.30 MZN',
       homePercent: 45,
       drawPercent: 25,
       awayPercent: 30,

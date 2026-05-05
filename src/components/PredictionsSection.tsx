@@ -137,6 +137,16 @@ const PredictionsSection = () => {
                   <span className="text-lg font-bold text-primary">{pred.odds.toFixed(2)}</span>
                 </div>
 
+                {/* Analysis / Justification */}
+                {pred.analysis && (
+                  <div className="mt-3 rounded-lg bg-secondary/50 border border-border/50 p-3">
+                    <p className="text-xs text-muted-foreground leading-relaxed flex items-start gap-1.5">
+                      <span className="text-primary mt-0.5 shrink-0">📌</span>
+                      <span>{pred.analysis}</span>
+                    </p>
+                  </div>
+                )}
+
                 {/* Confidence Bar */}
                 <div className="mt-3">
                   <div className="mb-1 flex justify-between text-xs text-muted-foreground">
