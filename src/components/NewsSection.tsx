@@ -1,64 +1,23 @@
-import { useEffect, useState } from "react";
-import { newsArticles as mockArticles } from "@/data/mockData";
-import { Clock, ExternalLink, RefreshCw } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { Clock, ExternalLink, RefreshCw, Flame } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-
-interface NewsArticle {
-  id: string | number;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  readTime: string;
-  link?: string;
-  source?: string;
-}
+import { useNews } from "@/hooks/useNews";
 
 const categoryColors: Record<string, string> = {
+  "ÚLTIMA HORA": "bg-destructive/20 text-destructive",
+  "ANÁLISE TÁTICA": "bg-accent/20 text-accent",
+  "TIPS DE APOSTAS": "bg-emerald/20 text-emerald",
+  "TRANSFERÊNCIAS": "bg-lavender/20 text-lavender",
+  "LESÕES": "bg-orange-500/20 text-orange-400",
+  "ESCÂNDALO": "bg-red-500/20 text-red-400",
   "Antevisão": "bg-primary/20 text-primary",
   "Análise Tática": "bg-accent/20 text-accent",
   "Tips de Apostas": "bg-emerald/20 text-emerald",
   "Transferências": "bg-lavender/20 text-lavender",
   "Lesões": "bg-destructive/20 text-destructive",
-  "Match Preview": "bg-primary/20 text-primary",
-  "Tactical Analysis": "bg-accent/20 text-accent",
-  "Betting Tips": "bg-emerald/20 text-emerald",
-  "Transfer News": "bg-lavender/20 text-lavender",
-  "Injury Update": "bg-destructive/20 text-destructive",
 };
 
 const NewsSection = () => {
-  const [articles, setArticles] = useState<NewsArticle[]>(mockArticles);
-  const [loading, setLoading] = useState(true);
-  const [isLive, setIsLive] = useState(false);
-
-  const fetchNews = async () => {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("fetch-football-news");
-      if (error) throw error;
-      if (data?.success && data.articles?.length > 0) {
-        setArticles(data.articles);
-        setIsLive(true);
-      } else {
-        setArticles(mockArticles);
-        setIsLive(false);
-      }
-    } catch (e) {
-      console.error("Falha ao buscar notícias ao vivo:", e);
-      setArticles(mockArticles);
-      setIsLive(false);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchNews();
-    const interval = setInterval(fetchNews, 5 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const { news, loading, refresh } = useNews();
 
   return (
     <section id="news" className="border-y border-border bg-secondary/30 py-16 md:py-24">
@@ -67,19 +26,17 @@ const NewsSection = () => {
           <div>
             <div className="flex items-center gap-2">
               <h2 className="font-display text-3xl font-bold">Notícias &amp; Análises</h2>
-              {isLive && (
-                <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-                  Ao Vivo
-                </span>
-              )}
+              <span className="flex items-center gap-1 rounded-full bg-destructive/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-destructive">
+                <Flame size={10} />
+                TRENDING
+              </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              {isLive ? "Insights de futebol em tempo real das melhores fontes" : "Análises de futebol e tips de apostas de especialistas"}
+              As notícias mais quentes do futebol mundial — atualizadas em tempo real
             </p>
           </div>
           <button
-            onClick={fetchNews}
+            onClick={refresh}
             disabled={loading}
             className="flex items-center gap-1.5 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
           >
@@ -98,47 +55,39 @@ const NewsSection = () => {
                   <Skeleton className="h-4 w-3/4" />
                 </div>
               ))
-            : articles.map((a) => {
-                const Wrapper = a.link ? "a" : "div";
-                const wrapperProps = a.link
-                  ? { href: a.link, target: "_blank", rel: "noopener noreferrer" }
-                  : {};
-                return (
-                  <Wrapper
-                    key={a.id}
-                    {...wrapperProps}
-                    className="gradient-card group cursor-pointer rounded-xl border border-border p-5 transition-all hover:border-primary/40"
-                  >
-                    <div className="mb-3 flex items-center gap-2">
-                      <span
-                        className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase ${
-                          categoryColors[a.category] || "bg-secondary text-secondary-foreground"
-                        }`}
-                      >
-                        {a.category}
+            : news.map((a) => (
+                <div
+                  key={a.id}
+                  className="gradient-card group cursor-pointer rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+                >
+                  <div className="mb-3 flex items-center gap-2">
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase ${
+                        categoryColors[a.category] || "bg-secondary text-secondary-foreground"
+                      }`}
+                    >
+                      {a.category}
+                    </span>
+                    {a.source && (
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] text-muted-foreground">
+                        {a.source}
                       </span>
-                      {a.source && (
-                        <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] text-muted-foreground">
-                          {a.source}
-                        </span>
-                      )}
+                    )}
+                  </div>
+                  <h3 className="font-display text-lg font-bold leading-snug transition-colors group-hover:text-primary">
+                    {a.title}
+                  </h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{a.excerpt}</p>
+                  <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center gap-1">
+                        <Clock size={12} /> {a.readTime}
+                      </span>
+                      <span>{a.date}</span>
                     </div>
-                    <h3 className="font-display text-lg font-bold leading-snug transition-colors group-hover:text-primary">
-                      {a.title}
-                    </h3>
-                    <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{a.excerpt}</p>
-                    <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                      <div className="flex items-center gap-3">
-                        <span className="flex items-center gap-1">
-                          <Clock size={12} /> {a.readTime}
-                        </span>
-                        <span>{a.date}</span>
-                      </div>
-                      {a.link && <ExternalLink size={12} className="opacity-0 transition-opacity group-hover:opacity-100" />}
-                    </div>
-                  </Wrapper>
-                );
-              })}
+                  </div>
+                </div>
+              ))}
         </div>
       </div>
     </section>

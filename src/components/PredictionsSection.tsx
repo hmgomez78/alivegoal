@@ -2,24 +2,32 @@ import { useState } from "react";
 import { bookmakers } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TrendingUp, RefreshCw, MessageCircle } from "lucide-react";
-import TeamLogo from "@/components/TeamLogo";
+import { TrendingUp, RefreshCw, Zap } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useTelegramTips } from "@/hooks/useTelegramTips";
+import { usePredictions } from "@/hooks/usePredictions";
 
-const tabs = ["Hoje", "Amanhã", "Esta Semana"];
+const tabs = ["Hoje", "Amanhã", "Esta Semana"] as const;
 
 const PredictionsSection = () => {
-  const [activeTab, setActiveTab] = useState("Hoje");
-  const { tips, isLive, loading, refresh } = useTelegramTips();
+  const [activeTab, setActiveTab] = useState<'Hoje' | 'Amanhã' | 'Esta Semana'>("Hoje");
+  const { predictions, loading, refresh } = usePredictions(activeTab);
 
-  const filtered = activeTab === "Hoje"
-    ? tips.filter((p) => p.kickoff.startsWith("Hoje"))
-    : activeTab === "Amanhã"
-    ? tips.filter((p) => p.kickoff.startsWith("Amanhã"))
-    : tips;
+  const getConfidenceColor = (confidence: number) => {
+    if (confidence >= 75) return 'bg-green-500';
+    if (confidence >= 60) return 'bg-yellow-500';
+    return 'bg-orange-500';
+  };
 
-  const display = filtered.length > 0 ? filtered : tips;
+  const getMarketBadgeColor = (market: string) => {
+    switch (market) {
+      case 'Resultado Final': return 'bg-blue-500/20 text-blue-400';
+      case 'Mais de 2.5': return 'bg-purple-500/20 text-purple-400';
+      case 'Menos de 2.5': return 'bg-indigo-500/20 text-indigo-400';
+      case 'Ambas Marcam': return 'bg-pink-500/20 text-pink-400';
+      case 'Dupla Hipótese': return 'bg-cyan-500/20 text-cyan-400';
+      default: return 'bg-green-500/20 text-green-400';
+    }
+  };
 
   return (
     <section id="predictions" className="py-16 md:py-24">
@@ -28,17 +36,13 @@ const PredictionsSection = () => {
           <div>
             <div className="flex items-center gap-2">
               <h2 className="font-display text-3xl font-bold">Previsões de Futebol</h2>
-              {isLive && (
-                <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
-                  <MessageCircle size={10} />
-                  Telegram
-                </span>
-              )}
+              <span className="flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-primary">
+                <Zap size={10} />
+                AO VIVO
+              </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              {isLive
-                ? "Tips em tempo real do canal AliveGoal no Telegram"
-                : "Previsões geradas por IA com índice de confiança"}
+              Previsões geradas por IA com dados em tempo real — atualizadas a cada 30 minutos
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -50,7 +54,7 @@ const PredictionsSection = () => {
               <RefreshCw size={12} className={loading ? "animate-spin" : ""} />
               Atualizar
             </button>
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)}>
               <TabsList className="bg-secondary">
                 {tabs.map((t) => (
                   <TabsTrigger key={t} value={t} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{t}</TabsTrigger>
@@ -72,47 +76,73 @@ const PredictionsSection = () => {
               </div>
             ))
           ) : (
-            display.map((p) => {
-              const bk = bookmakers.find((b) => b.id === p.bookmaker);
+            predictions.map((pred) => {
+              const bk = bookmakers[0]; // Default bookmaker for CTA
               return (
-                <div key={p.id} className="gradient-card rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:glow-emerald">
-                  <div className="mb-1 flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">{p.league}</span>
-                    {p.source === "telegram" && isLive && (
-                      <span className="flex items-center gap-1 text-[10px] text-primary">
-                        <MessageCircle size={10} /> Telegram
-                      </span>
-                    )}
+                <div key={pred.id} className="gradient-card rounded-xl border border-border p-5 transition-all hover:border-primary/40 hover:glow-emerald">
+                  {/* Header - Liga & Market */}
+                  <div className="mb-3 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {pred.leagueLogo && (
+                        <img src={pred.leagueLogo} alt={pred.league} className="w-4 h-4 rounded-sm" />
+                      )}
+                      <span className="text-xs text-muted-foreground">{pred.league}</span>
+                    </div>
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${getMarketBadgeColor(pred.market)}`}>
+                      {pred.market}
+                    </span>
                   </div>
+
+                  {/* Teams */}
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <TeamLogo name={p.homeTeam} size="sm" />
-                      <span className="font-semibold text-sm">{p.homeTeam}</span>
+                      {pred.homeLogo && (
+                        <img src={pred.homeLogo} alt={pred.homeTeam} className="w-6 h-6" />
+                      )}
+                      <span className="font-semibold text-sm">{pred.homeTeam}</span>
                     </div>
                     <span className="text-xs text-muted-foreground">vs</span>
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-right">{p.awayTeam}</span>
-                      <TeamLogo name={p.awayTeam} size="sm" />
+                      <span className="font-semibold text-sm text-right">{pred.awayTeam}</span>
+                      {pred.awayLogo && (
+                        <img src={pred.awayLogo} alt={pred.awayTeam} className="w-6 h-6" />
+                      )}
                     </div>
                   </div>
-                  <div className="mt-2 text-xs text-muted-foreground">{p.kickoff}</div>
 
+                  {/* Date/Time */}
+                  <div className="mt-2 text-xs text-muted-foreground">{pred.date}, {pred.time}</div>
+
+                  {/* Prediction & Odds */}
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="rounded bg-accent/20 px-2 py-1 text-xs font-semibold text-accent">{p.prediction}</span>
-                    <span className="text-sm font-bold text-primary">{p.odds}</span>
+                    <span className="rounded bg-accent/20 px-2 py-1 text-xs font-semibold text-accent">
+                      {pred.prediction}
+                    </span>
+                    <span className="text-sm font-bold text-primary">{pred.odds.toFixed(2)}</span>
                   </div>
 
-                  {/* Barra de confiança */}
+                  {/* Confidence Bar */}
                   <div className="mt-3">
                     <div className="mb-1 flex justify-between text-xs text-muted-foreground">
                       <span>Confiança</span>
-                      <span>{p.confidence}%</span>
+                      <span>{pred.confidence}%</span>
                     </div>
                     <div className="h-2 rounded-full bg-secondary">
-                      <div className="h-2 rounded-full bg-primary transition-all" style={{ width: `${p.confidence}%` }} />
+                      <div
+                        className={`h-2 rounded-full transition-all ${getConfidenceColor(pred.confidence)}`}
+                        style={{ width: `${pred.confidence}%` }}
+                      />
                     </div>
                   </div>
 
+                  {/* Percentages */}
+                  <div className="mt-2 flex justify-between text-[10px] text-muted-foreground">
+                    <span>Casa {pred.homePercent}%</span>
+                    <span>Empate {pred.drawPercent}%</span>
+                    <span>Fora {pred.awayPercent}%</span>
+                  </div>
+
+                  {/* CTA Button */}
                   <Button size="sm" className="mt-4 w-full glow-emerald" asChild>
                     <a href={bk?.url || "#bookmakers"} target="_blank" rel="noopener noreferrer">
                       <TrendingUp size={14} /> Apostar Agora
