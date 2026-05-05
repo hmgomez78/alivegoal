@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { bookmakers } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
-import { Star, ExternalLink, LayoutGrid, Table } from "lucide-react";
+import { Star, ExternalLink, LayoutGrid, Table, MapPin } from "lucide-react";
+import { useGeolocation, getVisibleBookmakers } from "@/hooks/useGeolocation";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const BookmakersSection = () => {
   const [view, setView] = useState<"cards" | "table">("cards");
+  const { countryCode, country, loading } = useGeolocation();
+
+  // Filtrar casas de apostas com base na geolocalização
+  const visibleIds = countryCode ? getVisibleBookmakers(countryCode) : bookmakers.map(b => b.id as any);
+  const filteredBookmakers = bookmakers.filter(b => visibleIds.includes(b.id as any));
 
   return (
     <section id="bookmakers" className="py-16 md:py-24">
@@ -13,6 +20,11 @@ const BookmakersSection = () => {
           <div>
             <h2 className="font-display text-3xl font-bold">Comparar Casas de Apostas</h2>
             <p className="mt-1 text-muted-foreground">Encontra as melhores ofertas de bónus e funcionalidades</p>
+            {country && (
+              <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground/70">
+                <MapPin size={10} /> Ofertas para {country}
+              </p>
+            )}
           </div>
           <div className="flex gap-2">
             <Button size="sm" variant={view === "cards" ? "default" : "outline"} onClick={() => setView("cards")}><LayoutGrid size={14} /> Cards</Button>
@@ -20,9 +32,21 @@ const BookmakersSection = () => {
           </div>
         </div>
 
-        {view === "cards" ? (
+        {loading ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {bookmakers.map((b) => (
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="gradient-card rounded-xl border border-border p-6">
+                <Skeleton className="mb-3 h-10 w-10 rounded-lg" />
+                <Skeleton className="mb-2 h-5 w-32" />
+                <Skeleton className="mb-2 h-4 w-full" />
+                <Skeleton className="mb-2 h-3 w-24" />
+                <Skeleton className="h-10 w-full" />
+              </div>
+            ))}
+          </div>
+        ) : view === "cards" ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredBookmakers.map((b) => (
               <div key={b.id} className="gradient-card flex flex-col rounded-xl border border-border p-6 transition-all hover:border-primary/40 hover:glow-emerald">
                 <div className="mb-3 flex items-center gap-3">
                   <img
@@ -71,7 +95,7 @@ const BookmakersSection = () => {
                 </tr>
               </thead>
               <tbody>
-                {bookmakers.map((b) => (
+                {filteredBookmakers.map((b) => (
                   <tr key={b.id} className="border-t border-border transition-colors hover:bg-secondary/30">
                     <td className="px-4 py-3 font-semibold">
                       <div className="flex items-center gap-2">
