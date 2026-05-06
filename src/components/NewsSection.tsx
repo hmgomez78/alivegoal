@@ -2,8 +2,10 @@ import { Clock, RefreshCw, Flame, ChevronRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useNews } from "@/hooks/useNews";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const categoryColors: Record<string, string> = {
+  // Portuguese categories
   "ÚLTIMA HORA": "bg-destructive/20 text-destructive",
   "ANÁLISE TÁTICA": "bg-accent/20 text-accent",
   "TIPS DE APOSTAS": "bg-emerald-500/20 text-emerald-400",
@@ -15,9 +17,19 @@ const categoryColors: Record<string, string> = {
   "Tips de Apostas": "bg-emerald-500/20 text-emerald-400",
   "Transferências": "bg-purple-500/20 text-purple-400",
   "Lesões": "bg-destructive/20 text-destructive",
+  // English categories
+  "BREAKING": "bg-destructive/20 text-destructive",
+  "TACTICAL ANALYSIS": "bg-accent/20 text-accent",
+  "BETTING TIPS": "bg-emerald-500/20 text-emerald-400",
+  "TRANSFERS": "bg-purple-500/20 text-purple-400",
+  "INJURIES": "bg-orange-500/20 text-orange-400",
+  "SCANDAL": "bg-red-500/20 text-red-400",
+  "Preview": "bg-primary/20 text-primary",
+  "Analysis": "bg-accent/20 text-accent",
 };
 
 const NewsSection = () => {
+  const lang = useLanguage();
   const { news, loading, refresh } = useNews();
   const navigate = useNavigate();
 
@@ -27,14 +39,18 @@ const NewsSection = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="font-display text-3xl font-bold">Notícias de Futebol Hoje</h2>
+              <h2 className="font-display text-3xl font-bold">
+                {lang === "pt" ? "Notícias de Futebol Hoje" : "Football News Today"}
+              </h2>
               <span className="flex items-center gap-1 rounded-full bg-destructive/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-destructive">
                 <Flame size={10} />
                 TRENDING
               </span>
             </div>
             <p className="mt-1 text-muted-foreground">
-              Transferências, análises táticas e tips de apostas — atualizado em tempo real
+              {lang === "pt"
+                ? "Transferências, análises táticas e tips de apostas — atualizado em tempo real"
+                : "Transfers, tactical analysis and betting tips — updated in real time"}
             </p>
           </div>
           <button
@@ -43,7 +59,7 @@ const NewsSection = () => {
             className="flex items-center gap-1.5 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
           >
             <RefreshCw size={12} className={loading ? "animate-spin" : ""} />
-            Atualizar
+            {lang === "pt" ? "Atualizar" : "Refresh"}
           </button>
         </div>
 
@@ -89,7 +105,7 @@ const NewsSection = () => {
                       <span>{a.date}</span>
                     </div>
                     <span className="flex items-center gap-1 text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                      Ler mais <ChevronRight size={12} />
+                      {lang === "pt" ? "Ler mais" : "Read more"} <ChevronRight size={12} />
                     </span>
                   </div>
                 </div>

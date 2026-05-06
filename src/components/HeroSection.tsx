@@ -3,13 +3,25 @@ import { Activity, ChevronDown } from "lucide-react";
 import TeamLogo from "@/components/TeamLogo";
 import { useLiveScores } from "@/hooks/useLiveScores";
 import { useState } from "react";
+import { useLanguage } from "../hooks/useLanguage";
+import { t, tr } from "../i18n/translations";
 
 const HeroSection = () => {
   const { matches, isLive } = useLiveScores();
   const [showAll, setShowAll] = useState(false);
+  const lang = useLanguage();
 
-  // Mostrar até 10 jogos, ou todos se showAll
   const displayMatches = showAll ? matches : matches.slice(0, 8);
+
+  const liveLabel = lang === "pt" ? "Jogos ao Vivo" : "Live Games";
+  const todayLabel = lang === "pt" ? "Jogos de Hoje" : "Today's Games";
+  const gameWord = lang === "pt"
+    ? (matches.length === 1 ? "jogo" : "jogos")
+    : (matches.length === 1 ? "game" : "games");
+  const showMoreLabel = lang === "pt"
+    ? `Ver todos os ${matches.length} jogos`
+    : `See all ${matches.length} games`;
+  const showLessLabel = lang === "pt" ? "Mostrar menos" : "Show less";
 
   return (
     <section className="gradient-hero relative overflow-hidden py-16 md:py-28">
@@ -21,15 +33,26 @@ const HeroSection = () => {
         {/* Top section with text */}
         <div className="mb-10 max-w-3xl">
           <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            <span className="text-primary">Palpites de Futebol</span> Grátis Hoje —
-            <span className="text-accent"> Prognósticos</span> com Análise
+            {lang === "pt" ? (
+              <>
+                <span className="text-primary">Palpites de Futebol</span> Grátis Hoje —
+                <span className="text-accent"> Prognósticos</span> com Análise
+              </>
+            ) : (
+              <>
+                <span className="text-primary">Free Football</span> Predictions Today —
+                <span className="text-accent"> Tips</span> with Analysis
+              </>
+            )}
           </h1>
           <p className="mt-4 max-w-lg text-lg text-muted-foreground">
-            Dicas de apostas diárias com análise detalhada e odds atualizadas. Prognósticos para Champions League, Premier League, Moçambola, Girabola e mais — tudo grátis no AliveGoal.
+            {lang === "pt"
+              ? "Dicas de apostas diárias com análise detalhada e odds atualizadas. Prognósticos para Champions League, Premier League, Moçambola, Girabola e mais — tudo grátis no AliveGoal."
+              : "Daily betting tips with detailed analysis and updated odds. Predictions for Champions League, Premier League, African leagues and more — all free on AliveGoal."}
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Button size="lg" className="glow-emerald" asChild>
-              <a href="#predictions">Ver Palpites de Hoje</a>
+              <a href="#predictions">{tr(t.hero.ctaPrimary, lang)}</a>
             </Button>
           </div>
         </div>
@@ -39,7 +62,7 @@ const HeroSection = () => {
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-2 text-sm font-semibold text-primary">
               <Activity size={18} className="animate-pulse-glow" />
-              <span className="text-lg">{isLive ? "Jogos ao Vivo" : "Jogos de Hoje"}</span>
+              <span className="text-lg">{isLive ? liveLabel : todayLabel}</span>
               {isLive && (
                 <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px]">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
@@ -48,18 +71,17 @@ const HeroSection = () => {
               )}
             </div>
             <span className="text-xs text-muted-foreground">
-              {matches.length} {matches.length === 1 ? "jogo" : "jogos"}
+              {matches.length} {gameWord}
             </span>
           </div>
 
-          {/* Grid de jogos - layout alargado */}
+          {/* Grid de jogos */}
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
             {displayMatches.map((m) => (
               <div
                 key={m.id}
                 className="flex items-center justify-between rounded-lg bg-secondary/50 px-4 py-3 text-sm transition-colors hover:bg-secondary/80"
               >
-                {/* Liga badge */}
                 <div className="flex flex-1 flex-col gap-1">
                   <span className="text-[10px] font-medium uppercase text-muted-foreground tracking-wider">
                     {m.league}
@@ -74,14 +96,12 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Score */}
                 <div className="mx-3 flex flex-col items-center">
                   <span className="font-display text-lg font-bold text-primary">
                     {m.homeScore} - {m.awayScore}
                   </span>
                 </div>
 
-                {/* Away team */}
                 <div className="flex flex-1 flex-col items-end gap-1">
                   <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-bold text-primary">
                     {typeof m.minute === "number" && m.minute > 0 ? `${m.minute}'` : m.status}
@@ -99,14 +119,13 @@ const HeroSection = () => {
             ))}
           </div>
 
-          {/* Show more/less button */}
           {matches.length > 8 && (
             <button
               onClick={() => setShowAll(!showAll)}
               className="mt-4 flex w-full items-center justify-center gap-1 rounded-lg border border-border py-2 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               <ChevronDown size={14} className={`transition-transform ${showAll ? "rotate-180" : ""}`} />
-              {showAll ? "Mostrar menos" : `Ver todos os ${matches.length} jogos`}
+              {showAll ? showLessLabel : showMoreLabel}
             </button>
           )}
         </div>

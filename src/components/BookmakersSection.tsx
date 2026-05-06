@@ -4,31 +4,43 @@ import { Button } from "@/components/ui/button";
 import { Star, ExternalLink, LayoutGrid, Table, MapPin } from "lucide-react";
 import { useGeolocation, getVisibleBookmakers } from "@/hooks/useGeolocation";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const BookmakersSection = () => {
+  const lang = useLanguage();
   const [view, setView] = useState<"cards" | "table">("cards");
   const { countryCode, country, loading } = useGeolocation();
 
-  // Filtrar casas de apostas com base na geolocalização
-  const visibleIds = countryCode ? getVisibleBookmakers(countryCode) : bookmakers.map(b => b.id as any);
-  const filteredBookmakers = bookmakers.filter(b => visibleIds.includes(b.id as any));
+  const visibleIds = countryCode ? getVisibleBookmakers(countryCode) : bookmakers.map((b) => b.id as any);
+  const filteredBookmakers = bookmakers.filter((b) => visibleIds.includes(b.id as any));
 
   return (
     <section id="bookmakers" className="py-16 md:py-24">
       <div className="container">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="font-display text-3xl font-bold">Melhores Casas de Apostas 2026</h2>
-            <p className="mt-1 text-muted-foreground">Compara bónus de boas-vindas, odds e funcionalidades das melhores casas de apostas online</p>
+            <h2 className="font-display text-3xl font-bold">
+              {lang === "pt" ? "Melhores Casas de Apostas 2026" : "Best Bookmakers 2026"}
+            </h2>
+            <p className="mt-1 text-muted-foreground">
+              {lang === "pt"
+                ? "Compara bónus de boas-vindas, odds e funcionalidades das melhores casas de apostas online"
+                : "Compare welcome bonuses, odds and features from the best online bookmakers"}
+            </p>
             {country && (
               <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground/70">
-                <MapPin size={10} /> Ofertas para {country}
+                <MapPin size={10} />
+                {lang === "pt" ? `Ofertas para ${country}` : `Offers available for ${country}`}
               </p>
             )}
           </div>
           <div className="flex gap-2">
-            <Button size="sm" variant={view === "cards" ? "default" : "outline"} onClick={() => setView("cards")}><LayoutGrid size={14} /> Cards</Button>
-            <Button size="sm" variant={view === "table" ? "default" : "outline"} onClick={() => setView("table")}><Table size={14} /> Tabela</Button>
+            <Button size="sm" variant={view === "cards" ? "default" : "outline"} onClick={() => setView("cards")}>
+              <LayoutGrid size={14} /> Cards
+            </Button>
+            <Button size="sm" variant={view === "table" ? "default" : "outline"} onClick={() => setView("table")}>
+              <Table size={14} /> {lang === "pt" ? "Tabela" : "Table"}
+            </Button>
           </div>
         </div>
 
@@ -47,7 +59,10 @@ const BookmakersSection = () => {
         ) : view === "cards" ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredBookmakers.map((b) => (
-              <div key={b.id} className="gradient-card flex flex-col rounded-xl border border-border p-6 transition-all hover:border-primary/40 hover:glow-emerald">
+              <div
+                key={b.id}
+                className="gradient-card flex flex-col rounded-xl border border-border p-6 transition-all hover:border-primary/40 hover:glow-emerald"
+              >
                 <div className="mb-3 flex items-center gap-3">
                   <img
                     src={`https://www.google.com/s2/favicons?domain=${new URL(b.url).hostname}&sz=64`}
@@ -62,11 +77,17 @@ const BookmakersSection = () => {
                 </div>
                 <div className="mt-2 flex items-center gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className={i < Math.floor(b.rating) ? "fill-primary text-primary" : "text-muted-foreground"} />
+                    <Star
+                      key={i}
+                      size={14}
+                      className={i < Math.floor(b.rating) ? "fill-primary text-primary" : "text-muted-foreground"}
+                    />
                   ))}
                   <span className="ml-1 text-xs text-muted-foreground">{b.rating}</span>
                 </div>
-                <div className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-semibold text-primary">{b.bonus}</div>
+                <div className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-semibold text-primary">
+                  {b.bonus}
+                </div>
                 <ul className="mt-4 flex-1 space-y-1">
                   {b.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -76,7 +97,7 @@ const BookmakersSection = () => {
                 </ul>
                 <Button className="mt-5 w-full glow-emerald" asChild>
                   <a href={b.url} target="_blank" rel="noopener noreferrer">
-                    Reclamar Bónus <ExternalLink size={14} />
+                    {lang === "pt" ? "Reclamar Bónus" : "Claim Bonus"} <ExternalLink size={14} />
                   </a>
                 </Button>
               </div>
@@ -87,11 +108,21 @@ const BookmakersSection = () => {
             <table className="w-full text-sm">
               <thead className="bg-secondary/50">
                 <tr>
-                  <th className="px-4 py-3 text-left font-semibold">Casa de Apostas</th>
-                  <th className="px-4 py-3 text-left font-semibold">Região</th>
-                  <th className="px-4 py-3 text-left font-semibold">Bónus</th>
-                  <th className="px-4 py-3 text-center font-semibold">Avaliação</th>
-                  <th className="px-4 py-3 text-center font-semibold">Ação</th>
+                  <th className="px-4 py-3 text-left font-semibold">
+                    {lang === "pt" ? "Casa de Apostas" : "Bookmaker"}
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold">
+                    {lang === "pt" ? "Região" : "Region"}
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold">
+                    {lang === "pt" ? "Bónus" : "Bonus"}
+                  </th>
+                  <th className="px-4 py-3 text-center font-semibold">
+                    {lang === "pt" ? "Avaliação" : "Rating"}
+                  </th>
+                  <th className="px-4 py-3 text-center font-semibold">
+                    {lang === "pt" ? "Ação" : "Action"}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -112,7 +143,11 @@ const BookmakersSection = () => {
                     <td className="px-4 py-3 text-primary">{b.bonus}</td>
                     <td className="px-4 py-3 text-center">{b.rating}</td>
                     <td className="px-4 py-3 text-center">
-                      <Button size="sm" asChild><a href={b.url} target="_blank" rel="noopener noreferrer">Reclamar</a></Button>
+                      <Button size="sm" asChild>
+                        <a href={b.url} target="_blank" rel="noopener noreferrer">
+                          {lang === "pt" ? "Reclamar" : "Claim"}
+                        </a>
+                      </Button>
                     </td>
                   </tr>
                 ))}
