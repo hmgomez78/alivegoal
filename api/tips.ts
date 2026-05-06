@@ -121,23 +121,11 @@ function parseTipsFromHTML(html: string): Tip[] {
     messages.push({ text, date: msgDate, pos });
   }
 
-  // Get today's date in UTC
-  const now = new Date();
-  const todayUTC = now.toISOString().slice(0, 10); // "2026-05-06"
-
-  // Filter messages from today or yesterday (to handle timezone edge cases)
-  const yesterday = new Date(now);
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayUTC = yesterday.toISOString().slice(0, 10);
-
-  // Sort by date descending (newest first)
+  // Sort ALL messages by date descending (newest first) — process most recent first
   const sortedMessages = [...messages].sort((a, b) => b.date.localeCompare(a.date));
 
-  // Try to find tips in today's messages first, then yesterday's
-  for (const dateFilter of [todayUTC, yesterdayUTC]) {
-    const dayMessages = sortedMessages.filter(m => m.date.startsWith(dateFilter));
-
-    for (const { text: msg } of dayMessages) {
+  // Process messages newest-first, stop as soon as we find tips
+  for (const { text: msg } of sortedMessages) {
       // --- FORMAT 1: New format "TIP 1: OVER 2.5 GOALS" ---
       if (/TIP\s+\d+\s*:/i.test(msg) || (/✅\s*TIP/i.test(msg))) {
         // Extract header info
@@ -321,8 +309,6 @@ function parseTipsFromHTML(html: string): Tip[] {
         if (tips.length > 0) break;
       }
     }
-
-    if (tips.length > 0) break;
   }
 
   return tips;
