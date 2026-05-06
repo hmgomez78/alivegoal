@@ -309,7 +309,6 @@ function parseTipsFromHTML(html: string): Tip[] {
         if (tips.length > 0) break;
       }
     }
-  }
 
   return tips;
 }
