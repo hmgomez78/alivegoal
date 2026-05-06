@@ -53,10 +53,10 @@ const PRIORITY_LEAGUES = [
   686,  // Moçambola
 ];
 
-// Fallback data com jogos reais (atualizado 05/05/2026)
+// Fallback data com jogos reais (atualizado 06/05/2026)
 const fallbackMatches: LiveMatch[] = [
-  { id: 1540843, homeTeam: "Arsenal", awayTeam: "Atletico Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/42.png", awayTeamLogo: "https://media.api-sports.io/football/teams/530.png" },
-  { id: 1540844, homeTeam: "Bayern München", awayTeam: "Paris Saint Germain", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 19:00", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/157.png", awayTeamLogo: "https://media.api-sports.io/football/teams/85.png" },
+  { id: 1540844, homeTeam: "Bayern München", awayTeam: "Paris Saint Germain", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/157.png", awayTeamLogo: "https://media.api-sports.io/football/teams/85.png" },
+  { id: 1540843, homeTeam: "Arsenal", awayTeam: "Atletico Madrid", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/42.png", awayTeamLogo: "https://media.api-sports.io/football/teams/530.png" },
   { id: 1540900, homeTeam: "Al Ahly", awayTeam: "Enppi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Premier League Egito", leagueId: 233, homeTeamLogo: "https://media.api-sports.io/football/teams/1028.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1040.png" },
   { id: 1540901, homeTeam: "Smouha SC", awayTeam: "Zamalek SC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Premier League Egito", leagueId: 233, homeTeamLogo: "https://media.api-sports.io/football/teams/1044.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1029.png" },
   { id: 1540902, homeTeam: "Stellenbosch", awayTeam: "Orlando Pirates", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Premier Soccer League", leagueId: 288, homeTeamLogo: "https://media.api-sports.io/football/teams/2907.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2896.png" },
@@ -68,10 +68,10 @@ const fallbackMatches: LiveMatch[] = [
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Arsenal", awayTeam: "Atletico Madrid",
+  homeTeam: "Bayern München", awayTeam: "Paris Saint Germain",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

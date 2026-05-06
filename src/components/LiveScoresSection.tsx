@@ -1,4 +1,4 @@
-import { Activity, BarChart3, RefreshCw } from "lucide-react";
+import { Activity, RefreshCw, BarChart3, Send } from "lucide-react";
 import TeamLogo from "@/components/TeamLogo";
 import { useLiveScores } from "@/hooks/useLiveScores";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -32,6 +32,38 @@ const LiveScoresSection = () => {
             <p className="mt-1 text-muted-foreground">
               {isLive ? "Resultados em tempo real" : "Resultados e estatísticas dos jogos"}
             </p>
+            {/* Redes sociais */}
+            <div className="mt-3 flex items-center gap-2">
+              <a
+                href="https://t.me/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold text-white transition-opacity hover:opacity-80"
+                style={{ backgroundColor: '#0088cc' }}
+              >
+                <Send size={11} /> Telegram
+              </a>
+              <a
+                href="https://x.com/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold text-white transition-opacity hover:opacity-80"
+                style={{ backgroundColor: '#14171A' }}
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+              </a>
+              <a
+                href="https://facebook.com/alivegoal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold text-white transition-opacity hover:opacity-80"
+                style={{ backgroundColor: '#1877f2' }}
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+            </div>
           </div>
           <button
             onClick={refresh}

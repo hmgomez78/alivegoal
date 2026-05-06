@@ -8,40 +8,19 @@ export interface GeoData {
 
 // Países onde V.Vegas deve aparecer
 const VVEGAS_COUNTRIES = [
-  "DE", // Germany
-  "BE", // Belgium
-  "AT", // Austria
-  "PL", // Poland
-  "LV", // Latvia
-  "LT", // Lithuania
-  "EE", // Estonia
-  "SI", // Slovenia
-  "SK", // Slovakia
-  "PT", // Portugal
-  "HR", // Croatia
-  "BA", // Bosnia
-  "LU", // Luxembourg
-  "IS", // Iceland
-  "CH", // Switzerland
-  "RO", // Romania
-  "HU", // Hungary
-  "GR", // Greece
-  "DK", // Denmark
-  "NO", // Norway
-  "FI", // Finland
-  "SE", // Sweden
-  "IE", // Ireland
-  "BG", // Bulgaria
-  "CA", // Canada
-  "GE", // Georgia
-  "RS", // Serbia
-  "MD", // Moldova
-  "IT", // Italy
-  "AL", // Albania
-  "AD", // Andorra
+  "DE", "BE", "AT", "PL", "LV", "LT", "EE", "SI", "SK", "PT",
+  "HR", "BA", "LU", "IS", "CH", "RO", "HU", "GR", "DK", "NO",
+  "FI", "SE", "IE", "BG", "CA", "GE", "RS", "MD", "IT", "AL", "AD",
 ];
 
-export type BookmakerGeo = "elephantbet-angola" | "elephantbet-mozambique" | "hollywoodbets" | "888bets" | "premierbet" | "betway" | "vvegas";
+export type BookmakerGeo =
+  | "elephantbet-angola"
+  | "elephantbet-mozambique"
+  | "hollywoodbets"
+  | "888bets"
+  | "premierbet"
+  | "betway"
+  | "vvegas";
 
 /**
  * Determina quais casas de apostas mostrar com base no país do visitante
@@ -49,28 +28,43 @@ export type BookmakerGeo = "elephantbet-angola" | "elephantbet-mozambique" | "ho
 export function getVisibleBookmakers(countryCode: string): BookmakerGeo[] {
   const code = countryCode.toUpperCase();
 
-  // Angola: ElephantBet Angola + PremierBet
-  if (code === "AO") {
-    return ["elephantbet-angola", "premierbet"];
-  }
+  if (code === "AO") return ["elephantbet-angola", "premierbet"];
+  if (code === "MZ") return ["elephantbet-mozambique", "888bets"];
+  if (code === "ZA") return ["hollywoodbets"];
+  if (VVEGAS_COUNTRIES.includes(code)) return ["vvegas"];
 
-  // Moçambique: ElephantBet Moçambique + 888
-  if (code === "MZ") {
-    return ["elephantbet-mozambique", "888bets"];
-  }
-
-  // África do Sul: HollywoodBets
-  if (code === "ZA") {
-    return ["hollywoodbets"];
-  }
-
-  // Países V.Vegas (Europa + Canadá)
-  if (VVEGAS_COUNTRIES.includes(code)) {
-    return ["vvegas"];
-  }
-
-  // Fallback: mostrar todas (para países não mapeados)
+  // Fallback: mostrar todas
   return ["elephantbet-angola", "elephantbet-mozambique", "hollywoodbets", "888bets", "premierbet", "vvegas"];
+}
+
+/**
+ * Tenta adivinhar o país a partir do idioma do browser como fallback rápido
+ */
+function guessCountryFromLanguage(): string {
+  const lang = (navigator.language || "").toLowerCase();
+  if (lang.startsWith("pt-pt") || lang === "pt") return "PT";
+  if (lang.startsWith("pt-mz")) return "MZ";
+  if (lang.startsWith("pt-ao")) return "AO";
+  if (lang.startsWith("pt-br")) return "BR";
+  if (lang.startsWith("af") || lang.startsWith("zu") || lang.startsWith("xh")) return "ZA";
+  if (lang.startsWith("de")) return "DE";
+  if (lang.startsWith("fr-be")) return "BE";
+  if (lang.startsWith("fr")) return "FR";
+  if (lang.startsWith("it")) return "IT";
+  if (lang.startsWith("es")) return "ES";
+  if (lang.startsWith("pl")) return "PL";
+  if (lang.startsWith("ro")) return "RO";
+  if (lang.startsWith("hu")) return "HU";
+  if (lang.startsWith("el")) return "GR";
+  if (lang.startsWith("sv")) return "SE";
+  if (lang.startsWith("da")) return "DK";
+  if (lang.startsWith("fi")) return "FI";
+  if (lang.startsWith("nb") || lang.startsWith("no")) return "NO";
+  if (lang.startsWith("en-ie")) return "IE";
+  if (lang.startsWith("en-ca")) return "CA";
+  if (lang.startsWith("en-gb")) return "GB";
+  if (lang.startsWith("en-za")) return "ZA";
+  return "";
 }
 
 export function useGeolocation(): GeoData {
@@ -82,43 +76,92 @@ export function useGeolocation(): GeoData {
 
   useEffect(() => {
     const detectCountry = async () => {
+      // 1. Tentar ipapi.co (gratuito, sem chave)
       try {
-        // Tentar ipapi.co (gratuito, sem chave)
         const res = await fetch("https://ipapi.co/json/", {
-          signal: AbortSignal.timeout(5000),
+          signal: AbortSignal.timeout(4000),
         });
         if (res.ok) {
           const data = await res.json();
-          setGeo({
-            countryCode: data.country_code || "",
-            country: data.country_name || "",
-            loading: false,
-          });
-          return;
+          if (data.country_code) {
+            setGeo({
+              countryCode: data.country_code,
+              country: data.country_name || data.country_code,
+              loading: false,
+            });
+            return;
+          }
         }
       } catch {
-        // Fallback
+        // continuar
       }
 
+      // 2. Tentar cloudflare trace (muito rápido, sem CORS)
       try {
-        // Fallback: ip-api.com (gratuito)
-        const res = await fetch("http://ip-api.com/json/?fields=countryCode,country", {
-          signal: AbortSignal.timeout(5000),
+        const res = await fetch("https://cloudflare.com/cdn-cgi/trace", {
+          signal: AbortSignal.timeout(3000),
+        });
+        if (res.ok) {
+          const text = await res.text();
+          const match = text.match(/loc=([A-Z]{2})/);
+          if (match) {
+            const code = match[1];
+            const names: Record<string, string> = {
+              PT: "Portugal", MZ: "Moçambique", AO: "Angola", ZA: "África do Sul",
+              DE: "Alemanha", BE: "Bélgica", AT: "Áustria", PL: "Polónia",
+              IT: "Itália", FR: "França", ES: "Espanha", GB: "Reino Unido",
+              CA: "Canadá", BR: "Brasil", US: "Estados Unidos",
+            };
+            setGeo({
+              countryCode: code,
+              country: names[code] || code,
+              loading: false,
+            });
+            return;
+          }
+        }
+      } catch {
+        // continuar
+      }
+
+      // 3. Tentar ip-api.com (gratuito, HTTP)
+      try {
+        const res = await fetch("https://ip-api.com/json/?fields=countryCode,country", {
+          signal: AbortSignal.timeout(4000),
         });
         if (res.ok) {
           const data = await res.json();
-          setGeo({
-            countryCode: data.countryCode || "",
-            country: data.country || "",
-            loading: false,
-          });
-          return;
+          if (data.countryCode) {
+            setGeo({
+              countryCode: data.countryCode,
+              country: data.country || data.countryCode,
+              loading: false,
+            });
+            return;
+          }
         }
       } catch {
-        // Fallback final
+        // continuar
       }
 
-      // Se tudo falhar, não filtrar (mostrar tudo)
+      // 4. Fallback: tentar adivinhar pelo idioma do browser
+      const langCode = guessCountryFromLanguage();
+      if (langCode) {
+        const names: Record<string, string> = {
+          PT: "Portugal", MZ: "Moçambique", AO: "Angola", ZA: "África do Sul",
+          DE: "Alemanha", BE: "Bélgica", AT: "Áustria", PL: "Polónia",
+          IT: "Itália", FR: "França", ES: "Espanha", GB: "Reino Unido",
+          CA: "Canadá", BR: "Brasil",
+        };
+        setGeo({
+          countryCode: langCode,
+          country: names[langCode] || langCode,
+          loading: false,
+        });
+        return;
+      }
+
+      // 5. Último fallback: sem filtro
       setGeo({ countryCode: "", country: "", loading: false });
     };
 
