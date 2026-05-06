@@ -22,8 +22,15 @@ interface Tip {
   awayPercent: number;
 }
 
+function confidenceFromText(text: string): number {
+  if (/MUITO ALTA|VERY HIGH/i.test(text)) return 90;
+  if (/ALTA|HIGH/i.test(text)) return 82;
+  if (/MÉDIA|MEDIUM|MODERATE/i.test(text)) return 68;
+  if (/BAIXA|LOW/i.test(text)) return 55;
+  return 70;
+}
+
 function confidenceFromOdds(odds: number): number {
-  // Higher odds = lower confidence, lower odds = higher confidence
   if (odds <= 1.30) return 85;
   if (odds <= 1.50) return 80;
   if (odds <= 1.70) return 75;
@@ -34,249 +41,298 @@ function confidenceFromOdds(odds: number): number {
 
 function parseMarket(marketLine: string): { market: string; prediction: string } {
   const line = marketLine.trim();
-  
-  if (line.includes('BTTS') && line.includes('Over')) {
+
+  if (/ACUMULAD|ACUMUL/i.test(line)) {
+    return { market: 'Combinada', prediction: line.replace(/^ACUMULAD[OR]*:?\s*/i, '').trim() || 'Acumulador' };
+  }
+  if (/BTTS.*Over|Over.*BTTS/i.test(line)) {
     return { market: 'Combinada', prediction: 'BTTS + Over 1.5' };
   }
-  if (line.includes('BTTS') || line.includes('Ambas Marcam') || line.includes('Ambas as Equipas Marcam')) {
+  if (/BTTS|Ambas Marcam|Ambas as Equipas/i.test(line)) {
     return { market: 'Ambas Marcam', prediction: 'Ambas Marcam - Sim' };
   }
-  if (line.match(/Over\s*2\.5/i)) {
+  if (/Over\s*2\.5/i.test(line)) {
     return { market: 'Mais de 2.5', prediction: 'Mais de 2.5 Golos' };
   }
-  if (line.match(/Over\s*1\.5/i)) {
+  if (/Over\s*1\.5/i.test(line)) {
     return { market: 'Mais de 1.5', prediction: 'Mais de 1.5 Golos' };
   }
-  if (line.match(/Over\s*0\.5.*(?:1ª|First|HT)/i)) {
+  if (/Over\s*0\.5.*(1ª|First|HT|Half)/i.test(line) || /First\s*Half|1ª\s*Part/i.test(line)) {
     return { market: 'Golo 1ª Parte', prediction: 'Golo na 1ª Parte' };
   }
-  if (line.match(/Over\s*0\.5/i)) {
-    return { market: 'Golo 1ª Parte', prediction: 'Over 0.5 Golos 1ª Parte' };
+  if (/Over\s*0\.5/i.test(line)) {
+    return { market: 'Golo 1ª Parte', prediction: 'Over 0.5 Golos' };
   }
-  if (line.match(/to\s*Win/i) || line.match(/Vitória/i)) {
-    // Try to extract team name
+  if (/to\s*Win|Vitória/i.test(line)) {
     const teamMatch = line.match(/(.+?)\s*(?:to\s*Win|Vitória)/i);
     if (teamMatch) {
       return { market: 'Resultado Final', prediction: `Vitória ${teamMatch[1].trim()}` };
     }
     return { market: 'Resultado Final', prediction: 'Vitória Casa' };
   }
-  if (line.includes('Double Chance') || line.includes('Dupla')) {
+  if (/Double Chance|Dupla Hipótese/i.test(line)) {
     return { market: 'Dupla Hipótese', prediction: 'Dupla Hipótese' };
   }
-  
   return { market: 'Resultado Final', prediction: line };
+}
+
+function cleanText(html: string): string {
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#33;/g, '!')
+    .replace(/&nbsp;/g, ' ')
+    .trim();
+}
+
+interface MessageWithDate {
+  text: string;
+  date: string;
+  pos: number;
 }
 
 function parseTipsFromHTML(html: string): Tip[] {
   const tips: Tip[] = [];
 
-  // Extract all message text blocks
+  // Extract messages with their dates
+  const dateRegex = /datetime="([^"]+)"/g;
+  const datePositions: { pos: number; date: string }[] = [];
+  let dm;
+  while ((dm = dateRegex.exec(html)) !== null) {
+    datePositions.push({ pos: dm.index, date: dm[1] });
+  }
+
   const messageRegex = /class="tgme_widget_message_text[^"]*"[^>]*>([\s\S]*?)<\/div>/gi;
-  const messages: string[] = [];
+  const messages: MessageWithDate[] = [];
   let match;
-  
   while ((match = messageRegex.exec(html)) !== null) {
-    let text = match[1]
-      .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<[^>]+>/g, '')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/&#33;/g, '!')
-      .replace(/&nbsp;/g, ' ')
-      .trim();
-    messages.push(text);
+    const pos = match.index;
+    const text = cleanText(match[1]);
+    // Find closest date before this position
+    let msgDate = '';
+    for (const dp of datePositions) {
+      if (dp.pos < pos) msgDate = dp.date;
+    }
+    messages.push({ text, date: msgDate, pos });
   }
 
-  // Process messages in reverse (newest first)
-  for (const msg of messages.reverse()) {
-    // Skip messages without BET
-    if (!msg.includes('BET')) continue;
+  // Get today's date in UTC
+  const now = new Date();
+  const todayUTC = now.toISOString().slice(0, 10); // "2026-05-06"
 
-    // Extract title info for teams and league
-    let defaultHomeTeam = '';
-    let defaultAwayTeam = '';
-    let defaultLeague = 'Champions League';
-    let defaultTime = '20:00';
+  // Filter messages from today or yesterday (to handle timezone edge cases)
+  const yesterday = new Date(now);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayUTC = yesterday.toISOString().slice(0, 10);
 
-    // Title pattern: "TIPS Team1 vs Team2 — Competition"
-    const titleMatch = msg.match(/TIPS\s+(.+?)\s*(?:vs|🆚)\s*(.+?)\s*(?:—|–|-)\s*(.+?)(?:\n|$)/i);
-    if (titleMatch) {
-      defaultHomeTeam = titleMatch[1].replace(/[⚽🎯🔥]/g, '').trim();
-      defaultAwayTeam = titleMatch[2].trim();
-      defaultLeague = titleMatch[3].trim();
-    }
+  // Sort by date descending (newest first)
+  const sortedMessages = [...messages].sort((a, b) => b.date.localeCompare(a.date));
 
-    // Also check for time in the announcement message before tips
-    const timeMatch = msg.match(/(\d{1,2}):(\d{2})\s*BST/i);
-    if (timeMatch) {
-      defaultTime = `${timeMatch[1]}:${timeMatch[2]}`;
-    }
+  // Try to find tips in today's messages first, then yesterday's
+  for (const dateFilter of [todayUTC, yesterdayUTC]) {
+    const dayMessages = sortedMessages.filter(m => m.date.startsWith(dateFilter));
 
-    // Split by separator lines (━━━)
-    const sections = msg.split(/━+/);
+    for (const { text: msg } of dayMessages) {
+      // --- FORMAT 1: New format "TIP 1: OVER 2.5 GOALS" ---
+      if (/TIP\s+\d+\s*:/i.test(msg) || (/✅\s*TIP/i.test(msg))) {
+        // Extract header info
+        const teamsMatch = msg.match(/(?:⚽|🏟️)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
+        const leagueMatch = msg.match(/(?:🏆|Champions|Premier|La Liga|Serie|Bundesliga|Libertadores|UCL|UEL)\s*(.+?)(?:\n|$)/i);
+        const dateMatch = msg.match(/📅\s*(\d{1,2})\s*(Maio|Abril|Março|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro|Janeiro|Fevereiro|May|April|March|June|July|August|September|October|November|December|January|February)/i);
 
-    for (const section of sections) {
-      // Match BET line: "BET 169 | SINGLE" or "BET 172 | DOUBLE"
-      const betMatch = section.match(/BET\s+(\d+)\s*\|\s*(SINGLE|DOUBLE)/i);
-      if (!betMatch) continue;
+        const homeTeam = teamsMatch ? teamsMatch[1].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
+        const awayTeam = teamsMatch ? teamsMatch[2].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
 
-      const betNumber = betMatch[1];
-      const betType = betMatch[2].toUpperCase();
+        // Determine league
+        let league = 'UEFA Champions League';
+        if (/Premier League/i.test(msg)) league = 'Premier League';
+        else if (/La Liga/i.test(msg)) league = 'La Liga';
+        else if (/Bundesliga/i.test(msg)) league = 'Bundesliga';
+        else if (/Serie A/i.test(msg)) league = 'Serie A';
+        else if (/Libertadores/i.test(msg)) league = 'CONMEBOL Libertadores';
+        else if (/Moçambola/i.test(msg)) league = 'Moçambola';
+        else if (/Champions|UCL/i.test(msg)) league = 'UEFA Champions League';
 
-      // Match odds: "Odd: @1.95" or "ODD: @1.95"
-      const oddsMatch = section.match(/(?:Odd|ODD)\s*:?\s*@?([\d.]+)/i);
-      const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 1.50;
+        // Extract analysis from 🧠 ANÁLISE line
+        const analysisMatch = msg.match(/(?:🧠\s*ANÁLISE|🧠\s*ANALYSIS)\s*:?\s*(.+?)(?:\n━|$)/is);
+        const globalAnalysis = analysisMatch ? analysisMatch[1].replace(/\n/g, ' ').trim() : '';
 
-      // Match analysis text: "📌 ..." line
-      const analysisMatch = section.match(/📌\s*(.+?)(?:\n|$)/);
-      const analysis = analysisMatch ? analysisMatch[1].trim() : '';
+        // Split by separator lines (━━━)
+        const sections = msg.split(/━+/);
+        let tipCounter = 0;
 
-      // Match market line: "⚽ BTTS (Ambas Marcam) — Arsenal vs Atlético"
-      // or "⚽ Over 1.5 Golos — Arsenal vs Atlético"
-      // or "⚽ Arsenal to Win"
-      const marketLineMatch = section.match(/⚽️?\s*(.+?)(?:\n|$)/);
-      let marketLine = marketLineMatch ? marketLineMatch[1].trim() : '';
+        for (const section of sections) {
+          // Match "TIP 1: OVER 2.5 GOALS" or "✅ TIP 1: ..."
+          const tipMatch = section.match(/(?:✅\s*)?TIP\s+(\d+)\s*:\s*(.+?)(?:\n|$)/i);
+          if (!tipMatch) continue;
 
-      // Extract teams from market line if present
-      let homeTeam = defaultHomeTeam;
-      let awayTeam = defaultAwayTeam;
-      
-      const teamsInLine = marketLine.match(/(?:—|–|-)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)$/i);
-      if (teamsInLine) {
-        homeTeam = teamsInLine[1].trim();
-        awayTeam = teamsInLine[2].trim();
-        // Remove teams part from market line
-        marketLine = marketLine.replace(/\s*(?:—|–|-)\s*.+$/, '').trim();
-      }
+          tipCounter++;
+          const tipNum = parseInt(tipMatch[1]);
+          const marketRaw = tipMatch[2].trim();
 
-      // Also check for individual tip format: "🏟️ Team1 vs Team2"
-      const altTeamsMatch = section.match(/🏟️\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
-      if (altTeamsMatch) {
-        homeTeam = altTeamsMatch[1].trim();
-        awayTeam = altTeamsMatch[2].trim();
-      }
+          // Extract confidence
+          const confMatch = section.match(/(?:Confiança|Confidence)\s*:\s*(.+?)(?:\n|$)/i);
+          const confidence = confMatch ? confidenceFromText(confMatch[1]) : 75;
 
-      // Check for MERCADO line (alternative format)
-      const mercadoMatch = section.match(/(?:MERCADO|📊\s*MERCADO)\s*:?\s*(.+?)(?:\n|$)/i);
-      if (mercadoMatch && !marketLine) {
-        marketLine = mercadoMatch[1].trim();
-      }
+          // Extract odds if present
+          const oddsMatch = section.match(/(?:Odd|ODD|@)\s*:?\s*@?([\d.]+)/i);
+          const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 0;
 
-      // Check for time in individual tip
-      const tipTimeMatch = section.match(/🕒\s*(\d{1,2}):(\d{2})\s*BST/i);
-      const time = tipTimeMatch ? `${tipTimeMatch[1]}:${tipTimeMatch[2]}` : defaultTime;
+          // Extract stake
+          const stakeMatch = section.match(/(?:Stake|💰)\s*:?\s*(.+?)(?:\n|$)/i);
 
-      // Check for league in individual tip
-      const tipLeagueMatch = section.match(/(?:TIP\s*#\d+\s*\|\s*\w+\s*\|\s*)(.+?)(?:\n|$)/i);
-      const league = tipLeagueMatch ? tipLeagueMatch[1].trim() : defaultLeague;
+          // Extract tip-specific analysis
+          const tipAnalysisMatch = section.match(/📊\s*(.+?)(?:\n📊|\n💰|\n━|$)/is);
+          const tipAnalysis = tipAnalysisMatch
+            ? tipAnalysisMatch[0].replace(/📊\s*/g, '').replace(/\n/g, ' | ').trim()
+            : globalAnalysis;
 
-      // Parse the market
-      const { market, prediction } = parseMarket(marketLine);
+          const { market, prediction } = parseMarket(marketRaw);
 
-      // Determine confidence
-      const confidence = confidenceFromOdds(odds);
-
-      // Determine winner
-      let winner = '';
-      if (prediction.includes('Vitória') || prediction.includes('Win')) {
-        if (prediction.includes('Casa') || prediction.includes(homeTeam)) {
-          winner = homeTeam;
-        } else if (prediction.includes('Fora') || prediction.includes(awayTeam)) {
-          winner = awayTeam;
-        } else {
-          // Check if team name is in prediction
-          const teamInPred = prediction.match(/Vitória\s+(.+)/i);
-          if (teamInPred) winner = teamInPred[1].trim();
+          if (homeTeam && awayTeam) {
+            const today = new Date();
+            tips.push({
+              id: 170 + tipCounter,
+              betNumber: String(170 + tipCounter),
+              betType: tipCounter > 3 ? 'DOUBLE' : 'SINGLE',
+              league,
+              homeTeam,
+              awayTeam,
+              date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
+              time: '20:00',
+              prediction,
+              confidence,
+              odds: odds || (confidence >= 80 ? 1.65 : confidence >= 70 ? 1.85 : 2.10),
+              market,
+              winner: prediction.includes('Vitória') ? homeTeam : '',
+              analysis: tipAnalysis,
+              homePercent: 55,
+              drawPercent: 20,
+              awayPercent: 25,
+            });
+          }
         }
+
+        // Also add accumulator if mentioned
+        const accumMatch = msg.match(/(?:💸\s*ACUMULAD[OR]*|ACUMULAD[OR]*)\s*:?\s*(.+?)(?:\n|$)/i);
+        if (accumMatch && homeTeam && awayTeam && tips.length > 0) {
+          const accumPred = accumMatch[1].trim();
+          tips.push({
+            id: 170 + tipCounter + 1,
+            betNumber: String(170 + tipCounter + 1),
+            betType: 'DOUBLE',
+            league: tips[0].league,
+            homeTeam,
+            awayTeam,
+            date: tips[0].date,
+            time: '20:00',
+            prediction: accumPred,
+            confidence: 72,
+            odds: 2.90,
+            market: 'Combinada',
+            winner: '',
+            analysis: globalAnalysis || `Acumulador: ${accumPred}`,
+            homePercent: 55,
+            drawPercent: 20,
+            awayPercent: 25,
+          });
+        }
+
+        if (tips.length > 0) break;
       }
 
-      if (homeTeam && awayTeam) {
-        const today = new Date();
-        tips.push({
-          id: parseInt(betNumber) || tips.length + 1,
-          betNumber,
-          betType,
-          league: league.replace(/UCL/i, 'UEFA Champions League').replace(/SEMI-FINAL/i, '').trim() || 'UEFA Champions League',
-          homeTeam,
-          awayTeam,
-          date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
-          time,
-          prediction,
-          confidence,
-          odds,
-          market,
-          winner,
-          analysis,
-          homePercent: winner === homeTeam ? 50 : 40,
-          drawPercent: 25,
-          awayPercent: winner === awayTeam ? 50 : 30,
-        });
+      // --- FORMAT 2: Old format "BET 169 | SINGLE" ---
+      if (msg.includes('BET') && /BET\s+\d+\s*\|\s*(SINGLE|DOUBLE)/i.test(msg)) {
+        let defaultHomeTeam = '';
+        let defaultAwayTeam = '';
+        let defaultLeague = 'Champions League';
+        let defaultTime = '20:00';
+
+        const titleMatch = msg.match(/TIPS\s+(.+?)\s*(?:vs|🆚)\s*(.+?)\s*(?:—|–|-)\s*(.+?)(?:\n|$)/i);
+        if (titleMatch) {
+          defaultHomeTeam = titleMatch[1].replace(/[⚽🎯🔥]/g, '').trim();
+          defaultAwayTeam = titleMatch[2].trim();
+          defaultLeague = titleMatch[3].trim();
+        }
+
+        const timeMatch = msg.match(/(\d{1,2}):(\d{2})\s*BST/i);
+        if (timeMatch) defaultTime = `${timeMatch[1]}:${timeMatch[2]}`;
+
+        const sections = msg.split(/━+/);
+        for (const section of sections) {
+          const betMatch = section.match(/BET\s+(\d+)\s*\|\s*(SINGLE|DOUBLE)/i);
+          if (!betMatch) continue;
+
+          const betNumber = betMatch[1];
+          const betType = betMatch[2].toUpperCase();
+          const oddsMatch = section.match(/(?:Odd|ODD)\s*:?\s*@?([\d.]+)/i);
+          const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 1.50;
+          const analysisMatch = section.match(/📌\s*(.+?)(?:\n|$)/);
+          const analysis = analysisMatch ? analysisMatch[1].trim() : '';
+          const marketLineMatch = section.match(/⚽️?\s*(.+?)(?:\n|$)/);
+          let marketLine = marketLineMatch ? marketLineMatch[1].trim() : '';
+
+          let homeTeam = defaultHomeTeam;
+          let awayTeam = defaultAwayTeam;
+          const teamsInLine = marketLine.match(/(?:—|–|-)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)$/i);
+          if (teamsInLine) {
+            homeTeam = teamsInLine[1].trim();
+            awayTeam = teamsInLine[2].trim();
+            marketLine = marketLine.replace(/\s*(?:—|–|-)\s*.+$/, '').trim();
+          }
+          const altTeamsMatch = section.match(/🏟️\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
+          if (altTeamsMatch) {
+            homeTeam = altTeamsMatch[1].trim();
+            awayTeam = altTeamsMatch[2].trim();
+          }
+
+          const { market, prediction } = parseMarket(marketLine);
+          const confidence = confidenceFromOdds(odds);
+
+          if (homeTeam && awayTeam) {
+            const today = new Date();
+            tips.push({
+              id: parseInt(betNumber) || tips.length + 1,
+              betNumber,
+              betType,
+              league: defaultLeague.replace(/UCL/i, 'UEFA Champions League').replace(/SEMI-FINAL/i, '').trim() || 'UEFA Champions League',
+              homeTeam,
+              awayTeam,
+              date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
+              time: defaultTime,
+              prediction,
+              confidence,
+              odds,
+              market,
+              winner: prediction.includes('Vitória') || prediction.includes('Win') ? homeTeam : '',
+              analysis,
+              homePercent: 45,
+              drawPercent: 25,
+              awayPercent: 30,
+            });
+          }
+        }
+
+        if (tips.length > 0) break;
       }
     }
 
-    // If we found tips in this message, stop (we only want the latest tips)
     if (tips.length > 0) break;
-  }
-
-  // Also check for individual TIP format (older messages)
-  if (tips.length === 0) {
-    for (const msg of messages) {
-      const tipMatch = msg.match(/TIP\s*#(\d+)\s*\|\s*(SINGLE|DOUBLE)\s*\|\s*(.+?)(?:\n|$)/i);
-      if (!tipMatch) continue;
-
-      const betNumber = tipMatch[1];
-      const betType = tipMatch[2].toUpperCase();
-      const league = tipMatch[3].trim();
-
-      const teamsMatch = msg.match(/🏟️\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
-      const oddsMatch = msg.match(/(?:ODD|Odd)\s*:?\s*@?([\d.]+)/i);
-      const mercadoMatch = msg.match(/(?:MERCADO|📊\s*MERCADO)\s*:?\s*(.+?)(?:\n|$)/i);
-      const timeMatch = msg.match(/🕒\s*(\d{1,2}):(\d{2})\s*BST/i);
-
-      if (teamsMatch && oddsMatch) {
-        const marketLine = mercadoMatch ? mercadoMatch[1].trim() : '';
-        const { market, prediction } = parseMarket(marketLine);
-        const odds = parseFloat(oddsMatch[1]);
-        const today = new Date();
-        // Extract analysis from individual tip format
-        const analysisMatch = msg.match(/📌\s*(.+?)(?:\n|$)/);
-        const analysis = analysisMatch ? analysisMatch[1].trim() : '';
-
-        tips.push({
-          id: parseInt(betNumber),
-          betNumber,
-          betType,
-          league,
-          homeTeam: teamsMatch[1].trim(),
-          awayTeam: teamsMatch[2].trim(),
-          date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
-          time: timeMatch ? `${timeMatch[1]}:${timeMatch[2]}` : '20:00',
-          prediction,
-          confidence: confidenceFromOdds(odds),
-          odds,
-          market,
-          winner: '',
-          analysis,
-          homePercent: 40,
-          drawPercent: 30,
-          awayPercent: 30,
-        });
-      }
-    }
   }
 
   return tips;
 }
 
-// Fallback tips
+// Fallback tips — Bayern vs PSG (06/05/2026)
 function getFallbackTips(): Tip[] {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' });
-  
+
   return [
     {
       id: 173,
@@ -292,7 +348,7 @@ function getFallbackTips(): Tip[] {
       odds: 1.65,
       market: 'Mais de 2.5',
       winner: '',
-      analysis: 'Bayern em casa na Champions é uma MÁQUINA de golos — 4.69 golos/jogo de média! Bayern: 92% Over 2.5 na UCL | PSG: 73%. Média combinada: 4.48 golos/jogo. FOGO GARANTIDO!',
+      analysis: 'Bayern: 92% Over 2.5 na UCL | PSG: 73%. Média combinada: 4.48 golos/jogo. FOGO GARANTIDO!',
       homePercent: 55,
       drawPercent: 20,
       awayPercent: 25,
@@ -311,7 +367,7 @@ function getFallbackTips(): Tip[] {
       odds: 1.72,
       market: 'Ambas Marcam',
       winner: '',
-      analysis: 'Bayern FTS: 0% | PSG FTS: 7%. Semi-final de volta, ambas equipas vão atacar sem medo. Bayern: 85% BTTS | PSG: 67%. BTTS é praticamente certo!',
+      analysis: 'Bayern FTS: 0% | PSG FTS: 7%. Semi-final de volta, ambas equipas vão atacar sem medo. Bayern: 85% BTTS | PSG: 67%.',
       homePercent: 55,
       drawPercent: 20,
       awayPercent: 25,
@@ -349,7 +405,7 @@ function getFallbackTips(): Tip[] {
       odds: 2.90,
       market: 'Combinada',
       winner: '',
-      analysis: 'ACUMULADOR: Over 2.5 + BTTS + Over 0.5 1H. Média combinada: 4.48 golos/jogo. Stake: 500 MZN por aposta → Retorno potencial: 1450 MZN!',
+      analysis: 'ACUMULADOR: Over 2.5 + BTTS + Over 0.5 1H. Média combinada: 4.48 golos/jogo. Stake: 500 MZN → Retorno potencial: 1450 MZN!',
       homePercent: 55,
       drawPercent: 20,
       awayPercent: 25,
@@ -363,7 +419,7 @@ export default async function handler(request: Request) {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=3600',
+    'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=1800',
   };
 
   if (request.method === 'OPTIONS') {
