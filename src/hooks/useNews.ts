@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback sempre atuais e dramáticas
+// Notícias de fallback sempre atuais e dramáticas — atualizadas 07/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,8 +157,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'FOGO GARANTIDO! Bayern vs PSG — Semi-Final UCL Esta Noite na Allianz Arena',
-      excerpt: 'A Allianz Arena vai EXPLODIR esta noite! O Bayern recebe o PSG na semi-final de volta da Champions League. Média combinada de 4.48 golos/jogo — Over 2.5 é praticamente certo. As odds já reagiram!',
+      title: 'FINAL DOS SONHOS! Arsenal vs PSG em Budapeste — 30 de Maio 2026',
+      excerpt: 'A final da UEFA Champions League 2025/26 está definida: Arsenal vs PSG no Puskás Aréna de Budapeste, a 30 de Maio. O Arsenal eliminou o Atlético de Madrid (5-1 no agregado) e o PSG afastou o Bayern num épico 6-5. Primeira final europeia do Arsenal desde 2006!',
       category: 'ÚLTIMA HORA',
       readTime: '4 min',
       date: formatToday,
@@ -166,48 +166,48 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS EXPLOSIVAS: 3 Apostas de Alta Confiança para Bayern vs PSG',
-      excerpt: 'Bayern: 92% Over 2.5 na UCL | PSG: 73%. Bayern FTS: 0% | PSG FTS: 7%. O nosso acumulador Over 2.5 + BTTS + Over 0.5 1H tem odd @2.90. Stake: 500 MZN por aposta!',
-      category: 'TIPS DE APOSTAS',
+      title: 'ESCÂNDALO UCL: PSG beneficiou de 2 penáltis não marcados — Bayern exige investigação',
+      excerpt: 'O jornal Bild classificou de escândalo a atuação do árbitro na semi-final PSG vs Bayern. Michael Ballack afirmou: "Dois penáltis claros não foram marcados e isso mudou o jogo". O Bayern exige investigação formal à UEFA. A BBC Sport também analisou as polémicas decisões.',
+      category: 'ESCÂNDALO',
       readTime: '5 min',
       date: formatToday,
-      source: 'AliveGoal',
+      source: 'Bild / BBC Sport',
     },
     {
       id: 3,
-      title: 'MOÇAMBOLA 2026: Costa do Sol ESMAGA Maxaquene 4-1 na 1ª Jornada!',
-      excerpt: 'Abdoul Karim (2x), Yuri e Muchanga marcaram para o Sol! Os Leões de Maputo mostram que são candidatos sérios ao título. Black Bulls também surpreenderam ao bater o Ferr. Maputo por 1-0!',
+      title: 'NEYMAR ESBOFETEIA colega no treino do Santos — pedido de desculpas público',
+      excerpt: 'Neymar protagonizou um incidente chocante ao esbofetear o jovem Robinho Júnior no treino do Santos. O vídeo viralizou nas redes sociais. Neymar pediu desculpas publicamente, mas o Santos abriu investigação interna. O caso pode comprometer a convocatória para o Mundial 2026.',
+      category: 'ESCÂNDALO',
+      readTime: '3 min',
+      date: formatYesterday,
+      source: 'The Guardian',
+    },
+    {
+      id: 4,
+      title: 'PIQUÉ SUSPENSO 6 JOGOS por violência contra árbitro — escândalo no FC Andorra',
+      excerpt: 'Gerard Piqué, dono do FC Andorra, foi suspenso por 6 jogos e proibido de qualquer atividade futebolística em Espanha por 2 meses após confronto físico com o árbitro. A Federação Espanhola classificou o incidente como "violência leve". O presidente do clube também foi punido.',
+      category: 'ESCÂNDALO',
+      readTime: '4 min',
+      date: formatYesterday,
+      source: 'Marca / BBC Sport',
+    },
+    {
+      id: 5,
+      title: 'RONALDO HOJE: Al-Nassr vs Al-Shabab — título da Saudi Pro League em jogo!',
+      excerpt: 'Cristiano Ronaldo e o Al-Nassr jogam hoje (18:00 GMT) contra o Al-Shabab numa partida decisiva para o título da Saudi Pro League. O Al-Nassr lidera com 5 pontos de vantagem sobre o Al-Hilal de Benzema. CR7 tem 25 golos e 12 assistências esta época.',
       category: 'ÚLTIMA HORA',
       readTime: '3 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'PREMIER LEAGUE MW36: 6 Tips para Liverpool vs Chelsea e Man City vs Brentford',
-      excerpt: 'Liverpool: 63% Over 2.5 | Chelsea: 66%. Man City: 79% Over 0.5 HT | Brentford: 74%. O nosso tracker aponta para Over 2.5 em ambos os jogos. Odds e análise completa no canal!',
-      category: 'TIPS DE APOSTAS',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'ANÁLISE TÁTICA: Como o Bayern Vai Destruir o PSG Esta Noite',
-      excerpt: 'O Bayern em casa na Champions é uma máquina imparável — 4.69 golos/jogo de média! Semi-final de volta, ambas equipas vão atacar sem medo. BTTS + Over 2.5 é a aposta da noite!',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
       id: 6,
-      title: 'MOÇAMBOLA 2026: Resultados Completos da 1ª Jornada — Drama e Surpresas!',
-      excerpt: 'Ferr. Nacala 3-1 Ferr. Nampula, AD Pemba 1-0 Baía de Pemba, UD Songo 1-0 Chingale de Tete. A 49.ª edição do Moçambola arrancou com bue emocão e o futebol moçambicano está de volta!',
-      category: 'ÚLTIMA HORA',
-      readTime: '4 min',
-      date: formatYesterday,
-      source: 'AliveGoal',
+      title: 'ARSENAL quer KVARATSKHELIA do PSG — "O melhor extremo do mundo"',
+      excerpt: 'O Arsenal está a preparar uma proposta milionária para contratar Khvicha Kvaratskhelia do PSG no verão. O extremo georgiano foi apelidado de "o melhor extremo do mundo" por Steven Gerrard. Mikel Arteta quer reforçar o ataque para a próxima época, independentemente do resultado da final.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'FootballTransfers',
     },
   ];
 }
