@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback sempre atuais e dramáticas — atualizadas 07/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 07/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,57 +157,57 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'FINAL DOS SONHOS! Arsenal vs PSG em Budapeste — 30 de Maio 2026',
-      excerpt: 'A final da UEFA Champions League 2025/26 está definida: Arsenal vs PSG no Puskás Aréna de Budapeste, a 30 de Maio. O Arsenal eliminou o Atlético de Madrid (5-1 no agregado) e o PSG afastou o Bayern num épico 6-5. Primeira final europeia do Arsenal desde 2006!',
-      category: 'ÚLTIMA HORA',
-      readTime: '4 min',
+      title: 'ANÁLISE TÁTICA: Aston Villa vs Nottingham Forest — Como Emery pode chegar à final da Europa League',
+      excerpt: 'Emery tem preparado um esquema de pressão alta para neutralizar o Forest. Villa tem 63% de posse média em casa e Watkins está em grande forma com 4 golos nos últimos 3 jogos. Análise completa das forças e fraquezas de ambas as equipas para a semi-final de hoje.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ESCÂNDALO UCL: PSG beneficiou de 2 penáltis não marcados — Bayern exige investigação',
-      excerpt: 'O jornal Bild classificou de escândalo a atuação do árbitro na semi-final PSG vs Bayern. Michael Ballack afirmou: "Dois penáltis claros não foram marcados e isso mudou o jogo". O Bayern exige investigação formal à UEFA. A BBC Sport também analisou as polémicas decisões.',
-      category: 'ESCÂNDALO',
+      title: 'TIPS DE APOSTAS: 5 Apostas de Alta Confiança para os Jogos de Hoje — Europa League e Conference',
+      excerpt: 'Aston Villa BTTS @1.75 | Crystal Palace Vence @1.55 | Freiburg Over 2.5 @1.85 | Al-Nassr Vence @1.70 | Platense vs Peñarol X2 @1.65. Análise detalhada de cada aposta com estatísticas e justificação. Acumulador total @8.20!',
+      category: 'TIPS DE APOSTAS',
       readTime: '5 min',
-      date: formatToday,
-      source: 'Bild / BBC Sport',
-    },
-    {
-      id: 3,
-      title: 'NEYMAR ESBOFETEIA colega no treino do Santos — pedido de desculpas público',
-      excerpt: 'Neymar protagonizou um incidente chocante ao esbofetear o jovem Robinho Júnior no treino do Santos. O vídeo viralizou nas redes sociais. Neymar pediu desculpas publicamente, mas o Santos abriu investigação interna. O caso pode comprometer a convocatória para o Mundial 2026.',
-      category: 'ESCÂNDALO',
-      readTime: '3 min',
-      date: formatYesterday,
-      source: 'The Guardian',
-    },
-    {
-      id: 4,
-      title: 'PIQUÉ SUSPENSO 6 JOGOS por violência contra árbitro — escândalo no FC Andorra',
-      excerpt: 'Gerard Piqué, dono do FC Andorra, foi suspenso por 6 jogos e proibido de qualquer atividade futebolística em Espanha por 2 meses após confronto físico com o árbitro. A Federação Espanhola classificou o incidente como "violência leve". O presidente do clube também foi punido.',
-      category: 'ESCÂNDALO',
-      readTime: '4 min',
-      date: formatYesterday,
-      source: 'Marca / BBC Sport',
-    },
-    {
-      id: 5,
-      title: 'RONALDO HOJE: Al-Nassr vs Al-Shabab — título da Saudi Pro League em jogo!',
-      excerpt: 'Cristiano Ronaldo e o Al-Nassr jogam hoje (18:00 GMT) contra o Al-Shabab numa partida decisiva para o título da Saudi Pro League. O Al-Nassr lidera com 5 pontos de vantagem sobre o Al-Hilal de Benzema. CR7 tem 25 golos e 12 assistências esta época.',
-      category: 'ÚLTIMA HORA',
-      readTime: '3 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ARSENAL quer KVARATSKHELIA do PSG — "O melhor extremo do mundo"',
-      excerpt: 'O Arsenal está a preparar uma proposta milionária para contratar Khvicha Kvaratskhelia do PSG no verão. O extremo georgiano foi apelidado de "o melhor extremo do mundo" por Steven Gerrard. Mikel Arteta quer reforçar o ataque para a próxima época, independentemente do resultado da final.',
-      category: 'TRANSFERÊNCIAS',
+      id: 3,
+      title: 'PRÉ-VISUALIZAÇÃO: Crystal Palace vs Shakhtar Donetsk — Palace a um passo da final da Conference League',
+      excerpt: 'Crystal Palace entra com vantagem de 3-1 do primeiro jogo. Glasner tem o seu melhor 11 disponível. Eze e Olise são as grandes ameaças. O Shakhtar precisaria de um milagre para virar a elimnatória. Probabilidade de qualificação do Palace: 94%.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'COPA LIBERTADORES: Platense vs Peñarol — Análise e Palpites para a Fase de Grupos',
+      excerpt: 'Peñarol é um dos grandes favoritos da Libertadores 2026. Com Forlan Jr. em grande forma e uma defesa sólida, os uruguaios têm 78% de probabilidade de pelo menos empatar. Over 1.5 golos é forte com odd @1.55. Análise completa dos últimos 5 confrontos diretos.',
+      category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
-      source: 'FootballTransfers',
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'COMO APOSTAR: Guia Completo sobre Mercados de Apostas na Europa League 2026',
+      excerpt: 'Explicação detalhada dos mercados mais lucrativos na Europa League: BTTS, Over/Under, Handicap Asiático e Resultado Final. Estatísticas das semi-finais dos últimos 5 anos mostram que 73% dos jogos têm Over 2.5. Guia prático para apostadores de todos os níveis.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '8 min',
+      date: formatYesterday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'SAUDI PRO LEAGUE: CR7 vs Benzema — A corrida ao título que o mundo está a seguir',
+      excerpt: 'Ronaldo (Al-Nassr, 25 golos) vs Benzema (Al-Hilal, 21 golos). Al-Nassr lidera com 5 pontos de vantagem mas joga hoje contra o Al-Shabab. Se vencer, praticamente garante o título. Análise tática completa e palpites para o jogo de hoje às 18:00 GMT.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
     },
   ];
 }

@@ -13,11 +13,11 @@ const Index = () => (
     <Navbar />
     <main>
       <HeroSection />
+      <TrendingSection />
       <PredictionsSection />
       <LiveScoresSection />
       <BookmakersSection />
       <NewsSection />
-      <TrendingSection />
       <ConversionSection />
     </main>
     <Footer />
