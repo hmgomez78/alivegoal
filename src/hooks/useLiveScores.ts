@@ -30,46 +30,66 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// IDs das ligas principais na API-Football
-const PRIORITY_LEAGUES = [
-  39,   // Premier League (Inglaterra)
-  140,  // La Liga (Espanha)
-  135,  // Serie A (Itália)
-  78,   // Bundesliga (Alemanha)
-  61,   // Ligue 1 (França)
-  94,   // Liga Portugal
-  2,    // Champions League
-  3,    // Europa League
-  848,  // Conference League
-  71,   // Brasileirão Serie A
-  253,  // MLS
-  1,    // World Cup
-  4,    // Euro
-  6,    // Copa África
-  10,   // Nations League
-  307,  // Saudi Pro League
-  233,  // Premier League Egito
-  551,  // Girabola (Angola)
-  686,  // Moçambola
+// Competições disponíveis no plano gratuito do football-data.org
+const COMPETITION_CODES = [
+  "CL",   // UEFA Champions League
+  "PL",   // Premier League
+  "PD",   // La Liga
+  "SA",   // Serie A
+  "BL1",  // Bundesliga
+  "FL1",  // Ligue 1
+  "PPL",  // Primeira Liga (Portugal)
+  "CLI",  // Copa Libertadores
+  "BSA",  // Brasileirão
+  "ELC",  // Championship
 ];
+
+// Mapeamento de status da football-data.org para português
+const statusMap: Record<string, string> = {
+  "SCHEDULED": "POR INICIAR",
+  "TIMED": "HOJE",
+  "IN_PLAY": "AO VIVO",
+  "PAUSED": "INT",
+  "FINISHED": "FIM",
+  "POSTPONED": "ADIADO",
+  "SUSPENDED": "SUSP",
+  "CANCELLED": "CANC",
+};
+
+function formatMatchTime(match: any): string {
+  const status = match.status;
+  if (status === "IN_PLAY" || status === "PAUSED") {
+    return "AO VIVO";
+  }
+  if (status === "FINISHED") {
+    return "FIM";
+  }
+  if (status === "TIMED" || status === "SCHEDULED") {
+    const date = new Date(match.utcDate);
+    const hours = date.getUTCHours().toString().padStart(2, "0");
+    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+    return `HOJE ${hours}:${minutes}`;
+  }
+  return statusMap[status] || status;
+}
+
+// Logos dos clubes via football-data.org crests
+function getTeamLogo(team: any): string {
+  return team?.crest || "";
+}
 
 // Fallback data com jogos reais (atualizado 07/05/2026)
 const fallbackMatches: LiveMatch[] = [
-  // UEFA Europa League — Semi-finais (2ª mão)
-  { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3, homeTeamLogo: "https://media.api-sports.io/football/teams/66.png", awayTeamLogo: "https://media.api-sports.io/football/teams/65.png" },
-  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3, homeTeamLogo: "https://media.api-sports.io/football/teams/160.png", awayTeamLogo: "https://media.api-sports.io/football/teams/228.png" },
-  // UEFA Conference League — Semi-finais (2ª mão)
-  { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848, homeTeamLogo: "https://media.api-sports.io/football/teams/52.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2282.png" },
-  { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848, homeTeamLogo: "https://media.api-sports.io/football/teams/95.png", awayTeamLogo: "https://media.api-sports.io/football/teams/728.png" },
-  // Saudi Pro League
-  { id: 1550005, homeTeam: "Al Shabab", awayTeam: "Al Nassr", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Saudi Pro League", leagueId: 307, homeTeamLogo: "https://media.api-sports.io/football/teams/2932.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2939.png" },
-  // CONMEBOL Libertadores
-  { id: 1550006, homeTeam: "Platense", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/435.png", awayTeamLogo: "https://media.api-sports.io/football/teams/442.png" },
-  { id: 1550007, homeTeam: "Mirassol", awayTeam: "LDU Quito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1191.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1190.png" },
-  // Jogos terminados de hoje
-  { id: 1550008, homeTeam: "Deportes Tolima", awayTeam: "Nacional", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1197.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1195.png" },
-  { id: 1550009, homeTeam: "Independiente Rivadavia", awayTeam: "Fluminense", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1193.png", awayTeamLogo: "https://media.api-sports.io/football/teams/119.png" },
-  { id: 1550010, homeTeam: "Independiente Santa Fe", awayTeam: "Corinthians", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1196.png", awayTeamLogo: "https://media.api-sports.io/football/teams/131.png" },
+  { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3 },
+  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3 },
+  { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848 },
+  { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848 },
+  { id: 1550005, homeTeam: "Al Shabab", awayTeam: "Al Nassr", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Saudi Pro League", leagueId: 307 },
+  { id: 1550006, homeTeam: "Platense", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 13 },
+  { id: 1550007, homeTeam: "Mirassol", awayTeam: "LDU Quito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 13 },
+  { id: 1550008, homeTeam: "Deportes Tolima", awayTeam: "Nacional", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
+  { id: 1550009, homeTeam: "Independiente Rivadavia", awayTeam: "Fluminense", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
+  { id: 1550010, homeTeam: "Independiente Santa Fe", awayTeam: "Corinthians", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
@@ -81,25 +101,7 @@ const fallbackFeatured: FeaturedMatchData = {
   },
 };
 
-// API-Football status mapping to Portuguese
-const statusMap: Record<string, string> = {
-  "1H": "1T", "2H": "2T", "HT": "INT", "ET": "PROL",
-  "P": "PEN", "FT": "FIM", "AET": "FIM AP", "PEN": "PEN",
-  "BT": "PAUSA", "SUSP": "SUSP", "INT": "INT",
-  "PST": "ADIADO", "CANC": "CANC", "ABD": "ABAND",
-  "AWD": "WO", "WO": "WO", "LIVE": "AO VIVO",
-  "NS": "POR INICIAR", "TBD": "A DEFINIR",
-};
-
-function mapStatus(short: string, elapsed: number | null): string {
-  if (["1H", "2H", "ET"].includes(short) && elapsed) {
-    return "AO VIVO";
-  }
-  return statusMap[short] || short;
-}
-
-// Use a CORS proxy for client-side API calls
-const API_BASE = "https://v3.football.api-sports.io";
+const FOOTBALL_DATA_BASE = "https://api.football-data.org/v4";
 const CORS_PROXY = "https://corsproxy.io/?";
 
 export function useLiveScores(apiKey?: string) {
@@ -110,7 +112,7 @@ export function useLiveScores(apiKey?: string) {
   const [error, setError] = useState<string | null>(null);
 
   const fetchLiveScores = useCallback(async () => {
-    const key = apiKey || import.meta.env.VITE_API_FOOTBALL_KEY;
+    const key = apiKey || import.meta.env.VITE_FOOTBALL_DATA_KEY;
     if (!key) {
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
@@ -121,114 +123,79 @@ export function useLiveScores(apiKey?: string) {
 
     setLoading(true);
     try {
-      // Primeiro tentar jogos ao vivo
-      const url = `${CORS_PROXY}${encodeURIComponent(`${API_BASE}/fixtures?live=all`)}`;
-      const res = await fetch(url, {
-        headers: { "x-apisports-key": key },
+      const today = new Date().toISOString().split("T")[0];
+      const allMatches: LiveMatch[] = [];
+      let hasLive = false;
+
+      // Buscar jogos de hoje em paralelo para as competições disponíveis
+      // Usamos apenas as primeiras 5 para evitar rate limiting (10 req/min)
+      const compsToFetch = COMPETITION_CODES.slice(0, 5);
+
+      const results = await Promise.allSettled(
+        compsToFetch.map(async (code) => {
+          const url = `${CORS_PROXY}${encodeURIComponent(
+            `${FOOTBALL_DATA_BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${today}`
+          )}`;
+          const res = await fetch(url, {
+            headers: { "X-Auth-Token": key },
+          });
+          if (!res.ok) return [];
+          const data = await res.json();
+          return data.matches || [];
+        })
+      );
+
+      results.forEach((result) => {
+        if (result.status === "fulfilled") {
+          const fixtures = result.value as any[];
+          fixtures.forEach((m: any) => {
+            const statusStr = formatMatchTime(m);
+            if (m.status === "IN_PLAY" || m.status === "PAUSED") {
+              hasLive = true;
+            }
+            allMatches.push({
+              id: m.id,
+              homeTeam: m.homeTeam?.shortName || m.homeTeam?.name || "Home",
+              awayTeam: m.awayTeam?.shortName || m.awayTeam?.name || "Away",
+              homeScore: m.score?.fullTime?.home ?? m.score?.halfTime?.home ?? 0,
+              awayScore: m.score?.fullTime?.away ?? m.score?.halfTime?.away ?? 0,
+              minute: m.minute || 0,
+              status: statusStr,
+              league: m.competition?.name || "Football",
+              leagueId: m.competition?.id,
+              homeTeamLogo: getTeamLogo(m.homeTeam),
+              awayTeamLogo: getTeamLogo(m.awayTeam),
+            });
+          });
+        }
       });
 
-      if (!res.ok) throw new Error(`API error: ${res.status}`);
-
-      const data = await res.json();
-      let fixtures = data?.response || [];
-
-      // Filtrar apenas ligas principais
-      let filteredFixtures = fixtures.filter((f: any) =>
-        PRIORITY_LEAGUES.includes(f.league.id)
-      );
-
-      // Se não há jogos ao vivo das ligas principais, buscar jogos de hoje
-      if (filteredFixtures.length === 0) {
-        const today = new Date().toISOString().split("T")[0];
-        const todayUrl = `${CORS_PROXY}${encodeURIComponent(`${API_BASE}/fixtures?date=${today}`)}`;
-        const todayRes = await fetch(todayUrl, {
-          headers: { "x-apisports-key": key },
+      if (allMatches.length > 0) {
+        // Ordenar: ao vivo primeiro, depois por hora
+        const sorted = allMatches.sort((a, b) => {
+          const aLive = a.status === "AO VIVO" ? 0 : a.status === "FIM" ? 2 : 1;
+          const bLive = b.status === "AO VIVO" ? 0 : b.status === "FIM" ? 2 : 1;
+          return aLive - bLive;
         });
-        const todayData = await todayRes.json();
-        const todayFixtures = todayData?.response || [];
 
-        // Filtrar ligas principais
-        filteredFixtures = todayFixtures.filter((f: any) =>
-          PRIORITY_LEAGUES.includes(f.league.id)
-        );
+        setMatches(sorted.slice(0, 15));
+        setIsLive(hasLive);
 
-        // Se ainda não há jogos, usar todos os de hoje (top 15)
-        if (filteredFixtures.length === 0) {
-          filteredFixtures = todayFixtures.slice(0, 15);
+        // Jogo em destaque: primeiro ao vivo ou primeiro do dia
+        const featMatch = sorted[0];
+        if (featMatch) {
+          setFeatured({
+            homeTeam: featMatch.homeTeam,
+            awayTeam: featMatch.awayTeam,
+            homeScore: featMatch.homeScore,
+            awayScore: featMatch.awayScore,
+            stats: fallbackFeatured.stats,
+          });
         }
-
-        if (filteredFixtures.length > 0) {
-          const mapped = filteredFixtures.slice(0, 15).map((f: any, idx: number) => ({
-            id: f.fixture.id || idx,
-            homeTeam: f.teams.home.name,
-            awayTeam: f.teams.away.name,
-            homeScore: f.goals.home ?? 0,
-            awayScore: f.goals.away ?? 0,
-            minute: f.fixture.status.elapsed || 0,
-            status: mapStatus(f.fixture.status.short, f.fixture.status.elapsed),
-            league: f.league.name,
-            leagueId: f.league.id,
-            homeTeamLogo: f.teams.home.logo,
-            awayTeamLogo: f.teams.away.logo,
-          }));
-          setMatches(mapped);
-          setIsLive(false);
-        } else {
-          setMatches(fallbackMatches);
-          setIsLive(false);
-        }
-        setLoading(false);
-        return;
-      }
-
-      // Mapear jogos ao vivo das ligas principais
-      const mapped: LiveMatch[] = filteredFixtures.slice(0, 15).map((f: any, idx: number) => ({
-        id: f.fixture.id || idx,
-        homeTeam: f.teams.home.name,
-        awayTeam: f.teams.away.name,
-        homeScore: f.goals.home ?? 0,
-        awayScore: f.goals.away ?? 0,
-        minute: f.fixture.status.elapsed || 0,
-        status: mapStatus(f.fixture.status.short, f.fixture.status.elapsed),
-        league: f.league.name,
-        leagueId: f.league.id,
-        homeTeamLogo: f.teams.home.logo,
-        awayTeamLogo: f.teams.away.logo,
-      }));
-
-      setMatches(mapped);
-      setIsLive(true);
-
-      // Set featured match (primeiro jogo com mais golos)
-      const sorted = [...filteredFixtures].sort((a: any, b: any) =>
-        ((b.goals.home || 0) + (b.goals.away || 0)) - ((a.goals.home || 0) + (a.goals.away || 0))
-      );
-      const feat = sorted[0];
-      if (feat) {
-        const stats = feat.statistics;
-        let featuredStats: MatchStats = fallbackFeatured.stats;
-        if (stats && stats.length >= 2) {
-          const homeStats = stats[0]?.statistics || [];
-          const awayStats = stats[1]?.statistics || [];
-          const getStat = (arr: any[], type: string) => {
-            const found = arr.find((s: any) => s.type === type);
-            return found ? parseInt(found.value) || 0 : 0;
-          };
-          featuredStats = {
-            possession: [getStat(homeStats, "Ball Possession"), getStat(awayStats, "Ball Possession")],
-            shots: [getStat(homeStats, "Total Shots"), getStat(awayStats, "Total Shots")],
-            shotsOnTarget: [getStat(homeStats, "Shots on Goal"), getStat(awayStats, "Shots on Goal")],
-            corners: [getStat(homeStats, "Corner Kicks"), getStat(awayStats, "Corner Kicks")],
-            fouls: [getStat(homeStats, "Fouls"), getStat(awayStats, "Fouls")],
-          };
-        }
-        setFeatured({
-          homeTeam: feat.teams.home.name,
-          awayTeam: feat.teams.away.name,
-          homeScore: feat.goals.home ?? 0,
-          awayScore: feat.goals.away ?? 0,
-          stats: featuredStats,
-        });
+      } else {
+        setMatches(fallbackMatches);
+        setFeatured(fallbackFeatured);
+        setIsLive(false);
       }
 
       setError(null);
