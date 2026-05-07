@@ -113,7 +113,6 @@ function parseTipsFromHTML(html: string): Tip[] {
   while ((match = messageRegex.exec(html)) !== null) {
     const pos = match.index;
     const text = cleanText(match[1]);
-    // Find closest date before this position
     let msgDate = '';
     for (const dp of datePositions) {
       if (dp.pos < pos) msgDate = dp.date;
@@ -121,279 +120,351 @@ function parseTipsFromHTML(html: string): Tip[] {
     messages.push({ text, date: msgDate, pos });
   }
 
-  // Sort ALL messages by date descending (newest first) — process most recent first
+  // Sort ALL messages by date descending (newest first)
   const sortedMessages = [...messages].sort((a, b) => b.date.localeCompare(a.date));
 
-  // Process messages newest-first, stop as soon as we find tips
-  for (const { text: msg } of sortedMessages) {
-      // --- FORMAT 1: New format "TIP 1: OVER 2.5 GOALS" ---
-      if (/TIP\s+\d+\s*:/i.test(msg) || (/✅\s*TIP/i.test(msg))) {
-        // Extract header info
-        const teamsMatch = msg.match(/(?:⚽|🏟️)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
-        const leagueMatch = msg.match(/(?:🏆|Champions|Premier|La Liga|Serie|Bundesliga|Libertadores|UCL|UEL)\s*(.+?)(?:\n|$)/i);
-        const dateMatch = msg.match(/📅\s*(\d{1,2})\s*(Maio|Abril|Março|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro|Janeiro|Fevereiro|May|April|March|June|July|August|September|October|November|December|January|February)/i);
+  // Get today's date string for filtering
+  const today = new Date();
+  const todayStr = today.toISOString().split('T')[0]; // e.g. "2026-05-07"
 
-        const homeTeam = teamsMatch ? teamsMatch[1].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
-        const awayTeam = teamsMatch ? teamsMatch[2].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
+  // Process messages newest-first, try to find tips from TODAY first
+  // then fall back to most recent regardless of date
+  const todayMessages = sortedMessages.filter(m => m.date.startsWith(todayStr));
+  const allMessagesToProcess = todayMessages.length > 0
+    ? [...todayMessages, ...sortedMessages.filter(m => !m.date.startsWith(todayStr))]
+    : sortedMessages;
 
-        // Determine league
-        let league = 'UEFA Champions League';
-        if (/Premier League/i.test(msg)) league = 'Premier League';
-        else if (/La Liga/i.test(msg)) league = 'La Liga';
-        else if (/Bundesliga/i.test(msg)) league = 'Bundesliga';
-        else if (/Serie A/i.test(msg)) league = 'Serie A';
-        else if (/Libertadores/i.test(msg)) league = 'CONMEBOL Libertadores';
-        else if (/Moçambola/i.test(msg)) league = 'Moçambola';
-        else if (/Champions|UCL/i.test(msg)) league = 'UEFA Champions League';
+  for (const { text: msg } of allMessagesToProcess) {
+    // --- FORMAT 1: New format "TIP 1: OVER 2.5 GOALS" ---
+    if (/TIP\s+\d+\s*:/i.test(msg) || (/✅\s*TIP/i.test(msg))) {
+      const teamsMatch = msg.match(/(?:⚽|🏟️)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
+      const homeTeam = teamsMatch ? teamsMatch[1].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
+      const awayTeam = teamsMatch ? teamsMatch[2].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
 
-        // Extract analysis from 🧠 ANÁLISE line
-        const analysisMatch = msg.match(/(?:🧠\s*ANÁLISE|🧠\s*ANALYSIS)\s*:?\s*(.+?)(?:\n━|$)/is);
-        const globalAnalysis = analysisMatch ? analysisMatch[1].replace(/\n/g, ' ').trim() : '';
+      let league = 'UEFA Champions League';
+      if (/Premier League/i.test(msg)) league = 'Premier League';
+      else if (/La Liga/i.test(msg)) league = 'La Liga';
+      else if (/Bundesliga/i.test(msg)) league = 'Bundesliga';
+      else if (/Serie A/i.test(msg)) league = 'Serie A';
+      else if (/Libertadores/i.test(msg)) league = 'CONMEBOL Libertadores';
+      else if (/Conference/i.test(msg)) league = 'UEFA Conference League';
+      else if (/Europa League/i.test(msg)) league = 'UEFA Europa League';
+      else if (/Moçambola/i.test(msg)) league = 'Moçambola';
+      else if (/Champions|UCL/i.test(msg)) league = 'UEFA Champions League';
 
-        // Split by separator lines (━━━)
-        const sections = msg.split(/━+/);
-        let tipCounter = 0;
+      const analysisMatch = msg.match(/(?:🧠\s*ANÁLISE|🧠\s*ANALYSIS)\s*:?\s*(.+?)(?:\n━|$)/is);
+      const globalAnalysis = analysisMatch ? analysisMatch[1].replace(/\n/g, ' ').trim() : '';
 
-        for (const section of sections) {
-          // Match "TIP 1: OVER 2.5 GOALS" or "✅ TIP 1: ..."
-          const tipMatch = section.match(/(?:✅\s*)?TIP\s+(\d+)\s*:\s*(.+?)(?:\n|$)/i);
-          if (!tipMatch) continue;
+      const sections = msg.split(/━+/);
+      let tipCounter = 0;
 
-          tipCounter++;
-          const tipNum = parseInt(tipMatch[1]);
-          const marketRaw = tipMatch[2].trim();
+      for (const section of sections) {
+        const tipMatch = section.match(/(?:✅\s*)?TIP\s+(\d+)\s*:\s*(.+?)(?:\n|$)/i);
+        if (!tipMatch) continue;
 
-          // Extract confidence
-          const confMatch = section.match(/(?:Confiança|Confidence)\s*:\s*(.+?)(?:\n|$)/i);
-          const confidence = confMatch ? confidenceFromText(confMatch[1]) : 75;
+        tipCounter++;
+        const tipNum = parseInt(tipMatch[1]);
+        const marketRaw = tipMatch[2].trim();
 
-          // Extract odds if present
-          const oddsMatch = section.match(/(?:Odd|ODD|@)\s*:?\s*@?([\d.]+)/i);
-          const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 0;
+        const confMatch = section.match(/(?:Confiança|Confidence)\s*:\s*(.+?)(?:\n|$)/i);
+        const confidence = confMatch ? confidenceFromText(confMatch[1]) : 75;
 
-          // Extract stake
-          const stakeMatch = section.match(/(?:Stake|💰)\s*:?\s*(.+?)(?:\n|$)/i);
+        const oddsMatch = section.match(/(?:Odd|ODD|@)\s*:?\s*@?([\d.]+)/i);
+        const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 0;
 
-          // Extract tip-specific analysis
-          const tipAnalysisMatch = section.match(/📊\s*(.+?)(?:\n📊|\n💰|\n━|$)/is);
-          const tipAnalysis = tipAnalysisMatch
-            ? tipAnalysisMatch[0].replace(/📊\s*/g, '').replace(/\n/g, ' | ').trim()
-            : globalAnalysis;
+        const tipAnalysisMatch = section.match(/📊\s*(.+?)(?:\n📊|\n💰|\n━|$)/is);
+        const tipAnalysis = tipAnalysisMatch
+          ? tipAnalysisMatch[0].replace(/📊\s*/g, '').replace(/\n/g, ' | ').trim()
+          : globalAnalysis;
 
-          const { market, prediction } = parseMarket(marketRaw);
+        const { market, prediction } = parseMarket(marketRaw);
 
-          if (homeTeam && awayTeam) {
-            const today = new Date();
-            tips.push({
-              id: 170 + tipCounter,
-              betNumber: String(170 + tipCounter),
-              betType: tipCounter > 3 ? 'DOUBLE' : 'SINGLE',
-              league,
-              homeTeam,
-              awayTeam,
-              date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
-              time: '20:00',
-              prediction,
-              confidence,
-              odds: odds || (confidence >= 80 ? 1.65 : confidence >= 70 ? 1.85 : 2.10),
-              market,
-              winner: prediction.includes('Vitória') ? homeTeam : '',
-              analysis: tipAnalysis,
-              homePercent: 55,
-              drawPercent: 20,
-              awayPercent: 25,
-            });
-          }
-        }
-
-        // Also add accumulator if mentioned
-        const accumMatch = msg.match(/(?:💸\s*ACUMULAD[OR]*|ACUMULAD[OR]*)\s*:?\s*(.+?)(?:\n|$)/i);
-        if (accumMatch && homeTeam && awayTeam && tips.length > 0) {
-          const accumPred = accumMatch[1].trim();
+        if (homeTeam && awayTeam) {
           tips.push({
-            id: 170 + tipCounter + 1,
-            betNumber: String(170 + tipCounter + 1),
-            betType: 'DOUBLE',
-            league: tips[0].league,
+            id: 170 + tipCounter,
+            betNumber: String(170 + tipCounter),
+            betType: tipCounter > 3 ? 'DOUBLE' : 'SINGLE',
+            league,
             homeTeam,
             awayTeam,
-            date: tips[0].date,
+            date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
             time: '20:00',
-            prediction: accumPred,
-            confidence: 72,
-            odds: 2.90,
-            market: 'Combinada',
-            winner: '',
-            analysis: globalAnalysis || `Acumulador: ${accumPred}`,
+            prediction,
+            confidence,
+            odds: odds || (confidence >= 80 ? 1.65 : confidence >= 70 ? 1.85 : 2.10),
+            market,
+            winner: prediction.includes('Vitória') ? homeTeam : '',
+            analysis: tipAnalysis,
             homePercent: 55,
             drawPercent: 20,
             awayPercent: 25,
           });
         }
-
-        if (tips.length > 0) break;
       }
 
-      // --- FORMAT 2: Old format "BET 169 | SINGLE" ---
-      if (msg.includes('BET') && /BET\s+\d+\s*\|\s*(SINGLE|DOUBLE)/i.test(msg)) {
-        let defaultHomeTeam = '';
-        let defaultAwayTeam = '';
-        let defaultLeague = 'Champions League';
-        let defaultTime = '20:00';
-
-        const titleMatch = msg.match(/TIPS\s+(.+?)\s*(?:vs|🆚)\s*(.+?)\s*(?:—|–|-)\s*(.+?)(?:\n|$)/i);
-        if (titleMatch) {
-          defaultHomeTeam = titleMatch[1].replace(/[⚽🎯🔥]/g, '').trim();
-          defaultAwayTeam = titleMatch[2].trim();
-          defaultLeague = titleMatch[3].trim();
-        }
-
-        const timeMatch = msg.match(/(\d{1,2}):(\d{2})\s*BST/i);
-        if (timeMatch) defaultTime = `${timeMatch[1]}:${timeMatch[2]}`;
-
-        const sections = msg.split(/━+/);
-        for (const section of sections) {
-          const betMatch = section.match(/BET\s+(\d+)\s*\|\s*(SINGLE|DOUBLE)/i);
-          if (!betMatch) continue;
-
-          const betNumber = betMatch[1];
-          const betType = betMatch[2].toUpperCase();
-          const oddsMatch = section.match(/(?:Odd|ODD)\s*:?\s*@?([\d.]+)/i);
-          const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 1.50;
-          const analysisMatch = section.match(/📌\s*(.+?)(?:\n|$)/);
-          const analysis = analysisMatch ? analysisMatch[1].trim() : '';
-          const marketLineMatch = section.match(/⚽️?\s*(.+?)(?:\n|$)/);
-          let marketLine = marketLineMatch ? marketLineMatch[1].trim() : '';
-
-          let homeTeam = defaultHomeTeam;
-          let awayTeam = defaultAwayTeam;
-          const teamsInLine = marketLine.match(/(?:—|–|-)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)$/i);
-          if (teamsInLine) {
-            homeTeam = teamsInLine[1].trim();
-            awayTeam = teamsInLine[2].trim();
-            marketLine = marketLine.replace(/\s*(?:—|–|-)\s*.+$/, '').trim();
-          }
-          const altTeamsMatch = section.match(/🏟️\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
-          if (altTeamsMatch) {
-            homeTeam = altTeamsMatch[1].trim();
-            awayTeam = altTeamsMatch[2].trim();
-          }
-
-          const { market, prediction } = parseMarket(marketLine);
-          const confidence = confidenceFromOdds(odds);
-
-          if (homeTeam && awayTeam) {
-            const today = new Date();
-            tips.push({
-              id: parseInt(betNumber) || tips.length + 1,
-              betNumber,
-              betType,
-              league: defaultLeague.replace(/UCL/i, 'UEFA Champions League').replace(/SEMI-FINAL/i, '').trim() || 'UEFA Champions League',
-              homeTeam,
-              awayTeam,
-              date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
-              time: defaultTime,
-              prediction,
-              confidence,
-              odds,
-              market,
-              winner: prediction.includes('Vitória') || prediction.includes('Win') ? homeTeam : '',
-              analysis,
-              homePercent: 45,
-              drawPercent: 25,
-              awayPercent: 30,
-            });
-          }
-        }
-
-        if (tips.length > 0) break;
-      }
+      if (tips.length > 0) break;
     }
+
+    // --- FORMAT 2: "BET 174: Over 2.5 Goals @1.80" (inline format) ---
+    if (/🎯\s*BET\s+\d+\s*:/i.test(msg)) {
+      // Extract teams from the message
+      const teamsMatch = msg.match(/⚽\s*(.+?)\s*vs\s*(.+?)(?:\n|🏟️)/i);
+      const homeTeam = teamsMatch ? teamsMatch[1].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
+      const awayTeam = teamsMatch ? teamsMatch[2].replace(/[⚽🎯🔥🏆]/g, '').trim() : '';
+
+      // Determine league
+      let league = 'UEFA Conference League';
+      if (/Europa League/i.test(msg)) league = 'UEFA Europa League';
+      else if (/Champions|UCL/i.test(msg)) league = 'UEFA Champions League';
+      else if (/Premier League/i.test(msg)) league = 'Premier League';
+      else if (/Libertadores/i.test(msg)) league = 'CONMEBOL Libertadores';
+      else if (/Moçambola/i.test(msg)) league = 'Moçambola';
+
+      // Extract time
+      const timeMatch = msg.match(/(\d{1,2}):(\d{2})\s*(?:GMT|BST|UTC)/i);
+      const time = timeMatch ? `${timeMatch[1]}:${timeMatch[2]}` : '20:00';
+
+      // Extract all BET lines: "🎯 BET 174: Over 2.5 Goals @1.80"
+      const betLineRegex = /🎯\s*BET\s+(\d+)\s*:\s*(.+?)\s*@([\d.]+)/gi;
+      let betMatch;
+      let betCounter = 0;
+
+      while ((betMatch = betLineRegex.exec(msg)) !== null) {
+        betCounter++;
+        const betNumber = betMatch[1];
+        const marketRaw = betMatch[2].trim();
+        const odds = parseFloat(betMatch[3]);
+
+        const { market, prediction } = parseMarket(marketRaw);
+        const confidence = confidenceFromOdds(odds);
+
+        // Extract analysis from 💡 line
+        const analysisMatch = msg.match(/💡\s*(.+?)(?:\n━|$)/is);
+        const analysis = analysisMatch ? analysisMatch[1].replace(/\n/g, ' ').trim() : '';
+
+        if (homeTeam && awayTeam) {
+          tips.push({
+            id: parseInt(betNumber) || tips.length + 1,
+            betNumber,
+            betType: betCounter > 2 ? 'DOUBLE' : 'SINGLE',
+            league,
+            homeTeam,
+            awayTeam,
+            date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
+            time,
+            prediction,
+            confidence,
+            odds,
+            market,
+            winner: prediction.includes('Vitória') ? homeTeam : '',
+            analysis,
+            homePercent: 45,
+            drawPercent: 25,
+            awayPercent: 30,
+          });
+        }
+      }
+
+      if (tips.length > 0) break;
+    }
+
+    // --- FORMAT 3: Old format "BET 169 | SINGLE" ---
+    if (msg.includes('BET') && /BET\s+\d+\s*\|\s*(SINGLE|DOUBLE)/i.test(msg)) {
+      let defaultHomeTeam = '';
+      let defaultAwayTeam = '';
+      let defaultLeague = 'Champions League';
+      let defaultTime = '20:00';
+
+      const titleMatch = msg.match(/TIPS\s+(.+?)\s*(?:vs|🆚)\s*(.+?)\s*(?:—|–|-)\s*(.+?)(?:\n|$)/i);
+      if (titleMatch) {
+        defaultHomeTeam = titleMatch[1].replace(/[⚽🎯🔥]/g, '').trim();
+        defaultAwayTeam = titleMatch[2].trim();
+        defaultLeague = titleMatch[3].trim();
+      }
+
+      const timeMatch = msg.match(/(\d{1,2}):(\d{2})\s*BST/i);
+      if (timeMatch) defaultTime = `${timeMatch[1]}:${timeMatch[2]}`;
+
+      const sections = msg.split(/━+/);
+      for (const section of sections) {
+        const betMatch = section.match(/BET\s+(\d+)\s*\|\s*(SINGLE|DOUBLE)/i);
+        if (!betMatch) continue;
+
+        const betNumber = betMatch[1];
+        const betType = betMatch[2].toUpperCase();
+        const oddsMatch = section.match(/(?:Odd|ODD)\s*:?\s*@?([\d.]+)/i);
+        const odds = oddsMatch ? parseFloat(oddsMatch[1]) : 1.50;
+        const analysisMatch = section.match(/📌\s*(.+?)(?:\n|$)/);
+        const analysis = analysisMatch ? analysisMatch[1].trim() : '';
+        const marketLineMatch = section.match(/⚽️?\s*(.+?)(?:\n|$)/);
+        let marketLine = marketLineMatch ? marketLineMatch[1].trim() : '';
+
+        let homeTeam = defaultHomeTeam;
+        let awayTeam = defaultAwayTeam;
+        const teamsInLine = marketLine.match(/(?:—|–|-)\s*(.+?)\s*(?:vs|🆚)\s*(.+?)$/i);
+        if (teamsInLine) {
+          homeTeam = teamsInLine[1].trim();
+          awayTeam = teamsInLine[2].trim();
+          marketLine = marketLine.replace(/\s*(?:—|–|-)\s*.+$/, '').trim();
+        }
+        const altTeamsMatch = section.match(/🏟️\s*(.+?)\s*(?:vs|🆚)\s*(.+?)(?:\n|$)/i);
+        if (altTeamsMatch) {
+          homeTeam = altTeamsMatch[1].trim();
+          awayTeam = altTeamsMatch[2].trim();
+        }
+
+        const { market, prediction } = parseMarket(marketLine);
+        const confidence = confidenceFromOdds(odds);
+
+        if (homeTeam && awayTeam) {
+          tips.push({
+            id: parseInt(betNumber) || tips.length + 1,
+            betNumber,
+            betType,
+            league: defaultLeague.replace(/UCL/i, 'UEFA Champions League').replace(/SEMI-FINAL/i, '').trim() || 'UEFA Champions League',
+            homeTeam,
+            awayTeam,
+            date: today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' }),
+            time: defaultTime,
+            prediction,
+            confidence,
+            odds,
+            market,
+            winner: prediction.includes('Vitória') || prediction.includes('Win') ? homeTeam : '',
+            analysis,
+            homePercent: 45,
+            drawPercent: 25,
+            awayPercent: 30,
+          });
+        }
+      }
+
+      if (tips.length > 0) break;
+    }
+  }
 
   return tips;
 }
 
-// Fallback tips — Bayern vs PSG (06/05/2026)
+// Fallback tips — jogos de hoje 07/05/2026
 function getFallbackTips(): Tip[] {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' });
 
   return [
     {
-      id: 173,
-      betNumber: '173',
+      id: 177,
+      betNumber: '177',
       betType: 'SINGLE',
-      league: 'UEFA Champions League',
-      homeTeam: 'Bayern München',
-      awayTeam: 'Paris SG',
+      league: 'UEFA Europa League',
+      homeTeam: 'Aston Villa',
+      awayTeam: 'Nottingham Forest',
+      date: dateStr,
+      time: '20:00',
+      prediction: 'Ambas Marcam - Sim',
+      confidence: 78,
+      odds: 1.75,
+      market: 'Ambas Marcam',
+      winner: '',
+      analysis: 'Semi-final da Europa League — Aston Villa e Nottingham Forest vão ao ataque! Emery sabe que precisa de golos. Forest também não vai fechar. BTTS é a aposta certa para esta noite!',
+      homePercent: 50,
+      drawPercent: 22,
+      awayPercent: 28,
+    },
+    {
+      id: 178,
+      betNumber: '178',
+      betType: 'SINGLE',
+      league: 'UEFA Europa League',
+      homeTeam: 'Freiburg',
+      awayTeam: 'Sporting Braga',
       date: dateStr,
       time: '20:00',
       prediction: 'Mais de 2.5 Golos',
-      confidence: 85,
-      odds: 1.65,
+      confidence: 74,
+      odds: 1.85,
       market: 'Mais de 2.5',
       winner: '',
-      analysis: 'Bayern: 92% Over 2.5 na UCL | PSG: 73%. Média combinada: 4.48 golos/jogo. FOGO GARANTIDO!',
-      homePercent: 55,
-      drawPercent: 20,
-      awayPercent: 25,
+      analysis: 'Braga tem 2-1 do primeiro jogo. O Freiburg precisa de marcar em casa. Jogo aberto, ambas equipas com motivação máxima. Over 2.5 é forte neste contexto!',
+      homePercent: 48,
+      drawPercent: 24,
+      awayPercent: 28,
     },
     {
       id: 174,
       betNumber: '174',
       betType: 'SINGLE',
-      league: 'UEFA Champions League',
-      homeTeam: 'Bayern München',
-      awayTeam: 'Paris SG',
+      league: 'UEFA Conference League',
+      homeTeam: 'Strasbourg',
+      awayTeam: 'Rayo Vallecano',
       date: dateStr,
       time: '20:00',
-      prediction: 'Ambas Marcam - Sim',
-      confidence: 82,
-      odds: 1.72,
-      market: 'Ambas Marcam',
+      prediction: 'Mais de 2.5 Golos',
+      confidence: 72,
+      odds: 1.80,
+      market: 'Mais de 2.5',
       winner: '',
-      analysis: 'Bayern FTS: 0% | PSG FTS: 7%. Semi-final de volta, ambas equipas vão atacar sem medo. Bayern: 85% BTTS | PSG: 67%.',
-      homePercent: 55,
-      drawPercent: 20,
-      awayPercent: 25,
+      analysis: 'Strasbourg precisa de virar 0-1 em casa! Rayo letal no contra-ataque. Strasbourg: 55% Over 2.5 | Rayo: 64% Over 2.5. Receita perfeita para golos!',
+      homePercent: 45,
+      drawPercent: 25,
+      awayPercent: 30,
     },
     {
       id: 175,
       betNumber: '175',
       betType: 'SINGLE',
-      league: 'UEFA Champions League',
-      homeTeam: 'Bayern München',
-      awayTeam: 'Paris SG',
+      league: 'UEFA Conference League',
+      homeTeam: 'Strasbourg',
+      awayTeam: 'Rayo Vallecano',
       date: dateStr,
       time: '20:00',
-      prediction: 'Golo na 1ª Parte',
-      confidence: 80,
-      odds: 1.40,
-      market: 'Golo 1ª Parte',
+      prediction: 'Ambas Marcam - Sim',
+      confidence: 70,
+      odds: 1.85,
+      market: 'Ambas Marcam',
       winner: '',
-      analysis: 'Bayern: 77% Over 0.5 HT | PSG: 80%. Média HT combinada: 2.19. A Allianz Arena vai explodir logo nos primeiros minutos!',
-      homePercent: 55,
-      drawPercent: 20,
-      awayPercent: 25,
+      analysis: 'Strasbourg vai pressionar desde o início + Rayo letal em transição = BTTS garantido! Ambas as equipas precisam de marcar para avançar.',
+      homePercent: 45,
+      drawPercent: 25,
+      awayPercent: 30,
     },
     {
-      id: 176,
-      betNumber: '176',
-      betType: 'DOUBLE',
-      league: 'UEFA Champions League',
-      homeTeam: 'Bayern München',
-      awayTeam: 'Paris SG',
+      id: 179,
+      betNumber: '179',
+      betType: 'SINGLE',
+      league: 'UEFA Conference League',
+      homeTeam: 'Crystal Palace',
+      awayTeam: 'Shakhtar Donetsk',
       date: dateStr,
       time: '20:00',
-      prediction: 'Over 2.5 + BTTS + Over 0.5 1H',
-      confidence: 75,
-      odds: 2.90,
+      prediction: 'Crystal Palace Vence',
+      confidence: 80,
+      odds: 1.55,
+      market: 'Resultado Final',
+      winner: 'Crystal Palace',
+      analysis: 'Crystal Palace entra com vantagem de 3-1 do primeiro jogo. Em casa, Glasner\'s side vai fechar o assunto. Vitória do Palace é praticamente garantida!',
+      homePercent: 60,
+      drawPercent: 20,
+      awayPercent: 20,
+    },
+    {
+      id: 180,
+      betNumber: '180',
+      betType: 'DOUBLE',
+      league: 'UEFA Conference League',
+      homeTeam: 'Strasbourg',
+      awayTeam: 'Rayo Vallecano',
+      date: dateStr,
+      time: '20:00',
+      prediction: 'Over 2.5 + BTTS',
+      confidence: 68,
+      odds: 2.85,
       market: 'Combinada',
       winner: '',
-      analysis: 'ACUMULADOR: Over 2.5 + BTTS + Over 0.5 1H. Média combinada: 4.48 golos/jogo. Stake: 500 MZN → Retorno potencial: 1450 MZN!',
-      homePercent: 55,
-      drawPercent: 20,
-      awayPercent: 25,
+      analysis: 'ACUMULADOR: Over 2.5 + Ambas Marcam. Strasbourg vs Rayo — jogo de tudo ou nada com golos garantidos. Odd @2.85 com excelente retorno!',
+      homePercent: 45,
+      drawPercent: 25,
+      awayPercent: 30,
     },
   ];
 }
