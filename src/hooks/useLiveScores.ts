@@ -53,25 +53,30 @@ const PRIORITY_LEAGUES = [
   686,  // Moçambola
 ];
 
-// Fallback data com jogos reais (atualizado 06/05/2026)
+// Fallback data com jogos reais (atualizado 07/05/2026)
 const fallbackMatches: LiveMatch[] = [
-  { id: 1540844, homeTeam: "Bayern München", awayTeam: "Paris Saint Germain", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/157.png", awayTeamLogo: "https://media.api-sports.io/football/teams/85.png" },
-  { id: 1540843, homeTeam: "Arsenal", awayTeam: "Atletico Madrid", homeScore: 1, awayScore: 0, minute: 0, status: "FIM", league: "UEFA Champions League", leagueId: 2, homeTeamLogo: "https://media.api-sports.io/football/teams/42.png", awayTeamLogo: "https://media.api-sports.io/football/teams/530.png" },
-  { id: 1540900, homeTeam: "Al Ahly", awayTeam: "Enppi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Premier League Egito", leagueId: 233, homeTeamLogo: "https://media.api-sports.io/football/teams/1028.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1040.png" },
-  { id: 1540901, homeTeam: "Smouha SC", awayTeam: "Zamalek SC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Premier League Egito", leagueId: 233, homeTeamLogo: "https://media.api-sports.io/football/teams/1044.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1029.png" },
-  { id: 1540902, homeTeam: "Stellenbosch", awayTeam: "Orlando Pirates", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Premier Soccer League", leagueId: 288, homeTeamLogo: "https://media.api-sports.io/football/teams/2907.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2896.png" },
-  { id: 1457749, homeTeam: "Azam", awayTeam: "Namungo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Ligi kuu Bara", leagueId: 567, homeTeamLogo: "https://media.api-sports.io/football/teams/6446.png", awayTeamLogo: "https://media.api-sports.io/football/teams/12190.png" },
-  { id: 1542135, homeTeam: "Baniyas SC", awayTeam: "Al-Dhafra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Pro League UAE", leagueId: 301, homeTeamLogo: "https://media.api-sports.io/football/teams/2875.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2880.png" },
-  { id: 1541040, homeTeam: "Suhul Shire", awayTeam: "Mebrat Hayl", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Premier League Etiópia", leagueId: 363, homeTeamLogo: "https://media.api-sports.io/football/teams/4121.png", awayTeamLogo: "https://media.api-sports.io/football/teams/4126.png" },
-  { id: 1542493, homeTeam: "Saint Eloi Lupopo", awayTeam: "TP Mazembe", homeScore: 1, awayScore: 0, minute: 45, status: "INT", league: "Ligue 1 Congo", leagueId: 424, homeTeamLogo: "https://media.api-sports.io/football/teams/8578.png", awayTeamLogo: "https://media.api-sports.io/football/teams/6435.png" },
-  { id: 1540903, homeTeam: "Ceramica Cleopatra", awayTeam: "Pyramids FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Premier League Egito", leagueId: 233, homeTeamLogo: "https://media.api-sports.io/football/teams/1041.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1031.png" },
+  // UEFA Europa League — Semi-finais (2ª mão)
+  { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3, homeTeamLogo: "https://media.api-sports.io/football/teams/66.png", awayTeamLogo: "https://media.api-sports.io/football/teams/65.png" },
+  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3, homeTeamLogo: "https://media.api-sports.io/football/teams/160.png", awayTeamLogo: "https://media.api-sports.io/football/teams/228.png" },
+  // UEFA Conference League — Semi-finais (2ª mão)
+  { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848, homeTeamLogo: "https://media.api-sports.io/football/teams/52.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2282.png" },
+  { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848, homeTeamLogo: "https://media.api-sports.io/football/teams/95.png", awayTeamLogo: "https://media.api-sports.io/football/teams/728.png" },
+  // Saudi Pro League
+  { id: 1550005, homeTeam: "Al Shabab", awayTeam: "Al Nassr", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Saudi Pro League", leagueId: 307, homeTeamLogo: "https://media.api-sports.io/football/teams/2932.png", awayTeamLogo: "https://media.api-sports.io/football/teams/2939.png" },
+  // CONMEBOL Libertadores
+  { id: 1550006, homeTeam: "Platense", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/435.png", awayTeamLogo: "https://media.api-sports.io/football/teams/442.png" },
+  { id: 1550007, homeTeam: "Mirassol", awayTeam: "LDU Quito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1191.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1190.png" },
+  // Jogos terminados de hoje
+  { id: 1550008, homeTeam: "Deportes Tolima", awayTeam: "Nacional", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1197.png", awayTeamLogo: "https://media.api-sports.io/football/teams/1195.png" },
+  { id: 1550009, homeTeam: "Independiente Rivadavia", awayTeam: "Fluminense", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1193.png", awayTeamLogo: "https://media.api-sports.io/football/teams/119.png" },
+  { id: 1550010, homeTeam: "Independiente Santa Fe", awayTeam: "Corinthians", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "CONMEBOL Libertadores", leagueId: 13, homeTeamLogo: "https://media.api-sports.io/football/teams/1196.png", awayTeamLogo: "https://media.api-sports.io/football/teams/131.png" },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Bayern München", awayTeam: "Paris Saint Germain",
+  homeTeam: "Aston Villa", awayTeam: "Nottingham Forest",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
