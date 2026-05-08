@@ -21,10 +21,10 @@ interface TrendingItem {
 const CURATED_TRENDING: TrendingItem[] = [
   {
     id: "t1",
-    title: "ASTON VILLA 4-0 FOREST! Emery leva Villa à Final da Europa League — Braga também avança!",
-    title_en: "ASTON VILLA 4-0 FOREST! Emery takes Villa to Europa League Final — Braga also through!",
-    summary: "Noite histórica na Europa League! Aston Villa goleou o Nottingham Forest por 4-0 (4-1 no agregado) no Villa Park e está na final pela primeira vez. Ollie Watkins marcou dois golos. Na outra semi-final, o Freiburg venceu o Braga por 3-1 mas o Braga avançou pelo agregado (4-3). A final será Aston Villa vs Sporting Braga!",
-    summary_en: "Historic Europa League night! Aston Villa thrashed Nottingham Forest 4-0 (4-1 on aggregate) at Villa Park and are in the final for the first time. Ollie Watkins scored twice. In the other semi, Freiburg beat Braga 3-1 but Braga advanced on aggregate (4-3). The final: Aston Villa vs Sporting Braga!",
+    title: "ASTON VILLA 4-0 FOREST! Emery leva Villa à Final da Europa League — Freiburg também avança!",
+    title_en: "ASTON VILLA 4-0 FOREST! Emery takes Villa to Europa League Final — Freiburg also through!",
+    summary: "Noite histórica na Europa League! Aston Villa goleou o Nottingham Forest por 4-0 (4-1 no agregado) no Villa Park e está na final pela primeira vez. Ollie Watkins marcou dois golos. Na outra semi-final, o Freiburg eliminou o Braga pelo agregado (4-3). A final será Aston Villa vs Freiburg!",
+    summary_en: "Historic Europa League night! Aston Villa thrashed Nottingham Forest 4-0 (4-1 on aggregate) at Villa Park and are in the final for the first time. Ollie Watkins scored twice. In the other semi, Freiburg eliminated Braga on aggregate (4-3). The final: Aston Villa vs Freiburg!",
     tag: "BREAKING",
     source: "@UEFA",
     url: "https://x.com/alivegoal",

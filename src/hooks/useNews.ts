@@ -158,7 +158,7 @@ function getFallbackNews(): NewsArticle[] {
     {
       id: 1,
       title: 'RESULTADOS DE ONTEM: Aston Villa 4-0 Forest, Crystal Palace 2-1 Shakhtar, Rayo 1-0 Strasbourg',
-      excerpt: 'Noite europeia de gala! Aston Villa goleou o Nottingham Forest (4-0) e está na final da Europa League. Crystal Palace qualificou-se para a final da Conference League. Rayo Vallecano eliminou o Strasbourg. Freiburg venceu o Braga 3-1 mas o Braga avançou pelo agregado (4-3). Resultados completos e estatísticas.',
+      excerpt: 'Noite europeia de gala! Aston Villa goleou o Nottingham Forest (4-0) e está na final da Europa League. Crystal Palace qualificou-se para a final da Conference League. Rayo Vallecano eliminou o Strasbourg. Freiburg eliminou o Braga pelo agregado (4-3) e também está na final. A FINAL É ASTON VILLA vs FREIBURG!',
       category: 'ÚLTIMA HORA',
       readTime: '4 min',
       date: formatToday,
@@ -193,8 +193,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Sporting Braga — Data, Local e Análise Prévia',
-      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Sporting Braga! Primeira final europeia do Villa desde 1982. O Braga eliminou o Freiburg pelo agregado (4-3). Data e local ainda a confirmar pela UEFA. Emery tem 4 títulos na Europa League — o mais bem-sucedido treinador nesta competição.',
+      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Data, Local e Análise Prévia',
+      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg! Primeira final europeia do Villa desde 1982. O Freiburg eliminou o Braga pelo agregado (4-3). Data e local ainda a confirmar pela UEFA. Emery tem 4 títulos na Europa League — o mais bem-sucedido treinador nesta competição.',
       category: 'ÚLTIMA HORA',
       readTime: '5 min',
       date: formatToday,

@@ -82,7 +82,7 @@ function getTeamLogo(team: any): string {
 const fallbackMatches: LiveMatch[] = [
   // Resultados de ontem (07/05)
   { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 4, awayScore: 0, minute: 90, status: "FIM", league: "UEFA Europa League", leagueId: 3 },
-  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Europa League", leagueId: 3 },
+  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 3, awayScore: 1, minute: 90, status: "FIM (Agr. 4-3)", league: "UEFA Europa League", leagueId: 3 },
   { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Conference League", leagueId: 848 },
   { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Conference League", leagueId: 848 },
   // Jogos de hoje (08/05)
