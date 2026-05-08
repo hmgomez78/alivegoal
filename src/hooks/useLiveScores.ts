@@ -78,25 +78,27 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Fallback data com jogos reais (atualizado 07/05/2026)
+// Fallback data com jogos reais (atualizado 08/05/2026)
 const fallbackMatches: LiveMatch[] = [
-  { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3 },
-  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League", leagueId: 3 },
-  { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848 },
-  { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Conference League", leagueId: 848 },
-  { id: 1550005, homeTeam: "Al Shabab", awayTeam: "Al Nassr", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Saudi Pro League", leagueId: 307 },
-  { id: 1550006, homeTeam: "Platense", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 13 },
-  { id: 1550007, homeTeam: "Mirassol", awayTeam: "LDU Quito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 13 },
-  { id: 1550008, homeTeam: "Deportes Tolima", awayTeam: "Nacional", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
-  { id: 1550009, homeTeam: "Independiente Rivadavia", awayTeam: "Fluminense", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
-  { id: 1550010, homeTeam: "Independiente Santa Fe", awayTeam: "Corinthians", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Copa Libertadores", leagueId: 13 },
+  // Resultados de ontem (07/05)
+  { id: 1550001, homeTeam: "Aston Villa", awayTeam: "Nottingham Forest", homeScore: 4, awayScore: 0, minute: 90, status: "FIM", league: "UEFA Europa League", leagueId: 3 },
+  { id: 1550002, homeTeam: "Freiburg", awayTeam: "Sporting Braga", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Europa League", leagueId: 3 },
+  { id: 1550003, homeTeam: "Crystal Palace", awayTeam: "Shakhtar Donetsk", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Conference League", leagueId: 848 },
+  { id: 1550004, homeTeam: "Strasbourg", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "UEFA Conference League", leagueId: 848 },
+  // Jogos de hoje (08/05)
+  { id: 1550005, homeTeam: "Borussia Dortmund", awayTeam: "Eintracht Frankfurt", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1550006, homeTeam: "Levante", awayTeam: "Osasuna", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "La Liga", leagueId: 2014 },
+  { id: 1550007, homeTeam: "Torino", awayTeam: "Sassuolo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Serie A", leagueId: 2019 },
+  { id: 1550008, homeTeam: "Lens", awayTeam: "Nantes", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Ligue 1", leagueId: 2015 },
+  { id: 1550009, homeTeam: "Cadiz", awayTeam: "Deportivo La Coruna", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "La Liga 2", leagueId: 2016 },
+  { id: 1550010, homeTeam: "Augsburg", awayTeam: "Borussia Mönchengladbach", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHA 15:30", league: "Bundesliga", leagueId: 2002 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Aston Villa", awayTeam: "Nottingham Forest",
+  homeTeam: "Borussia Dortmund", awayTeam: "Eintracht Frankfurt",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 07/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 08/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,35 +157,35 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Aston Villa vs Nottingham Forest — Como Emery pode chegar à final da Europa League',
-      excerpt: 'Emery tem preparado um esquema de pressão alta para neutralizar o Forest. Villa tem 63% de posse média em casa e Watkins está em grande forma com 4 golos nos últimos 3 jogos. Análise completa das forças e fraquezas de ambas as equipas para a semi-final de hoje.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
+      title: 'RESULTADOS DE ONTEM: Aston Villa 4-0 Forest, Crystal Palace 2-1 Shakhtar, Rayo 1-0 Strasbourg',
+      excerpt: 'Noite europeia de gala! Aston Villa goleou o Nottingham Forest (4-0) e está na final da Europa League. Crystal Palace qualificou-se para a final da Conference League. Rayo Vallecano eliminou o Strasbourg. Freiburg venceu o Braga 3-1 mas o Braga avançou pelo agregado (4-3). Resultados completos e estatísticas.',
+      category: 'ÚLTIMA HORA',
+      readTime: '4 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: 5 Apostas de Alta Confiança para os Jogos de Hoje — Europa League e Conference',
-      excerpt: 'Aston Villa BTTS @1.75 | Crystal Palace Vence @1.55 | Freiburg Over 2.5 @1.85 | Al-Nassr Vence @1.70 | Platense vs Peñarol X2 @1.65. Análise detalhada de cada aposta com estatísticas e justificação. Acumulador total @8.20!',
-      category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'PRÉ-VISUALIZAÇÃO: Crystal Palace vs Shakhtar Donetsk — Palace a um passo da final da Conference League',
-      excerpt: 'Crystal Palace entra com vantagem de 3-1 do primeiro jogo. Glasner tem o seu melhor 11 disponível. Eze e Olise são as grandes ameaças. O Shakhtar precisaria de um milagre para virar a elimnatória. Probabilidade de qualificação do Palace: 94%.',
+      title: 'ANÁLISE TÁTICA: Borussia Dortmund vs Eintracht Frankfurt — Como Kovac pode vencer esta noite',
+      excerpt: 'Dortmund precisa de vencer para garantir o 2º lugar na Bundesliga. Frankfurt está em colapso interno com o treinador Riera prestes a ser despedido. Dortmund ganhou 9 dos últimos 12 jogos em casa. O Under 2.5 golos é a aposta mais forte desta noite — 3 dos últimos 5 jogos do Dortmund tiveram menos de 2.5 golos.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'TIPS BUNDESLIGA: Dortmund vs Frankfurt — 3 Apostas com Alta Confiança para Hoje à Noite',
+      excerpt: 'BET 1: Dortmund Vence @1.55 (Confiança 78%) | BET 2: Under 2.5 Golos @2.00 (Confiança 72%) | BET 3: Dortmund -1 Handicap @1.68 (Confiança 65%). Frankfurt tem apenas 1 vitória nos últimos 6 jogos e a defesa sofreu 11 golos nesse período. Acumulador das 3: odd @5.10!',
+      category: 'TIPS DE APOSTAS',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'COPA LIBERTADORES: Platense vs Peñarol — Análise e Palpites para a Fase de Grupos',
-      excerpt: 'Peñarol é um dos grandes favoritos da Libertadores 2026. Com Forlan Jr. em grande forma e uma defesa sólida, os uruguaios têm 78% de probabilidade de pelo menos empatar. Over 1.5 golos é forte com odd @1.55. Análise completa dos últimos 5 confrontos diretos.',
+      title: 'TIPS LA LIGA: Levante vs Osasuna — Jogo de Relegation com Golos Garantidos',
+      excerpt: 'Levante está a 4 pontos da zona de descida com 4 jogos para jogar. Ganhou os últimos 3 em casa. Osasuna não vence fora desde fevereiro. BET PRINCIPAL: BTTS @1.75 — 4 dos últimos 5 jogos do Osasuna tiveram golos dos dois lados. Levante precisa desesperadamente dos 3 pontos.',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -193,20 +193,20 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'COMO APOSTAR: Guia Completo sobre Mercados de Apostas na Europa League 2026',
-      excerpt: 'Explicação detalhada dos mercados mais lucrativos na Europa League: BTTS, Over/Under, Handicap Asiático e Resultado Final. Estatísticas das semi-finais dos últimos 5 anos mostram que 73% dos jogos têm Over 2.5. Guia prático para apostadores de todos os níveis.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '8 min',
-      date: formatYesterday,
+      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Sporting Braga — Data, Local e Análise Prévia',
+      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Sporting Braga! Primeira final europeia do Villa desde 1982. O Braga eliminou o Freiburg pelo agregado (4-3). Data e local ainda a confirmar pela UEFA. Emery tem 4 títulos na Europa League — o mais bem-sucedido treinador nesta competição.',
+      category: 'ÚLTIMA HORA',
+      readTime: '5 min',
+      date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'SAUDI PRO LEAGUE: CR7 vs Benzema — A corrida ao título que o mundo está a seguir',
-      excerpt: 'Ronaldo (Al-Nassr, 25 golos) vs Benzema (Al-Hilal, 21 golos). Al-Nassr lidera com 5 pontos de vantagem mas joga hoje contra o Al-Shabab. Se vencer, praticamente garante o título. Análise tática completa e palpites para o jogo de hoje às 18:00 GMT.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
-      date: formatToday,
+      title: 'GUIA DE APOSTAS: Como Apostar na Bundesliga Matchday 33 — Mercados e Odds Explicados',
+      excerpt: 'Com apenas 2 jornadas para o fim da Bundesliga, o título está decidido (Bayern) mas a luta pelo 2º lugar e pela Europa é intensa. Explicamos os mercados mais lucrativos: Handicap Asiático, Over/Under e BTTS. Estatísticas: 68% dos jogos da Bundesliga nesta fase da época têm Over 2.5 golos.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '7 min',
+      date: formatYesterday,
       source: 'AliveGoal',
     },
   ];
