@@ -125,14 +125,11 @@ function parseTipsFromHTML(html: string): Tip[] {
 
   // Get today's date string for filtering
   const today = new Date();
-  const todayStr = today.toISOString().split('T')[0]; // e.g. "2026-05-07"
+  const todayStr = today.toISOString().split('T')[0]; // e.g. "2026-05-08"
 
-  // Process messages newest-first, try to find tips from TODAY first
-  // then fall back to most recent regardless of date
+  // ONLY process messages from TODAY — if no tips today, return empty so fallback is used
   const todayMessages = sortedMessages.filter(m => m.date.startsWith(todayStr));
-  const allMessagesToProcess = todayMessages.length > 0
-    ? [...todayMessages, ...sortedMessages.filter(m => !m.date.startsWith(todayStr))]
-    : sortedMessages;
+  const allMessagesToProcess = todayMessages;
 
   for (const { text: msg } of allMessagesToProcess) {
     // --- FORMAT 1: New format "TIP 1: OVER 2.5 GOALS" ---
@@ -449,10 +446,49 @@ function getFallbackTips(): Tip[] {
       drawPercent: 28,
       awayPercent: 34,
     },
+    // ===== LA LIGA JORNADA 35: CELTA VIGO vs GETAFE =====
+    {
+      id: 189,
+      betNumber: '189',
+      betType: 'SINGLE',
+      league: 'La Liga',
+      homeTeam: 'Celta Vigo',
+      awayTeam: 'Getafe',
+      date: dateStr,
+      time: '19:00',
+      prediction: 'Menos de 2.5 Golos',
+      confidence: 76,
+      odds: 1.72,
+      market: 'Menos de 2.5',
+      winner: '',
+      analysis: '🔒 Under 2.5 Golos é a aposta certa neste duelo! Getafe é a equipa com menos golos marcados da La Liga (28 em 34 jogos). 4 dos últimos 5 jogos do Getafe terminaram com menos de 2.5 golos. Celta Vigo sem pressão de descida ou de Europa — jogo sem grande motivação. Confronto direto H2H: 3 dos últimos 4 jogos terminaram Under 2.5. Under 2.5 @1.72 é VALOR SÓLIDO!',
+      homePercent: 42,
+      drawPercent: 30,
+      awayPercent: 28,
+    },
+    {
+      id: 190,
+      betNumber: '190',
+      betType: 'SINGLE',
+      league: 'La Liga',
+      homeTeam: 'Celta Vigo',
+      awayTeam: 'Getafe',
+      date: dateStr,
+      time: '19:00',
+      prediction: 'Empate ou Celta Vigo',
+      confidence: 72,
+      odds: 1.45,
+      market: 'Dupla Hipótese',
+      winner: '',
+      analysis: '⚽ Dupla Hipótese 1X — Getafe não vence fora de casa há 7 jogos seguidos. Celta Vigo tem 5 vitórias nos últimos 7 jogos em casa. Getafe marcou apenas 1 golo nos últimos 3 jogos fora. Celta Vigo não perde em casa há 4 jogos. Dupla Hipótese 1X @1.45 é SEGURA!',
+      homePercent: 42,
+      drawPercent: 30,
+      awayPercent: 28,
+    },
     // ===== ACUMULADOR BUNDESLIGA + LA LIGA =====
     {
-      id: 188,
-      betNumber: '188',
+      id: 191,
+      betNumber: '191',
       betType: 'DOUBLE',
       league: 'Bundesliga + La Liga',
       homeTeam: 'Dortmund + Levante',
@@ -464,7 +500,7 @@ function getFallbackTips(): Tip[] {
       odds: 2.71,
       market: 'Combinada',
       winner: '',
-      analysis: '💥 ACUMULADOR DA SEXTA-FEIRA: Dortmund Vence @1.55 + BTTS Levante vs Osasuna @1.75 = Odd combinada @2.71! Stake: 500 MZN → Retorno potencial: 1.355 MZN. Dortmund em casa motivado + jogo de relegation com golos = COMBINADA FORTE!',
+      analysis: '💥 ACUMULADOR DO DIA: Dortmund Vence @1.55 + BTTS Levante vs Osasuna @1.75 = Odd combinada @2.71! Stake: 500 MZN → Retorno potencial: 1.355 MZN. Dortmund em casa motivado + jogo de relegation com golos = COMBINADA FORTE!',
       homePercent: 55,
       drawPercent: 22,
       awayPercent: 23,
