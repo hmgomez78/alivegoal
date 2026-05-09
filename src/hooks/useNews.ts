@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 08/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 09/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,8 +157,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'RESULTADOS DE ONTEM: Aston Villa 4-0 Forest, Crystal Palace 2-1 Shakhtar, Rayo 1-0 Strasbourg',
-      excerpt: 'Noite europeia de gala! Aston Villa goleou o Nottingham Forest (4-0) e está na final da Europa League. Crystal Palace qualificou-se para a final da Conference League. Rayo Vallecano eliminou o Strasbourg. Freiburg eliminou o Braga pelo agregado (4-3) e também está na final. A FINAL É ASTON VILLA vs FREIBURG!',
+      title: 'RESULTADOS DE ONTEM: Dortmund 1-1 Frankfurt, Levante 3-2 Osasuna — Etta Eyong herói!',
+      excerpt: 'Noite de drama na Bundesliga e La Liga! Dortmund empatou 1-1 com Frankfurt (Guirassy marcou) e garantiu o 2º lugar. Em Espanha, Levante venceu o Osasuna 3-2 com um golo tardio de Karl Etta Eyong após 6 meses sem marcar — golos dramáticos que mantêm o Levante na luta pela sobrevivência. Celta Vigo 0-0 Getafe.',
       category: 'ÚLTIMA HORA',
       readTime: '4 min',
       date: formatToday,
@@ -166,8 +166,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ANÁLISE TÁTICA: Borussia Dortmund vs Eintracht Frankfurt — Como Kovac pode vencer esta noite',
-      excerpt: 'Dortmund precisa de vencer para garantir o 2º lugar na Bundesliga. Frankfurt está em colapso interno com o treinador Riera prestes a ser despedido. Dortmund ganhou 9 dos últimos 12 jogos em casa. O Under 2.5 golos é a aposta mais forte desta noite — 3 dos últimos 5 jogos do Dortmund tiveram menos de 2.5 golos.',
+      title: 'ANÁLISE TÁTICA: Liverpool vs Chelsea — Slot vs Maresca, batalha de sistemas no Anfield',
+      excerpt: 'Liverpool recebe o Chelsea hoje às 08h30. Arne Slot usa um 4-3-3 compacto com Gravenberch como pivot. Maresca responde com um 4-2-2-2 ofensivo. Alexander Isak pode regressar. Liverpool ganhou 8 dos últimos 10 em casa. Chelsea marcou em todos os últimos 7 jogos fora. Jogo de golos garantidos — BTTS @1.70 é a aposta certa.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: formatToday,
@@ -175,8 +175,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TIPS BUNDESLIGA: Dortmund vs Frankfurt — 3 Apostas com Alta Confiança para Hoje à Noite',
-      excerpt: 'BET 1: Dortmund Vence @1.55 (Confiança 78%) | BET 2: Under 2.5 Golos @2.00 (Confiança 72%) | BET 3: Dortmund -1 Handicap @1.68 (Confiança 65%). Frankfurt tem apenas 1 vitória nos últimos 6 jogos e a defesa sofreu 11 golos nesse período. Acumulador das 3: odd @5.10!',
+      title: 'TIPS PREMIER LEAGUE: Liverpool vs Chelsea e Sunderland vs Man United — Apostas de Hoje',
+      excerpt: 'BET 1: Liverpool Vence @1.55 (Anfield é fortaleza — 8 vitórias nos últimos 10) | BET 2: Man United Vence em Sunderland @2.10 (United garantiu Champions, motivado para terminar forte) | BET 3: Mais de 2.5 Golos Liverpool vs Chelsea @1.75. Acumulador: Liverpool Vence + Over 2.5 = odd @2.71!',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -184,8 +184,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS LA LIGA: Levante vs Osasuna — Jogo de Relegation com Golos Garantidos',
-      excerpt: 'Levante está a 4 pontos da zona de descida com 4 jogos para jogar. Ganhou os últimos 3 em casa. Osasuna não vence fora desde fevereiro. BET PRINCIPAL: BTTS @1.75 — 4 dos últimos 5 jogos do Osasuna tiveram golos dos dois lados. Levante precisa desesperadamente dos 3 pontos.',
+      title: 'TIPS BUNDESLIGA: Wolfsburg vs Bayern Munich — Última Jornada em Casa do Bayern',
+      excerpt: 'Bayern joga em Wolfsburg hoje às 23h30. Wolfsburg está na zona de descida (3º de baixo). Bayern ganhou 7 jogos seguidos contra o Wolfsburg incluindo 8-1 na 1ª volta. Harry Kane lidera os marcadores com 7 golos nos últimos 10 jogos. BET PRINCIPAL: Bayern Vence @1.64 (Confiança 78%). Resultado previsto: 0-2.',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -193,8 +193,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Data, Local e Análise Prévia',
-      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg! Primeira final europeia do Villa desde 1982. O Freiburg eliminou o Braga pelo agregado (4-3). Data e local ainda a confirmar pela UEFA. Emery tem 4 títulos na Europa League — o mais bem-sucedido treinador nesta competição.',
+      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Tudo o que Precisas de Saber',
+      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg! Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga pelo agregado (4-3). Grifo marcou 5 golos na competição. A final realiza-se a 27 de maio no Estádio San Mamés, em Bilbau.',
       category: 'ÚLTIMA HORA',
       readTime: '5 min',
       date: formatToday,
@@ -202,9 +202,9 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'GUIA DE APOSTAS: Como Apostar na Bundesliga Matchday 33 — Mercados e Odds Explicados',
-      excerpt: 'Com apenas 2 jornadas para o fim da Bundesliga, o título está decidido (Bayern) mas a luta pelo 2º lugar e pela Europa é intensa. Explicamos os mercados mais lucrativos: Handicap Asiático, Over/Under e BTTS. Estatísticas: 68% dos jogos da Bundesliga nesta fase da época têm Over 2.5 golos.',
-      category: 'TIPS DE APOSTAS',
+      title: 'GUIA: Lazio vs Inter de Milão Hoje — Análise e Tips para a Serie A',
+      excerpt: 'Lazio recebe o Inter de Milão hoje às 13h00 na Serie A. Inter precisa de vencer para manter pressão no topo. Lazio ganhou os últimos 3 em casa. BET: Inter Vence @1.85 — Inter marcou em todos os últimos 8 jogos fora. Simone Inzaghi conhece o Olímpico de Roma como a palma da mão (ex-treinador da Lazio). Lautaro Martínez em forma.',
+      category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatYesterday,
       source: 'AliveGoal',
