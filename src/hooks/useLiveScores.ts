@@ -66,9 +66,10 @@ function formatMatchTime(match: any): string {
   }
   if (status === "TIMED" || status === "SCHEDULED") {
     const date = new Date(match.utcDate);
-    const hours = date.getUTCHours().toString().padStart(2, "0");
-    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
-    return `HOJE ${hours}:${minutes}`;
+    // Converter UTC para GMT+1 (Portugal/Lisboa)
+    const localHours = ((date.getUTCHours() + 1) % 24).toString().padStart(2, "0");
+    const localMinutes = date.getUTCMinutes().toString().padStart(2, "0");
+    return `HOJE ${localHours}:${localMinutes}`;
   }
   return statusMap[status] || status;
 }
@@ -78,20 +79,25 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
+// Jogos com tips hoje (09/05/2026) — aparecem primeiro
+const TODAYS_TIP_TEAMS = [
+  "Liverpool", "Chelsea",
+  "Sunderland", "Manchester United",
+  "Wolfsburg", "Bayern Munich",
+];
+
 // Fallback data com jogos reais (atualizado 09/05/2026)
+// NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
-  // Resultados de ontem (08/05)
-  { id: 1550001, homeTeam: "Borussia Dortmund", awayTeam: "Eintracht Frankfurt", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Bundesliga", leagueId: 2002 },
-  { id: 1550002, homeTeam: "Levante", awayTeam: "Osasuna", homeScore: 3, awayScore: 2, minute: 90, status: "FIM", league: "La Liga", leagueId: 2014 },
-  { id: 1550003, homeTeam: "Celta Vigo", awayTeam: "Getafe", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "La Liga", leagueId: 2014 },
-  // Jogos de hoje (09/05)
-  { id: 1550004, homeTeam: "Liverpool", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 08:30", league: "Premier League", leagueId: 2021 },
-  { id: 1550005, homeTeam: "Sunderland", awayTeam: "Manchester United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Premier League", leagueId: 2021 },
-  { id: 1550006, homeTeam: "Lazio", awayTeam: "Inter de Mil\u00e3o", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Serie A", leagueId: 2019 },
-  { id: 1550007, homeTeam: "Udinese", awayTeam: "Juventus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Serie A", leagueId: 2019 },
+  // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
+  { id: 1550004, homeTeam: "Liverpool", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 09:30", league: "Premier League", leagueId: 2021 },
+  { id: 1550005, homeTeam: "Sunderland", awayTeam: "Manchester United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:00", league: "Premier League", leagueId: 2021 },
   { id: 1550008, homeTeam: "Wolfsburg", awayTeam: "Bayern Munich", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Bundesliga", leagueId: 2002 },
-  { id: 1550009, homeTeam: "Villarreal", awayTeam: "Atl\u00e9tico Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "La Liga", leagueId: 2014 },
-  { id: 1550010, homeTeam: "Independiente Medell\u00edn", awayTeam: "Flamengo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2152 },
+  // Outros jogos importantes de hoje
+  { id: 1550006, homeTeam: "Lazio", awayTeam: "Inter de Mil\u00e3o", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Serie A", leagueId: 2019 },
+  { id: 1550007, homeTeam: "Udinese", awayTeam: "Juventus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Serie A", leagueId: 2019 },
+  { id: 1550009, homeTeam: "Villarreal", awayTeam: "Atl\u00e9tico Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "La Liga", leagueId: 2014 },
+  { id: 1550010, homeTeam: "Independiente Medell\u00edn", awayTeam: "Flamengo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Copa Libertadores", leagueId: 2152 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
@@ -173,14 +179,28 @@ export function useLiveScores(apiKey?: string) {
       });
 
       if (allMatches.length > 0) {
-        // Ordenar: ao vivo primeiro, depois por hora
-        const sorted = allMatches.sort((a, b) => {
-          const aLive = a.status === "AO VIVO" ? 0 : a.status === "FIM" ? 2 : 1;
-          const bLive = b.status === "AO VIVO" ? 0 : b.status === "FIM" ? 2 : 1;
-          return aLive - bLive;
+        // Filtrar jogos terminados — só mostrar ao vivo e agendados
+        const activeMatches = allMatches.filter(m => m.status !== "FIM");
+        const displayMatches = activeMatches.length > 0 ? activeMatches : allMatches;
+
+        // Ordenar: 1º jogos com tips, 2º ao vivo, 3º por hora
+        const sorted = displayMatches.sort((a, b) => {
+          const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t)) ? 0 : 1;
+          const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t)) ? 0 : 1;
+          if (aHasTip !== bHasTip) return aHasTip - bHasTip;
+          const aLive = a.status === "AO VIVO" ? 0 : 1;
+          const bLive = b.status === "AO VIVO" ? 0 : 1;
+          if (aLive !== bLive) return aLive - bLive;
+          // Ordenar por hora (extrair HH:MM do status)
+          const aTime = a.status.match(/(\d{2}):(\d{2})/);
+          const bTime = b.status.match(/(\d{2}):(\d{2})/);
+          if (aTime && bTime) {
+            return (parseInt(aTime[1]) * 60 + parseInt(aTime[2])) - (parseInt(bTime[1]) * 60 + parseInt(bTime[2]));
+          }
+          return 0;
         });
 
-        setMatches(sorted.slice(0, 15));
+        setMatches(sorted.slice(0, 12));
         setIsLive(hasLive);
 
         // Jogo em destaque: primeiro ao vivo ou primeiro do dia

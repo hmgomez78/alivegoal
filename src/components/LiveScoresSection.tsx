@@ -129,11 +129,16 @@ const LiveScoresSection = () => {
                       )}
                     </div>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <span className="rounded bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">
-                      {typeof m.minute === "number" && m.minute > 0 ? `${m.minute}'` : "—"}
+                  <div className="flex flex-col items-end gap-1">
+                    <span className={`rounded px-2 py-0.5 text-xs font-bold ${
+                      m.status === "AO VIVO" ? "bg-red-500/20 text-red-400 animate-pulse" :
+                      m.status === "FIM" ? "bg-muted/50 text-muted-foreground" :
+                      "bg-primary/20 text-primary"
+                    }`}>
+                      {m.status === "AO VIVO" && typeof m.minute === "number" && m.minute > 0
+                        ? `${m.minute}'`
+                        : m.status}
                     </span>
-                    <span className="mt-1 text-[10px] uppercase text-primary">{m.status}</span>
                   </div>
                 </div>
               ))
