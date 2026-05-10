@@ -79,32 +79,35 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (09/05/2026) — aparecem primeiro
+// Jogos com tips hoje (10/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Liverpool", "Chelsea",
-  "Sunderland", "Manchester United",
-  "Wolfsburg", "Bayern Munich",
+  "Barcelona", "Real Madrid",
+  "West Ham", "Arsenal",
+  "Milan", "Atalanta",
 ];
 
-// Fallback data com jogos reais (atualizado 09/05/2026)
+// Fallback data com jogos reais (atualizado 10/05/2026)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1550004, homeTeam: "Liverpool", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 09:30", league: "Premier League", leagueId: 2021 },
-  { id: 1550005, homeTeam: "Sunderland", awayTeam: "Manchester United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:00", league: "Premier League", leagueId: 2021 },
-  { id: 1550008, homeTeam: "Wolfsburg", awayTeam: "Bayern Munich", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1560001, homeTeam: "West Ham", awayTeam: "Arsenal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Premier League", leagueId: 2021 },
+  { id: 1560002, homeTeam: "Milan", awayTeam: "Atalanta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
+  { id: 1560003, homeTeam: "Barcelona", awayTeam: "Real Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "La Liga — El Clásico", leagueId: 2014 },
   // Outros jogos importantes de hoje
-  { id: 1550006, homeTeam: "Lazio", awayTeam: "Inter de Mil\u00e3o", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Serie A", leagueId: 2019 },
-  { id: 1550007, homeTeam: "Udinese", awayTeam: "Juventus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Serie A", leagueId: 2019 },
-  { id: 1550009, homeTeam: "Villarreal", awayTeam: "Atl\u00e9tico Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "La Liga", leagueId: 2014 },
-  { id: 1550010, homeTeam: "Independiente Medell\u00edn", awayTeam: "Flamengo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Copa Libertadores", leagueId: 2152 },
+  { id: 1560004, homeTeam: "Burnley", awayTeam: "Aston Villa", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560005, homeTeam: "Crystal Palace", awayTeam: "Everton", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560006, homeTeam: "Nottm Forest", awayTeam: "Newcastle", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560007, homeTeam: "Mallorca", awayTeam: "Villarreal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "La Liga", leagueId: 2014 },
+  { id: 1560008, homeTeam: "Athletic Club", awayTeam: "Valencia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:15", league: "La Liga", leagueId: 2014 },
+  { id: 1560009, homeTeam: "PSG", awayTeam: "Brest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Ligue 1", leagueId: 2015 },
+  { id: 1560010, homeTeam: "AS Monaco", awayTeam: "Lille", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Ligue 1", leagueId: 2015 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Liverpool", awayTeam: "Chelsea",
+  homeTeam: "Barcelona", awayTeam: "Real Madrid",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
@@ -219,11 +222,9 @@ export function useLiveScores(apiKey?: string) {
         setFeatured(fallbackFeatured);
         setIsLive(false);
       }
-
-      setError(null);
-    } catch (err: any) {
-      console.error("Erro ao buscar live scores:", err);
-      setError(err.message);
+    } catch (err) {
+      console.error("Error fetching live scores:", err);
+      setError("Erro ao carregar jogos");
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
       setIsLive(false);
@@ -234,7 +235,7 @@ export function useLiveScores(apiKey?: string) {
 
   useEffect(() => {
     fetchLiveScores();
-    // Refresh every 60 seconds
+    // Atualizar a cada 60 segundos
     const interval = setInterval(fetchLiveScores, 60 * 1000);
     return () => clearInterval(interval);
   }, [fetchLiveScores]);

@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 09/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 10/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,8 +157,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'RESULTADOS DE ONTEM: Dortmund 1-1 Frankfurt, Levante 3-2 Osasuna — Etta Eyong herói!',
-      excerpt: 'Noite de drama na Bundesliga e La Liga! Dortmund empatou 1-1 com Frankfurt (Guirassy marcou) e garantiu o 2º lugar. Em Espanha, Levante venceu o Osasuna 3-2 com um golo tardio de Karl Etta Eyong após 6 meses sem marcar — golos dramáticos que mantêm o Levante na luta pela sobrevivência. Celta Vigo 0-0 Getafe.',
+      title: 'RESULTADOS DE ONTEM: Liverpool 1-0 Chelsea, Sunderland 0-2 Man United, Wolfsburg 0-3 Bayern!',
+      excerpt: 'Sábado de grandes resultados! Gravenberch decidiu o Liverpool vs Chelsea com um golo ao minuto 6. Man United goleou o Sunderland 2-0 com golos de Rashford e Fernandes. Bayern Munich destruiu o Wolfsburg 3-0 com hat-trick de Harry Kane. Lazio 0-3 Inter de Milão — Lautaro marcou duas vezes. Udinese 1-2 Juventus.',
       category: 'ÚLTIMA HORA',
       readTime: '4 min',
       date: formatToday,
@@ -166,17 +166,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ANÁLISE TÁTICA: Liverpool vs Chelsea — Slot vs Maresca, batalha de sistemas no Anfield',
-      excerpt: 'Liverpool recebe o Chelsea hoje às 08h30. Arne Slot usa um 4-3-3 compacto com Gravenberch como pivot. Maresca responde com um 4-2-2-2 ofensivo. Alexander Isak pode regressar. Liverpool ganhou 8 dos últimos 10 em casa. Chelsea marcou em todos os últimos 7 jogos fora. Jogo de golos garantidos — BTTS @1.70 é a aposta certa.',
+      title: 'ANÁLISE TÁTICA: Barcelona vs Real Madrid — O El Clásico que pode dar o título ao Barça HOJE!',
+      excerpt: 'Barcelona (WWWWW) recebe o Real Madrid (DLWDW) às 21:00 no Camp Nou. Flick usa um 4-3-3 com Yamal e Raphinha nas alas. Arbeloa responde com 4-4-2. Mbappé em dúvida por lesão muscular. Barça marcou 18 golos nos últimos 5 jogos em casa. Real Madrid chega em crise interna (escândalo Valverde/Tchouameni). BET: Barcelona Vence @1.75.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TIPS PREMIER LEAGUE: Liverpool vs Chelsea e Sunderland vs Man United — Apostas de Hoje',
-      excerpt: 'BET 1: Liverpool Vence @1.55 (Anfield é fortaleza — 8 vitórias nos últimos 10) | BET 2: Man United Vence em Sunderland @2.10 (United garantiu Champions, motivado para terminar forte) | BET 3: Mais de 2.5 Golos Liverpool vs Chelsea @1.75. Acumulador: Liverpool Vence + Over 2.5 = odd @2.71!',
+      title: 'TIPS LA LIGA: Barcelona vs Real Madrid — 3 Apostas para o El Clásico de Hoje!',
+      excerpt: 'BET 200: Barcelona Vence @1.75 (Confiança 78%) — Barça em forma perfeita, Real Madrid em crise. BET 201: Mais de 2.5 Golos @1.85 — Clásico tem média de 3.2 golos nos últimos 5 anos. BET 202: Yamal Marca em Qualquer Altura @2.20 — Yamal marcou em 4 dos últimos 5 Clásicos. Acumulador: Barça Vence + Over 2.5 = @3.24!',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -184,8 +184,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS BUNDESLIGA: Wolfsburg vs Bayern Munich — Última Jornada em Casa do Bayern',
-      excerpt: 'Bayern joga em Wolfsburg hoje às 23h30. Wolfsburg está na zona de descida (3º de baixo). Bayern ganhou 7 jogos seguidos contra o Wolfsburg incluindo 8-1 na 1ª volta. Harry Kane lidera os marcadores com 7 golos nos últimos 10 jogos. BET PRINCIPAL: Bayern Vence @1.64 (Confiança 78%). Resultado previsto: 0-2.',
+      title: 'TIPS PREMIER LEAGUE: West Ham vs Arsenal — Arteta pode confirmar 2º lugar hoje!',
+      excerpt: 'Arsenal visita o West Ham às 15:30. Uma vitória confirma o 2º lugar e a qualificação direta para a Champions League. BET 203: Arsenal Vence @1.65 (Confiança 80%) — Arsenal ganhou 7 dos últimos 8 fora de casa. BET 204: Arsenal Marca Mais de 1.5 Golos @1.70 — Arsenal marcou 2+ em 6 dos últimos 7 jogos fora. West Ham está em 17º lugar.',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -193,19 +193,19 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Tudo o que Precisas de Saber',
-      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg! Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga pelo agregado (4-3). Grifo marcou 5 golos na competição. A final realiza-se a 27 de maio no Estádio San Mamés, em Bilbau.',
-      category: 'ÚLTIMA HORA',
-      readTime: '5 min',
+      title: 'TIPS SERIE A: Milan vs Atalanta — Batalha épica pelo 3º lugar e vaga na Champions!',
+      excerpt: 'Milan recebe a Atalanta às 18:45. Ambas precisam de vencer para garantir o 3º lugar e a Champions League. BET 205: Ambas Marcam @1.72 — Milan marcou em todos os últimos 8 jogos em casa; Atalanta é a equipa mais goleadora da Serie A. BET 206: Mais de 2.5 Golos @1.80. Resultado previsto: 2-2. Gasperini vs Conceição!',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'GUIA: Lazio vs Inter de Milão Hoje — Análise e Tips para a Serie A',
-      excerpt: 'Lazio recebe o Inter de Milão hoje às 13h00 na Serie A. Inter precisa de vencer para manter pressão no topo. Lazio ganhou os últimos 3 em casa. BET: Inter Vence @1.85 — Inter marcou em todos os últimos 8 jogos fora. Simone Inzaghi conhece o Olímpico de Roma como a palma da mão (ex-treinador da Lazio). Lautaro Martínez em forma.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
+      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Data, Local e Análise Prévia',
+      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg a 27 de maio no Estádio San Mamés, Bilbau. Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga 4-3 no agregado. Grifo marcou 5 golos na competição. Odds: Villa @1.85, Freiburg @2.10.',
+      category: 'ÚLTIMA HORA',
+      readTime: '5 min',
       date: formatYesterday,
       source: 'AliveGoal',
     },
