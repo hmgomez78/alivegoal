@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e pré-visualizações — 10/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 10/05/2026 (noite)
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,56 +157,56 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'RESULTADOS DE ONTEM: Liverpool 1-0 Chelsea, Sunderland 0-2 Man United, Wolfsburg 0-3 Bayern!',
-      excerpt: 'Sábado de grandes resultados! Gravenberch decidiu o Liverpool vs Chelsea com um golo ao minuto 6. Man United goleou o Sunderland 2-0 com golos de Rashford e Fernandes. Bayern Munich destruiu o Wolfsburg 3-0 com hat-trick de Harry Kane. Lazio 0-3 Inter de Milão — Lautaro marcou duas vezes. Udinese 1-2 Juventus.',
+      title: 'BARCELONA CAMPEÃO! Análise completa do El Clásico 2-0 — Rashford e Ferran Torres decidem!',
+      excerpt: 'Histórico! Barcelona 2-0 Real Madrid no Camp Nou. Rashford abriu o marcador aos 9\' de livre direto — o seu 22º golo na La Liga. Ferran Torres fez o 2-0 aos 18\' com assistência de Dani Olmo. Real Madrid nunca entrou no jogo. Yamal foi o melhor em campo. Barça é campeão com 3 jornadas de antecedência — 29º título da La Liga!',
       category: 'ÚLTIMA HORA',
-      readTime: '4 min',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ANÁLISE TÁTICA: Barcelona vs Real Madrid — O El Clásico que pode dar o título ao Barça HOJE!',
-      excerpt: 'Barcelona (WWWWW) recebe o Real Madrid (DLWDW) às 21:00 no Camp Nou. Flick usa um 4-3-3 com Yamal e Raphinha nas alas. Arbeloa responde com 4-4-2. Mbappé em dúvida por lesão muscular. Barça marcou 18 golos nos últimos 5 jogos em casa. Real Madrid chega em crise interna (escândalo Valverde/Tchouameni). BET: Barcelona Vence @1.75.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TIPS LA LIGA: Barcelona vs Real Madrid — 3 Apostas para o El Clásico de Hoje!',
-      excerpt: 'BET 200: Barcelona Vence @1.75 (Confiança 78%) — Barça em forma perfeita, Real Madrid em crise. BET 201: Mais de 2.5 Golos @1.85 — Clásico tem média de 3.2 golos nos últimos 5 anos. BET 202: Yamal Marca em Qualquer Altura @2.20 — Yamal marcou em 4 dos últimos 5 Clásicos. Acumulador: Barça Vence + Over 2.5 = @3.24!',
-      category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TIPS PREMIER LEAGUE: West Ham vs Arsenal — Arteta pode confirmar 2º lugar hoje!',
-      excerpt: 'Arsenal visita o West Ham às 15:30. Uma vitória confirma o 2º lugar e a qualificação direta para a Champions League. BET 203: Arsenal Vence @1.65 (Confiança 80%) — Arsenal ganhou 7 dos últimos 8 fora de casa. BET 204: Arsenal Marca Mais de 1.5 Golos @1.70 — Arsenal marcou 2+ em 6 dos últimos 7 jogos fora. West Ham está em 17º lugar.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS SERIE A: Milan vs Atalanta — Batalha épica pelo 3º lugar e vaga na Champions!',
-      excerpt: 'Milan recebe a Atalanta às 18:45. Ambas precisam de vencer para garantir o 3º lugar e a Champions League. BET 205: Ambas Marcam @1.72 — Milan marcou em todos os últimos 8 jogos em casa; Atalanta é a equipa mais goleadora da Serie A. BET 206: Mais de 2.5 Golos @1.80. Resultado previsto: 2-2. Gasperini vs Conceição!',
+      title: 'CRISE MILAN: Atalanta vence 3-2 em San Siro — Champions League em risco máximo para o Milan!',
+      excerpt: 'Desastre para o AC Milan! Atalanta venceu 3-2 num jogo louco no San Siro. Milan caiu para 4º empatado com a Roma. Com 2 jornadas para o fim, a Champions League pode escapar. Gasperini continua a sua magia com a Atalanta. Fonseca sob pressão máxima. Próximos jogos do Milan: Genoa (fora) e Monza (casa).',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — Data, Local e Análise Prévia',
-      excerpt: 'A final da UEFA Europa League 2025/26 será Aston Villa vs Freiburg a 27 de maio no Estádio San Mamés, Bilbau. Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga 4-3 no agregado. Grifo marcou 5 golos na competição. Odds: Villa @1.85, Freiburg @2.10.',
+      id: 3,
+      title: 'CHAMPIONS LEAGUE: PSG vs Arsenal e Inter vs Atlético — Tudo o que precisas saber para terça-feira!',
+      excerpt: 'Dois jogos épicos na terça-feira! PSG recebe o Arsenal (Arsenal ganhou 1-0 na 1ª mão). PSG eliminou o Bayern 6-5 no agregado. Inter recebe o Atlético (1-1 na 1ª mão). BET 210: Arsenal Qualifica-se @1.90. BET 211: Inter Qualifica-se @1.75. BET 212: Acumulador Arsenal + Inter = @3.52. Análise detalhada de cada jogo disponível no canal Telegram @alivegoal.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'RESULTADOS DE HOJE: Barcelona 2-0 Real Madrid, Milan 2-3 Atalanta, West Ham 0-2 Arsenal!',
+      excerpt: 'Domingo de grandes resultados! Barcelona campeão da La Liga após goleada no Clásico. Atalanta surpreende o Milan em San Siro. Arsenal confirma 2º lugar na Premier League com vitória em West Ham. Wolfsburg 0-2 Bayern Munich — Kane com mais um golo. Udinese 1-1 Juventus. Lazio 1-2 Inter de Milão.',
       category: 'ÚLTIMA HORA',
+      readTime: '4 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — 27 de Maio em Bilbau!',
+      excerpt: 'A final da UEFA Europa League 2025/26 está confirmada: Aston Villa vs Freiburg a 27 de maio no Estádio San Mamés, Bilbau. Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga 4-3 no agregado. Grifo marcou 5 golos na competição. Odds: Villa @1.85, Freiburg @2.10. Quem vai ganhar?',
+      category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: formatYesterday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'SOUTHAMPTON ESPIONAGEM: EFL abre processo — Podem ser expulsos dos play-offs do Championship!',
+      excerpt: 'O escândalo mais bizarro do futebol inglês! Um funcionário do Southampton foi apanhado nos arbustos a filmar o treino do Middlesbrough antes da semi-final dos play-offs. O EFL abriu processo disciplinar. Vários clubes exigem a expulsão dos play-offs. Treinador Tonda Eckert saiu furioso da conferência de imprensa. Decisão esperada para segunda-feira.',
+      category: 'ESCÂNDALO',
+      readTime: '4 min',
+      date: formatToday,
       source: 'AliveGoal',
     },
   ];
