@@ -79,35 +79,35 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (10/05/2026) — aparecem primeiro
+// Jogos com tips hoje (11/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Barcelona", "Real Madrid",
-  "West Ham", "Arsenal",
-  "Milan", "Atalanta",
+  "Tottenham", "Leeds United",
+  "Benfica", "Braga",
+  "Rio Ave", "Sporting CP",
 ];
 
-// Fallback data com jogos reais (atualizado 10/05/2026)
+// Fallback data com jogos reais (atualizado 11/05/2026)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1560001, homeTeam: "West Ham", awayTeam: "Arsenal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Premier League", leagueId: 2021 },
-  { id: 1560002, homeTeam: "Milan", awayTeam: "Atalanta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
-  { id: 1560003, homeTeam: "Barcelona", awayTeam: "Real Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "La Liga — El Clásico", leagueId: 2014 },
+  { id: 1560001, homeTeam: "Tottenham", awayTeam: "Leeds United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560002, homeTeam: "Benfica", awayTeam: "Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560003, homeTeam: "Rio Ave", awayTeam: "Sporting CP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:15", league: "Liga Portugal", leagueId: 2017 },
   // Outros jogos importantes de hoje
-  { id: 1560004, homeTeam: "Burnley", awayTeam: "Aston Villa", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560005, homeTeam: "Crystal Palace", awayTeam: "Everton", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560006, homeTeam: "Nottm Forest", awayTeam: "Newcastle", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560007, homeTeam: "Mallorca", awayTeam: "Villarreal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "La Liga", leagueId: 2014 },
-  { id: 1560008, homeTeam: "Athletic Club", awayTeam: "Valencia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:15", league: "La Liga", leagueId: 2014 },
-  { id: 1560009, homeTeam: "PSG", awayTeam: "Brest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Ligue 1", leagueId: 2015 },
-  { id: 1560010, homeTeam: "AS Monaco", awayTeam: "Lille", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Ligue 1", leagueId: 2015 },
+  { id: 1560004, homeTeam: "Brentford", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560005, homeTeam: "Man City", awayTeam: "Bournemouth", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560006, homeTeam: "Famalicão", awayTeam: "Porto", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560007, homeTeam: "Vitória SC", awayTeam: "Estoril", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560008, homeTeam: "Flamengo", awayTeam: "Ind. Medellín", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Copa Libertadores", leagueId: 2152 },
+  { id: 1560009, homeTeam: "Peñarol", awayTeam: "Estudiantes", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "Copa Libertadores", leagueId: 2152 },
+  { id: 1560010, homeTeam: "Cracovia", awayTeam: "Radomiak", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Ekstraklasa", leagueId: 2106 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Barcelona", awayTeam: "Real Madrid",
+  homeTeam: "Benfica", awayTeam: "Braga",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

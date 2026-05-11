@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 10/05/2026 (noite)
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 11/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,44 +157,44 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'BARCELONA CAMPEÃO! Análise completa do El Clásico 2-0 — Rashford e Ferran Torres decidem!',
-      excerpt: 'Histórico! Barcelona 2-0 Real Madrid no Camp Nou. Rashford abriu o marcador aos 9\' de livre direto — o seu 22º golo na La Liga. Ferran Torres fez o 2-0 aos 18\' com assistência de Dani Olmo. Real Madrid nunca entrou no jogo. Yamal foi o melhor em campo. Barça é campeão com 3 jornadas de antecedência — 29º título da La Liga!',
-      category: 'ÚLTIMA HORA',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'CRISE MILAN: Atalanta vence 3-2 em San Siro — Champions League em risco máximo para o Milan!',
-      excerpt: 'Desastre para o AC Milan! Atalanta venceu 3-2 num jogo louco no San Siro. Milan caiu para 4º empatado com a Roma. Com 2 jornadas para o fim, a Champions League pode escapar. Gasperini continua a sua magia com a Atalanta. Fonseca sob pressão máxima. Próximos jogos do Milan: Genoa (fora) e Monza (casa).',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TIPS LIGA PORTUGAL: Benfica vs Braga e Rio Ave vs Sporting — Análise e Prognósticos!',
+      excerpt: 'Liga Portugal em destaque hoje! Benfica (Mourinho) recebe o Braga na luta pelo 2º lugar. BET 209: Benfica Vence @1.39 (80% confiança). BET 210: BTTS @1.80 (82% confiança). BET 211: Over 2.5 @1.65. Em paralelo, Rio Ave vs Sporting CP — Gyökeres (32 golos!) quer mais. BET 212: Sporting Vence @1.55. Acumulador Liga Portugal @2.15. Todos os jogos às 21:15!',
+      category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 2,
+      title: 'RESULTADOS DE ONTEM: Barcelona CAMPEÃO 2-0 Real Madrid, Milan 2-3 Atalanta, Arsenal 2-0 West Ham!',
+      excerpt: 'Domingo histórico no futebol europeu! Barcelona campeão da La Liga após goleada no Clásico — Rashford e Ferran Torres decidiram. Atalanta surpreende o Milan em San Siro e coloca a Champions em risco. Arsenal confirma 2º lugar. Wolfsburg 0-2 Bayern Munich — Kane com mais um golo. Lazio 1-2 Inter. Resultados completos no site.',
+      category: 'ÚLTIMA HORA',
+      readTime: '4 min',
+      date: formatYesterday,
+      source: 'AliveGoal',
+    },
+    {
       id: 3,
-      title: 'CHAMPIONS LEAGUE: PSG vs Arsenal e Inter vs Atlético — Tudo o que precisas saber para terça-feira!',
-      excerpt: 'Dois jogos épicos na terça-feira! PSG recebe o Arsenal (Arsenal ganhou 1-0 na 1ª mão). PSG eliminou o Bayern 6-5 no agregado. Inter recebe o Atlético (1-1 na 1ª mão). BET 210: Arsenal Qualifica-se @1.90. BET 211: Inter Qualifica-se @1.75. BET 212: Acumulador Arsenal + Inter = @3.52. Análise detalhada de cada jogo disponível no canal Telegram @alivegoal.',
-      category: 'TIPS DE APOSTAS',
+      title: 'CHAMPIONS LEAGUE AMANHÃ: PSG vs Arsenal e Inter vs Atlético — Análise completa!',
+      excerpt: 'As meias-finais da Champions League decidem-se amanhã! PSG recebe o Arsenal (Arsenal ganhou 1-0 na 1ª mão). PSG eliminou o Bayern 6-5 no agregado. Inter recebe o Atlético (1-1 na 1ª mão). BET: Arsenal Qualifica-se @1.90. BET: Inter Qualifica-se @1.75. Acumulador Arsenal + Inter = @3.52. Análise tática detalhada disponível!',
+      category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'RESULTADOS DE HOJE: Barcelona 2-0 Real Madrid, Milan 2-3 Atalanta, West Ham 0-2 Arsenal!',
-      excerpt: 'Domingo de grandes resultados! Barcelona campeão da La Liga após goleada no Clásico. Atalanta surpreende o Milan em San Siro. Arsenal confirma 2º lugar na Premier League com vitória em West Ham. Wolfsburg 0-2 Bayern Munich — Kane com mais um golo. Udinese 1-1 Juventus. Lazio 1-2 Inter de Milão.',
-      category: 'ÚLTIMA HORA',
-      readTime: '4 min',
+      title: 'BENFICA vs BRAGA: Mourinho precisa de vencer para garantir a Champions League!',
+      excerpt: 'José Mourinho enfrenta o Braga numa batalha crucial pelo 2º lugar e a qualificação para a Champions League. Benfica está invicto há 47 jogos na Liga Portugal. Braga vem de derrota pesada na Europa League (1-3 vs Freiburg). Pavlidis com 24 golos na época. Benfica venceu 8 dos últimos 9 jogos em casa. Jogo às 21:15 no Estádio da Luz.',
+      category: 'PRÉ-JOGO',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
       title: 'FINAL DA EUROPA LEAGUE: Aston Villa vs Freiburg — 27 de Maio em Bilbau!',
-      excerpt: 'A final da UEFA Europa League 2025/26 está confirmada: Aston Villa vs Freiburg a 27 de maio no Estádio San Mamés, Bilbau. Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga 4-3 no agregado. Grifo marcou 5 golos na competição. Odds: Villa @1.85, Freiburg @2.10. Quem vai ganhar?',
+      excerpt: 'A final da UEFA Europa League 2025/26 está confirmada: Aston Villa vs Freiburg a 27 de maio no Estádio San Mamés, Bilbau. Primeira final europeia do Villa desde 1982. Emery tem 4 títulos na Europa League. Freiburg eliminou o Braga 4-3 no agregado. Odds: Villa @1.85, Freiburg @2.10.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: formatYesterday,
@@ -202,9 +202,9 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'SOUTHAMPTON ESPIONAGEM: EFL abre processo — Podem ser expulsos dos play-offs do Championship!',
-      excerpt: 'O escândalo mais bizarro do futebol inglês! Um funcionário do Southampton foi apanhado nos arbustos a filmar o treino do Middlesbrough antes da semi-final dos play-offs. O EFL abriu processo disciplinar. Vários clubes exigem a expulsão dos play-offs. Treinador Tonda Eckert saiu furioso da conferência de imprensa. Decisão esperada para segunda-feira.',
-      category: 'ESCÂNDALO',
+      title: 'TOTTENHAM vs LEEDS: Spurs em casa com Son e Maddison em forma — Tips e Análise!',
+      excerpt: 'Tottenham recebe o Leeds United às 16:00 na Premier League. Spurs em casa: 9 vitórias em 13 jogos. Leeds recém-promovido da Championship com a pior defesa dos promovidos (62 golos sofridos). BET 214: Tottenham Vence @1.72. BET 215: Over 2.5 Golos @1.85. Son e Maddison são as ameaças principais.',
+      category: 'TIPS DE APOSTAS',
       readTime: '4 min',
       date: formatToday,
       source: 'AliveGoal',
