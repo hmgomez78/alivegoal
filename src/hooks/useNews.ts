@@ -166,8 +166,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS PREMIER LEAGUE: Arsenal na luta pelo título após vitória polémica sobre o West Ham',
-      excerpt: 'O Arsenal sobreviveu a um susto contra o West Ham (1-0) com um golo anulado pelo VAR no último minuto. A equipa de Arteta mantém a pressão na liderança. BET 301: Arsenal Vence o próximo jogo @1.45. BET 302: Saka a marcar @2.10. A corrida pelo título está ao rubro!',
+      title: 'TIPS PREMIER LEAGUE: Arsenal na luta pelo título após vitória sobre o West Ham (0-1)',
+      excerpt: 'O Arsenal venceu o West Ham por 0-1 (fora de casa) com um golo anulado pelo VAR no último minuto que gerou polémica. West Ham 0-1 Arsenal — a equipa de Arteta mantém a pressão na liderança. BET 301: Arsenal Vence o próximo jogo @1.45. BET 302: Saka a marcar @2.10. A corrida pelo título está ao rubro!',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
