@@ -86,21 +86,21 @@ const TODAYS_TIP_TEAMS = [
   "Rio Ave", "Sporting CP",
 ];
 
-// Fallback data com jogos reais (atualizado 11/05/2026)
+// Fallback data com jogos reais (atualizado 11/05/2026 — verificado FlashScore)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1560001, homeTeam: "Tottenham", awayTeam: "Leeds United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560002, homeTeam: "Benfica", awayTeam: "Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560003, homeTeam: "Rio Ave", awayTeam: "Sporting CP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560001, homeTeam: "Tottenham", awayTeam: "Leeds United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Premier League", leagueId: 2021 },
+  { id: 1560002, homeTeam: "Benfica", awayTeam: "Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560003, homeTeam: "Rio Ave", awayTeam: "Sporting CP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
   // Outros jogos importantes de hoje
-  { id: 1560004, homeTeam: "Brentford", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560005, homeTeam: "Man City", awayTeam: "Bournemouth", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560006, homeTeam: "Famalicão", awayTeam: "Porto", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560007, homeTeam: "Vitória SC", awayTeam: "Estoril", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560008, homeTeam: "Flamengo", awayTeam: "Ind. Medellín", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Copa Libertadores", leagueId: 2152 },
-  { id: 1560009, homeTeam: "Peñarol", awayTeam: "Estudiantes", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "Copa Libertadores", leagueId: 2152 },
-  { id: 1560010, homeTeam: "Cracovia", awayTeam: "Radomiak", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Ekstraklasa", leagueId: 2106 },
+  { id: 1560004, homeTeam: "Napoli", awayTeam: "Bologna", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
+  { id: 1560005, homeTeam: "Rayo Vallecano", awayTeam: "Girona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "La Liga", leagueId: 2014 },
+  { id: 1560006, homeTeam: "Vitória Guimarães", awayTeam: "Casa Pia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560007, homeTeam: "Gil Vicente", awayTeam: "Arouca", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560008, homeTeam: "Santa Clara", awayTeam: "Nacional", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560009, homeTeam: "Millwall", awayTeam: "Hull City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Championship", leagueId: 2016 },
+  { id: 1560010, homeTeam: "Cerro Largo", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Copa Libertadores", leagueId: 2152 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {

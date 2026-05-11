@@ -158,7 +158,7 @@ function getFallbackNews(): NewsArticle[] {
     {
       id: 1,
       title: 'TIPS LIGA PORTUGAL: Benfica vs Braga e Rio Ave vs Sporting — Análise e Prognósticos!',
-      excerpt: 'Liga Portugal em destaque hoje! Benfica (Mourinho) recebe o Braga na luta pelo 2º lugar. BET 209: Benfica Vence @1.39 (80% confiança). BET 210: BTTS @1.80 (82% confiança). BET 211: Over 2.5 @1.65. Em paralelo, Rio Ave vs Sporting CP — Gyökeres (32 golos!) quer mais. BET 212: Sporting Vence @1.55. Acumulador Liga Portugal @2.15. Todos os jogos às 21:15!',
+      excerpt: 'Liga Portugal em destaque hoje! Benfica (Mourinho) recebe o Braga na luta pelo 2º lugar. BET 209: Benfica Vence @1.39 (80% confiança). BET 210: BTTS @1.80 (82% confiança). BET 211: Over 2.5 @1.65. Em paralelo, Rio Ave vs Sporting CP — Gyökeres quer mais golos. BET 212: Sporting Vence @1.55. Todos os jogos às 19:15!',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
@@ -166,8 +166,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'RESULTADOS DE ONTEM: Barcelona CAMPEÃO 2-0 Real Madrid, Milan 2-3 Atalanta, Arsenal 2-0 West Ham!',
-      excerpt: 'Domingo histórico no futebol europeu! Barcelona campeão da La Liga após goleada no Clásico — Rashford e Ferran Torres decidiram. Atalanta surpreende o Milan em San Siro e coloca a Champions em risco. Arsenal confirma 2º lugar. Wolfsburg 0-2 Bayern Munich — Kane com mais um golo. Lazio 1-2 Inter. Resultados completos no site.',
+      title: 'RESULTADOS DE ONTEM: Barcelona CAMPEÃO, Milan 2-3 Atalanta, Arsenal 1-0 West Ham!',
+      excerpt: 'Domingo histórico no futebol europeu! Barcelona campeão da La Liga. Atalanta surpreende o Milan em San Siro. Arsenal venceu o West Ham por 1-0 com golo de Saka e consolida o 2º lugar na Premier League. Wolfsburg 0-2 Bayern Munich — Kane decisivo. Resultados completos no site.',
       category: 'ÚLTIMA HORA',
       readTime: '4 min',
       date: formatYesterday,
@@ -175,8 +175,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'CHAMPIONS LEAGUE AMANHÃ: PSG vs Arsenal e Inter vs Atlético — Análise completa!',
-      excerpt: 'As meias-finais da Champions League decidem-se amanhã! PSG recebe o Arsenal (Arsenal ganhou 1-0 na 1ª mão). PSG eliminou o Bayern 6-5 no agregado. Inter recebe o Atlético (1-1 na 1ª mão). BET: Arsenal Qualifica-se @1.90. BET: Inter Qualifica-se @1.75. Acumulador Arsenal + Inter = @3.52. Análise tática detalhada disponível!',
+      title: 'FINAL DA CHAMPIONS LEAGUE: PSG vs Arsenal a 30 de Maio em Budapeste!',
+      excerpt: 'A final da UEFA Champions League 2025/26 está confirmada: PSG vs Arsenal a 30 de maio no Puskás Aréna, Budapeste. PSG eliminou o Bayern Munich 6-5 no agregado. Arsenal eliminou o Inter de Milão. Primeira final europeia do Arsenal desde 2006. Odds: PSG @2.10, Arsenal @1.75. Análise tática completa disponível!',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
@@ -185,7 +185,7 @@ function getFallbackNews(): NewsArticle[] {
     {
       id: 4,
       title: 'BENFICA vs BRAGA: Mourinho precisa de vencer para garantir a Champions League!',
-      excerpt: 'José Mourinho enfrenta o Braga numa batalha crucial pelo 2º lugar e a qualificação para a Champions League. Benfica está invicto há 47 jogos na Liga Portugal. Braga vem de derrota pesada na Europa League (1-3 vs Freiburg). Pavlidis com 24 golos na época. Benfica venceu 8 dos últimos 9 jogos em casa. Jogo às 21:15 no Estádio da Luz.',
+      excerpt: 'José Mourinho enfrenta o Braga numa batalha crucial pelo 2º lugar e a qualificação para a Champions League. Benfica está invicto há 47 jogos na Liga Portugal. Braga vem de derrota pesada na Europa League. Pavlidis com 24 golos na época. Benfica venceu 8 dos últimos 9 jogos em casa. Jogo às 19:15 no Estádio da Luz.',
       category: 'PRÉ-JOGO',
       readTime: '5 min',
       date: formatToday,
@@ -203,7 +203,7 @@ function getFallbackNews(): NewsArticle[] {
     {
       id: 6,
       title: 'TOTTENHAM vs LEEDS: Spurs em casa com Son e Maddison em forma — Tips e Análise!',
-      excerpt: 'Tottenham recebe o Leeds United às 16:00 na Premier League. Spurs em casa: 9 vitórias em 13 jogos. Leeds recém-promovido da Championship com a pior defesa dos promovidos (62 golos sofridos). BET 214: Tottenham Vence @1.72. BET 215: Over 2.5 Golos @1.85. Son e Maddison são as ameaças principais.',
+      excerpt: 'Tottenham recebe o Leeds United às 19:00 na Premier League. Spurs em casa: 9 vitórias em 13 jogos. Leeds recém-promovido da Championship com a pior defesa dos promovidos (62 golos sofridos). BET 214: Tottenham Vence @1.72. BET 215: Over 2.5 Golos @1.85. Son e Maddison são as ameaças principais.',
       category: 'TIPS DE APOSTAS',
       readTime: '4 min',
       date: formatToday,
