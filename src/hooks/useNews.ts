@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026 (Tarde)
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026 (Noite)
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -163,24 +163,6 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS PREMIER LEAGUE: Mbappé no Liverpool? Como as odds do título podem mudar',
-      excerpt: 'Os rumores de que Kylian Mbappé pode trocar o caos do Real Madrid pelo Liverpool estão a agitar o mercado. Se a transferência se confirmar, as odds dos Reds para vencer a Premier League na próxima época vão cair drasticamente. Analisamos o valor de apostar no Liverpool a longo prazo.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '4 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE TÁTICA: A renovação de Hansi Flick e o futuro do Barcelona',
-      excerpt: 'Hansi Flick renovou até 2028 após guiar o Barcelona ao título da La Liga. Analisamos a evolução tática da equipa sob o comando do alemão, a aposta na formação (com Lamine Yamal em destaque) e como o Barça se prepara para dominar o futebol espanhol nos próximos anos.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
       title: 'ESCÂNDALO: O "Spygate" do Southampton e as consequências nos Playoffs',
       excerpt: 'O Southampton foi acusado de espiar os treinos do Middlesbrough antes da meia-final dos playoffs do Championship. Com a ameaça de expulsão a pairar, analisamos os precedentes legais na EFL e como este caso pode alterar completamente a luta pela subida à Premier League.',
       category: 'ESCÂNDALO',
@@ -189,19 +171,37 @@ function getFallbackNews(): NewsArticle[] {
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'TIPS LA LIGA: A rivalidade Yamal vs Bellingham e o impacto no El Clásico',
-      excerpt: 'A troca de farpas entre Lamine Yamal e Jude Bellingham após a vitória do Barcelona no El Clásico mostra que a rivalidade está mais viva que nunca. Analisamos o impacto psicológico destes confrontos e como apostar nos próximos duelos entre as duas maiores promessas do futebol mundial.',
+      id: 3,
+      title: 'ANÁLISE TÁTICA: A coragem de Lamine Yamal e o significado da bandeira da Palestina',
+      excerpt: 'O gesto de Lamine Yamal durante o desfile do Barcelona gerou controvérsia global. Analisamos o impacto político e social da atitude do jovem talento, a reação do clube e como o ativismo dos jogadores está a moldar a imagem do futebol moderno.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TIPS CHAMPIONS LEAGUE: Como a lesão de Ben White muda as odds da final',
+      excerpt: 'A ausência confirmada de Ben White na final da Champions League é um golpe duro para o Arsenal. Analisamos como esta lesão afeta as dinâmicas defensivas dos Gunners e como as casas de apostas estão a ajustar as odds a favor do PSG de Luis Enrique.',
       category: 'TIPS DE APOSTAS',
       readTime: '4 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ANÁLISE: O falhanço da FIFA nos direitos televisivos do Mundial 2026',
-      excerpt: 'A um mês do Mundial 2026, a FIFA ainda não tem acordos de transmissão na China e na Índia. Analisamos as razões deste impasse comercial, o impacto financeiro para a organização e as consequências para a visibilidade global do torneio mais alargado de sempre.',
+      id: 5,
+      title: 'ANÁLISE TÁTICA: O que Xabi Alonso pode trazer ao Chelsea',
+      excerpt: 'Com Xabi Alonso apontado como o favorito para assumir o Chelsea, analisamos o estilo de jogo do treinador espanhol. Como o seu sistema de posse e pressão alta se encaixaria no plantel dos Blues e quais os jogadores que mais beneficiariam com a sua chegada.',
       category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TIPS SAUDI PRO LEAGUE: Al Nassr vs Al Hilal e o impacto da exaustão de Ronaldo',
+      excerpt: 'A revelação de que Cristiano Ronaldo vomitou de exaustão após o último jogo levanta dúvidas sobre a sua condição física para o clássico contra o Al Hilal. Analisamos as odds para o jogo e se o Al Nassr tem capacidade para vencer sem o seu capitão a 100%.',
+      category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
