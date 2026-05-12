@@ -79,32 +79,32 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (11/05/2026) — aparecem primeiro
+// Jogos com tips hoje (12/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Tottenham", "Leeds United",
-  "Benfica", "Braga",
-  "Rio Ave", "Sporting CP",
+  "Osasuna", "Atl. Madrid",
+  "Southampton", "Middlesbrough",
+  "Al Nassr", "Al Hilal",
 ];
 
-// Fallback data com jogos reais (atualizado 11/05/2026 — verificado FlashScore)
+// Fallback data com jogos reais (atualizado 12/05/2026 — verificado FlashScore)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1560001, homeTeam: "Tottenham", awayTeam: "Leeds United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Premier League", leagueId: 2021 },
-  { id: 1560002, homeTeam: "Benfica", awayTeam: "Braga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560003, homeTeam: "Rio Ave", awayTeam: "Sporting CP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 1560001, homeTeam: "Osasuna", awayTeam: "Atl. Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "La Liga", leagueId: 2014 },
+  { id: 1560002, homeTeam: "Southampton", awayTeam: "Middlesbrough", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Championship", leagueId: 2016 },
+  { id: 1560003, homeTeam: "Al Nassr", awayTeam: "Al Hilal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Saudi Pro League", leagueId: 2025 },
   // Outros jogos importantes de hoje
-  { id: 1560004, homeTeam: "Napoli", awayTeam: "Bologna", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
-  { id: 1560005, homeTeam: "Rayo Vallecano", awayTeam: "Girona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "La Liga", leagueId: 2014 },
-  { id: 1560006, homeTeam: "Vitória Guimarães", awayTeam: "Casa Pia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560007, homeTeam: "Gil Vicente", awayTeam: "Arouca", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560008, homeTeam: "Santa Clara", awayTeam: "Nacional", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:15", league: "Liga Portugal", leagueId: 2017 },
-  { id: 1560009, homeTeam: "Millwall", awayTeam: "Hull City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Championship", leagueId: 2016 },
-  { id: 1560010, homeTeam: "Cerro Largo", awayTeam: "Peñarol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Copa Libertadores", leagueId: 2152 },
+  { id: 1560004, homeTeam: "Celta Vigo", awayTeam: "Levante", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "La Liga", leagueId: 2014 },
+  { id: 1560005, homeTeam: "Betis", awayTeam: "Elche", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
+  { id: 1560006, homeTeam: "Al Kholood", awayTeam: "Al Okhdood", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:20", league: "Saudi Pro League", leagueId: 2025 },
+  { id: 1560007, homeTeam: "Belgrano", awayTeam: "Union de Santa Fe", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Liga Profesional", leagueId: 2026 },
+  { id: 1560008, homeTeam: "Red Star", awayTeam: "Rodez", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Ligue 1", leagueId: 2015 },
+  { id: 1560009, homeTeam: "USM Alger", awayTeam: "Mostaganem", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Ligue 1", leagueId: 2015 },
+  { id: 1560010, homeTeam: "Saoura", awayTeam: "CR Belouizdad", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Ligue 1", leagueId: 2015 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Benfica", awayTeam: "Braga",
+  homeTeam: "Osasuna", awayTeam: "Atl. Madrid",
   homeScore: 0, awayScore: 0,
   stats: {
     possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
