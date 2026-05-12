@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 11/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -157,8 +157,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Hansi Flick transformou o Barcelona em Campeão da La Liga',
-      excerpt: 'O Barcelona conquistou a La Liga com uma vitória por 2-0 no El Clásico. Analisamos a revolução tática de Hansi Flick: pressão alta, intensidade constante e a reinvenção de jogadores chave. O impacto do golo de livre de Rashford e a solidez defensiva que garantiu o título.',
+      title: 'ANÁLISE TÁTICA: O FC Porto de Villas-Boas e a conquista do 31º título nacional',
+      excerpt: 'O FC Porto sagrou-se campeão nacional sob a presidência de André Villas-Boas. Analisamos a solidez defensiva da equipa, o impacto das contratações de inverno e como a estrutura tática superou o Sporting e o Benfica na reta final da Liga Portugal. Um título construído na consistência.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -166,26 +166,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS PREMIER LEAGUE: Arsenal na luta pelo título após vitória sobre o West Ham (0-1)',
-      excerpt: 'O Arsenal venceu o West Ham por 0-1 (fora de casa) com um golo anulado pelo VAR no último minuto que gerou polémica. West Ham 0-1 Arsenal — a equipa de Arteta mantém a pressão na liderança. BET 301: Arsenal Vence o próximo jogo @1.45. BET 302: Saka a marcar @2.10. A corrida pelo título está ao rubro!',
+      title: 'TIPS PREMIER LEAGUE: Arsenal vs Man City — Onde apostar na corrida ao título?',
+      excerpt: 'O Arsenal lidera com 5 pontos de avanço, mas o Man City tem um jogo a menos. BET 401: Man City Vence a Premier League @1.85 (valor de mercado). BET 402: Arsenal Vence o próximo jogo @1.40. BET 403: Empate na última jornada Arsenal @3.50. Oportunidades reais na reta final!',
       category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'MERCADO DE TRANSFERÊNCIAS: O impacto de Otamendi no River Plate e o futuro do Benfica',
-      excerpt: 'Nicolás Otamendi está a caminho do River Plate após o Mundial de 2026. O que significa isto para a defesa do Benfica? Analisamos os possíveis substitutos e o impacto financeiro da saída do capitão. O Benfica precisa de reforçar o eixo defensivo para a próxima temporada.',
-      category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'MERCADO: Rashford e a cláusula de €30M — O que acontece se o Barcelona não pagar?',
+      excerpt: 'Marcus Rashford quer ficar no Barcelona, mas o clube catalão hesita em pagar 30 milhões de euros ao Manchester United. Analisamos os cenários possíveis: regresso a Old Trafford, terceiro clube, ou negociação de desconto. O prazo é 15 de junho. O tempo está a esgotar-se.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'CRISE NO REAL MADRID: As consequências da exclusão de Mbappé e a perda do título',
-      excerpt: 'A derrota no El Clásico e a exclusão de Kylian Mbappé por motivos disciplinares mergulharam o Real Madrid numa crise profunda. Analisamos o impacto no balneário, a pressão sobre a direção e as possíveis mudanças no plantel para a próxima época. Uma semana para esquecer em Madrid.',
+      title: 'O FUTURO DO BENFICA: Marco Silva como sucessor de Mourinho — O que esperar?',
+      excerpt: 'Com Mourinho cada vez mais perto do Real Madrid, o Benfica prepara a sucessão. Marco Silva, atual treinador do Fulham, é o favorito. Analisamos o seu estilo de jogo, os resultados no futebol inglês e como poderia transformar a equipa encarnada para a próxima temporada.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
@@ -193,8 +193,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TIPS LIGA PORTUGAL: Sporting perto do título e o impacto da possível chegada de Zalazar',
-      excerpt: 'O Sporting CP está a um passo de garantir Rodrigo Zalazar por 30 milhões de euros. Como o médio uruguaio pode encaixar no sistema de Rúben Amorim? BET 305: Sporting Vence e Over 2.5 @1.85. BET 306: Gyökeres a marcar @1.60. O leão prepara-se para atacar a próxima época em força.',
+      title: 'TIPS CHAMPIONS LEAGUE FINAL: Arsenal vs PSG — Análise e prognósticos para Budapeste',
+      excerpt: 'A final da Champions League está definida: Arsenal vs PSG em Budapeste a 30 de maio. BET 405: PSG Vence o Troféu @1.95. BET 406: BTTS (Ambas Marcam) @1.75. BET 407: Arsenal Vence nos 90min @2.10. Analisamos as odds iniciais e onde está o verdadeiro valor nesta final histórica.',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -202,8 +202,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'O NOVO CHELSEA DE XABI ALONSO: O que esperar se o espanhol assumir o comando',
-      excerpt: 'Com conversas "positivas" em andamento, Xabi Alonso pode ser o próximo treinador do Chelsea. Analisamos o seu estilo de jogo no Bayer Leverkusen e como ele poderia transformar o plantel dos Blues. Uma mudança tática radical a caminho de Stamford Bridge?',
+      title: 'A REVOLUÇÃO NO CHELSEA: Como Xabi Alonso pode transformar os Blues em campeões',
+      excerpt: 'Xabi Alonso abriu as portas ao Chelsea. O treinador espanhol, conhecido pelo seu futebol ofensivo e posse de bola no Bayer Leverkusen, pode ser a peça que falta em Stamford Bridge. Analisamos o seu sistema tático e quais jogadores do atual plantel beneficiariam mais com a sua chegada.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: formatToday,
