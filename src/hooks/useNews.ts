@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026 (Tarde)
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -154,17 +154,17 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: Como o Arsenal de Arteta se tornou o favorito ao título da Premier League',
-      excerpt: 'Com uma vantagem de 5 pontos sobre o Man City, analisamos a evolução tática dos Gunners. A solidez defensiva e a criatividade de Odegaard e Saka têm sido fundamentais. O jogo contra o West Ham provou que a equipa sabe sofrer. Será este o ano do regresso à glória?',
-      category: 'ANÁLISE TÁTICA',
+      title: 'ANÁLISE: O impacto do escândalo das "Escort Parties" no balneário do AC Milan',
+      excerpt: 'Com Theo Hernández e outras estrelas do Milan envolvidas num escândalo de festas ilegais e "gás do riso", analisamos como esta crise pode destruir a estabilidade da equipa. A direção promete sanções pesadas, e o impacto no rendimento desportivo na reta final da Serie A pode ser devastador.',
+      category: 'ESCÂNDALO',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'TIPS JUVENTUS: Bernardo Silva a caminho de Turim? Impacto nas odds da Serie A',
-      excerpt: 'A Juventus está otimista na contratação de Bernardo Silva a custo zero. O agente Jorge Mendes tem reuniões marcadas. Se o negócio se concretizar, as odds da Juve para vencer a Serie A na próxima época vão cair a pique. Apostar agora na Juve a longo prazo pode ter muito valor!',
+      title: 'TIPS PREMIER LEAGUE: Mbappé no Liverpool? Como as odds do título podem mudar',
+      excerpt: 'Os rumores de que Kylian Mbappé pode trocar o caos do Real Madrid pelo Liverpool estão a agitar o mercado. Se a transferência se confirmar, as odds dos Reds para vencer a Premier League na próxima época vão cair drasticamente. Analisamos o valor de apostar no Liverpool a longo prazo.',
       category: 'TIPS DE APOSTAS',
       readTime: '4 min',
       date: formatToday,
@@ -172,37 +172,37 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ESCÂNDALO BOTAFOGO: Terceiro "Transfer Ban" da FIFA afunda o clube',
-      excerpt: 'O Botafogo sofreu o terceiro "transfer ban" da FIFA por dívidas ao Atlanta United na transferência de Thiago Almada. O clube está proibido de inscrever jogadores por tempo indeterminado. Uma crise diretiva que pode comprometer toda a época do Fogão no Brasileirão.',
-      category: 'ESCÂNDALO',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ANÁLISE: O que Xabi Alonso pode trazer ao Chelsea?',
-      excerpt: 'Com o Chelsea a explorar a contratação de Xabi Alonso, analisamos como o seu sistema de 3-4-2-1 se encaixaria no plantel dos Blues. Jogadores como Enzo Fernández e Reece James poderiam beneficiar imenso do estilo de posse e controlo do técnico espanhol.',
+      title: 'ANÁLISE TÁTICA: A renovação de Hansi Flick e o futuro do Barcelona',
+      excerpt: 'Hansi Flick renovou até 2028 após guiar o Barcelona ao título da La Liga. Analisamos a evolução tática da equipa sob o comando do alemão, a aposta na formação (com Lamine Yamal em destaque) e como o Barça se prepara para dominar o futebol espanhol nos próximos anos.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'MUNDIAL 2026: A polémica lista da Argentina e a ausência de estrelas',
-      excerpt: 'Lionel Scaloni divulgou a lista preliminar de 55 jogadores da Argentina para o Mundial 2026. As escolhas geraram enorme debate no país, com várias ausências notáveis. Analisamos as opções do selecionador e como a equipa se vai estruturar para defender o título.',
-      category: 'ANÁLISE TÁTICA',
+      id: 4,
+      title: 'ESCÂNDALO: O "Spygate" do Southampton e as consequências nos Playoffs',
+      excerpt: 'O Southampton foi acusado de espiar os treinos do Middlesbrough antes da meia-final dos playoffs do Championship. Com a ameaça de expulsão a pairar, analisamos os precedentes legais na EFL e como este caso pode alterar completamente a luta pela subida à Premier League.',
+      category: 'ESCÂNDALO',
       readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TIPS CHAMPIONS: PSG vs Arsenal — Quem é o favorito na final de Budapeste?',
-      excerpt: 'A final da Champions League está definida. O PSG, atual campeão, defronta um Arsenal faminto. As casas de apostas dão um ligeiro favoritismo aos parisienses (@2.10), mas o Arsenal (@2.80) tem valor. Analisamos os confrontos diretos e as melhores apostas para o jogo do ano.',
+      id: 5,
+      title: 'TIPS LA LIGA: A rivalidade Yamal vs Bellingham e o impacto no El Clásico',
+      excerpt: 'A troca de farpas entre Lamine Yamal e Jude Bellingham após a vitória do Barcelona no El Clásico mostra que a rivalidade está mais viva que nunca. Analisamos o impacto psicológico destes confrontos e como apostar nos próximos duelos entre as duas maiores promessas do futebol mundial.',
       category: 'TIPS DE APOSTAS',
       readTime: '4 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ANÁLISE: O falhanço da FIFA nos direitos televisivos do Mundial 2026',
+      excerpt: 'A um mês do Mundial 2026, a FIFA ainda não tem acordos de transmissão na China e na Índia. Analisamos as razões deste impasse comercial, o impacto financeiro para a organização e as consequências para a visibilidade global do torneio mais alargado de sempre.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
