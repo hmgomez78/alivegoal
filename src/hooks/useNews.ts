@@ -146,7 +146,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e resultados — 12/05/2026 (Noite)
+// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e contexto — 13/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -154,55 +154,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: O impacto do escândalo das "Escort Parties" no balneário do AC Milan',
-      excerpt: 'Com Theo Hernández e outras estrelas do Milan envolvidas num escândalo de festas ilegais e "gás do riso", analisamos como esta crise pode destruir a estabilidade da equipa. A direção promete sanções pesadas, e o impacto no rendimento desportivo na reta final da Serie A pode ser devastador.',
-      category: 'ESCÂNDALO',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: O "Spygate" do Southampton e as consequências nos Playoffs',
-      excerpt: 'O Southampton foi acusado de espiar os treinos do Middlesbrough antes da meia-final dos playoffs do Championship. Com a ameaça de expulsão a pairar, analisamos os precedentes legais na EFL e como este caso pode alterar completamente a luta pela subida à Premier League.',
-      category: 'ESCÂNDALO',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE TÁTICA: A coragem de Lamine Yamal e o significado da bandeira da Palestina',
-      excerpt: 'O gesto de Lamine Yamal durante o desfile do Barcelona gerou controvérsia global. Analisamos o impacto político e social da atitude do jovem talento, a reação do clube e como o ativismo dos jogadores está a moldar a imagem do futebol moderno.',
+      title: 'ANÁLISE TÁTICA: O que muda no Real Madrid com Mourinho — o sistema, os jogadores e a filosofia',
+      excerpt: 'O regresso de Mourinho ao Bernabéu é a maior notícia do futebol europeu. Analisamos como o técnico português vai reorganizar o Real Madrid: o provável 4-2-3-1, o papel de Mbappé no novo sistema, e quais os jogadores atuais que sobrevivem à revolução. Mourinho já exigiu três contratações específicas para aceitar o cargo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'TIPS CHAMPIONS LEAGUE: Como a lesão de Ben White muda as odds da final',
-      excerpt: 'A ausência confirmada de Ben White na final da Champions League é um golpe duro para o Arsenal. Analisamos como esta lesão afeta as dinâmicas defensivas dos Gunners e como as casas de apostas estão a ajustar as odds a favor do PSG de Luis Enrique.',
+      id: 2,
+      title: 'TIPS PREMIER LEAGUE: Arsenal campeão? As odds e os cenários para as últimas 2 jornadas',
+      excerpt: 'Com 4 pontos de vantagem sobre o Manchester City e apenas 2 jogos restantes, o Arsenal está a um passo do título da Premier League. Analisamos os cenários matemáticos, as odds das casas de apostas e qual o resultado mínimo que os Gunners precisam no próximo jogo para garantir o campeonato.',
       category: 'TIPS DE APOSTAS',
-      readTime: '4 min',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'ANÁLISE: O "Caso Negreira" explicado — o maior escândalo de corrupção na história do futebol espanhol',
+      excerpt: 'Florentino Pérez voltou a agitar o futebol espanhol ao acusar o Barcelona de pagar árbitros durante mais de 20 anos. Explicamos o "Caso Negreira" desde o início: quem é José María Enríquez Negreira, quanto dinheiro foi pago, e quais as possíveis consequências desportivas e legais para o clube catalão.',
+      category: 'ESCÂNDALO',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TRANSFERÊNCIAS: Man United quer Éderson da Atalanta — o médio que pode transformar Old Trafford',
+      excerpt: 'O Manchester United identificou Éderson, médio defensivo da Atalanta, como prioridade para a janela de verão. O CEO da Atalanta negou abordagem formal, mas o jogador brasileiro de 26 anos é apontado como o substituto ideal para Casemiro. Analisamos o perfil do jogador e o impacto que pode ter na reconstrução dos Red Devils.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'ANÁLISE TÁTICA: O que Xabi Alonso pode trazer ao Chelsea',
-      excerpt: 'Com Xabi Alonso apontado como o favorito para assumir o Chelsea, analisamos o estilo de jogo do treinador espanhol. Como o seu sistema de posse e pressão alta se encaixaria no plantel dos Blues e quais os jogadores que mais beneficiariam com a sua chegada.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TIPS CHAMPIONS LEAGUE FINAL: PSG vs Arsenal — análise completa e as melhores apostas para 30 de maio',
+      excerpt: 'A final da Champions League entre PSG e Arsenal promete ser um espetáculo épico. Analisamos os pontos fortes e fracos de cada equipa, o impacto das lesões (Ben White está fora), as estatísticas head-to-head e as odds mais atrativas disponíveis nas principais casas de apostas para o jogo em Budapeste.',
+      category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TIPS SAUDI PRO LEAGUE: Al Nassr vs Al Hilal e o impacto da exaustão de Ronaldo',
-      excerpt: 'A revelação de que Cristiano Ronaldo vomitou de exaustão após o último jogo levanta dúvidas sobre a sua condição física para o clássico contra o Al Hilal. Analisamos as odds para o jogo e se o Al Nassr tem capacidade para vencer sem o seu capitão a 100%.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
+      title: 'ANÁLISE: Real Betis regressa à Champions League após 20 anos — o renascimento de um gigante adormecido',
+      excerpt: 'O Real Betis garantiu o 5.º lugar na LaLiga e regressa à Champions League pela primeira vez em 20 anos. Analisamos a evolução tática do clube sevilhano, o papel fundamental de Isco e Fekir nesta campanha histórica, e o que esperar dos Verdiblancos na próxima edição da Liga dos Campeões.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
