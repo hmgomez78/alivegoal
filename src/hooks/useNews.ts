@@ -52,21 +52,17 @@ async function fetchTrendingNews(): Promise<NewsArticle[]> {
 
 // Tornar os títulos mais dramáticos e impactantes
 function dramatizeTitle(title: string): string {
-  // Remove HTML tags
   const clean = title.replace(/<[^>]*>/g, '').trim();
   
-  // Adicionar drama se o título for muito neutro
   const dramaticPrefixes = [
     'BOMBA: ', 'CHOQUE: ', 'INACREDITÁVEL: ', 'URGENTE: ', 
     'EXCLUSIVO: ', 'REVELAÇÃO: ', 'CAOS: ', 'HISTÓRICO: '
   ];
   
-  // Se o título já tem impacto, manter
   if (clean.includes('!') || clean.includes('BREAKING') || clean.length > 80) {
     return clean.substring(0, 100);
   }
   
-  // Adicionar prefixo dramático aleatório (30% das vezes)
   if (Math.random() < 0.3) {
     const prefix = dramaticPrefixes[Math.floor(Math.random() * dramaticPrefixes.length)];
     return prefix + clean.substring(0, 80);
@@ -76,11 +72,9 @@ function dramatizeTitle(title: string): string {
 }
 
 function dramatizeExcerpt(text: string): string {
-  // Remove HTML tags and limit length
   const clean = text.replace(/<[^>]*>/g, '').trim();
   const shortened = clean.substring(0, 150);
   
-  // Adicionar frases de impacto no final
   const endings = [
     '... O mundo do futebol está em choque!',
     '... Ninguém esperava isto!',
@@ -100,7 +94,6 @@ function dramatizeExcerpt(text: string): string {
 
 function assignCategory(title: string, categories: string[]): string {
   const titleLower = title.toLowerCase();
-  const catStr = categories.join(' ').toLowerCase();
   
   if (titleLower.includes('transfer') || titleLower.includes('sign') || titleLower.includes('deal')) {
     return 'TRANSFERÊNCIAS';
@@ -118,7 +111,7 @@ function assignCategory(title: string, categories: string[]): string {
     return 'ESCÂNDALO';
   }
   
-  return CATEGORIES[Math.floor(Math.random() * 3)]; // ÚLTIMA HORA, ANÁLISE TÁTICA, ou TIPS
+  return CATEGORIES[Math.floor(Math.random() * 3)];
 }
 
 function formatDate(dateStr: string): string {
@@ -146,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — conteúdo DIFERENTE do Trending: análises, tips e contexto — 13/05/2026
+// Notícias de fallback — análises, tips e contexto — 13/05/2026 (Manhã)
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -154,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O que muda no Real Madrid com Mourinho — o sistema, os jogadores e a filosofia',
-      excerpt: 'O regresso de Mourinho ao Bernabéu é a maior notícia do futebol europeu. Analisamos como o técnico português vai reorganizar o Real Madrid: o provável 4-2-3-1, o papel de Mbappé no novo sistema, e quais os jogadores atuais que sobrevivem à revolução. Mourinho já exigiu três contratações específicas para aceitar o cargo.',
+      title: 'ANÁLISE TÁTICA: O sistema de Mourinho no Real Madrid — como o 4-2-3-1 vai transformar o Bernabéu',
+      excerpt: 'Com o regresso confirmado de Mourinho ao Real Madrid, analisamos o sistema tático preferido do "Special One". O 4-2-3-1 compacto, a importância do médio defensivo e como Mbappé se encaixa no novo esquema. Mourinho já pediu Olise, Yıldız e um médio de destruição — os alvos revelam muito sobre o seu plano de jogo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
@@ -163,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS PREMIER LEAGUE: Arsenal campeão? As odds e os cenários para as últimas 2 jornadas',
-      excerpt: 'Com 4 pontos de vantagem sobre o Manchester City e apenas 2 jogos restantes, o Arsenal está a um passo do título da Premier League. Analisamos os cenários matemáticos, as odds das casas de apostas e qual o resultado mínimo que os Gunners precisam no próximo jogo para garantir o campeonato.',
+      title: 'TIPS HOJE: Lens vs PSG — PSG pode ser campeão esta noite. Análise e melhores apostas',
+      excerpt: 'O PSG joga em Lens esta noite e um empate basta para ser campeão de França. Luis Enrique deve rodar o plantel com a final da Champions em mente. Analisamos as odds, o histórico recente entre as equipas e as melhores apostas para este duelo de topo da Ligue 1. Dembélé e Kvaratskhelia são os jogadores a seguir.',
       category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: formatToday,
@@ -172,37 +165,37 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE: O "Caso Negreira" explicado — o maior escândalo de corrupção na história do futebol espanhol',
-      excerpt: 'Florentino Pérez voltou a agitar o futebol espanhol ao acusar o Barcelona de pagar árbitros durante mais de 20 anos. Explicamos o "Caso Negreira" desde o início: quem é José María Enríquez Negreira, quanto dinheiro foi pago, e quais as possíveis consequências desportivas e legais para o clube catalão.',
-      category: 'ESCÂNDALO',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: Man United quer Éderson da Atalanta — o médio que pode transformar Old Trafford',
-      excerpt: 'O Manchester United identificou Éderson, médio defensivo da Atalanta, como prioridade para a janela de verão. O CEO da Atalanta negou abordagem formal, mas o jogador brasileiro de 26 anos é apontado como o substituto ideal para Casemiro. Analisamos o perfil do jogador e o impacto que pode ter na reconstrução dos Red Devils.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS CHAMPIONS LEAGUE FINAL: PSG vs Arsenal — análise completa e as melhores apostas para 30 de maio',
-      excerpt: 'A final da Champions League entre PSG e Arsenal promete ser um espetáculo épico. Analisamos os pontos fortes e fracos de cada equipa, o impacto das lesões (Ben White está fora), as estatísticas head-to-head e as odds mais atrativas disponíveis nas principais casas de apostas para o jogo em Budapeste.',
+      title: 'TIPS HOJE: Lazio vs Inter — Final da Coppa Italia. Inzaghi regressa a Roma para conquistar o troféu',
+      excerpt: 'A final da Coppa Italia entre Lazio e Inter é o jogo mais especial da noite. O Inter é favorito claro após vencer o Lazio 3-0 na Serie A, mas o Lazio em casa é sempre perigoso. Analisamos as odds (Inter favorito a -159), as prováveis composições e as apostas de maior valor para esta final histórica.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ANÁLISE: Real Betis regressa à Champions League após 20 anos — o renascimento de um gigante adormecido',
-      excerpt: 'O Real Betis garantiu o 5.º lugar na LaLiga e regressa à Champions League pela primeira vez em 20 anos. Analisamos a evolução tática do clube sevilhano, o papel fundamental de Isco e Fekir nesta campanha histórica, e o que esperar dos Verdiblancos na próxima edição da Liga dos Campeões.',
+      id: 4,
+      title: 'ANÁLISE: Man City vs Crystal Palace — Guardiola sob pressão máxima. Derrota pode custar o título',
+      excerpt: 'O Manchester City recebe o Crystal Palace esta noite numa partida que pode decidir o título da Premier League. Uma derrota ou empate deixa o Arsenal praticamente campeão. Analisamos o estado de forma do City (3 vitórias consecutivas), as baixas do Crystal Palace e porque o City é favorito a -500 nas casas de apostas.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ESCÂNDALO: O "Caso Negreira" explicado — Barcelona pagou árbitros durante 20 anos?',
+      excerpt: 'Florentino Pérez voltou a agitar o futebol espanhol ao chamar o "Caso Negreira" o maior escândalo da história do futebol. Explicamos tudo: quem é Negreira, quanto dinheiro foi transferido, o que dizem os documentos e quais as possíveis consequências para o Barcelona na UEFA e nos tribunais espanhóis.',
+      category: 'ESCÂNDALO',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TRANSFERÊNCIAS: Endrick regressa ao Real Madrid — o prodígio brasileiro termina empréstimo no Lyon',
+      excerpt: 'Endrick vai realizar o seu último jogo pelo Lyon no domingo e regressará de imediato ao Real Madrid. O avançado brasileiro, de 19 anos, foi uma revelação na Ligue 1 com mais minutos jogados do que Dembélé. Com Mourinho no comando, qual será o papel de Endrick na próxima temporada? A concorrência com Mbappé é o grande tema.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
@@ -221,7 +214,6 @@ export function useNews() {
       if (trendingNews.length >= 4) {
         setNews(trendingNews.slice(0, 6));
       } else {
-        // Misturar trending com fallback
         const fallback = getFallbackNews();
         const mixed = [...trendingNews, ...fallback].slice(0, 6);
         setNews(mixed);
