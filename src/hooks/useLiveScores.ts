@@ -81,35 +81,35 @@ function getTeamLogo(team: any): string {
 
 // Jogos com tips hoje (13/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Man City", "Crystal Palace",
-  "Lens", "PSG",
-  "Lazio", "Inter",
-  "Alavés", "Barcelona",
-  "Villarreal", "Sevilla",
+  "Real Madrid", "Real Oviedo",
+  "Bradford City", "Bolton Wanderers",
+  "Valencia", "Rayo Vallecano",
+  "Girona", "Real Sociedad",
+  "Hamburger SV", "Freiburg",
 ];
 
-// Fallback data com jogos reais (atualizado 13/05/2026 — verificado LiveSoccerTV)
+// Fallback data com jogos reais (atualizado 14/05/2026 — verificado LiveSoccerTV)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1570001, homeTeam: "Man City", awayTeam: "Crystal Palace", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Premier League", leagueId: 2021 },
-  { id: 1570002, homeTeam: "Lazio", awayTeam: "Inter", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Coppa Italia Final", leagueId: 2019 },
-  { id: 1570003, homeTeam: "Lens", awayTeam: "PSG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Ligue 1", leagueId: 2015 },
-  { id: 1570004, homeTeam: "Alavés", awayTeam: "Barcelona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "La Liga", leagueId: 2014 },
-  { id: 1570005, homeTeam: "Villarreal", awayTeam: "Sevilla", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
+  { id: 1570001, homeTeam: "Real Madrid", awayTeam: "Real Oviedo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "La Liga", leagueId: 2014 },
+  { id: 1570002, homeTeam: "Bradford City", awayTeam: "Bolton Wanderers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "League One Play-offs", leagueId: 2016 },
+  { id: 1570003, homeTeam: "Valencia", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "La Liga", leagueId: 2014 },
+  { id: 1570004, homeTeam: "Girona", awayTeam: "Real Sociedad", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
+  { id: 1570005, homeTeam: "Hamburger SV", awayTeam: "Freiburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Bundesliga", leagueId: 2002 },
   // Outros jogos importantes de hoje
-  { id: 1570006, homeTeam: "Espanyol", awayTeam: "Athletic Club", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
-  { id: 1570007, homeTeam: "Getafe", awayTeam: "Mallorca", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "La Liga", leagueId: 2014 },
-  { id: 1570008, homeTeam: "Rangers", awayTeam: "Hibernian", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Scottish Premiership", leagueId: 2003 },
-  { id: 1570009, homeTeam: "Motherwell", awayTeam: "Celtic", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Scottish Premiership", leagueId: 2003 },
-  { id: 1570010, homeTeam: "Olympiakos", awayTeam: "Panathinaikos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Super League Grécia", leagueId: 2017 },
+  { id: 1570006, homeTeam: "Bayer Leverkusen", awayTeam: "Hamburger SV", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1570007, homeTeam: "Toulouse", awayTeam: "Lyon", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Ligue 1", leagueId: 2015 },
+  { id: 1570008, homeTeam: "Vitória", awayTeam: "Flamengo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa do Brasil", leagueId: 2022 },
+  { id: 1570009, homeTeam: "Chapecoense", awayTeam: "Botafogo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Copa do Brasil", leagueId: 2022 },
+  { id: 1570010, homeTeam: "Atlético-GO", awayTeam: "Athletico-PR", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa do Brasil", leagueId: 2022 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Man City", awayTeam: "Crystal Palace",
+  homeTeam: "Real Madrid", awayTeam: "Real Oviedo",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
