@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 13/05/2026 (Manhã)
+// Notícias de fallback — análises, tips e contexto — 14/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O sistema de Mourinho no Real Madrid — como o 4-2-3-1 vai transformar o Bernabéu',
-      excerpt: 'Com o regresso confirmado de Mourinho ao Real Madrid, analisamos o sistema tático preferido do "Special One". O 4-2-3-1 compacto, a importância do médio defensivo e como Mbappé se encaixa no novo esquema. Mourinho já pediu Olise, Yıldız e um médio de destruição — os alvos revelam muito sobre o seu plano de jogo.',
+      title: 'ANÁLISE: As consequências desportivas e financeiras do "Caso Negreira" para o Barcelona',
+      excerpt: 'Com a pressão de Florentino Pérez e do Real Madrid a aumentar, analisamos o que está em jogo para o Barcelona. A UEFA pode banir o clube das competições europeias? Qual o impacto financeiro de uma sanção severa? Especialistas em direito desportivo alertam que o clube catalão enfrenta a maior crise da sua história centenária.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'TIPS HOJE: Lens vs PSG — PSG pode ser campeão esta noite. Análise e melhores apostas',
-      excerpt: 'O PSG joga em Lens esta noite e um empate basta para ser campeão de França. Luis Enrique deve rodar o plantel com a final da Champions em mente. Analisamos as odds, o histórico recente entre as equipas e as melhores apostas para este duelo de topo da Ligue 1. Dembélé e Kvaratskhelia são os jogadores a seguir.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TIPS HOJE: Lazio vs Inter — Final da Coppa Italia. Inzaghi regressa a Roma para conquistar o troféu',
-      excerpt: 'A final da Coppa Italia entre Lazio e Inter é o jogo mais especial da noite. O Inter é favorito claro após vencer o Lazio 3-0 na Serie A, mas o Lazio em casa é sempre perigoso. Analisamos as odds (Inter favorito a -159), as prováveis composições e as apostas de maior valor para esta final histórica.',
+      title: 'TIPS DE APOSTAS: Como o escândalo "Spygate" afeta as odds da final dos Playoffs do Championship',
+      excerpt: 'O Southampton está sob investigação por espionagem ao Middlesbrough, e a incerteza já está a mexer com os mercados de apostas. Analisamos como as casas de apostas estão a reagir à possibilidade de expulsão do Southampton e quais as melhores oportunidades de valor para os apostadores mais atentos ao desenrolar deste drama.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'ANÁLISE: Man City vs Crystal Palace — Guardiola sob pressão máxima. Derrota pode custar o título',
-      excerpt: 'O Manchester City recebe o Crystal Palace esta noite numa partida que pode decidir o título da Premier League. Uma derrota ou empate deixa o Arsenal praticamente campeão. Analisamos o estado de forma do City (3 vitórias consecutivas), as baixas do Crystal Palace e porque o City é favorito a -500 nas casas de apostas.',
+      id: 3,
+      title: 'ANÁLISE TÁTICA: Como Anthony Gordon encaixa no sistema do Bayern Munique',
+      excerpt: 'Com a transferência de £55M praticamente fechada, dissecamos o impacto de Anthony Gordon no Bayern Munique. A sua velocidade e capacidade de drible vão revolucionar as alas bávaras. Como irá o treinador integrar o inglês no onze inicial e o que isto significa para jogadores como Leroy Sané e Kingsley Coman?',
       category: 'ANÁLISE TÁTICA',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TRANSFERÊNCIAS: O efeito dominó de Federico Valverde no mercado europeu',
+      excerpt: 'O conflito de Valverde no Real Madrid e o interesse do Manchester United podem desencadear um efeito dominó no mercado de transferências. Se o uruguaio rumar a Old Trafford, o Real Madrid terá de ir ao mercado por um substituto de peso. Analisamos os potenciais alvos de Florentino Pérez e como isto afeta outros gigantes europeus.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'ESCÂNDALO: O "Caso Negreira" explicado — Barcelona pagou árbitros durante 20 anos?',
-      excerpt: 'Florentino Pérez voltou a agitar o futebol espanhol ao chamar o "Caso Negreira" o maior escândalo da história do futebol. Explicamos tudo: quem é Negreira, quanto dinheiro foi transferido, o que dizem os documentos e quais as possíveis consequências para o Barcelona na UEFA e nos tribunais espanhóis.',
-      category: 'ESCÂNDALO',
-      readTime: '8 min',
+      title: 'TIPS DE APOSTAS: Mundial 2026 — As odds a longo prazo e os favoritos à vitória final',
+      excerpt: 'Com o Mundial 2026 a aproximar-se, as casas de apostas já começam a definir os favoritos. Analisamos as odds a longo prazo para a conquista do troféu nos Estados Unidos, México e Canadá. Quem são os dark horses e onde está o valor nas apostas antecipadas para o maior torneio de futebol do mundo?',
+      category: 'TIPS DE APOSTAS',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Endrick regressa ao Real Madrid — o prodígio brasileiro termina empréstimo no Lyon',
-      excerpt: 'Endrick vai realizar o seu último jogo pelo Lyon no domingo e regressará de imediato ao Real Madrid. O avançado brasileiro, de 19 anos, foi uma revelação na Ligue 1 com mais minutos jogados do que Dembélé. Com Mourinho no comando, qual será o papel de Endrick na próxima temporada? A concorrência com Mbappé é o grande tema.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '5 min',
+      title: 'ANÁLISE: O perfil de Jonathan Rowe e porque o Chelsea o vê como o novo Garnacho',
+      excerpt: 'O Chelsea está disposto a pagar 40 milhões de euros por Jonathan Rowe do Bologna. Analisamos o perfil do extremo de 22 anos através de dados e estatísticas avançadas. O que viu o scouting dos Blues no jogador inglês e como as suas características se assemelham às de Alejandro Garnacho?',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
