@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 14/05/2026
+// Notícias de fallback — análises, tips e contexto — 15/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: As consequências desportivas e financeiras do "Caso Negreira" para o Barcelona',
-      excerpt: 'Com a pressão de Florentino Pérez e do Real Madrid a aumentar, analisamos o que está em jogo para o Barcelona. A UEFA pode banir o clube das competições europeias? Qual o impacto financeiro de uma sanção severa? Especialistas em direito desportivo alertam que o clube catalão enfrenta a maior crise da sua história centenária.',
+      title: 'ANÁLISE JURÍDICA: O que pode acontecer ao Southampton no "Spygate" — expulsão, dedução de pontos ou multa?',
+      excerpt: 'Com a EFL a marcar uma audiência disciplinar para antes de 19 de maio, analisamos os cenários possíveis para o Southampton. Especialistas em direito desportivo explicam que a expulsão da final é possível mas improvavél, sendo mais provável uma multa pesada e dedução de pontos. O impacto nas odds da final Hull City vs Southampton é imediato e significativo para os apostadores.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -156,46 +156,46 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: Como o escândalo "Spygate" afeta as odds da final dos Playoffs do Championship',
-      excerpt: 'O Southampton está sob investigação por espionagem ao Middlesbrough, e a incerteza já está a mexer com os mercados de apostas. Analisamos como as casas de apostas estão a reagir à possibilidade de expulsão do Southampton e quais as melhores oportunidades de valor para os apostadores mais atentos ao desenrolar deste drama.',
+      title: 'TIPS DE APOSTAS: Aston Villa vs Liverpool — Análise tática e as melhores apostas para esta sexta-feira',
+      excerpt: 'O duelo de Villa Park é o jogo mais importante da jornada da Premier League. O Liverpool precisa de vencer para manter as esperanças no Top 4, enquanto o Villa quer consolidar o seu lugar europeu. Analisamos as estatísticas, o historial recente e identificamos as apostas com maior valor: ambas as equipas a marcar (1.75) e Liverpool vence (7/5) são as nossas picks.',
       category: 'TIPS DE APOSTAS',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE TÁTICA: Como Anthony Gordon encaixa no sistema do Bayern Munique',
-      excerpt: 'Com a transferência de £55M praticamente fechada, dissecamos o impacto de Anthony Gordon no Bayern Munique. A sua velocidade e capacidade de drible vão revolucionar as alas bávaras. Como irá o treinador integrar o inglês no onze inicial e o que isto significa para jogadores como Leroy Sané e Kingsley Coman?',
-      category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: O efeito dominó de Federico Valverde no mercado europeu',
-      excerpt: 'O conflito de Valverde no Real Madrid e o interesse do Manchester United podem desencadear um efeito dominó no mercado de transferências. Se o uruguaio rumar a Old Trafford, o Real Madrid terá de ir ao mercado por um substituto de peso. Analisamos os potenciais alvos de Florentino Pérez e como isto afeta outros gigantes europeus.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS DE APOSTAS: Mundial 2026 — As odds a longo prazo e os favoritos à vitória final',
-      excerpt: 'Com o Mundial 2026 a aproximar-se, as casas de apostas já começam a definir os favoritos. Analisamos as odds a longo prazo para a conquista do troféu nos Estados Unidos, México e Canadá. Quem são os dark horses e onde está o valor nas apostas antecipadas para o maior torneio de futebol do mundo?',
-      category: 'TIPS DE APOSTAS',
+      id: 3,
+      title: 'ANÁLISE: Xabi Alonso no Chelsea — O "Gegenpress" pode transformar os Blues em candidatos ao título?',
+      excerpt: 'Se Xabi Alonso assinar pelo Chelsea, como será o seu sistema tático? Analisamos o "Gegenpress" que Alonso implementou no Bayer Leverkusen e no Real Madrid, e como pode encaixar no plantel atual dos Blues. Com £160M para gastar, quem serão os alvos prioritários e pode o Chelsea lutar pelo título da Premier League na próxima temporada?',
+      category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ANÁLISE: O perfil de Jonathan Rowe e porque o Chelsea o vê como o novo Garnacho',
-      excerpt: 'O Chelsea está disposto a pagar 40 milhões de euros por Jonathan Rowe do Bologna. Analisamos o perfil do extremo de 22 anos através de dados e estatísticas avançadas. O que viu o scouting dos Blues no jogador inglês e como as suas características se assemelham às de Alejandro Garnacho?',
-      category: 'ANÁLISE TÁTICA',
+      id: 4,
+      title: 'TRANSFERÊNCIAS: Viktor Gyökeres — Por que o United e o Arsenal estão dispostos a pagar €80M pelo sueco',
+      excerpt: 'Com 80 golos em 7 temporadas, Viktor Gyökeres é o avançado mais cobiçado da Europa. Analisamos as suas estatísticas avançadas, o seu impacto no Sporting CP e porque Ruben Amorim o considera essencial para o projeto do Manchester United. O Arsenal também quer o jogador — quem tem mais argumentos financeiros e desportivos para o convencer?',
+      category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'CRISE NO BERNABÉU: O que está por detrás das vaias a Mbappé e Vinicius — e o que isto significa para o futuro do Real Madrid',
+      excerpt: 'Os adeptos do Real Madrid vaiaram Mbappé e Vinicius Júnior no próprio Bernabéu. Florentino Pérez foi filmado a discutir com adeptos. O que está por detrás desta crise? Analisamos as causas do descontentamento, o impacto no balneário e o que pode mudar no Real Madrid na próxima temporada. Mbappé pode sair já no verão?',
+      category: 'ESCÂNDALO',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TIPS DE APOSTAS: Mundial 2026 — As odds a longo prazo e os favoritos à vitória final com o torneio a 6 semanas',
+      excerpt: 'Com o Mundial 2026 a apenas 6 semanas de distância, as casas de apostas já definiram os favoritos. Analisamos as odds para a conquista do troféu nos EUA, México e Canadá. Brasil e França lideram, mas Portugal e Espanha são os dark horses com maior valor. Onde estão as melhores apostas antecipadas para o maior torneio de futebol do mundo?',
+      category: 'TIPS DE APOSTAS',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },

@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (13/05/2026) — aparecem primeiro
+// Jogos com tips hoje (15/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Real Madrid", "Real Oviedo",
-  "Bradford City", "Bolton Wanderers",
-  "Valencia", "Rayo Vallecano",
-  "Girona", "Real Sociedad",
-  "Hamburger SV", "Freiburg",
+  "Aston Villa", "Liverpool",
+  "Salford City", "Grimsby Town",
+  "Notts County", "Chesterfield",
+  "Caykur Rizespor", "Besiktas",
+  "OH Leuven", "Antwerp",
 ];
 
-// Fallback data com jogos reais (atualizado 14/05/2026 — verificado LiveSoccerTV)
+// Fallback data com jogos reais (atualizado 15/05/2026 — verificado SportingLife + SoccerBase)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1570001, homeTeam: "Real Madrid", awayTeam: "Real Oviedo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "La Liga", leagueId: 2014 },
-  { id: 1570002, homeTeam: "Bradford City", awayTeam: "Bolton Wanderers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "League One Play-offs", leagueId: 2016 },
-  { id: 1570003, homeTeam: "Valencia", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "La Liga", leagueId: 2014 },
-  { id: 1570004, homeTeam: "Girona", awayTeam: "Real Sociedad", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
-  { id: 1570005, homeTeam: "Hamburger SV", awayTeam: "Freiburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1580001, homeTeam: "Aston Villa", awayTeam: "Liverpool", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Premier League", leagueId: 2021 },
+  { id: 1580002, homeTeam: "Salford City", awayTeam: "Grimsby Town", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:15", league: "League Two", leagueId: 2016 },
+  { id: 1580003, homeTeam: "Notts County", awayTeam: "Chesterfield", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "League Two", leagueId: 2016 },
+  { id: 1580004, homeTeam: "Caykur Rizespor", awayTeam: "Besiktas", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Turkish Süper Lig", leagueId: 2017 },
+  { id: 1580005, homeTeam: "OH Leuven", awayTeam: "Antwerp", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Belgian Pro League", leagueId: 2018 },
   // Outros jogos importantes de hoje
-  { id: 1570006, homeTeam: "Bayer Leverkusen", awayTeam: "Hamburger SV", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Bundesliga", leagueId: 2002 },
-  { id: 1570007, homeTeam: "Toulouse", awayTeam: "Lyon", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Ligue 1", leagueId: 2015 },
-  { id: 1570008, homeTeam: "Vitória", awayTeam: "Flamengo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa do Brasil", leagueId: 2022 },
-  { id: 1570009, homeTeam: "Chapecoense", awayTeam: "Botafogo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Copa do Brasil", leagueId: 2022 },
-  { id: 1570010, homeTeam: "Atlético-GO", awayTeam: "Athletico-PR", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa do Brasil", leagueId: 2022 },
+  { id: 1580006, homeTeam: "Partick Thistle", awayTeam: "Dunfermline", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Scottish Prem. Play-offs", leagueId: 2003 },
+  { id: 1580007, homeTeam: "Hamilton Acad.", awayTeam: "Clyde", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Scottish L1 Play-offs", leagueId: 2003 },
+  { id: 1580008, homeTeam: "Bari", awayTeam: "Südtirol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Serie B", leagueId: 2004 },
+  { id: 1580009, homeTeam: "Zaglebie Lubin", awayTeam: "Pogon Szczecin", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Polish Ekstraklasa", leagueId: 2019 },
+  { id: 1580010, homeTeam: "Al Taawoun", awayTeam: "Al Riyadh", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Saudi Pro League", leagueId: 2020 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Real Madrid", awayTeam: "Real Oviedo",
+  homeTeam: "Aston Villa", awayTeam: "Liverpool",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [48, 52], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
