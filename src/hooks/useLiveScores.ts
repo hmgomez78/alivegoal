@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (15/05/2026) — aparecem primeiro
+// Jogos com tips hoje (16/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Aston Villa", "Liverpool",
-  "Salford City", "Grimsby Town",
-  "Notts County", "Chesterfield",
-  "Caykur Rizespor", "Besiktas",
-  "OH Leuven", "Antwerp",
+  "Manchester City", "Chelsea",
+  "Celtic", "Hearts",
+  "FC Porto", "Santa Clara",
+  "Lyon", "Lens",
+  "St. Pauli", "Heidenheim",
 ];
 
-// Fallback data com jogos reais (atualizado 15/05/2026 — verificado SportingLife + SoccerBase)
+// Fallback data com jogos reais (atualizado 16/05/2026 — FA Cup Final + Bundesliga Final Day + Liga Portugal + Ligue 1 + Scottish Prem)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1580001, homeTeam: "Aston Villa", awayTeam: "Liverpool", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Premier League", leagueId: 2021 },
-  { id: 1580002, homeTeam: "Salford City", awayTeam: "Grimsby Town", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:15", league: "League Two", leagueId: 2016 },
-  { id: 1580003, homeTeam: "Notts County", awayTeam: "Chesterfield", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "League Two", leagueId: 2016 },
-  { id: 1580004, homeTeam: "Caykur Rizespor", awayTeam: "Besiktas", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Turkish Süper Lig", leagueId: 2017 },
-  { id: 1580005, homeTeam: "OH Leuven", awayTeam: "Antwerp", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Belgian Pro League", leagueId: 2018 },
+  { id: 1590001, homeTeam: "Manchester City", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "FA Cup Final", leagueId: 2021 },
+  { id: 1590002, homeTeam: "Celtic", awayTeam: "Hearts", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Scottish Premiership", leagueId: 2003 },
+  { id: 1590003, homeTeam: "FC Porto", awayTeam: "Santa Clara", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Liga Portugal Betclic", leagueId: 2002 },
+  { id: 1590004, homeTeam: "Lyon", awayTeam: "Lens", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Ligue 1", leagueId: 2015 },
+  { id: 1590005, homeTeam: "St. Pauli", awayTeam: "Heidenheim", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
   // Outros jogos importantes de hoje
-  { id: 1580006, homeTeam: "Partick Thistle", awayTeam: "Dunfermline", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Scottish Prem. Play-offs", leagueId: 2003 },
-  { id: 1580007, homeTeam: "Hamilton Acad.", awayTeam: "Clyde", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Scottish L1 Play-offs", leagueId: 2003 },
-  { id: 1580008, homeTeam: "Bari", awayTeam: "Südtirol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Serie B", leagueId: 2004 },
-  { id: 1580009, homeTeam: "Zaglebie Lubin", awayTeam: "Pogon Szczecin", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Polish Ekstraklasa", leagueId: 2019 },
-  { id: 1580010, homeTeam: "Al Taawoun", awayTeam: "Al Riyadh", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Saudi Pro League", leagueId: 2020 },
+  { id: 1590006, homeTeam: "Wolfsburg", awayTeam: "Bayer Leverkusen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1590007, homeTeam: "Bayern Munich", awayTeam: "Augsburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1590008, homeTeam: "Sporting CP", awayTeam: "Famalicão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Liga Portugal Betclic", leagueId: 2002 },
+  { id: 1590009, homeTeam: "Benfica", awayTeam: "Estoril", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Liga Portugal Betclic", leagueId: 2002 },
+  { id: 1590010, homeTeam: "Napoli", awayTeam: "Cagliari", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Serie A", leagueId: 2019 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Aston Villa", awayTeam: "Liverpool",
+  homeTeam: "Manchester City", awayTeam: "Chelsea",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [48, 52], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

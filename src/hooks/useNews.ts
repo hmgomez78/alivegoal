@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 15/05/2026
+// Notícias de fallback — análises, tips e contexto — 16/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,17 +147,17 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE JURÍDICA: O que pode acontecer ao Southampton no "Spygate" — expulsão, dedução de pontos ou multa?',
-      excerpt: 'Com a EFL a marcar uma audiência disciplinar para antes de 19 de maio, analisamos os cenários possíveis para o Southampton. Especialistas em direito desportivo explicam que a expulsão da final é possível mas improvavél, sendo mais provável uma multa pesada e dedução de pontos. O impacto nas odds da final Hull City vs Southampton é imediato e significativo para os apostadores.',
+      title: 'ANÁLISE TÁTICA: Mourinho no Real Madrid — O "Parking the Bus" pode funcionar no Bernabéu em 2026?',
+      excerpt: 'O regresso de José Mourinho ao Real Madrid é o tema do momento. Analisamos como o treinador português pode adaptar o seu estilo defensivo ao plantel atual, com Mbappé e Vinicius como peças centrais. Mourinho terá de conciliar a sua filosofia pragmática com as exigências ofensivas do Bernabéu. Quais são os cenários táticos e quem são os jogadores que mais beneficiam com esta mudança?',
       category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: Aston Villa vs Liverpool — Análise tática e as melhores apostas para esta sexta-feira',
-      excerpt: 'O duelo de Villa Park é o jogo mais importante da jornada da Premier League. O Liverpool precisa de vencer para manter as esperanças no Top 4, enquanto o Villa quer consolidar o seu lugar europeu. Analisamos as estatísticas, o historial recente e identificamos as apostas com maior valor: ambas as equipas a marcar (1.75) e Liverpool vence (7/5) são as nossas picks.',
+      title: 'TIPS DE APOSTAS: FA Cup Final Manchester City vs Chelsea — As melhores apostas para Wembley hoje!',
+      excerpt: 'A Final da FA Cup entre Manchester City e Chelsea é o jogo do dia em Wembley. O City é favorito a 1.75, mas o Chelsea tem João Pedro em grande forma e pode surpreender. Analisamos as estatísticas, o historial recente e identificamos as apostas com maior valor: Erling Haaland a marcar a qualquer momento (2.10), Over 2.5 golos (1.80) e Manchester City vence (1.75) são as nossas picks para esta final histórica.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -165,37 +165,37 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE: Xabi Alonso no Chelsea — O "Gegenpress" pode transformar os Blues em candidatos ao título?',
-      excerpt: 'Se Xabi Alonso assinar pelo Chelsea, como será o seu sistema tático? Analisamos o "Gegenpress" que Alonso implementou no Bayer Leverkusen e no Real Madrid, e como pode encaixar no plantel atual dos Blues. Com £160M para gastar, quem serão os alvos prioritários e pode o Chelsea lutar pelo título da Premier League na próxima temporada?',
+      title: 'ANÁLISE: Aston Villa 4-2 Liverpool — O colapso de Arne Slot e o que mudou no futebol inglês esta temporada',
+      excerpt: 'A derrota por 4-2 em Villa Park foi mais um capítulo negro para o Liverpool de Arne Slot. Com 19 derrotas na temporada — o pior registo do século — o clube de Anfield enfrenta uma reconstrução profunda. Analisamos as causas do colapso, o impacto nas apostas para o Top 4 e o que o Liverpool precisa de fazer no mercado de verão para regressar à elite. Slot sobreviverá à próxima temporada?',
       category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: Viktor Gyökeres — Por que o United e o Arsenal estão dispostos a pagar €80M pelo sueco',
-      excerpt: 'Com 80 golos em 7 temporadas, Viktor Gyökeres é o avançado mais cobiçado da Europa. Analisamos as suas estatísticas avançadas, o seu impacto no Sporting CP e porque Ruben Amorim o considera essencial para o projeto do Manchester United. O Arsenal também quer o jogador — quem tem mais argumentos financeiros e desportivos para o convencer?',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'CRISE NO BERNABÉU: O que está por detrás das vaias a Mbappé e Vinicius — e o que isto significa para o futuro do Real Madrid',
-      excerpt: 'Os adeptos do Real Madrid vaiaram Mbappé e Vinicius Júnior no próprio Bernabéu. Florentino Pérez foi filmado a discutir com adeptos. O que está por detrás desta crise? Analisamos as causas do descontentamento, o impacto no balneário e o que pode mudar no Real Madrid na próxima temporada. Mbappé pode sair já no verão?',
-      category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TIPS DE APOSTAS: Mundial 2026 — As odds a longo prazo e os favoritos à vitória final com o torneio a 6 semanas',
-      excerpt: 'Com o Mundial 2026 a apenas 6 semanas de distância, as casas de apostas já definiram os favoritos. Analisamos as odds para a conquista do troféu nos EUA, México e Canadá. Brasil e França lideram, mas Portugal e Espanha são os dark horses com maior valor. Onde estão as melhores apostas antecipadas para o maior torneio de futebol do mundo?',
-      category: 'TIPS DE APOSTAS',
+      id: 4,
+      title: 'ESCÂNDALO: Inter Milan e o FFP — O que pode acontecer aos nerazzurri se as acusações de €300M forem provadas?',
+      excerpt: 'O escândalo financeiro do Inter Milan é o mais grave desde o Calciopoli de 2006. Se o relatório secreto for confirmado, o Inter pode ser banido das competições europeias, sofrer uma dedução de pontos na Serie A e até ver o Scudetto revogado. Analisamos os cenários legais, o impacto no mercado de transferências e o que isto significa para o futebol italiano. O Inter pode ser o novo Juventus de 2006?',
+      category: 'ESCÂNDALO',
       readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'TRANSFERÊNCIAS: Michael Carrick no Manchester United — Viktor Gyökeres continua a ser o alvo número 1?',
+      excerpt: 'Com Michael Carrick confirmado como treinador permanente do Manchester United, a questão mais urgente é: quem vai reforçar o ataque? Viktor Gyökeres do Sporting CP continua a ser o alvo número 1, mas o Arsenal também está na corrida. Analisamos as probabilidades de Carrick conseguir o avançado sueco, o impacto nas odds de transferências e quais os outros alvos prioritários para o mercado de verão dos Red Devils.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TIPS DE APOSTAS: Bundesliga Final Day — St. Pauli, Heidenheim e Wolfsburg em igualdade — quem desce?',
+      excerpt: 'O último dia da Bundesliga é um caos total! St. Pauli, Heidenheim e Wolfsburg estão todos empatados em pontos na zona de descida. Analisamos os cenários possíveis, os jogos de cada equipa e as apostas com maior valor para este dia histórico do futebol alemão. Quem vai descer e quem vai sobreviver? As odds estão a mudar a cada hora — aqui estão as melhores apostas para o drama final da Bundesliga!',
+      category: 'TIPS DE APOSTAS',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
