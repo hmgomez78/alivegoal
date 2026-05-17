@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (16/05/2026) — aparecem primeiro
+// Jogos com tips hoje (17/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Manchester City", "Chelsea",
-  "Celtic", "Hearts",
-  "FC Porto", "Santa Clara",
-  "Lyon", "Lens",
-  "St. Pauli", "Heidenheim",
+  "Sevilla", "Real Madrid",
+  "Barcelona", "Real Betis",
+  "Roma", "Lazio",
+  "Newcastle", "West Ham",
+  "Botafogo", "Corinthians",
 ];
 
-// Fallback data com jogos reais (atualizado 16/05/2026 — FA Cup Final + Bundesliga Final Day + Liga Portugal + Ligue 1 + Scottish Prem)
+// Fallback data com jogos reais (atualizado 17/05/2026 — La Liga Final Day + Premier League + Serie A Derby + Ligue 1 + Brasileirão)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1590001, homeTeam: "Manchester City", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "FA Cup Final", leagueId: 2021 },
-  { id: 1590002, homeTeam: "Celtic", awayTeam: "Hearts", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Scottish Premiership", leagueId: 2003 },
-  { id: 1590003, homeTeam: "FC Porto", awayTeam: "Santa Clara", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Liga Portugal Betclic", leagueId: 2002 },
-  { id: 1590004, homeTeam: "Lyon", awayTeam: "Lens", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Ligue 1", leagueId: 2015 },
-  { id: 1590005, homeTeam: "St. Pauli", awayTeam: "Heidenheim", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 1600001, homeTeam: "Roma", awayTeam: "Lazio", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
+  { id: 1600002, homeTeam: "Man Utd", awayTeam: "Nottm Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Premier League", leagueId: 2021 },
+  { id: 1600003, homeTeam: "Newcastle", awayTeam: "West Ham", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Premier League", leagueId: 2021 },
+  { id: 1600004, homeTeam: "Sevilla", awayTeam: "Real Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
+  { id: 1600005, homeTeam: "Barcelona", awayTeam: "Real Betis", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:15", league: "La Liga", leagueId: 2014 },
   // Outros jogos importantes de hoje
-  { id: 1590006, homeTeam: "Wolfsburg", awayTeam: "Bayer Leverkusen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
-  { id: 1590007, homeTeam: "Bayern Munich", awayTeam: "Augsburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Bundesliga", leagueId: 2002 },
-  { id: 1590008, homeTeam: "Sporting CP", awayTeam: "Famalicão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Liga Portugal Betclic", leagueId: 2002 },
-  { id: 1590009, homeTeam: "Benfica", awayTeam: "Estoril", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Liga Portugal Betclic", leagueId: 2002 },
-  { id: 1590010, homeTeam: "Napoli", awayTeam: "Cagliari", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Serie A", leagueId: 2019 },
+  { id: 1600006, homeTeam: "Juventus", awayTeam: "Fiorentina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
+  { id: 1600007, homeTeam: "Genoa", awayTeam: "AC Milan", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
+  { id: 1600008, homeTeam: "Atl. Madrid", awayTeam: "Girona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
+  { id: 1600009, homeTeam: "Botafogo", awayTeam: "Corinthians", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 1600010, homeTeam: "Bahia", awayTeam: "Grêmio", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série A", leagueId: 2013 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Manchester City", awayTeam: "Chelsea",
+  homeTeam: "Sevilla", awayTeam: "Real Madrid",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [42, 58], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

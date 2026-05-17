@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 16/05/2026
+// Notícias de fallback — análises, tips e contexto — 17/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Mourinho no Real Madrid — O "Parking the Bus" pode funcionar no Bernabéu em 2026?',
-      excerpt: 'O regresso de José Mourinho ao Real Madrid é o tema do momento. Analisamos como o treinador português pode adaptar o seu estilo defensivo ao plantel atual, com Mbappé e Vinicius como peças centrais. Mourinho terá de conciliar a sua filosofia pragmática com as exigências ofensivas do Bernabéu. Quais são os cenários táticos e quem são os jogadores que mais beneficiam com esta mudança?',
+      title: 'ANÁLISE TÁTICA: Como Guardiola ganhou a FA Cup com Semenyo — o plano secreto que destruiu o Chelsea em Wembley',
+      excerpt: 'O Manchester City venceu a FA Cup 1-0 contra o Chelsea num jogo tático e intenso. Analisamos como Pep Guardiola preparou o jogo, o papel crucial de Antoine Semenyo como arma surpresa, e por que o Chelsea, apesar de dominar a posse, nunca conseguiu criar perigo real. A vitória garante ao City um lugar na Europa League e pode ser o ponto de viragem para uma reconstrução profunda do plantel no verão. Que jogadores ficam e quem sai de Manchester?',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -156,17 +156,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: FA Cup Final Manchester City vs Chelsea — As melhores apostas para Wembley hoje!',
-      excerpt: 'A Final da FA Cup entre Manchester City e Chelsea é o jogo do dia em Wembley. O City é favorito a 1.75, mas o Chelsea tem João Pedro em grande forma e pode surpreender. Analisamos as estatísticas, o historial recente e identificamos as apostas com maior valor: Erling Haaland a marcar a qualquer momento (2.10), Over 2.5 golos (1.80) e Manchester City vence (1.75) são as nossas picks para esta final histórica.',
+      title: 'TIPS DE APOSTAS: La Liga Jornada Final — Sevilla vs Real Madrid e Barcelona vs Betis — as apostas com maior valor hoje!',
+      excerpt: 'A última jornada da La Liga promete drama total! O Real Madrid, já sem título (Barcelona campeão), joga em Sevilha sem pressão mas com Mbappé a querer terminar a época com golos. O Barcelona recebe o Betis em casa e pode festejar. Analisamos os cenários de descida com Elche, Getafe e Osasuna em risco, identificamos as apostas de maior valor e damos as nossas picks para esta jornada histórica do futebol espanhol. Odds e análises detalhadas incluídas!',
       category: 'TIPS DE APOSTAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'ANÁLISE: Aston Villa 4-2 Liverpool — O colapso de Arne Slot e o que mudou no futebol inglês esta temporada',
-      excerpt: 'A derrota por 4-2 em Villa Park foi mais um capítulo negro para o Liverpool de Arne Slot. Com 19 derrotas na temporada — o pior registo do século — o clube de Anfield enfrenta uma reconstrução profunda. Analisamos as causas do colapso, o impacto nas apostas para o Top 4 e o que o Liverpool precisa de fazer no mercado de verão para regressar à elite. Slot sobreviverá à próxima temporada?',
+      title: 'ANÁLISE: Derby della Capitale — Roma vs Lazio hoje na Serie A — o jogo mais explosivo de Itália com tudo em jogo!',
+      excerpt: 'O Derby della Capitale entre Roma e Lazio é hoje na Serie A e promete ser um dos jogos mais intensos da temporada. A Roma, com Malen confirmado por €25M após a qualificação europeia, quer terminar em grande. A Lazio luta por uma vaga europeia. Analisamos o historial recente, os jogadores-chave, o impacto do escândalo do Inter Milan nas apostas italianas e as melhores apostas para este derby histórico. Quem vai dominar Roma esta tarde?',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -174,28 +174,28 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: Inter Milan e o FFP — O que pode acontecer aos nerazzurri se as acusações de €300M forem provadas?',
-      excerpt: 'O escândalo financeiro do Inter Milan é o mais grave desde o Calciopoli de 2006. Se o relatório secreto for confirmado, o Inter pode ser banido das competições europeias, sofrer uma dedução de pontos na Serie A e até ver o Scudetto revogado. Analisamos os cenários legais, o impacto no mercado de transferências e o que isto significa para o futebol italiano. O Inter pode ser o novo Juventus de 2006?',
-      category: 'ESCÂNDALO',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TRANSFERÊNCIAS: Michael Carrick no Manchester United — Viktor Gyökeres continua a ser o alvo número 1?',
-      excerpt: 'Com Michael Carrick confirmado como treinador permanente do Manchester United, a questão mais urgente é: quem vai reforçar o ataque? Viktor Gyökeres do Sporting CP continua a ser o alvo número 1, mas o Arsenal também está na corrida. Analisamos as probabilidades de Carrick conseguir o avançado sueco, o impacto nas odds de transferências e quais os outros alvos prioritários para o mercado de verão dos Red Devils.',
+      title: 'TRANSFERÊNCIAS: Bastoni ao Barcelona por €60M — Inter Milan em duplo escândalo: FFP e perda do melhor defesa!',
+      excerpt: 'O Inter Milan enfrenta uma semana catastrófica: além do escândalo do Fair Play Financeiro com alegadas receitas falsas de €300M, o clube pode perder Alessandro Bastoni para o Barcelona por €60M. O diretor desportivo do Barça, Deco, viajou a Londres para reunir com os agentes do defesa italiano. Analisamos o impacto desta dupla crise no Inter, as probabilidades de Bastoni aceitar a mudança e o que isto significa para o futebol italiano. O Inter pode sobreviver a este verão?',
       category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TIPS DE APOSTAS: Bundesliga Final Day — St. Pauli, Heidenheim e Wolfsburg em igualdade — quem desce?',
-      excerpt: 'O último dia da Bundesliga é um caos total! St. Pauli, Heidenheim e Wolfsburg estão todos empatados em pontos na zona de descida. Analisamos os cenários possíveis, os jogos de cada equipa e as apostas com maior valor para este dia histórico do futebol alemão. Quem vai descer e quem vai sobreviver? As odds estão a mudar a cada hora — aqui estão as melhores apostas para o drama final da Bundesliga!',
+      id: 5,
+      title: 'TIPS DE APOSTAS: Brasileirão Série A — Botafogo vs Corinthians e Bahia vs Grêmio — análise completa dos jogos de hoje!',
+      excerpt: 'O Brasileirão Série A tem uma tarde repleta de jogos emocionantes! O Botafogo, atual campeão, recebe o Corinthians num duelo de alto nível. O Bahia enfrenta o Grêmio num jogo com implicações na tabela. Analisamos os jogos do dia, incluindo o Palmeiras vs Cruzeiro já disputado, e damos as nossas picks para as apostas de maior valor no futebol brasileiro. Odds reais, estatísticas e análise detalhada para os apostadores mais exigentes!',
       category: 'TIPS DE APOSTAS',
-      readTime: '8 min',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ESCÂNDALO: Arne Slot em risco de despedimento — Salah força saída do treinador com declarações explosivas após derrota 4-2!',
+      excerpt: 'As declarações de Mohamed Salah após a derrota por 4-2 frente ao Aston Villa são vistas como uma crítica direta ao trabalho de Arne Slot. O egípcio, no último ano de contrato, parece estar a usar a sua influência para forçar uma mudança na liderança técnica. A direção do Liverpool está dividida: uns querem dar mais tempo a Slot, outros preferem uma mudança imediata. Analisamos os cenários possíveis, os candidatos ao cargo e o impacto nas apostas para a próxima temporada. Será que Salah fica se Slot sair?',
+      category: 'ESCÂNDALO',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
