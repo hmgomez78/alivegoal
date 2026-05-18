@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (17/05/2026) — aparecem primeiro
+// Jogos com tips hoje (18/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Sevilla", "Real Madrid",
-  "Barcelona", "Real Betis",
-  "Roma", "Lazio",
-  "Newcastle", "West Ham",
-  "Botafogo", "Corinthians",
+  "Arsenal", "Burnley",
+  "Leganés", "Huesca",
+  "Ponte Preta", "Londrina",
+  "Chelsea", "Tottenham",
+  "Liverpool", "Brentford",
 ];
 
-// Fallback data com jogos reais (atualizado 17/05/2026 — La Liga Final Day + Premier League + Serie A Derby + Ligue 1 + Brasileirão)
+// Fallback data com jogos reais (atualizado 18/05/2026 — Premier League + LaLiga 2 + Brasileirão Série B)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1600001, homeTeam: "Roma", awayTeam: "Lazio", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
-  { id: 1600002, homeTeam: "Man Utd", awayTeam: "Nottm Forest", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Premier League", leagueId: 2021 },
-  { id: 1600003, homeTeam: "Newcastle", awayTeam: "West Ham", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Premier League", leagueId: 2021 },
-  { id: 1600004, homeTeam: "Sevilla", awayTeam: "Real Madrid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
-  { id: 1600005, homeTeam: "Barcelona", awayTeam: "Real Betis", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:15", league: "La Liga", leagueId: 2014 },
-  // Outros jogos importantes de hoje
-  { id: 1600006, homeTeam: "Juventus", awayTeam: "Fiorentina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
-  { id: 1600007, homeTeam: "Genoa", awayTeam: "AC Milan", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Serie A", leagueId: 2019 },
-  { id: 1600008, homeTeam: "Atl. Madrid", awayTeam: "Girona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "La Liga", leagueId: 2014 },
-  { id: 1600009, homeTeam: "Botafogo", awayTeam: "Corinthians", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 1600010, homeTeam: "Bahia", awayTeam: "Grêmio", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 1700001, homeTeam: "Arsenal", awayTeam: "Burnley", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700002, homeTeam: "Leganés", awayTeam: "Huesca", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "LaLiga 2", leagueId: 2014 },
+  { id: 1700003, homeTeam: "Ponte Preta", awayTeam: "Londrina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Brasileirão Série B", leagueId: 2013 },
+  // Jogos de amanhã (19 de Maio) já anunciados — última jornada Premier League
+  { id: 1700004, homeTeam: "Chelsea", awayTeam: "Tottenham", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700005, homeTeam: "Liverpool", awayTeam: "Brentford", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700006, homeTeam: "Man City", awayTeam: "Aston Villa", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700007, homeTeam: "Bournemouth", awayTeam: "Man City", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700008, homeTeam: "Sunderland", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700009, homeTeam: "West Ham", awayTeam: "Leeds", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 1700010, homeTeam: "Fulham", awayTeam: "Newcastle", homeScore: 0, awayScore: 0, minute: 0, status: "AMANHÃ 16:00", league: "Premier League", leagueId: 2021 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Sevilla", awayTeam: "Real Madrid",
+  homeTeam: "Arsenal", awayTeam: "Burnley",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [42, 58], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

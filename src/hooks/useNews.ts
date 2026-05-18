@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 17/05/2026
+// Notícias de fallback — análises, tips e contexto — 18/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Guardiola ganhou a FA Cup com Semenyo — o plano secreto que destruiu o Chelsea em Wembley',
-      excerpt: 'O Manchester City venceu a FA Cup 1-0 contra o Chelsea num jogo tático e intenso. Analisamos como Pep Guardiola preparou o jogo, o papel crucial de Antoine Semenyo como arma surpresa, e por que o Chelsea, apesar de dominar a posse, nunca conseguiu criar perigo real. A vitória garante ao City um lugar na Europa League e pode ser o ponto de viragem para uma reconstrução profunda do plantel no verão. Que jogadores ficam e quem sai de Manchester?',
+      title: 'ANÁLISE TÁTICA: O que esperar do Chelsea de Xabi Alonso — como o espanhol vai transformar os Blues numa potência europeia',
+      excerpt: 'A chegada de Xabi Alonso ao Chelsea representa uma das maiores revoluções táticas do futebol inglês em anos. O ex-médio espanhol, que fez história no Bayer Leverkusen com um futebol agressivo, vertical e baseado na pressão alta, vai tentar implementar a mesma filosofia num Chelsea que tem oscilado entre sistemas e estilos. Analisamos os jogadores que melhor se adaptam ao seu sistema, os reforços prioritários que já pediu — incluindo Morgan Rogers e um novo guarda-redes — e o que os adeptos podem esperar na época 2026/27.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -156,17 +156,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: La Liga Jornada Final — Sevilla vs Real Madrid e Barcelona vs Betis — as apostas com maior valor hoje!',
-      excerpt: 'A última jornada da La Liga promete drama total! O Real Madrid, já sem título (Barcelona campeão), joga em Sevilha sem pressão mas com Mbappé a querer terminar a época com golos. O Barcelona recebe o Betis em casa e pode festejar. Analisamos os cenários de descida com Elche, Getafe e Osasuna em risco, identificamos as apostas de maior valor e damos as nossas picks para esta jornada histórica do futebol espanhol. Odds e análises detalhadas incluídas!',
+      title: 'TIPS DE APOSTAS: Arsenal vs Burnley hoje às 19:00 — análise completa e as melhores apostas para o jogo da noite!',
+      excerpt: 'O Arsenal recebe o Burnley hoje às 19:00 num jogo decisivo para a classificação final da Premier League. Os Gunners precisam de vencer para garantir a sua vaga na Champions League da próxima época. Analisamos o historial recente, as estatísticas de golos, a forma das duas equipas e identificamos as apostas de maior valor para esta noite. O Arsenal marcou em 89% dos jogos em casa esta temporada. Odds reais, análise detalhada e as nossas picks para este jogo imperdível!',
       category: 'TIPS DE APOSTAS',
-      readTime: '8 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'ANÁLISE: Derby della Capitale — Roma vs Lazio hoje na Serie A — o jogo mais explosivo de Itália com tudo em jogo!',
-      excerpt: 'O Derby della Capitale entre Roma e Lazio é hoje na Serie A e promete ser um dos jogos mais intensos da temporada. A Roma, com Malen confirmado por €25M após a qualificação europeia, quer terminar em grande. A Lazio luta por uma vaga europeia. Analisamos o historial recente, os jogadores-chave, o impacto do escândalo do Inter Milan nas apostas italianas e as melhores apostas para este derby histórico. Quem vai dominar Roma esta tarde?',
+      title: 'ANÁLISE: Mourinho no Real Madrid — o que muda para Mbappé, Vinicius e o projeto Madridista em 2026/27',
+      excerpt: 'O regresso de José Mourinho ao Real Madrid vai mudar tudo no Bernabéu. O treinador português, famoso pelo seu pragmatismo e organização defensiva, vai ter de gerir estrelas como Mbappé e Vinicius Jr., que foram vaiados pelos próprios adeptos esta temporada. Analisamos como Mourinho pode transformar o Real Madrid, que posições vai reforçar, quais as estrelas que podem sair e se o "Special One" tem o que é preciso para devolver os títulos ao clube mais titulado do mundo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -174,28 +174,28 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: Bastoni ao Barcelona por €60M — Inter Milan em duplo escândalo: FFP e perda do melhor defesa!',
-      excerpt: 'O Inter Milan enfrenta uma semana catastrófica: além do escândalo do Fair Play Financeiro com alegadas receitas falsas de €300M, o clube pode perder Alessandro Bastoni para o Barcelona por €60M. O diretor desportivo do Barça, Deco, viajou a Londres para reunir com os agentes do defesa italiano. Analisamos o impacto desta dupla crise no Inter, as probabilidades de Bastoni aceitar a mudança e o que isto significa para o futebol italiano. O Inter pode sobreviver a este verão?',
+      title: 'TRANSFERÊNCIAS: Gyökeres ao Manchester United — Sporting em alerta máximo com Carrick a confirmar interesse no avançado sueco',
+      excerpt: 'Michael Carrick, recém-confirmado como treinador permanente do Manchester United, já definiu Viktor Gyökeres como o alvo número 1 para o ataque. O avançado sueco, que marcou 43 golos esta temporada pelo Sporting CP, tem uma cláusula de rescisão de €80 milhões. O Sporting está em alerta máximo e já identificou possíveis substitutos, incluindo Jonathan David e Serhou Guirassy. Analisamos os cenários possíveis, o impacto financeiro para o Sporting e se Gyökeres vai mesmo aceitar a mudança para Old Trafford neste verão.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Brasileirão Série A — Botafogo vs Corinthians e Bahia vs Grêmio — análise completa dos jogos de hoje!',
-      excerpt: 'O Brasileirão Série A tem uma tarde repleta de jogos emocionantes! O Botafogo, atual campeão, recebe o Corinthians num duelo de alto nível. O Bahia enfrenta o Grêmio num jogo com implicações na tabela. Analisamos os jogos do dia, incluindo o Palmeiras vs Cruzeiro já disputado, e damos as nossas picks para as apostas de maior valor no futebol brasileiro. Odds reais, estatísticas e análise detalhada para os apostadores mais exigentes!',
+      title: 'TIPS DE APOSTAS: Última jornada da Premier League amanhã — Chelsea vs Tottenham, Liverpool vs Brentford e City vs Villa — picks completas!',
+      excerpt: 'Amanhã, 19 de Maio, é o último dia da Premier League 2025/26 e há drama total em vários jogos. O Chelsea vs Tottenham é um derby explosivo com ambos os clubes a lutar por objetivos europeus. O Liverpool vs Brentford pode decidir o Top 4. O Manchester City vs Aston Villa tem implicações na descida. Damos as nossas picks para todos os jogos com análise detalhada, odds reais e percentagens de probabilidade. A jornada mais emocionante do ano está aí!',
       category: 'TIPS DE APOSTAS',
-      readTime: '7 min',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ESCÂNDALO: Arne Slot em risco de despedimento — Salah força saída do treinador com declarações explosivas após derrota 4-2!',
-      excerpt: 'As declarações de Mohamed Salah após a derrota por 4-2 frente ao Aston Villa são vistas como uma crítica direta ao trabalho de Arne Slot. O egípcio, no último ano de contrato, parece estar a usar a sua influência para forçar uma mudança na liderança técnica. A direção do Liverpool está dividida: uns querem dar mais tempo a Slot, outros preferem uma mudança imediata. Analisamos os cenários possíveis, os candidatos ao cargo e o impacto nas apostas para a próxima temporada. Será que Salah fica se Slot sair?',
+      title: 'ESCÂNDALO: FIFA atrasando pagamentos a revendedores do Mundial 2026 — milhares de dólares retidos em alegada violação dos próprios contratos',
+      excerpt: 'A FIFA está a atrasar pagamentos a revendedores oficiais de bilhetes do Mundial 2026, com alguns casos a envolver milhares de dólares retidos em aparente violação dos próprios contratos legais. O escândalo surge a apenas semanas do início do torneio nos EUA, México e Canadá, e levanta sérias questões sobre a gestão financeira do organismo que governa o futebol mundial. Vários revendedores já contactaram advogados e ameaçam processar a FIFA. A organização ainda não comentou publicamente as acusações.',
       category: 'ESCÂNDALO',
-      readTime: '9 min',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
