@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 18/05/2026
+// Notícias de fallback — análises, tips e contexto — 19/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O que esperar do Chelsea de Xabi Alonso — como o espanhol vai transformar os Blues numa potência europeia',
-      excerpt: 'A chegada de Xabi Alonso ao Chelsea representa uma das maiores revoluções táticas do futebol inglês em anos. O ex-médio espanhol, que fez história no Bayer Leverkusen com um futebol agressivo, vertical e baseado na pressão alta, vai tentar implementar a mesma filosofia num Chelsea que tem oscilado entre sistemas e estilos. Analisamos os jogadores que melhor se adaptam ao seu sistema, os reforços prioritários que já pediu — incluindo Morgan Rogers e um novo guarda-redes — e o que os adeptos podem esperar na época 2026/27.',
+      title: 'ANÁLISE TÁTICA: O impacto da saída de Pep Guardiola no Manchester City e o que Enzo Maresca trará de novo',
+      excerpt: 'A saída de Pep Guardiola marca o fim de uma era dourada no Manchester City. Analisamos o legado tático deixado pelo catalão e como Enzo Maresca, o seu sucessor, poderá adaptar a equipa. Maresca, que já trabalhou com Guardiola, tem uma filosofia semelhante, mas com nuances próprias. Será que o City conseguirá manter a hegemonia na Premier League sem o seu mestre?',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 2,
+      title: 'TIPS DE APOSTAS: Bournemouth vs Manchester City — Análise detalhada e as melhores odds para o jogo decisivo',
+      excerpt: 'O Manchester City visita o Bournemouth num jogo crucial para as aspirações de título. Analisamos as estatísticas recentes, o histórico de confrontos e a forma das equipas. O City precisa de vencer, mas o Bournemouth tem sido uma surpresa. Descubra as nossas picks de valor, incluindo o mercado de golos e handicaps, para maximizar os seus lucros neste embate da Premier League.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'ESPECIAL COPA DO MUNDO 2026: O regresso de Neymar e as opções de Carlo Ancelotti para a Seleção Brasileira',
+      excerpt: 'A convocatória de Neymar por Carlo Ancelotti para a Copa do Mundo de 2026 surpreendeu muitos, mas faz sentido taticamente? Analisamos o papel que Neymar poderá desempenhar no esquema de Ancelotti, a sua condição física e como a sua presença afeta a dinâmica da equipa. O Brasil procura o Hexa e a experiência de Neymar pode ser o fator X.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 2,
-      title: 'TIPS DE APOSTAS: Arsenal vs Burnley hoje às 19:00 — análise completa e as melhores apostas para o jogo da noite!',
-      excerpt: 'O Arsenal recebe o Burnley hoje às 19:00 num jogo decisivo para a classificação final da Premier League. Os Gunners precisam de vencer para garantir a sua vaga na Champions League da próxima época. Analisamos o historial recente, as estatísticas de golos, a forma das duas equipas e identificamos as apostas de maior valor para esta noite. O Arsenal marcou em 89% dos jogos em casa esta temporada. Odds reais, análise detalhada e as nossas picks para este jogo imperdível!',
-      category: 'TIPS DE APOSTAS',
+      id: 4,
+      title: 'TRANSFERÊNCIAS: O mercado de verão do Real Madrid com Mourinho — Quem entra e quem sai do Bernabéu?',
+      excerpt: 'Com o regresso de José Mourinho ao Real Madrid, espera-se uma revolução no plantel. Analisamos os alvos prioritários do técnico português, os jogadores que poderão estar de saída e como o clube irá financiar estas movimentações. Mourinho terá exigido controlo total, o que significa que nomes surpreendentes poderão chegar à capital espanhola.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 3,
-      title: 'ANÁLISE: Mourinho no Real Madrid — o que muda para Mbappé, Vinicius e o projeto Madridista em 2026/27',
-      excerpt: 'O regresso de José Mourinho ao Real Madrid vai mudar tudo no Bernabéu. O treinador português, famoso pelo seu pragmatismo e organização defensiva, vai ter de gerir estrelas como Mbappé e Vinicius Jr., que foram vaiados pelos próprios adeptos esta temporada. Analisamos como Mourinho pode transformar o Real Madrid, que posições vai reforçar, quais as estrelas que podem sair e se o "Special One" tem o que é preciso para devolver os títulos ao clube mais titulado do mundo.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: Gyökeres ao Manchester United — Sporting em alerta máximo com Carrick a confirmar interesse no avançado sueco',
-      excerpt: 'Michael Carrick, recém-confirmado como treinador permanente do Manchester United, já definiu Viktor Gyökeres como o alvo número 1 para o ataque. O avançado sueco, que marcou 43 golos esta temporada pelo Sporting CP, tem uma cláusula de rescisão de €80 milhões. O Sporting está em alerta máximo e já identificou possíveis substitutos, incluindo Jonathan David e Serhou Guirassy. Analisamos os cenários possíveis, o impacto financeiro para o Sporting e se Gyökeres vai mesmo aceitar a mudança para Old Trafford neste verão.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
       id: 5,
-      title: 'TIPS DE APOSTAS: Última jornada da Premier League amanhã — Chelsea vs Tottenham, Liverpool vs Brentford e City vs Villa — picks completas!',
-      excerpt: 'Amanhã, 19 de Maio, é o último dia da Premier League 2025/26 e há drama total em vários jogos. O Chelsea vs Tottenham é um derby explosivo com ambos os clubes a lutar por objetivos europeus. O Liverpool vs Brentford pode decidir o Top 4. O Manchester City vs Aston Villa tem implicações na descida. Damos as nossas picks para todos os jogos com análise detalhada, odds reais e percentagens de probabilidade. A jornada mais emocionante do ano está aí!',
+      title: 'TIPS DE APOSTAS: Chelsea vs Tottenham — O dérbi londrino que pode decidir o futuro europeu de ambas as equipas',
+      excerpt: 'Chelsea e Tottenham defrontam-se num dérbi de alta tensão. Ambas as equipas precisam de pontos para garantir a qualificação europeia. Analisamos as fraquezas defensivas do Chelsea e a inconsistência do Tottenham. Apresentamos as melhores apostas para este jogo, com foco no mercado de cantos, cartões e ambas as equipas marcam.',
       category: 'TIPS DE APOSTAS',
-      readTime: '10 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ESCÂNDALO: FIFA atrasando pagamentos a revendedores do Mundial 2026 — milhares de dólares retidos em alegada violação dos próprios contratos',
-      excerpt: 'A FIFA está a atrasar pagamentos a revendedores oficiais de bilhetes do Mundial 2026, com alguns casos a envolver milhares de dólares retidos em aparente violação dos próprios contratos legais. O escândalo surge a apenas semanas do início do torneio nos EUA, México e Canadá, e levanta sérias questões sobre a gestão financeira do organismo que governa o futebol mundial. Vários revendedores já contactaram advogados e ameaçam processar a FIFA. A organização ainda não comentou publicamente as acusações.',
+      title: 'ESCÂNDALO: As repercussões do caso de apostas no Texas Tech e o impacto no desporto universitário',
+      excerpt: 'O caso do quarterback Brendan Sorsby, suspenso por envolvimento em apostas desportivas, levanta questões sérias sobre a integridade no desporto universitário. Analisamos as regras da NCAA, as possíveis consequências legais do processo movido por Sorsby e como as universidades estão a lidar com a crescente legalização das apostas desportivas nos EUA.',
       category: 'ESCÂNDALO',
-      readTime: '6 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
