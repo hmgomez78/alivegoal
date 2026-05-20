@@ -1,9 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-
 export const config = {
   runtime: "nodejs",
 };
-
 interface TrendingItem {
   id: string;
   title: string;
@@ -16,92 +14,88 @@ interface TrendingItem {
   time: string;
   engagement: string;
 }
-
-// Notícias curadas — atualizadas 19/05/2026
+// Notícias curadas — atualizadas 20/05/2026
 const CURATED_TRENDING: TrendingItem[] = [
   {
     id: "t1",
-    title: "🚨 PEP GUARDIOLA DEIXA O MANCHESTER CITY! Treinador sai após o último jogo da época — Enzo Maresca é o sucessor escolhido!",
-    title_en: "🚨 PEP GUARDIOLA LEAVES MANCHESTER CITY! Manager departs after final game of the season — Enzo Maresca chosen as successor!",
-    summary: "BOMBA NO FUTEBOL MUNDIAL! Pep Guardiola vai deixar o comando técnico do Manchester City após o último jogo da Premier League contra o Aston Villa. O treinador catalão ativou uma cláusula no seu contrato que lhe permite sair um ano mais cedo. O City já tem o sucessor garantido: Enzo Maresca, ex-treinador do Chelsea, já chegou a acordo para assumir o comando dos 'Citizens'. Uma nova era começa no Etihad!",
-    summary_en: "BOMB IN WORLD FOOTBALL! Pep Guardiola will leave Manchester City after the final Premier League game against Aston Villa. The Catalan manager activated a clause in his contract allowing him to leave a year early. City already have a successor lined up: Enzo Maresca, former Chelsea manager, has agreed to take charge of the 'Citizens'. A new era begins at the Etihad!",
+    title: "🏆 ARSENAL CAMPEÃO DA PREMIER LEAGUE APÓS 22 ANOS! Os Gunners conquistam o título histórico com Man City a empatar com o Bournemouth!",
+    title_en: "🏆 ARSENAL PREMIER LEAGUE CHAMPIONS AFTER 22 YEARS! The Gunners clinch the historic title as Man City draw with Bournemouth!",
+    summary: "HISTÓRIA ESCRITA EM LETRAS DE OURO! O Arsenal é campeão da Premier League pela primeira vez em 22 anos! Após o Manchester City empatar 1-1 com o Bournemouth na jornada 37, os Gunners de Mikel Arteta garantiram matematicamente o título, encerrando um jejum que durava desde a temporada dos Invencíveis de 2003/04. As celebrações explodiram no Emirates Stadium e pelas ruas de Londres. Kai Havertz, Bukayo Saka e toda a equipa foram ovacionados pelos adeptos em delírio. Um momento que ficará para sempre na história do futebol inglês!",
+    summary_en: "HISTORY WRITTEN IN GOLDEN LETTERS! Arsenal are Premier League champions for the first time in 22 years! After Manchester City drew 1-1 with Bournemouth in matchweek 37, Mikel Arteta's Gunners mathematically secured the title, ending a drought dating back to the Invincibles season of 2003/04. Celebrations erupted at the Emirates Stadium and across the streets of London. Kai Havertz, Bukayo Saka and the entire squad were cheered by delirious fans. A moment that will forever remain in English football history!",
     tag: "BREAKING",
-    source: "@SkySports",
+    source: "@PremierLeague",
     url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "35.2M",
+    time: "20/05/2026",
+    engagement: "89.4M",
   },
   {
     id: "t2",
-    title: "🔥 MOURINHO ASSINA PELO REAL MADRID! 'The Special One' regressa ao Bernabéu com contrato de 2 anos!",
-    title_en: "🔥 MOURINHO SIGNS FOR REAL MADRID! 'The Special One' returns to the Bernabeu on a 2-year contract!",
-    summary: "O REGRESSO DO REI! José Mourinho chegou a acordo verbal total com o Real Madrid para um contrato de dois anos. Fabrizio Romano confirmou o negócio com o seu famoso 'Here we go!'. Mourinho não colocou qualquer entrave nas negociações, pois o seu único desejo era regressar ao clube merengue. Florentino Pérez prepara-se para anunciar o português nos próximos dias.",
-    summary_en: "THE RETURN OF THE KING! José Mourinho has reached a full verbal agreement with Real Madrid for a two-year contract. Fabrizio Romano confirmed the deal with his famous 'Here we go!'. Mourinho made no demands during negotiations, as his only desire was to return to the Spanish giants. Florentino Pérez is preparing to announce the Portuguese manager in the coming days.",
-    tag: "BREAKING",
-    source: "@FabrizioRomano",
+    title: "🚨 ESCÂNDALO! SOUTHAMPTON EXPULSO DOS PLAY-OFFS DO CHAMPIONSHIP POR ESPIONAGEM! Middlesbrough enfrenta Hull City na final de Wembley!",
+    title_en: "🚨 SCANDAL! SOUTHAMPTON EXPELLED FROM CHAMPIONSHIP PLAY-OFFS FOR SPYING! Middlesbrough to face Hull City in Wembley final!",
+    summary: "CHOQUE NO FUTEBOL INGLÊS! O Southampton foi expulso dos play-offs do Championship pela EFL após ser declarado culpado de espionagem ilegal a múltiplos adversários durante a época 2025/26. O clube admitiu ter filmado ilegalmente treinos do Middlesbrough e de outros clubes antes dos jogos dos play-offs. A sanção inclui a expulsão imediata e uma multa pesada. O Middlesbrough avança agora para a final de Wembley contra o Hull City no sábado. Os adeptos do Southampton estão furiosos e o clube anunciou recurso imediato da decisão.",
+    summary_en: "SHOCK IN ENGLISH FOOTBALL! Southampton have been expelled from the Championship play-offs by the EFL after being found guilty of illegally spying on multiple opponents during the 2025/26 season. The club admitted to illegally filming Middlesbrough's and other clubs' training sessions ahead of play-off matches. The sanction includes immediate expulsion and a heavy fine. Middlesbrough now advance to the Wembley final against Hull City on Saturday. Southampton fans are furious and the club announced an immediate appeal.",
+    tag: "SCANDAL",
+    source: "@EFL",
     url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "42.1M",
+    time: "20/05/2026",
+    engagement: "52.7M",
   },
   {
     id: "t3",
-    title: "💰 XABI ALONSO CONFIRMADO NO CHELSEA! Espanhol assina por 4 anos e prepara revolução no plantel!",
-    title_en: "💰 XABI ALONSO CONFIRMED AT CHELSEA! Spaniard signs for 4 years and prepares squad revolution!",
-    summary: "OFICIAL! Xabi Alonso é o novo treinador do Chelsea para a temporada 2026/27. O técnico espanhol assinou um contrato de quatro anos e já está a trabalhar na reestruturação do plantel. Morgan Rogers, do Aston Villa, é um dos principais alvos de Alonso, que terá controlo total sobre as transferências. Os adeptos dos 'Blues' estão eufóricos com a chegada do ex-treinador do Bayer Leverkusen.",
-    summary_en: "OFFICIAL! Xabi Alonso is the new Chelsea manager for the 2026/27 season. The Spanish coach has signed a four-year contract and is already working on restructuring the squad. Aston Villa's Morgan Rogers is one of Alonso's main targets, as he will have full control over transfers. 'Blues' fans are euphoric with the arrival of the former Bayer Leverkusen manager.",
-    tag: "TRANSFER",
-    source: "@TEAMtalk",
+    title: "🏟️ FINAL DA EUROPA LEAGUE HOJE! Aston Villa vs Freiburg em Istambul — Villa tenta acabar com 30 anos de espera por um troféu europeu!",
+    title_en: "🏟️ EUROPA LEAGUE FINAL TONIGHT! Aston Villa vs Freiburg in Istanbul — Villa attempt to end 30-year wait for a European trophy!",
+    summary: "A NOITE MAIS IMPORTANTE DA HISTÓRIA RECENTE DO ASTON VILLA! Os Villans de Unai Emery enfrentam o SC Freiburg na final da UEFA Europa League no Beşiktaş Park, em Istambul, às 20:00 (hora de Lisboa). O Villa não conquista um troféu europeu desde 1982, quando venceu a Taça dos Campeões Europeus. O capitão John McGinn disse que é o 'momento mais orgulhoso' da sua carreira. O Freiburg, surpreendente finalista, chega motivado para criar a maior surpresa da sua história. Emery, o 'Rei da Europa League', vai tentar o seu quarto título na competição.",
+    summary_en: "THE MOST IMPORTANT NIGHT IN RECENT ASTON VILLA HISTORY! Unai Emery's Villans face SC Freiburg in the UEFA Europa League final at Beşiktaş Park in Istanbul at 20:00 (Lisbon time). Villa have not won a European trophy since 1982, when they won the European Cup. Captain John McGinn said it is the 'proudest moment' of his career. Freiburg, the surprise finalists, arrive motivated to create the biggest shock in their history. Emery, the 'Europa League King', will attempt to win his fourth title in the competition.",
+    tag: "HOT",
+    source: "@UEFA",
     url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "28.5M",
+    time: "20/05/2026",
+    engagement: "44.3M",
   },
   {
     id: "t4",
-    title: "🚨 ESCÂNDALO DE APOSTAS NO TEXAS TECH! Quarterback Brendan Sorsby processa NCAA após ser suspenso!",
-    title_en: "🚨 BETTING SCANDAL AT TEXAS TECH! Quarterback Brendan Sorsby sues NCAA after being suspended!",
-    summary: "ESCÂNDALO NOS EUA! O quarterback do Texas Tech, Brendan Sorsby, deu entrada numa clínica de reabilitação para vício em jogo após ter feito milhares de apostas desportivas. Sorsby foi declarado inelegível pela NCAA e decidiu processar a organização num tribunal do Texas, procurando uma providência cautelar. O caso está a abalar o desporto universitário americano.",
-    summary_en: "SCANDAL IN THE USA! Texas Tech quarterback Brendan Sorsby has entered a gambling addiction treatment facility after reportedly placing thousands of sports bets. Sorsby was declared ineligible by the NCAA and has decided to sue the organization in a Texas state court, seeking a temporary injunction. The case is shaking American college sports.",
-    tag: "SCANDAL",
-    source: "@TheAthletic",
-    url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "15.7M",
-  },
-  {
-    id: "t5",
-    title: "🏆 ARSENAL A UMA VITÓRIA DO TÍTULO! Gunners vencem Burnley e ficam a um passo da glória na Premier League!",
-    title_en: "🏆 ARSENAL ONE WIN AWAY FROM TITLE! Gunners beat Burnley and are one step away from Premier League glory!",
-    summary: "O TÍTULO ESTÁ PERTO! O Arsenal venceu o Burnley por 1-0, com um golo de Kai Havertz, e está agora a apenas uma vitória de conquistar a Premier League, 22 anos depois do último título. A equipa de Mikel Arteta lidera a tabela e pode até celebrar se o Manchester City não vencer o seu próximo jogo. A tensão é máxima na reta final do campeonato inglês!",
-    summary_en: "THE TITLE IS CLOSE! Arsenal beat Burnley 1-0, with a goal from Kai Havertz, and are now just one win away from winning the Premier League, 22 years after their last title. Mikel Arteta's team leads the table and could even celebrate if Manchester City fail to win their next game. Tension is at its peak in the final stretch of the English championship!",
-    tag: "HOT",
-    source: "@ESPN",
-    url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "31.4M",
-  },
-  {
-    id: "t6",
-    title: "🇧🇷 NEYMAR CONVOCADO PARA A COPA DO MUNDO 2026! Carlo Ancelotti surpreende e chama o craque para a seleção!",
-    title_en: "🇧🇷 NEYMAR CALLED UP FOR 2026 WORLD CUP! Carlo Ancelotti surprises and calls the star to the national team!",
-    summary: "ELE VOLTOU! O selecionador do Brasil, Carlo Ancelotti, anunciou a lista de 26 convocados para a Copa do Mundo de 2026 e a grande surpresa é o regresso de Neymar Jr. O craque brasileiro, que tem sofrido com lesões, recebeu um voto de confiança do técnico italiano. Os adeptos brasileiros celebraram a notícia nas ruas, sonhando com o tão desejado Hexa nos Estados Unidos, México e Canadá.",
-    summary_en: "HE IS BACK! Brazil manager Carlo Ancelotti has announced the 26-man squad for the 2026 World Cup and the big surprise is the return of Neymar Jr. The Brazilian star, who has struggled with injuries, received a vote of confidence from the Italian coach. Brazilian fans celebrated the news in the streets, dreaming of the much-desired sixth World Cup title in the US, Mexico and Canada.",
+    title: "🇧🇷 NEYMAR EM LÁGRIMAS AO SER CONVOCADO PARA O MUNDIAL 2026! Carlo Ancelotti surpreende o mundo com o regresso do craque!",
+    title_en: "🇧🇷 NEYMAR IN TEARS AFTER WORLD CUP 2026 CALL-UP! Carlo Ancelotti surprises the world with the return of the Brazilian star!",
+    summary: "ELE VOLTOU! O momento em que Neymar Jr. soube que foi convocado por Carlo Ancelotti para a Copa do Mundo de 2026 correu o mundo: o craque brasileiro rompeu em lágrimas ao ouvir o seu nome na lista dos 26 convocados. Após anos de lesões e críticas, o melhor marcador de sempre da Seleção Canarinha vai disputar o que será provavelmente o seu último Mundial. O Brasil sonha com o Hexa nos Estados Unidos, México e Canadá, e Neymar pode ser o fator decisivo.",
+    summary_en: "HE IS BACK! The moment Neymar Jr. found out he was called up by Carlo Ancelotti for the 2026 World Cup went viral worldwide: the Brazilian star burst into tears upon hearing his name in the 26-man squad. After years of injuries and criticism, Brazil's all-time top scorer will compete in what will likely be his final World Cup. Brazil dreams of a sixth World Cup title in the United States, Mexico and Canada, and Neymar could be the decisive factor.",
     tag: "HOT",
     source: "@GloboEsporte",
     url: "https://x.com/alivegoal",
-    time: "19/05/2026",
-    engagement: "45.8M",
+    time: "20/05/2026",
+    engagement: "67.2M",
+  },
+  {
+    id: "t5",
+    title: "💰 MOURINHO ASSINA PELO REAL MADRID! 'The Special One' regressa ao Bernabéu com contrato de 2 anos — Salah no radar!",
+    title_en: "💰 MOURINHO SIGNS FOR REAL MADRID! 'The Special One' returns to the Bernabeu on a 2-year deal — Salah in his sights!",
+    summary: "O REGRESSO DO REI! José Mourinho chegou a acordo total com o Real Madrid para um contrato de dois anos. Fabrizio Romano confirmou o negócio com o seu famoso 'Here we go!'. Mourinho já terá pedido reforços de peso para o mercado de verão, incluindo Mohamed Salah, que está a ponderar uma mudança para La Liga após a saída do Liverpool. Florentino Pérez prepara-se para anunciar o português nos próximos dias. Uma nova era começa no Bernabéu!",
+    summary_en: "THE RETURN OF THE KING! José Mourinho has reached a full agreement with Real Madrid for a two-year contract. Fabrizio Romano confirmed the deal with his famous 'Here we go!'. Mourinho has reportedly already requested high-profile reinforcements for the summer market, including Mohamed Salah, who is considering a move to La Liga after leaving Liverpool. Florentino Pérez is preparing to announce the Portuguese manager in the coming days. A new era begins at the Bernabeu!",
+    tag: "TRANSFER",
+    source: "@FabrizioRomano",
+    url: "https://x.com/alivegoal",
+    time: "20/05/2026",
+    engagement: "42.1M",
+  },
+  {
+    id: "t6",
+    title: "🔥 BOCA JUNIORS vs CRUZEIRO NA LIBERTADORES HOJE! Xeneize em jogo decisivo na Bombonera — tudo ou nada no Grupo D!",
+    title_en: "🔥 BOCA JUNIORS vs CRUZEIRO IN LIBERTADORES TODAY! Xeneize in decisive clash at La Bombonera — all or nothing in Group D!",
+    summary: "NOITE DE FOGO NA BOMBONERA! O Boca Juniors recebe o Cruzeiro esta noite às 21:30 (hora de Lisboa) num jogo decisivo da fase de grupos da Copa Libertadores 2026. O Cruzeiro lidera o Grupo D e uma derrota pode praticamente eliminar o Boca da competição. A atmosfera na Bombonera promete ser elétrica, com mais de 50.000 adeptos a encher o estádio. O duelo entre duas das maiores potências do futebol sul-americano é um dos jogos mais aguardados da semana na Libertadores.",
+    summary_en: "FIRE NIGHT AT LA BOMBONERA! Boca Juniors host Cruzeiro tonight at 21:30 (Lisbon time) in a decisive Copa Libertadores 2026 group stage match. Cruzeiro lead Group D and a defeat could virtually eliminate Boca from the competition. The atmosphere at La Bombonera promises to be electric, with over 50,000 fans filling the stadium. The clash between two of South America's biggest football powers is one of the most anticipated matches of the week in the Libertadores.",
+    tag: "HOT",
+    source: "@Libertadores",
+    url: "https://x.com/alivegoal",
+    time: "20/05/2026",
+    engagement: "29.8M",
   }
 ];
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=600");
-
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
-
   return res.status(200).json({
     source: "curated",
     count: CURATED_TRENDING.length,
