@@ -79,32 +79,32 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (19/05/2026) — aparecem primeiro
+// Jogos com tips hoje (21/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Aston Villa", "Freiburg",
-  "Boca Juniors", "Cruzeiro",
-  "Middlesbrough", "Hull City",
-  "Palermo", "Catanzaro",
-  "Sporting CP", "Torreense",
+  "Wolfsburg", "Paderborn",
+  "Ajax", "Groningen",
+  "Utrecht", "Heerenveen",
+  "La Guaira", "Ind. Rivadavia",
+  "Anderlecht", "St. Truiden",
 ];
 
-// Fallback data com jogos reais (atualizado 20/05/2026)
+// Fallback data com jogos reais (atualizado 21/05/2026)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 1800001, homeTeam: "Aston Villa", awayTeam: "Freiburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League Final", leagueId: 2018 },
-  { id: 1800002, homeTeam: "Boca Juniors", awayTeam: "Cruzeiro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa Libertadores", leagueId: 2000 },
-  { id: 1800003, homeTeam: "Middlesbrough", awayTeam: "Hull City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Championship Play-Off Final", leagueId: 2016 },
-  { id: 1800004, homeTeam: "Palermo", awayTeam: "Catanzaro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Serie B", leagueId: 2019 },
-  { id: 1800005, homeTeam: "Sporting CP", awayTeam: "Torreense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:15", league: "Liga Portugal", leagueId: 2017 },
+  { id: 2100001, homeTeam: "Wolfsburg", awayTeam: "Paderborn", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Bundesliga - Relegation", leagueId: 2002 },
+  { id: 2100002, homeTeam: "Ajax", awayTeam: "Groningen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Eredivisie - Play Offs", leagueId: 2003 },
+  { id: 2100003, homeTeam: "Utrecht", awayTeam: "Heerenveen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Eredivisie - Play Offs", leagueId: 2003 },
+  { id: 2100004, homeTeam: "La Guaira", awayTeam: "Ind. Rivadavia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2000 },
+  { id: 2100005, homeTeam: "Anderlecht", awayTeam: "St. Truiden", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
   // Outros jogos do dia
-  { id: 1800006, homeTeam: "GAIS", awayTeam: "Hammarby", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Allsvenskan", leagueId: 2000 },
-  { id: 1800007, homeTeam: "Lillestrøm", awayTeam: "Kristiansund", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Eliteserien", leagueId: 2000 },
-  { id: 1800008, homeTeam: "Start", awayTeam: "Bodø/Glimt", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Eliteserien", leagueId: 2000 },
+  { id: 2100006, homeTeam: "Gent", awayTeam: "Royale Union SG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
+  { id: 2100007, homeTeam: "KV Mechelen", awayTeam: "Club Brugge KV", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
+  { id: 2100008, homeTeam: "Brondby", awayTeam: "FC Copenhagen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Superliga - Play Offs", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Aston Villa", awayTeam: "Freiburg",
+  homeTeam: "Wolfsburg", awayTeam: "Paderborn",
   homeScore: 0, awayScore: 0,
   stats: {
     possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],

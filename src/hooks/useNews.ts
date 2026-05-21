@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 19/05/2026
+// Notícias de fallback — análises, tips e contexto — 21/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como o Arsenal de Arteta conquistou a Premier League — O sistema que destronou o City',
-      excerpt: 'Após 22 anos de espera, o Arsenal é campeão inglês. Analisamos a evolução tática de Mikel Arteta ao longo desta temporada histórica: a solidez defensiva, a pressão alta e a criatividade de Saka e Havertz foram os pilares do título. O que mudou desde a época passada e como o Arsenal conseguiu finalmente ultrapassar o Manchester City na corrida ao título?',
+      title: 'ANÁLISE TÁTICA: O Chelsea de Xabi Alonso — Como o sistema de 3 centrais vai revolucionar Stamford Bridge',
+      excerpt: 'Com a confirmação de Xabi Alonso como novo treinador do Chelsea, analisamos como o técnico espanhol vai implementar o seu sistema tático de sucesso. O que significa isto para jogadores como Enzo Fernández e Cole Palmer? E porque é que Alonso exigiu a contratação de duas estrelas do Real Madrid para o seu esquema?',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -156,44 +156,44 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TIPS DE APOSTAS: Final da Europa League — Aston Villa vs Freiburg em Istambul — Análise completa e picks de valor',
-      excerpt: 'A grande final da UEFA Europa League de 2026 está marcada para esta noite em Istambul. Unai Emery, o "Rei da Europa League", leva o Aston Villa ao palco europeu mais importante. O Freiburg é o outsider, mas tem qualidade para surpreender. Analisamos as estatísticas, os mercados de valor e apresentamos as nossas melhores picks para esta final histórica.',
-      category: 'TIPS DE APOSTAS',
+      title: 'ESCÂNDALO: O caso Brendan Sorsby — O impacto das apostas ilegais no futebol moderno',
+      excerpt: 'A suspensão de Brendan Sorsby por envolvimento em apostas ilegais levanta novas questões sobre a integridade no desporto. Analisamos os detalhes do caso, as consequências para o jogador e para a sua equipa, e como as autoridades estão a tentar combater este problema crescente no futebol.',
+      category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'ANÁLISE TÁTICA: O escândalo do Southampton — Como a espionagem se tornou uma prática no futebol moderno',
-      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem levanta questões profundas sobre a ética no futebol moderno. Analisamos como as equipas recolhem informação sobre os adversários, onde está a linha entre análise legítima e espionagem ilegal, e quais as consequências para o clube de Southampton, que agora perde a oportunidade de regressar à Premier League.',
-      category: 'ESCÂNDALO',
+      title: 'TRANSFERÊNCIAS: O trio MS"C" no Inter Miami — O que a chegada de Casemiro significa para a MLS',
+      excerpt: 'O Inter Miami está prestes a fechar a contratação de Casemiro, juntando-o a Messi, Suárez e Busquets. Analisamos o impacto desta transferência bombástica na MLS, como o médio brasileiro se vai encaixar na equipa e o que isto significa para as ambições do clube de David Beckham.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: Mourinho no Real Madrid — Quem são os alvos para o verão? Salah, Wirtz e mais nomes bombásticos',
-      excerpt: 'Com o regresso de José Mourinho ao Real Madrid confirmado, o mercado de transferências vai aquecer. Analisamos os principais alvos do técnico português para o verão: Mohamed Salah está no radar após sair do Liverpool, Florian Wirtz é outro nome que circula. Mourinho terá controlo total sobre as contratações. Quem entra e quem sai do Bernabéu neste verão revolucionário?',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'ESPECIAL COPA DO MUNDO 2026: Neymar de volta — Análise da convocatória do Brasil e as chances de conquistar o Hexa',
-      excerpt: 'Carlo Ancelotti surpreendeu o mundo ao convocar Neymar para o Mundial 2026. Analisamos a lista completa dos 26 convocados do Brasil, o papel que Neymar poderá desempenhar no esquema tático de Ancelotti e quais são as reais hipóteses do Brasil conquistar o Hexa. O torneio começa a 11 de junho nos EUA, México e Canadá.',
+      title: 'ANÁLISE TÁTICA: A tragédia italiana — Porque é que a Itália falhou o Mundial 2026?',
+      excerpt: 'A Itália está fora do Mundial 2026. Analisamos os erros táticos, as decisões polémicas e os problemas estruturais que levaram a mais um fracasso da Squadra Azzurra. O que precisa de mudar no futebol italiano para evitar que este pesadelo se repita no futuro?',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 5,
+      title: 'TRANSFERÊNCIAS: A revolução de Guardiola — Quem são Mathys Detourbet e Kennet Eichhorn?',
+      excerpt: 'O Manchester City prepara-se para investir 32 milhões de libras na dupla Mathys Detourbet e Kennet Eichhorn. Analisamos o perfil destes dois jovens talentos, como se encaixam no sistema de Pep Guardiola e porque é que o treinador catalão os vê como o futuro do clube.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 6,
-      title: 'TIPS DE APOSTAS: Copa Libertadores — Boca Juniors vs Cruzeiro na Bombonera — Análise e picks para o duelo sul-americano',
-      excerpt: 'A Bombonera recebe esta noite um dos jogos mais emocionantes da fase de grupos da Copa Libertadores 2026. O Boca Juniors precisa de vencer o Cruzeiro para manter as esperanças de qualificação. Analisamos a forma recente de ambas as equipas, o histórico de confrontos e apresentamos as nossas melhores apostas para este duelo de alto voltagem.',
+      title: 'TIPS DE APOSTAS: Premier League — Última jornada decisiva — Análise e picks de valor',
+      excerpt: 'A última jornada da Premier League joga-se no domingo, 24 de maio. Analisamos os jogos mais importantes, incluindo o Brighton vs Manchester United e o Crystal Palace vs Arsenal. Apresentamos as nossas melhores picks e mercados de valor para fechar a temporada em grande.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -201,6 +201,7 @@ function getFallbackNews(): NewsArticle[] {
     },
   ];
 }
+
 export function useNews() {
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
