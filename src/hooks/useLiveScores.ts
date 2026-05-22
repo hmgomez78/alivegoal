@@ -79,35 +79,35 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (21/05/2026) — aparecem primeiro
+// Jogos com tips hoje (22/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Wolfsburg", "Paderborn",
-  "Ajax", "Groningen",
-  "Utrecht", "Heerenveen",
-  "La Guaira", "Ind. Rivadavia",
-  "Anderlecht", "St. Truiden",
+  "Fiorentina", "Atalanta",
+  "Lens", "Nice",
+  "RW Essen", "Greuther Furth",
+  "Ried", "SK Rapid",
+  "Nautico", "Cuiaba",
 ];
 
-// Fallback data com jogos reais (atualizado 21/05/2026)
+// Fallback data com jogos reais (atualizado 22/05/2026)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 2100001, homeTeam: "Wolfsburg", awayTeam: "Paderborn", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Bundesliga - Relegation", leagueId: 2002 },
-  { id: 2100002, homeTeam: "Ajax", awayTeam: "Groningen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Eredivisie - Play Offs", leagueId: 2003 },
-  { id: 2100003, homeTeam: "Utrecht", awayTeam: "Heerenveen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Eredivisie - Play Offs", leagueId: 2003 },
-  { id: 2100004, homeTeam: "La Guaira", awayTeam: "Ind. Rivadavia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2000 },
-  { id: 2100005, homeTeam: "Anderlecht", awayTeam: "St. Truiden", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
+  { id: 2200001, homeTeam: "Fiorentina", awayTeam: "Atalanta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
+  { id: 2200002, homeTeam: "Lens", awayTeam: "Nice", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Coupe de France", leagueId: 2015 },
+  { id: 2200003, homeTeam: "RW Essen", awayTeam: "Greuther Furth", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "2. Bundesliga - Relegation", leagueId: 2004 },
+  { id: 2200004, homeTeam: "Ried", awayTeam: "SK Rapid", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Bundesliga - Conference League - Play Offs", leagueId: 2012 },
+  { id: 2200005, homeTeam: "Nautico", awayTeam: "Cuiaba", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Serie B", leagueId: 2013 },
   // Outros jogos do dia
-  { id: 2100006, homeTeam: "Gent", awayTeam: "Royale Union SG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
-  { id: 2100007, homeTeam: "KV Mechelen", awayTeam: "Club Brugge KV", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Jupiler Pro League", leagueId: 2009 },
-  { id: 2100008, homeTeam: "Brondby", awayTeam: "FC Copenhagen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Superliga - Play Offs", leagueId: 2000 },
+  { id: 2200006, homeTeam: "Union de Santa Fe", awayTeam: "Independiente", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Argentina", leagueId: 2000 },
+  { id: 2200007, homeTeam: "Liverpool M.", awayTeam: "Racing Montevideo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:30", league: "Liga AUF Uruguaya", leagueId: 2000 },
+  { id: 2200008, homeTeam: "Nueve de Octubre", awayTeam: "Manta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Copa Ecuador", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Wolfsburg", awayTeam: "Paderborn",
+  homeTeam: "Fiorentina", awayTeam: "Atalanta",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

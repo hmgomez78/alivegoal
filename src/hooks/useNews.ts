@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 21/05/2026
+// Notícias de fallback — análises, tips e contexto — 22/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Chelsea de Xabi Alonso — Como o sistema de 3 centrais vai revolucionar Stamford Bridge',
-      excerpt: 'Com a confirmação de Xabi Alonso como novo treinador do Chelsea, analisamos como o técnico espanhol vai implementar o seu sistema tático de sucesso. O que significa isto para jogadores como Enzo Fernández e Cole Palmer? E porque é que Alonso exigiu a contratação de duas estrelas do Real Madrid para o seu esquema?',
+      title: 'ANÁLISE TÁTICA: O Arsenal Campeão — Como a defesa de ferro de Arteta conquistou a Premier League',
+      excerpt: 'O Arsenal quebrou um jejum de 22 anos e sagrou-se campeão da Premier League. Analisamos os números impressionantes da defesa dos Gunners, a consistência tática ao longo da época e como Mikel Arteta conseguiu finalmente superar a máquina do Manchester City de Pep Guardiola.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O caso Brendan Sorsby — O impacto das apostas ilegais no futebol moderno',
-      excerpt: 'A suspensão de Brendan Sorsby por envolvimento em apostas ilegais levanta novas questões sobre a integridade no desporto. Analisamos os detalhes do caso, as consequências para o jogador e para a sua equipa, e como as autoridades estão a tentar combater este problema crescente no futebol.',
+      title: 'ESCÂNDALO: O caso Spygate do Southampton — As consequências legais e desportivas',
+      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem está a abalar o futebol inglês. Exploramos os detalhes do esquema, a fúria dos clubes rivais, as opções legais dos Saints e o impacto da dedução de pontos para a próxima temporada.',
       category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
@@ -165,8 +165,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: O trio MS"C" no Inter Miami — O que a chegada de Casemiro significa para a MLS',
-      excerpt: 'O Inter Miami está prestes a fechar a contratação de Casemiro, juntando-o a Messi, Suárez e Busquets. Analisamos o impacto desta transferência bombástica na MLS, como o médio brasileiro se vai encaixar na equipa e o que isto significa para as ambições do clube de David Beckham.',
+      title: 'TRANSFERÊNCIAS: A revolução no Manchester United — O que significa o acordo de 74 milhões?',
+      excerpt: 'O Manchester United está a agir rápido no mercado com um acordo de 74 milhões de libras e negociações avançadas por um médio da Atalanta. Analisamos a nova estratégia desportiva dos Red Devils e como estas contratações podem transformar a equipa para a próxima época.',
       category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
@@ -174,8 +174,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ANÁLISE TÁTICA: A tragédia italiana — Porque é que a Itália falhou o Mundial 2026?',
-      excerpt: 'A Itália está fora do Mundial 2026. Analisamos os erros táticos, as decisões polémicas e os problemas estruturais que levaram a mais um fracasso da Squadra Azzurra. O que precisa de mudar no futebol italiano para evitar que este pesadelo se repita no futuro?',
+      title: 'ANÁLISE TÁTICA: O regresso de Mourinho — Como o Real Madrid vai jogar sob o comando do Special One',
+      excerpt: 'José Mourinho está de volta ao Santiago Bernabéu. Analisamos o que muda taticamente no Real Madrid, a relação com estrelas como Vinícius Júnior e Mbappé, e quais as contratações que o técnico português exigiu para implementar o seu estilo de jogo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -183,17 +183,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TRANSFERÊNCIAS: A revolução de Guardiola — Quem são Mathys Detourbet e Kennet Eichhorn?',
-      excerpt: 'O Manchester City prepara-se para investir 32 milhões de libras na dupla Mathys Detourbet e Kennet Eichhorn. Analisamos o perfil destes dois jovens talentos, como se encaixam no sistema de Pep Guardiola e porque é que o treinador catalão os vê como o futuro do clube.',
-      category: 'TRANSFERÊNCIAS',
+      title: 'ÚLTIMA HORA: As escolhas polémicas de Tuchel — Porque é que Maguire e Foden ficaram de fora?',
+      excerpt: 'A convocatória de Thomas Tuchel para o Mundial 2026 deixou Inglaterra em choque. Analisamos as razões táticas e físicas por trás das exclusões de Harry Maguire, Phil Foden e Cole Palmer, e o que a chamada de Ivan Toney significa para o ataque dos Três Leões.',
+      category: 'ÚLTIMA HORA',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TIPS DE APOSTAS: Premier League — Última jornada decisiva — Análise e picks de valor',
-      excerpt: 'A última jornada da Premier League joga-se no domingo, 24 de maio. Analisamos os jogos mais importantes, incluindo o Brighton vs Manchester United e o Crystal Palace vs Arsenal. Apresentamos as nossas melhores picks e mercados de valor para fechar a temporada em grande.',
+      title: 'TIPS DE APOSTAS: Finais da Taça e Play-offs — Onde está o valor este fim de semana?',
+      excerpt: 'Com a final da Coupe de France entre Lens e Nice, e os jogos decisivos dos play-offs e despromoções por toda a Europa, analisamos as melhores oportunidades de aposta. Descubra as nossas picks de valor e os mercados mais rentáveis para os jogos de hoje.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
