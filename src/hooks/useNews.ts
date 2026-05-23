@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 22/05/2026
+// Notícias de fallback — análises, tips e contexto — 23/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,53 +147,53 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Arsenal Campeão — Como a defesa de ferro de Arteta conquistou a Premier League',
-      excerpt: 'O Arsenal quebrou um jejum de 22 anos e sagrou-se campeão da Premier League. Analisamos os números impressionantes da defesa dos Gunners, a consistência tática ao longo da época e como Mikel Arteta conseguiu finalmente superar a máquina do Manchester City de Pep Guardiola.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: O caso Spygate do Southampton — As consequências legais e desportivas',
-      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem está a abalar o futebol inglês. Exploramos os detalhes do esquema, a fúria dos clubes rivais, as opções legais dos Saints e o impacto da dedução de pontos para a próxima temporada.',
-      category: 'ESCÂNDALO',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: A revolução no Manchester United — O que significa o acordo de 74 milhões?',
-      excerpt: 'O Manchester United está a agir rápido no mercado com um acordo de 74 milhões de libras e negociações avançadas por um médio da Atalanta. Analisamos a nova estratégia desportiva dos Red Devils e como estas contratações podem transformar a equipa para a próxima época.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ANÁLISE TÁTICA: O regresso de Mourinho — Como o Real Madrid vai jogar sob o comando do Special One',
-      excerpt: 'José Mourinho está de volta ao Santiago Bernabéu. Analisamos o que muda taticamente no Real Madrid, a relação com estrelas como Vinícius Júnior e Mbappé, e quais as contratações que o técnico português exigiu para implementar o seu estilo de jogo.',
+      title: 'ANÁLISE TÁTICA: O legado de Pep Guardiola no Manchester City — 10 anos que mudaram o futebol',
+      excerpt: 'Com a confirmação da saída de Pep Guardiola do Manchester City, analisamos o impacto revolucionário do treinador catalão no futebol inglês e mundial. Seis Premier Leagues, duas Champions Leagues e uma transformação completa do jogo posicional. Quem pode suceder ao maior treinador da era moderna?',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'ÚLTIMA HORA: As escolhas polémicas de Tuchel — Porque é que Maguire e Foden ficaram de fora?',
-      excerpt: 'A convocatória de Thomas Tuchel para o Mundial 2026 deixou Inglaterra em choque. Analisamos as razões táticas e físicas por trás das exclusões de Harry Maguire, Phil Foden e Cole Palmer, e o que a chamada de Ivan Toney significa para o ataque dos Três Leões.',
-      category: 'ÚLTIMA HORA',
+      id: 2,
+      title: 'ÚLTIMA HORA: La Liga decide-se hoje — Barcelona campeão ou Real Madrid virada histórica?',
+      excerpt: 'A última jornada de La Liga promete emoção máxima. O Barcelona lidera com 1 ponto de vantagem e visita o Valencia às 19h00, enquanto o Real Madrid recebe o Athletic Club. Analisamos os cenários possíveis, as probabilidades e onde está o valor para apostar neste duelo épico pelo título.',
+      category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'TRANSFERÊNCIAS: O próximo treinador do Manchester City — Quem substitui Pep Guardiola?',
+      excerpt: 'Com a saída confirmada de Pep Guardiola, o Manchester City enfrenta a maior decisão da sua história recente. Enzo Maresca é o favorito, mas os nomes de Xabi Alonso, Roberto De Zerbi e Thomas Frank também circulam. Analisamos os candidatos e o impacto de cada escolha no mercado de transferências.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'ESCÂNDALO: O Spygate do Southampton — As consequências legais e o futuro do clube',
+      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem levanta questões profundas sobre a ética no futebol moderno. Exploramos como o esquema funcionou, quem sabia o quê e quando, as opções legais dos Saints e se a dedução de 4 pontos é suficiente punição para um crime desportivo desta magnitude.',
+      category: 'ESCÂNDALO',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ANÁLISE TÁTICA: Michael Carrick no Manchester United — Pode o ex-capitão reconstruir o gigante adormecido?',
+      excerpt: 'Michael Carrick foi nomeado treinador permanente do Manchester United até 2028. Analisamos o seu estilo de jogo, os resultados da fase interina, as contratações prioritárias para o verão e se o ex-médio tem capacidade para devolver os Red Devils ao topo da Premier League após anos de instabilidade.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 6,
-      title: 'TIPS DE APOSTAS: Finais da Taça e Play-offs — Onde está o valor este fim de semana?',
-      excerpt: 'Com a final da Coupe de France entre Lens e Nice, e os jogos decisivos dos play-offs e despromoções por toda a Europa, analisamos as melhores oportunidades de aposta. Descubra as nossas picks de valor e os mercados mais rentáveis para os jogos de hoje.',
+      title: 'TIPS DE APOSTAS: Serie A — Bologna vs Inter e La Liga — Valencia vs Barcelona com análise completa',
+      excerpt: 'Os jogos de hoje na Serie A e La Liga oferecem oportunidades de aposta com valor real. O Bologna recebe o Inter numa partida decisiva para o top 4, enquanto o Valencia vs Barcelona pode ser o jogo que decide o título espanhol. Analisamos as odds, as formas das equipas e as melhores picks para hoje.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
