@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 23/05/2026
+// Notícias de fallback — análises, tips e contexto — 24/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O legado de Pep Guardiola no Manchester City — 10 anos que mudaram o futebol',
-      excerpt: 'Com a confirmação da saída de Pep Guardiola do Manchester City, analisamos o impacto revolucionário do treinador catalão no futebol inglês e mundial. Seis Premier Leagues, duas Champions Leagues e uma transformação completa do jogo posicional. Quem pode suceder ao maior treinador da era moderna?',
+      title: 'ANÁLISE TÁTICA: O último ato de Guardiola no City e a herança que deixa a Maresca',
+      excerpt: 'No dia da despedida de Pep Guardiola do Manchester City, analisamos o sistema tático que revolucionou o futebol inglês e o desafio monumental que Enzo Maresca enfrentará. O treinador italiano vai herdar uma equipa perfeita ou um plantel que precisa de renovação urgente? A contratação de Enzo Fernández poderá ser a primeira peça.',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ÚLTIMA HORA: La Liga decide-se hoje — Barcelona campeão ou Real Madrid virada histórica?',
-      excerpt: 'A última jornada de La Liga promete emoção máxima. O Barcelona lidera com 1 ponto de vantagem e visita o Valencia às 19h00, enquanto o Real Madrid recebe o Athletic Club. Analisamos os cenários possíveis, as probabilidades e onde está o valor para apostar neste duelo épico pelo título.',
+      title: 'ÚLTIMA HORA: Premier League Final Day — Tottenham em risco de descer, Arsenal campeão festeja',
+      excerpt: 'O último dia da Premier League 2025/26 promete drama máximo. O Tottenham precisa de pelo menos um empate contra o Everton para evitar a descida histórica. O Arsenal, já coroado campeão, visita o Crystal Palace. Analisamos todos os cenários, as probabilidades e as melhores apostas para este dia épico.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
@@ -165,8 +165,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: O próximo treinador do Manchester City — Quem substitui Pep Guardiola?',
-      excerpt: 'Com a saída confirmada de Pep Guardiola, o Manchester City enfrenta a maior decisão da sua história recente. Enzo Maresca é o favorito, mas os nomes de Xabi Alonso, Roberto De Zerbi e Thomas Frank também circulam. Analisamos os candidatos e o impacto de cada escolha no mercado de transferências.',
+      title: 'TRANSFERÊNCIAS: Éderson no Manchester United — Como o brasileiro vai mudar o meio-campo de Carrick',
+      excerpt: 'Com a contratação de Éderson à Atalanta por 50 milhões de euros praticamente selada, analisamos o perfil do médio brasileiro. A sua capacidade física, visão de jogo e intensidade encaixam na perfeição no sistema que Michael Carrick quer implementar no Manchester United. Será ele o novo Casemiro?',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
@@ -174,8 +174,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: O Spygate do Southampton — As consequências legais e o futuro do clube',
-      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem levanta questões profundas sobre a ética no futebol moderno. Exploramos como o esquema funcionou, quem sabia o quê e quando, as opções legais dos Saints e se a dedução de 4 pontos é suficiente punição para um crime desportivo desta magnitude.',
+      title: 'ESCÂNDALO: Hull City exige promoção direta e ameaça paralisar o Championship',
+      excerpt: 'O Spygate do Southampton continua a gerar ondas de choque. O Hull City recusa-se a jogar a final dos play-offs contra o Middlesbrough, argumentando que as infrações do Southampton viciaram toda a competição. Acun Ilicali, dono dos Tigers, contratou advogados de topo para forçar a EFL a conceder a promoção direta.',
       category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
@@ -183,8 +183,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE TÁTICA: Michael Carrick no Manchester United — Pode o ex-capitão reconstruir o gigante adormecido?',
-      excerpt: 'Michael Carrick foi nomeado treinador permanente do Manchester United até 2028. Analisamos o seu estilo de jogo, os resultados da fase interina, as contratações prioritárias para o verão e se o ex-médio tem capacidade para devolver os Red Devils ao topo da Premier League após anos de instabilidade.',
+      title: 'ANÁLISE TÁTICA: O Barcelona Femení é a melhor equipa de sempre do futebol feminino?',
+      excerpt: 'Após a vitória categórica por 4-0 sobre o poderoso Lyon na final da Champions League em Oslo, analisamos o domínio absoluto do Barcelona. Com quatro títulos europeus conquistados com um futebol total e avassalador, a equipa de Pere Romeu estabeleceu um novo padrão global. A tática, as jogadoras-chave e o futuro.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -192,8 +192,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TIPS DE APOSTAS: Serie A — Bologna vs Inter e La Liga — Valencia vs Barcelona com análise completa',
-      excerpt: 'Os jogos de hoje na Serie A e La Liga oferecem oportunidades de aposta com valor real. O Bologna recebe o Inter numa partida decisiva para o top 4, enquanto o Valencia vs Barcelona pode ser o jogo que decide o título espanhol. Analisamos as odds, as formas das equipas e as melhores picks para hoje.',
+      title: 'TIPS DE APOSTAS: Premier League Final Day — Brighton vs Man Utd e Palace vs Arsenal',
+      excerpt: 'A última jornada da Premier League é historicamente propensa a surpresas e golos. Analisamos o Brighton vs Manchester United e o Crystal Palace vs Arsenal, com foco nos mercados de golos e cantos. Descubra as nossas tips exclusivas e as odds de maior valor para o grande encerramento do futebol inglês.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,

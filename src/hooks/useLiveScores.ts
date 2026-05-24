@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (23/05/2026) — aparecem primeiro
+// Jogos com tips hoje (24/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Valencia", "Barcelona",
-  "Real Madrid", "Athletic Club",
-  "Bologna", "Inter",
-  "São Paulo", "Botafogo",
-  "Hull City", "Middlesbrough",
+  "Man City", "Aston Villa",
+  "Brighton", "Man United",
+  "Crystal Palace", "Arsenal",
+  "Napoli", "Udinese",
+  "Parma", "Sassuolo",
 ];
 
-// Fallback data com jogos reais (atualizado 23/05/2026)
+// Fallback data com jogos reais (atualizado 24/05/2026)
 // NOTA: Apenas jogos de HOJE — sem resultados de ontem
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 2300001, homeTeam: "Bologna", awayTeam: "Inter", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Serie A", leagueId: 2019 },
-  { id: 2300002, homeTeam: "Real Madrid", awayTeam: "Athletic Club", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "La Liga", leagueId: 2014 },
-  { id: 2300003, homeTeam: "Valencia", awayTeam: "Barcelona", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "La Liga", leagueId: 2014 },
-  { id: 2300004, homeTeam: "São Paulo", awayTeam: "Botafogo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão", leagueId: 2013 },
-  { id: 2300005, homeTeam: "Hull City", awayTeam: "Middlesbrough", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Championship Play-Off Final", leagueId: 2016 },
+  { id: 2400001, homeTeam: "Man City", awayTeam: "Aston Villa", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400002, homeTeam: "Brighton", awayTeam: "Man United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400003, homeTeam: "Crystal Palace", awayTeam: "Arsenal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400004, homeTeam: "Napoli", awayTeam: "Udinese", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Serie A", leagueId: 2019 },
+  { id: 2400005, homeTeam: "Parma", awayTeam: "Sassuolo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:00", league: "Serie A", leagueId: 2019 },
   // Outros jogos do dia
-  { id: 2300006, homeTeam: "Lazio", awayTeam: "Pisa", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Serie A", leagueId: 2019 },
-  { id: 2300007, homeTeam: "Vitória", awayTeam: "Internacional", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão", leagueId: 2013 },
-  { id: 2300008, homeTeam: "Grêmio", awayTeam: "Santos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Brasileirão", leagueId: 2013 },
-  { id: 2300009, homeTeam: "Bayern", awayTeam: "Stuttgart", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "DFB Pokal", leagueId: 2011 },
-  { id: 2300010, homeTeam: "OH Leuven", awayTeam: "Genk", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Pro League - Conference PO", leagueId: 2000 },
+  { id: 2400006, homeTeam: "Burnley", awayTeam: "Wolves", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400007, homeTeam: "Sunderland", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400008, homeTeam: "Tottenham", awayTeam: "Everton", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400009, homeTeam: "West Ham", awayTeam: "Leeds", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2400010, homeTeam: "Nott'm Forest", awayTeam: "Bournemouth", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Real Madrid", awayTeam: "Athletic Club",
+  homeTeam: "Man City", awayTeam: "Aston Villa",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
