@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 24/05/2026
+// Notícias de fallback — análises, tips e contexto — 25/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O último ato de Guardiola no City e a herança que deixa a Maresca',
-      excerpt: 'No dia da despedida de Pep Guardiola do Manchester City, analisamos o sistema tático que revolucionou o futebol inglês e o desafio monumental que Enzo Maresca enfrentará. O treinador italiano vai herdar uma equipa perfeita ou um plantel que precisa de renovação urgente? A contratação de Enzo Fernández poderá ser a primeira peça.',
+      title: 'ANÁLISE: Mourinho no Real Madrid — O que muda com a crise presidencial e o prazo da cláusula de Benfica',
+      excerpt: 'O regresso de Mourinho ao Bernabéu estava marcado para hoje, mas as eleições presidenciais do Real Madrid complicaram tudo. A cláusula de rescisão de €6M no Benfica expira precisamente esta segunda-feira. Analisamos os cenários possíveis: o que acontece se Florentino perder as eleições, se Riquelme ganhar, e como isto afeta o mercado de transferências do clube merengue para o verão.',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,17 +156,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ÚLTIMA HORA: Premier League Final Day — Tottenham em risco de descer, Arsenal campeão festeja',
-      excerpt: 'O último dia da Premier League 2025/26 promete drama máximo. O Tottenham precisa de pelo menos um empate contra o Everton para evitar a descida histórica. O Arsenal, já coroado campeão, visita o Crystal Palace. Analisamos todos os cenários, as probabilidades e as melhores apostas para este dia épico.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '8 min',
+      title: 'ÚLTIMA HORA: Arsenal campeão — O que Arteta construiu em 4 anos e o que vem a seguir',
+      excerpt: 'Com o título da Premier League 2025/26 conquistado após 22 anos de espera, analisamos a revolução tática de Mikel Arteta no Arsenal. Como o catalão transformou um clube em crise num campeão europeu? Quais são as prioridades de mercado para a próxima época? E poderá o Arsenal lutar pela Champions League? Um olhar profundo sobre o renascimento dos Gunners.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Éderson no Manchester United — Como o brasileiro vai mudar o meio-campo de Carrick',
-      excerpt: 'Com a contratação de Éderson à Atalanta por 50 milhões de euros praticamente selada, analisamos o perfil do médio brasileiro. A sua capacidade física, visão de jogo e intensidade encaixam na perfeição no sistema que Michael Carrick quer implementar no Manchester United. Será ele o novo Casemiro?',
+      title: 'TRANSFERÊNCIAS: Nico Paz — O maior negócio do verão por apenas €9M e o que ele representa para o Real Madrid',
+      excerpt: 'O Real Madrid vai recomprar Nico Paz ao Como por €9 milhões, numa cláusula que representa um dos melhores negócios da história do futebol. Com 13 golos e 8 assistências na Serie A, o jovem espanhol de 20 anos é agora avaliado em mais de €80M. Analisamos o seu perfil, como encaixa no sistema do Real Madrid e por que razão este pode ser o início de uma nova era no Bernabéu.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
@@ -174,8 +174,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: Hull City exige promoção direta e ameaça paralisar o Championship',
-      excerpt: 'O Spygate do Southampton continua a gerar ondas de choque. O Hull City recusa-se a jogar a final dos play-offs contra o Middlesbrough, argumentando que as infrações do Southampton viciaram toda a competição. Acun Ilicali, dono dos Tigers, contratou advogados de topo para forçar a EFL a conceder a promoção direta.',
+      title: 'ESCÂNDALO: O caso Southampton — Como a espionagem destruiu um clube e mudou o Championship para sempre',
+      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem é o maior escândalo do futebol inglês em anos. O Hull City beneficiou e subiu à Premier League. Mas as consequências vão muito além: a EFL enfrenta processos judiciais, a integridade das competições está em causa e várias equipas exigem compensações. Um caso que vai marcar o futebol inglês durante anos.',
       category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
@@ -183,19 +183,19 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE TÁTICA: O Barcelona Femení é a melhor equipa de sempre do futebol feminino?',
-      excerpt: 'Após a vitória categórica por 4-0 sobre o poderoso Lyon na final da Champions League em Oslo, analisamos o domínio absoluto do Barcelona. Com quatro títulos europeus conquistados com um futebol total e avassalador, a equipa de Pere Romeu estabeleceu um novo padrão global. A tática, as jogadoras-chave e o futuro.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      title: 'TIPS DE APOSTAS: Bundesliga — Paderborn vs Wolfsburg e as melhores apostas para esta segunda-feira',
+      excerpt: 'Com poucos jogos hoje, o destaque vai para o Paderborn vs Wolfsburg na Bundesliga às 18:30. Analisamos a forma recente de ambas as equipas, os mercados de maior valor e as odds mais atrativas. O Wolfsburg precisa de pontos para a Europa e o Paderborn joga em casa com motivação. Descubra as nossas tips exclusivas para este jogo e os mercados de golos.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TIPS DE APOSTAS: Premier League Final Day — Brighton vs Man Utd e Palace vs Arsenal',
-      excerpt: 'A última jornada da Premier League é historicamente propensa a surpresas e golos. Analisamos o Brighton vs Manchester United e o Crystal Palace vs Arsenal, com foco nos mercados de golos e cantos. Descubra as nossas tips exclusivas e as odds de maior valor para o grande encerramento do futebol inglês.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '7 min',
+      title: 'ANÁLISE TÁTICA: Torreense na Liga Europa — Como um clube da 2ª Liga portuguesa chegou à Europa',
+      excerpt: 'A conquista da Taça de Portugal pelo SCU Torreense é uma das maiores surpresas da história do futebol português. Como conseguiu um clube da segunda divisão derrotar equipas da Liga Portugal? Analisamos a tática, os jogadores-chave e o que esperar do Torreense na fase de qualificação da Liga Europa. Uma história de cinema que merece ser contada.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },

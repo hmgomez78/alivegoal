@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (24/05/2026) — aparecem primeiro
+// Jogos com tips hoje (25/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Man City", "Aston Villa",
-  "Brighton", "Man United",
-  "Crystal Palace", "Arsenal",
-  "Napoli", "Udinese",
-  "Parma", "Sassuolo",
+  "Paderborn", "Wolfsburg",
+  "St. Mirren", "Partick Thistle",
+  "Coritiba", "Bahia",
+  "Elfsborg", "BK Haecken",
+  "Derry City", "Shamrock Rovers",
 ];
 
-// Fallback data com jogos reais (atualizado 24/05/2026)
-// NOTA: Apenas jogos de HOJE — sem resultados de ontem
+// Fallback data com jogos reais (atualizado 25/05/2026)
+// NOTA: Segunda-feira — jogos de ligas secundárias e internacionais
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 2400001, homeTeam: "Man City", awayTeam: "Aston Villa", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400002, homeTeam: "Brighton", awayTeam: "Man United", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400003, homeTeam: "Crystal Palace", awayTeam: "Arsenal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400004, homeTeam: "Napoli", awayTeam: "Udinese", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Serie A", leagueId: 2019 },
-  { id: 2400005, homeTeam: "Parma", awayTeam: "Sassuolo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:00", league: "Serie A", leagueId: 2019 },
+  { id: 2500001, homeTeam: "Paderborn", awayTeam: "Wolfsburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Bundesliga", leagueId: 2002 },
+  { id: 2500002, homeTeam: "St. Mirren", awayTeam: "Partick Thistle", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Premiership Escócia", leagueId: 2003 },
+  { id: 2500003, homeTeam: "Derry City", awayTeam: "Shelbourne", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "League of Ireland", leagueId: 2004 },
+  { id: 2500004, homeTeam: "Bohemian FC", awayTeam: "Shamrock Rovers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "League of Ireland", leagueId: 2004 },
+  { id: 2500005, homeTeam: "Elfsborg", awayTeam: "BK Haecken", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Allsvenskan", leagueId: 2005 },
   // Outros jogos do dia
-  { id: 2400006, homeTeam: "Burnley", awayTeam: "Wolves", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400007, homeTeam: "Sunderland", awayTeam: "Chelsea", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400008, homeTeam: "Tottenham", awayTeam: "Everton", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400009, homeTeam: "West Ham", awayTeam: "Leeds", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
-  { id: 2400010, homeTeam: "Nott'm Forest", awayTeam: "Bournemouth", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Premier League", leagueId: 2021 },
+  { id: 2500006, homeTeam: "IFK Gothenburg", awayTeam: "Mjaellby", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Allsvenskan", leagueId: 2005 },
+  { id: 2500007, homeTeam: "Notts County", awayTeam: "Salford City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "League 2 Inglaterra", leagueId: 2006 },
+  { id: 2500008, homeTeam: "Coritiba", awayTeam: "Bahia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 2500009, homeTeam: "FC Rapid 1923", awayTeam: "CS Univ. Craiova", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Liga 1 Roménia", leagueId: 2007 },
+  { id: 2500010, homeTeam: "IK Start", awayTeam: "Vaalerenga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Eliteserien Noruega", leagueId: 2008 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Man City", awayTeam: "Aston Villa",
+  homeTeam: "Paderborn", awayTeam: "Wolfsburg",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [45, 55], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
