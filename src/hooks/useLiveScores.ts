@@ -79,37 +79,38 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (25/05/2026) — aparecem primeiro
+// Jogos com tips hoje (26/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Paderborn", "Wolfsburg",
-  "St. Mirren", "Partick Thistle",
-  "Coritiba", "Bahia",
-  "Elfsborg", "BK Haecken",
-  "Derry City", "Shamrock Rovers",
+  "Universitario", "Deportes Tolima",
+  "LDU de Quito", "Always Ready",
+  "Saint-Etienne", "Nice",
+  "Millonarios", "O'Higgins",
+  "Sao Paulo", "Boston River",
+  "Gremio", "Montevideo City Torque",
 ];
 
-// Fallback data com jogos reais (atualizado 25/05/2026)
-// NOTA: Segunda-feira — jogos de ligas secundárias e internacionais
+// Fallback data com jogos reais (atualizado 26/05/2026)
+// NOTA: Terça-feira — jogos de ligas sul-americanas e europeias
 const fallbackMatches: LiveMatch[] = [
   // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 2500001, homeTeam: "Paderborn", awayTeam: "Wolfsburg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Bundesliga", leagueId: 2002 },
-  { id: 2500002, homeTeam: "St. Mirren", awayTeam: "Partick Thistle", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Premiership Escócia", leagueId: 2003 },
-  { id: 2500003, homeTeam: "Derry City", awayTeam: "Shelbourne", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "League of Ireland", leagueId: 2004 },
-  { id: 2500004, homeTeam: "Bohemian FC", awayTeam: "Shamrock Rovers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "League of Ireland", leagueId: 2004 },
-  { id: 2500005, homeTeam: "Elfsborg", awayTeam: "BK Haecken", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Allsvenskan", leagueId: 2005 },
+  { id: 2600001, homeTeam: "Saint-Etienne", awayTeam: "Nice", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Ligue 1 Play-offs", leagueId: 2015 },
+  { id: 2600002, homeTeam: "Universitario", awayTeam: "Deportes Tolima", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2600003, homeTeam: "LDU de Quito", awayTeam: "Always Ready", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2600004, homeTeam: "Millonarios", awayTeam: "O'Higgins", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
+  { id: 2600005, homeTeam: "Sao Paulo", awayTeam: "Boston River", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
+  { id: 2600006, homeTeam: "Gremio", awayTeam: "Montevideo City Torque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
   // Outros jogos do dia
-  { id: 2500006, homeTeam: "IFK Gothenburg", awayTeam: "Mjaellby", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Allsvenskan", leagueId: 2005 },
-  { id: 2500007, homeTeam: "Notts County", awayTeam: "Salford City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "League 2 Inglaterra", leagueId: 2006 },
-  { id: 2500008, homeTeam: "Coritiba", awayTeam: "Bahia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 2500009, homeTeam: "FC Rapid 1923", awayTeam: "CS Univ. Craiova", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Liga 1 Roménia", leagueId: 2007 },
-  { id: 2500010, homeTeam: "IK Start", awayTeam: "Vaalerenga", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Eliteserien Noruega", leagueId: 2008 },
+  { id: 2600007, homeTeam: "Lanus", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2600008, homeTeam: "Palestino", awayTeam: "Deportivo Riestra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
+  { id: 2600009, homeTeam: "Greuther Furth", awayTeam: "RW Essen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "2. Bundesliga", leagueId: 2004 },
+  { id: 2600010, homeTeam: "Morocco", awayTeam: "Burundi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amigáveis", leagueId: 2018 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Paderborn", awayTeam: "Wolfsburg",
+  homeTeam: "Universitario", awayTeam: "Deportes Tolima",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [45, 55], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

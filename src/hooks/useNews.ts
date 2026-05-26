@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 25/05/2026
+// Notícias de fallback — análises, tips e contexto — 26/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: Mourinho no Real Madrid — O que muda com a crise presidencial e o prazo da cláusula de Benfica',
-      excerpt: 'O regresso de Mourinho ao Bernabéu estava marcado para hoje, mas as eleições presidenciais do Real Madrid complicaram tudo. A cláusula de rescisão de €6M no Benfica expira precisamente esta segunda-feira. Analisamos os cenários possíveis: o que acontece se Florentino perder as eleições, se Riquelme ganhar, e como isto afeta o mercado de transferências do clube merengue para o verão.',
+      title: 'ANÁLISE TÁTICA: O impacto da lesão de Messi no esquema da Argentina para o Mundial 2026',
+      excerpt: 'A possível ausência de Lionel Messi devido a lesão obriga Lionel Scaloni a repensar toda a estrutura da seleção argentina. Analisamos como a equipa se pode adaptar sem o seu capitão e principal criador de jogo, os jogadores que terão de assumir mais responsabilidade (como Julián Álvarez e Mac Allister), e o impacto psicológico desta perda a poucas semanas do torneio.',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,35 +156,35 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ÚLTIMA HORA: Arsenal campeão — O que Arteta construiu em 4 anos e o que vem a seguir',
-      excerpt: 'Com o título da Premier League 2025/26 conquistado após 22 anos de espera, analisamos a revolução tática de Mikel Arteta no Arsenal. Como o catalão transformou um clube em crise num campeão europeu? Quais são as prioridades de mercado para a próxima época? E poderá o Arsenal lutar pela Champions League? Um olhar profundo sobre o renascimento dos Gunners.',
+      title: 'PREVISÃO DA FINAL: PSG vs Arsenal — Onde se vai decidir a Liga dos Campeões?',
+      excerpt: 'Antevisão tática do grande duelo de Budapeste. Como a pressão alta do Arsenal de Mikel Arteta pode contrariar a posse de bola do PSG de Luis Enrique? Analisamos os confrontos chave: o duelo no meio-campo entre Declan Rice e Vitinha, e como a defesa londrina tentará travar a velocidade de Ousmane Dembélé e companhia. Quem levantará o troféu?',
       category: 'ANÁLISE TÁTICA',
-      readTime: '11 min',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Nico Paz — O maior negócio do verão por apenas €9M e o que ele representa para o Real Madrid',
-      excerpt: 'O Real Madrid vai recomprar Nico Paz ao Como por €9 milhões, numa cláusula que representa um dos melhores negócios da história do futebol. Com 13 golos e 8 assistências na Serie A, o jovem espanhol de 20 anos é agora avaliado em mais de €80M. Analisamos o seu perfil, como encaixa no sistema do Real Madrid e por que razão este pode ser o início de uma nova era no Bernabéu.',
+      title: 'TRANSFERÊNCIAS: O plano de reconstrução do Tottenham com a chegada de Andy Robertson',
+      excerpt: 'A contratação a custo zero de Andy Robertson é apenas o primeiro passo na remodelação do Tottenham para 2026/27. Analisamos como a experiência e mentalidade vencedora do escocês podem transformar a ala esquerda dos Spurs, e quais são os próximos alvos do clube londrino no mercado para garantir que não repetem a luta pela manutenção da época que agora termina.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ESCÂNDALO: O caso Southampton — Como a espionagem destruiu um clube e mudou o Championship para sempre',
-      excerpt: 'A expulsão do Southampton dos play-offs do Championship por espionagem é o maior escândalo do futebol inglês em anos. O Hull City beneficiou e subiu à Premier League. Mas as consequências vão muito além: a EFL enfrenta processos judiciais, a integridade das competições está em causa e várias equipas exigem compensações. Um caso que vai marcar o futebol inglês durante anos.',
-      category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 4,
+      title: 'O ADEUS DO REI: Os números e o legado de Mohamed Salah no Liverpool',
+      excerpt: 'Mohamed Salah despede-se do Liverpool após uma era dourada. Revemos os números impressionantes do avançado egípcio, os seus golos mais icónicos, e o impacto que teve na conquista da Premier League e da Liga dos Campeões. Um olhar sobre como o clube de Anfield se vai preparar para a vida sem a sua principal referência ofensiva dos últimos anos.',
+      category: 'ÚLTIMA HORA',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 5,
-      title: 'TIPS DE APOSTAS: Bundesliga — Paderborn vs Wolfsburg e as melhores apostas para esta segunda-feira',
-      excerpt: 'Com poucos jogos hoje, o destaque vai para o Paderborn vs Wolfsburg na Bundesliga às 18:30. Analisamos a forma recente de ambas as equipas, os mercados de maior valor e as odds mais atrativas. O Wolfsburg precisa de pontos para a Europa e o Paderborn joga em casa com motivação. Descubra as nossas tips exclusivas para este jogo e os mercados de golos.',
+      title: 'TIPS DE APOSTAS: Copa Libertadores — A última e decisiva jornada da fase de grupos',
+      excerpt: 'A fase de grupos da Copa Libertadores 2026 chega ao fim com decisões escaldantes. Analisamos os jogos mais importantes da jornada, incluindo o embate entre LDU Quito e Always Ready, e o duelo entre Universitario e Deportes Tolima. Descubra as melhores odds, as equipas que precisam desesperadamente de vencer e as nossas tips para lucrar com a principal competição sul-americana.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -192,10 +192,10 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'ANÁLISE TÁTICA: Torreense na Liga Europa — Como um clube da 2ª Liga portuguesa chegou à Europa',
-      excerpt: 'A conquista da Taça de Portugal pelo SCU Torreense é uma das maiores surpresas da história do futebol português. Como conseguiu um clube da segunda divisão derrotar equipas da Liga Portugal? Analisamos a tática, os jogadores-chave e o que esperar do Torreense na fase de qualificação da Liga Europa. Uma história de cinema que merece ser contada.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      title: 'LESÕES: Como a ausência de Lamine Yamal muda os planos de Espanha',
+      excerpt: 'A lesão nos isquiotibiais de Lamine Yamal é um duro revés para a seleção espanhola antes do Mundial 2026. Analisamos as alternativas de Luis de la Fuente para a ala direita, o impacto na dinâmica ofensiva da equipa e como isto afeta as probabilidades de Espanha chegar longe no torneio. Quem será o escolhido para substituir o jovem prodígio do Barcelona?',
+      category: 'LESÕES',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
