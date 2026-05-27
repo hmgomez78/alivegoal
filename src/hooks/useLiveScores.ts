@@ -79,38 +79,38 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (26/05/2026) — aparecem primeiro
+// Jogos com tips hoje (27/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Universitario", "Deportes Tolima",
-  "LDU de Quito", "Always Ready",
-  "Saint-Etienne", "Nice",
-  "Millonarios", "O'Higgins",
-  "Sao Paulo", "Boston River",
-  "Gremio", "Montevideo City Torque",
+  "Crystal Palace", "Rayo Vallecano",
+  "Flamengo", "Cusco",
+  "Universitario", "Tolima",
+  "Independiente", "Rosario",
+  "Libertad", "Universidad Central",
+  "India", "Jamaica",
 ];
 
-// Fallback data com jogos reais (atualizado 26/05/2026)
-// NOTA: Terça-feira — jogos de ligas sul-americanas e europeias
+// Fallback data com jogos reais (atualizado 27/05/2026)
+// NOTA: Quarta-feira — Final da UEFA Conference League + Copa Libertadores + Amigáveis
 const fallbackMatches: LiveMatch[] = [
-  // Jogos com TIPS — aparecem primeiro (ordem por hora GMT+1)
-  { id: 2600001, homeTeam: "Saint-Etienne", awayTeam: "Nice", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:45", league: "Ligue 1 Play-offs", leagueId: 2015 },
-  { id: 2600002, homeTeam: "Universitario", awayTeam: "Deportes Tolima", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2600003, homeTeam: "LDU de Quito", awayTeam: "Always Ready", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2600004, homeTeam: "Millonarios", awayTeam: "O'Higgins", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
-  { id: 2600005, homeTeam: "Sao Paulo", awayTeam: "Boston River", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
-  { id: 2600006, homeTeam: "Gremio", awayTeam: "Montevideo City Torque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
-  // Outros jogos do dia
-  { id: 2600007, homeTeam: "Lanus", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2600008, homeTeam: "Palestino", awayTeam: "Deportivo Riestra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Copa Sudamericana", leagueId: 2017 },
-  { id: 2600009, homeTeam: "Greuther Furth", awayTeam: "RW Essen", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "2. Bundesliga", leagueId: 2004 },
-  { id: 2600010, homeTeam: "Morocco", awayTeam: "Burundi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amigáveis", leagueId: 2018 },
+  // Jogo PRINCIPAL — Final da Conference League (TIP)
+  { id: 2700001, homeTeam: "Crystal Palace", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "UEFA Conference League Final", leagueId: 2014 },
+  // Copa Libertadores — jogos da madrugada (já em curso / terminados)
+  { id: 2700002, homeTeam: "Flamengo", awayTeam: "Cusco", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2700003, homeTeam: "Club Nacional", awayTeam: "Coquimbo Unido", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2700004, homeTeam: "Universitario", awayTeam: "Tolima", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2700005, homeTeam: "Estudiantes LP", awayTeam: "Independiente", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
+  // Copa Libertadores — jogos da noite
+  { id: 2700006, homeTeam: "Independiente", awayTeam: "Rosario Central", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2700007, homeTeam: "Libertad", awayTeam: "Universidad Central", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
+  // Amigável internacional
+  { id: 2700008, homeTeam: "India", awayTeam: "Jamaica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "Amigáveis", leagueId: 2018 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Universitario", awayTeam: "Deportes Tolima",
+  homeTeam: "Crystal Palace", awayTeam: "Rayo Vallecano",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [52, 48], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

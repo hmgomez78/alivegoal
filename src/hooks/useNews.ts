@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 26/05/2026
+// Notícias de fallback — análises, tips e contexto — 27/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O impacto da lesão de Messi no esquema da Argentina para o Mundial 2026',
-      excerpt: 'A possível ausência de Lionel Messi devido a lesão obriga Lionel Scaloni a repensar toda a estrutura da seleção argentina. Analisamos como a equipa se pode adaptar sem o seu capitão e principal criador de jogo, os jogadores que terão de assumir mais responsabilidade (como Julián Álvarez e Mac Allister), e o impacto psicológico desta perda a poucas semanas do torneio.',
+      title: 'ANÁLISE TÁTICA: Crystal Palace vs Rayo Vallecano — Como se vai decidir a Final da Conference League?',
+      excerpt: 'A grande final da UEFA Conference League 2025/26 acontece esta noite em Leipzig. O Crystal Palace de Oliver Glasner, com Ismaïla Sarr como principal ameaça (9 golos na competição), enfrenta um Rayo Vallecano organizado e corajoso. Analisamos os sistemas táticos de ambas as equipas, os duelos chave no meio-campo e como a pressão alta dos Eagles pode ser contrariada pela transição rápida do conjunto espanhol. Uma final equilibrada onde o detalhe pode fazer a diferença.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '10 min',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'PREVISÃO DA FINAL: PSG vs Arsenal — Onde se vai decidir a Liga dos Campeões?',
-      excerpt: 'Antevisão tática do grande duelo de Budapeste. Como a pressão alta do Arsenal de Mikel Arteta pode contrariar a posse de bola do PSG de Luis Enrique? Analisamos os confrontos chave: o duelo no meio-campo entre Declan Rice e Vitinha, e como a defesa londrina tentará travar a velocidade de Ousmane Dembélé e companhia. Quem levantará o troféu?',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '12 min',
+      title: 'ESCÂNDALO: Cole Palmer reage com fúria à exclusão da seleção inglesa — "Não foi por razões desportivas"',
+      excerpt: 'A exclusão de Cole Palmer da lista de 26 jogadores de Thomas Tuchel para o Mundial 2026 gerou uma polémica enorme. O avançado do Chelsea, um dos melhores jogadores da Premier League esta época, declarou publicamente que acredita ter sido excluído por razões pessoais. Harry Maguire ficou a saber da exclusão de forma indireta e expressou o seu choque nas redes sociais. Uma crise que divide os adeptos ingleses e coloca Tuchel sob enorme pressão antes do torneio.',
+      category: 'ESCÂNDALO',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: O plano de reconstrução do Tottenham com a chegada de Andy Robertson',
-      excerpt: 'A contratação a custo zero de Andy Robertson é apenas o primeiro passo na remodelação do Tottenham para 2026/27. Analisamos como a experiência e mentalidade vencedora do escocês podem transformar a ala esquerda dos Spurs, e quais são os próximos alvos do clube londrino no mercado para garantir que não repetem a luta pela manutenção da época que agora termina.',
-      category: 'TRANSFERÊNCIAS',
+      title: 'TIPS DE APOSTAS: Final da Conference League — Crystal Palace vs Rayo Vallecano, as nossas melhores apostas',
+      excerpt: 'A final da UEFA Conference League desta noite em Leipzig oferece oportunidades interessantes para os apostadores. O Crystal Palace é ligeiro favorito com odds a rondar 1.85, mas o Rayo Vallecano chega em excelente forma (4 jogos sem perder). Analisamos os mercados mais atrativos: resultado final, número de golos, marcador da partida e apostas ao intervalo. Ismaïla Sarr, com 9 golos na competição, é a nossa principal aposta para marcador a qualquer momento.',
+      category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'O ADEUS DO REI: Os números e o legado de Mohamed Salah no Liverpool',
-      excerpt: 'Mohamed Salah despede-se do Liverpool após uma era dourada. Revemos os números impressionantes do avançado egípcio, os seus golos mais icónicos, e o impacto que teve na conquista da Premier League e da Liga dos Campeões. Um olhar sobre como o clube de Anfield se vai preparar para a vida sem a sua principal referência ofensiva dos últimos anos.',
-      category: 'ÚLTIMA HORA',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS DE APOSTAS: Copa Libertadores — A última e decisiva jornada da fase de grupos',
-      excerpt: 'A fase de grupos da Copa Libertadores 2026 chega ao fim com decisões escaldantes. Analisamos os jogos mais importantes da jornada, incluindo o embate entre LDU Quito e Always Ready, e o duelo entre Universitario e Deportes Tolima. Descubra as melhores odds, as equipas que precisam desesperadamente de vencer e as nossas tips para lucrar com a principal competição sul-americana.',
-      category: 'TIPS DE APOSTAS',
+      title: 'TRANSFERÊNCIAS: Robertson entre Tottenham e Juventus — O que pesa na decisão do lateral escocês?',
+      excerpt: 'Andy Robertson, que vai deixar o Liverpool a custo zero, tem de escolher entre o Tottenham Hotspur e a Juventus. Os Spurs oferecem continuidade na Premier League e um projeto de reconstrução ambicioso. A Juventus oferece a Liga Europa e a possibilidade de jogar em Itália. Analisamos os prós e contras de cada opção para o capitão da Escócia, de 32 anos, e o impacto que a sua escolha terá nos planos de mercado de ambos os clubes para o verão de 2026.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'LESÕES: Como a ausência de Lamine Yamal muda os planos de Espanha',
-      excerpt: 'A lesão nos isquiotibiais de Lamine Yamal é um duro revés para a seleção espanhola antes do Mundial 2026. Analisamos as alternativas de Luis de la Fuente para a ala direita, o impacto na dinâmica ofensiva da equipa e como isto afeta as probabilidades de Espanha chegar longe no torneio. Quem será o escolhido para substituir o jovem prodígio do Barcelona?',
+      id: 5,
+      title: 'LESÕES: O estado de saúde das estrelas antes do Mundial 2026 — Yamal, Messi e os casos mais preocupantes',
+      excerpt: 'A menos de um mês do início do Campeonato do Mundo de 2026, o boletim médico das grandes estrelas preocupa os adeptos. Lamine Yamal (Espanha) está em dúvida com lesão muscular. Lionel Messi (Argentina) saiu lesionado no último jogo do Inter Miami. Fazemos o ponto de situação sobre os casos mais preocupantes, os prazos de recuperação estimados e o impacto que as ausências podem ter nas probabilidades de cada seleção chegar à fase final do torneio.',
       category: 'LESÕES',
-      readTime: '8 min',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ANÁLISE TÁTICA: PSG vs Arsenal — Antevisão completa da Final da Champions 2026 em Budapeste',
+      excerpt: 'Faltam 3 dias para a grande final da Liga dos Campeões 2025/26 em Budapeste. O PSG de Luis Enrique, atual campeão, enfrenta o Arsenal de Mikel Arteta, novo campeão da Premier League. Analisamos em profundidade os sistemas táticos de ambas as equipas, os duelos individuais mais importantes (Rice vs Vitinha, Saka vs Hakimi) e as estratégias que cada treinador poderá adotar para conquistar o troféu mais cobiçado do futebol europeu.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '13 min',
       date: formatToday,
       source: 'AliveGoal',
     },
