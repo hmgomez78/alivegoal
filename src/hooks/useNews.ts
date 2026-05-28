@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 27/05/2026
+// Notícias de fallback — análises, tips e contexto — 28/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Crystal Palace vs Rayo Vallecano — Como se vai decidir a Final da Conference League?',
-      excerpt: 'A grande final da UEFA Conference League 2025/26 acontece esta noite em Leipzig. O Crystal Palace de Oliver Glasner, com Ismaïla Sarr como principal ameaça (9 golos na competição), enfrenta um Rayo Vallecano organizado e corajoso. Analisamos os sistemas táticos de ambas as equipas, os duelos chave no meio-campo e como a pressão alta dos Eagles pode ser contrariada pela transição rápida do conjunto espanhol. Uma final equilibrada onde o detalhe pode fazer a diferença.',
+      title: 'ANÁLISE TÁTICA: Como o Crystal Palace anulou o Rayo Vallecano na final da Conference League',
+      excerpt: 'A vitória do Crystal Palace por 1-0 sobre o Rayo Vallecano na final da UEFA Conference League não foi apenas sobre o golo de Mateta, mas sim uma masterclass tática de Oliver Glasner. Analisamos como a linha defensiva dos Eagles bloqueou as transições rápidas do Rayo e como o meio-campo controlou o ritmo do jogo. Uma vitória que consolida o trabalho de Glasner no clube londrino.',
       category: 'ANÁLISE TÁTICA',
       readTime: '11 min',
       date: formatToday,
@@ -156,46 +156,46 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: Cole Palmer reage com fúria à exclusão da seleção inglesa — "Não foi por razões desportivas"',
-      excerpt: 'A exclusão de Cole Palmer da lista de 26 jogadores de Thomas Tuchel para o Mundial 2026 gerou uma polémica enorme. O avançado do Chelsea, um dos melhores jogadores da Premier League esta época, declarou publicamente que acredita ter sido excluído por razões pessoais. Harry Maguire ficou a saber da exclusão de forma indireta e expressou o seu choque nas redes sociais. Uma crise que divide os adeptos ingleses e coloca Tuchel sob enorme pressão antes do torneio.',
-      category: 'ESCÂNDALO',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TIPS DE APOSTAS: Final da Conference League — Crystal Palace vs Rayo Vallecano, as nossas melhores apostas',
-      excerpt: 'A final da UEFA Conference League desta noite em Leipzig oferece oportunidades interessantes para os apostadores. O Crystal Palace é ligeiro favorito com odds a rondar 1.85, mas o Rayo Vallecano chega em excelente forma (4 jogos sem perder). Analisamos os mercados mais atrativos: resultado final, número de golos, marcador da partida e apostas ao intervalo. Ismaïla Sarr, com 9 golos na competição, é a nossa principal aposta para marcador a qualquer momento.',
+      title: 'TIPS DE APOSTAS: Copa Libertadores — Palmeiras vs Junior Barranquilla, as melhores oportunidades',
+      excerpt: 'O Palmeiras precisa de uma vitória no Allianz Parque contra o Junior Barranquilla para garantir a qualificação direta sem depender de terceiros. Com o Verdão em boa forma em casa, as odds para vitória simples estão baixas, mas o mercado de "Palmeiras para vencer sem sofrer golos" oferece valor interessante. Analisamos os confrontos diretos e o momento de ambas as equipas.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: Robertson entre Tottenham e Juventus — O que pesa na decisão do lateral escocês?',
-      excerpt: 'Andy Robertson, que vai deixar o Liverpool a custo zero, tem de escolher entre o Tottenham Hotspur e a Juventus. Os Spurs oferecem continuidade na Premier League e um projeto de reconstrução ambicioso. A Juventus oferece a Liga Europa e a possibilidade de jogar em Itália. Analisamos os prós e contras de cada opção para o capitão da Escócia, de 32 anos, e o impacto que a sua escolha terá nos planos de mercado de ambos os clubes para o verão de 2026.',
+      id: 3,
+      title: 'TRANSFERÊNCIAS: O impacto da chegada de Anthony Gordon ao Barcelona — Quem perde espaço?',
+      excerpt: 'A contratação de Anthony Gordon por 70 milhões de euros agita o plantel do Barcelona. Com a chegada do extremo inglês, jogadores como Raphinha e Ferran Torres podem ver o seu tempo de jogo reduzido. Analisamos como Gordon encaixa no sistema tático do Barça, o seu papel na pressão alta e o que esta transferência significa para o futuro do ataque catalão na próxima temporada.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'ESCÂNDALO: O caso de racismo e suspensão que abala a base do Palmeiras na Libertadores',
+      excerpt: 'A suspensão de 4 meses imposta pela Conmebol a Eduardo Conceição, de 16 anos, por imitar um macaco num gesto que o jogador afirma ser de protesto contra insultos racistas, gerou indignação. O Palmeiras já anunciou que vai recorrer da decisão. Especialistas jurídicos analisam o caso e o precedente perigoso que a Conmebol pode estar a criar ao punir a vítima de racismo.',
+      category: 'ESCÂNDALO',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'LESÕES: O estado de saúde das estrelas antes do Mundial 2026 — Yamal, Messi e os casos mais preocupantes',
-      excerpt: 'A menos de um mês do início do Campeonato do Mundo de 2026, o boletim médico das grandes estrelas preocupa os adeptos. Lamine Yamal (Espanha) está em dúvida com lesão muscular. Lionel Messi (Argentina) saiu lesionado no último jogo do Inter Miami. Fazemos o ponto de situação sobre os casos mais preocupantes, os prazos de recuperação estimados e o impacto que as ausências podem ter nas probabilidades de cada seleção chegar à fase final do torneio.',
+      title: 'LESÕES: O plano de recuperação de Messi — Como a Argentina gere a fadiga do capitão',
+      excerpt: 'A fadiga muscular na coxa esquerda de Lionel Messi liga os alarmes na Argentina, mas a equipa médica de Lionel Scaloni tem um plano claro. O objetivo é gerir os minutos de Messi nos treinos e poupá-lo nos primeiros jogos da fase de grupos do Mundial 2026, garantindo que o camisola 10 chega na máxima força às fases a eliminar. Detalhamos o cronograma de recuperação.',
       category: 'LESÕES',
-      readTime: '10 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ANÁLISE TÁTICA: PSG vs Arsenal — Antevisão completa da Final da Champions 2026 em Budapeste',
-      excerpt: 'Faltam 3 dias para a grande final da Liga dos Campeões 2025/26 em Budapeste. O PSG de Luis Enrique, atual campeão, enfrenta o Arsenal de Mikel Arteta, novo campeão da Premier League. Analisamos em profundidade os sistemas táticos de ambas as equipas, os duelos individuais mais importantes (Rice vs Vitinha, Saka vs Hakimi) e as estratégias que cada treinador poderá adotar para conquistar o troféu mais cobiçado do futebol europeu.',
+      title: 'ANÁLISE TÁTICA: O plano de Roberto De Zerbi para reconstruir o Tottenham na próxima época',
+      excerpt: 'Após evitar a despromoção, Roberto De Zerbi declarou: "Fechamos uma página e abrimos outra". O treinador italiano já prepara a revolução no Tottenham para 2026/27. Analisamos os perfis de jogadores que De Zerbi procura no mercado, as mudanças táticas esperadas e como os Spurs pretendem voltar a lutar pelos lugares europeus na Premier League.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '13 min',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },

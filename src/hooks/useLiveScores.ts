@@ -79,38 +79,36 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (27/05/2026) — aparecem primeiro
+// Jogos com tips hoje (28/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Crystal Palace", "Rayo Vallecano",
-  "Flamengo", "Cusco",
-  "Universitario", "Tolima",
-  "Independiente", "Rosario",
-  "Libertad", "Universidad Central",
-  "India", "Jamaica",
+  "Palmeiras", "Junior Barranquilla",
+  "Boca Juniors", "Universidad Católica",
+  "Cruzeiro", "Barcelona ECU",
+  "Peñarol", "Santa Fe",
+  "Rep. Ireland", "Qatar",
+  "Belgium U17", "Spain U17",
 ];
 
-// Fallback data com jogos reais (atualizado 27/05/2026)
-// NOTA: Quarta-feira — Final da UEFA Conference League + Copa Libertadores + Amigáveis
+// Fallback data com jogos reais (atualizado 28/05/2026)
+// NOTA: Quinta-feira — Copa Libertadores + Sul-Americana + Amigáveis Internacionais
 const fallbackMatches: LiveMatch[] = [
-  // Jogo PRINCIPAL — Final da Conference League (TIP)
-  { id: 2700001, homeTeam: "Crystal Palace", awayTeam: "Rayo Vallecano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "UEFA Conference League Final", leagueId: 2014 },
-  // Copa Libertadores — jogos da madrugada (já em curso / terminados)
-  { id: 2700002, homeTeam: "Flamengo", awayTeam: "Cusco", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2700003, homeTeam: "Club Nacional", awayTeam: "Coquimbo Unido", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2700004, homeTeam: "Universitario", awayTeam: "Tolima", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2700005, homeTeam: "Estudiantes LP", awayTeam: "Independiente", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
-  // Copa Libertadores — jogos da noite
-  { id: 2700006, homeTeam: "Independiente", awayTeam: "Rosario Central", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2700007, homeTeam: "Libertad", awayTeam: "Universidad Central", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
-  // Amigável internacional
-  { id: 2700008, homeTeam: "India", awayTeam: "Jamaica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "Amigáveis", leagueId: 2018 },
+  // Jogos PRINCIPAIS — Copa Libertadores (TIPS)
+  { id: 2800001, homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2800002, homeTeam: "Boca Juniors", awayTeam: "Universidad Católica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2800003, homeTeam: "Cruzeiro", awayTeam: "Barcelona ECU", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2800004, homeTeam: "Cerro Porteño", awayTeam: "Sporting Cristal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Libertadores", leagueId: 2016 },
+  // Copa Sul-Americana
+  { id: 2800005, homeTeam: "Peñarol", awayTeam: "Santa Fe", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Sul-Americana", leagueId: 2017 },
+  // Amigáveis Internacionais e Competições Jovens
+  { id: 2800006, homeTeam: "Rep. Ireland", awayTeam: "Qatar", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Amigáveis", leagueId: 2018 },
+  { id: 2800007, homeTeam: "Belgium U17", awayTeam: "Spain U17", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Euro U17", leagueId: 2019 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Crystal Palace", awayTeam: "Rayo Vallecano",
+  homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [52, 48], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
