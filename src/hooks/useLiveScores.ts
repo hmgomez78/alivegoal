@@ -79,36 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (28/05/2026) — aparecem primeiro
+// Jogos com tips hoje (29/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
   "Palmeiras", "Junior Barranquilla",
-  "Boca Juniors", "Universidad Católica",
-  "Cruzeiro", "Barcelona ECU",
-  "Peñarol", "Santa Fe",
-  "Rep. Ireland", "Qatar",
-  "Belgium U17", "Spain U17",
+  "Cerro Porteño", "Sporting Cristal",
+  "Club Bolívar", "Ind. Rivadavia",
+  "Olimpia", "Audax Italiano",
+  "Dundalk FC", "Derry City",
+  "Shamrock Rovers", "St Patrick's",
 ];
 
-// Fallback data com jogos reais (atualizado 28/05/2026)
-// NOTA: Quinta-feira — Copa Libertadores + Sul-Americana + Amigáveis Internacionais
+// Fallback data com jogos reais (atualizado 29/05/2026)
+// NOTA: Sexta-feira — Copa Libertadores + Sul-Americana + Liga da Irlanda + Allsvenskan
 const fallbackMatches: LiveMatch[] = [
   // Jogos PRINCIPAIS — Copa Libertadores (TIPS)
-  { id: 2800001, homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2800002, homeTeam: "Boca Juniors", awayTeam: "Universidad Católica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2800003, homeTeam: "Cruzeiro", awayTeam: "Barcelona ECU", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2800004, homeTeam: "Cerro Porteño", awayTeam: "Sporting Cristal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2900001, homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2900002, homeTeam: "Cerro Porteño", awayTeam: "Sporting Cristal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
+  { id: 2900003, homeTeam: "Club Bolívar", awayTeam: "Ind. Rivadavia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
   // Copa Sul-Americana
-  { id: 2800005, homeTeam: "Peñarol", awayTeam: "Santa Fe", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Copa Sul-Americana", leagueId: 2017 },
-  // Amigáveis Internacionais e Competições Jovens
-  { id: 2800006, homeTeam: "Rep. Ireland", awayTeam: "Qatar", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Amigáveis", leagueId: 2018 },
-  { id: 2800007, homeTeam: "Belgium U17", awayTeam: "Spain U17", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Euro U17", leagueId: 2019 },
+  { id: 2900004, homeTeam: "Olimpia", awayTeam: "Audax Italiano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Sul-Americana", leagueId: 2017 },
+  { id: 2900005, homeTeam: "RB Bragantino", awayTeam: "Carabobo FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Sul-Americana", leagueId: 2017 },
+  // Ligas Europeias (Irlanda, Suécia)
+  { id: 2900006, homeTeam: "Dundalk FC", awayTeam: "Derry City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "League of Ireland", leagueId: 2020 },
+  { id: 2900007, homeTeam: "Shamrock Rovers", awayTeam: "St Patrick's", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "League of Ireland", leagueId: 2020 },
+  { id: 2900008, homeTeam: "Örgryte", awayTeam: "Elfsborg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Allsvenskan", leagueId: 2021 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
   homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

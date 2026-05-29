@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 28/05/2026
+// Notícias de fallback — análises, tips e contexto — 29/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,54 +147,54 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como o Crystal Palace anulou o Rayo Vallecano na final da Conference League',
-      excerpt: 'A vitória do Crystal Palace por 1-0 sobre o Rayo Vallecano na final da UEFA Conference League não foi apenas sobre o golo de Mateta, mas sim uma masterclass tática de Oliver Glasner. Analisamos como a linha defensiva dos Eagles bloqueou as transições rápidas do Rayo e como o meio-campo controlou o ritmo do jogo. Uma vitória que consolida o trabalho de Glasner no clube londrino.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '11 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'TIPS DE APOSTAS: Copa Libertadores — Palmeiras vs Junior Barranquilla, as melhores oportunidades',
-      excerpt: 'O Palmeiras precisa de uma vitória no Allianz Parque contra o Junior Barranquilla para garantir a qualificação direta sem depender de terceiros. Com o Verdão em boa forma em casa, as odds para vitória simples estão baixas, mas o mercado de "Palmeiras para vencer sem sofrer golos" oferece valor interessante. Analisamos os confrontos diretos e o momento de ambas as equipas.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: O impacto da chegada de Anthony Gordon ao Barcelona — Quem perde espaço?',
-      excerpt: 'A contratação de Anthony Gordon por 70 milhões de euros agita o plantel do Barcelona. Com a chegada do extremo inglês, jogadores como Raphinha e Ferran Torres podem ver o seu tempo de jogo reduzido. Analisamos como Gordon encaixa no sistema tático do Barça, o seu papel na pressão alta e o que esta transferência significa para o futuro do ataque catalão na próxima temporada.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ESCÂNDALO: O caso de racismo e suspensão que abala a base do Palmeiras na Libertadores',
-      excerpt: 'A suspensão de 4 meses imposta pela Conmebol a Eduardo Conceição, de 16 anos, por imitar um macaco num gesto que o jogador afirma ser de protesto contra insultos racistas, gerou indignação. O Palmeiras já anunciou que vai recorrer da decisão. Especialistas jurídicos analisam o caso e o precedente perigoso que a Conmebol pode estar a criar ao punir a vítima de racismo.',
+      title: 'ESCÂNDALO: A investigação dos EUA à FIFA e o impacto nos bilhetes do Mundial 2026',
+      excerpt: 'Os procuradores-gerais de Nova Iorque e Nova Jérsia lançaram uma investigação formal às práticas de venda de bilhetes da FIFA para o Mundial 2026. Analisamos como a política de preços variáveis e a falta de transparência na distribuição dos ingressos geraram revolta entre os adeptos. Esta crise pode manchar a reputação da organização a poucos dias do início do torneio na América do Norte.',
       category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'LESÕES: O plano de recuperação de Messi — Como a Argentina gere a fadiga do capitão',
-      excerpt: 'A fadiga muscular na coxa esquerda de Lionel Messi liga os alarmes na Argentina, mas a equipa médica de Lionel Scaloni tem um plano claro. O objetivo é gerir os minutos de Messi nos treinos e poupá-lo nos primeiros jogos da fase de grupos do Mundial 2026, garantindo que o camisola 10 chega na máxima força às fases a eliminar. Detalhamos o cronograma de recuperação.',
+      id: 2,
+      title: 'TRANSFERÊNCIAS: O impacto de Bernardo Silva no meio-campo do Barcelona',
+      excerpt: 'Com um acordo verbal quase fechado para rumar à Catalunha a custo zero, Bernardo Silva promete revolucionar o Barcelona de Hansi Flick. A versatilidade do internacional português, capaz de jogar tanto no miolo como a extremo direito, oferece soluções táticas que o Barça tem procurado desesperadamente. Analisamos como a sua visão de jogo e capacidade de passe podem potenciar o ataque culé.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'ANÁLISE TÁTICA: Arsenal vs PSG — Onde se vai decidir a final da Champions League',
+      excerpt: 'A grande final da UEFA Champions League em Budapeste coloca frente a frente duas filosofias distintas. O Arsenal de Mikel Arteta aposta no controlo posicional e na pressão alta, enquanto o PSG procura explorar transições rápidas. Detalhamos os duelos individuais cruciais: a batalha no meio-campo entre Rice e Vitinha, e como a defesa londrina tentará anular o ataque demolidor dos parisienses.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '14 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'LESÕES: A corrida contra o tempo de Neymar e o plano B de Ancelotti',
+      excerpt: 'A lesão muscular na perna de Neymar Jr. é um golpe duro para as aspirações do Brasil no Mundial 2026. Com o camisola 10 fora do jogo de abertura, Carlo Ancelotti terá de adaptar o seu esquema tático. Exploramos as alternativas na seleção canarinha, desde a utilização de Rodrygo num papel mais central até à aposta na irreverência de Vini Jr. para assumir a batuta ofensiva.',
       category: 'LESÕES',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'TRANSFERÊNCIAS: Pedro Lima e a nova era no meio-campo do Sporting',
+      excerpt: 'A contratação de Pedro Lima, ex-Palmeiras, por cinco temporadas confirma a intenção do Sporting CP de renovar o seu setor intermediário. Com 23 anos, o brasileiro traz intensidade, capacidade de recuperação de bola e chegada à área adversária. Avaliamos como as suas características se enquadram no sistema de Rúben Amorim, especialmente face às potenciais saídas de Hjulmand e Morita.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ANÁLISE TÁTICA: O plano de Roberto De Zerbi para reconstruir o Tottenham na próxima época',
-      excerpt: 'Após evitar a despromoção, Roberto De Zerbi declarou: "Fechamos uma página e abrimos outra". O treinador italiano já prepara a revolução no Tottenham para 2026/27. Analisamos os perfis de jogadores que De Zerbi procura no mercado, as mudanças táticas esperadas e como os Spurs pretendem voltar a lutar pelos lugares europeus na Premier League.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TIPS DE APOSTAS: Previsões para os jogos decisivos da Libertadores e Sul-Americana',
+      excerpt: 'A fase de grupos das competições da CONMEBOL chega ao fim com jogos de alta tensão. Analisamos as melhores oportunidades de aposta para os confrontos desta noite. O Palmeiras, já qualificado, recebe o Junior Barranquilla, enquanto o Cerro Porteño joga a vida contra o Sporting Cristal. Apresentamos as odds com mais valor e as tendências estatísticas das equipas em casa e fora.',
+      category: 'TIPS DE APOSTAS',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
