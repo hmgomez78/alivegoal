@@ -79,37 +79,38 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (29/05/2026) — aparecem primeiro
+// Jogos com tips hoje (30/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Palmeiras", "Junior Barranquilla",
-  "Cerro Porteño", "Sporting Cristal",
-  "Club Bolívar", "Ind. Rivadavia",
-  "Olimpia", "Audax Italiano",
-  "Dundalk FC", "Derry City",
-  "Shamrock Rovers", "St Patrick's",
+  "Arsenal", "PSG",
+  "Flamengo", "Coritiba",
+  "Bahia", "Botafogo",
+  "Athletico", "Mirassol",
+  "Palmeiras", "Santos",
+  "Vitória",
 ];
 
-// Fallback data com jogos reais (atualizado 29/05/2026)
-// NOTA: Sexta-feira — Copa Libertadores + Sul-Americana + Liga da Irlanda + Allsvenskan
+// Fallback data com jogos reais (atualizado 30/05/2026)
+// NOTA: Sábado — Final da Champions League + Brasilão Série A + Allsvenskan + Eliteserien
 const fallbackMatches: LiveMatch[] = [
-  // Jogos PRINCIPAIS — Copa Libertadores (TIPS)
-  { id: 2900001, homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2900002, homeTeam: "Cerro Porteño", awayTeam: "Sporting Cristal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Copa Libertadores", leagueId: 2016 },
-  { id: 2900003, homeTeam: "Club Bolívar", awayTeam: "Ind. Rivadavia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Libertadores", leagueId: 2016 },
-  // Copa Sul-Americana
-  { id: 2900004, homeTeam: "Olimpia", awayTeam: "Audax Italiano", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Sul-Americana", leagueId: 2017 },
-  { id: 2900005, homeTeam: "RB Bragantino", awayTeam: "Carabobo FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "Copa Sul-Americana", leagueId: 2017 },
-  // Ligas Europeias (Irlanda, Suécia)
-  { id: 2900006, homeTeam: "Dundalk FC", awayTeam: "Derry City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "League of Ireland", leagueId: 2020 },
-  { id: 2900007, homeTeam: "Shamrock Rovers", awayTeam: "St Patrick's", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "League of Ireland", leagueId: 2020 },
-  { id: 2900008, homeTeam: "Örgryte", awayTeam: "Elfsborg", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Allsvenskan", leagueId: 2021 },
+  // JOGO PRINCIPAL — Final da UEFA Champions League (TIP)
+  { id: 3000001, homeTeam: "Arsenal", awayTeam: "PSG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Champions League", leagueId: 2001 },
+  // Brasilão Série A (TIPS)
+  { id: 3000002, homeTeam: "Flamengo", awayTeam: "Coritiba", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
+  { id: 3000003, homeTeam: "Bahia", awayTeam: "Botafogo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Brasilão Série A", leagueId: 2013 },
+  { id: 3000004, homeTeam: "Athletico Paranaense", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
+  { id: 3000005, homeTeam: "Palmeiras", awayTeam: "Santos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasilão Série A", leagueId: 2013 },
+  { id: 3000006, homeTeam: "Vitória", awayTeam: "Coritiba", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
+  // Allsvenskan
+  { id: 3000007, homeTeam: "Hammarby", awayTeam: "Djurgården", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Allsvenskan", leagueId: 2021 },
+  // Eliteserien
+  { id: 3000008, homeTeam: "Rosenborg", awayTeam: "Bodø/Glimt", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Eliteserien", leagueId: 2022 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Palmeiras", awayTeam: "Junior Barranquilla",
+  homeTeam: "Arsenal", awayTeam: "PSG",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [52, 48], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

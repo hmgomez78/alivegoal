@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 29/05/2026
+// Notícias de fallback — análises, tips e contexto — 30/05/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ESCÂNDALO: A investigação dos EUA à FIFA e o impacto nos bilhetes do Mundial 2026',
-      excerpt: 'Os procuradores-gerais de Nova Iorque e Nova Jérsia lançaram uma investigação formal às práticas de venda de bilhetes da FIFA para o Mundial 2026. Analisamos como a política de preços variáveis e a falta de transparência na distribuição dos ingressos geraram revolta entre os adeptos. Esta crise pode manchar a reputação da organização a poucos dias do início do torneio na América do Norte.',
-      category: 'ESCÂNDALO',
-      readTime: '12 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'TRANSFERÊNCIAS: O impacto de Bernardo Silva no meio-campo do Barcelona',
-      excerpt: 'Com um acordo verbal quase fechado para rumar à Catalunha a custo zero, Bernardo Silva promete revolucionar o Barcelona de Hansi Flick. A versatilidade do internacional português, capaz de jogar tanto no miolo como a extremo direito, oferece soluções táticas que o Barça tem procurado desesperadamente. Analisamos como a sua visão de jogo e capacidade de passe podem potenciar o ataque culé.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE TÁTICA: Arsenal vs PSG — Onde se vai decidir a final da Champions League',
-      excerpt: 'A grande final da UEFA Champions League em Budapeste coloca frente a frente duas filosofias distintas. O Arsenal de Mikel Arteta aposta no controlo posicional e na pressão alta, enquanto o PSG procura explorar transições rápidas. Detalhamos os duelos individuais cruciais: a batalha no meio-campo entre Rice e Vitinha, e como a defesa londrina tentará anular o ataque demolidor dos parisienses.',
+      title: 'ANÁLISE TÁTICA: Arsenal vs PSG — Os duelos individuais que vão decidir a final da Champions em Budapeste',
+      excerpt: 'A grande final da UEFA Champions League 2025/26 coloca frente a frente duas filosofias distintas. O Arsenal de Mikel Arteta aposta no controlo posicional e na pressão alta, enquanto o PSG de Luis Enrique procura explorar transições rápidas com Mbappé. Detalhamos os duelos cruciais: a batalha no meio-campo entre Declan Rice e Vitinha, e como a defesa londrina tentará anular o ataque demolidor dos parisienses liderado por Dembélé.',
       category: 'ANÁLISE TÁTICA',
       readTime: '14 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 2,
+      title: 'ESCÂNDALO: A guerra nas redes sociais entre Atlético de Madrid e Barcelona — Quem vai ganhar a batalha por Julián Álvarez?',
+      excerpt: 'A disputa pelo avançado argentino Julián Álvarez atingiu um novo nível de tensão após o Atlético de Madrid publicar propostas fictícias por Yamal, Pedri e Raphinha em resposta à oferta de 100 milhões do Barcelona. Analisamos o impacto desta guerra mediática no mercado de transferências, as motivações de cada clube e as probabilidades reais de Álvarez mudar para o Camp Nou antes do Mundial 2026.',
+      category: 'ESCÂNDALO',
+      readTime: '11 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'TRANSFERÊNCIAS: Mourinho no Real Madrid — O que muda na estratégia dos merengues para 2026/27',
+      excerpt: 'O regresso de José Mourinho ao Santiago Bernabéu é a maior notícia do mercado de treinadores. Após a confirmação de Fabrizio Romano, analisamos como o estilo defensivo e pragmático do "Special One" pode transformar um Real Madrid que perdeu a Champions para o PSG. Quais os jogadores que beneficiam com Mourinho? E quem pode estar em risco? Uma análise profunda ao impacto desta contratação histórica.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'LESÕES: A corrida contra o tempo de Neymar e o plano B de Ancelotti',
-      excerpt: 'A lesão muscular na perna de Neymar Jr. é um golpe duro para as aspirações do Brasil no Mundial 2026. Com o camisola 10 fora do jogo de abertura, Carlo Ancelotti terá de adaptar o seu esquema tático. Exploramos as alternativas na seleção canarinha, desde a utilização de Rodrygo num papel mais central até à aposta na irreverência de Vini Jr. para assumir a batuta ofensiva.',
+      title: 'LESÕES: Neymar fora do jogo de abertura do Brasil — Ancelotti revela o plano B para o Mundial 2026',
+      excerpt: 'A lesão de grau 2 na perna de Neymar Jr. foi confirmada pelo médico da CBF, Rodrigo Lasmar, e o craque está "altamente improvável" de jogar contra Marrocos a 13 de junho. Carlo Ancelotti terá de reinventar o esquema tático da Seleção Canarinha. Analisamos as opções disponíveis: Rodrygo num papel mais central, Vini Jr. como referência ofensiva, e como o Brasil pode ser ainda mais imprevisível sem o seu número 10.',
       category: 'LESÕES',
-      readTime: '8 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'TRANSFERÊNCIAS: Pedro Lima e a nova era no meio-campo do Sporting',
-      excerpt: 'A contratação de Pedro Lima, ex-Palmeiras, por cinco temporadas confirma a intenção do Sporting CP de renovar o seu setor intermediário. Com 23 anos, o brasileiro traz intensidade, capacidade de recuperação de bola e chegada à área adversária. Avaliamos como as suas características se enquadram no sistema de Rúben Amorim, especialmente face às potenciais saídas de Hjulmand e Morita.',
+      title: 'TRANSFERÊNCIAS: Konaté sai do Liverpool grátis — Análise ao impacto na defesa dos reds e os candidatos à sua substituição',
+      excerpt: 'A saída de Ibrahima Konaté do Liverpool como agente livre é um golpe inesperado para Arne Slot. O defesa central francês era uma das peças-chave da equipa e a sua perda deixa um vazio difícil de preencher. Analisamos os candidatos para o substituir, desde Gvardiol ao próprio Konaté no Real Madrid, e como o Liverpool pode reagir no mercado de verão para manter as suas ambições na Premier League.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TIPS DE APOSTAS: Previsões para os jogos decisivos da Libertadores e Sul-Americana',
-      excerpt: 'A fase de grupos das competições da CONMEBOL chega ao fim com jogos de alta tensão. Analisamos as melhores oportunidades de aposta para os confrontos desta noite. O Palmeiras, já qualificado, recebe o Junior Barranquilla, enquanto o Cerro Porteño joga a vida contra o Sporting Cristal. Apresentamos as odds com mais valor e as tendências estatísticas das equipas em casa e fora.',
+      title: 'TIPS DE APOSTAS: Final da Champions League — Arsenal vs PSG, análise completa e previsão para a aposta do século',
+      excerpt: 'A final da UEFA Champions League entre Arsenal e PSG é o evento mais apostado do ano. Analisamos as estatísticas de ambas as equipas, os registos em jogos decisivos, as odds disponíveis nos principais bookmakers e apresentamos a nossa previsão fundamentada. O Arsenal entra como ligeiro favorito em casa, mas o PSG tem a experiência de ser bicampeão. Qual é a aposta com mais valor esta noite?',
       category: 'TIPS DE APOSTAS',
-      readTime: '10 min',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
