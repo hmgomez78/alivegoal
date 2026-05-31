@@ -79,38 +79,38 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (30/05/2026) — aparecem primeiro
+// Jogos com tips hoje (31/05/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Arsenal", "PSG",
-  "Flamengo", "Coritiba",
-  "Bahia", "Botafogo",
-  "Athletico", "Mirassol",
-  "Palmeiras", "Santos",
-  "Vitória",
+  "Brasil", "Panamá",
+  "Cruzeiro", "Fluminense",
+  "Palmeiras", "Chapecoense",
+  "Bragantino", "Internacional",
+  "Vasco", "Atlético",
+  "Remo", "São Paulo",
 ];
 
-// Fallback data com jogos reais (atualizado 30/05/2026)
-// NOTA: Sábado — Final da Champions League + Brasilão Série A + Allsvenskan + Eliteserien
+// Fallback data com jogos reais (atualizado 31/05/2026)
+// NOTA: Domingo — Amistoso Brasil + Brasileirão Série A Rodada 18 + Amistosos Internacionais + Roland Garros
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Final da UEFA Champions League (TIP)
-  { id: 3000001, homeTeam: "Arsenal", awayTeam: "PSG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "UEFA Champions League", leagueId: 2001 },
-  // Brasilão Série A (TIPS)
-  { id: 3000002, homeTeam: "Flamengo", awayTeam: "Coritiba", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
-  { id: 3000003, homeTeam: "Bahia", awayTeam: "Botafogo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Brasilão Série A", leagueId: 2013 },
-  { id: 3000004, homeTeam: "Athletico Paranaense", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
-  { id: 3000005, homeTeam: "Palmeiras", awayTeam: "Santos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasilão Série A", leagueId: 2013 },
-  { id: 3000006, homeTeam: "Vitória", awayTeam: "Coritiba", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Brasilão Série A", leagueId: 2013 },
-  // Allsvenskan
-  { id: 3000007, homeTeam: "Hammarby", awayTeam: "Djurgården", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Allsvenskan", leagueId: 2021 },
-  // Eliteserien
-  { id: 3000008, homeTeam: "Rosenborg", awayTeam: "Bodø/Glimt", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Eliteserien", leagueId: 2022 },
+  // JOGO PRINCIPAL — Amistoso Brasil x Panamá (pré-Copa do Mundo 2026)
+  { id: 3000001, homeTeam: "Brasil", awayTeam: "Panamá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
+  // Brasileirão Série A Rodada 18 (TIPS)
+  { id: 3000002, homeTeam: "RB Bragantino", awayTeam: "Internacional", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 3000003, homeTeam: "Vasco", awayTeam: "Atlético-MG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 3000004, homeTeam: "Palmeiras", awayTeam: "Chapecoense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 3000005, homeTeam: "Cruzeiro", awayTeam: "Fluminense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 3000006, homeTeam: "Remo", awayTeam: "São Paulo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série A", leagueId: 2013 },
+  // Amistosos Internacionais
+  { id: 3000007, homeTeam: "Alemanha", awayTeam: "Finlândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 3000008, homeTeam: "Polónia", awayTeam: "Ucrânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 3000009, homeTeam: "EUA", awayTeam: "Senegal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Arsenal", awayTeam: "PSG",
+  homeTeam: "Brasil", awayTeam: "Panamá",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [52, 48], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
