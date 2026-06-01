@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 31/05/2026
+// Notícias de fallback — análises, tips e contexto — 01/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,26 +147,26 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como o PSG de Luis Enrique destroçou o sistema do Arsenal nos penáltis — A análise da final histórica',
-      excerpt: 'O PSG é bicampeão da Champions League após vencer o Arsenal 4-3 nos penáltis em Budapeste. Analisamos como Luis Enrique preparou a equipa para neutralizar o pressing alto de Mikel Arteta, a decisão de Dembélé de cobrar o penálti que empatou o jogo, e por que razão Eze e Gabriel falharam as suas tentativas decisivas. Uma análise tática profunda a uma final que ficará na história do futebol europeu.',
+      title: 'ANÁLISE TÁTICA: O que o Real Madrid ganha com o regresso de José Mourinho — A nova era merengue',
+      excerpt: 'José Mourinho está de volta ao Santiago Bernabéu! Analisamos como o treinador português poderá organizar taticamente a equipa do Real Madrid, com um plantel recheado de estrelas como Vinícius Jr., Bellingham e Mbappé. Irá o "Special One" adotar um estilo mais pragmático ou apostar no futebol ofensivo? Uma análise profunda ao impacto de Mourinho na La Liga.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '14 min',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ÚLTIMA HORA: Liverpool despede Slot — Quem são os candidatos ao banco de Anfield e o que esperar da próxima época?',
-      excerpt: 'A demissão de Arne Slot do Liverpool chocou o mundo do futebol. O holandês, campeão da Premier League na primeira temporada, não sobreviveu a uma segunda época inconsistente. Analisamos os principais candidatos ao cargo — Iraola do Bournemouth é o favorito — e o que esta mudança significa para o projeto desportivo dos Reds, que precisam de reconstruir após a saída de Konaté e outras peças-chave.',
-      category: 'ÚLTIMA HORA',
-      readTime: '11 min',
+      title: 'ESCÂNDALO: FIFA no banco dos réus — Como os preços do Mundial 2026 estão a revoltar os adeptos',
+      excerpt: 'As Procuradorias-Gerais de Nova Iorque e Nova Jérsia abriram uma investigação à FIFA devido aos preços exorbitantes dos bilhetes para o Mundial 2026. Analisamos as táticas de "escassez falsa" e as relocalizações de lugares que levaram a este processo legal. O que significa isto para os adeptos que já compraram bilhetes e para a imagem da organização?',
+      category: 'ESCÂNDALO',
+      readTime: '15 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: O verão de ouro do Barcelona — Gordon, Bernardo Silva e a estratégia de Deco para dominar a La Liga',
-      excerpt: 'O Barcelona está a construir uma equipa de sonho para 2026/27. A contratação de Anthony Gordon por €80M ao Newcastle e a chegada gratuita de Bernardo Silva (que aceitou reduzir o salário para metade) mostram a ambição do clube catalão. Analisamos como estas peças se encaixam no sistema de Flick, o impacto no futuro de Rashford e Bardghji, e se o Barça tem agora o plantel para reconquistar a Champions.',
+      title: 'TRANSFERÊNCIAS: Rafael Leão na porta de saída — Quais os possíveis destinos para o internacional português?',
+      excerpt: 'Rafael Leão confirmou que a sua etapa no AC Milan chegou ao fim. Com uma cláusula de 175 milhões de euros, o extremo português é um dos jogadores mais cobiçados do mercado. Analisamos o interesse do Manchester United e do PSG, como Leão encaixaria nestas equipas e qual o valor real que o Milan poderá exigir pela sua transferência.',
       category: 'TRANSFERÊNCIAS',
       readTime: '10 min',
       date: formatToday,
@@ -174,28 +174,28 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Brasileirão Série A — Análise completa à rodada 18 com Cruzeiro vs Fluminense e Palmeiras vs Chapecoense',
-      excerpt: 'A última rodada do Brasileirão antes da pausa para o Mundial 2026 tem jogos de alto impacto. Analisamos os confrontos mais relevantes: Cruzeiro vs Fluminense no Mineirão (20h30), Palmeiras vs Chapecoense no Allianz Parque (16h00) e Bragantino vs Internacional (11h00). Apresentamos as nossas picks com odds reais, análise de forma recente e percentagens de probabilidade para cada resultado.',
+      title: 'TIPS DE APOSTAS: Amigáveis Internacionais — Previsões para o Noruega vs Suécia e Colômbia vs Costa Rica',
+      excerpt: 'Os amigáveis de preparação para o Mundial 2026 continuam a todo o gás. Analisamos o clássico nórdico entre Noruega e Suécia, com Haaland em destaque, e o duelo sul-americano entre Colômbia e Costa Rica. Apresentamos as nossas picks com odds reais, análise de forma recente e as melhores oportunidades de aposta para estes confrontos.',
       category: 'TIPS DE APOSTAS',
-      readTime: '12 min',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'ESCÂNDALO: O caso Saco Azul do Benfica regressa ao tribunal — O que significa o recurso do MP para o clube e para Vieira?',
-      excerpt: 'O Ministério Público vai recorrer da absolvição do Benfica SAD e de Luís Filipe Vieira no processo Saco Azul, reabrindo um caso que parecia encerrado. O tribunal tinha absolvido todos os arguidos em abril por impossibilidade de realizar perícia forense 10 anos após os factos. Analisamos as implicações jurídicas, o impacto na imagem do clube e o que pode acontecer nas próximas semanas com o prazo de 60 dias para o recurso.',
-      category: 'ESCÂNDALO',
-      readTime: '9 min',
+      title: 'ÚLTIMA HORA: O descalabro logístico da África do Sul — O impacto do adiamento na preparação para o Mundial',
+      excerpt: 'A seleção sul-africana (Bafana Bafana) viu a sua viagem para o México adiada devido a problemas com vistos, falhando o voo agendado. Analisamos o impacto deste atraso na preparação da equipa de Hugo Broos para o Mundial 2026, o cancelamento do amigável com a Jamaica e como este erro administrativo pode afetar o desempenho da equipa no torneio.',
+      category: 'ÚLTIMA HORA',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ANÁLISE TÁTICA: Brasil x Panamá — Ancelotti testa o sistema para o Mundial e revela as suas escolhas para o onze titular',
-      excerpt: 'O amistoso Brasil vs Panamá no Maracanã (18h30) é o último ensaio antes do Mundial 2026. Carlo Ancelotti tem dúvidas na composição do ataque após as lesões e quer testar Rodrygo, Vini Jr. e Endrick juntos. Analisamos o possível onze inicial da Seleção Canarinha, as opções táticas do técnico italiano, e o que este jogo pode revelar sobre a estratégia do Brasil para o torneio que começa a 11 de junho.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
+      title: 'TRANSFERÊNCIAS: Liverpool perde Konaté a custo zero — Como Arne Slot irá reconstruir a defesa dos Reds?',
+      excerpt: 'Ibrahima Konaté confirmou a sua saída do Liverpool após cinco épocas, não tendo chegado a acordo para renovar. Analisamos as opções do Liverpool no mercado para substituir o central francês, o impacto da sua saída a custo zero nas finanças do clube e como a defesa será reestruturada para a próxima temporada da Premier League.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },

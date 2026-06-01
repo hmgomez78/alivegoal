@@ -79,38 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (31/05/2026) — aparecem primeiro
+// Jogos com tips hoje (01/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Brasil", "Panamá",
-  "Cruzeiro", "Fluminense",
-  "Palmeiras", "Chapecoense",
-  "Bragantino", "Internacional",
-  "Vasco", "Atlético",
-  "Remo", "São Paulo",
+  "Noruega", "Suécia",
+  "Colômbia", "Costa Rica",
+  "Ponte Preta", "Botafogo-SP",
+  "Barra", "Brusque",
+  "Turquia", "Macedónia do Norte",
+  "Bulgária", "Montenegro",
 ];
 
-// Fallback data com jogos reais (atualizado 31/05/2026)
-// NOTA: Domingo — Amistoso Brasil + Brasileirão Série A Rodada 18 + Amistosos Internacionais + Roland Garros
+// Fallback data com jogos reais (atualizado 01/06/2026)
+// NOTA: Segunda-feira — Amistosos Internacionais + Brasileirão Série B e C
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Amistoso Brasil x Panamá (pré-Copa do Mundo 2026)
-  { id: 3000001, homeTeam: "Brasil", awayTeam: "Panamá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
-  // Brasileirão Série A Rodada 18 (TIPS)
-  { id: 3000002, homeTeam: "RB Bragantino", awayTeam: "Internacional", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 3000003, homeTeam: "Vasco", awayTeam: "Atlético-MG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 3000004, homeTeam: "Palmeiras", awayTeam: "Chapecoense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 3000005, homeTeam: "Cruzeiro", awayTeam: "Fluminense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 3000006, homeTeam: "Remo", awayTeam: "São Paulo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série A", leagueId: 2013 },
+  // JOGO PRINCIPAL — Amistoso Internacional (Noruega vs Suécia)
+  { id: 4000001, homeTeam: "Noruega", awayTeam: "Suécia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
   // Amistosos Internacionais
-  { id: 3000007, homeTeam: "Alemanha", awayTeam: "Finlândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 3000008, homeTeam: "Polónia", awayTeam: "Ucrânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 3000009, homeTeam: "EUA", awayTeam: "Senegal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000002, homeTeam: "Colômbia", awayTeam: "Costa Rica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000003, homeTeam: "Turquia", awayTeam: "Macedónia do Norte", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000004, homeTeam: "Bulgária", awayTeam: "Montenegro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000005, homeTeam: "Eslováquia", awayTeam: "Malta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000006, homeTeam: "Áustria", awayTeam: "Tunísia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
+  // Brasileirão Série B e C
+  { id: 4000007, homeTeam: "Ponte Preta", awayTeam: "Botafogo-SP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 2014 },
+  { id: 4000008, homeTeam: "Barra", awayTeam: "Brusque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série C", leagueId: 2015 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Brasil", awayTeam: "Panamá",
+  homeTeam: "Noruega", awayTeam: "Suécia",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
