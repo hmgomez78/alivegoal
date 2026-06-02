@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 01/06/2026
+// Notícias de fallback — análises, tips e contexto — 02/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O que o Real Madrid ganha com o regresso de José Mourinho — A nova era merengue',
-      excerpt: 'José Mourinho está de volta ao Santiago Bernabéu! Analisamos como o treinador português poderá organizar taticamente a equipa do Real Madrid, com um plantel recheado de estrelas como Vinícius Jr., Bellingham e Mbappé. Irá o "Special One" adotar um estilo mais pragmático ou apostar no futebol ofensivo? Uma análise profunda ao impacto de Mourinho na La Liga.',
+      title: 'ANÁLISE TÁTICA: Como Savinho encaixa no sistema de Roberto De Zerbi no Tottenham',
+      excerpt: 'Com a provável transferência de Savinho para o Tottenham, analisamos como o extremo brasileiro se adaptará à tática de Roberto De Zerbi. O seu drible rápido e capacidade de jogar em ambos os flancos poderão ser a chave para desbloquear defesas cerradas na Premier League, compensando as lesões no ataque dos Spurs.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '12 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: FIFA no banco dos réus — Como os preços do Mundial 2026 estão a revoltar os adeptos',
-      excerpt: 'As Procuradorias-Gerais de Nova Iorque e Nova Jérsia abriram uma investigação à FIFA devido aos preços exorbitantes dos bilhetes para o Mundial 2026. Analisamos as táticas de "escassez falsa" e as relocalizações de lugares que levaram a este processo legal. O que significa isto para os adeptos que já compraram bilhetes e para a imagem da organização?',
-      category: 'ESCÂNDALO',
-      readTime: '15 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: Rafael Leão na porta de saída — Quais os possíveis destinos para o internacional português?',
-      excerpt: 'Rafael Leão confirmou que a sua etapa no AC Milan chegou ao fim. Com uma cláusula de 175 milhões de euros, o extremo português é um dos jogadores mais cobiçados do mercado. Analisamos o interesse do Manchester United e do PSG, como Leão encaixaria nestas equipas e qual o valor real que o Milan poderá exigir pela sua transferência.',
-      category: 'TRANSFERÊNCIAS',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'TIPS DE APOSTAS: Amigáveis Internacionais — Previsões para o Noruega vs Suécia e Colômbia vs Costa Rica',
-      excerpt: 'Os amigáveis de preparação para o Mundial 2026 continuam a todo o gás. Analisamos o clássico nórdico entre Noruega e Suécia, com Haaland em destaque, e o duelo sul-americano entre Colômbia e Costa Rica. Apresentamos as nossas picks com odds reais, análise de forma recente e as melhores oportunidades de aposta para estes confrontos.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '11 min',
+      id: 2,
+      title: 'ESCÂNDALO: O impacto do caso Brendan Sorsby nas apostas desportivas universitárias',
+      excerpt: 'A revelação de que o quarterback do Texas Tech apostou nos jogos da sua própria equipa levanta questões sérias sobre a integridade do desporto universitário. Exploramos as consequências legais e as medidas que a NCAA poderá tomar para prevenir futuros casos semelhantes.',
+      category: 'ESCÂNDALO',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'ÚLTIMA HORA: O descalabro logístico da África do Sul — O impacto do adiamento na preparação para o Mundial',
-      excerpt: 'A seleção sul-africana (Bafana Bafana) viu a sua viagem para o México adiada devido a problemas com vistos, falhando o voo agendado. Analisamos o impacto deste atraso na preparação da equipa de Hugo Broos para o Mundial 2026, o cancelamento do amigável com a Jamaica e como este erro administrativo pode afetar o desempenho da equipa no torneio.',
-      category: 'ÚLTIMA HORA',
+      id: 3,
+      title: 'TRANSFERÊNCIAS: Arsenal no mercado — Quem são os principais alvos de Mikel Arteta?',
+      excerpt: 'Após a conquista do título, o Arsenal prepara-se para investir forte. Analisamos os potenciais alvos dos Gunners, desde médios criativos a avançados finalizadores, e como estas contratações poderão solidificar o domínio do clube no futebol inglês e europeu.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TRANSFERÊNCIAS: Liverpool perde Konaté a custo zero — Como Arne Slot irá reconstruir a defesa dos Reds?',
-      excerpt: 'Ibrahima Konaté confirmou a sua saída do Liverpool após cinco épocas, não tendo chegado a acordo para renovar. Analisamos as opções do Liverpool no mercado para substituir o central francês, o impacto da sua saída a custo zero nas finanças do clube e como a defesa será reestruturada para a próxima temporada da Premier League.',
-      category: 'TRANSFERÊNCIAS',
+      id: 4,
+      title: 'TIPS DE APOSTAS: Preparação Mundial 2026 — Oportunidades nos amigáveis de hoje',
+      excerpt: 'Os jogos de preparação para o Mundial oferecem excelentes oportunidades de aposta. Analisamos os confrontos de hoje, destacando as seleções que precisam de provar valor e aquelas que poderão poupar os titulares. Dicas fundamentadas para apostas de valor.',
+      category: 'TIPS DE APOSTAS',
       readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ÚLTIMA HORA: Seleção Brasileira a caminho dos EUA com esperança renovada',
+      excerpt: 'A viagem da Seleção Brasileira para os EUA marca o início da reta final para o Mundial 2026. Com Ancelotti no comando e o regresso de Neymar, a confiança está em alta. Discutimos o ambiente na equipa e as expectativas dos adeptos brasileiros.',
+      category: 'ÚLTIMA HORA',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TRANSFERÊNCIAS: Ansu Fati no Mónaco — O renascer de uma promessa',
+      excerpt: 'A transferência definitiva de Ansu Fati para o AS Monaco por 11 milhões de euros marca um novo capítulo na sua carreira. Analisamos como o ambiente na Ligue 1 e a estrutura do Mónaco poderão ajudar o jovem espanhol a recuperar a sua melhor forma e atingir o potencial que demonstrou no início da carreira no Barcelona.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },

@@ -79,37 +79,35 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (01/06/2026) — aparecem primeiro
+// Jogos com tips hoje (02/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Noruega", "Suécia",
-  "Colômbia", "Costa Rica",
-  "Ponte Preta", "Botafogo-SP",
-  "Barra", "Brusque",
-  "Turquia", "Macedónia do Norte",
-  "Bulgária", "Montenegro",
+  "Croácia", "Bélgica",
+  "Geórgia", "Roménia",
+  "País de Gales", "Gana",
+  "Haiti", "Nova Zelândia",
+  "Fortaleza", "Vitória",
+  "Brasil", "Marrocos",
 ];
 
-// Fallback data com jogos reais (atualizado 01/06/2026)
-// NOTA: Segunda-feira — Amistosos Internacionais + Brasileirão Série B e C
+// Fallback data com jogos reais (atualizado 02/06/2026)
+// NOTA: Terça-feira — Amistosos Internacionais + Copa do Nordeste
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Amistoso Internacional (Noruega vs Suécia)
-  { id: 4000001, homeTeam: "Noruega", awayTeam: "Suécia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — Amistoso Internacional (Croácia vs Bélgica)
+  { id: 4000001, homeTeam: "Croácia", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
   // Amistosos Internacionais
-  { id: 4000002, homeTeam: "Colômbia", awayTeam: "Costa Rica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000003, homeTeam: "Turquia", awayTeam: "Macedónia do Norte", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000004, homeTeam: "Bulgária", awayTeam: "Montenegro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000005, homeTeam: "Eslováquia", awayTeam: "Malta", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000006, homeTeam: "Áustria", awayTeam: "Tunísia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
-  // Brasileirão Série B e C
-  { id: 4000007, homeTeam: "Ponte Preta", awayTeam: "Botafogo-SP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 2014 },
-  { id: 4000008, homeTeam: "Barra", awayTeam: "Brusque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série C", leagueId: 2015 },
+  { id: 4000002, homeTeam: "Geórgia", awayTeam: "Roménia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000003, homeTeam: "País de Gales", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000004, homeTeam: "Haiti", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000005, homeTeam: "Brasil", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Copa do Nordeste (Final)
+  { id: 4000006, homeTeam: "Fortaleza", awayTeam: "Vitória", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Copa do Nordeste", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Noruega", awayTeam: "Suécia",
+  homeTeam: "Croácia", awayTeam: "Bélgica",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
