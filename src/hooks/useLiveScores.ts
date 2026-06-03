@@ -79,32 +79,31 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (02/06/2026) — aparecem primeiro
+// Jogos com tips hoje (03/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Croácia", "Bélgica",
-  "Geórgia", "Roménia",
-  "País de Gales", "Gana",
+  "Holanda", "Argélia",
+  "Luxemburgo", "Itália",
+  "RD Congo", "Dinamarca",
   "Haiti", "Nova Zelândia",
-  "Fortaleza", "Vitória",
-  "Brasil", "Marrocos",
+  "Canadá", "Uzbequistão",
+  "Coreia do Sul", "El Salvador",
 ];
 
-// Fallback data com jogos reais (atualizado 02/06/2026)
-// NOTA: Terça-feira — Amistosos Internacionais + Copa do Nordeste
+// Fallback data com jogos reais (atualizado 03/06/2026)
+// NOTA: Quarta-feira — Amistosos Internacionais (Preparação Mundial 2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Amistoso Internacional (Croácia vs Bélgica)
-  { id: 4000001, homeTeam: "Croácia", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — Amistoso Internacional
+  { id: 4000001, homeTeam: "Holanda", awayTeam: "Argélia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Amistoso Internacional", leagueId: 0 },
   // Amistosos Internacionais
-  { id: 4000002, homeTeam: "Geórgia", awayTeam: "Roménia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000003, homeTeam: "País de Gales", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:45", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000002, homeTeam: "Luxemburgo", awayTeam: "Itália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000003, homeTeam: "RD Congo", awayTeam: "Dinamarca", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Amistoso Internacional", leagueId: 0 },
   { id: 4000004, homeTeam: "Haiti", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000005, homeTeam: "Brasil", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Copa do Nordeste (Final)
-  { id: 4000006, homeTeam: "Fortaleza", awayTeam: "Vitória", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Copa do Nordeste", leagueId: 0 },
+  { id: 4000005, homeTeam: "Canadá", awayTeam: "Uzbequistão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 4000006, homeTeam: "Coreia do Sul", awayTeam: "El Salvador", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Croácia", awayTeam: "Bélgica",
+  homeTeam: "Holanda", awayTeam: "Argélia",
   homeScore: 0, awayScore: 0,
   stats: {
     possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],

@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 02/06/2026
+// Notícias de fallback — análises, tips e contexto — 03/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Savinho encaixa no sistema de Roberto De Zerbi no Tottenham',
-      excerpt: 'Com a provável transferência de Savinho para o Tottenham, analisamos como o extremo brasileiro se adaptará à tática de Roberto De Zerbi. O seu drible rápido e capacidade de jogar em ambos os flancos poderão ser a chave para desbloquear defesas cerradas na Premier League, compensando as lesões no ataque dos Spurs.',
+      title: 'ANÁLISE TÁTICA: O impacto de Ibrahima Konaté na defesa do Real Madrid',
+      excerpt: 'Com a chegada iminente de Ibrahima Konaté ao Real Madrid, analisamos como o central francês irá transformar a linha defensiva dos merengues. A sua velocidade, força física e capacidade de saída de bola serão fundamentais para o sistema da equipa, preenchendo as lacunas deixadas por lesões recentes.',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O impacto do caso Brendan Sorsby nas apostas desportivas universitárias',
-      excerpt: 'A revelação de que o quarterback do Texas Tech apostou nos jogos da sua própria equipa levanta questões sérias sobre a integridade do desporto universitário. Exploramos as consequências legais e as medidas que a NCAA poderá tomar para prevenir futuros casos semelhantes.',
+      title: 'ESCÂNDALO: Como o "spot-fixing" está a ameaçar a integridade do Mundial 2026',
+      excerpt: 'O recente caso de jogadores a forçarem cartões amarelos antes do Mundial 2026 levanta sérias preocupações sobre a vulnerabilidade do futebol global a redes de apostas ilegais. Exploramos os detalhes da investigação do The Athletic e as medidas de segurança que a FIFA terá de implementar urgentemente.',
       category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
@@ -165,8 +165,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Arsenal no mercado — Quem são os principais alvos de Mikel Arteta?',
-      excerpt: 'Após a conquista do título, o Arsenal prepara-se para investir forte. Analisamos os potenciais alvos dos Gunners, desde médios criativos a avançados finalizadores, e como estas contratações poderão solidificar o domínio do clube no futebol inglês e europeu.',
+      title: 'TRANSFERÊNCIAS: Marco Silva no Benfica — O que muda na Luz?',
+      excerpt: 'A contratação de Marco Silva pelo Benfica marca uma nova era para o clube. Analisamos o estilo de jogo do treinador português, o seu sucesso no Fulham e como poderá revitalizar o plantel encarnado. Quais serão as suas primeiras exigências no mercado de transferências?',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
@@ -174,8 +174,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Preparação Mundial 2026 — Oportunidades nos amigáveis de hoje',
-      excerpt: 'Os jogos de preparação para o Mundial oferecem excelentes oportunidades de aposta. Analisamos os confrontos de hoje, destacando as seleções que precisam de provar valor e aquelas que poderão poupar os titulares. Dicas fundamentadas para apostas de valor.',
+      title: 'TIPS DE APOSTAS: Amigáveis de Seleções — Como lucrar com jogos imprevisíveis',
+      excerpt: 'Os jogos de preparação para o Mundial 2026 como Holanda vs Argélia ou Dinamarca vs RD Congo apresentam desafios únicos para os apostadores. Partilhamos estratégias fundamentais para encontrar valor nestes encontros, focando na motivação das equipas e nas rotações de plantel.',
       category: 'TIPS DE APOSTAS',
       readTime: '9 min',
       date: formatToday,
@@ -183,8 +183,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: Seleção Brasileira a caminho dos EUA com esperança renovada',
-      excerpt: 'A viagem da Seleção Brasileira para os EUA marca o início da reta final para o Mundial 2026. Com Ancelotti no comando e o regresso de Neymar, a confiança está em alta. Discutimos o ambiente na equipa e as expectativas dos adeptos brasileiros.',
+      title: 'ÚLTIMA HORA: A resposta da UEFA à violência na final da Champions',
+      excerpt: 'Os graves motins em Paris e outras cidades francesas após a vitória do PSG na Liga dos Campeões forçaram uma resposta rápida das autoridades. Discutimos o impacto da nova lei de segurança francesa e as possíveis sanções que a UEFA poderá aplicar aos clubes e organizadores.',
       category: 'ÚLTIMA HORA',
       readTime: '7 min',
       date: formatToday,
@@ -192,8 +192,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Ansu Fati no Mónaco — O renascer de uma promessa',
-      excerpt: 'A transferência definitiva de Ansu Fati para o AS Monaco por 11 milhões de euros marca um novo capítulo na sua carreira. Analisamos como o ambiente na Ligue 1 e a estrutura do Mónaco poderão ajudar o jovem espanhol a recuperar a sua melhor forma e atingir o potencial que demonstrou no início da carreira no Barcelona.',
+      title: 'TRANSFERÊNCIAS: A aposta do Barcelona em Enzo Pérez para o futuro',
+      excerpt: 'O regresso do prodígio Enzo Pérez, de apenas 14 anos, ao Barcelona demonstra a renovada força de atração de La Masia. Analisamos o perfil deste jovem talento que rejeitou Real Madrid e Manchester City, e como o clube catalão planeia o seu desenvolvimento para chegar à equipa principal.',
       category: 'TRANSFERÊNCIAS',
       readTime: '11 min',
       date: formatToday,
