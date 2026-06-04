@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 03/06/2026
+// Notícias de fallback — análises, tips e contexto — 04/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O impacto de Ibrahima Konaté na defesa do Real Madrid',
-      excerpt: 'Com a chegada iminente de Ibrahima Konaté ao Real Madrid, analisamos como o central francês irá transformar a linha defensiva dos merengues. A sua velocidade, força física e capacidade de saída de bola serão fundamentais para o sistema da equipa, preenchendo as lacunas deixadas por lesões recentes.',
+      title: 'ANÁLISE TÁTICA: Como José Mourinho vai transformar o Real Madrid',
+      excerpt: 'Com a confirmação do regresso de José Mourinho ao Real Madrid, analisamos como o técnico português pretende revolucionar a equipa. As contratações de Konaté e Dumfries indicam uma aposta numa defesa sólida e laterais ofensivos. Conseguirá Mourinho replicar o sucesso da sua primeira passagem?',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: Como o "spot-fixing" está a ameaçar a integridade do Mundial 2026',
-      excerpt: 'O recente caso de jogadores a forçarem cartões amarelos antes do Mundial 2026 levanta sérias preocupações sobre a vulnerabilidade do futebol global a redes de apostas ilegais. Exploramos os detalhes da investigação do The Athletic e as medidas de segurança que a FIFA terá de implementar urgentemente.',
+      title: 'ESCÂNDALO: O impacto do mandado de detenção de Brandon Aiyuk',
+      excerpt: 'A emissão de um mandado de detenção para o jogador dos 49ers, Brandon Aiyuk, lança uma sombra sobre a NFL. Exploramos as possíveis consequências disciplinares e o impacto na sua carreira, relembrando casos semelhantes no passado e como as ligas lidam com problemas legais dos atletas.',
       category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
@@ -165,8 +165,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Marco Silva no Benfica — O que muda na Luz?',
-      excerpt: 'A contratação de Marco Silva pelo Benfica marca uma nova era para o clube. Analisamos o estilo de jogo do treinador português, o seu sucesso no Fulham e como poderá revitalizar o plantel encarnado. Quais serão as suas primeiras exigências no mercado de transferências?',
+      title: 'TRANSFERÊNCIAS: Éderson no Man Utd — A peça que faltava no meio-campo?',
+      excerpt: 'A contratação de Éderson pela equipa de Old Trafford promete trazer mais dinamismo e agressividade ao meio-campo. Analisamos o perfil do médio brasileiro, a sua fantástica época na Atalanta e como ele pode complementar Bruno Fernandes e Kobbie Mainoo no sistema tático.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
@@ -174,8 +174,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Amigáveis de Seleções — Como lucrar com jogos imprevisíveis',
-      excerpt: 'Os jogos de preparação para o Mundial 2026 como Holanda vs Argélia ou Dinamarca vs RD Congo apresentam desafios únicos para os apostadores. Partilhamos estratégias fundamentais para encontrar valor nestes encontros, focando na motivação das equipas e nas rotações de plantel.',
+      title: 'TIPS DE APOSTAS: Preparação para o Mundial — Apostar em Amigáveis',
+      excerpt: 'Os jogos de preparação para o Mundial 2026, como o Espanha vs Iraque e o França vs Costa do Marfim, são notoriamente difíceis de prever. Partilhamos estratégias para apostar nestes encontros, focando em mercados de golos e na gestão de expectativas face às habituais rotações de plantel.',
       category: 'TIPS DE APOSTAS',
       readTime: '9 min',
       date: formatToday,
@@ -183,8 +183,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: A resposta da UEFA à violência na final da Champions',
-      excerpt: 'Os graves motins em Paris e outras cidades francesas após a vitória do PSG na Liga dos Campeões forçaram uma resposta rápida das autoridades. Discutimos o impacto da nova lei de segurança francesa e as possíveis sanções que a UEFA poderá aplicar aos clubes e organizadores.',
+      title: 'ÚLTIMA HORA: A chegada das seleções à América do Norte para o Mundial',
+      excerpt: 'As seleções nacionais começam a aterrar nos EUA, Canadá e México para o Mundial 2026. Acompanhamos a chegada das equipas, os primeiros treinos de adaptação e o ambiente de festa que já se vive nas cidades anfitriãs. O maior torneio de sempre está prestes a começar!',
       category: 'ÚLTIMA HORA',
       readTime: '7 min',
       date: formatToday,
@@ -192,8 +192,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: A aposta do Barcelona em Enzo Pérez para o futuro',
-      excerpt: 'O regresso do prodígio Enzo Pérez, de apenas 14 anos, ao Barcelona demonstra a renovada força de atração de La Masia. Analisamos o perfil deste jovem talento que rejeitou Real Madrid e Manchester City, e como o clube catalão planeia o seu desenvolvimento para chegar à equipa principal.',
+      title: 'TRANSFERÊNCIAS: A estratégia do Bayern Munique no mercado de verão',
+      excerpt: 'Com a contratação iminente de Ismael Saibari, o Bayern Munique demonstra uma abordagem cirúrgica ao mercado. Analisamos a política de transferências de Vincent Kompany e como o clube bávaro procura rejuvenescer o plantel sem cometer excessos financeiros, focando em talento provado e com margem de progressão.',
       category: 'TRANSFERÊNCIAS',
       readTime: '11 min',
       date: formatToday,
