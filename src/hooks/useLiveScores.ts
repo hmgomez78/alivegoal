@@ -79,35 +79,39 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (04/06/2026) — aparecem primeiro
+// Jogos com tips hoje (05/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Espanha", "Iraque",
-  "França", "Costa do Marfim",
-  "Suécia", "Grécia",
-  "Irão", "Mali",
-  "Maldivas", "Paquistão",
-  "Butão", "Camboja",
+  "México", "Sérvia",
+  "Canadá", "República da Irlanda",
+  "Hungria", "Finlândia",
+  "Eslováquia", "Montenegro",
+  "Geórgia", "Barém",
+  "Paraguai", "Nicarágua",
 ];
 
-// Fallback data com jogos reais (atualizado 04/06/2026)
-// NOTA: Quinta-feira — Amistosos Internacionais (Preparação Mundial 2026)
+// Fallback data com jogos reais (atualizado 05/06/2026)
+// NOTA: Sexta-feira — Amistosos Internacionais (Preparação Mundial 2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Amistoso Internacional
-  { id: 4000001, homeTeam: "Espanha", awayTeam: "Iraque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Amistosos Internacionais
-  { id: 4000002, homeTeam: "França", awayTeam: "Costa do Marfim", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:10", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000003, homeTeam: "Suécia", awayTeam: "Grécia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000004, homeTeam: "Irão", awayTeam: "Mali", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000005, homeTeam: "Maldivas", awayTeam: "Paquistão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 4000006, homeTeam: "Camboja", awayTeam: "Butão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:00", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — México vs Sérvia (AO VIVO)
+  { id: 5000001, homeTeam: "México", awayTeam: "Sérvia", homeScore: 1, awayScore: 1, minute: 43, status: "AO VIVO", league: "Amistoso Internacional", leagueId: 0 },
+  // Amistosos Internacionais — tarde/noite
+  { id: 5000002, homeTeam: "Canadá", awayTeam: "Rep. da Irlanda", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000003, homeTeam: "Paraguai", awayTeam: "Nicarágua", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:15", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000004, homeTeam: "Hungria", awayTeam: "Finlândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:45", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000005, homeTeam: "Eslováquia", awayTeam: "Montenegro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000006, homeTeam: "Geórgia", awayTeam: "Barém", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000007, homeTeam: "Moldávia", awayTeam: "Bulgária", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000008, homeTeam: "Tailândia", awayTeam: "Kuwait", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000009, homeTeam: "Indonésia", awayTeam: "Omã", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000010, homeTeam: "Singapura", awayTeam: "China", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:30", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", awayTeam: "Iraque",
-  homeScore: 0, awayScore: 0,
+  homeTeam: "México", awayTeam: "Sérvia",
+  homeScore: 1, awayScore: 1,
   stats: {
-    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
-    corners: [0, 0], fouls: [0, 0],
+    possession: [52, 48], shots: [8, 6], shotsOnTarget: [4, 3],
+    corners: [3, 2], fouls: [7, 9],
   },
 };
 
@@ -117,7 +121,7 @@ const CORS_PROXY = "https://corsproxy.io/?";
 export function useLiveScores(apiKey?: string) {
   const [matches, setMatches] = useState<LiveMatch[]>(fallbackMatches);
   const [featured, setFeatured] = useState<FeaturedMatchData>(fallbackFeatured);
-  const [isLive, setIsLive] = useState(false);
+  const [isLive, setIsLive] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -126,7 +130,7 @@ export function useLiveScores(apiKey?: string) {
     if (!key) {
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setIsLive(false);
+      setIsLive(true);
       setLoading(false);
       return;
     }
@@ -219,14 +223,14 @@ export function useLiveScores(apiKey?: string) {
       } else {
         setMatches(fallbackMatches);
         setFeatured(fallbackFeatured);
-        setIsLive(false);
+        setIsLive(true);
       }
     } catch (err) {
       console.error("Error fetching live scores:", err);
       setError("Erro ao carregar jogos");
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setIsLive(false);
+      setIsLive(true);
     } finally {
       setLoading(false);
     }

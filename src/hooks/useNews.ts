@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, tips e contexto — 04/06/2026
+// Notícias de fallback — análises, contexto e investigação — 05/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como José Mourinho vai transformar o Real Madrid',
-      excerpt: 'Com a confirmação do regresso de José Mourinho ao Real Madrid, analisamos como o técnico português pretende revolucionar a equipa. As contratações de Konaté e Dumfries indicam uma aposta numa defesa sólida e laterais ofensivos. Conseguirá Mourinho replicar o sucesso da sua primeira passagem?',
+      title: 'ANÁLISE: O colapso defensivo da França — o que correu mal contra a Costa do Marfim?',
+      excerpt: 'A derrota da França por 1-2 frente à Costa do Marfim, a apenas dias do início do Mundial 2026, levantou sérias questões táticas. Deschamps optou por um bloco médio que foi repetidamente explorado pela velocidade de Yan Diomandé. A linha defensiva mostrou falta de comunicação e os centrais foram apanhados em posição adiantada nos dois golos sofridos. Será que esta derrota é apenas um acidente ou um sinal de algo mais profundo?',
       category: 'ANÁLISE TÁTICA',
       readTime: '10 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O impacto do mandado de detenção de Brandon Aiyuk',
-      excerpt: 'A emissão de um mandado de detenção para o jogador dos 49ers, Brandon Aiyuk, lança uma sombra sobre a NFL. Exploramos as possíveis consequências disciplinares e o impacto na sua carreira, relembrando casos semelhantes no passado e como as ligas lidam com problemas legais dos atletas.',
+      title: 'ESCÂNDALO: A guerra jurídica entre Man City e o candidato presidencial do Real Madrid',
+      excerpt: 'A promessa pública de Enrique Riquelme de contratar Erling Haaland para o Real Madrid abriu uma caixa de Pandora legal. O Manchester City considera que esta declaração pública pode constituir uma tentativa de induzir o jogador a quebrar o contrato, o que é proibido pela lei inglesa e pelos regulamentos da FIFA. Analisamos os precedentes legais e o que pode acontecer se o City avançar com a ação judicial.',
       category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
@@ -165,26 +165,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Éderson no Man Utd — A peça que faltava no meio-campo?',
-      excerpt: 'A contratação de Éderson pela equipa de Old Trafford promete trazer mais dinamismo e agressividade ao meio-campo. Analisamos o perfil do médio brasileiro, a sua fantástica época na Atalanta e como ele pode complementar Bruno Fernandes e Kobbie Mainoo no sistema tático.',
+      title: 'TRANSFERÊNCIAS: Vlahovic agente livre — quem vai ganhar a corrida pelo avançado sérvio?',
+      excerpt: 'Com Dusan Vlahovic a sair da Juventus sem qualquer custo de transferência, os principais clubes europeus estão em alerta máximo. O sérvio marcou 23 golos na Serie A esta época e é considerado um dos melhores avançados do mundo. Tottenham precisa de um 9 de raiz, Arsenal quer reforçar o ataque, e vários clubes alemães têm capacidade financeira para satisfazer as exigências salariais. Quem vai vencer esta batalha?',
       category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TIPS DE APOSTAS: Preparação para o Mundial — Apostar em Amigáveis',
-      excerpt: 'Os jogos de preparação para o Mundial 2026, como o Espanha vs Iraque e o França vs Costa do Marfim, são notoriamente difíceis de prever. Partilhamos estratégias para apostar nestes encontros, focando em mercados de golos e na gestão de expectativas face às habituais rotações de plantel.',
-      category: 'TIPS DE APOSTAS',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 4,
+      title: 'TIPS DE APOSTAS: Canadá vs República da Irlanda — análise completa e apostas recomendadas',
+      excerpt: 'O amistoso de hoje entre o Canadá e a República da Irlanda (19:30 hora local) apresenta dois selecionados com estilos muito diferentes. O Canadá, que participa no Mundial em casa, vai querer impressionar os adeptos locais. A Irlanda, em reconstrução após não se qualificar, tem jovens talentos a afirmar. Analisamos as odds, o historial recente e as melhores apostas para este encontro.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 5,
-      title: 'ÚLTIMA HORA: A chegada das seleções à América do Norte para o Mundial',
-      excerpt: 'As seleções nacionais começam a aterrar nos EUA, Canadá e México para o Mundial 2026. Acompanhamos a chegada das equipas, os primeiros treinos de adaptação e o ambiente de festa que já se vive nas cidades anfitriãs. O maior torneio de sempre está prestes a começar!',
+      title: 'ÚLTIMA HORA: México vs Sérvia em jogo — o que está em jogo para ambas as seleções?',
+      excerpt: 'O México recebe a Sérvia num amistoso de grande interesse para ambas as equipas. Os mexicanos, anfitriões do Mundial 2026, precisam de afinar a equipa e ganhar confiança antes da competição. A Sérvia, liderada por Vlahovic (que pode estar a jogar o seu último jogo antes de anunciar o novo clube), quer mostrar que é uma ameaça real no torneio. O jogo está a decorrer no Estádio Nemesio Díez em Toluca.',
       category: 'ÚLTIMA HORA',
       readTime: '7 min',
       date: formatToday,
@@ -192,8 +192,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: A estratégia do Bayern Munique no mercado de verão',
-      excerpt: 'Com a contratação iminente de Ismael Saibari, o Bayern Munique demonstra uma abordagem cirúrgica ao mercado. Analisamos a política de transferências de Vincent Kompany e como o clube bávaro procura rejuvenescer o plantel sem cometer excessos financeiros, focando em talento provado e com margem de progressão.',
+      title: 'TRANSFERÊNCIAS: Julian Alvarez — o Barcelona vai conseguir convencer o Atlético de Madrid?',
+      excerpt: 'A novela de Julian Alvarez promete ser a transferência do verão. O argentino quer sair do Atlético de Madrid e o Barcelona já apresentou €100M, mas os colchoneros exigem €130M. Com o Mundial a decorrer, o valor de Alvarez pode ainda subir. Analisamos a situação financeira do Barcelona, a posição do Atlético e como este negócio pode afetar o equilíbrio de forças na La Liga.',
       category: 'TRANSFERÊNCIAS',
       readTime: '11 min',
       date: formatToday,
