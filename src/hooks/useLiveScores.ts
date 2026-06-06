@@ -79,39 +79,47 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (05/06/2026) — aparecem primeiro
+// Jogos com tips hoje (06/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "México", "Sérvia",
-  "Canadá", "República da Irlanda",
-  "Hungria", "Finlândia",
-  "Eslováquia", "Montenegro",
-  "Geórgia", "Barém",
-  "Paraguai", "Nicarágua",
+  "Portugal", "Chile",
+  "EUA", "Alemanha",
+  "Brasil", "Egito",
+  "Argentina", "Honduras",
+  "Inglaterra", "Nova Zelândia",
+  "Bélgica", "Tunísia",
 ];
 
-// Fallback data com jogos reais (atualizado 05/06/2026)
-// NOTA: Sexta-feira — Amistosos Internacionais (Preparação Mundial 2026)
+// Fallback data com jogos reais (atualizado 06/06/2026)
+// NOTA: Sábado — Amistosos Internacionais (Preparação Mundial 2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — México vs Sérvia (AO VIVO)
-  { id: 5000001, homeTeam: "México", awayTeam: "Sérvia", homeScore: 1, awayScore: 1, minute: 43, status: "AO VIVO", league: "Amistoso Internacional", leagueId: 0 },
-  // Amistosos Internacionais — tarde/noite
-  { id: 5000002, homeTeam: "Canadá", awayTeam: "Rep. da Irlanda", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000003, homeTeam: "Paraguai", awayTeam: "Nicarágua", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:15", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000004, homeTeam: "Hungria", awayTeam: "Finlândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:45", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000005, homeTeam: "Eslováquia", awayTeam: "Montenegro", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000006, homeTeam: "Geórgia", awayTeam: "Barém", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000007, homeTeam: "Moldávia", awayTeam: "Bulgária", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000008, homeTeam: "Tailândia", awayTeam: "Kuwait", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 12:30", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000009, homeTeam: "Indonésia", awayTeam: "Omã", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000010, homeTeam: "Singapura", awayTeam: "China", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:30", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — EUA vs Alemanha (Soldier Field, Chicago)
+  { id: 5000001, homeTeam: "EUA", awayTeam: "Alemanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
+  // Portugal vs Chile — Estádio Nacional do Jamor
+  { id: 5000002, homeTeam: "Portugal", awayTeam: "Chile", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Brasil vs Egito (sem Neymar)
+  { id: 5000003, homeTeam: "Brasil", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Argentina vs Honduras
+  { id: 5000004, homeTeam: "Argentina", awayTeam: "Honduras", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Inglaterra vs Nova Zelândia (Raymond James Stadium, Tampa)
+  { id: 5000005, homeTeam: "Inglaterra", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Bélgica vs Tunísia
+  { id: 5000006, homeTeam: "Bélgica", awayTeam: "Tunísia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Suíça vs Austrália
+  { id: 5000007, homeTeam: "Suíça", awayTeam: "Austrália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Escócia vs Bolívia
+  { id: 5000008, homeTeam: "Escócia", awayTeam: "Bolívia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Venezuela vs Turquia
+  { id: 5000009, homeTeam: "Venezuela", awayTeam: "Turquia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Panamá vs Bósnia-Herzegovina
+  { id: 5000010, homeTeam: "Panamá", awayTeam: "Bósnia-Herzegovina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "México", awayTeam: "Sérvia",
-  homeScore: 1, awayScore: 1,
+  homeTeam: "EUA", awayTeam: "Alemanha",
+  homeScore: 0, awayScore: 0,
   stats: {
-    possession: [52, 48], shots: [8, 6], shotsOnTarget: [4, 3],
-    corners: [3, 2], fouls: [7, 9],
+    possession: [48, 52], shots: [0, 0], shotsOnTarget: [0, 0],
+    corners: [0, 0], fouls: [0, 0],
   },
 };
 
