@@ -79,47 +79,47 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (06/06/2026) — aparecem primeiro
+// Jogos com tips hoje (07/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Portugal", "Chile",
-  "EUA", "Alemanha",
-  "Brasil", "Egito",
   "Argentina", "Honduras",
-  "Inglaterra", "Nova Zelândia",
-  "Bélgica", "Tunísia",
+  "Croácia", "Eslovénia",
+  "Marrocos", "Noruega",
+  "Equador", "Guatemala",
+  "Bélgica U17", "Itália U17",
+  "Grécia", "Itália",
 ];
 
-// Fallback data com jogos reais (atualizado 06/06/2026)
-// NOTA: Sábado — Amistosos Internacionais (Preparação Mundial 2026)
+// Fallback data com jogos reais (atualizado 07/06/2026)
+// NOTA: Domingo — Amistosos Internacionais (Preparação Mundial 2026) + UEFA U17 Final
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — EUA vs Alemanha (Soldier Field, Chicago)
-  { id: 5000001, homeTeam: "EUA", awayTeam: "Alemanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
-  // Portugal vs Chile — Estádio Nacional do Jamor
-  { id: 5000002, homeTeam: "Portugal", awayTeam: "Chile", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Brasil vs Egito (sem Neymar)
-  { id: 5000003, homeTeam: "Brasil", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Argentina vs Honduras
-  { id: 5000004, homeTeam: "Argentina", awayTeam: "Honduras", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Inglaterra vs Nova Zelândia (Raymond James Stadium, Tampa)
-  { id: 5000005, homeTeam: "Inglaterra", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Bélgica vs Tunísia
-  { id: 5000006, homeTeam: "Bélgica", awayTeam: "Tunísia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Suíça vs Austrália
-  { id: 5000007, homeTeam: "Suíça", awayTeam: "Austrália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Escócia vs Bolívia
-  { id: 5000008, homeTeam: "Escócia", awayTeam: "Bolívia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Venezuela vs Turquia
-  { id: 5000009, homeTeam: "Venezuela", awayTeam: "Turquia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Panamá vs Bósnia-Herzegovina
-  { id: 5000010, homeTeam: "Panamá", awayTeam: "Bósnia-Herzegovina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — Argentina vs Honduras (College Station, Texas)
+  { id: 5000101, homeTeam: "Argentina", awayTeam: "Honduras", homeScore: 2, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Croácia vs Eslovénia (Varazdin) — 19:45 BST
+  { id: 5000102, homeTeam: "Croácia", awayTeam: "Eslovénia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Amistoso Internacional", leagueId: 0 },
+  // Marrocos vs Noruega (Harrison, NJ) — 20:00 BST
+  { id: 5000103, homeTeam: "Marrocos", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Equador vs Guatemala (Columbus, Ohio) — 21:00 BST
+  { id: 5000104, homeTeam: "Equador", awayTeam: "Guatemala", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Amistoso Internacional", leagueId: 0 },
+  // UEFA U17 Championship Final — Bélgica U17 vs Itália U17 — 18:00 BST
+  { id: 5000105, homeTeam: "Bélgica U17", awayTeam: "Itália U17", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "UEFA U17 Championship", leagueId: 0 },
+  // Grécia vs Itália (Amistoso) — 20:00 BST
+  { id: 5000106, homeTeam: "Grécia", awayTeam: "Itália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Dinamarca vs Ucrânia — 17:30 BST
+  { id: 5000107, homeTeam: "Dinamarca", awayTeam: "Ucrânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
+  // Kosovo vs Andorra — 19:00 BST
+  { id: 5000108, homeTeam: "Kosovo", awayTeam: "Andorra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Liechtenstein vs Chipre — 14:00 BST
+  { id: 5000109, homeTeam: "Liechtenstein", awayTeam: "Chipre", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Resultados de ontem (06/06) — Portugal vs Chile
+  { id: 5000110, homeTeam: "Portugal", awayTeam: "Chile", homeScore: 2, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "EUA", awayTeam: "Alemanha",
-  homeScore: 0, awayScore: 0,
+  homeTeam: "Argentina", awayTeam: "Honduras",
+  homeScore: 2, awayScore: 0,
   stats: {
-    possession: [48, 52], shots: [0, 0], shotsOnTarget: [0, 0],
-    corners: [0, 0], fouls: [0, 0],
+    possession: [62, 38], shots: [14, 4], shotsOnTarget: [7, 1],
+    corners: [6, 2], fouls: [8, 12],
   },
 };
 
@@ -129,7 +129,7 @@ const CORS_PROXY = "https://corsproxy.io/?";
 export function useLiveScores(apiKey?: string) {
   const [matches, setMatches] = useState<LiveMatch[]>(fallbackMatches);
   const [featured, setFeatured] = useState<FeaturedMatchData>(fallbackFeatured);
-  const [isLive, setIsLive] = useState(true);
+  const [isLive, setIsLive] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -138,7 +138,7 @@ export function useLiveScores(apiKey?: string) {
     if (!key) {
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setIsLive(true);
+      setIsLive(false);
       setLoading(false);
       return;
     }
@@ -231,14 +231,14 @@ export function useLiveScores(apiKey?: string) {
       } else {
         setMatches(fallbackMatches);
         setFeatured(fallbackFeatured);
-        setIsLive(true);
+        setIsLive(false);
       }
     } catch (err) {
       console.error("Error fetching live scores:", err);
       setError("Erro ao carregar jogos");
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setIsLive(true);
+      setIsLive(false);
     } finally {
       setLoading(false);
     }

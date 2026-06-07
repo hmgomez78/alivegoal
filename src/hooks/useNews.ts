@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 06/06/2026
+// Notícias de fallback — análises, contexto e investigação — 07/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,55 +147,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: EUA vs Alemanha — quem é o favorito no último teste antes do Mundial 2026?',
-      excerpt: 'O Soldier Field em Chicago recebe hoje o duelo mais aguardado dos amistosos pré-Mundial: Estados Unidos vs Alemanha (18:30 GMT). Os americanos, anfitriões do torneio, querem confirmar que estão prontos para competir com as grandes potências. A Alemanha, em excelente forma, quer mostrar que é candidata ao título. Analisamos as forças e fraquezas de ambas as equipas, as prováveis composições e o que este jogo nos pode dizer sobre as hipóteses de cada seleção no Mundial.',
+      title: 'ANÁLISE: O que a expulsão de Leão significa para Portugal no Mundial 2026?',
+      excerpt: 'Rafael Leão foi expulso por soco no amistoso Portugal vs Chile (2-0) e a questão que todos fazem é: vai ser suspenso para o Mundial? A FIFA tem jurisdição sobre jogos amistosos internacionais e pode aplicar uma suspensão automática. Portugal estreia-se no Mundial a 15 de junho e Leão é uma peça fundamental do sistema de Roberto Martínez. Analisamos o regulamento disciplinar da FIFA, os precedentes históricos e o impacto tático que a sua ausência teria na seleção das quinas.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '10 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'INVESTIGAÇÃO: O escândalo dos bilhetes do Mundial — como a FIFA falhou os adeptos',
-      excerpt: 'O cancelamento de bilhetes dados de graça por erro é apenas a ponta do iceberg do caos na venda de bilhetes do Mundial 2026. Os procuradores-gerais de Nova Iorque e Nova Jérsia estão a investigar a FIFA por possíveis violações de proteção ao consumidor. Os preços são os mais altos de sempre, a FIFA opera a sua própria plataforma de revenda cobrando 15% de comissão a compradores e vendedores, e os bilhetes prometidos a $21 para jogos da fase de grupos nunca chegaram. Uma análise completa do escândalo.',
-      category: 'ESCÂNDALO',
-      readTime: '13 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: O regresso de Mourinho ao Real Madrid — o que esperar desta parceria?',
-      excerpt: 'José Mourinho está de volta ao Real Madrid, desta vez com Florentino Pérez a prometer uma oferta de €150M por Michael Olise. A primeira passagem de Mourinho pelo clube (2010-2013) foi marcada por conquistas mas também por conflitos. Agora, com 63 anos e vindo do Benfica, o treinador português tem uma segunda oportunidade de deixar a sua marca no Santiago Bernabéu. Analisamos o que mudou, o que permanece igual e quais as expectativas para esta nova era.',
-      category: 'TRANSFERÊNCIAS',
+      title: 'ANÁLISE TÁTICA: Como a Alemanha derrotou os EUA — lições para o Mundial 2026',
+      excerpt: 'A Alemanha venceu os Estados Unidos no Soldier Field em Chicago no último amistoso pré-Mundial. Florian Wirtz foi o grande protagonista, mostrando porque é considerado um dos melhores jogadores do mundo. Analisamos as táticas de Julian Nagelsmann, as fraquezas expostas dos EUA como anfitriões, e o que este resultado nos diz sobre as hipóteses de ambas as seleções no torneio que começa a 11 de junho. A Alemanha parece pronta para ir longe.',
+      category: 'ANÁLISE TÁTICA',
       readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'INVESTIGAÇÃO: PSG campeão da Europa — o projeto de um bilião de euros que finalmente deu frutos',
+      excerpt: 'O PSG conquistou a sua primeira Liga dos Campeões ao vencer o Arsenal nos penáltis em Budapeste. Mas o que custou este projeto? Desde a compra pelo Qatar Sports Investments em 2011, o clube parisiense gastou mais de €1,5 mil milhões em transferências. Neymar, Mbappé, Messi — todos passaram por Paris. Analisamos o percurso do PSG até ao título europeu, os erros do passado, e como Luís Enrique construiu a equipa que finalmente chegou ao topo da Europa.',
+      category: 'ESCÂNDALO',
+      readTime: '14 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'TIPS DE APOSTAS: Portugal vs Chile — Ronaldo lidera a última preparação para o Mundial',
-      excerpt: 'Portugal recebe o Chile hoje às 20:00 no Estádio Nacional do Jamor, em Oeiras, no último amistoso antes do Mundial 2026. Cristiano Ronaldo, que vai disputar o seu quinto Mundial, quer terminar a preparação com um golo. O Chile, sem se qualificar para o torneio, serve de sparring para a equipa das quinas. Analisamos as odds (Portugal favorito a 1.40), as prováveis composições e as melhores apostas para este encontro.',
+      title: 'TRANSFERÊNCIAS: Ederson para o Man United — o médio que pode mudar tudo em Old Trafford',
+      excerpt: 'Manchester United confirmou a contratação de Ederson da Atalanta por €45M, o primeiro reforço da era Michael Carrick. O médio brasileiro foi um dos melhores da Serie A nas últimas duas épocas, combinando qualidade técnica com intensidade defensiva. Analisamos as características do jogador, como ele se encaixa no sistema de Carrick, e porque este pode ser o início de uma reconstrução séria dos Red Devils. Com Casemiro e Ugarte a sair, o meio-campo precisa de renovação urgente.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'TIPS DE APOSTAS: Amistosos de hoje — Argentina vs Honduras, Croatia vs Slovenia, Morocco vs Norway',
+      excerpt: 'Domingo de amistosos internacionais com jogos importantes para a preparação do Mundial 2026. Argentina enfrenta Honduras em College Station, Texas (01:00 BST), onde Messi e Scaloni vão testar o 11 ideal. Croácia vs Eslovénia (19:45 BST) é um dérbi dos Balcãs com muito orgulho em jogo. Marrocos vs Noruega (20:00 BST) em Harrison, NJ, promete ser um jogo equilibrado. Analisamos as odds, as prováveis composições e as melhores apostas para cada encontro.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'ÚLTIMA HORA: Brasil vs Egito sem Neymar — a grande ausência antes do Mundial',
-      excerpt: 'O Brasil defronta o Egito esta noite (23:00 GMT) no último amistoso antes do Mundial 2026, mas sem Neymar. O craque brasileiro foi afastado do jogo por uma lesão na barriga da perna, levantando dúvidas sobre a sua condição física para o torneio. Dorival Júnior vai testar alternativas no ataque, com Vinicius Jr. e Rodrygo a serem os principais candidatos a liderar o jogo ofensivo. O Brasil é um dos favoritos ao título, mas a incerteza em torno de Neymar é uma preocupação real.',
-      category: 'ÚLTIMA HORA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
       id: 6,
-      title: 'ANÁLISE TÁTICA: Argentina vs Honduras — Scaloni testa o 11 ideal para o Mundial',
-      excerpt: 'A Argentina, atual campeã do mundo, defronta Honduras esta noite (00:00 GMT) no último amistoso de preparação. Lionel Scaloni tem usado estes jogos para testar diferentes combinações táticas e decidir quem vai ser titular no primeiro jogo do Mundial. Messi, que vai disputar o seu último Mundial, está em excelente forma. Analisamos as opções táticas do selecionador argentino, os jogadores em dúvida e o que esperar do campeão mundial em defesa do título.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      title: 'ÚLTIMA HORA: Liverpool recusa vender Rio Ngumoha ao Bayern Munich — posição firme e clara!',
+      excerpt: 'O Liverpool rejeitou categoricamente qualquer proposta do Bayern Munich pelo jovem extremo Rio Ngumoha. Fabrizio Romano revelou que a posição do clube é "zero intenção de negociar, zero hipótese de deixar sair". O jovem prodígio, que foi contratado ao Chelsea e se tornou um dos melhores extremos jovens do mundo, assinou recentemente o seu primeiro contrato profissional com os Reds. Andoni Iraola, novo treinador do Liverpool, conta com ele como peça fundamental do projeto. O Bayern vai ter de procurar outro alvo.',
+      category: 'ÚLTIMA HORA',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
