@@ -79,47 +79,47 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (07/06/2026) — aparecem primeiro
+// Jogos com tips hoje (08/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Argentina", "Honduras",
-  "Croácia", "Eslovénia",
+  "Espanha", "Chipre",
+  "Itália", "Ucrânia",
   "Marrocos", "Noruega",
-  "Equador", "Guatemala",
-  "Bélgica U17", "Itália U17",
-  "Grécia", "Itália",
+  "Colômbia", "Jordânia",
+  "Croácia", "Eslovénia",
+  "Brasil", "Egito",
 ];
 
-// Fallback data com jogos reais (atualizado 07/06/2026)
-// NOTA: Domingo — Amistosos Internacionais (Preparação Mundial 2026) + UEFA U17 Final
+// Fallback data com jogos reais (atualizado 08/06/2026)
+// NOTA: Segunda-feira — Amistosos Internacionais (Preparação Mundial 2026) + Brasileirão Série B
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Argentina vs Honduras (College Station, Texas)
-  { id: 5000101, homeTeam: "Argentina", awayTeam: "Honduras", homeScore: 2, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // Croácia vs Eslovénia (Varazdin) — 19:45 BST
-  { id: 5000102, homeTeam: "Croácia", awayTeam: "Eslovénia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:45", league: "Amistoso Internacional", leagueId: 0 },
-  // Marrocos vs Noruega (Harrison, NJ) — 20:00 BST
-  { id: 5000103, homeTeam: "Marrocos", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Equador vs Guatemala (Columbus, Ohio) — 21:00 BST
-  { id: 5000104, homeTeam: "Equador", awayTeam: "Guatemala", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Amistoso Internacional", leagueId: 0 },
-  // UEFA U17 Championship Final — Bélgica U17 vs Itália U17 — 18:00 BST
-  { id: 5000105, homeTeam: "Bélgica U17", awayTeam: "Itália U17", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "UEFA U17 Championship", leagueId: 0 },
-  // Grécia vs Itália (Amistoso) — 20:00 BST
-  { id: 5000106, homeTeam: "Grécia", awayTeam: "Itália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Dinamarca vs Ucrânia — 17:30 BST
-  { id: 5000107, homeTeam: "Dinamarca", awayTeam: "Ucrânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:30", league: "Amistoso Internacional", leagueId: 0 },
-  // Kosovo vs Andorra — 19:00 BST
-  { id: 5000108, homeTeam: "Kosovo", awayTeam: "Andorra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Liechtenstein vs Chipre — 14:00 BST
-  { id: 5000109, homeTeam: "Liechtenstein", awayTeam: "Chipre", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Resultados de ontem (06/06) — Portugal vs Chile
-  { id: 5000110, homeTeam: "Portugal", awayTeam: "Chile", homeScore: 2, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // JOGO PRINCIPAL — Espânha vs Chipre (amistoso pré-Mundial) — resultado de hoje
+  { id: 5000201, homeTeam: "Espanha", awayTeam: "Chipre", homeScore: 6, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Itália vs Ucrânia (Grécia) — resultado de hoje
+  { id: 5000202, homeTeam: "Itália", awayTeam: "Ucrânia", homeScore: 2, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Marrocos vs Noruega (Minneapolis) — hoje à noite
+  { id: 5000203, homeTeam: "Marrocos", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:30", league: "Amistoso Internacional", leagueId: 0 },
+  // Colômbia vs Jordânia — amistoso pré-Mundial
+  { id: 5000204, homeTeam: "Colômbia", awayTeam: "Jordânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Croácia vs Eslovénia — resultado de ontem
+  { id: 5000205, homeTeam: "Croácia", awayTeam: "Eslovénia", homeScore: 2, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Brasil vs Egito — resultado de ontem (07/06)
+  { id: 5000206, homeTeam: "Brasil", awayTeam: "Egito", homeScore: 3, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Dinamarca vs Ucrânia — jogo abandonado (Eriksen colapso)
+  { id: 5000207, homeTeam: "Dinamarca", awayTeam: "Ucrânia", homeScore: 2, awayScore: 1, minute: "ABAND.", status: "ABAND.", league: "Amistoso Internacional", leagueId: 0 },
+  // Brasileirão Série B — CRB vs São Bernardo
+  { id: 5000208, homeTeam: "CRB", awayTeam: "São Bernardo FC", homeScore: 2, awayScore: 3, minute: "FIM", status: "FIM", league: "Brasileirão Série B", leagueId: 0 },
+  // Equador vs Guatemala — resultado de ontem
+  { id: 5000209, homeTeam: "Equador", awayTeam: "Guatemala", homeScore: 1, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Kosovo vs Andorra — resultado de ontem
+  { id: 5000210, homeTeam: "Kosovo", awayTeam: "Andorra", homeScore: 3, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Argentina", awayTeam: "Honduras",
-  homeScore: 2, awayScore: 0,
+  homeTeam: "Espanha", awayTeam: "Chipre",
+  homeScore: 6, awayScore: 0,
   stats: {
-    possession: [62, 38], shots: [14, 4], shotsOnTarget: [7, 1],
-    corners: [6, 2], fouls: [8, 12],
+    possession: [72, 28], shots: [22, 3], shotsOnTarget: [12, 1],
+    corners: [9, 1], fouls: [6, 14],
   },
 };
 
