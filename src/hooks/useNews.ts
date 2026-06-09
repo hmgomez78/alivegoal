@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 08/06/2026
+// Notícias de fallback — análises, contexto e investigação — 09/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,54 +147,54 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE: O colapso de Eriksen — o que aconteceu e o que significa para a Dinamarca no Mundial?',
-      excerpt: 'Christian Eriksen voltou a colapsar em campo durante o amistoso Dinamarca vs Ucrânia, apenas 5 anos depois do episódio traumático no Euro 2020. O médio do Manchester United saiu consciente e a falar, mas o jogo foi abandonado. Analisamos o historial médico do jogador, o impacto psicológico para a equipa dinamarquesa, e o que este episódio significa para a participação da Dinamarca no Mundial 2026. A Dinamarca estreia-se no torneio a 15 de junho — terá Eriksen condições de jogar?',
-      category: 'ÚLTIMA HORA',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'INVESTIGAÇÃO: O escândalo dos bilhetes do Mundial 2026 — como a FIFA falhou os adeptos',
-      excerpt: 'A FIFA está sob investigação nos EUA por um suposto esquema de venda ilegal de bilhetes para o Mundial 2026. Promotores federais investigam a revenda de bilhetes a preços 10 vezes superiores ao valor oficial através de intermediários ligados a dirigentes da FIFA. Este não é o primeiro escândalo da organização — em 2015, vários dirigentes foram detidos por corrupção. Analisamos o padrão de comportamento da FIFA, as consequências para os adeptos, e o que pode mudar.',
-      category: 'ESCÂNDALO',
-      readTime: '12 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE TÁTICA: Xabi Alonso no Chelsea — que futebol podemos esperar em Stamford Bridge?',
-      excerpt: 'Xabi Alonso assumiu o comando do Chelsea com um orçamento de €200M+ para a janela de verão. O treinador espanhol, que fez um trabalho extraordinário no Bayer Leverkusen, vai trazer o seu estilo de pressão alta e posse de bola ao futebol inglês. Analisamos o sistema tático preferido de Alonso, os perfis de jogadores que procura, e porque Rafael Leão e Michael Olise são os alvos ideais para o seu projeto. Pode o Chelsea finalmente competir pelo título com Alonso?',
+      title: 'ANÁLISE TÁTICA: Argentina vs Islândia — Scaloni revela sistema surpresa antes do Mundial',
+      excerpt: 'No último amistoso antes do Mundial 2026, Lionel Scaloni surpreendeu com um 4-3-3 modificado onde Messi atua como meia-atacante e Lautaro Martínez como falso 9. Analisamos as implicações táticas desta escolha, como a Argentina pode explorar os espaços contra seleções organizadas defensivamente, e porque este sistema pode ser a chave para defender o título mundial. A Argentina estreia no Grupo D contra a Arábia Saudita a 13 de junho — o mesmo adversário que causou o maior choque do Mundial 2022.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '11 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ANÁLISE: A crise diplomática Irão-EUA e o impacto no Mundial 2026',
-      excerpt: 'Trump ameaçou banir a seleção iraniana do Mundial 2026, e vários membros do staff técnico já foram barrados de entrar nos EUA. O Irão instalou-se em Tijuana, México, e ameaça levar o caso ao Tribunal Arbitral do Desporto. Analisamos o enquadramento legal desta situação, os precedentes históricos de crises políticas em Mundiais, e o que a FIFA pode fazer para garantir a participação de todas as seleções qualificadas. É a maior crise política na história recente do futebol.',
-      category: 'ESCÂNDALO',
-      readTime: '10 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS DE APOSTAS: Mundial 2026 começa a 11 de junho — as melhores apostas para a fase de grupos',
-      excerpt: 'O Mundial 2026 arranca em 3 dias com México vs África do Sul no Estádio Azteca. Com 48 seleções e 104 jogos, as oportunidades de apostas são imensas. Analisamos os favoritos ao título (Espanha, Argentina, França, Brasil), as surpresas potenciais (Marrocos, Japão, Portugal), e as melhores apostas para a fase de grupos. Espanha é a favorita com odds de 5.00, seguida de Argentina a 5.50 e França a 6.00. Quem vai levantar o troféu em Los Angeles a 19 de julho?',
-      category: 'TIPS DE APOSTAS',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TRANSFERÊNCIAS: Mateus Fernandes para o Man United — o próximo passo da era Carrick',
-      excerpt: 'Após confirmar Ederson, o Manchester United avança para Mateus Fernandes do West Ham por €25M. O jovem médio português de 21 anos foi um dos melhores jogadores do West Ham na época passada, apesar da descida do clube ao Championship. Fabrizio Romano confirma que as negociações estão avançadas e que o jogador quer a mudança para Old Trafford. Com Bruno Fernandes como referência e Carrick a construir um meio-campo competitivo, o United parece finalmente a ter uma estratégia clara de recrutamento.',
+      id: 2,
+      title: 'INVESTIGAÇÃO: Segurança no Mundial 2026 — tiroteios, ICE e o pesadelo logístico dos EUA',
+      excerpt: 'A 2 dias do início do Mundial 2026, os EUA enfrentam uma crise de segurança sem precedentes. Um tiroteio com 9 feridos em Kansas City, a morte de uma mulher pela ICE em Minneapolis e ameaças de grupos extremistas estão a criar pânico entre adeptos internacionais. Investigamos os protocolos de segurança da FIFA, as falhas das autoridades americanas, e porque vários países emitiram alertas de viagem para os seus cidadãos que pretendem assistir ao torneio. Está o maior Mundial da história a tornar-se um pesadelo logístico?',
+      category: 'ESCÂNDALO',
+      readTime: '11 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'ANÁLISE: Brasil sem Wesley — como Ancelotti vai resolver o problema no lado direito?',
+      excerpt: 'O corte de Wesley por lesão muscular grave é um golpe duro para o Brasil a 2 dias do Mundial. Analisamos as opções de Ancelotti para o lado direito da defesa: Éderson (convocado de emergência), Danilo (veterano experiente) e a possibilidade de usar Militão como lateral. Também examinamos o padrão preocupante de lesões musculares na Seleção — 3 casos graves em 2 semanas — e o que isto revela sobre a gestão de carga dos atletas. O Brasil estreia no Grupo C contra Marrocos a 12 de junho.',
+      category: 'LESÕES',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TIPS DE APOSTAS: Argentina vs Islândia esta noite — análise e melhores apostas',
+      excerpt: 'A Argentina enfrenta a Islândia às 22h (hora de Lisboa) no último amistoso antes do Mundial. Com odds de 1.25 para vitória argentina, a aposta mais interessante é Over 2.5 golos a 1.65 — a Argentina marcou em média 3.2 golos nos últimos 5 amistosos. Messi está em grande forma e quer chegar ao torneio com confiança máxima. A Islândia, sem qualificação para o Mundial, vai jogar sem pressão. Analisamos as estatísticas head-to-head e as melhores oportunidades de apostas para este jogo.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ANÁLISE: Tonali para o Man United — o que muda no meio-campo dos Red Devils?',
+      excerpt: 'Se o Manchester United concretizar a contratação de Sandro Tonali por £80M, como fica o meio-campo de Michael Carrick? Analisamos o perfil do médio italiano — box-to-box, excelente na recuperação de bola e com capacidade de progressão — e como se encaixa ao lado de Bruno Fernandes e Kobbie Mainoo. Também examinamos o risco de uma contratação tão cara para um jogador que esteve suspenso por apostas ilegais. Pode Tonali ser a peça que falta ao United para competir pelo título?',
       category: 'TRANSFERÊNCIAS',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ANÁLISE: Eriksen e o dispositivo cardíaco — como funciona e porque salvou a sua vida duas vezes',
+      excerpt: 'O ICD (Cardioverter-Desfibrilhador Implantável) de Christian Eriksen voltou a funcionar na perfeição durante o susto no amistoso Dinamarca vs Ucrânia. Explicamos como funciona este dispositivo, porque Eriksen pode continuar a jogar futebol profissional com ele implantado, e o que os médicos da Dinamarca vão avaliar antes de decidirem se o jogador pode participar no Mundial 2026. A Dinamarca estreia no Grupo E contra a Sérvia a 15 de junho — o tempo é curto mas a esperança é grande.',
+      category: 'ÚLTIMA HORA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
