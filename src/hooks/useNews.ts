@@ -139,7 +139,7 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 09/06/2026
+// Notícias de fallback — análises, contexto e investigação — 10/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -147,8 +147,8 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Argentina vs Islândia — Scaloni revela sistema surpresa antes do Mundial',
-      excerpt: 'No último amistoso antes do Mundial 2026, Lionel Scaloni surpreendeu com um 4-3-3 modificado onde Messi atua como meia-atacante e Lautaro Martínez como falso 9. Analisamos as implicações táticas desta escolha, como a Argentina pode explorar os espaços contra seleções organizadas defensivamente, e porque este sistema pode ser a chave para defender o título mundial. A Argentina estreia no Grupo D contra a Arábia Saudita a 13 de junho — o mesmo adversário que causou o maior choque do Mundial 2022.',
+      title: 'ANÁLISE TÁTICA: O impacto de Mourinho no Real Madrid — O que muda no Bernabéu?',
+      excerpt: 'A contratação surpresa de José Mourinho pelo Real Madrid a troco de 15M€ vai revolucionar a tática dos merengues. Analisamos como o estilo pragmático do "Special One" se vai encaixar num plantel recheado de estrelas ofensivas, as prováveis vítimas desta mudança e se esta é a solução de Florentino Pérez para dominar a Europa novamente.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -156,8 +156,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'INVESTIGAÇÃO: Segurança no Mundial 2026 — tiroteios, ICE e o pesadelo logístico dos EUA',
-      excerpt: 'A 2 dias do início do Mundial 2026, os EUA enfrentam uma crise de segurança sem precedentes. Um tiroteio com 9 feridos em Kansas City, a morte de uma mulher pela ICE em Minneapolis e ameaças de grupos extremistas estão a criar pânico entre adeptos internacionais. Investigamos os protocolos de segurança da FIFA, as falhas das autoridades americanas, e porque vários países emitiram alertas de viagem para os seus cidadãos que pretendem assistir ao torneio. Está o maior Mundial da história a tornar-se um pesadelo logístico?',
+      title: 'INVESTIGAÇÃO: A negação do visto a Omar Artan e a crise política no Mundial 2026',
+      excerpt: 'A recusa de entrada nos EUA ao árbitro somali Omar Artan levanta questões profundas sobre a organização do Mundial 2026. Investigamos os bastidores desta decisão das autoridades americanas, a reação passiva da FIFA que enfureceu figuras como Ian Wright, e o impacto diplomático que ameaça ensombrar o torneio na América do Norte.',
       category: 'ESCÂNDALO',
       readTime: '11 min',
       date: formatToday,
@@ -165,17 +165,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE: Brasil sem Wesley — como Ancelotti vai resolver o problema no lado direito?',
-      excerpt: 'O corte de Wesley por lesão muscular grave é um golpe duro para o Brasil a 2 dias do Mundial. Analisamos as opções de Ancelotti para o lado direito da defesa: Éderson (convocado de emergência), Danilo (veterano experiente) e a possibilidade de usar Militão como lateral. Também examinamos o padrão preocupante de lesões musculares na Seleção — 3 casos graves em 2 semanas — e o que isto revela sobre a gestão de carga dos atletas. O Brasil estreia no Grupo C contra Marrocos a 12 de junho.',
-      category: 'LESÕES',
+      title: 'ANÁLISE: Julián Álvarez vale 150M€? O braço de ferro entre Real e Atlético',
+      excerpt: 'O Real Madrid testou a determinação do Atlético com uma oferta astronómica de 150 milhões de euros por Julián Álvarez. Analisamos os números do avançado argentino, porque é que Simeone o considera intocável e as implicações financeiras deste possível negócio histórico no futebol espanhol. A cláusula de 500M€ será o único caminho?',
+      category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Argentina vs Islândia esta noite — análise e melhores apostas',
-      excerpt: 'A Argentina enfrenta a Islândia às 22h (hora de Lisboa) no último amistoso antes do Mundial. Com odds de 1.25 para vitória argentina, a aposta mais interessante é Over 2.5 golos a 1.65 — a Argentina marcou em média 3.2 golos nos últimos 5 amistosos. Messi está em grande forma e quer chegar ao torneio com confiança máxima. A Islândia, sem qualificação para o Mundial, vai jogar sem pressão. Analisamos as estatísticas head-to-head e as melhores oportunidades de apostas para este jogo.',
+      title: 'TIPS DE APOSTAS: Inglaterra vs Costa Rica — Último teste de Tuchel antes do Mundial',
+      excerpt: 'A Inglaterra defronta a Costa Rica em Orlando no seu último jogo de preparação. Com as odds muito favoráveis aos ingleses, analisamos os mercados de golos e handicaps. Thomas Tuchel deve rodar a equipa, mas jogadores como Bukayo Saka e Trent Alexander-Arnold prometem desequilibrar. Descubra as melhores oportunidades de aposta.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
@@ -183,19 +183,19 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE: Tonali para o Man United — o que muda no meio-campo dos Red Devils?',
-      excerpt: 'Se o Manchester United concretizar a contratação de Sandro Tonali por £80M, como fica o meio-campo de Michael Carrick? Analisamos o perfil do médio italiano — box-to-box, excelente na recuperação de bola e com capacidade de progressão — e como se encaixa ao lado de Bruno Fernandes e Kobbie Mainoo. Também examinamos o risco de uma contratação tão cara para um jogador que esteve suspenso por apostas ilegais. Pode Tonali ser a peça que falta ao United para competir pelo título?',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '10 min',
+      title: 'ANÁLISE MÉDICA: A lesão de Messi e o plano de emergência da Argentina',
+      excerpt: 'Lionel Messi sofreu uma sobrecarga no tendão da coxa esquerda, gerando pânico na seleção argentina. Especialistas em medicina desportiva analisam o tempo de recuperação para este tipo de lesão muscular, os riscos de uma utilização prematura no Mundial 2026 e como Lionel Scaloni terá de adaptar a equipa se o seu capitão falhar a estreia.',
+      category: 'LESÕES',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ANÁLISE: Eriksen e o dispositivo cardíaco — como funciona e porque salvou a sua vida duas vezes',
-      excerpt: 'O ICD (Cardioverter-Desfibrilhador Implantável) de Christian Eriksen voltou a funcionar na perfeição durante o susto no amistoso Dinamarca vs Ucrânia. Explicamos como funciona este dispositivo, porque Eriksen pode continuar a jogar futebol profissional com ele implantado, e o que os médicos da Dinamarca vão avaliar antes de decidirem se o jogador pode participar no Mundial 2026. A Dinamarca estreia no Grupo E contra a Sérvia a 15 de junho — o tempo é curto mas a esperança é grande.',
-      category: 'ÚLTIMA HORA',
-      readTime: '7 min',
+      title: 'CONTEXTO: Platini vs Infantino — O processo criminal que abala as fundações da FIFA',
+      excerpt: 'A escassos dias do Mundial 2026, Michel Platini lançou uma bomba judicial contra Gianni Infantino em França. Explicamos as raízes deste conflito, as acusações de tráfico de influências e o que este processo criminal significa para a liderança atual da FIFA. Uma análise detalhada à guerra pelo poder no topo do futebol mundial.',
+      category: 'ESCÂNDALO',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },

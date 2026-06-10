@@ -79,45 +79,39 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (09/06/2026) — aparecem primeiro
+// Jogos com tips hoje (10/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Argentina", "Islândia",
-  "Brasil Feminino", "EUA Feminino",
-  "Náutico", "Fortaleza",
-  "Ponte Preta", "Cuiabá",
-  "Almería", "Castellón",
+  "Portugal", "Nigéria",
+  "Inglaterra", "Costa Rica",
+  "EUA", "Brasil",
+  "Argentina", "Arábia Saudita",
+  "Alemanha", "França",
 ];
 
-// Fallback data com jogos reais (atualizado 09/06/2026)
-// NOTA: Terça-feira — Amistosos Internacionais (Preparação Mundial 2026) + Brasileirão Série B
+// Fallback data com jogos reais (atualizado 10/06/2026)
+// NOTA: Quarta-feira — Amistosos Internacionais (Preparação Mundial 2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL — Argentina vs Islândia (amistoso pré-Mundial) — hoje às 22h
-  { id: 5000301, homeTeam: "Argentina", awayTeam: "Islândia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Brasil Feminino vs EUA Feminino — hoje às 21h30
-  { id: 5000302, homeTeam: "Brasil Feminino", awayTeam: "EUA Feminino", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Amistoso Feminino", leagueId: 0 },
-  // Brasileirão Série B 12ª Rodada — Náutico vs Fortaleza
-  { id: 5000303, homeTeam: "Náutico", awayTeam: "Fortaleza", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 0 },
-  // Brasileirão Série B 12ª Rodada — Ponte Preta vs Cuiabá
-  { id: 5000304, homeTeam: "Ponte Preta", awayTeam: "Cuiabá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 0 },
-  // La Liga 2 Semifinal — Almería vs Castellón
-  { id: 5000305, homeTeam: "Almería", awayTeam: "Castellón", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "La Liga 2 Play-offs", leagueId: 0 },
-  // Holanda vs Uzbequistão — resultado de ontem (08/06)
-  { id: 5000306, homeTeam: "Holanda", awayTeam: "Uzbequistão", homeScore: 2, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // França vs Irlanda do Norte — resultado de ontem (08/06)
-  { id: 5000307, homeTeam: "França", awayTeam: "Irlanda do Norte", homeScore: 3, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // Espanha vs Peru — resultado de ontem (08/06)
-  { id: 5000308, homeTeam: "Espanha", awayTeam: "Peru", homeScore: 2, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // Flamengo vs Athletico-PR Sub-20
-  { id: 5000309, homeTeam: "Flamengo", awayTeam: "Athletico-PR", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Brasileirão Sub-20", leagueId: 0 },
-  // Brasil Sub-17 vs Portugal Sub-17 (amistoso)
-  { id: 5000310, homeTeam: "Brasil Sub-17", awayTeam: "Portugal Sub-17", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:30", league: "Amistoso Sub-17", leagueId: 0 },
+  // Portugal vs Nigéria (amistoso pré-Mundial) — hoje às 16:45
+  { id: 5000401, homeTeam: "Portugal", awayTeam: "Nigéria", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Amistoso Internacional", leagueId: 0 },
+  // Inglaterra vs Costa Rica — hoje às 21:00
+  { id: 5000402, homeTeam: "Inglaterra", awayTeam: "Costa Rica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
+  // EUA vs Brasil — hoje
+  { id: 5000403, homeTeam: "EUA", awayTeam: "Brasil", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Argentina vs Arábia Saudita — hoje
+  { id: 5000404, homeTeam: "Argentina", awayTeam: "Arábia Saudita", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Amistoso Internacional", leagueId: 0 },
+  // Espanha vs Peru — resultado de ontem (09/06)
+  { id: 5000405, homeTeam: "Espanha", awayTeam: "Peru", homeScore: 3, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Argentina vs Islândia — resultado de ontem (09/06)
+  { id: 5000406, homeTeam: "Argentina", awayTeam: "Islândia", homeScore: 1, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // EUA vs Alemanha — resultado de ontem (09/06)
+  { id: 5000407, homeTeam: "EUA", awayTeam: "Alemanha", homeScore: 1, awayScore: 2, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Argentina", awayTeam: "Islândia",
+  homeTeam: "Portugal", awayTeam: "Nigéria",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
