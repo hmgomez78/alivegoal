@@ -139,25 +139,24 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 10/06/2026
+// Notícias de fallback — análises, contexto e investigação — 11/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
-
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O impacto de Mourinho no Real Madrid — O que muda no Bernabéu?',
-      excerpt: 'A contratação surpresa de José Mourinho pelo Real Madrid a troco de 15M€ vai revolucionar a tática dos merengues. Analisamos como o estilo pragmático do "Special One" se vai encaixar num plantel recheado de estrelas ofensivas, as prováveis vítimas desta mudança e se esta é a solução de Florentino Pérez para dominar a Europa novamente.',
+      title: 'ANÁLISE TÁTICA: México vs África do Sul — O jogo de abertura do maior Mundial de sempre',
+      excerpt: 'O Estádio Azteca recebe hoje o jogo de abertura do Mundial 2026. O México, anfitrião, entra em campo com a pressão de uma nação inteira sobre os ombros. Analisamos as forças e fraquezas de ambas as equipas, a estratégia de Javier Aguirre para aproveitar o fator casa, e porque é que a África do Sul pode surpreender neste encontro histórico com 48 seleções.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'INVESTIGAÇÃO: A negação do visto a Omar Artan e a crise política no Mundial 2026',
-      excerpt: 'A recusa de entrada nos EUA ao árbitro somali Omar Artan levanta questões profundas sobre a organização do Mundial 2026. Investigamos os bastidores desta decisão das autoridades americanas, a reação passiva da FIFA que enfureceu figuras como Ian Wright, e o impacto diplomático que ameaça ensombrar o torneio na América do Norte.',
+      title: 'INVESTIGAÇÃO: A fraude nos bilhetes do Mundial 2026 — Como a FIFA enganou milhares de adeptos',
+      excerpt: 'Quatro estados americanos abriram investigações criminais à FIFA por práticas enganosas na venda de bilhetes para o Mundial 2026. Adeptos que pagaram preços premium por lugares de Categoria 1 viram os seus assentos reclassificados sem aviso. Investigamos os bastidores desta fraude, as histórias das vítimas e o que pode acontecer à FIFA se for condenada.',
       category: 'ESCÂNDALO',
       readTime: '11 min',
       date: formatToday,
@@ -165,17 +164,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE: Julián Álvarez vale 150M€? O braço de ferro entre Real e Atlético',
-      excerpt: 'O Real Madrid testou a determinação do Atlético com uma oferta astronómica de 150 milhões de euros por Julián Álvarez. Analisamos os números do avançado argentino, porque é que Simeone o considera intocável e as implicações financeiras deste possível negócio histórico no futebol espanhol. A cláusula de 500M€ será o único caminho?',
+      title: 'ANÁLISE: Arsenal vs Atlético — Quanto vale Julián Álvarez e quem pode pagar?',
+      excerpt: 'Com o Real Madrid e o Barcelona fora da corrida por Julián Álvarez, o Arsenal emerge como o único clube com capacidade financeira para satisfazer as exigências do Atlético de Madrid. Analisamos os números do avançado argentino, o impacto que teria no projeto de Arteta, e se uma oferta próxima do recorde mundial faz sentido para os Gunners neste mercado de verão.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Inglaterra vs Costa Rica — Último teste de Tuchel antes do Mundial',
-      excerpt: 'A Inglaterra defronta a Costa Rica em Orlando no seu último jogo de preparação. Com as odds muito favoráveis aos ingleses, analisamos os mercados de golos e handicaps. Thomas Tuchel deve rodar a equipa, mas jogadores como Bukayo Saka e Trent Alexander-Arnold prometem desequilibrar. Descubra as melhores oportunidades de aposta.',
+      title: 'TIPS DE APOSTAS: México vs África do Sul — Análise e apostas para o jogo de abertura do Mundial',
+      excerpt: 'O México joga em casa no Azteca, com um ambiente que pode ser decisivo. A África do Sul é uma equipa organizada e difícil de bater. Analisamos as odds, os mercados mais atrativos — incluindo resultado final, golos e handicaps — e apresentamos as nossas melhores sugestões para este jogo histórico que abre o maior torneio de futebol do mundo.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
@@ -183,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE MÉDICA: A lesão de Messi e o plano de emergência da Argentina',
-      excerpt: 'Lionel Messi sofreu uma sobrecarga no tendão da coxa esquerda, gerando pânico na seleção argentina. Especialistas em medicina desportiva analisam o tempo de recuperação para este tipo de lesão muscular, os riscos de uma utilização prematura no Mundial 2026 e como Lionel Scaloni terá de adaptar a equipa se o seu capitão falhar a estreia.',
+      title: 'ANÁLISE MÉDICA: Lamine Yamal — Pode o prodígio de 18 anos jogar no Mundial com lesão?',
+      excerpt: 'Lamine Yamal está "desesperado" para jogar no Mundial 2026, mas não atua desde 22 de abril devido a uma lesão no tendão. Especialistas em medicina desportiva analisam os riscos de uma utilização prematura, o tempo real de recuperação para este tipo de lesão, e como a Espanha pode adaptar o seu jogo se o maior talento da geração falhar o arranque do torneio.',
       category: 'LESÕES',
       readTime: '7 min',
       date: formatToday,
@@ -192,16 +191,15 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'CONTEXTO: Platini vs Infantino — O processo criminal que abala as fundações da FIFA',
-      excerpt: 'A escassos dias do Mundial 2026, Michel Platini lançou uma bomba judicial contra Gianni Infantino em França. Explicamos as raízes deste conflito, as acusações de tráfico de influências e o que este processo criminal significa para a liderança atual da FIFA. Uma análise detalhada à guerra pelo poder no topo do futebol mundial.',
+      title: 'CONTEXTO: O Mundial mais polémico da história — Vistos negados, bandeiras proibidas e investigações criminais',
+      excerpt: 'O Mundial 2026 começa hoje num ambiente de enorme controvérsia. Árbitros e adeptos com vistos negados, o Irão a ameaçar boicotar jogos por causa de bandeiras LGBTQ+, investigações criminais à FIFA em quatro estados americanos, e protestos de adeptos mexicanos. Uma análise completa a todas as polémicas que ensombram o arranque do maior torneio de futebol de sempre.',
       category: 'ESCÂNDALO',
-      readTime: '10 min',
+      readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
   ];
 }
-
 export function useNews() {
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);

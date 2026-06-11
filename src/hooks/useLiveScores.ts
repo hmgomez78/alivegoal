@@ -79,39 +79,33 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (10/06/2026) — aparecem primeiro
+// Jogos com tips hoje (11/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Portugal", "Nigéria",
-  "Inglaterra", "Costa Rica",
-  "EUA", "Brasil",
-  "Argentina", "Arábia Saudita",
-  "Alemanha", "França",
+  "Mexico", "South Africa",
+  "México", "África do Sul",
+  "South Korea", "Czechia",
+  "Coreia do Sul", "Chéquia",
 ];
 
-// Fallback data com jogos reais (atualizado 10/06/2026)
-// NOTA: Quarta-feira — Amistosos Internacionais (Preparação Mundial 2026)
+// Fallback data com jogos reais (atualizado 11/06/2026)
+// NOTA: Quinta-feira — DIA DE ABERTURA DO MUNDIAL 2026! Grupo A
 const fallbackMatches: LiveMatch[] = [
-  // Portugal vs Nigéria (amistoso pré-Mundial) — hoje às 16:45
-  { id: 5000401, homeTeam: "Portugal", awayTeam: "Nigéria", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:45", league: "Amistoso Internacional", leagueId: 0 },
-  // Inglaterra vs Costa Rica — hoje às 21:00
-  { id: 5000402, homeTeam: "Inglaterra", awayTeam: "Costa Rica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "Amistoso Internacional", leagueId: 0 },
-  // EUA vs Brasil — hoje
-  { id: 5000403, homeTeam: "EUA", awayTeam: "Brasil", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Argentina vs Arábia Saudita — hoje
-  { id: 5000404, homeTeam: "Argentina", awayTeam: "Arábia Saudita", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Amistoso Internacional", leagueId: 0 },
-  // Espanha vs Peru — resultado de ontem (09/06)
-  { id: 5000405, homeTeam: "Espanha", awayTeam: "Peru", homeScore: 3, awayScore: 1, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // Argentina vs Islândia — resultado de ontem (09/06)
-  { id: 5000406, homeTeam: "Argentina", awayTeam: "Islândia", homeScore: 1, awayScore: 0, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  // EUA vs Alemanha — resultado de ontem (09/06)
-  { id: 5000407, homeTeam: "EUA", awayTeam: "Alemanha", homeScore: 1, awayScore: 2, minute: "FIM", status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // México vs África do Sul — JOGO DE ABERTURA DO MUNDIAL 2026 — hoje às 20:00 (Lisboa)
+  { id: 537327, homeTeam: "México", awayTeam: "África do Sul", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
+  // Coreia do Sul vs Chéquia — Grupo A — hoje às 03:00 (Lisboa) / amanhã
+  { id: 537328, homeTeam: "Coreia do Sul", awayTeam: "Chéquia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
+  // Amistosos de ontem (10/06) — resultados
+  { id: 5000401, homeTeam: "Portugal", awayTeam: "Nigéria", homeScore: 4, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000402, homeTeam: "Inglaterra", awayTeam: "Costa Rica", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000403, homeTeam: "EUA", awayTeam: "Brasil", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  { id: 5000404, homeTeam: "Argentina", awayTeam: "Arábia Saudita", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Portugal", awayTeam: "Nigéria",
+  homeTeam: "México", awayTeam: "África do Sul",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
