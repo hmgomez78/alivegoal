@@ -79,33 +79,34 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (11/06/2026) — aparecem primeiro
+// Jogos com tips hoje (12/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Mexico", "South Africa",
-  "México", "África do Sul",
-  "South Korea", "Czechia",
+  "Canada", "Bosnia-H.",
+  "Canadá", "Bósnia",
+  "United States", "Paraguay",
+  "EUA", "Paraguai",
+  "Korea Republic", "Czechia",
   "Coreia do Sul", "Chéquia",
 ];
 
-// Fallback data com jogos reais (atualizado 11/06/2026)
-// NOTA: Quinta-feira — DIA DE ABERTURA DO MUNDIAL 2026! Grupo A
+// Fallback data com jogos reais (atualizado 12/06/2026)
+// NOTA: Sexta-feira — Dia 2 do Mundial 2026: Grupo A (Coreia do Sul vs Chéquia), Grupo B (Canadá vs Bósnia), Grupo D (EUA vs Paraguai)
 const fallbackMatches: LiveMatch[] = [
-  // México vs África do Sul — JOGO DE ABERTURA DO MUNDIAL 2026 — hoje às 20:00 (Lisboa)
-  { id: 537327, homeTeam: "México", awayTeam: "África do Sul", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
-  // Coreia do Sul vs Chéquia — Grupo A — hoje às 03:00 (Lisboa) / amanhã
-  { id: 537328, homeTeam: "Coreia do Sul", awayTeam: "Chéquia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
-  // Amistosos de ontem (10/06) — resultados
-  { id: 5000401, homeTeam: "Portugal", awayTeam: "Nigéria", homeScore: 4, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000402, homeTeam: "Inglaterra", awayTeam: "Costa Rica", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000403, homeTeam: "EUA", awayTeam: "Brasil", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
-  { id: 5000404, homeTeam: "Argentina", awayTeam: "Arábia Saudita", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "Amistoso Internacional", leagueId: 0 },
+  // Coreia do Sul vs Chéquia — Grupo A — em curso (02:00 UTC = 03:00 Lisboa)
+  { id: 537328, homeTeam: "Coreia do Sul", awayTeam: "Chéquia", homeScore: 0, awayScore: 0, minute: "AO VIVO", status: "AO VIVO", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
+  // Canadá vs Bósnia-Herzegovina — Grupo B — hoje às 20:00 (Lisboa)
+  { id: 537333, homeTeam: "Canadá", awayTeam: "Bósnia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  // EUA vs Paraguai — Grupo D — hoje às 02:00 (Lisboa/sábado)
+  { id: 537340, homeTeam: "EUA", awayTeam: "Paraguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
+  // México vs África do Sul — resultado de ontem (11/06)
+  { id: 537327, homeTeam: "México", awayTeam: "África do Sul", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "México", awayTeam: "África do Sul",
+  homeTeam: "Coreia do Sul", awayTeam: "Chéquia",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [54, 46], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
