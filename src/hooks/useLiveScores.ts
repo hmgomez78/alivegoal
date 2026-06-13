@@ -79,34 +79,46 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (12/06/2026) — aparecem primeiro
+// Jogos com tips hoje (13/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Canada", "Bosnia-H.",
-  "Canadá", "Bósnia",
-  "United States", "Paraguay",
-  "EUA", "Paraguai",
-  "Korea Republic", "Czechia",
-  "Coreia do Sul", "Chéquia",
+  "Brasil", "Marrocos",
+  "Brazil", "Morocco",
+  "Suíça", "Qatar",
+  "Switzerland", "Qatar",
+  "Escócia", "Haiti",
+  "Scotland", "Haiti",
+  "Turquia", "Austrália",
+  "Turkey", "Australia",
+  "Türkiye", "Australia",
 ];
 
-// Fallback data com jogos reais (atualizado 12/06/2026)
-// NOTA: Sexta-feira — Dia 2 do Mundial 2026: Grupo A (Coreia do Sul vs Chéquia), Grupo B (Canadá vs Bósnia), Grupo D (EUA vs Paraguai)
+// Fallback data com jogos reais (atualizado 13/06/2026)
+// NOTA: Sábado — Dia 3 do Mundial 2026:
+// Grupo B: Qatar vs Suíça (20:00 Lisboa)
+// Grupo C: Brasil vs Marrocos (23:00 Lisboa)
+// Grupo C: Haiti vs Escócia (02:00 Lisboa domingo)
+// Grupo D: Austrália vs Turquia (05:00 Lisboa domingo)
+// Resultados de ontem (12/06): Canadá 1-1 Bósnia, EUA 3-0 Paraguai (ao intervalo)
 const fallbackMatches: LiveMatch[] = [
-  // Coreia do Sul vs Chéquia — Grupo A — em curso (02:00 UTC = 03:00 Lisboa)
-  { id: 537328, homeTeam: "Coreia do Sul", awayTeam: "Chéquia", homeScore: 0, awayScore: 0, minute: "AO VIVO", status: "AO VIVO", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
-  // Canadá vs Bósnia-Herzegovina — Grupo B — hoje às 20:00 (Lisboa)
-  { id: 537333, homeTeam: "Canadá", awayTeam: "Bósnia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
-  // EUA vs Paraguai — Grupo D — hoje às 02:00 (Lisboa/sábado)
-  { id: 537340, homeTeam: "EUA", awayTeam: "Paraguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
-  // México vs África do Sul — resultado de ontem (11/06)
-  { id: 537327, homeTeam: "México", awayTeam: "África do Sul", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo A", leagueId: 2000 },
+  // Qatar vs Suíça — Grupo B — hoje às 20:00 (Lisboa) / 15:00 ET
+  { id: 537341, homeTeam: "Qatar", awayTeam: "Suíça", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  // Brasil vs Marrocos — Grupo C — hoje às 23:00 (Lisboa) / 18:00 ET
+  { id: 537342, homeTeam: "Brasil", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
+  // Haiti vs Escócia — Grupo C — 02:00 (Lisboa domingo) / 21:00 ET sábado
+  { id: 537343, homeTeam: "Haiti", awayTeam: "Escócia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
+  // Austrália vs Turquia — Grupo D — 05:00 (Lisboa domingo) / 00:00 ET domingo
+  { id: 537344, homeTeam: "Austrália", awayTeam: "Turquia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 05:00", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
+  // Canadá vs Bósnia — resultado de ontem (12/06)
+  { id: 537333, homeTeam: "Canadá", awayTeam: "Bósnia", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  // EUA vs Paraguai — resultado de ontem (12/06)
+  { id: 537340, homeTeam: "EUA", awayTeam: "Paraguai", homeScore: 4, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Coreia do Sul", awayTeam: "Chéquia",
+  homeTeam: "Brasil", awayTeam: "Marrocos",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [54, 46], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

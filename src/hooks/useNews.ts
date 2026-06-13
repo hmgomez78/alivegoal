@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 12/06/2026
+// Notícias de fallback — análises, contexto e investigação — 13/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Mourinho no Real Madrid — O que muda com o regresso do Special One ao Bernabéu?',
-      excerpt: 'José Mourinho está de volta ao Real Madrid 13 anos depois. Numa época em que o clube perdeu a Liga para o Barça, foi eliminado da Champions pelo Bayern e viu Valverde hospitalizado após confronto com Tchouaméni, o técnico português chega para restaurar a ordem. Analisamos o que muda taticamente, como Mourinho pode transformar o balneário e se a sua filosofia defensiva ainda funciona na era moderna do futebol.',
+      title: 'ANÁLISE TÁTICA: Brasil vs Marrocos — Pode Ancelotti surpreender sem Neymar no seu primeiro Mundial?',
+      excerpt: 'Carlo Ancelotti estreia-se como selecionador do Brasil num Mundial sem a sua maior estrela, Neymar, que está em dúvida para toda a fase de grupos. Marrocos, que chegou às meias-finais em 2022, é um adversário perigoso com uma defesa sólida e um contra-ataque letal. Analisamos o sistema tático de Ancelotti, como Vinícius Júnior e Raphinha podem fazer a diferença, e porque é que este jogo pode ser o mais imprevisível da fase de grupos do Mundial 2026.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -155,17 +155,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'INVESTIGAÇÃO: 3 Cartões Vermelhos no jogo de abertura — O VAR está a destruir o espetáculo do Mundial?',
-      excerpt: 'O jogo de abertura do Mundial 2026 entre o México e a África do Sul ficou marcado por 3 cartões vermelhos e múltiplas intervenções do VAR. A África do Sul ficou reduzida a 8 jogadores. A Fox Sports foi criticada por cortar para publicidade durante o jogo. Investigamos as novas regras do Mundial 2026, o impacto do VAR expandido e se a FIFA está a priorizar o negócio em detrimento do espetáculo.',
+      title: 'ESCÂNDALO: O caso Negreira — Tudo o que precisa de saber sobre o maior escândalo do futebol espanhol',
+      excerpt: 'O Barcelona pagou 7,5 milhões de euros ao vice-presidente do comité de árbitros espanhol ao longo de 17 anos. O Real Madrid preparou um dossier de 500 páginas para a UEFA. Florentino Pérez afirma que o Barça roubou títulos. O Barcelona processa Florentino por difamação. Um guia completo ao escândalo que está a destruir as relações entre os dois maiores clubes do mundo e que pode ter consequências históricas para o futebol espanhol.',
       category: 'ESCÂNDALO',
-      readTime: '10 min',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'ANÁLISE: Bernardo Silva ao Real Madrid — O médio perfeito para o sistema de Mourinho?',
-      excerpt: 'Com Mourinho confirmado no Real Madrid, o seu primeiro pedido foi Bernardo Silva. O médio português do Manchester City é o alvo número 1 do novo treinador merengue. Analisamos o perfil técnico de Bernardo, como se encaixa no sistema de Mourinho, e porque é que o Barça perdeu a corrida apesar de ter estado muito perto de fechar o negócio. Uma análise detalhada ao transfer mais falado do verão.',
+      title: 'ANÁLISE: Lewandowski para a MLS — O fim de uma era ou o início de um novo capítulo?',
+      excerpt: 'Robert Lewandowski, 37 anos, está a negociar com o Chicago Fire da MLS. O polaco, um dos maiores avançados da história do futebol, marcou 26 golos na última época no Barcelona. A MLS tem atraído cada vez mais estrelas no final de carreira, mas Lewandowski ainda está num nível competitivo elevado. Analisamos o impacto desta transferência na MLS, o legado de Lewandowski no futebol europeu e o que esperar desta nova aventura americana.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
@@ -173,8 +173,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Canadá vs Bósnia e EUA vs Paraguai — Análise e apostas para os jogos de hoje',
-      excerpt: 'Dois jogos de enorme interesse apostador hoje no Mundial 2026. O Canadá recebe a Bósnia em Toronto sem Alphonso Davies, o que muda completamente as probabilidades. Os EUA enfrentam o Paraguai em Los Angeles com Pochettino a preparar uma estratégia especial. Analisamos as odds, os mercados mais atrativos e apresentamos as nossas melhores sugestões para estes dois jogos do Grupo B e D.',
+      title: 'TIPS DE APOSTAS: Qatar vs Suíça, Haiti vs Escócia e Austrália vs Turquia — Análise completa dos jogos de hoje',
+      excerpt: 'Quatro jogos do Mundial 2026 hoje. A Suíça é favorita esmagadora contra o Qatar (-425), com o mercado de mais de 2.5 golos da Suíça a pagar +120. A Escócia regressa ao Mundial pela primeira vez desde 1998 e enfrenta o Haiti (-200). A Turquia é favorita contra a Austrália (-135). E o Brasil enfrenta Marrocos no jogo mais equilibrado do dia. Analisamos todos os mercados e apresentamos as melhores apostas para este sábado do Mundial.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -182,18 +182,18 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE MÉDICA: Alphonso Davies — Quanto tempo falta para o capitão do Canadá regressar?',
-      excerpt: 'Alphonso Davies foi confirmado como ausente para o jogo de abertura do Canadá contra a Bósnia. O lateral do Bayern Munique sofreu uma lesão no tendão e treina separadamente. O selecionador Marsch diz que uma ressonância mostrou sinais positivos. Especialistas em medicina desportiva analisam o tempo real de recuperação para este tipo de lesão e se Davies pode estar disponível para o segundo jogo do Canadá.',
-      category: 'LESÕES',
-      readTime: '6 min',
+      title: 'ÚLTIMA HORA: Canadá 1-1 Bósnia — Cyle Larin salva os anfitriões com golo dramático no final!',
+      excerpt: 'O Canadá evitou uma derrota histórica em Toronto graças a um golo de Cyle Larin no segundo tempo, que empatou o jogo a 1-1 contra a Bósnia-Herzegovina. Foi o primeiro ponto do Canadá na história dos Mundiais masculinos. O jogo foi marcado pela ausência de Alphonso Davies, que ficou no banco. A Bósnia tinha marcado primeiro e parecia a caminho de uma vitória surpreendente. O Canadá terá de melhorar muito para a próxima fase do Grupo B.',
+      category: 'ÚLTIMA HORA',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'CONTEXTO: Raúl Jiménez — A história mais emocionante do Mundial 2026 começa no Azteca',
-      excerpt: 'Raúl Jiménez marcou o segundo golo do México contra a África do Sul com um cabeceamento sublime. Mas o que torna este golo especial é a história por trás dele: em 2020, o avançado mexicano quase morreu após uma fratura no crânio num jogo pelo Wolverhampton. Jiménez usa um capacete especial desde então e disse que é um milagre estar aqui. Uma análise completa à carreira de resiliência do herói nacional mexicano.',
-      category: 'ÚLTIMA HORA',
+      title: 'ANÁLISE: Mateus Fernandes — O médio português de 21 anos que vale 99 milhões de euros e quer seguir Bruno Fernandes',
+      excerpt: 'Mateus Fernandes, o médio do West Ham de 21 anos, tornou-se um dos jogadores mais cobiçados do mercado de verão. O Manchester United quer agir rapidamente para o contratar por 99 milhões de euros, mas Arsenal e Real Madrid também estão interessados. Analisamos o perfil técnico de Mateus Fernandes, as suas estatísticas impressionantes na Premier League, e porque é que este jovem português pode ser o próximo grande médio do futebol mundial.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
