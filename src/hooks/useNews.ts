@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 14/06/2026
+// Notícias de fallback — análises, contexto e investigação — 15/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Alemanha vs Curaçao — Wirtz pode finalmente brilhar num Mundial? O regresso dos Panzer!',
-      excerpt: 'Florian Wirtz, o craque do Liverpool de 23 anos, faz a sua estreia num Mundial contra Curaçao, a menor nação da história do torneio. A Alemanha falhou a fase de grupos em 2018 e 2022 e Nagelsmann quer mostrar que os Panzer voltaram ao topo. Analisamos o sistema tático alemão, o papel de Wirtz no 4-2-3-1 de Nagelsmann, e porque é que este jogo pode ser o início de uma nova era para o futebol alemão. As odds colocam a Alemanha como favorita esmagadora mas o histórico recente obriga à cautela.',
+      title: 'ANÁLISE TÁTICA: Espanha vs Cabo Verde — Como Yamal pode destruir a defesa cabo-verdiana e o que esperar do Grupo H',
+      excerpt: 'A Espanha, bicampeã do mundo e da Europa, estreia-se hoje no Mundial 2026 contra Cabo Verde. Lamine Yamal, de 18 anos, é a grande ameaça espanhola e vai enfrentar uma defesa cabo-verdiana que se organiza em bloco baixo. Analisamos o sistema tático de Luis de la Fuente, o papel de Pedri e Rodri no controlo do jogo, e porque é que a Espanha pode golear mas também pode sofrer num contra-ataque. Ryan Mendes, o capitão de Cabo Verde, é o único jogador a vigiar de perto.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -155,26 +155,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: Roubo no Mundial! Chuteiras de Kane e Bellingham desaparecem — Segurança do torneio em causa!',
-      excerpt: 'O equipamento da seleção inglesa foi roubado durante a transferência da Florida para Kansas City. Chuteiras personalizadas de Harry Kane e Jude Bellingham, bolas oficiais e material tático desapareceram. A polícia deteve dois suspeitos. Este incidente, somado a problemas de segurança com outras seleções, levanta sérias questões sobre a organização do maior Mundial de sempre. Thomas Tuchel está furioso e a federação inglesa trabalha contra o relógio para repor o material antes do jogo contra a Croácia.',
-      category: 'ESCÂNDALO',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE: Brasil 1-1 Marrocos — O empate que abalou o mundo e o que significa para o Grupo C',
-      excerpt: 'O Brasil de Ancelotti empatou 1-1 com Marrocos num resultado histórico que deixou o Grupo C completamente em aberto. Saibari abriu o marcador com um contra-ataque clínico que expôs as fragilidades defensivas brasileiras. Vinícius Júnior respondeu com um golo brilhante. Sem Neymar, o Brasil mostrou que ainda tem muito trabalho a fazer. Analisamos o que este resultado significa para as próximas jornadas e quais são os cenários de qualificação para Brasil, Marrocos, Escócia e Haiti.',
+      title: 'ANÁLISE: Holanda 1-1 Japão — Kamada salva o Japão no último minuto! O que este empate significa para o Grupo F',
+      excerpt: 'Num resultado surpreendente, o Japão empatou 1-1 com a Holanda no AT&T Stadium de Dallas graças a um golo de cabeça de Daichi Kamada no último minuto. A Holanda dominou o jogo mas o Japão mostrou a sua organização defensiva e capacidade de contra-ataque. Este resultado deixa o Grupo F completamente em aberto. Analisamos o que correu mal para a Holanda, o papel de Ayase Ueda no ataque japonês, e quais são os cenários de qualificação para as próximas jornadas.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'ESCÂNDALO: O "Watergate" do Mundial 2026 — Como a FIFA vendeu pausas de publicidade disfarçadas de hidratação',
+      excerpt: 'A FIFA introduziu pausas obrigatórias de 3 minutos em cada jogo, supostamente para proteger os jogadores do calor americano. Mas a Fox TV transformou-as em blocos publicitários milionários. Segundo analistas, o Mundial terá 208 pausas, gerando 624 minutos de publicidade extra. Klopp, Pochettino e Deschamps criticaram publicamente a medida. Investigamos como a FIFA negociou estes contratos e quanto dinheiro está em jogo neste esquema que a imprensa britânica já apelidou de "Watergate".',
+      category: 'ESCÂNDALO',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'TIPS DE APOSTAS: Alemanha vs Curaçao, Holanda vs Japão e Costa do Marfim vs Equador — Análise do Dia 4',
-      excerpt: 'Quatro jogos do Dia 4 do Mundial 2026. A Alemanha é favorita esmagadora contra Curaçao (odds 1.05). A Holanda enfrenta um Japão perigoso que dominou a qualificação asiática. A Costa do Marfim, a equipa mais jovem do torneio, defronta o Equador. E a Suécia joga com a Tunísia. Analisamos todos os mercados e apresentamos as melhores apostas para este domingo do Mundial, incluindo o nosso acumulador do dia.',
+      title: 'TIPS DE APOSTAS: Espanha vs Cabo Verde, Arábia Saudita vs Uruguai e Suécia vs Tunísia — As melhores apostas do Dia 5',
+      excerpt: 'Quatro jogos do Dia 5 do Mundial 2026. A Espanha é favorita esmagadora contra Cabo Verde mas o mercado de golos pode oferecer valor. A Arábia Saudita enfrenta um Uruguai com Darwin Núñez em forma. A Suécia, com Isak e Gyökeres, defronta a Tunísia. Analisamos todos os mercados, apresentamos as melhores apostas e o nosso acumulador do dia, com análise detalhada de odds e percentagens de probabilidade para cada jogo.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -182,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: Escócia 1-0 Haiti — McGinn marca o primeiro golo escocês num Mundial em 28 anos!',
-      excerpt: 'John McGinn marcou o primeiro golo da Escócia num Mundial desde 1998, abrindo o marcador aos 28 minutos contra o Haiti no Gillette Stadium em Boston. Foi um golo de recarga após uma defesa do guarda-redes haitiano a um remate de Ché Adams. A Escócia, que regressou ao Mundial pela primeira vez desde 1998, lidera o Grupo C com 3 pontos se vencer. O Haiti, que se qualificou de forma surpreendente, mostrou algumas ideias interessantes mas falhou na finalização. O resultado final ainda está em aberto.',
+      title: 'ÚLTIMA HORA: Austrália 2-0 Turquia — Irankunda marca e torna-se herói nacional! História de refugiado comove o mundo',
+      excerpt: 'A Austrália venceu a Turquia por 2-0 no BC Place de Vancouver, num resultado que surpreendeu os analistas. Nestori Irankunda, nascido num campo de refugiados na Tanzânia, marcou o segundo golo e tornou-se o herói da noite. A história do avançado de 20 anos, que chegou à Austrália como refugiado e agora representa o país num Mundial, comoveu o mundo inteiro. A Turquia, com Hakan Calhanoglu e Arda Guler, foi incapaz de furar a organização defensiva australiana.',
       category: 'ÚLTIMA HORA',
       readTime: '5 min',
       date: formatToday,
@@ -191,8 +191,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Liverpool à caça do sucessor de Salah — Barcola, Diomandé ou Bazoumana Touré?',
-      excerpt: 'Com a saída de Mohamed Salah, o Liverpool tem uma lista de três candidatos para o seu lugar: Bradley Barcola (PSG, 120M€), Yan Diomandé (Sporting CP, 70M€) e Bazoumana Touré. O Arsenal também quer Barcola, o que pode desencadear uma guerra de licitações. Diomandé, que foi uma das revelações do Sporting esta época, pode ser a opção mais acessível. Analisamos o perfil de cada candidato, as suas estatísticas e qual deles se encaixa melhor no sistema de jogo do Liverpool.',
+      title: 'TRANSFERÊNCIAS: Cucurella para o Real Madrid — O que significa para a Premier League e quem substitui o espanhol no Chelsea',
+      excerpt: 'A transferência de Marc Cucurella para o Real Madrid por 60 milhões de euros é oficial. O lateral esquerdo espanhol foi um pedido pessoal de José Mourinho e vai assinar por 6 anos. O Chelsea, que pagou 62 milhões em 2022, recupera quase o investimento. Mas quem vai substituir Cucurella em Stamford Bridge? Analisamos os candidatos — Ben Chilwell (regresso do empréstimo), Alphonso Davies (livre) e outros nomes do mercado — e o impacto desta transferência no plantel de Enzo Maresca.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
