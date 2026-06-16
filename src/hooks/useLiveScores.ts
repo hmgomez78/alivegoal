@@ -81,51 +81,49 @@ function getTeamLogo(team: any): string {
 
 // Jogos com tips hoje (15/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Espanha", "Cabo Verde",
-  "Spain", "Cape Verde",
-  "Arábia Saudita", "Uruguai",
-  "Saudi Arabia", "Uruguay",
-  "Suécia", "Tunísia",
-  "Sweden", "Tunisia",
-  "Costa do Marfim", "Equador",
-  "Ivory Coast", "Ecuador",
+  "França", "Senegal",
+  "France", "Senegal",
+  "Argentina", "Argélia",
+  "Argentina", "Algeria",
+  "Iraque", "Noruega",
+  "Iraq", "Norway",
+  "Áustria", "Jordânia",
+  "Austria", "Jordan",
 ];
 
-// Fallback data com jogos reais (atualizado 15/06/2026)
-// NOTA: Segunda-feira — Dia 5 do Mundial 2026:
-// Resultados de ontem (14/06):
-//   Grupo C: Haiti 0-1 Escócia (FIM)
-//   Grupo D: Austrália 2-0 Turquia (FIM)
-//   Grupo E: Alemanha 7-1 Curaçao (FIM)
-//   Grupo F: Holanda 1-1 Japão (FIM)
-// Jogos de hoje (15/06):
-//   Grupo E: Costa do Marfim vs Equador (00:00 Lisboa) — pode estar em curso
-//   Grupo F: Suécia vs Tunísia (03:00 Lisboa)
-//   Grupo H: Espanha vs Cabo Verde (17:00 Lisboa)
-//   Grupo G: Bélgica vs Egito (20:00 Lisboa)
-//   Grupo H: Arábia Saudita vs Uruguai (23:00 Lisboa)
+// Fallback data com jogos reais (atualizado 16/06/2026)
+// NOTA: Terça-feira — Dia 6 do Mundial 2026:
+// Resultados de ontem (15/06):
+//   Grupo F: Suécia 5-1 Tunísia (FIM)
+//   Grupo H: Espanha 0-0 Cabo Verde (FIM)
+//   Grupo G: Bélgica 1-1 Egito (FIM)
+//   Grupo G: Irão 0-1 Nova Zelândia (FIM)
+// Jogos de hoje (16/06):
+//   Grupo I: França vs Senegal (20:00 Lisboa)
+//   Grupo I: Iraque vs Noruega (23:00 Lisboa)
+//   Grupo J: Argentina vs Argélia (02:00 Lisboa, 17 jun)
+//   Grupo J: Áustria vs Jordânia (05:00 Lisboa, 17 jun)
 const fallbackMatches: LiveMatch[] = [
-  // Costa do Marfim vs Equador — Grupo E — 00:00 Lisboa (pode estar em curso)
-  { id: 537347, homeTeam: "Costa do Marfim", awayTeam: "Equador", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
-  // Suécia vs Tunísia — Grupo F — 03:00 Lisboa
-  { id: 537348, homeTeam: "Suécia", awayTeam: "Tunísia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
-  // Espanha vs Cabo Verde — Grupo H — 17:00 Lisboa
-  { id: 537349, homeTeam: "Espanha", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  // Bélgica vs Egito — Grupo G — 20:00 Lisboa
-  { id: 537350, homeTeam: "Bélgica", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
-  // Arábia Saudita vs Uruguai — Grupo H — 23:00 Lisboa
-  { id: 537351, homeTeam: "Arábia Saudita", awayTeam: "Uruguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  // Resultados de ontem (14/06)
-  { id: 537345, homeTeam: "Alemanha", awayTeam: "Curaçao", homeScore: 7, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
-  { id: 537346, homeTeam: "Holanda", awayTeam: "Japão", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
-  { id: 537344, homeTeam: "Austrália", awayTeam: "Turquia", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
+  // França vs Senegal — Grupo I — 20:00 Lisboa (15:00 ET)
+  { id: 537352, homeTeam: "França", awayTeam: "Senegal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  // Iraque vs Noruega — Grupo I — 23:00 Lisboa (18:00 ET)
+  { id: 537353, homeTeam: "Iraque", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  // Argentina vs Argélia — Grupo J — 02:00 Lisboa (17 jun) (21:00 ET)
+  { id: 537354, homeTeam: "Argentina", awayTeam: "Argélia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
+  // Áustria vs Jordânia — Grupo J — 05:00 Lisboa (17 jun) (00:00 ET)
+  { id: 537355, homeTeam: "Áustria", awayTeam: "Jordânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 05:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
+  // Resultados de ontem (15/06)
+  { id: 537349, homeTeam: "Suécia", awayTeam: "Tunísia", homeScore: 5, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
+  { id: 537350, homeTeam: "Espanha", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
+  { id: 537351, homeTeam: "Bélgica", awayTeam: "Egito", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
+  { id: 537356, homeTeam: "Irão", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", awayTeam: "Cabo Verde",
+  homeTeam: "França", awayTeam: "Senegal",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
