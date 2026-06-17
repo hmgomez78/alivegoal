@@ -79,51 +79,45 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (15/06/2026) — aparecem primeiro
+// Jogos com tips hoje (17/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "França", "Senegal",
-  "France", "Senegal",
-  "Argentina", "Argélia",
-  "Argentina", "Algeria",
-  "Iraque", "Noruega",
-  "Iraq", "Norway",
-  "Áustria", "Jordânia",
-  "Austria", "Jordan",
+  "Portugal", "RD Congo", "Congo DR",
+  "Inglaterra", "Croácia", "England", "Croatia",
+  "Gana", "Panamá", "Ghana", "Panama",
+  "Uzbequistão", "Colômbia", "Uzbekistan", "Colombia",
 ];
 
-// Fallback data com jogos reais (atualizado 16/06/2026)
-// NOTA: Terça-feira — Dia 6 do Mundial 2026:
-// Resultados de ontem (15/06):
-//   Grupo F: Suécia 5-1 Tunísia (FIM)
-//   Grupo H: Espanha 0-0 Cabo Verde (FIM)
-//   Grupo G: Bélgica 1-1 Egito (FIM)
-//   Grupo G: Irão 0-1 Nova Zelândia (FIM)
-// Jogos de hoje (16/06):
-//   Grupo I: França vs Senegal (20:00 Lisboa)
-//   Grupo I: Iraque vs Noruega (23:00 Lisboa)
-//   Grupo J: Argentina vs Argélia (02:00 Lisboa, 17 jun)
-//   Grupo J: Áustria vs Jordânia (05:00 Lisboa, 17 jun)
+// Fallback data com jogos reais (atualizado 17/06/2026)
+// NOTA: Quarta-feira — Dia 7 do Mundial 2026:
+// Resultados de ontem (16/06):
+//   Grupo I: França 3-1 Senegal (FIM)
+//   Grupo I: Iraque vs Noruega (FIM)
+//   Grupo J: Argentina 3-0 Argélia (FIM)
+//   Grupo J: Áustria vs Jordânia (FIM)
+// Jogos de hoje (17/06):
+//   Grupo K: Portugal vs RD Congo (18:00 Lisboa)
+//   Grupo L: Inglaterra vs Croácia (21:00 Lisboa)
+//   Grupo L: Gana vs Panamá (00:00 Lisboa, 18 jun)
+//   Grupo K: Uzbequistão vs Colômbia (03:00 Lisboa, 18 jun)
 const fallbackMatches: LiveMatch[] = [
-  // França vs Senegal — Grupo I — 20:00 Lisboa (15:00 ET)
-  { id: 537352, homeTeam: "França", awayTeam: "Senegal", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
-  // Iraque vs Noruega — Grupo I — 23:00 Lisboa (18:00 ET)
-  { id: 537353, homeTeam: "Iraque", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
-  // Argentina vs Argélia — Grupo J — 02:00 Lisboa (17 jun) (21:00 ET)
-  { id: 537354, homeTeam: "Argentina", awayTeam: "Argélia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
-  // Áustria vs Jordânia — Grupo J — 05:00 Lisboa (17 jun) (00:00 ET)
-  { id: 537355, homeTeam: "Áustria", awayTeam: "Jordânia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 05:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
-  // Resultados de ontem (15/06)
-  { id: 537349, homeTeam: "Suécia", awayTeam: "Tunísia", homeScore: 5, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
-  { id: 537350, homeTeam: "Espanha", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  { id: 537351, homeTeam: "Bélgica", awayTeam: "Egito", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
-  { id: 537356, homeTeam: "Irão", awayTeam: "Nova Zelândia", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
+  // Portugal vs RD Congo — Grupo K — 18:00 Lisboa (13:00 ET)
+  { id: 537403, homeTeam: "Portugal", awayTeam: "RD Congo", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  // Inglaterra vs Croácia — Grupo L — 21:00 Lisboa (16:00 ET)
+  { id: 537404, homeTeam: "Inglaterra", awayTeam: "Croácia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
+  // Gana vs Panamá — Grupo L — 00:00 Lisboa (18 jun) (19:00 ET)
+  { id: 537405, homeTeam: "Gana", awayTeam: "Panamá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
+  // Uzbequistão vs Colômbia — Grupo K — 03:00 Lisboa (18 jun) (22:00 ET)
+  { id: 537406, homeTeam: "Uzbequistão", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  // Resultados de ontem (16/06)
+  { id: 537352, homeTeam: "França", awayTeam: "Senegal", homeScore: 3, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  { id: 537354, homeTeam: "Argentina", awayTeam: "Argélia", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "França", awayTeam: "Senegal",
+  homeTeam: "Portugal", awayTeam: "RD Congo",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

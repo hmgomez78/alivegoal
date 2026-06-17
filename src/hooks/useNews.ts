@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 15/06/2026
+// Notícias de fallback — análises, contexto e investigação — 17/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como a Suécia destruiu a Tunísia e o impacto de Gyokeres',
-      excerpt: 'A vitória por 5-1 da Suécia mostrou um ataque letal. Analisamos os movimentos de Isak e Gyokeres, e como Yasin Ayari dominou o meio-campo com dois golos de fora da área.',
+      title: 'ANÁLISE TÁTICA: Como o AC Milan pode jogar com Rúben Amorim',
+      excerpt: 'A chegada do treinador português a San Siro traz o seu famoso sistema de 3 centrais. Analisamos como Leão, Pulisic e Theo Hernández se podem encaixar na nova tática dos rossoneri.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: formatToday,
@@ -155,26 +155,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O racismo mancha o Mundial — O que a FIFA pode fazer?',
-      excerpt: 'Após o gesto racista de um adepto no jogo México vs Coreia do Sul, discutimos as medidas de segurança e as punições que a FIFA deve aplicar para erradicar estes comportamentos dos estádios.',
-      category: 'ESCÂNDALO',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: O efeito dominó de Anthony Gordon no Barcelona',
-      excerpt: 'Com a contratação de Gordon por 80M€, o Barcelona ganha profundidade, mas o Newcastle precisa de um substituto. Quem será o próximo alvo dos Magpies?',
-      category: 'TRANSFERÊNCIAS',
+      title: 'ANÁLISE: A revolução do meio-campo do Tottenham com Tonali',
+      excerpt: 'Com Roberto De Zerbi no comando, a possível chegada de Sandro Tonali pode transformar os Spurs. Uma análise profunda sobre como o italiano pode ditar o ritmo de jogo em Londres.',
+      category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'TRANSFERÊNCIAS: O futuro de Marcus Rashford após a recusa do Barcelona',
+      excerpt: 'Com a cláusula de 30M€ expirada, Rashford regressa ao Manchester United, que pede agora 40M£. Quais são os clubes na corrida pelo avançado inglês?',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 4,
-      title: 'ANÁLISE: França vs Senegal — A chave tática para parar Mbappé',
-      excerpt: 'O Senegal enfrenta a temível França. Exploramos como a defesa africana pode tentar neutralizar a velocidade de Kylian Mbappé e explorar os espaços deixados por Theo Hernández.',
+      title: 'MUNDIAL 2026: Portugal vs RD Congo — As chaves do jogo',
+      excerpt: 'A seleção portuguesa estreia-se hoje no Mundial. Exploramos como Roberto Martínez deve montar a equipa e os perigos que a RD Congo pode apresentar em contra-ataque.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -182,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Previsões para França vs Senegal e Argentina vs Argélia',
-      excerpt: 'Os grandes favoritos entram em campo hoje. Analisamos as odds e os melhores mercados para os jogos da França e da Argentina, incluindo acumuladores de valor.',
+      title: 'TIPS DE APOSTAS: Previsões para Inglaterra vs Croácia e Portugal vs RD Congo',
+      excerpt: 'Dia de grandes decisões no Mundial 2026. Analisamos as odds e os melhores mercados para os jogos de Inglaterra e Portugal, com dicas de acumuladores para os apostadores.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
@@ -191,9 +191,9 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Onde vai jogar Rafael Leão? O destino do craque português',
-      excerpt: 'Com a saída do Milan confirmada, avaliamos os possíveis destinos de Rafael Leão. Arsenal, Man United ou uma surpresa? O impacto tático que ele teria na Premier League.',
-      category: 'TRANSFERÊNCIAS',
+      title: 'ESCÂNDALO: O caso Brendan Sorsby e o impacto no desporto universitário',
+      excerpt: 'O fim da carreira do quarterback do Texas Tech levanta questões sobre apostas e contratos NIL no desporto universitário americano. O que muda a partir de agora?',
+      category: 'ESCÂNDALO',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
