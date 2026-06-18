@@ -139,24 +139,24 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 17/06/2026
+// Notícias de fallback — análises, contexto e investigação — 18/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como o AC Milan pode jogar com Rúben Amorim',
-      excerpt: 'A chegada do treinador português a San Siro traz o seu famoso sistema de 3 centrais. Analisamos como Leão, Pulisic e Theo Hernández se podem encaixar na nova tática dos rossoneri.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
+      title: 'ESCÂNDALO: O caso Elye Wahi e a crise de integridade no futebol moderno',
+      excerpt: 'A detenção do avançado da Costa do Marfim por suspeita de manipulação de apostas levanta questões profundas sobre a vigilância da FIFA e das ligas europeias. Como é possível que um jogador investigado por corrupção dispute um Mundial? A análise completa do escândalo que abala o futebol.',
+      category: 'ESCÂNDALO',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ANÁLISE: A revolução do meio-campo do Tottenham com Tonali',
-      excerpt: 'Com Roberto De Zerbi no comando, a possível chegada de Sandro Tonali pode transformar os Spurs. Uma análise profunda sobre como o italiano pode ditar o ritmo de jogo em Londres.',
+      title: 'ANÁLISE TÁTICA: Como o Liverpool vai usar Víctor Muñoz no esquema de Slot',
+      excerpt: 'A chegada do lateral espanhol ao Liverpool levanta questões táticas interessantes. Como Arne Slot vai integrar Muñoz no seu sistema? Analisamos o perfil do jogador, as suas características e como pode coexistir com Frimpong na faixa direita dos Reds.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
@@ -164,37 +164,37 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: O futuro de Marcus Rashford após a recusa do Barcelona',
-      excerpt: 'Com a cláusula de 30M€ expirada, Rashford regressa ao Manchester United, que pede agora 40M£. Quais são os clubes na corrida pelo avançado inglês?',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '5 min',
+      title: 'MUNDIAL 2026: Análise ao Grupo A — República Checa vs África do Sul e México vs Coreia do Sul',
+      excerpt: 'O Grupo A do Mundial 2026 promete emoções fortes hoje com dois jogos decisivos. A República Checa precisa de recuperar após a derrota com a Coreia do Sul, enquanto o México, líder do grupo, enfrenta um teste difícil. Analisamos as chaves táticas e as probabilidades de cada resultado.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'MUNDIAL 2026: Portugal vs RD Congo — As chaves do jogo',
-      excerpt: 'A seleção portuguesa estreia-se hoje no Mundial. Exploramos como Roberto Martínez deve montar a equipa e os perigos que a RD Congo pode apresentar em contra-ataque.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'TIPS DE APOSTAS: Previsões para Inglaterra vs Croácia e Portugal vs RD Congo',
-      excerpt: 'Dia de grandes decisões no Mundial 2026. Analisamos as odds e os melhores mercados para os jogos de Inglaterra e Portugal, com dicas de acumuladores para os apostadores.',
-      category: 'TIPS DE APOSTAS',
+      title: 'TRANSFERÊNCIAS: O impacto da corrida de Arsenal vs Liverpool por Víctor Muñoz no mercado de verão',
+      excerpt: 'O "roubo" do Liverpool ao Arsenal por Víctor Muñoz pode desencadear uma guerra de transferências entre os dois rivais ingleses. Com o Arsenal agora a precisar de um lateral direito e o Liverpool a consolidar o plantel, analisamos os próximos movimentos de ambos os clubes neste mercado de verão.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ESCÂNDALO: O caso Brendan Sorsby e o impacto no desporto universitário',
-      excerpt: 'O fim da carreira do quarterback do Texas Tech levanta questões sobre apostas e contratos NIL no desporto universitário americano. O que muda a partir de agora?',
-      category: 'ESCÂNDALO',
+      id: 5,
+      title: 'TIPS DE APOSTAS: Os melhores mercados para os 4 jogos do Dia 8 do Mundial 2026',
+      excerpt: 'República Checa vs África do Sul, Suíça vs Bósnia, Canadá vs Qatar e México vs Coreia do Sul. Analisamos as odds, as estatísticas e os melhores mercados para apostar hoje no Mundial 2026. Inclui dicas de acumuladores com odds atrativas para maximizar os ganhos.',
+      category: 'TIPS DE APOSTAS',
       readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ANÁLISE: Messi vs Haaland vs Mbappé — Quem domina o Mundial 2026 após a 1ª jornada?',
+      excerpt: 'Messi fez hat-trick, Haaland marcou pela Noruega e Mbappé brilhou pela França. Após a primeira jornada do Mundial 2026, analisamos o desempenho das três maiores estrelas do torneio e quem tem mais probabilidades de ganhar a Bota de Ouro e levar a sua seleção ao título.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
