@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 19/06/2026
+// Notícias de fallback — análises, contexto e investigação — 20/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Ancelotti vai jogar com o Brasil? O sistema esperado contra o Haiti',
-      excerpt: 'Carlo Ancelotti estreia-se no Mundial 2026 esta noite frente ao Haiti. Analisamos o sistema tático esperado — provavelmente um 4-3-3 com Vinicius, Rodrygo e Raphinha no ataque — e as principais dúvidas sobre o meio-campo. O Brasil tem obrigação de vencer, mas como vai Ancelotti gerir a pressão e os egos das estrelas canarinha?',
+      title: 'ANÁLISE TÁTICA: Alemanha vs Costa do Marfim — O duelo que pode definir o Grupo E do Mundial 2026',
+      excerpt: 'A Alemanha de Julian Nagelsmann entra neste jogo com a obrigação de confirmar a liderança do Grupo E após a goleada por 7-1 ao Curaçau. A Costa do Marfim, que venceu o Equador por 1-0, é uma equipa perigosa com Haller, Zaha e Seri. Analisamos os sistemas táticos, os duelos individuais e os mercados de apostas mais interessantes para este confronto no BMO Field, Toronto.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -155,8 +155,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ANÁLISE: Canadá 6-0 Qatar — O que este resultado histórico significa para o futebol norte-americano',
-      excerpt: 'A maior goleada da história do Mundial não foi apenas um resultado: foi uma declaração de intenções do futebol canadiano. Jonathan David mostrou porque é um dos melhores avançados do mundo, mas a lesão de Koné lança uma sombra. Analisamos o que este resultado significa para o Grupo B e para as aspirações do Canadá no torneio.',
+      title: 'ANÁLISE: Holanda vs Suécia — Batalha do Grupo F! Van Dijk vs Isak, o duelo de gigantes',
+      excerpt: 'A Holanda empatou com o Japão (2-2) na estreia e precisa de vencer a Suécia, que goleou a Tunísia por 5-1. Alexander Isak, um dos melhores avançados do mundo, enfrenta a sólida defesa holandesa liderada por Van Dijk. Este jogo no NRG Stadium, Houston, pode ser o mais equilibrado do dia. Analisamos as estatísticas, o historial e as melhores apostas.',
       category: 'ANÁLISE TÁTICA',
       readTime: '7 min',
       date: formatToday,
@@ -164,8 +164,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Bernardo Silva no Real Madrid — Mourinho constrói um meio-campo de sonho',
-      excerpt: 'A chegada de Bernardo Silva ao Real Madrid em fim de contrato é um dos negócios do verão. Como vai Mourinho integrar o português no seu sistema? Com Bellingham, Valverde e agora Bernardo, o Real Madrid tem um dos melhores meios-campos do mundo. Analisamos o impacto desta contratação e o que significa para o Manchester City.',
+      title: 'TRANSFERÊNCIAS: A guerra pelo Olise — Real Madrid vs Bayern, o negócio do verão que pode chegar aos €220M',
+      excerpt: 'Michael Olise tornou-se o jogador mais cobiçado do mercado de verão. O Real Madrid está disposto a pagar 220 milhões de euros, mas o Bayern quer segurar o francês com um salário de 22 milhões por época. Analisamos o impacto desta transferência nos dois clubes, o que Olise ganharia em cada destino e porque este negócio pode redefinir o mercado de transferências europeu.',
       category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
@@ -173,8 +173,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: O caso Irão no Mundial 2026 — Política, vistos e o futuro do desporto global',
-      excerpt: 'A recusa dos EUA em conceder vistos a membros do staff iraniano é o maior escândalo político de um Mundial desde 1978. Analisamos as implicações legais para a FIFA, o precedente perigoso que este caso cria e o que acontece se o Irão se retirar do torneio. O desporto e a política nunca estiveram tão entrelaçados.',
+      title: 'ESCÂNDALO: O declínio de Ronaldo no Mundial — 10 jogos sem remate enquadrado, Portugal em crise de identidade',
+      excerpt: 'Os números são implacáveis: Cristiano Ronaldo não enquadrou um único remate em 10 jogos consecutivos de torneios internacionais. Portugal empatou com a RD Congo na estreia e o debate sobre o futuro do capitão é inevitável. Analisamos as estatísticas, o impacto psicológico na equipa e o que Roberto Martínez deve fazer contra o Uzbequistão para salvar o Mundial de Portugal.',
       category: 'ESCÂNDALO',
       readTime: '9 min',
       date: formatToday,
@@ -182,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Brasil vs Haiti, EUA vs Austrália e Escócia vs Marrocos — Os melhores mercados de hoje',
-      excerpt: 'Três jogos de alto impacto no Dia 9 do Mundial 2026. O Brasil tem obrigação de golear o Haiti, os EUA enfrentam uma Austrália perigosa e a Escócia tenta confirmar a liderança do Grupo C contra Marrocos. Analisamos as odds, as estatísticas e os mercados mais rentáveis para apostar hoje.',
+      title: 'TIPS DE APOSTAS: Alemanha vs Costa do Marfim e Holanda vs Suécia — Análise completa dos jogos de hoje',
+      excerpt: 'Dois jogos de alto nível no Dia 10 do Mundial 2026. A Alemanha tem obrigação de vencer a Costa do Marfim para confirmar a liderança do Grupo E. A Holanda precisa de uma vitória sobre a Suécia para não complicar a sua passagem. Analisamos as odds, as estatísticas de forma e os mercados mais rentáveis para apostar hoje nestes dois duelos europeus.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -191,8 +191,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'ANÁLISE: Roberto Martínez sai de Portugal — Quem são os candidatos a suceder ao treinador espanhol?',
-      excerpt: 'Com a saída confirmada de Roberto Martínez após o Mundial, Portugal precisa de um novo selecionador. Analisamos os principais candidatos: Rui Jorge, Paulo Fonseca, Sérgio Conceição e nomes internacionais. Quem tem o perfil certo para liderar a geração de ouro portuguesa após Cristiano Ronaldo? O debate está aberto.',
+      title: 'ANÁLISE: Brasil 3-0 Haiti — Ancelotti encontrou a fórmula? O que este resultado significa para o Grupo C',
+      excerpt: 'O Brasil venceu o Haiti por 3-0 e aliviou a pressão após o empate com Marrocos. Matheus Cunha foi o herói, Vinicius Jr. marcou e Endrick estreou-se. Mas o Grupo C está ainda em aberto: Escócia lidera com 6 pontos e o Brasil precisa de vencer na última jornada. Analisamos o desempenho tático de Ancelotti, os pontos fortes e fracos que ficaram expostos e o que esperar do Brasil no mata-mata.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,

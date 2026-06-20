@@ -79,46 +79,45 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (19/06/2026) — aparecem primeiro
+// Jogos com tips hoje (20/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
+  "Alemanha", "Costa do Marfim", "Germany", "Ivory Coast", "Côte d'Ivoire",
+  "Holanda", "Suécia", "Netherlands", "Sweden",
+  "Equador", "Curaçau", "Ecuador", "Curaçao",
+  "Turquia", "Paraguai", "Türkiye", "Turkey", "Paraguay",
   "Brasil", "Haiti", "Brazil",
-  "EUA", "Austrália", "USA", "United States", "Australia",
-  "Escócia", "Marrocos", "Scotland", "Morocco",
-  "Turquia", "Paraguai", "Turkey", "Türkiye", "Paraguay",
-  "México", "Coreia do Sul", "Mexico", "South Korea",
 ];
 
-// Fallback data com jogos reais (atualizado 19/06/2026)
-// NOTA: Sexta-feira — Dia 9 do Mundial 2026:
-// Resultados de ontem (18/06):
-//   Grupo A: República Checa 1-1 África do Sul (FIM)
-//   Grupo B: Suíça 4-1 Bósnia e Herzegovina (FIM)
-//   Grupo B: Canadá 6-0 Qatar (FIM) — Maior goleada da história do Mundial!
-//   Grupo A: México vs Coreia do Sul (02:00 Lisboa / 21:00 ET) — Guadalajara
-// Jogos de hoje (19/06):
-//   Grupo D: EUA vs Austrália (20:00 Lisboa / 15:00 ET) — Seattle
-//   Grupo C: Escócia vs Marrocos (23:00 Lisboa / 18:00 ET) — Foxboro
-//   Grupo C: Brasil vs Haiti (01:30 Lisboa 20jun / 20:30 ET) — Filadélfia
-//   Grupo D: Turquia vs Paraguai (02:00 Lisboa 20jun / 21:00 ET) — Santa Clara
+// Fallback data com jogos reais (atualizado 20/06/2026)
+// NOTA: Sábado — Dia 10 do Mundial 2026:
+// Resultados de ontem (19/06):
+//   Grupo D: EUA 2-0 Austrália (FIM) — Seattle
+//   Grupo C: Escócia 1-0 Marrocos (FIM) — Foxboro  [resultado a confirmar]
+//   Grupo C: Brasil 3-0 Haiti (FIM) — Filadélfia
+//   Grupo D: Turquia 0-1 Paraguai (AO VIVO) — Santa Clara
+// Jogos de hoje (20/06):
+//   Grupo F: Holanda vs Suécia (18:00 Lisboa / 13:00 ET) — Houston
+//   Grupo E: Alemanha vs Costa do Marfim (22:00 Lisboa / 17:00 ET) — Toronto
+//   Grupo E: Equador vs Curaçau (02:00 Lisboa 21jun / 21:00 ET) — Kansas City
+//   Brasileirão Série B: Ceará vs Botafogo SP (19:00) / Vila Nova vs Náutico (19:00)
 const fallbackMatches: LiveMatch[] = [
-  // EUA vs Austrália — Grupo D — 20:00 Lisboa (15:00 ET) — Seattle
-  { id: 537601, homeTeam: "EUA", awayTeam: "Austrália", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
-  // Escócia vs Marrocos — Grupo C — 23:00 Lisboa (18:00 ET) — Foxboro
-  { id: 537602, homeTeam: "Escócia", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
-  // Brasil vs Haiti — Grupo C — 01:30 Lisboa 20jun (20:30 ET) — Filadélfia
-  { id: 537603, homeTeam: "Brasil", awayTeam: "Haiti", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:30", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
-  // Turquia vs Paraguai — Grupo D — 02:00 Lisboa 20jun (21:00 ET) — Santa Clara
-  { id: 537604, homeTeam: "Turquia", awayTeam: "Paraguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
-  // Resultados de ontem (18/06)
-  { id: 537503, homeTeam: "Canadá", awayTeam: "Qatar", homeScore: 6, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
-  { id: 537502, homeTeam: "Suíça", awayTeam: "Bósnia e Herzegovina", homeScore: 4, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  // Holanda vs Suécia — Grupo F — 18:00 Lisboa (13:00 ET) — Houston
+  { id: 537701, homeTeam: "Holanda", awayTeam: "Suécia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
+  // Alemanha vs Costa do Marfim — Grupo E — 22:00 Lisboa (17:00 ET) — Toronto
+  { id: 537702, homeTeam: "Alemanha", awayTeam: "Costa do Marfim", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
+  // Equador vs Curaçau — Grupo E — 02:00 Lisboa 21jun (21:00 ET) — Kansas City
+  { id: 537703, homeTeam: "Equador", awayTeam: "Curaçau", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
+  // Resultados de ontem (19/06)
+  { id: 537601, homeTeam: "EUA", awayTeam: "Austrália", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo D", leagueId: 2000 },
+  { id: 537603, homeTeam: "Brasil", awayTeam: "Haiti", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
+  { id: 537602, homeTeam: "Escócia", awayTeam: "Marrocos", homeScore: 1, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Brasil", awayTeam: "Haiti",
+  homeTeam: "Alemanha", awayTeam: "Costa do Marfim",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [68, 32], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
