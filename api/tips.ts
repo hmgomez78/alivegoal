@@ -125,7 +125,7 @@ function parseTipsFromHTML(html: string): Tip[] {
 
   // Get today's date string for filtering
   const today = new Date();
-  const todayStr = today.toISOString().split('T')[0]; // e.g. "2026-06-20"
+  const todayStr = today.toISOString().split('T')[0]; // e.g. "2026-06-21"
 
   // ONLY process messages from TODAY — if no tips today, return empty so fallback is used
   const todayMessages = sortedMessages.filter(m => m.date.startsWith(todayStr));
@@ -343,127 +343,127 @@ function parseTipsFromHTML(html: string): Tip[] {
   return tips;
 }
 
-// Fallback tips — 20/06/2026 — Dia 10 do Mundial 2026
+// Fallback tips — 21/06/2026 — Dia 11 do Mundial 2026
 function getFallbackTips(): Tip[] {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' });
   return [
-    // ===== MUNDIAL 2026 GRUPO E: ALEMANHA vs COSTA DO MARFIM =====
+    // ===== MUNDIAL 2026 GRUPO H: ESPANHA vs ARÁBIA SAUDITA =====
     {
-      id: 966,
-      betNumber: '966',
+      id: 972,
+      betNumber: '972',
       betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Grupo E',
-      homeTeam: 'Alemanha',
-      awayTeam: 'Costa do Marfim',
+      league: 'FIFA Mundial 2026 — Grupo H',
+      homeTeam: 'Espanha',
+      awayTeam: 'Arábia Saudita',
       date: dateStr,
-      time: '22:00',
-      prediction: 'Vitória Alemanha',
-      confidence: 78,
-      odds: 1.65,
+      time: '17:00',
+      prediction: 'Vitória Espanha',
+      confidence: 85,
+      odds: 1.35,
       market: 'Resultado Final',
-      winner: 'Alemanha',
-      analysis: '🇩🇪 Alemanha Vitória @1.65 — A Mannschaft goleou o Curaçau por 7-1 na estreia e chega a este jogo com enorme confiança. Kai Havertz, Florian Wirtz e Jamal Musiala formam um ataque devastador. A Costa do Marfim venceu o Equador por 1-0 mas foi muito sofrida. A Alemanha joga no BMO Field, Toronto, com grande apoio da comunidade germano-canadiana. Nagelsmann tem um plantel profundo e vai gerir a rotação. Vitória alemã é o resultado mais provável.',
-      homePercent: 62,
-      drawPercent: 22,
-      awayPercent: 16,
-    },
-    // ===== MUNDIAL 2026 GRUPO F: HOLANDA vs SUÉCIA =====
-    {
-      id: 967,
-      betNumber: '967',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Grupo F',
-      homeTeam: 'Holanda',
-      awayTeam: 'Suécia',
-      date: dateStr,
-      time: '18:00',
-      prediction: 'Ambas as Equipas Marcam',
-      confidence: 76,
-      odds: 1.80,
-      market: 'Ambas Marcam',
-      winner: '',
-      analysis: '🇳🇱🇸🇪 Ambas Marcam @1.80 — A Holanda empatou com o Japão (2-2) e tem Memphis Depay e Gakpo em forma. A Suécia goleou a Tunísia por 5-1 com Alexander Isak a marcar 2 golos. Ambas as equipas têm atacantes de classe mundial e defesas que podem ser exploradas. Este jogo no NRG Stadium, Houston, promete ser aberto e com golos dos dois lados. Isak vs Van Dijk é o duelo do jogo.',
-      homePercent: 40,
-      drawPercent: 28,
-      awayPercent: 32,
-    },
-    // ===== MUNDIAL 2026 GRUPO E: ALEMANHA — OVER 2.5 =====
-    {
-      id: 968,
-      betNumber: '968',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Grupo E',
-      homeTeam: 'Alemanha',
-      awayTeam: 'Costa do Marfim',
-      date: dateStr,
-      time: '22:00',
-      prediction: 'Over 2.5 Golos',
-      confidence: 80,
-      odds: 1.70,
-      market: 'Mais de 2.5',
-      winner: '',
-      analysis: '⚽ Over 2.5 @1.70 — A Alemanha marcou 7 golos na estreia e a Costa do Marfim tem uma defesa vulnerável. Mesmo que a Costa do Marfim marque, a Alemanha tem qualidade para responder e marcar mais. O historial destes dois países em Mundiais é sempre de jogos com muitos golos. A odd de 1.70 representa um valor excelente para um mercado com alta probabilidade de sucesso.',
-      homePercent: 62,
-      drawPercent: 22,
-      awayPercent: 16,
-    },
-    // ===== MUNDIAL 2026 GRUPO E: EQUADOR vs CURAÇAU =====
-    {
-      id: 969,
-      betNumber: '969',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Grupo E',
-      homeTeam: 'Equador',
-      awayTeam: 'Curaçau',
-      date: dateStr,
-      time: '02:00',
-      prediction: 'Vitória Equador',
-      confidence: 82,
-      odds: 1.45,
-      market: 'Resultado Final',
-      winner: 'Equador',
-      analysis: '🇪🇨 Equador Vitória @1.45 — O Equador perdeu para a Costa do Marfim (0-1) mas mostrou qualidade e precisa absolutamente de vencer para manter esperanças de qualificação. O Curaçau foi goleado pela Alemanha por 7-1 e está praticamente eliminado. Enner Valencia e Moisés Caicedo são as estrelas equatorianas. Este é o jogo mais desequilibrado do dia — a vitória do Equador é quase certa.',
-      homePercent: 72,
-      drawPercent: 18,
+      winner: 'Espanha',
+      analysis: '🇪🇸 Espanha Vitória @1.35 — A Espanha desiludiu no primeiro jogo com um empate (0-0) frente a Cabo Verde. A equipa de Luis de la Fuente tem agora a obrigação de vencer para não complicar as contas. A Arábia Saudita empatou com o Uruguai e mostrou ser uma equipa organizada, mas a qualidade técnica de jogadores como Lamine Yamal e Pedri deverá fazer a diferença. A Espanha dominará a posse de bola e, com maior eficácia, garantirá os 3 pontos.',
+      homePercent: 75,
+      drawPercent: 15,
       awayPercent: 10,
     },
-    // ===== MUNDIAL 2026 GRUPO F: HOLANDA — VITÓRIA =====
+    // ===== MUNDIAL 2026 GRUPO G: BÉLGICA vs IRÃO =====
     {
-      id: 970,
-      betNumber: '970',
+      id: 973,
+      betNumber: '973',
       betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Grupo F',
-      homeTeam: 'Holanda',
-      awayTeam: 'Suécia',
+      league: 'FIFA Mundial 2026 — Grupo G',
+      homeTeam: 'Bélgica',
+      awayTeam: 'Irão',
       date: dateStr,
-      time: '18:00',
-      prediction: 'Dupla Hipótese Holanda/Empate',
-      confidence: 73,
+      time: '20:00',
+      prediction: 'Vitória Bélgica',
+      confidence: 80,
       odds: 1.55,
-      market: 'Dupla Hipótese',
-      winner: 'Holanda',
-      analysis: '🇳🇱 Holanda X/1 @1.55 — A Holanda é ligeiramente favorita neste confronto do Grupo F. Com Van Dijk na defesa e Depay no ataque, os Tulipas têm qualidade para não perder. A Suécia é perigosa com Isak mas a Holanda tem mais experiência em torneios. A dupla hipótese oferece segurança numa partida que pode ser decidida por detalhes. Boa relação risco/recompensa.',
-      homePercent: 40,
-      drawPercent: 28,
-      awayPercent: 32,
+      market: 'Resultado Final',
+      winner: 'Bélgica',
+      analysis: '🇧🇪 Bélgica Vitória @1.55 — Após um empate frustrante (1-1) com o Egito, a Bélgica de Tedesco precisa de dar uma resposta. O Irão vem de um empate a 2-2 com a Nova Zelândia e demonstrou debilidades defensivas que Kevin De Bruyne e Lukaku podem explorar. A superioridade individual dos belgas é evidente e este é um jogo de "tudo ou nada" para as aspirações belgas no torneio.',
+      homePercent: 65,
+      drawPercent: 20,
+      awayPercent: 15,
     },
-    // ===== ACUMULADOR (DOUBLE) — DIA 10 DO MUNDIAL =====
+    // ===== MUNDIAL 2026 GRUPO H: URUGUAI vs CABO VERDE =====
     {
-      id: 971,
-      betNumber: '971',
+      id: 974,
+      betNumber: '974',
+      betType: 'SINGLE',
+      league: 'FIFA Mundial 2026 — Grupo H',
+      homeTeam: 'Uruguai',
+      awayTeam: 'Cabo Verde',
+      date: dateStr,
+      time: '23:00',
+      prediction: 'Vitória Uruguai',
+      confidence: 78,
+      odds: 1.60,
+      market: 'Resultado Final',
+      winner: 'Uruguai',
+      analysis: '🇺🇾 Uruguai Vitória @1.60 — O Uruguai de Marcelo Bielsa desiludiu no empate com a Arábia Saudita e enfrenta agora a grande surpresa do grupo, Cabo Verde, que travou a Espanha. A "garra charrúa" e a intensidade de Valverde e Darwin Núñez no meio-campo serão fundamentais. Apesar de Cabo Verde estar motivado, a experiência uruguaia em grandes palcos deverá prevalecer num jogo muito físico.',
+      homePercent: 60,
+      drawPercent: 25,
+      awayPercent: 15,
+    },
+    // ===== MUNDIAL 2026 GRUPO G: NOVA ZELÂNDIA vs EGITO =====
+    {
+      id: 975,
+      betNumber: '975',
+      betType: 'SINGLE',
+      league: 'FIFA Mundial 2026 — Grupo G',
+      homeTeam: 'Nova Zelândia',
+      awayTeam: 'Egito',
+      date: dateStr,
+      time: '02:00',
+      prediction: 'Ambas as Equipas Marcam',
+      confidence: 72,
+      odds: 1.95,
+      market: 'Ambas Marcam',
+      winner: '',
+      analysis: '🇳🇿🇪🇬 Ambas Marcam @1.95 — O Egito de Salah surpreendeu a Bélgica (1-1) e a Nova Zelândia esteve num jogo aberto com o Irão (2-2). O Egito é ligeiramente favorito, mas a Nova Zelândia tem mostrado capacidade para ferir defesas contrárias. Com ambas as equipas a precisarem de vencer para sonhar com a qualificação, perspetiva-se um jogo aberto e com golos de parte a parte.',
+      homePercent: 30,
+      drawPercent: 30,
+      awayPercent: 40,
+    },
+    // ===== MUNDIAL 2026 GRUPO H: ESPANHA — OVER 2.5 =====
+    {
+      id: 976,
+      betNumber: '976',
+      betType: 'SINGLE',
+      league: 'FIFA Mundial 2026 — Grupo H',
+      homeTeam: 'Espanha',
+      awayTeam: 'Arábia Saudita',
+      date: dateStr,
+      time: '17:00',
+      prediction: 'Over 2.5 Golos',
+      confidence: 75,
+      odds: 1.80,
+      market: 'Mais de 2.5',
+      winner: '',
+      analysis: '⚽ Over 2.5 @1.80 — A Espanha não marcou no primeiro jogo e precisa de fazer golos para recuperar a confiança e a diferença de golos. A Arábia Saudita poderá não aguentar a pressão ofensiva constante de La Roja. Esperamos uma Espanha dominadora a tentar resolver o jogo cedo e a construir um resultado confortável.',
+      homePercent: 75,
+      drawPercent: 15,
+      awayPercent: 10,
+    },
+    // ===== ACUMULADOR (DOUBLE) — DIA 11 DO MUNDIAL =====
+    {
+      id: 977,
+      betNumber: '977',
       betType: 'DOUBLE',
       league: 'Múltipla',
-      homeTeam: 'Alemanha + Equador',
+      homeTeam: 'Espanha + Bélgica',
       awayTeam: 'Dupla Vitória',
       date: dateStr,
       time: 'Vários',
-      prediction: 'Vitória Alemanha + Vitória Equador',
-      confidence: 78,
-      odds: 2.39,
+      prediction: 'Vitória Espanha + Vitória Bélgica',
+      confidence: 82,
+      odds: 2.09,
       market: 'Acumulador',
       winner: '',
-      analysis: '💰 ACUMULADOR DO DIA @2.39 — Combinamos as duas apostas mais sólidas do Dia 10. A Alemanha (@1.65) tem obrigação de vencer a Costa do Marfim após a goleada por 7-1 ao Curaçau — a Mannschaft está em grande forma. O Equador (@1.45) precisa absolutamente de vencer o Curaçau para manter esperanças de qualificação, enquanto o adversário está praticamente eliminado. A combinação oferece uma odd atrativa de 2.39 com probabilidade elevada de sucesso.',
+      analysis: '💰 ACUMULADOR DO DIA @2.09 — Combinamos as duas potências europeias que escorregaram na primeira jornada. A Espanha (@1.35) tem obrigação de vencer a Arábia Saudita e a Bélgica (@1.55) não pode falhar frente ao Irão. Ambas as equipas têm plantéis vastamente superiores aos seus adversários e a necessidade imperiosa de vitória garante que entrarão com máxima intensidade. Uma dupla com odd superior a 2.00 de enorme valor.',
       homePercent: 0,
       drawPercent: 0,
       awayPercent: 0,
@@ -471,30 +471,11 @@ function getFallbackTips(): Tip[] {
   ];
 }
 
-export default async function handler(request: Request) {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=1800',
-  };
-
-  if (request.method === 'OPTIONS') {
-    return new Response(null, { status: 204, headers });
-  }
-
+export default async function handler(req: Request) {
   try {
-    const response = await fetch('https://t.me/s/alivegoal', {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'pt-PT,pt;q=0.9,en;q=0.8',
-      },
-    });
-
+    const response = await fetch('https://t.me/s/alivegoal');
     if (!response.ok) {
-      throw new Error(`Telegram fetch failed: ${response.status}`);
+      throw new Error(`Failed to fetch Telegram: ${response.status}`);
     }
 
     const html = await response.text();
@@ -503,31 +484,48 @@ export default async function handler(request: Request) {
     if (tips.length > 0) {
       return new Response(JSON.stringify({
         success: true,
-        source: 'telegram_live',
+        source: 'telegram',
         count: tips.length,
         updatedAt: new Date().toISOString(),
         tips,
-      }), { status: 200, headers });
+      }), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 's-maxage=300, stale-while-revalidate=600'
+        }
+      });
     }
 
-    const fallback = getFallbackTips();
+    const fallbackTips = getFallbackTips();
     return new Response(JSON.stringify({
       success: true,
       source: 'fallback',
-      count: fallback.length,
+      count: fallbackTips.length,
       updatedAt: new Date().toISOString(),
-      tips: fallback,
-    }), { status: 200, headers });
+      tips: fallbackTips,
+    }), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 's-maxage=300, stale-while-revalidate=600'
+      }
+    });
 
   } catch (error) {
-    const fallback = getFallbackTips();
+    console.error('Error fetching tips:', error);
+    const fallbackTips = getFallbackTips();
     return new Response(JSON.stringify({
-      success: true,
-      source: 'fallback',
-      error: error instanceof Error ? error.message : 'Unknown error',
-      count: fallback.length,
+      success: false,
+      source: 'fallback_error',
+      count: fallbackTips.length,
       updatedAt: new Date().toISOString(),
-      tips: fallback,
-    }), { status: 200, headers });
+      tips: fallbackTips,
+    }), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
   }
 }

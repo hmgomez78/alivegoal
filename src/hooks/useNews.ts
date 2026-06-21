@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 20/06/2026
+// Notícias de fallback — análises, contexto e investigação — 21/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Alemanha vs Costa do Marfim — O duelo que pode definir o Grupo E do Mundial 2026',
-      excerpt: 'A Alemanha de Julian Nagelsmann entra neste jogo com a obrigação de confirmar a liderança do Grupo E após a goleada por 7-1 ao Curaçau. A Costa do Marfim, que venceu o Equador por 1-0, é uma equipa perigosa com Haller, Zaha e Seri. Analisamos os sistemas táticos, os duelos individuais e os mercados de apostas mais interessantes para este confronto no BMO Field, Toronto.',
+      title: 'ANÁLISE TÁTICA: O impacto de Deniz Undav no sistema de Nagelsmann',
+      excerpt: 'A Alemanha esteve a perder contra a Costa do Marfim, mas a entrada de Deniz Undav mudou o jogo. Com dois golos, o avançado mostrou porque é a arma secreta de Julian Nagelsmann. Analisamos como a sua movimentação entre linhas desequilibrou a defesa africana e o que isto significa para os próximos jogos da Mannschaft no Mundial.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -155,17 +155,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ANÁLISE: Holanda vs Suécia — Batalha do Grupo F! Van Dijk vs Isak, o duelo de gigantes',
-      excerpt: 'A Holanda empatou com o Japão (2-2) na estreia e precisa de vencer a Suécia, que goleou a Tunísia por 5-1. Alexander Isak, um dos melhores avançados do mundo, enfrenta a sólida defesa holandesa liderada por Van Dijk. Este jogo no NRG Stadium, Houston, pode ser o mais equilibrado do dia. Analisamos as estatísticas, o historial e as melhores apostas.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'ESCÂNDALO: A revolução de Mourinho no Real Madrid — O que significa a chegada de Cucurella?',
+      excerpt: 'José Mourinho está de volta ao Real Madrid e já começou a impor a sua lei. A contratação de Marc Cucurella por 60 milhões de euros gerou controvérsia, com muitos adeptos a questionarem o preço e o perfil do jogador. Analisamos a mudança de paradigma no Bernabéu: do foco em jovens talentos para a exigência de rendimento imediato do "Special One".',
+      category: 'ESCÂNDALO',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: A guerra pelo Olise — Real Madrid vs Bayern, o negócio do verão que pode chegar aos €220M',
-      excerpt: 'Michael Olise tornou-se o jogador mais cobiçado do mercado de verão. O Real Madrid está disposto a pagar 220 milhões de euros, mas o Bayern quer segurar o francês com um salário de 22 milhões por época. Analisamos o impacto desta transferência nos dois clubes, o que Olise ganharia em cada destino e porque este negócio pode redefinir o mercado de transferências europeu.',
+      title: 'TRANSFERÊNCIAS: Casemiro e Messi juntos — O Inter Miami está a construir um império?',
+      excerpt: 'A confirmação de que Casemiro vai juntar-se ao Inter Miami na MLS é um marco histórico. O brasileiro vai reencontrar antigos rivais do Barcelona (Messi, Suárez, Busquets e Alba) na mesma equipa. Analisamos o impacto desportivo e comercial desta transferência, e se o Inter Miami pode ser considerado o melhor plantel da história do futebol norte-americano.',
       category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
@@ -173,17 +173,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: O declínio de Ronaldo no Mundial — 10 jogos sem remate enquadrado, Portugal em crise de identidade',
-      excerpt: 'Os números são implacáveis: Cristiano Ronaldo não enquadrou um único remate em 10 jogos consecutivos de torneios internacionais. Portugal empatou com a RD Congo na estreia e o debate sobre o futuro do capitão é inevitável. Analisamos as estatísticas, o impacto psicológico na equipa e o que Roberto Martínez deve fazer contra o Uzbequistão para salvar o Mundial de Portugal.',
-      category: 'ESCÂNDALO',
+      title: 'ANÁLISE TÁTICA: Holanda 5-1 Suécia — A máquina ofensiva de Ronald Koeman',
+      excerpt: 'A goleada da Holanda sobre a Suécia (5-1) foi uma demonstração de força. Cody Gakpo e Brian Brobbey estiveram imparáveis. Analisamos a dinâmica ofensiva da equipa laranja, a forma como exploraram os espaços deixados pela defesa sueca e se esta exibição coloca a Holanda como uma das principais candidatas ao título mundial.',
+      category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Alemanha vs Costa do Marfim e Holanda vs Suécia — Análise completa dos jogos de hoje',
-      excerpt: 'Dois jogos de alto nível no Dia 10 do Mundial 2026. A Alemanha tem obrigação de vencer a Costa do Marfim para confirmar a liderança do Grupo E. A Holanda precisa de uma vitória sobre a Suécia para não complicar a sua passagem. Analisamos as odds, as estatísticas de forma e os mercados mais rentáveis para apostar hoje nestes dois duelos europeus.',
+      title: 'TIPS DE APOSTAS: Espanha vs Arábia Saudita e Bélgica vs Irão — Previsões para hoje',
+      excerpt: 'O Dia 11 do Mundial 2026 traz confrontos interessantes. A Espanha defronta a Arábia Saudita e a Bélgica joga contra o Irão. Analisamos as odds, o momento de forma das equipas e sugerimos as melhores apostas para estes jogos, incluindo mercados de golos e desempenhos individuais.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -191,15 +191,16 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'ANÁLISE: Brasil 3-0 Haiti — Ancelotti encontrou a fórmula? O que este resultado significa para o Grupo C',
-      excerpt: 'O Brasil venceu o Haiti por 3-0 e aliviou a pressão após o empate com Marrocos. Matheus Cunha foi o herói, Vinicius Jr. marcou e Endrick estreou-se. Mas o Grupo C está ainda em aberto: Escócia lidera com 6 pontos e o Brasil precisa de vencer na última jornada. Analisamos o desempenho tático de Ancelotti, os pontos fortes e fracos que ficaram expostos e o que esperar do Brasil no mata-mata.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TRANSFERÊNCIAS: Elliot Anderson no Man City? O que Guardiola vê no jovem inglês',
+      excerpt: 'O Manchester City está disposto a pagar 120 milhões de libras por Elliot Anderson, superando o interesse do Manchester United. O que faz deste jovem do Nottingham Forest um alvo tão cobiçado? Analisamos o perfil do jogador, a sua evolução tática e como se encaixaria no sistema de Pep Guardiola no Etihad.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
   ];
 }
+
 export function useNews() {
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
