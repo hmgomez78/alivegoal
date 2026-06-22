@@ -79,43 +79,40 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (21/06/2026) — aparecem primeiro
+// Jogos com tips hoje (22/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Espanha", "Arábia Saudita", "Spain", "Saudi Arabia",
-  "Bélgica", "Irão", "Belgium", "Iran",
-  "Uruguai", "Cabo Verde", "Uruguay", "Cape Verde",
   "Nova Zelândia", "Egito", "New Zealand", "Egypt",
+  "Argentina", "Áustria", "Austria",
+  "França", "Iraque", "France", "Iraq",
 ];
 
-// Fallback data com jogos reais (atualizado 21/06/2026)
-// NOTA: Domingo — Dia 11 do Mundial 2026:
-// Resultados de ontem (20/06):
-//   Grupo F: Holanda 5-1 Suécia (FIM)
-//   Grupo E: Alemanha 2-1 Costa do Marfim (FIM)
-//   Grupo E: Equador 0-0 Curaçau (FIM)
-// Jogos de hoje (21/06):
-//   Grupo H: Espanha vs Arábia Saudita (17:00 Lisboa / 12:00 ET) — Atlanta
-//   Grupo G: Bélgica vs Irão (20:00 Lisboa / 15:00 ET) — Inglewood
-//   Grupo H: Uruguai vs Cabo Verde (23:00 Lisboa / 18:00 ET) — Miami
-//   Grupo G: Nova Zelândia vs Egito (02:00 Lisboa 22jun / 21:00 ET) — Vancouver
+// Fallback data com jogos reais (atualizado 22/06/2026)
+// NOTA: Segunda-feira — Dia 12 do Mundial 2026:
+// Resultados de ontem (21/06):
+//   Grupo H: Espanha 4-0 Arábia Saudita (FIM)
+//   Grupo G: Bélgica 0-0 Irão (FIM)
+//   Grupo H: Uruguai 2-2 Cabo Verde (FIM)
+// Jogos de hoje (22/06):
+//   Grupo G: Nova Zelândia vs Egito (02:00 Lisboa)
+//   Grupo J: Argentina vs Áustria (18:00 Lisboa)
+//   Grupo I: França vs Iraque (22:00 Lisboa)
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de hoje (21/06)
-  { id: 537801, homeTeam: "Espanha", awayTeam: "Arábia Saudita", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  { id: 537802, homeTeam: "Bélgica", awayTeam: "Irão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
-  { id: 537803, homeTeam: "Uruguai", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  { id: 537804, homeTeam: "Nova Zelândia", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
+  // Jogos de hoje (22/06)
+  { id: 537805, homeTeam: "Nova Zelândia", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
+  { id: 537806, homeTeam: "Argentina", awayTeam: "Áustria", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
+  { id: 537807, homeTeam: "França", awayTeam: "Iraque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
   
-  // Resultados de ontem (20/06)
-  { id: 537701, homeTeam: "Holanda", awayTeam: "Suécia", homeScore: 5, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
-  { id: 537702, homeTeam: "Alemanha", awayTeam: "Costa do Marfim", homeScore: 2, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
-  { id: 537703, homeTeam: "Equador", awayTeam: "Curaçau", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
+  // Resultados de ontem (21/06)
+  { id: 537801, homeTeam: "Espanha", awayTeam: "Arábia Saudita", homeScore: 4, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
+  { id: 537802, homeTeam: "Bélgica", awayTeam: "Irão", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
+  { id: 537803, homeTeam: "Uruguai", awayTeam: "Cabo Verde", homeScore: 2, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", awayTeam: "Arábia Saudita",
+  homeTeam: "Argentina", awayTeam: "Áustria",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

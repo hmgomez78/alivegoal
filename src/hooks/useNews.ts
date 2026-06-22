@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 21/06/2026
+// Notícias de fallback — análises, contexto e investigação — 22/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O impacto de Deniz Undav no sistema de Nagelsmann',
-      excerpt: 'A Alemanha esteve a perder contra a Costa do Marfim, mas a entrada de Deniz Undav mudou o jogo. Com dois golos, o avançado mostrou porque é a arma secreta de Julian Nagelsmann. Analisamos como a sua movimentação entre linhas desequilibrou a defesa africana e o que isto significa para os próximos jogos da Mannschaft no Mundial.',
+      title: 'ANÁLISE TÁTICA: O impacto da política de veteranos de Mourinho no Real Madrid',
+      excerpt: 'A chegada de Bernardo Silva e Marc Cucurella marca uma viragem radical na estratégia do Real Madrid. José Mourinho abandonou a aposta em jovens promessas para construir uma equipa experiente, com uma média de idades de 29 anos. Analisamos como esta mentalidade de "vencer no imediato" vai alterar o sistema tático dos merengues e o que significa para o futuro de jogadores como Arda Güler e Endrick.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -155,8 +155,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: A revolução de Mourinho no Real Madrid — O que significa a chegada de Cucurella?',
-      excerpt: 'José Mourinho está de volta ao Real Madrid e já começou a impor a sua lei. A contratação de Marc Cucurella por 60 milhões de euros gerou controvérsia, com muitos adeptos a questionarem o preço e o perfil do jogador. Analisamos a mudança de paradigma no Bernabéu: do foco em jovens talentos para a exigência de rendimento imediato do "Special One".',
+      title: 'ESCÂNDALO: A encruzilhada de Vinícius Júnior e as exigências salariais',
+      excerpt: 'O braço de ferro entre Vinícius Júnior e Florentino Pérez ameaça desestabilizar o balneário do Real Madrid. Com a chegada de Mourinho e novas estrelas, as exigências salariais do brasileiro para renovar além de 2027 estão a gerar tensão. Exploramos os cenários possíveis, incluindo uma venda recorde neste verão para equilibrar as contas do clube.',
       category: 'ESCÂNDALO',
       readTime: '7 min',
       date: formatToday,
@@ -164,8 +164,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Casemiro e Messi juntos — O Inter Miami está a construir um império?',
-      excerpt: 'A confirmação de que Casemiro vai juntar-se ao Inter Miami na MLS é um marco histórico. O brasileiro vai reencontrar antigos rivais do Barcelona (Messi, Suárez, Busquets e Alba) na mesma equipa. Analisamos o impacto desportivo e comercial desta transferência, e se o Inter Miami pode ser considerado o melhor plantel da história do futebol norte-americano.',
+      title: 'TRANSFERÊNCIAS: A novela Enzo Fernández — O Chelsea vai ceder aos €120M?',
+      excerpt: 'O interesse do Real Madrid em Enzo Fernández é público, mas o Chelsea mantém-se inflexível na avaliação de 120 milhões de euros. Analisamos o impacto financeiro desta possível transferência, como o médio argentino encaixaria no meio-campo de Mourinho ao lado de Bernardo Silva, e as alternativas que os merengues têm em carteira caso o negócio falhe.',
       category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
@@ -173,8 +173,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ANÁLISE TÁTICA: Holanda 5-1 Suécia — A máquina ofensiva de Ronald Koeman',
-      excerpt: 'A goleada da Holanda sobre a Suécia (5-1) foi uma demonstração de força. Cody Gakpo e Brian Brobbey estiveram imparáveis. Analisamos a dinâmica ofensiva da equipa laranja, a forma como exploraram os espaços deixados pela defesa sueca e se esta exibição coloca a Holanda como uma das principais candidatas ao título mundial.',
+      title: 'ANÁLISE TÁTICA: Argentina de Messi — O segredo por trás do domínio no Mundial 2026',
+      excerpt: 'Após uma vitória convincente por 3-0 contra a Argélia, a Argentina prepara-se para enfrentar a Áustria. Analisamos a evolução tática de Lionel Scaloni, o papel de Messi a atuar mais recuado como organizador de jogo, e a importância de Rodrigo De Paul como o motor incansável do meio-campo da Albiceleste.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -182,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Espanha vs Arábia Saudita e Bélgica vs Irão — Previsões para hoje',
-      excerpt: 'O Dia 11 do Mundial 2026 traz confrontos interessantes. A Espanha defronta a Arábia Saudita e a Bélgica joga contra o Irão. Analisamos as odds, o momento de forma das equipas e sugerimos as melhores apostas para estes jogos, incluindo mercados de golos e desempenhos individuais.',
+      title: 'TIPS DE APOSTAS: Nova Zelândia vs Egito e França vs Iraque — As melhores odds',
+      excerpt: 'O dia 22 de junho traz confrontos decisivos no Mundial 2026. A Nova Zelândia defronta o Egito num jogo que promete golos de parte a parte, enquanto a França de Mbappé é ampla favorita contra o Iraque. Sugerimos as melhores apostas para estes jogos, focando nos mercados de golos, handicaps asiáticos e desempenhos individuais.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -191,8 +191,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Elliot Anderson no Man City? O que Guardiola vê no jovem inglês',
-      excerpt: 'O Manchester City está disposto a pagar 120 milhões de libras por Elliot Anderson, superando o interesse do Manchester United. O que faz deste jovem do Nottingham Forest um alvo tão cobiçado? Analisamos o perfil do jogador, a sua evolução tática e como se encaixaria no sistema de Pep Guardiola no Etihad.',
+      title: 'TRANSFERÊNCIAS: O futuro de Mbappé — A MLS no horizonte após o Mundial?',
+      excerpt: 'Kylian Mbappé revelou que está aberto a jogar na MLS no final da sua carreira, um comentário que agitou os bastidores do futebol norte-americano. Analisamos o impacto destas declarações, o convite de David Beckham e o que isso significa para a expansão global da liga, enquanto o astro francês continua focado em brilhar pela França no Mundial 2026.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
