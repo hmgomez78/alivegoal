@@ -139,24 +139,24 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 22/06/2026
+// Notícias de fallback — análises, contexto e investigação — 23/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O impacto da política de veteranos de Mourinho no Real Madrid',
-      excerpt: 'A chegada de Bernardo Silva e Marc Cucurella marca uma viragem radical na estratégia do Real Madrid. José Mourinho abandonou a aposta em jovens promessas para construir uma equipa experiente, com uma média de idades de 29 anos. Analisamos como esta mentalidade de "vencer no imediato" vai alterar o sistema tático dos merengues e o que significa para o futuro de jogadores como Arda Güler e Endrick.',
+      title: 'ANÁLISE TÁTICA: O segredo de Messi — Como o GOAT quebrou o recorde de Klose no Mundial 2026',
+      excerpt: 'Lionel Messi tornou-se o maior goleador de sempre em Mundiais com 17 golos, superando Miroslav Klose. Analisamos a evolução tática que permitiu ao astro argentino continuar a marcar a este nível aos 38 anos: o papel de organizador de jogo mais recuado, a cumplicidade com Lautaro Martínez e a forma como Scaloni construiu a equipa em torno das suas características únicas.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: A encruzilhada de Vinícius Júnior e as exigências salariais',
-      excerpt: 'O braço de ferro entre Vinícius Júnior e Florentino Pérez ameaça desestabilizar o balneário do Real Madrid. Com a chegada de Mourinho e novas estrelas, as exigências salariais do brasileiro para renovar além de 2027 estão a gerar tensão. Exploramos os cenários possíveis, incluindo uma venda recorde neste verão para equilibrar as contas do clube.',
+      title: 'ESCÂNDALO: Ronaldo vs Martinez — A crise silenciosa que pode explodir em Portugal',
+      excerpt: 'A polémica em torno de Cristiano Ronaldo na seleção portuguesa está a crescer. Após um empate frustrante com o Congo DR, fontes próximas do balneário revelam tensão entre o capitão e o treinador Roberto Martinez. Hoje, Portugal joga contra o Uzbequistão numa partida que pode ser decisiva não só para a qualificação, mas também para o futuro de Ronaldo na seleção nacional.',
       category: 'ESCÂNDALO',
       readTime: '7 min',
       date: formatToday,
@@ -164,26 +164,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: A novela Enzo Fernández — O Chelsea vai ceder aos €120M?',
-      excerpt: 'O interesse do Real Madrid em Enzo Fernández é público, mas o Chelsea mantém-se inflexível na avaliação de 120 milhões de euros. Analisamos o impacto financeiro desta possível transferência, como o médio argentino encaixaria no meio-campo de Mourinho ao lado de Bernardo Silva, e as alternativas que os merengues têm em carteira caso o negócio falhe.',
+      title: 'TRANSFERÊNCIAS: O dilema do Man Utd — Tchouaméni ou Camavinga? A análise completa',
+      excerpt: 'O Manchester United está a ponderar duas opções distintas para reforçar o meio-campo. Tchouaméni é o "sonho" do INEOS mas o Real Madrid não quer vender, e o seu salário é um obstáculo. Camavinga, cujo valor caiu €50M, pode ser mais acessível. Analisamos os perfis táticos de ambos os jogadores e qual seria a melhor opção para o projeto de Michael Carrick.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '6 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'ANÁLISE TÁTICA: Argentina de Messi — O segredo por trás do domínio no Mundial 2026',
-      excerpt: 'Após uma vitória convincente por 3-0 contra a Argélia, a Argentina prepara-se para enfrentar a Áustria. Analisamos a evolução tática de Lionel Scaloni, o papel de Messi a atuar mais recuado como organizador de jogo, e a importância de Rodrigo De Paul como o motor incansável do meio-campo da Albiceleste.',
+      title: 'ANÁLISE TÁTICA: Haaland e a Noruega — A máquina de golos que ameaça os favoritos ao título',
+      excerpt: 'Erling Haaland já marcou 4 golos em 2 jogos no Mundial 2026 e a Noruega lidera o Grupo I com 6 pontos. Analisamos o sistema tático de Ståle Solbakken que maximiza as capacidades do avançado do Manchester City, a forma como a equipa norueguesa equilibra o ataque explosivo com uma defesa sólida, e por que razão podem ser uma surpresa nos oitavos de final.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Nova Zelândia vs Egito e França vs Iraque — As melhores odds',
-      excerpt: 'O dia 22 de junho traz confrontos decisivos no Mundial 2026. A Nova Zelândia defronta o Egito num jogo que promete golos de parte a parte, enquanto a França de Mbappé é ampla favorita contra o Iraque. Sugerimos as melhores apostas para estes jogos, focando nos mercados de golos, handicaps asiáticos e desempenhos individuais.',
+      title: 'TIPS DE APOSTAS: Portugal vs Uzbequistão e Inglaterra vs Gana — As melhores apostas do dia',
+      excerpt: 'O dia 23 de junho oferece jogos decisivos no Mundial 2026. Portugal precisa urgentemente de vencer o Uzbequistão para manter a qualificação em aberto, enquanto a Inglaterra de Harry Kane é favorita frente ao Gana. Analisamos as melhores apostas para estes jogos, incluindo mercados de golos, handicaps asiáticos e desempenhos individuais com odds atrativas.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -191,10 +191,10 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: O futuro de Mbappé — A MLS no horizonte após o Mundial?',
-      excerpt: 'Kylian Mbappé revelou que está aberto a jogar na MLS no final da sua carreira, um comentário que agitou os bastidores do futebol norte-americano. Analisamos o impacto destas declarações, o convite de David Beckham e o que isso significa para a expansão global da liga, enquanto o astro francês continua focado em brilhar pela França no Mundial 2026.',
+      title: 'TRANSFERÊNCIAS: Grimaldo e Kang-in Lee para o Atlético — A revolução silenciosa de Simeone',
+      excerpt: 'O Atlético de Madrid está a construir uma equipa renovada para a próxima temporada. A chegada de Alejandro Grimaldo do Leverkusen e as negociações avançadas com Kang-in Lee do PSG mostram a ambição dos colchoneros. Analisamos como estas contratações se encaixam no sistema de Diego Simeone e o que significam para as aspirações do clube na Liga dos Campeões.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
