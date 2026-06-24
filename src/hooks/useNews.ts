@@ -139,62 +139,62 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 23/06/2026
+// Notícias de fallback — análises, contexto e investigação — 24/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O segredo de Messi — Como o GOAT quebrou o recorde de Klose no Mundial 2026',
-      excerpt: 'Lionel Messi tornou-se o maior goleador de sempre em Mundiais com 17 golos, superando Miroslav Klose. Analisamos a evolução tática que permitiu ao astro argentino continuar a marcar a este nível aos 38 anos: o papel de organizador de jogo mais recuado, a cumplicidade com Lautaro Martínez e a forma como Scaloni construiu a equipa em torno das suas características únicas.',
+      title: 'ANÁLISE TÁTICA: O renascimento de Portugal — Como Martinez soltou Cristiano Ronaldo',
+      excerpt: 'A goleada de 5-0 de Portugal sobre o Uzbequistão dissipou as dúvidas sobre o futuro da seleção no Mundial 2026. Analisamos as mudanças táticas de Roberto Martinez que permitiram a Cristiano Ronaldo brilhar com dois golos aos 41 anos, o papel fundamental de Bruno Fernandes na construção e a solidez defensiva que faltou no jogo inaugural.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 2,
+      title: 'ESCÂNDALO: O impacto do caso Brendan Sorsby na integridade do desporto',
+      excerpt: 'A decisão da NFL de cancelar o draft suplementar devido ao escândalo de apostas de Brendan Sorsby marca um precedente histórico. Investigamos os detalhes das mais de 9.000 apostas feitas pelo ex-quarterback, as ramificações legais e financeiras para o desporto universitário e como as ligas profissionais estão a reforçar as suas políticas anti-jogo.',
+      category: 'ESCÂNDALO',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'TRANSFERÊNCIAS: Julián Álvarez no Barcelona — A peça que falta para destronar o Real Madrid?',
+      excerpt: 'A possível transferência de €150M de Julián Álvarez para o Barcelona poderá alterar o equilíbrio de poder em Espanha. Com a fúria do Atlético de Madrid e o acordo verbal já alcançado, analisamos como o avançado argentino se encaixaria no esquema de Hansi Flick, substituindo Lewandowski e oferecendo uma dinâmica totalmente nova ao ataque catalão.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'ANÁLISE TÁTICA: A muralha do Gana — Como anular a Inglaterra de Thomas Tuchel',
+      excerpt: 'O empate 0-0 entre Gana e Inglaterra foi uma lição de organização defensiva. Analisamos detalhadamente a estratégia da seleção africana para neutralizar o poderoso ataque inglês: o bloco baixo compacto, as transições rápidas bloqueadas e a forma como isolaram Harry Kane, provando que a organização tática pode contrariar a superioridade técnica.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 2,
-      title: 'ESCÂNDALO: Ronaldo vs Martinez — A crise silenciosa que pode explodir em Portugal',
-      excerpt: 'A polémica em torno de Cristiano Ronaldo na seleção portuguesa está a crescer. Após um empate frustrante com o Congo DR, fontes próximas do balneário revelam tensão entre o capitão e o treinador Roberto Martinez. Hoje, Portugal joga contra o Uzbequistão numa partida que pode ser decisiva não só para a qualificação, mas também para o futuro de Ronaldo na seleção nacional.',
-      category: 'ESCÂNDALO',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: O dilema do Man Utd — Tchouaméni ou Camavinga? A análise completa',
-      excerpt: 'O Manchester United está a ponderar duas opções distintas para reforçar o meio-campo. Tchouaméni é o "sonho" do INEOS mas o Real Madrid não quer vender, e o seu salário é um obstáculo. Camavinga, cujo valor caiu €50M, pode ser mais acessível. Analisamos os perfis táticos de ambos os jogadores e qual seria a melhor opção para o projeto de Michael Carrick.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ANÁLISE TÁTICA: Haaland e a Noruega — A máquina de golos que ameaça os favoritos ao título',
-      excerpt: 'Erling Haaland já marcou 4 golos em 2 jogos no Mundial 2026 e a Noruega lidera o Grupo I com 6 pontos. Analisamos o sistema tático de Ståle Solbakken que maximiza as capacidades do avançado do Manchester City, a forma como a equipa norueguesa equilibra o ataque explosivo com uma defesa sólida, e por que razão podem ser uma surpresa nos oitavos de final.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
       id: 5,
-      title: 'TIPS DE APOSTAS: Portugal vs Uzbequistão e Inglaterra vs Gana — As melhores apostas do dia',
-      excerpt: 'O dia 23 de junho oferece jogos decisivos no Mundial 2026. Portugal precisa urgentemente de vencer o Uzbequistão para manter a qualificação em aberto, enquanto a Inglaterra de Harry Kane é favorita frente ao Gana. Analisamos as melhores apostas para estes jogos, incluindo mercados de golos, handicaps asiáticos e desempenhos individuais com odds atrativas.',
+      title: 'TIPS DE APOSTAS: Suíça vs Canadá e Marrocos vs Haiti — Onde está o valor hoje?',
+      excerpt: 'Os jogos de 24 de junho apresentam excelentes oportunidades de aposta no Mundial 2026. O confronto entre Suíça e Canadá promete ser equilibrado e com poucos golos, enquanto o Marrocos é amplo favorito frente ao Haiti. Analisamos as estatísticas, os confrontos diretos e as melhores odds disponíveis nos mercados de Mais/Menos golos e Ambas Marcam.',
       category: 'TIPS DE APOSTAS',
-      readTime: '7 min',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Grimaldo e Kang-in Lee para o Atlético — A revolução silenciosa de Simeone',
-      excerpt: 'O Atlético de Madrid está a construir uma equipa renovada para a próxima temporada. A chegada de Alejandro Grimaldo do Leverkusen e as negociações avançadas com Kang-in Lee do PSG mostram a ambição dos colchoneros. Analisamos como estas contratações se encaixam no sistema de Diego Simeone e o que significam para as aspirações do clube na Liga dos Campeões.',
+      title: 'TRANSFERÊNCIAS: O novo Chelsea de Maresca — Por que Maxence Lacroix é a prioridade',
+      excerpt: 'O Chelsea está determinado a reforçar a sua defesa e Maxence Lacroix é o alvo principal. Exploramos as razões pelas quais o novo treinador Enzo Maresca vê o defesa francês como essencial para o seu sistema de posse de bola: a sua velocidade na recuperação, a capacidade de sair a jogar e a agressividade nos duelos individuais.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '6 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },

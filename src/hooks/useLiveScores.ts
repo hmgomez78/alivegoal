@@ -79,43 +79,43 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (23/06/2026) — aparecem primeiro
+// Jogos com tips hoje (24/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Portugal", "Uzbequistão", "Uzbekistan",
-  "Inglaterra", "Gana", "England", "Ghana",
-  "Panamá", "Croácia", "Panama", "Croatia",
-  "Colômbia", "Congo", "Colombia",
+  "Suíça", "Canadá", "Switzerland", "Canada",
+  "Bósnia", "Qatar", "Bosnia",
+  "Marrocos", "Haiti", "Morocco",
+  "Escócia", "Brasil", "Scotland", "Brazil",
 ];
 
-// Fallback data com jogos reais (atualizado 23/06/2026)
-// NOTA: Terça-feira — Dia 13 do Mundial 2026:
-// Resultados de ontem (22/06):
-//   Grupo J: Argentina 2-0 Áustria (FIM) — Messi bate recorde histórico!
-//   Grupo I: França 3-0 Iraque (FIM) — Mbappé marca golaço
-//   Grupo I: Noruega 3-2 Senegal (FIM) — Haaland marca dois golos
-// Jogos de hoje (23/06):
-//   Grupo K: Portugal vs Uzbequistão (18:00 Lisboa)
-//   Grupo L: Inglaterra vs Gana (21:00 Lisboa)
-//   Grupo L: Panamá vs Croácia (00:00 Lisboa)
-//   Grupo K: Colômbia vs Congo DR (03:00 Lisboa)
+// Fallback data com jogos reais (atualizado 24/06/2026)
+// NOTA: Quarta-feira — Dia 14 do Mundial 2026:
+// Resultados de ontem (23/06):
+//   Grupo K: Portugal 5-0 Uzbequistão (FIM) — Ronaldo bisa
+//   Grupo L: Inglaterra 0-0 Gana (FIM) — Empate frustrante
+//   Grupo L: Panamá 0-1 Croácia (FIM)
+// Jogos de hoje (24/06):
+//   Grupo B: Suíça vs Canadá (20:00 Lisboa)
+//   Grupo B: Bósnia vs Qatar (20:00 Lisboa)
+//   Grupo C: Marrocos vs Haiti (23:00 Lisboa)
+//   Grupo C: Escócia vs Brasil (23:00 Lisboa)
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de hoje (23/06)
-  { id: 537810, homeTeam: "Portugal", awayTeam: "Uzbequistão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
-  { id: 537811, homeTeam: "Inglaterra", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
-  { id: 537812, homeTeam: "Panamá", awayTeam: "Croácia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
-  { id: 537813, homeTeam: "Colômbia", awayTeam: "Congo DR", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  // Jogos de hoje (24/06)
+  { id: 537337, homeTeam: "Suíça", awayTeam: "Canadá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  { id: 537338, homeTeam: "Bósnia", awayTeam: "Qatar", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo B", leagueId: 2000 },
+  { id: 537339, homeTeam: "Marrocos", awayTeam: "Haiti", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
+  { id: 537340, homeTeam: "Escócia", awayTeam: "Brasil", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — Grupo C", leagueId: 2000 },
 
-  // Resultados de ontem (22/06)
-  { id: 537806, homeTeam: "Argentina", awayTeam: "Áustria", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
-  { id: 537807, homeTeam: "França", awayTeam: "Iraque", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
-  { id: 537808, homeTeam: "Noruega", awayTeam: "Senegal", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  // Resultados de ontem (23/06)
+  { id: 537810, homeTeam: "Portugal", awayTeam: "Uzbequistão", homeScore: 5, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  { id: 537811, homeTeam: "Inglaterra", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
+  { id: 537812, homeTeam: "Panamá", awayTeam: "Croácia", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Portugal", awayTeam: "Uzbequistão",
+  homeTeam: "Suíça", awayTeam: "Canadá",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
