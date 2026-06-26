@@ -139,24 +139,24 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 24/06/2026
+// Notícias de fallback — análises, contexto e investigação — 26/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O renascimento de Portugal — Como Martinez soltou Cristiano Ronaldo',
-      excerpt: 'A goleada de 5-0 de Portugal sobre o Uzbequistão dissipou as dúvidas sobre o futuro da seleção no Mundial 2026. Analisamos as mudanças táticas de Roberto Martinez que permitiram a Cristiano Ronaldo brilhar com dois golos aos 41 anos, o papel fundamental de Bruno Fernandes na construção e a solidez defensiva que faltou no jogo inaugural.',
+      title: 'ANÁLISE TÁTICA: O Equador que derrubou a Alemanha — A tática que chocou o mundo',
+      excerpt: 'Como o Equador conseguiu o impossível e venceu a Alemanha por 2-1 no Mundial 2026? Analisamos a estratégia brilhante do selecionador equatoriano, o pressing alto que desorganizou a Mannschaft, os erros defensivos alemães e o papel crucial dos avantes equatorianos na criação de espaços. Um dos maiores choques da história recente dos Mundiais explicado ao pormenor.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O impacto do caso Brendan Sorsby na integridade do desporto',
-      excerpt: 'A decisão da NFL de cancelar o draft suplementar devido ao escândalo de apostas de Brendan Sorsby marca um precedente histórico. Investigamos os detalhes das mais de 9.000 apostas feitas pelo ex-quarterback, as ramificações legais e financeiras para o desporto universitário e como as ligas profissionais estão a reforçar as suas políticas anti-jogo.',
+      title: 'ESCÂNDALO: O incidente de Guadalajara — Que falhas de segurança permitiram o atropelamento?',
+      excerpt: 'O chocante incidente em que um carro embateu em adeptos nas imediações do estádio de Guadalajara levanta questões urgentes sobre a segurança nos Mundiais. Investigamos as falhas nos perímetros de segurança, a resposta das autoridades mexicanas, as críticas à FIFA e o que precisa de mudar para proteger os adeptos nos próximos jogos do torneio.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -164,37 +164,37 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Julián Álvarez no Barcelona — A peça que falta para destronar o Real Madrid?',
-      excerpt: 'A possível transferência de €150M de Julián Álvarez para o Barcelona poderá alterar o equilíbrio de poder em Espanha. Com a fúria do Atlético de Madrid e o acordo verbal já alcançado, analisamos como o avançado argentino se encaixaria no esquema de Hansi Flick, substituindo Lewandowski e oferecendo uma dinâmica totalmente nova ao ataque catalão.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      title: 'ANÁLISE TÁTICA: Mbappé vs Haaland — Quem domina o Grupo I e o Mundial?',
+      excerpt: 'Dois dos maiores talentos do futebol mundial defrontam-se hoje com 4 golos cada no torneio. Comparamos os estilos de jogo de Mbappé e Haaland, as suas estatísticas no Mundial 2026, os sistemas táticos de França e Noruega e como cada um pode ser decisivo na fase a eliminar. Quem sai vencedor deste duelo de titãs?',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'ANÁLISE TÁTICA: A muralha do Gana — Como anular a Inglaterra de Thomas Tuchel',
-      excerpt: 'O empate 0-0 entre Gana e Inglaterra foi uma lição de organização defensiva. Analisamos detalhadamente a estratégia da seleção africana para neutralizar o poderoso ataque inglês: o bloco baixo compacto, as transições rápidas bloqueadas e a forma como isolaram Harry Kane, provando que a organização tática pode contrariar a superioridade técnica.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
+      title: 'TIPS DE APOSTAS: Espanha vs Uruguai e França vs Noruega — As melhores apostas de hoje',
+      excerpt: 'O Dia 16 do Mundial 2026 apresenta jogos de enorme qualidade e valor para apostadores. Espanha vs Uruguai é um jogo de vida ou morte para os sul-americanos, enquanto França vs Noruega é o duelo Mbappé vs Haaland. Analisamos as odds, as estatísticas e os mercados com maior valor para hoje, incluindo Mais de 2.5 golos, Ambas Marcam e Resultado Final.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'TIPS DE APOSTAS: Suíça vs Canadá e Marrocos vs Haiti — Onde está o valor hoje?',
-      excerpt: 'Os jogos de 24 de junho apresentam excelentes oportunidades de aposta no Mundial 2026. O confronto entre Suíça e Canadá promete ser equilibrado e com poucos golos, enquanto o Marrocos é amplo favorito frente ao Haiti. Analisamos as estatísticas, os confrontos diretos e as melhores odds disponíveis nos mercados de Mais/Menos golos e Ambas Marcam.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '6 min',
+      title: 'TRANSFERÊNCIAS: O Chelsea de Maresca — Marco Palestra, Lacroix e a reconstrução defensiva',
+      excerpt: 'Com a confirmação de Marco Palestra e o interesse em Maxence Lacroix, o Chelsea de Enzo Maresca está a construir uma defesa sólida para 2026-27. Analisamos como estas contratações se encaixam no sistema tático do treinador italiano, as saídas esperadas e por que o Chelsea pode ser um dos clubes mais ativos neste mercado de verão.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: O novo Chelsea de Maresca — Por que Maxence Lacroix é a prioridade',
-      excerpt: 'O Chelsea está determinado a reforçar a sua defesa e Maxence Lacroix é o alvo principal. Exploramos as razões pelas quais o novo treinador Enzo Maresca vê o defesa francês como essencial para o seu sistema de posse de bola: a sua velocidade na recuperação, a capacidade de sair a jogar e a agressividade nos duelos individuais.',
+      title: 'TRANSFERÊNCIAS: Man City e Elliot Anderson — O meio-campo do futuro de Guardiola',
+      excerpt: 'O Manchester City está a finalizar a contratação de Elliot Anderson por €63M. Analisamos por que Guardiola vê o jovem médio do Nottingham Forest como o substituto ideal para os jogadores que saíram, as suas características técnicas, a sua capacidade de jogo entre linhas e como se encaixa no sistema de posse de bola do City. Uma transferência que pode definir o futuro do clube.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
