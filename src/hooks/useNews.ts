@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 26/06/2026
+// Notícias de fallback — análises, contexto e investigação — 27/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Equador que derrubou a Alemanha — A tática que chocou o mundo',
-      excerpt: 'Como o Equador conseguiu o impossível e venceu a Alemanha por 2-1 no Mundial 2026? Analisamos a estratégia brilhante do selecionador equatoriano, o pressing alto que desorganizou a Mannschaft, os erros defensivos alemães e o papel crucial dos avantes equatorianos na criação de espaços. Um dos maiores choques da história recente dos Mundiais explicado ao pormenor.',
+      title: 'ANÁLISE TÁTICA: O hat-trick de Dembélé — Como a França destruiu a Noruega em 32 minutos',
+      excerpt: 'Ousmane Dembélé fez história ao marcar três golos em apenas 32 minutos contra a Noruega, tornando-se o segundo jogador a conseguir este feito num Mundial. Analisamos como o sistema de Deschamps criou os espaços para o avançado do PSG, a decisão de Solbakken de poupar Haaland e o que este resultado significa para a França nos oitavos de final. A Bota de Ouro está ao alcance do vencedor do Bola de Ouro 2025.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -155,8 +155,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O incidente de Guadalajara — Que falhas de segurança permitiram o atropelamento?',
-      excerpt: 'O chocante incidente em que um carro embateu em adeptos nas imediações do estádio de Guadalajara levanta questões urgentes sobre a segurança nos Mundiais. Investigamos as falhas nos perímetros de segurança, a resposta das autoridades mexicanas, as críticas à FIFA e o que precisa de mudar para proteger os adeptos nos próximos jogos do torneio.',
+      title: 'ESCÂNDALO: O fim de Muslera — O erro que eliminou o Uruguai e encerrou uma era',
+      excerpt: 'Fernando Muslera, com 40 anos e 19 jogos de Mundial às costas, cometeu o erro mais doloroso da sua carreira ao deixar escapar o remate de Alex Baena. O veterano foi substituído ao intervalo por Bielsa, numa cena que pode marcar o fim da sua carreira internacional. Analisamos o impacto desta eliminação, a raiva de Bielsa, o cartão vermelho de Canobbio e o que o futuro reserva ao futebol uruguaio.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -164,8 +164,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE TÁTICA: Mbappé vs Haaland — Quem domina o Grupo I e o Mundial?',
-      excerpt: 'Dois dos maiores talentos do futebol mundial defrontam-se hoje com 4 golos cada no torneio. Comparamos os estilos de jogo de Mbappé e Haaland, as suas estatísticas no Mundial 2026, os sistemas táticos de França e Noruega e como cada um pode ser decisivo na fase a eliminar. Quem sai vencedor deste duelo de titãs?',
+      title: 'ANÁLISE TÁTICA: Portugal vs Colômbia — Ronaldo vs James Rodríguez, o duelo que define o Grupo K',
+      excerpt: 'Portugal e Colômbia defrontam-se esta noite no Hard Rock Stadium de Miami num jogo que pode definir a liderança do Grupo K. Cristiano Ronaldo, ainda a perseguir o seu primeiro golo no torneio, enfrenta um James Rodríguez em excelente forma. Analisamos os sistemas táticos, os pontos fortes e fracos de cada equipa, os jogadores a vigiar e as apostas com maior valor para este confronto de gigantes.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -173,8 +173,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Espanha vs Uruguai e França vs Noruega — As melhores apostas de hoje',
-      excerpt: 'O Dia 16 do Mundial 2026 apresenta jogos de enorme qualidade e valor para apostadores. Espanha vs Uruguai é um jogo de vida ou morte para os sul-americanos, enquanto França vs Noruega é o duelo Mbappé vs Haaland. Analisamos as odds, as estatísticas e os mercados com maior valor para hoje, incluindo Mais de 2.5 golos, Ambas Marcam e Resultado Final.',
+      title: 'TIPS DE APOSTAS: Inglaterra vs Panamá e Portugal vs Colômbia — As melhores apostas do Dia 17',
+      excerpt: 'O Dia 17 do Mundial 2026 traz seis jogos de enorme qualidade. Inglaterra vs Panamá, Croácia vs Gana, Portugal vs Colômbia e Congo-DR vs Uzbequistão são os destaques. Analisamos as odds, as estatísticas e os mercados com maior valor, incluindo Mais de 2.5 golos no jogo da Inglaterra, Resultado Final para Portugal e o Acumulador do Dia com odds combinadas acima de 3.50.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -182,19 +182,19 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TRANSFERÊNCIAS: O Chelsea de Maresca — Marco Palestra, Lacroix e a reconstrução defensiva',
-      excerpt: 'Com a confirmação de Marco Palestra e o interesse em Maxence Lacroix, o Chelsea de Enzo Maresca está a construir uma defesa sólida para 2026-27. Analisamos como estas contratações se encaixam no sistema tático do treinador italiano, as saídas esperadas e por que o Chelsea pode ser um dos clubes mais ativos neste mercado de verão.',
+      title: 'TRANSFERÊNCIAS: Arsenal vs Newcastle — A batalha por Bruno Guimarães que vai dominar o verão',
+      excerpt: 'A proposta de £55M do Arsenal por Bruno Guimarães foi recusada, mas os Gunners estão determinados a melhorar a oferta. Analisamos por que Mikel Arteta vê o médio brasileiro como a peça que falta para o Arsenal ganhar a Premier League, as razões do Newcastle para resistir à venda, o papel do agente do jogador e como esta saga pode terminar. Uma das transferências mais explosivas do verão de 2026.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Man City e Elliot Anderson — O meio-campo do futuro de Guardiola',
-      excerpt: 'O Manchester City está a finalizar a contratação de Elliot Anderson por €63M. Analisamos por que Guardiola vê o jovem médio do Nottingham Forest como o substituto ideal para os jogadores que saíram, as suas características técnicas, a sua capacidade de jogo entre linhas e como se encaixa no sistema de posse de bola do City. Uma transferência que pode definir o futuro do clube.',
+      title: 'TRANSFERÊNCIAS: Tottenham e De Zerbi — Tonali, Fernandes e a revolução do meio-campo dos Spurs',
+      excerpt: 'Roberto De Zerbi está a transformar o Tottenham com contratações de alto nível. O acordo com Sandro Tonali por £85M e o interesse em Mateus Fernandes do West Ham mostram a ambição dos Spurs para 2026-27. Analisamos como estes médios se encaixam no sistema de De Zerbi, o que significa para o projeto do técnico italiano e por que o Tottenham pode ser uma das equipas mais excitantes da próxima Premier League.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },

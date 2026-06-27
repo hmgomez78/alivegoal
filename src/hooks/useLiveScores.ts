@@ -81,49 +81,50 @@ function getTeamLogo(team: any): string {
 
 // Jogos com tips hoje (26/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "França", "Noruega", "France", "Norway",
-  "Espanha", "Uruguai", "Spain", "Uruguay",
-  "Egito", "Irã", "Egypt", "Iran",
-  "Bélgica", "Nova Zelândia", "Belgium", "New Zealand",
+  "Inglaterra", "Panamá", "England", "Panama",
+  "Portugal", "Colômbia", "Portugal", "Colombia",
+  "Croácia", "Gana", "Croatia", "Ghana",
+  "Argentina", "Jordânia", "Argentina", "Jordan",
 ];
-
-// Fallback data com jogos reais (atualizado 26/06/2026)
-// NOTA: Sexta-feira — Dia 16 do Mundial 2026:
-// Resultados de ontem (25/06):
-//   Grupo E: Equador 2-1 Alemanha (FIM) — CHOQUE HISTÓRICO!
-//   Grupo E: Costa do Marfil vs Curaçao (FIM)
-//   Grupo F: Japão 1-1 Suécia (FIM) — Ambos apurados
-//   Grupo F: Holanda vs Tunísia (FIM)
-//   Grupo D: Turquia vs EUA (FIM)
-//   Grupo D: Paraguai vs Austrália (FIM)
-// Jogos de hoje (26/06):
-//   Grupo I: França vs Noruega (20:00 Lisboa) — Mbappé vs Haaland!
-//   Grupo I: Senegal vs Iraque (20:00 Lisboa)
-//   Grupo H: Espanha vs Uruguai (01:00 Lisboa 27/06)
-//   Grupo H: Cabo Verde vs Arábia Saudita (01:00 Lisboa 27/06)
-//   Grupo G: Egito vs Irã (04:00 Lisboa 27/06)
-//   Grupo G: Nova Zelândia vs Bélgica (04:00 Lisboa 27/06)
+// Fallback data com jogos reais (atualizado 27/06/2026)
+// NOTA: Sábado — Dia 17 do Mundial 2026:
+// Resultados de ontem (26/06):
+//   Grupo I: França 4-1 Noruega (FIM) — Hat-trick histórico de Dembélé!
+//   Grupo I: Senegal 5-0 Iraque (FIM)
+//   Grupo H: Espanha 1-0 Uruguai (FIM) — Uruguai eliminado!
+//   Grupo H: Cabo Verde 0-0 Arábia Saudita (FIM) — Cabo Verde apurado!
+//   Grupo G: Egito vs Irã (04:00 Lisboa 27/06 — a decorrer)
+//   Grupo G: Nova Zelândia vs Bélgica (04:00 Lisboa 27/06 — a decorrer)
+// Jogos de hoje (27/06):
+//   Grupo L: Inglaterra vs Panamá (22:00 Lisboa)
+//   Grupo L: Croácia vs Gana (22:00 Lisboa)
+//   Grupo K: Portugal vs Colômbia (00:30 Lisboa 28/06)
+//   Grupo K: Congo-DR vs Uzbequistão (00:30 Lisboa 28/06)
+//   Grupo J: Argélia vs Áustria (03:00 Lisboa 28/06)
+//   Grupo J: Jordânia vs Argentina (03:00 Lisboa 28/06)
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de hoje (26/06) — Grupo I
-  { id: 537401, homeTeam: "França", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
-  { id: 537402, homeTeam: "Senegal", awayTeam: "Iraque", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
-  // Grupo H (madrugada de 27/06 em Lisboa = 01:00)
-  { id: 537403, homeTeam: "Espanha", awayTeam: "Uruguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  { id: 537404, homeTeam: "Cabo Verde", awayTeam: "Arábia Saudita", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:00", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
-  // Grupo G (madrugada de 27/06 em Lisboa = 04:00)
-  { id: 537405, homeTeam: "Egito", awayTeam: "Irã", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 04:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
-  { id: 537406, homeTeam: "Nova Zelândia", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 04:00", league: "FIFA Mundial 2026 — Grupo G", leagueId: 2000 },
-
-  // Resultados de ontem (25/06)
-  { id: 537820, homeTeam: "Equador", awayTeam: "Alemanha", homeScore: 2, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo E", leagueId: 2000 },
-  { id: 537821, homeTeam: "Japão", awayTeam: "Suécia", homeScore: 1, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo F", leagueId: 2000 },
+  // Resultados de ontem (26/06) — Grupo I
+  { id: 537401, homeTeam: "França", awayTeam: "Noruega", homeScore: 4, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  { id: 537402, homeTeam: "Senegal", awayTeam: "Iraque", homeScore: 5, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo I", leagueId: 2000 },
+  // Resultados de ontem (26/06) — Grupo H
+  { id: 537403, homeTeam: "Espanha", awayTeam: "Uruguai", homeScore: 1, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
+  { id: 537404, homeTeam: "Cabo Verde", awayTeam: "Arábia Saudita", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Grupo H", leagueId: 2000 },
+  // Jogos de hoje (27/06) — Grupo L (22:00 Lisboa)
+  { id: 537501, homeTeam: "Inglaterra", awayTeam: "Panamá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
+  { id: 537502, homeTeam: "Croácia", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Grupo L", leagueId: 2000 },
+  // Jogos de hoje (27/06) — Grupo K (00:30 Lisboa 28/06)
+  { id: 537503, homeTeam: "Portugal", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:30", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  { id: 537504, homeTeam: "Congo-DR", awayTeam: "Uzbequistão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:30", league: "FIFA Mundial 2026 — Grupo K", leagueId: 2000 },
+  // Jogos de hoje (27/06) — Grupo J (03:00 Lisboa 28/06)
+  { id: 537505, homeTeam: "Jordânia", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
+  { id: 537506, homeTeam: "Argélia", awayTeam: "Áustria", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 03:00", league: "FIFA Mundial 2026 — Grupo J", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "França", awayTeam: "Noruega",
+  homeTeam: "Portugal", awayTeam: "Colômbia",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
