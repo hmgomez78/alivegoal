@@ -139,15 +139,15 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 27/06/2026
+// Notícias de fallback — análises, contexto e investigação — 28/06/2026
 function getFallbackNews(): NewsArticle[] {
   const today = new Date();
   const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O hat-trick de Dembélé — Como a França destruiu a Noruega em 32 minutos',
-      excerpt: 'Ousmane Dembélé fez história ao marcar três golos em apenas 32 minutos contra a Noruega, tornando-se o segundo jogador a conseguir este feito num Mundial. Analisamos como o sistema de Deschamps criou os espaços para o avançado do PSG, a decisão de Solbakken de poupar Haaland e o que este resultado significa para a França nos oitavos de final. A Bota de Ouro está ao alcance do vencedor do Bola de Ouro 2025.',
+      title: 'ANÁLISE TÁTICA: Kane faz história — Como Bellingham e Tuchel transformaram a Inglaterra numa potência do Mundial',
+      excerpt: 'Harry Kane tornou-se o maior marcador inglês de sempre em Mundiais com 11 golos, ultrapassando Gary Lineker. Mas a grande história da vitória 2-0 sobre o Panamá foi Jude Bellingham: golo, assistência e domínio total do jogo. Analisamos como Thomas Tuchel construiu uma Inglaterra sólida e perigosa, o papel de Rashford e Saka no ataque, e por que os Three Lions são agora sérios candidatos ao título.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -155,8 +155,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O fim de Muslera — O erro que eliminou o Uruguai e encerrou uma era',
-      excerpt: 'Fernando Muslera, com 40 anos e 19 jogos de Mundial às costas, cometeu o erro mais doloroso da sua carreira ao deixar escapar o remate de Alex Baena. O veterano foi substituído ao intervalo por Bielsa, numa cena que pode marcar o fim da sua carreira internacional. Analisamos o impacto desta eliminação, a raiva de Bielsa, o cartão vermelho de Canobbio e o que o futuro reserva ao futebol uruguaio.',
+      title: 'ESCÂNDALO: A noite negra de Ronaldo — Colômbia 0-0 Portugal e as críticas que abalaram CR7',
+      excerpt: 'Cristiano Ronaldo foi completamente apagado pela defesa colombiana no Hard Rock Stadium. Sem um único remate enquadrado, o capitão português viu Diogo Costa salvar Portugal de uma derrota vergonhosa. A Colômbia teve 24 remates e um xG de 1.63. Analisamos o que correu mal, a crise de forma de Ronaldo no Mundial, e o que Portugal precisa de mudar para bater a Croácia nos oitavos de final.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -164,8 +164,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE TÁTICA: Portugal vs Colômbia — Ronaldo vs James Rodríguez, o duelo que define o Grupo K',
-      excerpt: 'Portugal e Colômbia defrontam-se esta noite no Hard Rock Stadium de Miami num jogo que pode definir a liderança do Grupo K. Cristiano Ronaldo, ainda a perseguir o seu primeiro golo no torneio, enfrenta um James Rodríguez em excelente forma. Analisamos os sistemas táticos, os pontos fortes e fracos de cada equipa, os jogadores a vigiar e as apostas com maior valor para este confronto de gigantes.',
+      title: 'ANÁLISE TÁTICA: Congo-DR 3-1 Uzbequistão — A história mais bonita do Mundial 2026',
+      excerpt: 'O Congo-DR escreveu uma das páginas mais bonitas do Mundial 2026 ao eliminar o Uzbequistão com uma reviravolta épica. Yoane Wissa foi o herói com dois golos, incluindo um penálti decisivo. O VAR anulou um golo congolês no início, tornando a vitória ainda mais dramática. Analisamos o sistema tático do Congo-DR, o papel de Wissa e Mayele, e o que esperar dos africanos nos oitavos de final contra a Inglaterra.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,
@@ -173,8 +173,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: Inglaterra vs Panamá e Portugal vs Colômbia — As melhores apostas do Dia 17',
-      excerpt: 'O Dia 17 do Mundial 2026 traz seis jogos de enorme qualidade. Inglaterra vs Panamá, Croácia vs Gana, Portugal vs Colômbia e Congo-DR vs Uzbequistão são os destaques. Analisamos as odds, as estatísticas e os mercados com maior valor, incluindo Mais de 2.5 golos no jogo da Inglaterra, Resultado Final para Portugal e o Acumulador do Dia com odds combinadas acima de 3.50.',
+      title: 'TIPS DE APOSTAS: Oitavos de Final do Mundial 2026 — As melhores apostas para a fase a eliminar',
+      excerpt: 'O quadro dos oitavos de final do Mundial 2026 está a tomar forma. Inglaterra vs Congo-DR, Portugal vs Croácia, Argentina vs Cabo Verde e Colômbia vs Gana são alguns dos duelos confirmados. Analisamos as odds, as estatísticas e os mercados com maior valor para cada jogo, incluindo os favoritos, as surpresas possíveis e o nosso acumulador especial para a fase a eliminar.',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -182,8 +182,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'TRANSFERÊNCIAS: Arsenal vs Newcastle — A batalha por Bruno Guimarães que vai dominar o verão',
-      excerpt: 'A proposta de £55M do Arsenal por Bruno Guimarães foi recusada, mas os Gunners estão determinados a melhorar a oferta. Analisamos por que Mikel Arteta vê o médio brasileiro como a peça que falta para o Arsenal ganhar a Premier League, as razões do Newcastle para resistir à venda, o papel do agente do jogador e como esta saga pode terminar. Uma das transferências mais explosivas do verão de 2026.',
+      title: 'TRANSFERÊNCIAS: Real Madrid em modo revolução — Cucurella, Bernardo Silva, Konaté e Dumfries confirmados',
+      excerpt: 'O Real Madrid está a construir uma equipa para dominar a Europa por anos. Marc Cucurella (€55M do Chelsea), Bernardo Silva (Bosman do Man City) e Ibrahima Konaté (Bosman do Liverpool) já estão confirmados. Denzel Dumfries do Inter Milão está a ser finalizado. Com Mbappé já no plantel, os merengues querem ainda Enzo Fernández do Chelsea. Analisamos como estas contratações transformam o Real Madrid e o que significa para a Premier League perder tantas estrelas.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
@@ -191,10 +191,10 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Tottenham e De Zerbi — Tonali, Fernandes e a revolução do meio-campo dos Spurs',
-      excerpt: 'Roberto De Zerbi está a transformar o Tottenham com contratações de alto nível. O acordo com Sandro Tonali por £85M e o interesse em Mateus Fernandes do West Ham mostram a ambição dos Spurs para 2026-27. Analisamos como estes médios se encaixam no sistema de De Zerbi, o que significa para o projeto do técnico italiano e por que o Tottenham pode ser uma das equipas mais excitantes da próxima Premier League.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      title: 'LESÕES: Ugarte lesionado gravemente — O impacto no Man Utd e no mercado de transferências',
+      excerpt: 'Manuel Ugarte foi retirado de maca do jogo Uruguai vs Espanha com uma lesão aparentemente grave no joelho. O médio do Manchester United estava previsto para sair do Old Trafford este verão, mas a lesão pode adiar esses planos. Analisamos o impacto desta notícia para o Man Utd, que agora pode ter de manter o jogador, e como isto afeta a corrida por Mateus Fernandes (£85M) e outros alvos dos Red Devils no mercado.',
+      category: 'LESÕES',
+      readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
