@@ -139,15 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 28/06/2026
+// Notícias de fallback — análises, contexto e investigação — 29/06/2026
 function getFallbackNews(): NewsArticle[] {
-  const today = new Date();
-  const formatToday = today.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
+  const formatToday = '29/06/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Kane faz história — Como Bellingham e Tuchel transformaram a Inglaterra numa potência do Mundial',
-      excerpt: 'Harry Kane tornou-se o maior marcador inglês de sempre em Mundiais com 11 golos, ultrapassando Gary Lineker. Mas a grande história da vitória 2-0 sobre o Panamá foi Jude Bellingham: golo, assistência e domínio total do jogo. Analisamos como Thomas Tuchel construiu uma Inglaterra sólida e perigosa, o papel de Rashford e Saka no ataque, e por que os Three Lions são agora sérios candidatos ao título.',
+      title: 'ANÁLISE TÁTICA: Eustáquio Herói — O meio-campo do Canadá e a estreia de Alphonso Davies',
+      excerpt: 'O golo dramático de Stephen Eustáquio aos 92 minutos fez história para o Canadá. Mas a grande história da vitória por 1-0 sobre a África do Sul foi o domínio tático no meio-campo. Analisamos como Jesse Marsch construiu um Canadá sólido e perigoso, o impacto da entrada de Alphonso Davies aos 75 minutos, e por que a equipa norte-americana pode surpreender Holanda ou Marrocos nos oitavos de final.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -155,8 +154,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: A noite negra de Ronaldo — Colômbia 0-0 Portugal e as críticas que abalaram CR7',
-      excerpt: 'Cristiano Ronaldo foi completamente apagado pela defesa colombiana no Hard Rock Stadium. Sem um único remate enquadrado, o capitão português viu Diogo Costa salvar Portugal de uma derrota vergonhosa. A Colômbia teve 24 remates e um xG de 1.63. Analisamos o que correu mal, a crise de forma de Ronaldo no Mundial, e o que Portugal precisa de mudar para bater a Croácia nos oitavos de final.',
+      title: 'ESCÂNDALO: Golo Anulado à Colômbia no último minuto frente a Portugal gera revolta',
+      excerpt: 'Davinson Sánchez marcou o que seria o golo da vitória da Colômbia no último minuto contra Portugal, mas o VAR anulou o lance por um fora de jogo milimétrico. A decisão está a gerar enorme revolta nas redes sociais e na imprensa sul-americana. Analisamos as imagens do VAR, a exibição cinzenta de Portugal e as implicações deste empate que atirou Portugal para o segundo lugar do grupo.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -164,40 +163,40 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'ANÁLISE TÁTICA: Congo-DR 3-1 Uzbequistão — A história mais bonita do Mundial 2026',
-      excerpt: 'O Congo-DR escreveu uma das páginas mais bonitas do Mundial 2026 ao eliminar o Uzbequistão com uma reviravolta épica. Yoane Wissa foi o herói com dois golos, incluindo um penálti decisivo. O VAR anulou um golo congolês no início, tornando a vitória ainda mais dramática. Analisamos o sistema tático do Congo-DR, o papel de Wissa e Mayele, e o que esperar dos africanos nos oitavos de final contra a Inglaterra.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TIPS DE APOSTAS: Oitavos de Final do Mundial 2026 — As melhores apostas para a fase a eliminar',
-      excerpt: 'O quadro dos oitavos de final do Mundial 2026 está a tomar forma. Inglaterra vs Congo-DR, Portugal vs Croácia, Argentina vs Cabo Verde e Colômbia vs Gana são alguns dos duelos confirmados. Analisamos as odds, as estatísticas e os mercados com maior valor para cada jogo, incluindo os favoritos, as surpresas possíveis e o nosso acumulador especial para a fase a eliminar.',
+      title: 'TIPS DE APOSTAS: Brasil vs Japão e Alemanha vs Paraguai — Onde está o valor nos oitavos?',
+      excerpt: 'O Mundial 2026 entra nos oitavos de final com jogos emocionantes! O Brasil defronta o Japão e a Alemanha enfrenta o Paraguai. Analisamos as odds, estatísticas, lesões e H2H. Recomendamos apostar na vitória do Brasil (@1.45) e em Alemanha Vence & Mais de 1.5 Golos (@1.65). O acumulador do dia (Brasil + Alemanha) paga @2.39!',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'TRANSFERÊNCIAS: Real Madrid em modo revolução — Cucurella, Bernardo Silva, Konaté e Dumfries confirmados',
-      excerpt: 'O Real Madrid está a construir uma equipa para dominar a Europa por anos. Marc Cucurella (€55M do Chelsea), Bernardo Silva (Bosman do Man City) e Ibrahima Konaté (Bosman do Liverpool) já estão confirmados. Denzel Dumfries do Inter Milão está a ser finalizado. Com Mbappé já no plantel, os merengues querem ainda Enzo Fernández do Chelsea. Analisamos como estas contratações transformam o Real Madrid e o que significa para a Premier League perder tantas estrelas.',
+      id: 4,
+      title: 'TRANSFERÊNCIAS: A Revolução do Real Madrid — Cucurella, Bernardo Silva, Konaté e Dumfries!',
+      excerpt: 'O Real Madrid confirmou quatro contratações de luxo antes do início de julho: Marc Cucurella (€55M), Bernardo Silva (Custo Zero), Ibrahima Konaté e Denzel Dumfries. Analisamos como Carlo Ancelotti vai encaixar estas estrelas com Kylian Mbappé, Vini Jr e Bellingham. Será este o melhor plantel da história recente do futebol europeu?',
       category: 'TRANSFERÊNCIAS',
+      readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ÚLTIMA HORA: Inglaterra vence Panamá mas não convence — Bellingham e Kane resolvem',
+      excerpt: 'A Inglaterra garantiu o primeiro lugar do grupo com uma vitória por 2-0 sobre o Panamá, mas a exibição voltou a desiludir os adeptos. Jude Bellingham abriu o marcador e Harry Kane fez história com o seu 11º golo em Mundiais. Analisamos a pressão sobre Thomas Tuchel e por que a equipa precisa de melhorar drasticamente para o jogo dos oitavos contra a RD Congo.',
+      category: 'ÚLTIMA HORA',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'LESÕES: Ugarte lesionado gravemente — O impacto no Man Utd e no mercado de transferências',
-      excerpt: 'Manuel Ugarte foi retirado de maca do jogo Uruguai vs Espanha com uma lesão aparentemente grave no joelho. O médio do Manchester United estava previsto para sair do Old Trafford este verão, mas a lesão pode adiar esses planos. Analisamos o impacto desta notícia para o Man Utd, que agora pode ter de manter o jogador, e como isto afeta a corrida por Mateus Fernandes (£85M) e outros alvos dos Red Devils no mercado.',
+      title: 'LESÕES: Rotura de ligamentos para Ugarte — Manchester United em crise no mercado',
+      excerpt: 'O Manchester United confirmou o pior cenário: Manuel Ugarte sofreu uma rotura de ligamentos no joelho esquerdo. Esta lesão grave afasta o médio dos relvados por vários meses e arruína a sua transferência iminente. Analisamos o impacto financeiro para o United e as alternativas de urgência que o clube terá de procurar no mercado de verão.',
       category: 'LESÕES',
-      readTime: '6 min',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
-    },
+    }
   ];
 }
 
