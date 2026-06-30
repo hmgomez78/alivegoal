@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 29/06/2026
+// Notícias de fallback — análises, contexto e investigação — 30/06/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '29/06/2026';
+  const formatToday = '30/06/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Eustáquio Herói — O meio-campo do Canadá e a estreia de Alphonso Davies',
-      excerpt: 'O golo dramático de Stephen Eustáquio aos 92 minutos fez história para o Canadá. Mas a grande história da vitória por 1-0 sobre a África do Sul foi o domínio tático no meio-campo. Analisamos como Jesse Marsch construiu um Canadá sólido e perigoso, o impacto da entrada de Alphonso Davies aos 75 minutos, e por que a equipa norte-americana pode surpreender Holanda ou Marrocos nos oitavos de final.',
+      title: 'ANÁLISE TÁTICA: O Erro de Nagelsmann — Como o Paraguai anulou a Alemanha',
+      excerpt: 'A eliminação da Alemanha frente ao Paraguai nos oitavos de final vai ficar para a história. Analisamos como a defesa compacta do Paraguai, liderada por um inspirado Orlando Gill na baliza, conseguiu neutralizar o ataque germânico. O golo de Julio Enciso e a incapacidade de Julian Nagelsmann em encontrar soluções táticas além dos cruzamentos para Havertz ditaram o fim da linha para a "Mannschaft".',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -154,8 +154,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: Golo Anulado à Colômbia no último minuto frente a Portugal gera revolta',
-      excerpt: 'Davinson Sánchez marcou o que seria o golo da vitória da Colômbia no último minuto contra Portugal, mas o VAR anulou o lance por um fora de jogo milimétrico. A decisão está a gerar enorme revolta nas redes sociais e na imprensa sul-americana. Analisamos as imagens do VAR, a exibição cinzenta de Portugal e as implicações deste empate que atirou Portugal para o segundo lugar do grupo.',
+      title: 'ESCÂNDALO VAR: O Golo Anulado a Jonathan Tah que mudou a história do Mundial',
+      excerpt: 'No minuto 101 do prolongamento entre Alemanha e Paraguai, Jonathan Tah marcou o que parecia ser o golo da vitória. No entanto, o VAR interveio e anulou o lance por uma suposta falta de Waldemar Anton sobre o guarda-redes. Especialistas de arbitragem estão divididos, com muitos a argumentar que o contacto foi normal e o golo deveria ter sido validado. A Alemanha chora a eliminação.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -163,8 +163,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TIPS DE APOSTAS: Brasil vs Japão e Alemanha vs Paraguai — Onde está o valor nos oitavos?',
-      excerpt: 'O Mundial 2026 entra nos oitavos de final com jogos emocionantes! O Brasil defronta o Japão e a Alemanha enfrenta o Paraguai. Analisamos as odds, estatísticas, lesões e H2H. Recomendamos apostar na vitória do Brasil (@1.45) e em Alemanha Vence & Mais de 1.5 Golos (@1.65). O acumulador do dia (Brasil + Alemanha) paga @2.39!',
+      title: 'TIPS DE APOSTAS: França vs Suécia e Costa do Marfim vs Noruega — Onde está o valor?',
+      excerpt: 'Os oitavos de final do Mundial 2026 continuam com grandes jogos. A França é favorita contra a Suécia, mas os nórdicos têm sido surpreendentes. A Costa do Marfim defronta a Noruega num jogo que promete golos. Recomendamos apostar em Ambas Marcam no jogo da Noruega (@1.85) e Vitória da França (@1.55). O acumulador do dia paga @2.86!',
       category: 'TIPS DE APOSTAS',
       readTime: '7 min',
       date: formatToday,
@@ -172,8 +172,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: A Revolução do Real Madrid — Cucurella, Bernardo Silva, Konaté e Dumfries!',
-      excerpt: 'O Real Madrid confirmou quatro contratações de luxo antes do início de julho: Marc Cucurella (€55M), Bernardo Silva (Custo Zero), Ibrahima Konaté e Denzel Dumfries. Analisamos como Carlo Ancelotti vai encaixar estas estrelas com Kylian Mbappé, Vini Jr e Bellingham. Será este o melhor plantel da história recente do futebol europeu?',
+      title: 'TRANSFERÊNCIAS: O Efeito Dominó — Maresca no City e Diomande no PSG',
+      excerpt: 'O mercado de transferências não pára! A saída de Enzo Maresca do Chelsea para o Manchester City por 20M€ deixa os londrinos à procura de um novo treinador. Entretanto, o PSG prepara-se para garantir Yan Diomande, depois do jogador ter rejeitado uma oferta de 100M€ (com bónus) do Liverpool. Analisamos o impacto destas movimentações na Premier League e na Ligue 1.',
       category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: formatToday,
@@ -181,8 +181,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: Inglaterra vence Panamá mas não convence — Bellingham e Kane resolvem',
-      excerpt: 'A Inglaterra garantiu o primeiro lugar do grupo com uma vitória por 2-0 sobre o Panamá, mas a exibição voltou a desiludir os adeptos. Jude Bellingham abriu o marcador e Harry Kane fez história com o seu 11º golo em Mundiais. Analisamos a pressão sobre Thomas Tuchel e por que a equipa precisa de melhorar drasticamente para o jogo dos oitavos contra a RD Congo.',
+      title: 'ÚLTIMA HORA: O Herói Improvável — Gabriel Martinelli salva o Brasil do abismo',
+      excerpt: 'O Brasil sofreu muito para ultrapassar o Japão nos oitavos de final. A equipa asiática esteve a vencer e mostrou grande organização, mas a entrada de Gabriel Martinelli mudou o jogo. O golo do avançado do Arsenal aos 95 minutos evitou o prolongamento e garantiu a passagem do Brasil. Analisamos as dificuldades da "Canarinha" e o que precisam melhorar para os quartos de final.',
       category: 'ÚLTIMA HORA',
       readTime: '8 min',
       date: formatToday,
@@ -190,9 +190,9 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'LESÕES: Rotura de ligamentos para Ugarte — Manchester United em crise no mercado',
-      excerpt: 'O Manchester United confirmou o pior cenário: Manuel Ugarte sofreu uma rotura de ligamentos no joelho esquerdo. Esta lesão grave afasta o médio dos relvados por vários meses e arruína a sua transferência iminente. Analisamos o impacto financeiro para o United e as alternativas de urgência que o clube terá de procurar no mercado de verão.',
-      category: 'LESÕES',
+      title: 'BASTIDORES: A Crise no Chelsea após a saída de Enzo Maresca',
+      excerpt: 'A rescisão de contrato de Enzo Maresca por 20M€ para rumar ao Manchester City deixou o Chelsea em choque. Os adeptos estão furiosos com a direção e os jogadores surpreendidos. Investigamos os motivos que levam um treinador a trocar o Chelsea pelo principal rival, e quem são os favoritos para assumir o cargo em Stamford Bridge.',
+      category: 'BASTIDORES',
       readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',

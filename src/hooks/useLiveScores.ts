@@ -81,42 +81,46 @@ function getTeamLogo(team: any): string {
 
 // Jogos com tips hoje (29/06/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Brasil", "Japão", "Brazil", "Japan",
-  "Alemanha", "Paraguai", "Germany", "Paraguay",
-  "Holanda", "Marrocos", "Netherlands", "Morocco",
+  "França", "Suécia", "France", "Sweden",
+  "Costa do Marfim", "Noruega", "Ivory Coast", "Norway",
+  "México", "Equador", "Mexico", "Ecuador",
 ];
-// Fallback data com jogos reais (atualizado 29/06/2026)
-// NOTA: Segunda-feira — Dia 19 do Mundial 2026:
-// Resultados de ontem (28/06):
-//   Oitavos de Final: Canadá 1-0 África do Sul (FIM) — Eustáquio marca aos 92'!
-// Jogos de hoje (29/06):
-//   Oitavos de Final: Brasil vs Japão (18:00 Lisboa)
-//   Oitavos de Final: Alemanha vs Paraguai (21:30 Lisboa)
-//   Oitavos de Final: Holanda vs Marrocos (02:00 Lisboa)
+// Fallback data com jogos reais (atualizado 30/06/2026)
+// NOTA: Terça-feira — Dia 20 do Mundial 2026:
+// Resultados de ontem (29/06):
+//   Oitavos de Final: Brasil 2-1 Japão (FIM)
+//   Oitavos de Final: Alemanha 1-1 Paraguai (FIM 3-4 gp)
+//   Oitavos de Final: Holanda 0-0 Marrocos (FIM)
+// Jogos de hoje (30/06):
+//   Oitavos de Final: Costa do Marfim vs Noruega (18:00 Lisboa)
+//   Oitavos de Final: França vs Suécia (22:00 Lisboa)
+//   Oitavos de Final: México vs Equador (02:00 Lisboa)
 // Quadro dos Oitavos de Final (confirmados):
 //   Inglaterra vs Congo-DR
 //   Portugal vs Croácia
 //   Colômbia vs Gana
 //   Argentina vs Cabo Verde
 const fallbackMatches: LiveMatch[] = [
-  // Resultados de ontem (28/06) — Oitavos de Final
-  { id: 537601, homeTeam: "Canadá", awayTeam: "África do Sul", homeScore: 1, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Jogos de hoje (29/06) — Oitavos de Final
-  { id: 537701, homeTeam: "Brasil", awayTeam: "Japão", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537702, homeTeam: "Alemanha", awayTeam: "Paraguai", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537703, homeTeam: "Holanda", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Resultados de ontem (29/06) — Oitavos de Final
+  { id: 537701, homeTeam: "Brasil", awayTeam: "Japão", homeScore: 2, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537702, homeTeam: "Alemanha", awayTeam: "Paraguai", homeScore: 1, awayScore: 1, minute: 0, status: "FIM (3-4 gp)", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537703, homeTeam: "Holanda", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Jogos de hoje (30/06) — Oitavos de Final
+  { id: 537801, homeTeam: "Costa do Marfim", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537802, homeTeam: "França", awayTeam: "Suécia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537803, homeTeam: "México", awayTeam: "Equador", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
   // Oitavos de Final confirmados (a partir de 1 julho)
-  { id: 537801, homeTeam: "Inglaterra", awayTeam: "Congo-DR", homeScore: 0, awayScore: 0, minute: 0, status: "1 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537802, homeTeam: "Portugal", awayTeam: "Croácia", homeScore: 0, awayScore: 0, minute: 0, status: "2 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537803, homeTeam: "Colômbia", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "2 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537804, homeTeam: "Argentina", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "3 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537901, homeTeam: "Inglaterra", awayTeam: "Congo-DR", homeScore: 0, awayScore: 0, minute: 0, status: "1 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537902, homeTeam: "Portugal", awayTeam: "Croácia", homeScore: 0, awayScore: 0, minute: 0, status: "2 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537903, homeTeam: "Colômbia", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "2 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 537904, homeTeam: "Argentina", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "3 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Brasil", awayTeam: "Japão",
+  homeTeam: "França", awayTeam: "Suécia",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
