@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 30/06/2026
+// Notícias de fallback — análises, contexto e investigação — 01/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '30/06/2026';
+  const formatToday = '01/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Erro de Nagelsmann — Como o Paraguai anulou a Alemanha',
-      excerpt: 'A eliminação da Alemanha frente ao Paraguai nos oitavos de final vai ficar para a história. Analisamos como a defesa compacta do Paraguai, liderada por um inspirado Orlando Gill na baliza, conseguiu neutralizar o ataque germânico. O golo de Julio Enciso e a incapacidade de Julian Nagelsmann em encontrar soluções táticas além dos cruzamentos para Havertz ditaram o fim da linha para a "Mannschaft".',
+      title: 'ANÁLISE TÁTICA: O Sistema Perfeito de Deschamps — Como a França Destruiu a Suécia',
+      excerpt: 'A goleada da França sobre a Suécia por 3-0 foi uma aula de futebol. Deschamps voltou ao banco após a morte da mãe e a sua equipa respondeu da melhor forma. Analisamos como o quarteto ofensivo Mbappé-Olise-Barcola-Dembélé criou superioridade numérica constante e como Tchouaméni e Rabiot controlaram o meio-campo. A Suécia de Gyokeres e Isak nunca conseguiu criar perigo real. Uma exibição de gala dos "Bleus".',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -154,46 +154,46 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO VAR: O Golo Anulado a Jonathan Tah que mudou a história do Mundial',
-      excerpt: 'No minuto 101 do prolongamento entre Alemanha e Paraguai, Jonathan Tah marcou o que parecia ser o golo da vitória. No entanto, o VAR interveio e anulou o lance por uma suposta falta de Waldemar Anton sobre o guarda-redes. Especialistas de arbitragem estão divididos, com muitos a argumentar que o contacto foi normal e o golo deveria ter sido validado. A Alemanha chora a eliminação.',
-      category: 'ESCÂNDALO',
-      readTime: '10 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TIPS DE APOSTAS: França vs Suécia e Costa do Marfim vs Noruega — Onde está o valor?',
-      excerpt: 'Os oitavos de final do Mundial 2026 continuam com grandes jogos. A França é favorita contra a Suécia, mas os nórdicos têm sido surpreendentes. A Costa do Marfim defronta a Noruega num jogo que promete golos. Recomendamos apostar em Ambas Marcam no jogo da Noruega (@1.85) e Vitória da França (@1.55). O acumulador do dia paga @2.86!',
-      category: 'TIPS DE APOSTAS',
+      title: 'TRANSFERÊNCIAS: O Impacto de Mateus Fernandes no Tottenham de De Zerbi',
+      excerpt: 'O Tottenham pagou £85 milhões por Mateus Fernandes ao West Ham, tornando-o no maior gasto dos Spurs de sempre. O médio português de 21 anos encaixa perfeitamente no sistema de De Zerbi, que prefere médios técnicos e com capacidade de progressão. Analisamos como Fernandes pode transformar o Tottenham numa candidata séria ao título da Premier League na próxima época, e o que este negócio significa para o West Ham.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: O Efeito Dominó — Maresca no City e Diomande no PSG',
-      excerpt: 'O mercado de transferências não pára! A saída de Enzo Maresca do Chelsea para o Manchester City por 20M€ deixa os londrinos à procura de um novo treinador. Entretanto, o PSG prepara-se para garantir Yan Diomande, depois do jogador ter rejeitado uma oferta de 100M€ (com bónus) do Liverpool. Analisamos o impacto destas movimentações na Premier League e na Ligue 1.',
-      category: 'TRANSFERÊNCIAS',
+      id: 3,
+      title: 'TIPS DE APOSTAS: Inglaterra vs Congo-DR e EUA vs Bósnia — Análise Completa',
+      excerpt: 'Os 16 avos de final do Mundial 2026 continuam hoje com dois jogos de grande interesse para apostadores. A Inglaterra é favorita clara contra o Congo-DR, mas a equipa africana surpreendeu na fase de grupos. Os EUA em casa contra a Bósnia é outro jogo onde o favoritismo é claro. Recomendamos Vitória Inglaterra & +1.5 Golos (@1.45) e EUA Vence (@1.50). Acumulador paga @2.17!',
+      category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'ÚLTIMA HORA: O Herói Improvável — Gabriel Martinelli salva o Brasil do abismo',
-      excerpt: 'O Brasil sofreu muito para ultrapassar o Japão nos oitavos de final. A equipa asiática esteve a vencer e mostrou grande organização, mas a entrada de Gabriel Martinelli mudou o jogo. O golo do avançado do Arsenal aos 95 minutos evitou o prolongamento e garantiu a passagem do Brasil. Analisamos as dificuldades da "Canarinha" e o que precisam melhorar para os quartos de final.',
-      category: 'ÚLTIMA HORA',
+      id: 4,
+      title: 'ESCÂNDALO: Gonçalo Ramos Abandona o PSG — A História Completa da Saída',
+      excerpt: 'A transferência de Gonçalo Ramos do PSG para o AC Milan por €55 milhões chocou o futebol europeu. Investigamos os bastidores da saída: desentendimentos com o treinador sobre o papel do avançado, promessas não cumpridas de minutos de jogo, e a intervenção decisiva do agente Jorge Mendes. O PSG está furioso e ameaça ação legal, enquanto o Milan celebra a contratação do avançado português que está a brilhar no Mundial.',
+      category: 'ESCÂNDALO',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'BASTIDORES: A Crise no Chelsea após a saída de Enzo Maresca',
-      excerpt: 'A rescisão de contrato de Enzo Maresca por 20M€ para rumar ao Manchester City deixou o Chelsea em choque. Os adeptos estão furiosos com a direção e os jogadores surpreendidos. Investigamos os motivos que levam um treinador a trocar o Chelsea pelo principal rival, e quem são os favoritos para assumir o cargo em Stamford Bridge.',
-      category: 'BASTIDORES',
+      id: 5,
+      title: 'ÚLTIMA HORA: Haaland vs Mbappé vs Messi — A Batalha pela Bota de Ouro do Mundial',
+      excerpt: 'A corrida à Bota de Ouro do Mundial 2026 está mais emocionante do que nunca! Mbappé e Messi lideram com 6 golos cada, seguidos de Haaland com 5. Vinícius Jr. e Dembélé têm 4. Com os oitavos de final a começar, qualquer um destes craques pode disparar na tabela. Analisamos as probabilidades de cada jogador vencer a Bota de Ouro e o impacto nas apostas.',
+      category: 'ÚLTIMA HORA',
       readTime: '5 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'BASTIDORES: A Crise do VAR no Mundial — FIFA Sob Pressão Após Alemanha',
+      excerpt: 'As declarações explosivas de Nagelsmann — "É um escândalo absoluto!" — abriram uma crise sem precedentes na FIFA. O golo anulado a Jonathan Tah no prolongamento contra o Paraguai divide especialistas e ex-árbitros. A FIFA convocou uma reunião de emergência para rever os critérios de aplicação do VAR. Enquanto isso, a Alemanha pede uma revisão formal e ameaça com ação legal. O futuro do VAR nos grandes torneios está em debate.',
+      category: 'ESCÂNDALO',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     }
