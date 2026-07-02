@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 01/07/2026
+// Notícias de fallback — análises, contexto e investigação — 02/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '01/07/2026';
+  const formatToday = '02/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Sistema Perfeito de Deschamps — Como a França Destruiu a Suécia',
-      excerpt: 'A goleada da França sobre a Suécia por 3-0 foi uma aula de futebol. Deschamps voltou ao banco após a morte da mãe e a sua equipa respondeu da melhor forma. Analisamos como o quarteto ofensivo Mbappé-Olise-Barcola-Dembélé criou superioridade numérica constante e como Tchouaméni e Rabiot controlaram o meio-campo. A Suécia de Gyokeres e Isak nunca conseguiu criar perigo real. Uma exibição de gala dos "Bleus".',
+      title: 'ANÁLISE TÁTICA: Tonali + Fernandes no Tottenham — De Zerbi Constrói Meio-Campo de Elite',
+      excerpt: 'O Tottenham gastou £185 milhões em dois médios num único verão: Mateus Fernandes (£85M) e Sandro Tonali (£100M). Analisamos como Roberto De Zerbi planeia usar estes dois jogadores no seu sistema de jogo. Tonali é um médio completo, com capacidade defensiva e ofensiva, que complementa perfeitamente o técnico português Fernandes. Com este duo no meio-campo, o Tottenham pode finalmente competir pelos títulos na Premier League. Uma análise detalhada do projeto ambicioso dos Spurs para a próxima época.',
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -154,17 +154,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TRANSFERÊNCIAS: O Impacto de Mateus Fernandes no Tottenham de De Zerbi',
-      excerpt: 'O Tottenham pagou £85 milhões por Mateus Fernandes ao West Ham, tornando-o no maior gasto dos Spurs de sempre. O médio português de 21 anos encaixa perfeitamente no sistema de De Zerbi, que prefere médios técnicos e com capacidade de progressão. Analisamos como Fernandes pode transformar o Tottenham numa candidata séria ao título da Premier League na próxima época, e o que este negócio significa para o West Ham.',
+      title: 'TRANSFERÊNCIAS: Xabi Alonso no Chelsea — O Que Esperar da Nova Era dos Blues',
+      excerpt: 'Xabi Alonso assumiu oficialmente o comando do Chelsea e já está a trabalhar com o plantel. A sua primeira contratação foi Marco Palestra, lateral italiano por €55M. Alonso avança para Pep Chavarría do Rayo Vallecano como lateral esquerdo. Analisamos o estilo de jogo do espanhol, como transformou o Bayer Leverkusen num campeão invicto, e o que os adeptos do Chelsea podem esperar. Cole Palmer e Enzo Fernandez são os pilares do projeto. Uma nova era começa em Stamford Bridge com um dos melhores treinadores do mundo.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '7 min',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 3,
-      title: 'TIPS DE APOSTAS: Inglaterra vs Congo-DR e EUA vs Bósnia — Análise Completa',
-      excerpt: 'Os 16 avos de final do Mundial 2026 continuam hoje com dois jogos de grande interesse para apostadores. A Inglaterra é favorita clara contra o Congo-DR, mas a equipa africana surpreendeu na fase de grupos. Os EUA em casa contra a Bósnia é outro jogo onde o favoritismo é claro. Recomendamos Vitória Inglaterra & +1.5 Golos (@1.45) e EUA Vence (@1.50). Acumulador paga @2.17!',
+      title: 'TIPS DE APOSTAS: Espanha vs Áustria e Portugal vs Croácia — Análise Completa dos Jogos de Hoje',
+      excerpt: 'Os 16 avos de final do Mundial 2026 continuam hoje com dois jogos de enorme interesse para apostadores. A Espanha é favorita clara contra a Áustria (odd 1.40), mas os austríacos surpreenderam ao qualificar-se. Portugal vs Croácia é o duelo das lendas — Ronaldo vs Modric. Recomendamos Espanha Vence @1.40 e Mais de 2.5 Golos em Portugal vs Croácia @1.95. Acumulador paga @2.73! Análise completa com estatísticas e contexto histórico dos confrontos.',
       category: 'TIPS DE APOSTAS',
       readTime: '6 min',
       date: formatToday,
@@ -172,28 +172,28 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'ESCÂNDALO: Gonçalo Ramos Abandona o PSG — A História Completa da Saída',
-      excerpt: 'A transferência de Gonçalo Ramos do PSG para o AC Milan por €55 milhões chocou o futebol europeu. Investigamos os bastidores da saída: desentendimentos com o treinador sobre o papel do avançado, promessas não cumpridas de minutos de jogo, e a intervenção decisiva do agente Jorge Mendes. O PSG está furioso e ameaça ação legal, enquanto o Milan celebra a contratação do avançado português que está a brilhar no Mundial.',
+      title: 'ESCÂNDALO: DFB Alvo de Rusga Policial — Corrupção no Euro 2024 Ameaça o Futebol Alemão',
+      excerpt: 'A crise do futebol alemão aprofundou-se dramaticamente. Após a eliminação humilhante frente ao Paraguai nos penáltis, a Federação Alemã de Futebol (DFB) foi alvo de uma rusga policial por suspeitas de corrupção ligadas à organização do Euro 2024. As investigações apontam para subornos na atribuição de contratos e manipulação de resultados. O chanceler Friedrich Merz entrou na polémica e foi duramente criticado. Nagelsmann exige revisão do VAR e ameaça com ação legal à FIFA. O futebol alemão vive a sua pior crise em décadas.',
       category: 'ESCÂNDALO',
-      readTime: '8 min',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: Haaland vs Mbappé vs Messi — A Batalha pela Bota de Ouro do Mundial',
-      excerpt: 'A corrida à Bota de Ouro do Mundial 2026 está mais emocionante do que nunca! Mbappé e Messi lideram com 6 golos cada, seguidos de Haaland com 5. Vinícius Jr. e Dembélé têm 4. Com os oitavos de final a começar, qualquer um destes craques pode disparar na tabela. Analisamos as probabilidades de cada jogador vencer a Bota de Ouro e o impacto nas apostas.',
+      title: 'ÚLTIMA HORA: Ronaldo vs Modric — Dois Ícones em Crepúsculo Num Duelo Histórico',
+      excerpt: 'Portugal vs Croácia é mais do que um jogo de futebol — é o adeus de duas lendas. Cristiano Ronaldo, 41 anos, marcou em 6 Mundiais consecutivos, um recorde absoluto. Luka Modric, 40 anos, fez a assistência mais velha da história do torneio. Ambos estão no último Mundial das suas carreiras. Analisamos o percurso de dois dos maiores jogadores de todos os tempos e o que este jogo representa para o futebol mundial. Uma noite que ficará na história do desporto.',
       category: 'ÚLTIMA HORA',
-      readTime: '5 min',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'BASTIDORES: A Crise do VAR no Mundial — FIFA Sob Pressão Após Alemanha',
-      excerpt: 'As declarações explosivas de Nagelsmann — "É um escândalo absoluto!" — abriram uma crise sem precedentes na FIFA. O golo anulado a Jonathan Tah no prolongamento contra o Paraguai divide especialistas e ex-árbitros. A FIFA convocou uma reunião de emergência para rever os critérios de aplicação do VAR. Enquanto isso, a Alemanha pede uma revisão formal e ameaça com ação legal. O futuro do VAR nos grandes torneios está em debate.',
-      category: 'ESCÂNDALO',
-      readTime: '10 min',
+      title: 'ANÁLISE TÁTICA: Como os EUA Venceram a Bósnia 2-0 — Balogun e o Sonho Americano',
+      excerpt: 'Os EUA confirmaram a passagem aos oitavos de final com uma vitória por 2-0 sobre a Bósnia-Herzegovina. Analisamos como o selecionador americano preparou o jogo, o papel decisivo de Folarin Balogun como referência ofensiva, e como Pulisic e McKennie controlaram o meio-campo. Os EUA vão agora defrontar a Bélgica ou o Senegal. Com o apoio do público em casa e uma geração de jogadores talentosos, os americanos sonham com as meias-finais. Uma análise tática detalhada da vitória histórica.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     }
