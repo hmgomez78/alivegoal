@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 02/07/2026
+// Notícias de fallback — análises, contexto e investigação — 03/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '02/07/2026';
+  const formatToday = '03/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Tonali + Fernandes no Tottenham — De Zerbi Constrói Meio-Campo de Elite',
-      excerpt: 'O Tottenham gastou £185 milhões em dois médios num único verão: Mateus Fernandes (£85M) e Sandro Tonali (£100M). Analisamos como Roberto De Zerbi planeia usar estes dois jogadores no seu sistema de jogo. Tonali é um médio completo, com capacidade defensiva e ofensiva, que complementa perfeitamente o técnico português Fernandes. Com este duo no meio-campo, o Tottenham pode finalmente competir pelos títulos na Premier League. Uma análise detalhada do projeto ambicioso dos Spurs para a próxima época.',
+      title: 'ANÁLISE TÁTICA: Como Portugal Eliminou a Croácia — Ramos, Ronaldo e a Magia de Leão',
+      excerpt: "Portugal venceu a Croácia 2-1 num jogo dramático em Toronto. Analisamos como Roberto Martínez reorganizou a equipa após o golo de Perišić, a decisão de colocar Ronaldo a marcar o penálti (68') e o papel crucial de Rafael Leão na assistência para Ramos no 90+4'. A Croácia de Modric jogou bem mas ficou sem forças no final. Portugal avança para os oitavos de final com uma confiança enorme. Uma análise detalhada dos momentos decisivos desta noite histórica em Toronto.",
       category: 'ANÁLISE TÁTICA',
       readTime: '9 min',
       date: formatToday,
@@ -154,44 +154,44 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'TRANSFERÊNCIAS: Xabi Alonso no Chelsea — O Que Esperar da Nova Era dos Blues',
-      excerpt: 'Xabi Alonso assumiu oficialmente o comando do Chelsea e já está a trabalhar com o plantel. A sua primeira contratação foi Marco Palestra, lateral italiano por €55M. Alonso avança para Pep Chavarría do Rayo Vallecano como lateral esquerdo. Analisamos o estilo de jogo do espanhol, como transformou o Bayer Leverkusen num campeão invicto, e o que os adeptos do Chelsea podem esperar. Cole Palmer e Enzo Fernandez são os pilares do projeto. Uma nova era começa em Stamford Bridge com um dos melhores treinadores do mundo.',
+      title: 'ESCÂNDALO: Duarte Gomes e o Caso da Arbitragem — O Que Sabemos Até Agora',
+      excerpt: 'A demissão de Duarte Gomes como Diretor Técnico de Arbitragem da FPF abriu uma caixa de Pandora no futebol português. Investigamos as alegações de manipulação de resultados, os clubes envolvidos e o que a FPF comunicou ao Ministério Público. Varandas exige provas, o Benfica e o Porto reagem. Comparamos este caso com o Apito Dourado de 2004 e analisamos as consequências possíveis para a Liga Portugal. Uma investigação aprofundada sobre o maior escândalo do futebol português em anos.',
+      category: 'ESCÂNDALO',
+      readTime: '11 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'TIPS DE APOSTAS: Argentina vs Cabo Verde e Colômbia vs Gana — As Nossas Picks de Hoje',
+      excerpt: 'Três jogos de enorme interesse para apostadores hoje nos 16 avos de final do Mundial 2026. Argentina é favorita esmagadora contra Cabo Verde (-667 moneyline), mas a odd de Under 2.5 @+125 tem valor. Colômbia vs Gana: os colombianos são favoritos a -190 e o handicap asiático -1 @-113 é a nossa pick principal. Austrália vs Egito é o jogo mais equilibrado do dia. Análise completa com estatísticas, forma recente e recomendações de apostas para cada jogo.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '7 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TRANSFERÊNCIAS: Hjulmand do Sporting — Atlético de Madrid Avança, Mas Há Concorrência da Premier League',
+      excerpt: 'Morten Hjulmand está prestes a deixar o Sporting CP. O Atlético de Madrid tem acordo de princípio com o jogador e está na frente da corrida, mas há interesse sério da Premier League e da Serie A. O Sporting pode receber mais de €50 milhões. Analisamos o impacto desta saída no plantel de Rúben Amorim para a próxima época, quem pode substituir o dinamarquês e como o Sporting planeia reinvestir a verba. Uma análise completa do mercado de transferências do clube de Alvalade.',
       category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 3,
-      title: 'TIPS DE APOSTAS: Espanha vs Áustria e Portugal vs Croácia — Análise Completa dos Jogos de Hoje',
-      excerpt: 'Os 16 avos de final do Mundial 2026 continuam hoje com dois jogos de enorme interesse para apostadores. A Espanha é favorita clara contra a Áustria (odd 1.40), mas os austríacos surpreenderam ao qualificar-se. Portugal vs Croácia é o duelo das lendas — Ronaldo vs Modric. Recomendamos Espanha Vence @1.40 e Mais de 2.5 Golos em Portugal vs Croácia @1.95. Acumulador paga @2.73! Análise completa com estatísticas e contexto histórico dos confrontos.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'ESCÂNDALO: DFB Alvo de Rusga Policial — Corrupção no Euro 2024 Ameaça o Futebol Alemão',
-      excerpt: 'A crise do futebol alemão aprofundou-se dramaticamente. Após a eliminação humilhante frente ao Paraguai nos penáltis, a Federação Alemã de Futebol (DFB) foi alvo de uma rusga policial por suspeitas de corrupção ligadas à organização do Euro 2024. As investigações apontam para subornos na atribuição de contratos e manipulação de resultados. O chanceler Friedrich Merz entrou na polémica e foi duramente criticado. Nagelsmann exige revisão do VAR e ameaça com ação legal à FIFA. O futebol alemão vive a sua pior crise em décadas.',
-      category: 'ESCÂNDALO',
+      id: 5,
+      title: 'ÚLTIMA HORA: Klopp vs Nagelsmann — A Crise da Seleção Alemã e o Futuro da Mannschaft',
+      excerpt: 'A Alemanha está em crise total após a eliminação frente ao Paraguai. O DFB pediu a demissão de Nagelsmann, que recusa sair. Jürgen Klopp é o candidato número um para o substituir. Analisamos o que correu mal na Alemanha neste Mundial, as investigações de corrupção que envolvem o DFB, e o que Klopp poderia trazer à seleção alemã. Com o Euro 2028 e o Mundial 2030 no horizonte, a Alemanha precisa urgentemente de uma revolução. Uma análise profunda da crise que abala o futebol germânico.',
+      category: 'ÚLTIMA HORA',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'ÚLTIMA HORA: Ronaldo vs Modric — Dois Ícones em Crepúsculo Num Duelo Histórico',
-      excerpt: 'Portugal vs Croácia é mais do que um jogo de futebol — é o adeus de duas lendas. Cristiano Ronaldo, 41 anos, marcou em 6 Mundiais consecutivos, um recorde absoluto. Luka Modric, 40 anos, fez a assistência mais velha da história do torneio. Ambos estão no último Mundial das suas carreiras. Analisamos o percurso de dois dos maiores jogadores de todos os tempos e o que este jogo representa para o futebol mundial. Uma noite que ficará na história do desporto.',
-      category: 'ÚLTIMA HORA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
       id: 6,
-      title: 'ANÁLISE TÁTICA: Como os EUA Venceram a Bósnia 2-0 — Balogun e o Sonho Americano',
-      excerpt: 'Os EUA confirmaram a passagem aos oitavos de final com uma vitória por 2-0 sobre a Bósnia-Herzegovina. Analisamos como o selecionador americano preparou o jogo, o papel decisivo de Folarin Balogun como referência ofensiva, e como Pulisic e McKennie controlaram o meio-campo. Os EUA vão agora defrontar a Bélgica ou o Senegal. Com o apoio do público em casa e uma geração de jogadores talentosos, os americanos sonham com as meias-finais. Uma análise tática detalhada da vitória histórica.',
+      title: 'ANÁLISE TÁTICA: Messi e Argentina vs Cabo Verde — Como os Campeões do Mundo Podem Vencer',
+      excerpt: 'Argentina enfrenta hoje Cabo Verde em Miami num jogo que parece fácil no papel mas pode ser complicado. Cabo Verde é a equipa mais trabalhadora do torneio (432.796 metros percorridos) e tem uma organização defensiva sólida. Analisamos como Scaloni planeia usar Messi, Lautaro Martínez e Mac Allister para quebrar o bloco baixo cabo-verdiano. A Argentina cobriu -1.5 em 8 dos últimos 9 jogos. Previsão: vitória argentina por 2-0 com Lautaro a marcar. Uma análise tática detalhada do jogo mais aguardado do dia.',
       category: 'ANÁLISE TÁTICA',
       readTime: '8 min',
       date: formatToday,

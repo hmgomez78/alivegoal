@@ -79,47 +79,48 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (02/07/2026) — aparecem primeiro
+// Jogos com tips hoje (03/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Espanha", "Áustria", "Spain", "Austria",
-  "Portugal", "Croácia", "Croatia",
-  "Suíça", "Argélia", "Switzerland", "Algeria",
-  "Inglaterra", "England", "EUA", "USA",
+  "Argentina", "Cabo Verde", "Cape Verde",
+  "Colômbia", "Gana", "Colombia", "Ghana",
+  "Austrália", "Egito", "Australia", "Egypt",
+  "Portugal", "Espanha", "Spain",
 ];
 
-// Fallback data com jogos reais (atualizado 02/07/2026)
-// NOTA: Quinta-feira — Dia 22 do Mundial 2026:
-// Resultados de ontem (01/07):
-//   16 avos: Inglaterra 2-1 Congo-DR (FIM) — Kane x2
-//   16 avos: Bélgica 1-0 Senegal (FIM) — Lukaku
-//   16 avos: EUA 2-0 Bósnia-Herzegovina (FIM) — Balogun
-// Jogos de hoje (02/07):
-//   16 avos: Espanha vs Áustria (20:00 Lisboa) — SoFi Stadium, Inglewood
-//   16 avos: Portugal vs Croácia (00:00 Lisboa) — BMO Field, Toronto
-//   16 avos: Suíça vs Argélia (04:00 Lisboa) — BC Place, Vancouver
-// Oitavos de Final confirmados (próximos dias):
-//   03 jul: Austrália vs Egito | Argentina vs Cabo Verde | Colômbia vs Gana
+// Fallback data com jogos reais (atualizado 03/07/2026)
+// NOTA: Sexta-feira — Dia 23 do Mundial 2026:
+// Resultados de ontem (02/07):
+//   16 avos: Espanha 3-0 Áustria (FIM) — Oyarzabal x2
+//   16 avos: Portugal 2-1 Croácia (FIM) — Ronaldo pen (68'), Ramos (90+4')
+//   16 avos: Suíça vs Argélia (madrugada)
+// Jogos de hoje (03/07):
+//   16 avos: Austrália vs Egito (19:00 Lisboa) — AT&T Stadium, Arlington
+//   16 avos: Argentina vs Cabo Verde (23:00 Lisboa) — Hard Rock Stadium, Miami
+//   16 avos: Colômbia vs Gana (02:30 Lisboa 04/07) — Arrowhead Stadium, Kansas City
+// Oitavos de Final (próximos dias):
+//   05 jul: Brasil vs Noruega | 06 jul: México vs Inglaterra
 const fallbackMatches: LiveMatch[] = [
-  // Resultados de ontem (01/07) — 16 avos de Final
+  // Resultados de ontem (02/07) — 16 avos de Final
+  { id: 537420, homeTeam: "Espanha", awayTeam: "Áustria", homeScore: 3, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  { id: 537419, homeTeam: "Portugal", awayTeam: "Croácia", homeScore: 2, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  // Jogos de hoje (03/07) — 16 avos de Final
+  { id: 538006, homeTeam: "Austrália", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  { id: 538007, homeTeam: "Argentina", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:00", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  { id: 538008, homeTeam: "Colômbia", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:30", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  // Resultados anteriores — 16 avos de Final
   { id: 537901, homeTeam: "Inglaterra", awayTeam: "Congo-DR", homeScore: 2, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  { id: 537902, homeTeam: "Bélgica", awayTeam: "Senegal", homeScore: 1, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
+  { id: 537902, homeTeam: "Bélgica", awayTeam: "Senegal", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
   { id: 537421, homeTeam: "EUA", awayTeam: "Bósnia-Herzegovina", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  // Jogos de hoje (02/07) — 16 avos de Final
-  { id: 537420, homeTeam: "Espanha", awayTeam: "Áustria", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  { id: 537419, homeTeam: "Portugal", awayTeam: "Croácia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 00:00", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  { id: 538005, homeTeam: "Suíça", awayTeam: "Argélia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 04:00", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  // Oitavos de Final confirmados (próximos dias)
-  { id: 538006, homeTeam: "Austrália", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "3 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538007, homeTeam: "Argentina", awayTeam: "Cabo Verde", homeScore: 0, awayScore: 0, minute: 0, status: "3 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538008, homeTeam: "Colômbia", awayTeam: "Gana", homeScore: 0, awayScore: 0, minute: 0, status: "3 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538009, homeTeam: "Brasil", awayTeam: "Costa do Marfim/Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "5 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Oitavos de Final (próximos dias)
+  { id: 538009, homeTeam: "Brasil", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "5 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538010, homeTeam: "México", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "6 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", awayTeam: "Áustria",
+  homeTeam: "Argentina", awayTeam: "Cabo Verde",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [65, 35], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [68, 32], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
