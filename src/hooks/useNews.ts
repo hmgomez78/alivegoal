@@ -139,61 +139,61 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 03/07/2026
+// Notícias de fallback — análises, contexto e investigação — 04/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '03/07/2026';
+  const formatToday = '04/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Portugal Eliminou a Croácia — Ramos, Ronaldo e a Magia de Leão',
-      excerpt: "Portugal venceu a Croácia 2-1 num jogo dramático em Toronto. Analisamos como Roberto Martínez reorganizou a equipa após o golo de Perišić, a decisão de colocar Ronaldo a marcar o penálti (68') e o papel crucial de Rafael Leão na assistência para Ramos no 90+4'. A Croácia de Modric jogou bem mas ficou sem forças no final. Portugal avança para os oitavos de final com uma confiança enorme. Uma análise detalhada dos momentos decisivos desta noite histórica em Toronto.",
+      title: 'ANÁLISE TÁTICA: Como Argentina Sobreviveu ao Susto — O Que Correu Mal e o Que Salvou Messi',
+      excerpt: 'Argentina venceu Cabo Verde 3-2 em prolongamento num jogo que ninguém esperava tão dramático. Analisamos os erros defensivos que permitiram a Cabo Verde empatar duas vezes, a decisão de Scaloni de manter Messi em campo durante todo o prolongamento, e como o capitão argentino decidiu o jogo com um golo no minuto 117. A Argentina mostrou vulnerabilidades que o Brasil, a França ou a Espanha vão certamente explorar. Uma análise detalhada de um jogo que revelou muito sobre os limites dos campeões do mundo.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: Duarte Gomes e o Caso da Arbitragem — O Que Sabemos Até Agora',
-      excerpt: 'A demissão de Duarte Gomes como Diretor Técnico de Arbitragem da FPF abriu uma caixa de Pandora no futebol português. Investigamos as alegações de manipulação de resultados, os clubes envolvidos e o que a FPF comunicou ao Ministério Público. Varandas exige provas, o Benfica e o Porto reagem. Comparamos este caso com o Apito Dourado de 2004 e analisamos as consequências possíveis para a Liga Portugal. Uma investigação aprofundada sobre o maior escândalo do futebol português em anos.',
-      category: 'ESCÂNDALO',
-      readTime: '11 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TIPS DE APOSTAS: Argentina vs Cabo Verde e Colômbia vs Gana — As Nossas Picks de Hoje',
-      excerpt: 'Três jogos de enorme interesse para apostadores hoje nos 16 avos de final do Mundial 2026. Argentina é favorita esmagadora contra Cabo Verde (-667 moneyline), mas a odd de Under 2.5 @+125 tem valor. Colômbia vs Gana: os colombianos são favoritos a -190 e o handicap asiático -1 @-113 é a nossa pick principal. Austrália vs Egito é o jogo mais equilibrado do dia. Análise completa com estatísticas, forma recente e recomendações de apostas para cada jogo.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TRANSFERÊNCIAS: Hjulmand do Sporting — Atlético de Madrid Avança, Mas Há Concorrência da Premier League',
-      excerpt: 'Morten Hjulmand está prestes a deixar o Sporting CP. O Atlético de Madrid tem acordo de princípio com o jogador e está na frente da corrida, mas há interesse sério da Premier League e da Serie A. O Sporting pode receber mais de €50 milhões. Analisamos o impacto desta saída no plantel de Rúben Amorim para a próxima época, quem pode substituir o dinamarquês e como o Sporting planeia reinvestir a verba. Uma análise completa do mercado de transferências do clube de Alvalade.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'ÚLTIMA HORA: Klopp vs Nagelsmann — A Crise da Seleção Alemã e o Futuro da Mannschaft',
-      excerpt: 'A Alemanha está em crise total após a eliminação frente ao Paraguai. O DFB pediu a demissão de Nagelsmann, que recusa sair. Jürgen Klopp é o candidato número um para o substituir. Analisamos o que correu mal na Alemanha neste Mundial, as investigações de corrupção que envolvem o DFB, e o que Klopp poderia trazer à seleção alemã. Com o Euro 2028 e o Mundial 2030 no horizonte, a Alemanha precisa urgentemente de uma revolução. Uma análise profunda da crise que abala o futebol germânico.',
-      category: 'ÚLTIMA HORA',
       readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'ANÁLISE TÁTICA: Messi e Argentina vs Cabo Verde — Como os Campeões do Mundo Podem Vencer',
-      excerpt: 'Argentina enfrenta hoje Cabo Verde em Miami num jogo que parece fácil no papel mas pode ser complicado. Cabo Verde é a equipa mais trabalhadora do torneio (432.796 metros percorridos) e tem uma organização defensiva sólida. Analisamos como Scaloni planeia usar Messi, Lautaro Martínez e Mac Allister para quebrar o bloco baixo cabo-verdiano. A Argentina cobriu -1.5 em 8 dos últimos 9 jogos. Previsão: vitória argentina por 2-0 com Lautaro a marcar. Uma análise tática detalhada do jogo mais aguardado do dia.',
-      category: 'ANÁLISE TÁTICA',
+      id: 2,
+      title: 'ESCÂNDALO: O Caso Senegal em Detalhe — Festas, Assédio e um Treinador Sem Contrato',
+      excerpt: 'O escândalo da seleção do Senegal no Mundial 2026 é um dos mais chocantes da história do futebol africano. Investigamos cada detalhe: as festas privadas com álcool enquanto os jogadores se preparavam, as acusações de assédio sexual ao chef da equipa, o treinador Pape Thiaw que não tinha contrato válido horas antes de um jogo do Mundial, e a retirada do capitão Pape Gueye. Comparamos com outros escândalos históricos de seleções em Mundiais e analisamos o impacto no futuro do futebol senegalês.',
+      category: 'ESCÂNDALO',
+      readTime: '12 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'TIPS DE APOSTAS: Canadá vs Marrocos e Paraguai vs França — As Nossas Picks para os Oitavos',
+      excerpt: 'Os oitavos de final do Mundial 2026 arrancam hoje com dois jogos de enorme interesse para apostadores. Canadá vs Marrocos (18:00 UTC) é um jogo muito equilibrado — Marrocos tem a defesa mais sólida do torneio mas o Canadá joga em casa (Houston). Paraguai vs França (22:00 UTC): a França é favorita a -250 mas o Paraguai eliminou a Alemanha e pode surpreender. Análise completa com estatísticas, forma recente, odds e as nossas recomendações de apostas para cada jogo.',
+      category: 'TIPS DE APOSTAS',
       readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TRANSFERÊNCIAS: Tonali para o Tottenham — O Que Muda na Premier League e no Newcastle',
+      excerpt: 'A transferência de Sandro Tonali para o Tottenham por £100 milhões é um dos movimentos mais impactantes do mercado de verão. Analisamos o impacto desta contratação no Tottenham de Roberto De Zerbi (que já contratou Mateus Fernandes por €98M), como o Newcastle planeia reinvestir os £100 milhões, e o que isto significa para o equilíbrio de forças na Premier League. O Tottenham está a construir um plantel de elite — mas será suficiente para competir pelo título com o City, Arsenal e Liverpool?',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ÚLTIMA HORA: Klopp de Regresso — O Que Esperar do Treinador Mais Carismático do Futebol Mundial',
+      excerpt: 'Jürgen Klopp está em negociações para assumir o comando da seleção alemã após a demissão de Nagelsmann. Se o acordo se concretizar, será o regresso mais aguardado ao futebol mundial. Analisamos o que Klopp pode trazer à Mannschaft, os desafios de treinar uma seleção nacional versus um clube, e como a Alemanha pode reconstruir-se para o Euro 2028 e o Mundial 2030. Com Klopp, a Alemanha voltaria a ter uma identidade clara e um futebol agressivo e vertical que os adeptos adoram.',
+      category: 'ÚLTIMA HORA',
+      readTime: '11 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'ANÁLISE TÁTICA: Paraguai vs França — Como os Sul-Americanos Podem Surpreender os Campeões Europeus',
+      excerpt: 'O Paraguai eliminou a Alemanha nos penáltis e agora enfrenta a França nos oitavos de final do Mundial 2026. Parece um jogo fácil para os franceses, mas o Paraguai tem uma organização defensiva excecional e pode jogar pelos contra-ataques. Analisamos o esquema tático do Paraguai, as fraquezas da França que podem ser exploradas, e os cenários em que uma surpresa é possível. A França tem Mbappé, Griezmann e Dembélé, mas o Paraguai tem organização, garra e a memória recente de ter eliminado a Alemanha.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     }
