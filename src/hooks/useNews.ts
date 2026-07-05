@@ -141,21 +141,21 @@ function extractDomain(url: string): string {
 
 // Notícias de fallback — análises, contexto e investigação — 04/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '04/07/2026';
+  const formatToday = '05/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Como Argentina Sobreviveu ao Susto — O Que Correu Mal e o Que Salvou Messi',
-      excerpt: 'Argentina venceu Cabo Verde 3-2 em prolongamento num jogo que ninguém esperava tão dramático. Analisamos os erros defensivos que permitiram a Cabo Verde empatar duas vezes, a decisão de Scaloni de manter Messi em campo durante todo o prolongamento, e como o capitão argentino decidiu o jogo com um golo no minuto 117. A Argentina mostrou vulnerabilidades que o Brasil, a França ou a Espanha vão certamente explorar. Uma análise detalhada de um jogo que revelou muito sobre os limites dos campeões do mundo.',
+      title: 'ANÁLISE TÁTICA: Brasil vs Noruega — Pode Haaland Destruir a Defesa Brasileira nos Oitavos?',
+      excerpt: 'O jogo mais aguardado dos oitavos de final do Mundial 2026 é hoje: Brasil vs Noruega no MetLife Stadium. Haaland marcou 6 golos contra Gabriel em 11 confrontos pela Premier League — uma estatística que assusta qualquer adepto brasileiro. O Brasil mostrou fragilidades defensivas contra o Japão e a Noruega vai certamente explorar os espaços entre a defesa e o meio-campo. Por outro lado, Vini Jr. e Rayan são uma ameaça constante pelos flancos. Analisamos os esquemas táticos, os pontos fracos de cada equipa e os cenários mais prováveis para este duelo de gigantes.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '10 min',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: O Caso Senegal em Detalhe — Festas, Assédio e um Treinador Sem Contrato',
-      excerpt: 'O escândalo da seleção do Senegal no Mundial 2026 é um dos mais chocantes da história do futebol africano. Investigamos cada detalhe: as festas privadas com álcool enquanto os jogadores se preparavam, as acusações de assédio sexual ao chef da equipa, o treinador Pape Thiaw que não tinha contrato válido horas antes de um jogo do Mundial, e a retirada do capitão Pape Gueye. Comparamos com outros escândalos históricos de seleções em Mundiais e analisamos o impacto no futuro do futebol senegalês.',
+      title: 'ESCÂNDALO: Bastoni e o Escândalo de Prostituição de Menores — O Que Sabemos Até Agora',
+      excerpt: 'O caso Bastoni está a abalar o futebol italiano. O defesa do Inter de Milão está sob investigação da Procuradoria de Milão por prostituição de menores, num incidente alegadamente ocorrido em 2020. Também envolvidos: Riccardo Calafiori (Arsenal), Daniel Maldini e Kevin Bonifazi. Bastoni recusou falar com os investigadores. O Real Madrid suspendeu as negociações de 60M. Investigamos o contexto legal, as implicações para a carreira do jogador, e como o Inter está a gerir a crise. Um escândalo que pode mudar o futebol italiano.',
       category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
@@ -163,8 +163,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TIPS DE APOSTAS: Canadá vs Marrocos e Paraguai vs França — As Nossas Picks para os Oitavos',
-      excerpt: 'Os oitavos de final do Mundial 2026 arrancam hoje com dois jogos de enorme interesse para apostadores. Canadá vs Marrocos (18:00 UTC) é um jogo muito equilibrado — Marrocos tem a defesa mais sólida do torneio mas o Canadá joga em casa (Houston). Paraguai vs França (22:00 UTC): a França é favorita a -250 mas o Paraguai eliminou a Alemanha e pode surpreender. Análise completa com estatísticas, forma recente, odds e as nossas recomendações de apostas para cada jogo.',
+      title: 'TIPS DE APOSTAS: Brasil vs Noruega e México vs Inglaterra — As Nossas Picks para Hoje',
+      excerpt: 'Dois jogos imperdíveis hoje nos oitavos do Mundial 2026. Brasil vs Noruega (21:00 UTC): o Brasil é ligeiro favorito (-115) mas Haaland é um perigo constante. Recomendamos Ambas Marcam a 1.85 e Mais de 2.5 Golos a 1.90. México vs Inglaterra (01:00 UTC): a Inglaterra é favorita (+125) mas a altitude da Cidade do México e o apoio do público podem fazer a diferença. Recomendamos Empate ou México a 1.65. Análise completa com estatísticas, forma recente e as nossas melhores picks.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
@@ -172,8 +172,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: Tonali para o Tottenham — O Que Muda na Premier League e no Newcastle',
-      excerpt: 'A transferência de Sandro Tonali para o Tottenham por £100 milhões é um dos movimentos mais impactantes do mercado de verão. Analisamos o impacto desta contratação no Tottenham de Roberto De Zerbi (que já contratou Mateus Fernandes por €98M), como o Newcastle planeia reinvestir os £100 milhões, e o que isto significa para o equilíbrio de forças na Premier League. O Tottenham está a construir um plantel de elite — mas será suficiente para competir pelo título com o City, Arsenal e Liverpool?',
+      title: 'TRANSFERÊNCIAS: Bernardo Silva ao Real Madrid de Graça — O Impacto no Mercado de Verão',
+      excerpt: 'Bernardo Silva vai assinar pelo Real Madrid em fim de contrato, deixando o Manchester City de graça. O Barça e o Atlético ficaram a ver. Florentino Pérez ofereceu 15M por ano durante 4 anos. Analisamos o impacto desta contratação no Real Madrid (que já tem Bellingham, Vini Jr. e Mbappé), o que o City vai fazer para o substituir, e como isto muda o equilíbrio de forças na La Liga. Bernardo Silva é um dos melhores médios do mundo e chega ao Bernabéu sem custar um cêntimo em taxa de transferência.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
@@ -181,18 +181,18 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ÚLTIMA HORA: Klopp de Regresso — O Que Esperar do Treinador Mais Carismático do Futebol Mundial',
-      excerpt: 'Jürgen Klopp está em negociações para assumir o comando da seleção alemã após a demissão de Nagelsmann. Se o acordo se concretizar, será o regresso mais aguardado ao futebol mundial. Analisamos o que Klopp pode trazer à Mannschaft, os desafios de treinar uma seleção nacional versus um clube, e como a Alemanha pode reconstruir-se para o Euro 2028 e o Mundial 2030. Com Klopp, a Alemanha voltaria a ter uma identidade clara e um futebol agressivo e vertical que os adeptos adoram.',
-      category: 'ÚLTIMA HORA',
-      readTime: '11 min',
+      title: 'ANÁLISE: Marrocos 3-0 Canadá — Ounahi Mostrou ao Mundo Que É um Craque de Nível Mundial',
+      excerpt: 'Marrocos destruiu o Canadá por 3-0 em Houston e avançou para os quartos de final do Mundial 2026. Azzedine Ounahi foi o grande herói com dois golos e uma exibição de gala. Analisamos como Marrocos anulou completamente o ataque canadiano, a evolução tática da equipa de Regragui desde o Qatar 2022, e as perspetivas para os quartos de final. Marrocos vai enfrentar o vencedor de Brasil vs Noruega — um duelo que promete ser histórico. O futebol africano está a conquistar o mundo.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'ANÁLISE TÁTICA: Paraguai vs França — Como os Sul-Americanos Podem Surpreender os Campeões Europeus',
-      excerpt: 'O Paraguai eliminou a Alemanha nos penáltis e agora enfrenta a França nos oitavos de final do Mundial 2026. Parece um jogo fácil para os franceses, mas o Paraguai tem uma organização defensiva excecional e pode jogar pelos contra-ataques. Analisamos o esquema tático do Paraguai, as fraquezas da França que podem ser exploradas, e os cenários em que uma surpresa é possível. A França tem Mbappé, Griezmann e Dembélé, mas o Paraguai tem organização, garra e a memória recente de ter eliminado a Alemanha.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TRANSFERÊNCIAS: Man United Quer Tchouaméni e Summerville — INEOS Planeia Revolução no Meio-Campo',
+      excerpt: 'O Manchester United está a preparar um verão de grandes investimentos. Tchouaméni (Real Madrid) é o sonho do INEOS para o meio-campo, mas o Real Madrid exige uma fortuna. Summerville (West Ham) quer apenas o United e pode ser contratado por 40M. Analisamos como estas contratações mudariam o United, os desafios financeiros do Fair Play Financeiro, e se o INEOS tem plano claro para devolver o clube ao topo da Premier League. Uma análise completa do projeto de reconstrução do Manchester United.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
