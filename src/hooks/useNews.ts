@@ -139,32 +139,32 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 04/07/2026
+// Notícias de fallback — análises, contexto e investigação — 06/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '05/07/2026';
+  const formatToday = '06/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Brasil vs Noruega — Pode Haaland Destruir a Defesa Brasileira nos Oitavos?',
-      excerpt: 'O jogo mais aguardado dos oitavos de final do Mundial 2026 é hoje: Brasil vs Noruega no MetLife Stadium. Haaland marcou 6 golos contra Gabriel em 11 confrontos pela Premier League — uma estatística que assusta qualquer adepto brasileiro. O Brasil mostrou fragilidades defensivas contra o Japão e a Noruega vai certamente explorar os espaços entre a defesa e o meio-campo. Por outro lado, Vini Jr. e Rayan são uma ameaça constante pelos flancos. Analisamos os esquemas táticos, os pontos fracos de cada equipa e os cenários mais prováveis para este duelo de gigantes.',
+      title: 'ANÁLISE TÁTICA: Portugal vs Espanha — O Dérbi Ibérico que Vai Parar o Mundo',
+      excerpt: 'O embate mais aguardado dos Oitavos de Final acontece hoje: Portugal contra Espanha em Dallas. A Roja tem dominado a posse de bola e apresenta um meio-campo fortíssimo com Rodri e Pedri, enquanto Portugal aposta na magia de Lamine Yamal e na experiência de Cristiano Ronaldo. Analisamos os pontos fortes de cada equipa, os esquemas táticos e onde o jogo poderá ser decidido. Será a organização espanhola capaz de anular a criatividade portuguesa?',
       category: 'ANÁLISE TÁTICA',
-      readTime: '11 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: Bastoni e o Escândalo de Prostituição de Menores — O Que Sabemos Até Agora',
-      excerpt: 'O caso Bastoni está a abalar o futebol italiano. O defesa do Inter de Milão está sob investigação da Procuradoria de Milão por prostituição de menores, num incidente alegadamente ocorrido em 2020. Também envolvidos: Riccardo Calafiori (Arsenal), Daniel Maldini e Kevin Bonifazi. Bastoni recusou falar com os investigadores. O Real Madrid suspendeu as negociações de 60M. Investigamos o contexto legal, as implicações para a carreira do jogador, e como o Inter está a gerir a crise. Um escândalo que pode mudar o futebol italiano.',
-      category: 'ESCÂNDALO',
       readTime: '12 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 2,
+      title: 'ESCÂNDALO: A Decisão da FIFA sobre Balogun — Favorecimento ou Justiça?',
+      excerpt: 'A suspensão do castigo de Folarin Balogun a horas do jogo contra a Bélgica levantou uma onda de indignação. A FIFA abriu um precedente perigoso ao anular o cartão vermelho, gerando acusações de favorecimento à seleção anfitriã (EUA). Investigamos os bastidores desta decisão inédita, as reações internacionais e o impacto que poderá ter na credibilidade do Mundial 2026.',
+      category: 'ESCÂNDALO',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 3,
-      title: 'TIPS DE APOSTAS: Brasil vs Noruega e México vs Inglaterra — As Nossas Picks para Hoje',
-      excerpt: 'Dois jogos imperdíveis hoje nos oitavos do Mundial 2026. Brasil vs Noruega (21:00 UTC): o Brasil é ligeiro favorito (-115) mas Haaland é um perigo constante. Recomendamos Ambas Marcam a 1.85 e Mais de 2.5 Golos a 1.90. México vs Inglaterra (01:00 UTC): a Inglaterra é favorita (+125) mas a altitude da Cidade do México e o apoio do público podem fazer a diferença. Recomendamos Empate ou México a 1.65. Análise completa com estatísticas, forma recente e as nossas melhores picks.',
+      title: 'TIPS DE APOSTAS: Portugal vs Espanha e EUA vs Bélgica — As Melhores Oportunidades',
+      excerpt: 'Dois grandes jogos hoje no Mundial 2026. Portugal vs Espanha: um jogo tático onde prevemos um Empate ao Intervalo (2.00) e Ambas Marcam (1.85). EUA vs Bélgica: os americanos jogam em casa com Balogun de volta. Recomendamos EUA Dupla Hipótese e Mais de 2.5 Golos. Leia a nossa análise detalhada com estatísticas exclusivas para maximizar os seus ganhos nestes Oitavos de Final.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
@@ -172,8 +172,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: Bernardo Silva ao Real Madrid de Graça — O Impacto no Mercado de Verão',
-      excerpt: 'Bernardo Silva vai assinar pelo Real Madrid em fim de contrato, deixando o Manchester City de graça. O Barça e o Atlético ficaram a ver. Florentino Pérez ofereceu 15M por ano durante 4 anos. Analisamos o impacto desta contratação no Real Madrid (que já tem Bellingham, Vini Jr. e Mbappé), o que o City vai fazer para o substituir, e como isto muda o equilíbrio de forças na La Liga. Bernardo Silva é um dos melhores médios do mundo e chega ao Bernabéu sem custar um cêntimo em taxa de transferência.',
+      title: 'TRANSFERÊNCIAS: Chelsea Acelera no Mercado — Chavarria e Lacroix a Caminho',
+      excerpt: 'O Chelsea não perde tempo na reconstrução do plantel para 2026/27. Com acordos encaminhados por Pep Chavarria (Rayo Vallecano) e Maxence Lacroix (Crystal Palace), os Blues reforçam a defesa. Paralelamente, a venda de Tyrique George ao Everton por 28M€ ajuda a equilibrar as contas. Analisamos a estratégia de Enzo Maresca e o impacto destas mexidas no futuro do clube londrino.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
@@ -181,17 +181,17 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE: Marrocos 3-0 Canadá — Ounahi Mostrou ao Mundo Que É um Craque de Nível Mundial',
-      excerpt: 'Marrocos destruiu o Canadá por 3-0 em Houston e avançou para os quartos de final do Mundial 2026. Azzedine Ounahi foi o grande herói com dois golos e uma exibição de gala. Analisamos como Marrocos anulou completamente o ataque canadiano, a evolução tática da equipa de Regragui desde o Qatar 2022, e as perspetivas para os quartos de final. Marrocos vai enfrentar o vencedor de Brasil vs Noruega — um duelo que promete ser histórico. O futebol africano está a conquistar o mundo.',
+      title: 'ANÁLISE: Noruega 2-1 Brasil — Haaland Escreve História e Manda o Escrete para Casa',
+      excerpt: 'Uma surpresa monumental! A Noruega eliminou o Brasil do Mundial com dois golos de Erling Haaland. Analisamos como a organização tática nórdica bloqueou o talento de Vini Jr. e Rodrygo, e como Haaland explorou as fragilidades defensivas brasileiras. O fim de uma era para a seleção canarinha e a afirmação definitiva da Noruega como uma força a ter em conta no futebol mundial.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '10 min',
+      readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Man United Quer Tchouaméni e Summerville — INEOS Planeia Revolução no Meio-Campo',
-      excerpt: 'O Manchester United está a preparar um verão de grandes investimentos. Tchouaméni (Real Madrid) é o sonho do INEOS para o meio-campo, mas o Real Madrid exige uma fortuna. Summerville (West Ham) quer apenas o United e pode ser contratado por 40M. Analisamos como estas contratações mudariam o United, os desafios financeiros do Fair Play Financeiro, e se o INEOS tem plano claro para devolver o clube ao topo da Premier League. Uma análise completa do projeto de reconstrução do Manchester United.',
+      title: 'TRANSFERÊNCIAS: O Futuro de Marcus Rashford — Ficar no United ou Mudar de Ares?',
+      excerpt: 'Marcus Rashford adiou qualquer decisão sobre o seu futuro até ao fim do Mundial 2026. O Manchester United, liderado pela INEOS, quer reintegrá-lo na pré-época, mas as dúvidas permanecem. Analisamos as opções de Rashford, os potenciais destinos (como o PSG ou Bayern) e o que a sua saída significaria para o ataque dos Red Devils na próxima temporada.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,

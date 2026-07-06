@@ -81,43 +81,35 @@ function getTeamLogo(team: any): string {
 
 // Jogos com tips hoje (05/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Brasil", "Noruega", "Brazil", "Norway",
-  "México", "Inglaterra", "Mexico", "England",
+  "Portugal", "Espanha", "Spain",
+  "EUA", "Bélgica", "USA", "Belgium",
 ];
 
-// Fallback data com jogos reais (atualizado 05/07/2026)
-// NOTA: Domingo — Dia 25 do Mundial 2026:
-// Resultados de ontem (04/07) — Oitavos de Final:
-//   Oitavos: Canadá 0-3 Marrocos (FIM) — Ounahi x2, Rahimi
-//   Oitavos: Paraguai vs França (FIM) — França venceu 1-0
-// Jogos de hoje (05/07) — Oitavos de Final:
-//   Oitavos: Brasil vs Noruega (21:00 UTC) — MetLife Stadium, East Rutherford, NJ
-//   Oitavos: México vs Inglaterra (01:00 UTC) — Estadio Banorte, Cidade do México
-// Próximos jogos (06-07 jul):
-//   06 jul: Portugal vs Espanha (20:00 UTC)
-//   06 jul: EUA vs Bélgica (00:00 UTC)
-//   06 jul: México vs Inglaterra (02:00 UTC)
+// Fallback data com jogos reais (atualizado 06/07/2026)
+// NOTA: Segunda-feira — Dia 26 do Mundial 2026:
+// Resultados de ontem (05/07) — Oitavos de Final:
+//   Oitavos: Brasil 1-2 Noruega (FIM) — Haaland x2
+//   Oitavos: México 2-3 Inglaterra (FIM) — Bellingham x2
+// Jogos de hoje (06/07) — Oitavos de Final:
+//   Oitavos: Portugal vs Espanha (19:00 UTC) — Dallas Stadium, Arlington, Texas
+//   Oitavos: EUA vs Bélgica (00:00 UTC) — Lumen Field, Seattle
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de HOJE (05/07) — Oitavos de Final
-  { id: 538009, homeTeam: "Brasil", awayTeam: "Noruega", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538010, homeTeam: "México", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 02:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados de ontem (04/07) — Oitavos de Final
+  // Jogos de HOJE (06/07) — Oitavos de Final
+  { id: 538011, homeTeam: "Portugal", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538012, homeTeam: "EUA", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Resultados de ontem (05/07) — Oitavos de Final
+  { id: 538009, homeTeam: "Brasil", awayTeam: "Noruega", homeScore: 1, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538010, homeTeam: "México", awayTeam: "Inglaterra", homeScore: 2, awayScore: 3, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Resultados anteriores — Oitavos de Final
   { id: 537376, homeTeam: "Canadá", awayTeam: "Marrocos", homeScore: 0, awayScore: 3, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
   { id: 537375, homeTeam: "Paraguai", awayTeam: "França", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados anteriores — 16 avos de Final
-  { id: 538007, homeTeam: "Argentina", awayTeam: "Cabo Verde", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  { id: 538008, homeTeam: "Colômbia", awayTeam: "Gana", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  { id: 538006, homeTeam: "Austrália", awayTeam: "Egito", homeScore: 1, awayScore: 1, minute: 0, status: "FIM (pen)", league: "FIFA Mundial 2026 — 16 Avos de Final", leagueId: 2000 },
-  // Próximos jogos (06-07 jul)
-  { id: 538011, homeTeam: "Portugal", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "6 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538012, homeTeam: "EUA", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "6 JUL", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Brasil", awayTeam: "Noruega",
+  homeTeam: "Portugal", awayTeam: "Espanha",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
