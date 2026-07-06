@@ -343,110 +343,110 @@ function parseTipsFromHTML(html: string): Tip[] {
   return tips;
 }
 
-// Fallback tips — 04/07/2026 — Oitavos de Final (Canadá vs Marrocos, Paraguai vs França)
+// Fallback tips — 06/07/2026 — Oitavos de Final (Portugal vs Espanha, EUA vs Bélgica)
 function getFallbackTips(): Tip[] {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' });
   return [
-    // ===== OITAVOS DE FINAL: BRASIL vs NORUEGA — AMBAS MARCAM =====
+    // ===== OITAVOS DE FINAL: PORTUGAL vs ESPANHA — ESPANHA VENCE =====
     {
       id: 3001,
       betNumber: '3001',
       betType: 'SINGLE',
       league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Brasil',
-      awayTeam: 'Noruega',
+      homeTeam: 'Portugal',
+      awayTeam: 'Espanha',
       date: dateStr,
-      time: '22:00',
-      prediction: 'Ambas as Equipas Marcam',
-      confidence: 78,
-      odds: 1.85,
-      market: 'Ambas Marcam',
-      winner: '',
-      analysis: '⚽ Brasil vs Noruega — Ambas Marcam @1.85 — O Brasil tem um ataque devastador com Vini Jr., Rayan e Rodrygo, mas a defesa mostrou fragilidades contra o Japão. A Noruega tem Haaland, que marcou 6 golos contra Gabriel em 11 confrontos pela Premier League. A Noruega marcou em 4 dos últimos 5 jogos internacionais e o Brasil sofreu golos em 3 dos últimos 4. Com dois ataques de qualidade e defesas que podem ser exploradas, Ambas Marcam é a aposta de maior valor neste jogo. Odd de 1.85 oferece excelente retorno para uma probabilidade real de ~65%.',
-      homePercent: 54,
-      drawPercent: 23,
-      awayPercent: 23,
+      time: '20:00',
+      prediction: 'Espanha Vence',
+      confidence: 72,
+      odds: 2.10,
+      market: 'Resultado Final',
+      winner: 'Espanha',
+      analysis: '🇪🇸 Portugal vs Espanha — Espanha Vence @2.10 — O dérbi ibérico! A Espanha tem sido a equipa mais consistente do torneio e é favorita para passar aos quartos. A Opta dá 49.2% de probabilidade de vitória à La Roja nos 90 minutos. O meio-campo espanhol com Rodri e Pedri tem dominado a posse de bola em todos os jogos. Portugal tem qualidade individual mas mostrou alguma irregularidade na fase de grupos. A odd de 2.10 para a vitória da Espanha tem bastante valor.',
+      homePercent: 25,
+      drawPercent: 25,
+      awayPercent: 50,
     },
-    // ===== OITAVOS DE FINAL: BRASIL vs NORUEGA — MAIS DE 2.5 GOLOS =====
+    // ===== OITAVOS DE FINAL: PORTUGAL vs ESPANHA — AMBAS MARCAM =====
     {
       id: 3002,
       betNumber: '3002',
       betType: 'SINGLE',
       league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Brasil',
-      awayTeam: 'Noruega',
+      homeTeam: 'Portugal',
+      awayTeam: 'Espanha',
       date: dateStr,
-      time: '22:00',
-      prediction: 'Mais de 2.5 Golos',
-      confidence: 72,
-      odds: 1.90,
-      market: 'Mais/Menos Golos',
+      time: '20:00',
+      prediction: 'Ambas as Equipas Marcam',
+      confidence: 75,
+      odds: 1.85,
+      market: 'Ambas Marcam',
       winner: '',
-      analysis: '⚽ Brasil vs Noruega — Mais de 2.5 Golos @1.90 — Em 4 dos últimos 5 jogos do Brasil no Mundial 2026, o total de golos foi Over 2.5. A Noruega tem Haaland como máquina de golos e o Brasil tem um ataque de nível mundial. Os especialistas do Yahoo Sports e BetMGM apontam para um jogo com golos de ambos os lados. A Noruega tem um registo histórico notável contra o Brasil e vai criar oportunidades. Com dois ataques de elite e defesas que podem ser exploradas, Over 2.5 é uma aposta sólida a uma odd atrativa.',
-      homePercent: 54,
-      drawPercent: 23,
-      awayPercent: 23,
+      analysis: '⚽ Portugal vs Espanha — Ambas Marcam @1.85 — Com talentos como Cristiano Ronaldo, Bruno Fernandes, Lamine Yamal e Dani Olmo em campo, é difícil imaginar um jogo sem golos de ambas as partes. O último encontro no Mundial (2018) terminou num épico 3-3. Ambas as equipas têm ataques fortíssimos e gostam de ter a bola. Uma aposta muito sólida para este grande jogo.',
+      homePercent: 25,
+      drawPercent: 25,
+      awayPercent: 50,
     },
-    // ===== OITAVOS DE FINAL: MÉXICO vs INGLATERRA — DUPLA HIPÓTESE INGLATERRA =====
+    // ===== OITAVOS DE FINAL: EUA vs BÉLGICA — EUA VENCE =====
     {
       id: 3003,
       betNumber: '3003',
       betType: 'SINGLE',
       league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'México',
-      awayTeam: 'Inglaterra',
+      homeTeam: 'EUA',
+      awayTeam: 'Bélgica',
       date: dateStr,
-      time: '02:00',
-      prediction: 'Dupla Hipótese — Empate ou Inglaterra',
-      confidence: 74,
-      odds: 1.55,
-      market: 'Dupla Hipótese',
-      winner: 'Inglaterra',
-      analysis: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 México vs Inglaterra — Dupla Hipótese (Empate ou Inglaterra) @1.55 — A Inglaterra é favorita (+125) com 42.6% de probabilidade de vitória segundo o Dimers. O México joga em casa na Cidade do México com vantagem de altitude, mas a qualidade individual inglesa é superior. Kane marcou 5 golos em 4 jogos neste Mundial. A Inglaterra tem a melhor defesa do torneio europeu. A Dupla Hipótese protege contra a surpresa da altitude mexicana enquanto mantém o retorno. Uma aposta segura com odd atrativa.',
-      homePercent: 28,
-      drawPercent: 30,
-      awayPercent: 42,
+      time: '01:00',
+      prediction: 'EUA Vence',
+      confidence: 68,
+      odds: 2.40,
+      market: 'Resultado Final',
+      winner: 'EUA',
+      analysis: '🇺🇸 EUA vs Bélgica — EUA Vence @2.40 — Os anfitriões têm o apoio do público em Seattle e receberam a excelente notícia da suspensão do castigo de Folarin Balogun. A Bélgica tem talento mas tem desiludido nos grandes palcos recentes. A energia e a motivação dos EUA, jogando em casa, podem ser decisivas para ultrapassar os belgas.',
+      homePercent: 40,
+      drawPercent: 25,
+      awayPercent: 35,
     },
-    // ===== OITAVOS DE FINAL: MÉXICO vs INGLATERRA — KANE MARCA =====
+    // ===== OITAVOS DE FINAL: EUA vs BÉLGICA — MAIS DE 2.5 GOLOS =====
     {
       id: 3004,
       betNumber: '3004',
       betType: 'SINGLE',
       league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'México',
-      awayTeam: 'Inglaterra',
+      homeTeam: 'EUA',
+      awayTeam: 'Bélgica',
       date: dateStr,
-      time: '02:00',
-      prediction: 'Mais de 1.5 Golos',
-      confidence: 75,
-      odds: 1.75,
+      time: '01:00',
+      prediction: 'Mais de 2.5 Golos',
+      confidence: 70,
+      odds: 1.95,
       market: 'Mais/Menos Golos',
       winner: '',
-      analysis: '⚽ México vs Inglaterra — Mais de 1.5 Golos @1.75 — O México marcou pelo menos 2 golos em 3 dos últimos 4 jogos do Mundial. A Inglaterra tem Kane em grande forma (5 golos em 4 jogos) e Saka, Bellingham e Foden como criadores. Mesmo com a altitude da Cidade do México a dificultar o ritmo, a qualidade ofensiva de ambas as equipas deve produzir pelo menos 2 golos. Em 7 dos últimos 10 jogos da Inglaterra, o total foi Over 1.5. Uma aposta de alta probabilidade a uma odd razoável.',
-      homePercent: 28,
-      drawPercent: 30,
-      awayPercent: 42,
+      analysis: '⚽ EUA vs Bélgica — Mais de 2.5 Golos @1.95 — Os EUA vão tentar impor um ritmo rápido e ofensivo em casa, enquanto a Bélgica tem qualidade no ataque para explorar os espaços. Com Balogun disponível, o ataque americano ganha outra dimensão. Espera-se um jogo aberto com várias oportunidades de golo.',
+      homePercent: 40,
+      drawPercent: 25,
+      awayPercent: 35,
     },
-    // ===== BRASIL vs NORUEGA — BRASIL VENCE =====
+    // ===== OITAVOS DE FINAL: PORTUGAL vs ESPANHA — EMPATE AO INTERVALO =====
     {
       id: 3005,
       betNumber: '3005',
       betType: 'SINGLE',
       league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Brasil',
-      awayTeam: 'Noruega',
+      homeTeam: 'Portugal',
+      awayTeam: 'Espanha',
       date: dateStr,
-      time: '22:00',
-      prediction: 'Brasil Vence',
-      confidence: 70,
-      odds: 2.05,
-      market: 'Resultado Final',
-      winner: 'Brasil',
-      analysis: '🇧🇷 Brasil Vence vs Noruega @2.05 — O Brasil é ligeiro favorito (-115 no moneyline americano, equivalente a ~1.87 europeu) mas a odd de 2.05 oferece valor. O Brasil tem Vini Jr., Rayan e Rodrygo em grande forma e o apoio de 80% dos adeptos no MetLife Stadium. A Noruega tem Haaland mas o resto do ataque é limitado. O Brasil venceu os últimos 3 jogos do torneio e tem a melhor média de posse de bola. Com o apoio do público e a qualidade individual, o Brasil deve avançar para os quartos. Uma aposta de valor a uma odd superior ao esperado.',
-      homePercent: 54,
-      drawPercent: 23,
-      awayPercent: 23,
+      time: '20:00',
+      prediction: 'Empate ao Intervalo',
+      confidence: 78,
+      odds: 2.00,
+      market: 'Intervalo',
+      winner: '',
+      analysis: '⏱️ Portugal vs Espanha — Empate ao Intervalo @2.00 — Num jogo de grande tensão e equilíbrio, é muito provável que a primeira parte seja tática e cautelosa. As duas equipas conhecem-se bem e não vão querer cometer erros cedo. O empate ao intervalo é uma aposta de valor num dérbi desta magnitude.',
+      homePercent: 25,
+      drawPercent: 25,
+      awayPercent: 50,
     },
     // ===== ACUMULADOR DO DIA =====
     {
@@ -457,25 +457,19 @@ function getFallbackTips(): Tip[] {
       homeTeam: 'Múltiplos',
       awayTeam: 'Jogos',
       date: dateStr,
-      time: '22:00',
-      prediction: 'Ambas Marcam (Brasil/Noruega) + Dupla Hipótese Inglaterra (México/Inglaterra)',
-      confidence: 76,
-      odds: 2.87,
+      time: '20:00',
+      prediction: 'Espanha Vence (Portugal/Espanha) + EUA Dupla Hipótese (EUA/Bélgica)',
+      confidence: 74,
+      odds: 2.94,
       market: 'Combinada',
       winner: '',
-      analysis: '🔥 ACUMULADOR DO DIA 🔥
-
-1️⃣ Brasil vs Noruega — Ambas Marcam @1.85
-2️⃣ México vs Inglaterra — Dupla Hipótese (Empate ou Inglaterra) @1.55
-
-Odd Total: @2.87 💰
-
-Haaland é uma ameaça constante para a defesa brasileira e o Brasil tem um ataque de nível mundial — Ambas Marcam é altamente provável. A Inglaterra é favorita contra o México e a Dupla Hipótese protege contra a surpresa da altitude. Dois resultados muito prováveis combinados num acumulador com retorno de quase 3x. A melhor aposta do dia!',
+      analysis: '🔥 ACUMULADOR DO DIA 🔥\n1️⃣ Portugal vs Espanha — Espanha Vence @2.10\n2️⃣ EUA vs Bélgica — Dupla Hipótese (EUA ou Empate) @1.40\nOdd Total: @2.94 💰\nA Espanha é favorita para bater Portugal devido à sua consistência e domínio do meio-campo. Os EUA, jogando em casa e com Balogun disponível, dificilmente perderão no tempo regulamentar contra a Bélgica. Uma combinada com excelente valor!',
       homePercent: 0,
       drawPercent: 0,
       awayPercent: 0,
     }
   ];
+}
 }
 
 
