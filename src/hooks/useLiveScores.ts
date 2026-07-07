@@ -79,37 +79,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (05/07/2026) — aparecem primeiro
+// Jogos com tips hoje (07/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Portugal", "Espanha", "Spain",
-  "EUA", "Bélgica", "USA", "Belgium",
+  "Argentina", "Egito", "Egypt",
+  "Suíça", "Colômbia", "Switzerland", "Colombia",
 ];
 
-// Fallback data com jogos reais (atualizado 06/07/2026)
-// NOTA: Segunda-feira — Dia 26 do Mundial 2026:
-// Resultados de ontem (05/07) — Oitavos de Final:
-//   Oitavos: Brasil 1-2 Noruega (FIM) — Haaland x2
-//   Oitavos: México 2-3 Inglaterra (FIM) — Bellingham x2
-// Jogos de hoje (06/07) — Oitavos de Final:
-//   Oitavos: Portugal vs Espanha (19:00 UTC) — Dallas Stadium, Arlington, Texas
-//   Oitavos: EUA vs Bélgica (00:00 UTC) — Lumen Field, Seattle
+// Fallback data com jogos reais (atualizado 07/07/2026)
+// NOTA: Terça-feira — Dia 27 do Mundial 2026:
+// Resultados de ontem (06/07) — Oitavos de Final:
+//   Portugal 0-1 Espanha (FIM) — Merino 90+1' — Fim da carreira de Ronaldo no Mundial
+//   EUA 1-4 Bélgica (FIM) — Humilhação dos anfitriões apesar da polémica Balogun
+// Jogos de hoje (07/07) — Oitavos de Final:
+//   Argentina vs Egito (16:00 UTC) — Mercedes-Benz Stadium, Atlanta
+//   Suíça vs Colômbia (20:00 UTC) — SoFi Stadium, Los Angeles
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de HOJE (06/07) — Oitavos de Final
-  { id: 538011, homeTeam: "Portugal", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538012, homeTeam: "EUA", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 01:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados de ontem (05/07) — Oitavos de Final
+  // Jogos de HOJE (07/07) — Oitavos de Final
+  { id: 538013, homeTeam: "Argentina", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538014, homeTeam: "Suíça", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Resultados de ontem (06/07) — Oitavos de Final
+  { id: 538011, homeTeam: "Portugal", awayTeam: "Espanha", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538012, homeTeam: "EUA", awayTeam: "Bélgica", homeScore: 1, awayScore: 4, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Resultados anteriores — Oitavos de Final
   { id: 538009, homeTeam: "Brasil", awayTeam: "Noruega", homeScore: 1, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
   { id: 538010, homeTeam: "México", awayTeam: "Inglaterra", homeScore: 2, awayScore: 3, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados anteriores — Oitavos de Final
-  { id: 537376, homeTeam: "Canadá", awayTeam: "Marrocos", homeScore: 0, awayScore: 3, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 537375, homeTeam: "Paraguai", awayTeam: "França", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Portugal", awayTeam: "Espanha",
+  homeTeam: "Argentina", awayTeam: "Egito",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [50, 50], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 06/07/2026
+// Notícias de fallback — análises, contexto e investigação — 07/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '06/07/2026';
+  const formatToday = '07/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: Portugal vs Espanha — O Dérbi Ibérico que Vai Parar o Mundo',
-      excerpt: 'O embate mais aguardado dos Oitavos de Final acontece hoje: Portugal contra Espanha em Dallas. A Roja tem dominado a posse de bola e apresenta um meio-campo fortíssimo com Rodri e Pedri, enquanto Portugal aposta na magia de Lamine Yamal e na experiência de Cristiano Ronaldo. Analisamos os pontos fortes de cada equipa, os esquemas táticos e onde o jogo poderá ser decidido. Será a organização espanhola capaz de anular a criatividade portuguesa?',
+      title: 'ANÁLISE TÁTICA: O Fim de uma Era — Ronaldo Despede-se do Mundial com Derrota para Espanha',
+      excerpt: 'Uma noite de emoções em Dallas. Cristiano Ronaldo, 41 anos, disputou o seu último jogo num Mundial e saiu de campo sem marcar, com Portugal a perder 0-1 para Espanha graças ao golo de Mikel Merino no primeiro minuto de descontos. Analisamos a prestação do capitão português, a frieza tática de Luis de la Fuente, e o que esta derrota significa para o futuro da seleção das Quinas. Portugal terá de reconstruir sem o seu maior ídolo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '12 min',
       date: formatToday,
@@ -154,8 +154,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: A Decisão da FIFA sobre Balogun — Favorecimento ou Justiça?',
-      excerpt: 'A suspensão do castigo de Folarin Balogun a horas do jogo contra a Bélgica levantou uma onda de indignação. A FIFA abriu um precedente perigoso ao anular o cartão vermelho, gerando acusações de favorecimento à seleção anfitriã (EUA). Investigamos os bastidores desta decisão inédita, as reações internacionais e o impacto que poderá ter na credibilidade do Mundial 2026.',
+      title: 'ESCÂNDALO: Bélgica Humilha EUA (4-1) — A Interferência de Trump na FIFA Saiu pela Culatra',
+      excerpt: 'A polémica reversão da suspensão de Balogun pela FIFA, que até mereceu agradecimentos do Presidente Trump, tornou-se num escândalo ainda maior quando a Bélgica goleou os EUA por 4-1 em Seattle. A interferência política na decisão da FIFA gerou indignação internacional. Os Red Devils avançam para os Quartos de Final e os EUA saem do torneio que organizaram com uma humilhação histórica. Investigamos os bastidores desta decisão sem precedentes.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -163,8 +163,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TIPS DE APOSTAS: Portugal vs Espanha e EUA vs Bélgica — As Melhores Oportunidades',
-      excerpt: 'Dois grandes jogos hoje no Mundial 2026. Portugal vs Espanha: um jogo tático onde prevemos um Empate ao Intervalo (2.00) e Ambas Marcam (1.85). EUA vs Bélgica: os americanos jogam em casa com Balogun de volta. Recomendamos EUA Dupla Hipótese e Mais de 2.5 Golos. Leia a nossa análise detalhada com estatísticas exclusivas para maximizar os seus ganhos nestes Oitavos de Final.',
+      title: 'TIPS DE APOSTAS: Argentina vs Egito e Suíça vs Colômbia — Análise e Previsões',
+      excerpt: 'Dois grandes jogos hoje nos Oitavos de Final do Mundial 2026. Argentina vs Egito (16:00 UTC): Messi e companhia são favoritos claros, mas Salah pode surpreender. Recomendamos Argentina Vence e Messi Marca a Qualquer Momento. Suíça vs Colômbia (20:00 UTC): um jogo muito equilibrado onde apostamos em Menos de 2.5 Golos e Suíça Dupla Hipótese. Leia a nossa análise completa com estatísticas e odds reais.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
@@ -172,8 +172,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: Chelsea Acelera no Mercado — Chavarria e Lacroix a Caminho',
-      excerpt: 'O Chelsea não perde tempo na reconstrução do plantel para 2026/27. Com acordos encaminhados por Pep Chavarria (Rayo Vallecano) e Maxence Lacroix (Crystal Palace), os Blues reforçam a defesa. Paralelamente, a venda de Tyrique George ao Everton por 28M€ ajuda a equilibrar as contas. Analisamos a estratégia de Enzo Maresca e o impacto destas mexidas no futuro do clube londrino.',
+      title: 'TRANSFERÊNCIAS: De Zerbi Transforma os Spurs — £237M Gastos e Mais Reforços a Caminho',
+      excerpt: 'Roberto De Zerbi está a revolucionar o Tottenham Hotspur! Após assinar Sandro Tonali por £100M (recorde do clube), os Spurs já gastaram mais de £237 milhões neste verão. O treinador italiano explora ainda Rafael Leão (AC Milan) e Savinho (Man City) para reforçar os flancos. Analisamos a estratégia de De Zerbi, o estilo de jogo que quer implementar e se o Tottenham pode finalmente competir pelos títulos na temporada 2026/27.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
@@ -181,8 +181,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE: Noruega 2-1 Brasil — Haaland Escreve História e Manda o Escrete para Casa',
-      excerpt: 'Uma surpresa monumental! A Noruega eliminou o Brasil do Mundial com dois golos de Erling Haaland. Analisamos como a organização tática nórdica bloqueou o talento de Vini Jr. e Rodrygo, e como Haaland explorou as fragilidades defensivas brasileiras. O fim de uma era para a seleção canarinha e a afirmação definitiva da Noruega como uma força a ter em conta no futebol mundial.',
+      title: 'ANÁLISE: Espanha — A Equipa Mais Dominante do Mundial 2026 Sem Sofrer Golos',
+      excerpt: 'A Espanha é simplesmente imparável! Após eliminar Portugal com um golo de Merino no último minuto, a La Roja mantém a sua folha de zeros no torneio — nenhum golo sofrido em todos os jogos. Com Lamine Yamal, Pedri, Rodri e Dani Olmo a brilhar, analisamos porque a Espanha é a grande favorita ao título e como Espanha vs Bélgica nos Quartos de Final pode ser o jogo do torneio. A defesa espanhola é uma muralha.',
       category: 'ANÁLISE TÁTICA',
       readTime: '11 min',
       date: formatToday,
@@ -190,8 +190,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: O Futuro de Marcus Rashford — Ficar no United ou Mudar de Ares?',
-      excerpt: 'Marcus Rashford adiou qualquer decisão sobre o seu futuro até ao fim do Mundial 2026. O Manchester United, liderado pela INEOS, quer reintegrá-lo na pré-época, mas as dúvidas permanecem. Analisamos as opções de Rashford, os potenciais destinos (como o PSG ou Bayern) e o que a sua saída significaria para o ataque dos Red Devils na próxima temporada.',
+      title: 'TRANSFERÊNCIAS: Liverpool Quer Thuram da Juventus por £39M — Corrida com Man United',
+      excerpt: 'O Liverpool identificou Khephren Thuram, médio francês da Juventus, como o seu alvo principal para o verão. A Juve está disposta a vender por entre £35M e £39M para equilibrar as contas. O Manchester United também está interessado, criando uma corrida entre os dois gigantes ingleses. Analisamos o perfil de Thuram, como se encaixaria no sistema de Arne Slot no Liverpool, e o impacto desta contratação na luta pelo título da Premier League.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
