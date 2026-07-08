@@ -343,191 +343,181 @@ function parseTipsFromHTML(html: string): Tip[] {
   return tips;
 }
 
-// Fallback tips — 07/07/2026 — Oitavos de Final (Argentina vs Egito, Suíça vs Colômbia)
+// Fallback tips — 08/07/2026 — Qualificações Europeias (Dia sem jogos do Mundial)
 function getFallbackTips(): Tip[] {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit' });
   return [
-    // ===== OITAVOS DE FINAL: ARGENTINA vs EGITO — ARGENTINA VENCE =====
+    // ===== QUALIFICAÇÃO CHAMPIONS LEAGUE: KAIRAT vs SUTJESKA =====
     {
-      id: 4001,
-      betNumber: '4001',
+      id: 4010,
+      betNumber: '4010',
       betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Argentina',
-      awayTeam: 'Egito',
+      league: 'Champions League - Qualificação',
+      homeTeam: 'Kairat Almaty',
+      awayTeam: 'Sutjeska',
       date: dateStr,
-      time: '17:00',
-      prediction: 'Argentina Vence',
-      confidence: 82,
+      time: '15:00',
+      prediction: 'Vitória Kairat Almaty',
+      confidence: 78,
+      odds: 1.65,
+      market: 'Resultado Final',
+      winner: 'Kairat Almaty',
+      analysis: '🇰🇿 Kairat vs Sutjeska — Vitória Kairat @1.65 — A equipa cazaque do Kairat Almaty é tradicionalmente muito forte em casa nas eliminatórias europeias. Com o campeonato cazaque em andamento, chegam com melhor ritmo competitivo do que o Sutjeska de Montenegro. A longa viagem e a diferença de preparação devem dar vantagem à equipa da casa.',
+      homePercent: 60,
+      drawPercent: 25,
+      awayPercent: 15,
+    },
+    // ===== QUALIFICAÇÃO CHAMPIONS LEAGUE: FLORA vs IBERIA 1999 =====
+    {
+      id: 4011,
+      betNumber: '4011',
+      betType: 'SINGLE',
+      league: 'Champions League - Qualificação',
+      homeTeam: 'Flora',
+      awayTeam: 'Iberia 1999',
+      date: dateStr,
+      time: '16:00',
+      prediction: 'Ambas Marcam - Sim',
+      confidence: 72,
+      odds: 1.85,
+      market: 'Ambas Marcam',
+      winner: '',
+      analysis: '⚽ Flora vs Iberia 1999 — Ambas Marcam @1.85 — O Flora da Estónia tem um ataque produtivo mas a sua defesa costuma conceder espaços. O Iberia 1999 da Geórgia possui jogadores tecnicamente evoluídos na frente. Sendo a primeira mão, esperamos um jogo aberto onde ambas as equipas procurarão marcar golos para levar vantagem para a segunda mão.',
+      homePercent: 40,
+      drawPercent: 30,
+      awayPercent: 30,
+    },
+    // ===== QUALIFICAÇÃO CONFERENCE LEAGUE: CONNAHS Q. vs BALLKANI =====
+    {
+      id: 4012,
+      betNumber: '4012',
+      betType: 'SINGLE',
+      league: 'Conference League - Qualificação',
+      homeTeam: 'Connahs Q.',
+      awayTeam: 'FC Ballkani',
+      date: dateStr,
+      time: '17:30',
+      prediction: 'Vitória FC Ballkani',
+      confidence: 80,
       odds: 1.55,
       market: 'Resultado Final',
-      winner: 'Argentina',
-      analysis: '🇦🇷 Argentina vs Egito — Argentina Vence @1.55 — O campeão do mundo entra em campo! A Argentina de Messi é clara favorita contra um Egito que chegou surpreendentemente a esta fase. Os sul-americanos têm qualidade individual superior em todas as posições e Messi está em excelente forma no torneio. O Egito, liderado por Salah, pode dificultar, mas a Argentina deverá vencer com conforto e avançar para os Quartos de Final.',
-      homePercent: 65,
+      winner: 'FC Ballkani',
+      analysis: '🇽🇰 Connahs vs Ballkani — Vitória Ballkani @1.55 — O FC Ballkani do Kosovo tem impressionado nas últimas temporadas nas competições europeias, chegando mesmo à fase de grupos. Possuem muito mais experiência e qualidade individual do que a equipa galesa do Connahs Quay. Esperamos uma vitória clara dos visitantes mesmo a jogar fora.',
+      homePercent: 15,
       drawPercent: 20,
-      awayPercent: 15,
+      awayPercent: 65,
     },
-    // ===== OITAVOS DE FINAL: ARGENTINA vs EGITO — MAIS DE 2.5 GOLOS =====
+    // ===== QUALIFICAÇÃO CONFERENCE LEAGUE: DIFFERDANGE vs ILVES =====
     {
-      id: 4002,
-      betNumber: '4002',
+      id: 4013,
+      betNumber: '4013',
       betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Argentina',
-      awayTeam: 'Egito',
+      league: 'Conference League - Qualificação',
+      homeTeam: 'Differdange',
+      awayTeam: 'Ilves',
       date: dateStr,
-      time: '17:00',
+      time: '17:30',
       prediction: 'Mais de 2.5 Golos',
-      confidence: 72,
-      odds: 1.90,
-      market: 'Mais de 2.5',
-      winner: '',
-      analysis: '⚽ Argentina vs Egito — Mais de 2.5 Golos @1.90 — A Argentina tem marcado em abundância neste Mundial e o Egito, apesar de organizado, tem fragilidades defensivas que Messi, Lautaro e Alvarez são capazes de explorar. Salah também pode marcar para o Egito. Esperamos um jogo com vários golos e emoção no Mercedes-Benz Stadium em Atlanta.',
-      homePercent: 65,
-      drawPercent: 20,
-      awayPercent: 15,
-    },
-    // ===== OITAVOS DE FINAL: SUÍÇA vs COLÔMBIA — MENOS DE 2.5 GOLOS =====
-    {
-      id: 4003,
-      betNumber: '4003',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Suíça',
-      awayTeam: 'Colômbia',
-      date: dateStr,
-      time: '21:00',
-      prediction: 'Menos de 2.5 Golos',
-      confidence: 70,
-      odds: 1.85,
-      market: 'Mais de 2.5',
-      winner: '',
-      analysis: '🇨🇭 Suíça vs Colômbia — Menos de 2.5 Golos @1.85 — A Suíça é uma equipa extremamente organizada e difícil de bater, com uma das melhores defesas do torneio. A Colômbia tem talento com James Rodríguez e Luís Díaz, mas as eliminatórias tendem a ser mais fechadas e táticas. Esperamos um jogo equilibrado com poucos golos, possivelmente a ir a prolongamento.',
-      homePercent: 40,
-      drawPercent: 30,
-      awayPercent: 30,
-    },
-    // ===== OITAVOS DE FINAL: SUÍÇA vs COLÔMBIA — SUÍÇA DUPLA HIPÓTESE =====
-    {
-      id: 4004,
-      betNumber: '4004',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Suíça',
-      awayTeam: 'Colômbia',
-      date: dateStr,
-      time: '21:00',
-      prediction: 'Suíça Dupla Hipótese',
-      confidence: 68,
-      odds: 1.65,
-      market: 'Dupla Hipótese',
-      winner: 'Suíça',
-      analysis: '🇨🇭 Suíça vs Colômbia — Suíça Dupla Hipótese @1.65 — A Suíça tem sido sólida e consistente neste Mundial. A dupla hipótese (Suíça vence ou empate) oferece uma margem de segurança num jogo que pode ser muito equilibrado. A Colômbia tem qualidade mas a Suíça raramente perde por uma margem grande. Uma aposta de valor com boa proteção.',
-      homePercent: 40,
-      drawPercent: 30,
-      awayPercent: 30,
-    },
-    // ===== ARGENTINA vs EGITO — MESSI MARCA =====
-    {
-      id: 4005,
-      betNumber: '4005',
-      betType: 'SINGLE',
-      league: 'FIFA Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Argentina',
-      awayTeam: 'Egito',
-      date: dateStr,
-      time: '17:00',
-      prediction: 'Messi Marca a Qualquer Momento',
       confidence: 75,
-      odds: 2.20,
-      market: 'Marcador',
-      winner: 'Argentina',
-      analysis: '🐐 Argentina vs Egito — Messi Marca a Qualquer Momento @2.20 — Lionel Messi está em grande forma neste Mundial e já marcou vários golos no torneio. Contra uma defesa do Egito que, apesar de organizada, não está habituada a lidar com a criatividade do argentino, Messi tem excelentes condições para marcar. A odd de 2.20 oferece excelente valor para o melhor jogador do mundo.',
-      homePercent: 65,
-      drawPercent: 20,
-      awayPercent: 15,
+      odds: 1.75,
+      market: 'Mais de 2.5',
+      winner: '',
+      analysis: '⚽ Differdange vs Ilves — Mais de 2.5 Golos @1.75 — O Ilves (Finlândia) está em pleno campeonato e apresenta jogos com muitos golos. O Differdange (Luxemburgo) jogando em casa tentará assumir as despesas do jogo. Este choque de estilos costuma resultar num jogo com golos, pelo que o Over 2.5 é a melhor opção para esta partida.',
+      homePercent: 35,
+      drawPercent: 25,
+      awayPercent: 40,
     },
-    // ===== ACUMULADOR DO DIA =====
+    // ===== QUALIFICAÇÃO CHAMPIONS LEAGUE: PETROCUB vs EGNATIA =====
     {
-      id: 4006,
-      betNumber: '4006',
-      betType: 'DOUBLE',
-      league: 'Acumulador Mundial 2026 — Oitavos de Final',
-      homeTeam: 'Múltiplos',
-      awayTeam: 'Jogos',
+      id: 4014,
+      betNumber: '4014',
+      betType: 'SINGLE',
+      league: 'Champions League - Qualificação',
+      homeTeam: 'Petrocub',
+      awayTeam: 'Egnatia',
       date: dateStr,
       time: '17:00',
-      prediction: 'Argentina Vence + Suíça Dupla Hipótese',
-      confidence: 74,
-      odds: 2.56,
+      prediction: 'Menos de 2.5 Golos',
+      confidence: 82,
+      odds: 1.60,
+      market: 'Menos de 2.5',
+      winner: '',
+      analysis: '🛡️ Petrocub vs Egnatia — Menos de 2.5 Golos @1.60 — Um duelo que se prevê muito tático e fechado. O Petrocub da Moldávia é conhecido pela sua solidez defensiva em casa. O Egnatia da Albânia fará uma abordagem cautelosa na primeira mão. Prevemos um jogo de poucos riscos e poucas oportunidades claras de golo.',
+      homePercent: 45,
+      drawPercent: 35,
+      awayPercent: 20,
+    },
+    // ===== ACUMULADOR DO DIA (DOUBLE) =====
+    {
+      id: 4015,
+      betNumber: '4015',
+      betType: 'DOUBLE',
+      league: 'Qualificações Europeias',
+      homeTeam: 'Kairat + Ballkani',
+      awayTeam: 'Múltipla',
+      date: dateStr,
+      time: '15:00',
+      prediction: 'Vitória Kairat + Vitória Ballkani',
+      confidence: 75,
+      odds: 2.55,
       market: 'Combinada',
       winner: '',
-      analysis: '🔥 ACUMULADOR DO DIA 🔥\n1️⃣ Argentina vs Egito — Argentina Vence @1.55\n2️⃣ Suíça vs Colômbia — Suíça Dupla Hipótese @1.65\nOdd Total: @2.56 💰\nA Argentina de Messi é clara favorita para eliminar o Egito. A Suíça, sempre organizada, dificilmente perde contra a Colômbia. Uma combinada sólida com bom valor para os dois jogos de hoje nos Oitavos de Final do Mundial 2026!',
-      homePercent: 0,
+      analysis: '🔥 ACUMULADOR DO DIA @2.55 — Juntamos os dois favoritos claros do dia nas competições europeias. O Kairat Almaty é fortíssimo em casa e está com melhor ritmo competitivo. O FC Ballkani tem provado ser uma equipa consistente na Europa e deve superar facilmente o Connahs galês. Uma dupla de valor para o dia de hoje.',
+      homePercent: 50,
       drawPercent: 0,
-      awayPercent: 0,
+      awayPercent: 50,
     }
   ];
 }
 
-
-
 export default async function handler(req: Request) {
+  // CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json',
+    'Cache-Control': 's-maxage=600, stale-while-revalidate=300',
+  };
+
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 200, headers });
+  }
+
   try {
-    const response = await fetch('https://t.me/s/alivegoal');
+    const channelId = process.env.TELEGRAM_CHANNEL_ID || 'alivegoal_tips';
+    const response = await fetch(`https://t.me/s/${channelId}`);
+    
     if (!response.ok) {
-      throw new Error(`Failed to fetch Telegram: ${response.status}`);
+      console.warn('Failed to fetch from Telegram, using fallback tips');
+      return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'fallback' }), {
+        status: 200,
+        headers,
+      });
     }
 
     const html = await response.text();
     const tips = parseTipsFromHTML(html);
 
     if (tips.length > 0) {
-      return new Response(JSON.stringify({
-        success: true,
-        source: 'telegram',
-        count: tips.length,
-        updatedAt: new Date().toISOString(),
-        tips,
-      }), {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Cache-Control': 's-maxage=300, stale-while-revalidate=600'
-        }
+      return new Response(JSON.stringify({ tips, source: 'telegram' }), {
+        status: 200,
+        headers,
       });
     }
 
-    const fallbackTips = getFallbackTips();
-    return new Response(JSON.stringify({
-      success: true,
-      source: 'fallback',
-      count: fallbackTips.length,
-      updatedAt: new Date().toISOString(),
-      tips: fallbackTips,
-    }), {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 's-maxage=300, stale-while-revalidate=600'
-      }
+    // Fallback if no tips found for today
+    return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'fallback_no_tips_today' }), {
+      status: 200,
+      headers,
     });
 
   } catch (error) {
-    console.error('Error fetching tips:', error);
-    const fallbackTips = getFallbackTips();
-    return new Response(JSON.stringify({
-      success: false,
-      source: 'fallback_error',
-      count: fallbackTips.length,
-      updatedAt: new Date().toISOString(),
-      tips: fallbackTips,
-    }), {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      }
+    console.error('Error in tips API:', error);
+    return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'error_fallback' }), {
+      status: 200,
+      headers,
     });
   }
 }

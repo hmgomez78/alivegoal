@@ -79,37 +79,38 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (07/07/2026) — aparecem primeiro
+// Jogos com tips hoje (08/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Argentina", "Egito", "Egypt",
-  "Suíça", "Colômbia", "Switzerland", "Colombia",
+  "Kairat", "Sutjeska",
+  "Differdange", "Ilves",
+  "Connahs", "Ballkani",
+  "Petrocub", "Egnatia"
 ];
 
-// Fallback data com jogos reais (atualizado 07/07/2026)
-// NOTA: Terça-feira — Dia 27 do Mundial 2026:
-// Resultados de ontem (06/07) — Oitavos de Final:
-//   Portugal 0-1 Espanha (FIM) — Merino 90+1' — Fim da carreira de Ronaldo no Mundial
-//   EUA 1-4 Bélgica (FIM) — Humilhação dos anfitriões apesar da polémica Balogun
-// Jogos de hoje (07/07) — Oitavos de Final:
-//   Argentina vs Egito (16:00 UTC) — Mercedes-Benz Stadium, Atlanta
-//   Suíça vs Colômbia (20:00 UTC) — SoFi Stadium, Los Angeles
+// Fallback data com jogos reais (atualizado 08/07/2026)
+// NOTA: Hoje é dia de descanso no Mundial 2026. Os próximos jogos (Quartos de Final) são dia 9.
+// Por isso focamos nas Qualificações da Liga dos Campeões e Liga Conferência que jogam hoje.
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de HOJE (07/07) — Oitavos de Final
-  { id: 538013, homeTeam: "Argentina", awayTeam: "Egito", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538014, homeTeam: "Suíça", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:00", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados de ontem (06/07) — Oitavos de Final
-  { id: 538011, homeTeam: "Portugal", awayTeam: "Espanha", homeScore: 0, awayScore: 1, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538012, homeTeam: "EUA", awayTeam: "Bélgica", homeScore: 1, awayScore: 4, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  // Resultados anteriores — Oitavos de Final
-  { id: 538009, homeTeam: "Brasil", awayTeam: "Noruega", homeScore: 1, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
-  { id: 538010, homeTeam: "México", awayTeam: "Inglaterra", homeScore: 2, awayScore: 3, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Jogos de HOJE (08/07) — Qualificação Champions League
+  { id: 538101, homeTeam: "Kairat Almaty", awayTeam: "Sutjeska", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Champions League - Qualificação", leagueId: 2001 },
+  { id: 538102, homeTeam: "Flora", awayTeam: "Iberia 1999", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Champions League - Qualificação", leagueId: 2001 },
+  { id: 538103, homeTeam: "Petrocub", awayTeam: "Egnatia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Champions League - Qualificação", leagueId: 2001 },
+  
+  // Jogos de HOJE (08/07) — Qualificação Conference League
+  { id: 538201, homeTeam: "Zira", awayTeam: "Torpedo Kutaisi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Conference League - Qualificação", leagueId: 2002 },
+  { id: 538202, homeTeam: "Connahs Q.", awayTeam: "FC Ballkani", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
+  { id: 538203, homeTeam: "Differdange", awayTeam: "Ilves", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
+  
+  // Resultados de ontem (07/07) — Oitavos de Final do Mundial 2026
+  { id: 538013, homeTeam: "Argentina", awayTeam: "Egito", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  { id: 538014, homeTeam: "Suíça", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: "Pen(4-3)", status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Argentina", awayTeam: "Egito",
+  homeTeam: "Kairat Almaty", awayTeam: "Sutjeska",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [60, 40], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

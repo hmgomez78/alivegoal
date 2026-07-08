@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 07/07/2026
+// Notícias de fallback — análises, contexto e investigação — 08/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '07/07/2026';
+  const formatToday = '08/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Fim de uma Era — Ronaldo Despede-se do Mundial com Derrota para Espanha',
-      excerpt: 'Uma noite de emoções em Dallas. Cristiano Ronaldo, 41 anos, disputou o seu último jogo num Mundial e saiu de campo sem marcar, com Portugal a perder 0-1 para Espanha graças ao golo de Mikel Merino no primeiro minuto de descontos. Analisamos a prestação do capitão português, a frieza tática de Luis de la Fuente, e o que esta derrota significa para o futuro da seleção das Quinas. Portugal terá de reconstruir sem o seu maior ídolo.',
+      title: 'ANÁLISE TÁTICA: O Fim da Era Ronaldo — O Legado e o Futuro de Portugal Após o Mundial 2026',
+      excerpt: 'A derrota de Portugal por 1-0 frente a Espanha assinalou o fim da brilhante carreira de Cristiano Ronaldo em Campeonatos do Mundo. O jogador de 41 anos não conseguiu encontrar as redes adversárias, mas o seu legado permanece intocável. Analisamos o impacto de CR7 nas últimas duas décadas, as razões da eliminação frente à "La Roja" de Luis de la Fuente, e como a seleção portuguesa precisará de se reinventar sob a liderança de novos talentos para os próximos anos.',
       category: 'ANÁLISE TÁTICA',
       readTime: '12 min',
       date: formatToday,
@@ -154,8 +154,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: Bélgica Humilha EUA (4-1) — A Interferência de Trump na FIFA Saiu pela Culatra',
-      excerpt: 'A polémica reversão da suspensão de Balogun pela FIFA, que até mereceu agradecimentos do Presidente Trump, tornou-se num escândalo ainda maior quando a Bélgica goleou os EUA por 4-1 em Seattle. A interferência política na decisão da FIFA gerou indignação internacional. Os Red Devils avançam para os Quartos de Final e os EUA saem do torneio que organizaram com uma humilhação histórica. Investigamos os bastidores desta decisão sem precedentes.',
+      title: 'ESCÂNDALO: "Trump-gate" na FIFA — A Investigação Europeia a Gianni Infantino',
+      excerpt: 'O caso Folarin Balogun tornou-se numa enorme dor de cabeça política para a FIFA. Após a controversa intervenção de Donald Trump que resultou no adiamento da suspensão do avançado norte-americano, dezenas de membros do Parlamento Europeu exigem agora uma investigação oficial a Gianni Infantino. A decisão, vista como uma capitulação da FIFA face a pressões políticas, levantou sérias dúvidas sobre a integridade e independência da organização.',
       category: 'ESCÂNDALO',
       readTime: '10 min',
       date: formatToday,
@@ -163,26 +163,26 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 3,
-      title: 'TIPS DE APOSTAS: Argentina vs Egito e Suíça vs Colômbia — Análise e Previsões',
-      excerpt: 'Dois grandes jogos hoje nos Oitavos de Final do Mundial 2026. Argentina vs Egito (16:00 UTC): Messi e companhia são favoritos claros, mas Salah pode surpreender. Recomendamos Argentina Vence e Messi Marca a Qualquer Momento. Suíça vs Colômbia (20:00 UTC): um jogo muito equilibrado onde apostamos em Menos de 2.5 Golos e Suíça Dupla Hipótese. Leia a nossa análise completa com estatísticas e odds reais.',
-      category: 'TIPS DE APOSTAS',
+      title: 'TRANSFERÊNCIAS: O Novo Meio-Campo dos Spurs — Como Tonali Muda Tudo para De Zerbi',
+      excerpt: 'O Tottenham quebrou o seu recorde de transferências ao garantir Sandro Tonali por uns impressionantes £100 milhões (€108M). O médio italiano de 26 anos traz uma combinação única de visão, agressividade e controlo tático que Roberto De Zerbi considera fundamental. Com mais de £237M gastos neste verão, analisamos como o Tottenham se está a posicionar para lutar pelo título da Premier League e o impacto de Tonali no sistema de jogo da equipa.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'TRANSFERÊNCIAS: De Zerbi Transforma os Spurs — £237M Gastos e Mais Reforços a Caminho',
-      excerpt: 'Roberto De Zerbi está a revolucionar o Tottenham Hotspur! Após assinar Sandro Tonali por £100M (recorde do clube), os Spurs já gastaram mais de £237 milhões neste verão. O treinador italiano explora ainda Rafael Leão (AC Milan) e Savinho (Man City) para reforçar os flancos. Analisamos a estratégia de De Zerbi, o estilo de jogo que quer implementar e se o Tottenham pode finalmente competir pelos títulos na temporada 2026/27.',
-      category: 'TRANSFERÊNCIAS',
+      title: 'TIPS DE APOSTAS: Previsão dos Quartos de Final do Mundial — Argentina vs Suíça e Espanha vs Bélgica',
+      excerpt: 'Os quartos de final do Mundial 2026 prometem confrontos épicos! A Argentina de Messi enfrenta uma Suíça resiliente (sábado, 11 de julho). Recomendamos apostar na vitória da Argentina e em Menos de 2.5 Golos, dada a sólida defesa helvética. No outro jogo (sexta, 10 de julho), a Espanha, ainda sem sofrer golos, defronta a Bélgica que acabou de golear os EUA. A nossa aposta vai para a Espanha a qualificar-se, com ambas as equipas a marcar.',
+      category: 'TIPS DE APOSTAS',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 5,
-      title: 'ANÁLISE: Espanha — A Equipa Mais Dominante do Mundial 2026 Sem Sofrer Golos',
-      excerpt: 'A Espanha é simplesmente imparável! Após eliminar Portugal com um golo de Merino no último minuto, a La Roja mantém a sua folha de zeros no torneio — nenhum golo sofrido em todos os jogos. Com Lamine Yamal, Pedri, Rodri e Dani Olmo a brilhar, analisamos porque a Espanha é a grande favorita ao título e como Espanha vs Bélgica nos Quartos de Final pode ser o jogo do torneio. A defesa espanhola é uma muralha.',
+      title: 'ANÁLISE TÁTICA: O Renascimento de Messi e a Controvérsia Contra o Egito',
+      excerpt: 'A Argentina conseguiu uma vitória dramática por 3-2 contra o Egito nos oitavos de final, mas o jogo não escapou à polémica, com queixas egípcias sobre a arbitragem. Lionel Messi continua a desafiar a idade, orquestrando a reviravolta argentina. Analisamos a dinâmica ofensiva da equipa de Scaloni, as vulnerabilidades defensivas expostas por Mohamed Salah e Omar Marmoush, e o que a Argentina precisa de corrigir para o duelo contra a Suíça.',
       category: 'ANÁLISE TÁTICA',
       readTime: '11 min',
       date: formatToday,
@@ -190,8 +190,8 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Liverpool Quer Thuram da Juventus por £39M — Corrida com Man United',
-      excerpt: 'O Liverpool identificou Khephren Thuram, médio francês da Juventus, como o seu alvo principal para o verão. A Juve está disposta a vender por entre £35M e £39M para equilibrar as contas. O Manchester United também está interessado, criando uma corrida entre os dois gigantes ingleses. Analisamos o perfil de Thuram, como se encaixaria no sistema de Arne Slot no Liverpool, e o impacto desta contratação na luta pelo título da Premier League.',
+      title: 'TRANSFERÊNCIAS: Mercado de Guarda-Redes Aquece — Meslier no Arsenal e Especulações no Man United',
+      excerpt: 'O Arsenal fez um movimento inteligente ao garantir Illan Meslier a custo zero após a sua saída do Leeds United. O guardião francês traz experiência e competição para a baliza dos Gunners. Entretanto, o mercado agita-se noutras paragens: o Manchester United pondera uma oferta astronómica de £85M por Aurélien Tchouaméni do Real Madrid para resolver os seus problemas no meio-campo. Uma análise detalhada aos movimentos mais recentes da Premier League.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,
