@@ -139,14 +139,14 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 08/07/2026
+// Notícias de fallback — análises, contexto e investigação — 09/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '08/07/2026';
+  const formatToday = '09/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: O Fim da Era Ronaldo — O Legado e o Futuro de Portugal Após o Mundial 2026',
-      excerpt: 'A derrota de Portugal por 1-0 frente a Espanha assinalou o fim da brilhante carreira de Cristiano Ronaldo em Campeonatos do Mundo. O jogador de 41 anos não conseguiu encontrar as redes adversárias, mas o seu legado permanece intocável. Analisamos o impacto de CR7 nas últimas duas décadas, as razões da eliminação frente à "La Roja" de Luis de la Fuente, e como a seleção portuguesa precisará de se reinventar sob a liderança de novos talentos para os próximos anos.',
+      title: 'ANÁLISE TÁTICA: França vs Marrocos — O Duelo de Gerações nos Quartos do Mundial 2026',
+      excerpt: 'Quatro anos depois da semifinal do Qatar 2022, França e Marrocos voltam a defrontar-se num Campeonato do Mundo, desta vez nos quartos de final. Mbappé lidera uma seleção francesa poderosa, mas Marrocos chega como a grande surpresa do torneio, com Hakimi e Ziyech em grande forma. Analisamos os sistemas táticos de ambas as equipas, os pontos fortes e fracos, e as chaves para a qualificação. Uma batalha épica que pode definir o rumo do Mundial 2026.',
       category: 'ANÁLISE TÁTICA',
       readTime: '12 min',
       date: formatToday,
@@ -154,44 +154,44 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 2,
-      title: 'ESCÂNDALO: "Trump-gate" na FIFA — A Investigação Europeia a Gianni Infantino',
-      excerpt: 'O caso Folarin Balogun tornou-se numa enorme dor de cabeça política para a FIFA. Após a controversa intervenção de Donald Trump que resultou no adiamento da suspensão do avançado norte-americano, dezenas de membros do Parlamento Europeu exigem agora uma investigação oficial a Gianni Infantino. A decisão, vista como uma capitulação da FIFA face a pressões políticas, levantou sérias dúvidas sobre a integridade e independência da organização.',
+      title: 'ESCÂNDALO: FBI vs AFA — O Caso dos $300 Milhões que Pode Abalar o Futebol Mundial',
+      excerpt: 'A investigação do FBI à Associação de Futebol Argentino (AFA) por suspeitas de lavagem de dinheiro e fraude bancária de $300 milhões é o maior escândalo do futebol em anos. Analisamos o historial de corrupção no futebol sul-americano, as implicações para a Argentina no atual Mundial 2026, e o que pode acontecer se as acusações forem confirmadas. Poderia a Argentina ser desclassificada do torneio? Um caso que está a sacudir as fundações do desporto rei.',
       category: 'ESCÂNDALO',
-      readTime: '10 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'TRANSFERÊNCIAS: O Novo Meio-Campo dos Spurs — Como Tonali Muda Tudo para De Zerbi',
-      excerpt: 'O Tottenham quebrou o seu recorde de transferências ao garantir Sandro Tonali por uns impressionantes £100 milhões (€108M). O médio italiano de 26 anos traz uma combinação única de visão, agressividade e controlo tático que Roberto De Zerbi considera fundamental. Com mais de £237M gastos neste verão, analisamos como o Tottenham se está a posicionar para lutar pelo título da Premier League e o impacto de Tonali no sistema de jogo da equipa.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'TIPS DE APOSTAS: Previsão dos Quartos de Final do Mundial — Argentina vs Suíça e Espanha vs Bélgica',
-      excerpt: 'Os quartos de final do Mundial 2026 prometem confrontos épicos! A Argentina de Messi enfrenta uma Suíça resiliente (sábado, 11 de julho). Recomendamos apostar na vitória da Argentina e em Menos de 2.5 Golos, dada a sólida defesa helvética. No outro jogo (sexta, 10 de julho), a Espanha, ainda sem sofrer golos, defronta a Bélgica que acabou de golear os EUA. A nossa aposta vai para a Espanha a qualificar-se, com ambas as equipas a marcar.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '9 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 5,
-      title: 'ANÁLISE TÁTICA: O Renascimento de Messi e a Controvérsia Contra o Egito',
-      excerpt: 'A Argentina conseguiu uma vitória dramática por 3-2 contra o Egito nos oitavos de final, mas o jogo não escapou à polémica, com queixas egípcias sobre a arbitragem. Lionel Messi continua a desafiar a idade, orquestrando a reviravolta argentina. Analisamos a dinâmica ofensiva da equipa de Scaloni, as vulnerabilidades defensivas expostas por Mohamed Salah e Omar Marmoush, e o que a Argentina precisa de corrigir para o duelo contra a Suíça.',
-      category: 'ANÁLISE TÁTICA',
       readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 3,
+      title: 'TRANSFERÊNCIAS: Andrey Santos no United — O Que Ruben Amorim Ganha com o Médio Brasileiro',
+      excerpt: 'A chegada de Andrey Santos ao Manchester United por £50 milhões é uma aposta clara de Ruben Amorim no talento brasileiro. O médio de 21 anos, formado no Vasco da Gama e que nunca conseguiu afirmar-se no Chelsea, chega com uma enorme margem de progressão. Analisamos as características técnicas do jogador, como se encaixa no sistema 3-4-3 de Amorim, e as expectativas para a próxima temporada na Premier League. Uma transferência de risco, mas com enorme potencial.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '9 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 4,
+      title: 'TIPS DE APOSTAS: França vs Marrocos — Análise Completa e Previsões para os Quartos',
+      excerpt: 'O jogo mais aguardado dos quartos de final do Mundial 2026 oferece oportunidades interessantes para apostadores. A França é favorita com odds de 1.75, mas Marrocos tem mostrado ser uma equipa difícil de bater. Recomendamos apostar em Mais de 2.5 Golos (2.10) dado o estilo ofensivo de ambas as equipas, e em Mbappé a marcar a qualquer momento (2.50). Análise completa das estatísticas, historial de confrontos diretos e as nossas melhores picks para este duelo épico.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '8 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 5,
+      title: 'ANÁLISE TÁTICA: Mohamed Salah Livre — O Melhor Destino para o Rei Egípcio',
+      excerpt: 'Com o contrato no Liverpool expirado, Mohamed Salah é o jogador mais cobiçado do mercado de verão. Aos 34 anos, o egípcio ainda está em excelente forma, como demonstrou no Mundial 2026. Analisamos as três opções mais prováveis: Inter Milan (projeto europeu de topo), MLS (aventura americana) e Arábia Saudita (proposta financeira irrecusável). Qual é o melhor destino para o legado de Salah? E qual o impacto de cada escolha na sua carreira e no futebol mundial?',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Mercado de Guarda-Redes Aquece — Meslier no Arsenal e Especulações no Man United',
-      excerpt: 'O Arsenal fez um movimento inteligente ao garantir Illan Meslier a custo zero após a sua saída do Leeds United. O guardião francês traz experiência e competição para a baliza dos Gunners. Entretanto, o mercado agita-se noutras paragens: o Manchester United pondera uma oferta astronómica de £85M por Aurélien Tchouaméni do Real Madrid para resolver os seus problemas no meio-campo. Uma análise detalhada aos movimentos mais recentes da Premier League.',
+      title: 'TRANSFERÊNCIAS: Morgan Rogers para o Arsenal — A Transferência de €130M que Pode Mudar a Premier League',
+      excerpt: 'Se o Arsenal conseguir fechar a contratação de Morgan Rogers por €130 milhões, será a maior transferência da história do clube. O extremo inglês de 23 anos tem sido uma das revelações da Premier League nas últimas temporadas, com 18 golos e 14 assistências pelo Aston Villa. Analisamos como Rogers se encaixa no sistema de Mikel Arteta, o impacto da saída de Trossard para o Besiktas, e se este investimento coloca o Arsenal como favorito ao título 2026/27.',
       category: 'TRANSFERÊNCIAS',
       readTime: '9 min',
       date: formatToday,

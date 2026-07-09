@@ -1,9 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-
 export const config = {
   runtime: "nodejs",
 };
-
 interface TrendingItem {
   id: string;
   title: string;
@@ -16,92 +14,88 @@ interface TrendingItem {
   time: string;
   engagement: string;
 }
-
-// Notícias curadas — atualizadas 08/07/2026
+// Notícias curadas — atualizadas 09/07/2026
 const CURATED_TRENDING: TrendingItem[] = [
   {
     id: "t1",
-    title: "🚨 BREAKING: Cristiano Ronaldo Confirma Fim de Carreira em Mundiais Após Eliminação!",
-    title_en: "🚨 BREAKING: Cristiano Ronaldo Confirms End of World Cup Career After Elimination!",
-    summary: "O fim de uma era no futebol mundial! Após a eliminação de Portugal frente à Espanha nos oitavos de final do Mundial 2026, Cristiano Ronaldo, de 41 anos, confirmou oficialmente que este foi o seu último Campeonato do Mundo. O astro português, que passou duas décadas a carregar a seleção nacional, deixou o relvado em lágrimas após a derrota por 1-0 com um golo de Mikel Merino aos 91 minutos. Uma despedida emocionante para um dos maiores de sempre.",
-    summary_en: "The end of an era in world football! Following Portugal's elimination against Spain in the World Cup 2026 round of 16, 41-year-old Cristiano Ronaldo officially confirmed that this was his last World Cup. The Portuguese star, who spent two decades carrying the national team, left the pitch in tears after the 1-0 defeat with a 91st-minute goal by Mikel Merino. An emotional farewell for one of the greatest ever.",
+    title: "🚨 BREAKING: França vs Marrocos — Quartos de Final do Mundial 2026 HOJE!",
+    title_en: "🚨 BREAKING: France vs Morocco — World Cup 2026 Quarter-Final TODAY!",
+    summary: "O duelo mais aguardado dos quartos de final está aqui! França e Marrocos voltam a encontrar-se num Campeonato do Mundo, quatro anos depois da semifinal de 2022 em que os franceses venceram por 2-0. Desta vez, os Leões do Atlas chegam mais fortes e com o apoio de todo o mundo árabe e africano. Mbappé e Hakimi são os protagonistas mais aguardados neste confronto épico que se disputa hoje às 17h (hora de Brasília) no Gillette Stadium. O vencedor enfrenta o vencedor de Espanha vs Bélgica nas meias-finais.",
+    summary_en: "The most anticipated quarter-final clash is here! France and Morocco meet again at a World Cup, four years after the 2022 semi-final where the French won 2-0. This time, the Atlas Lions arrive stronger and with the support of the entire Arab and African world. Mbappé and Hakimi are the most anticipated protagonists in this epic clash taking place today at 17h (Brasília time) at Gillette Stadium. The winner faces the winner of Spain vs Belgium in the semi-finals.",
     tag: "BREAKING",
     source: "@FabrizioRomano",
     url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "12.4M",
+    time: "09/07/2026",
+    engagement: "15.2M",
   },
   {
     id: "t2",
-    title: "😱 SCANDAL: FIFA Investiga Incidente Racista com IShowSpeed no Mundial!",
-    title_en: "😱 SCANDAL: FIFA Investigates Racist Incident Involving IShowSpeed at World Cup!",
-    summary: "A FIFA abriu uma investigação oficial após alegações de abusos racistas envolvendo o famoso YouTuber americano IShowSpeed e um adepto durante a vitória da Argentina por 3-2 sobre o Egito (originalmente reportado como Cabo Verde/Egito dependendo das fontes). O incidente, captado durante uma transmissão ao vivo, mostra um adepto a dirigir insultos racistas ao streamer. A FIFA já condenou veementemente o ato, afirmando que o racismo não tem lugar no futebol.",
-    summary_en: "FIFA has launched an official investigation following allegations of racist abuse involving famous American YouTuber IShowSpeed and a fan during Argentina's 3-2 win over Egypt (originally reported as Cape Verde/Egypt depending on sources). The incident, caught on a live stream, shows a fan directing racist slurs at the streamer. FIFA has strongly condemned the act, stating that racism has no place in football.",
-    tag: "SCANDAL",
-    source: "@BBCSport",
-    url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "8.9M",
-  },
-  {
-    id: "t3",
-    title: "⚡ TRANSFER: Sandro Tonali Assina pelo Tottenham num Negócio Recorde de £100M!",
-    title_en: "⚡ TRANSFER: Sandro Tonali Signs for Tottenham in Record £100M Deal!",
-    summary: "Revolução em Londres! Sandro Tonali completou a sua transferência definitiva para o Tottenham Hotspur por um valor recorde de £100 milhões (€108M) vindo do Newcastle. O médio italiano assinou um contrato de longo prazo até junho de 2032. Esta é a sexta contratação de verão de Roberto De Zerbi, que está a construir uma equipa temível nos Spurs, já tendo gasto mais de £237 milhões no mercado. Uma verdadeira declaração de poder!",
-    summary_en: "Revolution in London! Sandro Tonali has completed his permanent transfer to Tottenham Hotspur for a club-record £100 million (€108M) fee from Newcastle. The Italian midfielder has signed a long-term contract until June 2032. This is Roberto De Zerbi's sixth summer signing, who is building a fearsome squad at Spurs, having already spent over £237 million in the market. A true statement of intent!",
-    tag: "TRANSFER",
-    source: "@FabrizioRomano",
-    url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "6.5M",
-  },
-  {
-    id: "t4",
-    title: "🔥 HOT: Argentina e Suíça Avançam para os Quartos do Mundial 2026!",
-    title_en: "🔥 HOT: Argentina and Switzerland Advance to World Cup 2026 Quarter-Finals!",
-    summary: "Os quartos de final estão definidos! Num dia dramático, a Argentina de Messi precisou de uma reviravolta épica para vencer o Egito por 3-2, num jogo marcado por queixas egípcias sobre a arbitragem. No outro jogo do dia, a Suíça superou a Colômbia num tenso desempate por grandes penalidades (4-3) após um empate 0-0. Agora, Argentina e Suíça vão defrontar-se nos quartos de final no sábado, dia 11 de julho.",
-    summary_en: "The quarter-finals are set! On a dramatic day, Messi's Argentina needed an epic comeback to beat Egypt 3-2, in a match marked by Egyptian complaints about the refereeing. In the other game of the day, Switzerland overcame Colombia in a tense penalty shootout (4-3) following a 0-0 draw. Now, Argentina and Switzerland will face each other in the quarter-finals on Saturday, July 11th.",
-    tag: "HOT",
-    source: "@ESPN",
-    url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "7.2M",
-  },
-  {
-    id: "t5",
-    title: "⚡ TRANSFER: Arsenal Garante Contratação do Guarda-redes Illan Meslier!",
-    title_en: "⚡ TRANSFER: Arsenal Secure Signing of Goalkeeper Illan Meslier!",
-    summary: "Negócio fechado no Emirates! O Arsenal chegou a acordo para assinar com o guarda-redes Illan Meslier numa transferência a custo zero, após o término do seu contrato com o Leeds United. O guardião francês chega para reforçar as opções de Mikel Arteta na baliza dos Gunners. Um movimento astuto de mercado do Arsenal, garantindo um guarda-redes com experiência de Premier League sem custos de transferência.",
-    summary_en: "Deal done at the Emirates! Arsenal have agreed a deal to sign goalkeeper Illan Meslier on a free transfer following the expiration of his contract with Leeds United. The French shot-stopper arrives to bolster Mikel Arteta's goalkeeping options for the Gunners. An astute market move by Arsenal, securing a goalkeeper with Premier League experience with no transfer fee.",
-    tag: "TRANSFER",
-    source: "@TheAthletic",
-    url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "4.8M",
-  },
-  {
-    id: "t6",
-    title: "😱 SCANDAL: Investigação Europeia a Gianni Infantino por Causa de Donald Trump!",
-    title_en: "😱 SCANDAL: European Investigation into Gianni Infantino over Donald Trump!",
-    summary: "O escândalo do 'Trump-gate' ganha novas proporções! Dezenas de legisladores europeus estão a recolher apoio para lançar uma investigação no Parlamento Europeu contra o presidente da FIFA, Gianni Infantino. Em causa está a sua decisão de reverter a suspensão por cartão vermelho do jogador americano Folarin Balogun após intervenção direta do Presidente dos EUA, Donald Trump. Os legisladores classificam a mudança de regras a meio do torneio como uma 'vergonha e perversão da justiça'.",
-    summary_en: "The 'Trump-gate' scandal takes on new proportions! Dozens of European lawmakers are gathering support to launch an investigation in the European Parliament against FIFA boss Gianni Infantino. At issue is his decision to reverse the red card suspension of American player Folarin Balogun following direct intervention from US President Donald Trump. Lawmakers call the mid-tournament rule change a 'disgrace and a perversion of justice'.",
+    title: "😱 SCANDAL: FBI Investiga Associação Argentina de Futebol por Lavagem de Dinheiro de $300M!",
+    title_en: "😱 SCANDAL: FBI Investigates Argentine Football Association for $300M Money Laundering!",
+    summary: "Um escândalo colossal abalou o Mundial 2026! O FBI abriu uma investigação formal contra a Associação de Futebol Argentino (AFA) por suspeitas de lavagem de dinheiro e fraude bancária nos Estados Unidos, num caso que envolve alegadamente $300 milhões. A investigação analisa tanto a vitória argentina no Mundial 2022 como a atual campanha de 2026. A notícia surgiu imediatamente após a vitória dramática da Argentina por 3-2 sobre o Egito, levantando suspeitas sobre a integridade do torneio. A FIFA e a AFA negam qualquer irregularidade.",
+    summary_en: "A colossal scandal has rocked the 2026 World Cup! The FBI has opened a formal investigation into the Argentine Football Association (AFA) for suspected money laundering and bank fraud in the United States, in a case allegedly involving $300 million. The investigation analyses both Argentina's 2022 World Cup victory and the current 2026 campaign. The news emerged immediately after Argentina's dramatic 3-2 win over Egypt, raising suspicions about the tournament's integrity. FIFA and the AFA deny any wrongdoing.",
     tag: "SCANDAL",
     source: "@Independent",
     url: "https://x.com/alivegoal",
-    time: "08/07/2026",
-    engagement: "9.1M",
+    time: "09/07/2026",
+    engagement: "11.8M",
+  },
+  {
+    id: "t3",
+    title: "⚡ TRANSFER: HERE WE GO! Andrey Santos Assina pelo Manchester United por £50M!",
+    title_en: "⚡ TRANSFER: HERE WE GO! Andrey Santos Signs for Manchester United for £50M!",
+    summary: "É oficial! Fabrizio Romano confirmou o 'Here We Go' para a transferência de Andrey Santos do Chelsea para o Manchester United por um pacote de £50 milhões (£48M + £2M em variáveis e cláusula de revenda). O médio brasileiro de 21 anos, que nunca chegou a jogar regularmente pelos Blues, vai finalmente ter a sua oportunidade de brilhar na Premier League sob as ordens de Ruben Amorim. Uma aposta clara do United no talento jovem brasileiro para resolver os problemas no meio-campo.",
+    summary_en: "It's official! Fabrizio Romano has confirmed the 'Here We Go' for Andrey Santos' transfer from Chelsea to Manchester United for a £50 million package (£48M + £2M in variables and sell-on clause). The 21-year-old Brazilian midfielder, who never managed to play regularly for the Blues, will finally get his chance to shine in the Premier League under Ruben Amorim. A clear bet by United on young Brazilian talent to solve their midfield problems.",
+    tag: "TRANSFER",
+    source: "@FabrizioRomano",
+    url: "https://x.com/alivegoal",
+    time: "09/07/2026",
+    engagement: "9.3M",
+  },
+  {
+    id: "t4",
+    title: "🔥 HOT: Mohamed Salah Livre! Inter Milan, MLS e Arábia Saudita na Corrida pelo Egípcio!",
+    title_en: "🔥 HOT: Mohamed Salah Free Agent! Inter Milan, MLS and Saudi Arabia Race for Egyptian Star!",
+    summary: "O mercado de transferências está em ebulição com o futuro de Mohamed Salah! O lendário avançado egípcio, de 34 anos, está livre após o fim do seu contrato com o Liverpool e as propostas estão a chegar de todo o lado. O Inter Milan está a explorar ativamente a possibilidade de contratação, mas precisaria de libertar espaço salarial. A MLS também contactou o entourage do jogador, enquanto o Al-Ittihad da Arábia Saudita mantém interesse de longa data. Salah, focado no Mundial com o Egito, prometeu decidir o seu futuro após o torneio.",
+    summary_en: "The transfer market is boiling with Mohamed Salah's future! The legendary 34-year-old Egyptian forward is a free agent after his Liverpool contract expired and offers are arriving from everywhere. Inter Milan is actively exploring the possibility of signing him, but would need to free up wage space. MLS has also contacted the player's entourage, while Al-Ittihad from Saudi Arabia maintains long-standing interest. Salah, focused on the World Cup with Egypt, has promised to decide his future after the tournament.",
+    tag: "HOT",
+    source: "@ESPN",
+    url: "https://x.com/alivegoal",
+    time: "09/07/2026",
+    engagement: "8.7M",
+  },
+  {
+    id: "t5",
+    title: "⚡ TRANSFER: Arsenal 'Muito Perto' de Morgan Rogers — Aston Villa Pede €130M!",
+    title_en: "⚡ TRANSFER: Arsenal 'Very Close' to Morgan Rogers — Aston Villa Demand €130M!",
+    summary: "A novela do verão na Premier League! Fabrizio Romano confirmou que o Arsenal está 'muito perto' de chegar a acordo com Morgan Rogers sobre os termos pessoais do contrato. O extremo inglês é a prioridade máxima dos Gunners para o mercado de verão. O problema? O Aston Villa exige €130 milhões pela joia da coroa. O Arsenal está a negociar para baixar o valor, enquanto o jogador já terá dado o seu aval à mudança para o Emirates. Leandro Trossard pode sair para o Besiktas por €20M para financiar a operação.",
+    summary_en: "The summer soap opera in the Premier League! Fabrizio Romano confirmed that Arsenal are 'very close' to reaching an agreement with Morgan Rogers on personal contract terms. The English winger is the Gunners' top priority for the summer market. The problem? Aston Villa demand €130 million for their crown jewel. Arsenal are negotiating to bring the fee down, while the player has reportedly already given his approval for the move to the Emirates. Leandro Trossard may leave for Besiktas for €20M to help fund the deal.",
+    tag: "TRANSFER",
+    source: "@FabrizioRomano",
+    url: "https://x.com/alivegoal",
+    time: "09/07/2026",
+    engagement: "7.1M",
+  },
+  {
+    id: "t6",
+    title: "😱 SCANDAL: Egito Furioso com Arbitragem Contra Argentina — Pedido Formal à FIFA!",
+    title_en: "😱 SCANDAL: Egypt Furious with Refereeing Against Argentina — Formal Complaint to FIFA!",
+    summary: "O Egito não ficou calado! Após a derrota por 3-2 frente à Argentina nos oitavos de final, a Federação Egípcia de Futebol apresentou uma queixa formal à FIFA contra a arbitragem do jogo. Os egípcios alegam que vários lances decisivos foram incorretamente julgados a favor dos sul-americanos, incluindo um penálti não assinalado e um golo que deveria ter sido anulado por fora de jogo. Mohamed Salah, visivelmente transtornado no final, afirmou que 'todos viram o que aconteceu'. A FIFA diz estar a analisar o caso.",
+    summary_en: "Egypt is not staying silent! Following the 3-2 defeat against Argentina in the round of 16, the Egyptian Football Federation has filed a formal complaint with FIFA against the match refereeing. The Egyptians allege that several decisive moments were incorrectly judged in favour of the South Americans, including an unawarded penalty and a goal that should have been disallowed for offside. Mohamed Salah, visibly distraught at the end, stated that 'everyone saw what happened'. FIFA says it is analysing the case.",
+    tag: "SCANDAL",
+    source: "@BBCSport",
+    url: "https://x.com/alivegoal",
+    time: "09/07/2026",
+    engagement: "10.4M",
   }
 ];
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=600");
-
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
-
   return res.status(200).json({
     source: "curated",
     count: CURATED_TRENDING.length,

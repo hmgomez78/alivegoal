@@ -80,37 +80,38 @@ function getTeamLogo(team: any): string {
 }
 
 // Jogos com tips hoje (08/07/2026) — aparecem primeiro
+// Jogos com tips hoje (09/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
+  "France", "Morocco",
   "Kairat", "Sutjeska",
-  "Differdange", "Ilves",
   "Connahs", "Ballkani",
-  "Petrocub", "Egnatia"
+  "Differdange", "Ilves"
 ];
-
-// Fallback data com jogos reais (atualizado 08/07/2026)
-// NOTA: Hoje é dia de descanso no Mundial 2026. Os próximos jogos (Quartos de Final) são dia 9.
-// Por isso focamos nas Qualificações da Liga dos Campeões e Liga Conferência que jogam hoje.
+// Fallback data com jogos reais (atualizado 09/07/2026)
+// HOJE: Quartas de Final do Mundial 2026 — França vs Marrocos + Qualificações Europeias
 const fallbackMatches: LiveMatch[] = [
-  // Jogos de HOJE (08/07) — Qualificação Champions League
-  { id: 538101, homeTeam: "Kairat Almaty", awayTeam: "Sutjeska", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Champions League - Qualificação", leagueId: 2001 },
-  { id: 538102, homeTeam: "Flora", awayTeam: "Iberia 1999", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Champions League - Qualificação", leagueId: 2001 },
-  { id: 538103, homeTeam: "Petrocub", awayTeam: "Egnatia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Champions League - Qualificação", leagueId: 2001 },
-  
-  // Jogos de HOJE (08/07) — Qualificação Conference League
-  { id: 538201, homeTeam: "Zira", awayTeam: "Torpedo Kutaisi", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 538202, homeTeam: "Connahs Q.", awayTeam: "FC Ballkani", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 538203, homeTeam: "Differdange", awayTeam: "Ilves", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
-  
-  // Resultados de ontem (07/07) — Oitavos de Final do Mundial 2026
+  // JOGO PRINCIPAL DO DIA — Quartos de Final Mundial 2026
+  { id: 539001, homeTeam: "França", awayTeam: "Marrocos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  // Qualificação Champions League — 09/07
+  { id: 539101, homeTeam: "Kairat Almaty", awayTeam: "Sutjeska", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 15:00", league: "Champions League - Qualificação", leagueId: 2001 },
+  { id: 539102, homeTeam: "Petrocub", awayTeam: "Egnatia", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Champions League - Qualificação", leagueId: 2001 },
+  // Qualificação Conference League — 09/07
+  { id: 539201, homeTeam: "Connahs Q.", awayTeam: "FC Ballkani", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
+  { id: 539202, homeTeam: "Differdange", awayTeam: "Ilves", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:30", league: "Conference League - Qualificação", leagueId: 2002 },
+  // Resultados de ontem (08/07) — Oitavos de Final do Mundial 2026
   { id: 538013, homeTeam: "Argentina", awayTeam: "Egito", homeScore: 3, awayScore: 2, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
   { id: 538014, homeTeam: "Suíça", awayTeam: "Colômbia", homeScore: 0, awayScore: 0, minute: "Pen(4-3)", status: "FIM", league: "FIFA Mundial 2026 — Oitavos de Final", leagueId: 2000 },
+  // Próximos jogos — Quartos de Final
+  { id: 539002, homeTeam: "Espanha", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "10/07 16:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  { id: 539003, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "11/07 18:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  { id: 539004, homeTeam: "Argentina", awayTeam: "Suíça", homeScore: 0, awayScore: 0, minute: 0, status: "11/07 22:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Kairat Almaty", awayTeam: "Sutjeska",
+  homeTeam: "França", awayTeam: "Marrocos",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [55, 45], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [58, 42], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };
