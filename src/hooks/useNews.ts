@@ -139,41 +139,41 @@ function extractDomain(url: string): string {
   }
 }
 
-// Notícias de fallback — análises, contexto e investigação — 09/07/2026
+// Notícias de fallback — análises, contexto e investigação — 10/07/2026
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = '09/07/2026';
+  const formatToday = '10/07/2026';
   return [
     {
       id: 1,
-      title: 'ANÁLISE TÁTICA: França vs Marrocos — O Duelo de Gerações nos Quartos do Mundial 2026',
-      excerpt: 'Quatro anos depois da semifinal do Qatar 2022, França e Marrocos voltam a defrontar-se num Campeonato do Mundo, desta vez nos quartos de final. Mbappé lidera uma seleção francesa poderosa, mas Marrocos chega como a grande surpresa do torneio, com Hakimi e Ziyech em grande forma. Analisamos os sistemas táticos de ambas as equipas, os pontos fortes e fracos, e as chaves para a qualificação. Uma batalha épica que pode definir o rumo do Mundial 2026.',
+      title: 'ANÁLISE TÁTICA: Espanha vs Bélgica — O Jogo do Dia nos Quartos do Mundial 2026',
+      excerpt: 'Espanha chega aos quartos de final do Mundial 2026 como a equipa mais dominante do torneio: zero golos sofridos, posse de bola avassaladora e Lamine Yamal em estado de graça. A Bélgica, liderada por um Kevin De Bruyne em modo despedida, eliminou os EUA de forma dramática. Analisamos os sistemas táticos, os duelos individuais chave (Yamal vs Castagne, Rodri vs De Bruyne) e as probabilidades de cada equipa avançar para as meias-finais. Uma batalha de estilos que pode ser o jogo do torneio.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '12 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'ESCÂNDALO: FBI vs AFA — O Caso dos $300 Milhões que Pode Abalar o Futebol Mundial',
-      excerpt: 'A investigação do FBI à Associação de Futebol Argentino (AFA) por suspeitas de lavagem de dinheiro e fraude bancária de $300 milhões é o maior escândalo do futebol em anos. Analisamos o historial de corrupção no futebol sul-americano, as implicações para a Argentina no atual Mundial 2026, e o que pode acontecer se as acusações forem confirmadas. Poderia a Argentina ser desclassificada do torneio? Um caso que está a sacudir as fundações do desporto rei.',
-      category: 'ESCÂNDALO',
       readTime: '11 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
+      id: 2,
+      title: 'ESCÂNDALO: Trump, Infantino e o Cartão Vermelho de Balogun — Como a Política Invadiu o Futebol',
+      excerpt: 'O escândalo Balogun/Trump é o maior da história recente do futebol mundial. Pela primeira vez, um presidente dos EUA interferiu diretamente numa decisão da FIFA durante um Mundial. Trump ligou a Infantino, a FIFA cedeu, e Balogun jogou. A UEFA está furiosa, parlamentares europeus pedem investigação, e o precedente criado é aterrador. Analisamos as implicações legais e desportivas desta decisão sem precedentes e o que significa para o futuro da governança do futebol.',
+      category: 'ESCÂNDALO',
+      readTime: '13 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
       id: 3,
-      title: 'TRANSFERÊNCIAS: Andrey Santos no United — O Que Ruben Amorim Ganha com o Médio Brasileiro',
-      excerpt: 'A chegada de Andrey Santos ao Manchester United por £50 milhões é uma aposta clara de Ruben Amorim no talento brasileiro. O médio de 21 anos, formado no Vasco da Gama e que nunca conseguiu afirmar-se no Chelsea, chega com uma enorme margem de progressão. Analisamos as características técnicas do jogador, como se encaixa no sistema 3-4-3 de Amorim, e as expectativas para a próxima temporada na Premier League. Uma transferência de risco, mas com enorme potencial.',
+      title: 'TRANSFERÊNCIAS: Bruno Guimarães no Arsenal — O Que Arteta Ganha com o Médio Brasileiro',
+      excerpt: 'A chegada de Bruno Guimarães ao Arsenal por £70 milhões é a transferência mais impactante do mercado de verão até agora. O médio brasileiro de 27 anos é um dos melhores da Premier League e resolve o maior problema dos Gunners: a criatividade e intensidade no meio-campo. Analisamos como Guimarães se encaixa no sistema de Arteta, o impacto na formação, e se esta contratação coloca o Arsenal como favorito ao título 2026/27. O Newcastle perde o seu melhor jogador mas recebe uma fortuna para reinvestir.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '9 min',
+      readTime: '10 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 4,
-      title: 'TIPS DE APOSTAS: França vs Marrocos — Análise Completa e Previsões para os Quartos',
-      excerpt: 'O jogo mais aguardado dos quartos de final do Mundial 2026 oferece oportunidades interessantes para apostadores. A França é favorita com odds de 1.75, mas Marrocos tem mostrado ser uma equipa difícil de bater. Recomendamos apostar em Mais de 2.5 Golos (2.10) dado o estilo ofensivo de ambas as equipas, e em Mbappé a marcar a qualquer momento (2.50). Análise completa das estatísticas, historial de confrontos diretos e as nossas melhores picks para este duelo épico.',
+      title: 'TIPS DE APOSTAS: Espanha vs Bélgica — Análise Completa e as Melhores Picks para Hoje',
+      excerpt: 'O segundo quarto de final do Mundial 2026 oferece oportunidades únicas para apostadores. Espanha não sofreu um golo em todo o torneio, mas a Bélgica tem um ataque poderoso com De Bruyne, Doku e Trossard. Recomendamos Espanha a Vencer/Empate (1.45), Menos de 2.5 Golos (1.80) dado o estilo defensivo de ambas as equipas, e Lamine Yamal a ser o melhor jogador do jogo (3.50). Análise completa das estatísticas e as nossas melhores picks para este duelo épico.',
       category: 'TIPS DE APOSTAS',
       readTime: '8 min',
       date: formatToday,
@@ -181,19 +181,19 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 5,
-      title: 'ANÁLISE TÁTICA: Mohamed Salah Livre — O Melhor Destino para o Rei Egípcio',
-      excerpt: 'Com o contrato no Liverpool expirado, Mohamed Salah é o jogador mais cobiçado do mercado de verão. Aos 34 anos, o egípcio ainda está em excelente forma, como demonstrou no Mundial 2026. Analisamos as três opções mais prováveis: Inter Milan (projeto europeu de topo), MLS (aventura americana) e Arábia Saudita (proposta financeira irrecusável). Qual é o melhor destino para o legado de Salah? E qual o impacto de cada escolha na sua carreira e no futebol mundial?',
+      title: 'ANÁLISE TÁTICA: Sandro Tonali para o Tottenham — O Impacto de De Zerbi no Mercado de Verão',
+      excerpt: 'A chegada de Sandro Tonali ao Tottenham por €100 milhões é um sinal claro da ambição de Roberto De Zerbi. O médio italiano, que revelou que De Zerbi foi decisivo na sua escolha, junta-se a Mateus Fernandes (€98M do West Ham) numa reconstrução massiva do meio-campo dos Spurs. Analisamos o estilo de jogo de De Zerbi, como Tonali se encaixa no seu sistema de pressão alta e posse, e se o Tottenham pode finalmente competir pelos títulos na próxima época.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '10 min',
+      readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
       id: 6,
-      title: 'TRANSFERÊNCIAS: Morgan Rogers para o Arsenal — A Transferência de €130M que Pode Mudar a Premier League',
-      excerpt: 'Se o Arsenal conseguir fechar a contratação de Morgan Rogers por €130 milhões, será a maior transferência da história do clube. O extremo inglês de 23 anos tem sido uma das revelações da Premier League nas últimas temporadas, com 18 golos e 14 assistências pelo Aston Villa. Analisamos como Rogers se encaixa no sistema de Mikel Arteta, o impacto da saída de Trossard para o Besiktas, e se este investimento coloca o Arsenal como favorito ao título 2026/27.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '9 min',
+      title: 'ÚLTIMA HORA: Mbappé Iguala Recorde de 1958 — França nas Meias-Finais pela 3ª Vez Consecutiva',
+      excerpt: 'Kylian Mbappé escreveu mais uma página de ouro na história do futebol! Com o seu 8º golo no Mundial 2026 frente a Marrocos (2-0), o capitão francês igualou o recorde histórico de Just Fontaine de 1958. Mbappé é agora o único jogador a chegar às meias-finais nos seus três primeiros Mundiais. A França aguarda o vencedor de Espanha vs Bélgica para a semifinal de 14 de julho. Analisamos a performance histórica de Mbappé e as chances da França de conquistar o título.',
+      category: 'ÚLTIMA HORA',
+      readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     }
