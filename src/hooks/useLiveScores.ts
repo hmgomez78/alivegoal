@@ -79,38 +79,41 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (10/07/2026) — aparecem primeiro
+// Jogos com tips hoje (11/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Spain", "Belgium",
-  "Espanha", "Bélgica",
-  "Bohemians", "St. Joseph's",
-  "Pyunik", "Marsaxlokk"
+  "Norway", "England",
+  "Noruega", "Inglaterra",
+  "Sport", "Botafogo-SP",
+  "Hegelmann", "Paide"
 ];
 
-// Fallback data com jogos reais (atualizado 10/07/2026)
-// HOJE: Quartos de Final do Mundial 2026 — Espanha vs Bélgica + Qualificações Conference League
+// Fallback data com jogos reais (atualizado 11/07/2026)
+// HOJE: Quartos de Final do Mundial 2026 — Noruega vs Inglaterra + Brasileirão B + Qualificações Conference League
 const fallbackMatches: LiveMatch[] = [
   // JOGO PRINCIPAL DO DIA — Quartos de Final Mundial 2026
-  { id: 540001, homeTeam: "Espanha", awayTeam: "Bélgica", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  // Qualificação Conference League — 10/07
-  { id: 540101, homeTeam: "Bohemians", awayTeam: "St. Joseph's", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 540102, homeTeam: "Marsaxlokk", awayTeam: "Pyunik", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 540103, homeTeam: "Dila Gori", awayTeam: "AC Virtus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 540104, homeTeam: "Alashkert", awayTeam: "Yelimay", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Conference League - Qualificação", leagueId: 2002 },
-  // Resultado de ontem (09/07) — Quartos de Final do Mundial 2026
-  { id: 539001, homeTeam: "França", awayTeam: "Marrocos", homeScore: 2, awayScore: 0, minute: 0, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  { id: 540002, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  
+  // Brasileirão Série B — 11/07
+  { id: 540201, homeTeam: "Sport", awayTeam: "Botafogo-SP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série B", leagueId: 2013 },
+  
+  // Qualificação Conference League — 11/07
+  { id: 540105, homeTeam: "Hegelmann", awayTeam: "Paide", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Conference League - Qualificação", leagueId: 2002 },
+  { id: 540106, homeTeam: "Dinamo Minsk", awayTeam: "Sileks", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Conference League - Qualificação", leagueId: 2002 },
+  
+  // Resultado de ontem (10/07) — Quartos de Final do Mundial 2026
+  { id: 540001, homeTeam: "Espanha", awayTeam: "Bélgica", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  
   // Próximos jogos — Quartos e Meias-Finais
-  { id: 540002, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "11/07 22:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
   { id: 540003, homeTeam: "Argentina", awayTeam: "Suíça", homeScore: 0, awayScore: 0, minute: 0, status: "12/07 02:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  { id: 540004, homeTeam: "França", awayTeam: "Esp/Bél", homeScore: 0, awayScore: 0, minute: 0, status: "14/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "14/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
   { id: 540005, homeTeam: "Nor/Ing", awayTeam: "Arg/Suí", homeScore: 0, awayScore: 0, minute: 0, status: "15/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", awayTeam: "Bélgica",
+  homeTeam: "Noruega", awayTeam: "Inglaterra",
   homeScore: 0, awayScore: 0,
   stats: {
-    possession: [62, 38], shots: [0, 0], shotsOnTarget: [0, 0],
+    possession: [45, 55], shots: [0, 0], shotsOnTarget: [0, 0],
     corners: [0, 0], fouls: [0, 0],
   },
 };

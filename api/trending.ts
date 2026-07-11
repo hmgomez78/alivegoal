@@ -1,7 +1,9 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 export const config = {
   runtime: "nodejs",
 };
+
 interface TrendingItem {
   id: string;
   title: string;
@@ -14,88 +16,91 @@ interface TrendingItem {
   time: string;
   engagement: string;
 }
-// Notícias curadas — atualizadas 10/07/2026
+
 const CURATED_TRENDING: TrendingItem[] = [
   {
     id: "t1",
-    title: "🚨 BREAKING: Espanha vs Bélgica — Quartos de Final do Mundial 2026 HOJE às 20h!",
-    title_en: "🚨 BREAKING: Spain vs Belgium — World Cup 2026 Quarter-Final TODAY at 20h!",
-    summary: "O segundo duelo dos quartos de final do Mundial 2026 acontece HOJE! Espanha, que não sofreu um único golo neste torneio, enfrenta uma Bélgica em chamas que eliminou os EUA nos oitavos. Lamine Yamal e Rodri são os protagonistas espanhóis, enquanto Kevin De Bruyne lidera os Diables Rouges numa última dança antes da sua provável retirada internacional. O jogo disputa-se no Los Angeles Stadium às 20h00 (hora de Lisboa). O vencedor defronta a França nas meias-finais a 14 de julho.",
-    summary_en: "The second quarter-final clash of the 2026 World Cup happens TODAY! Spain, who have not conceded a single goal in this tournament, face a Belgium side on fire who eliminated the USA in the round of 16. Lamine Yamal and Rodri are the Spanish protagonists, while Kevin De Bruyne leads the Red Devils in what could be his last international dance before likely retirement. The match takes place at Los Angeles Stadium at 20h00 (Lisbon time). The winner faces France in the semi-finals on July 14.",
-    tag: "BREAKING",
-    source: "@FabrizioRomano",
+    title: "🔥 HOT: Espanha 2-1 Bélgica — Merino Marca aos 88' e Espanha Vai às Meias-Finais!",
+    title_en: "🔥 HOT: Spain 2-1 Belgium — Merino Scores at 88' and Spain Reaches Semi-Finals!",
+    summary: "Num jogo emocionante dos quartos de final do Mundial 2026, a Espanha derrotou a Bélgica por 2-1. Fabián Ruiz abriu o marcador aos 30', mas Charles De Ketelaere empatou aos 41'. Quando o jogo parecia destinado ao prolongamento, Mikel Merino, saído do banco, marcou o golo da vitória aos 88 minutos após um erro do guarda-redes belga Senne Lammens. A Espanha avança para as meias-finais onde defrontará a França num duelo de gigantes europeus.",
+    summary_en: "In a thrilling 2026 World Cup quarter-final, Spain defeated Belgium 2-1. Fabián Ruiz opened the scoring at 30', but Charles De Ketelaere equalised at 41'. When the match seemed destined for extra time, substitute Mikel Merino scored the winning goal at the 88th minute following a mistake by Belgian goalkeeper Senne Lammens. Spain advances to the semi-finals where they will face France in a clash of European giants.",
+    tag: "HOT",
+    source: "@AlJazeera",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "14.8M",
+    time: "11/07/2026",
+    engagement: "15.2M",
   },
   {
     id: "t2",
-    title: "😱 SCANDAL: Trump Ligou a Infantino e Forçou a FIFA a Anular Cartão Vermelho de Balogun — UE Furiosa!",
-    title_en: "😱 SCANDAL: Trump Called Infantino and Forced FIFA to Overturn Balogun's Red Card — EU Furious!",
-    summary: "O maior escândalo do Mundial 2026 explodiu! O presidente dos EUA, Donald Trump, admitiu ter ligado pessoalmente ao presidente da FIFA, Gianni Infantino, para pressionar a anulação do cartão vermelho de Folarin Balogun contra a Bósnia. A FIFA cedeu — algo sem precedentes na história moderna do futebol — e Balogun jogou contra a Bélgica. A UEFA classificou a decisão como 'sem precedentes, incompreensível e injustificável'. Parlamentares europeus pediram uma investigação formal. Trump disse que 'não sabia o que era um cartão vermelho' mas que era 'muito injusto'.",
-    summary_en: "The biggest scandal of the 2026 World Cup has exploded! US President Donald Trump admitted to personally calling FIFA president Gianni Infantino to pressure the overturning of Folarin Balogun's red card against Bosnia. FIFA caved — something unprecedented in modern football history — and Balogun played against Belgium. UEFA classified the decision as 'unprecedented, incomprehensible and unjustifiable'. European lawmakers called for a formal investigation. Trump said he 'didn't know what a red card was' but that it was 'very unfair'.",
-    tag: "SCANDAL",
-    source: "@TheAthletic",
+    title: "⚡ TRANSFER: Andrey Santos no Manchester United por £50M — Novo Reforço de Peso!",
+    title_en: "⚡ TRANSFER: Andrey Santos to Manchester United for £50M — Huge New Signing!",
+    summary: "O Manchester United está prestes a anunciar a contratação do médio brasileiro Andrey Santos ao Chelsea por £50 milhões. A transferência é vista como um sinal claro da nova abordagem do clube no mercado. O jovem internacional brasileiro de 22 anos vai reforçar o meio-campo de Michael Carrick para a época 2026/27. Rio Ferdinand elogiou a contratação, afirmando que é exatamente o tipo de jogador que o clube precisava há anos.",
+    summary_en: "Manchester United is set to announce the signing of Brazilian midfielder Andrey Santos from Chelsea for £50 million. The transfer is seen as a clear sign of the club's new approach in the market. The 22-year-old Brazilian international will bolster Michael Carrick's midfield for the 2026/27 season. Rio Ferdinand praised the signing, stating it is exactly the type of player the club has needed for years.",
+    tag: "TRANSFER",
+    source: "@FabrizioRomano",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "18.4M",
+    time: "11/07/2026",
+    engagement: "12.8M",
   },
   {
     id: "t3",
-    title: "⚡ TRANSFER: HERE WE GO! Bruno Guimarães Assina pelo Arsenal por £70M — Acordo de 5 Anos!",
-    title_en: "⚡ TRANSFER: HERE WE GO! Bruno Guimarães Signs for Arsenal for £70M — 5-Year Deal!",
-    summary: "É oficial! Fabrizio Romano confirmou o 'Here We Go' para a transferência de Bruno Guimarães do Newcastle United para o Arsenal por £70 milhões. O médio brasileiro de 27 anos, considerado um dos melhores da Premier League, assinou um contrato de 5 anos com os Gunners. O Arsenal confirma também a contratação do guarda-redes Illan Meslier. Mikel Arteta reforça o meio-campo com uma das peças mais cobiçadas do mercado. O Newcastle usará o dinheiro para contratar Bazoumana Toure do Hoffenheim por €50M.",
-    summary_en: "It's official! Fabrizio Romano has confirmed the 'Here We Go' for Bruno Guimarães' transfer from Newcastle United to Arsenal for £70 million. The 27-year-old Brazilian midfielder, considered one of the best in the Premier League, has signed a 5-year contract with the Gunners. Arsenal also confirms the signing of goalkeeper Illan Meslier. Mikel Arteta strengthens the midfield with one of the most coveted players on the market. Newcastle will use the money to sign Bazoumana Toure from Hoffenheim for €50M.",
-    tag: "TRANSFER",
-    source: "@FabrizioRomano",
+    title: "😱 SCANDAL: Escândalo do Relvado da Final do Mundial 2026 — FIFA Vende Pedaços por $647!",
+    title_en: "😱 SCANDAL: 2026 World Cup Final Pitch Scandal — FIFA Sells Pieces for $647!",
+    summary: "A FIFA está no centro de uma nova polémica após ser revelado que está a vender pedaços do relvado do estádio de Nova Iorque/Nova Jérsia, palco da final do Mundial 2026, por 647 dólares (cerca de 600 euros) aos fãs. Esta iniciativa tem gerado fortes críticas, juntando-se às queixas sobre o preço exorbitante dos bilhetes e os atrasos nos vistos. O Presidente Gianni Infantino desvalorizou as críticas numa conferência de imprensa desafiadora.",
+    summary_en: "FIFA is at the centre of a new controversy after it was revealed they are selling pieces of the pitch from the New York/New Jersey stadium, host of the 2026 World Cup final, for $647 to fans. This initiative has generated strong criticism, adding to complaints about exorbitant ticket prices and visa delays. President Gianni Infantino dismissed the criticism in a defiant press conference.",
+    tag: "SCANDAL",
+    source: "@FoxSports",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "11.2M",
+    time: "11/07/2026",
+    engagement: "10.5M",
   },
   {
     id: "t4",
-    title: "🔥 HOT: França 2-0 Marrocos — Mbappé Marca o 8º Golo e Vai às Meias-Finais pela 3ª Vez!",
-    title_en: "🔥 HOT: France 2-0 Morocco — Mbappé Scores 8th Goal and Reaches Semi-Finals for 3rd Time!",
-    summary: "A França confirmou o favoritismo e eliminou Marrocos por 2-0 nos quartos de final do Mundial 2026, repetindo exatamente o resultado da semifinal de 2022. Kylian Mbappé, após falhar um penálti, marcou o seu 8º golo do torneio — igualando o recorde de Just Fontaine de 1958. Ousmane Dembélé fez o segundo. Mbappé torna-se o primeiro jogador a chegar às meias-finais nos seus três primeiros Mundiais. Marrocos saiu de cabeça erguida, com Hakimi em lágrimas. A França aguarda o vencedor de Espanha vs Bélgica.",
-    summary_en: "France confirmed their favouritism and eliminated Morocco 2-0 in the 2026 World Cup quarter-finals, repeating exactly the result of the 2022 semi-final. Kylian Mbappé, after missing a penalty, scored his 8th goal of the tournament — equalling Just Fontaine's 1958 record. Ousmane Dembélé scored the second. Mbappé becomes the first player to reach the semi-finals in each of his first three World Cups. Morocco left with their heads held high, with Hakimi in tears. France awaits the winner of Spain vs Belgium.",
-    tag: "HOT",
-    source: "@BBCSport",
+    title: "🚨 BREAKING: Eurodeputados Exigem Investigação a Trump e Infantino por Caso Balogun",
+    title_en: "🚨 BREAKING: MEPs Demand Investigation into Trump and Infantino over Balogun Case",
+    summary: "O escândalo do cartão vermelho de Folarin Balogun continua a escalar. 72 membros do Parlamento Europeu exigiram formalmente uma investigação a Gianni Infantino após alegações de que a FIFA cedeu a pressões diretas de Donald Trump para anular a suspensão do avançado norte-americano durante o Mundial 2026. A interferência política sem precedentes na governação do futebol mundial ameaça criar uma crise institucional de grandes proporções.",
+    summary_en: "The Folarin Balogun red card scandal continues to escalate. 72 Members of the European Parliament have formally demanded an investigation into Gianni Infantino following allegations that FIFA bowed to direct pressure from Donald Trump to overturn the US striker's suspension during the 2026 World Cup. The unprecedented political interference in global football governance threatens to create a major institutional crisis.",
+    tag: "BREAKING",
+    source: "@SkySports",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "13.6M",
+    time: "11/07/2026",
+    engagement: "14.1M",
   },
   {
     id: "t5",
-    title: "⚡ TRANSFER: Sandro Tonali para o Tottenham por €100M — De Zerbi Influenciou a Decisão!",
-    title_en: "⚡ TRANSFER: Sandro Tonali to Tottenham for €100M — De Zerbi Influenced the Decision!",
-    summary: "Uma das maiores transferências do verão está fechada! Sandro Tonali vai deixar o Newcastle United para se juntar ao Tottenham Hotspur numa operação de €100 milhões. O médio italiano, que cumpriu suspensão por apostas ilegais, está em grande forma e revelou que a influência de Roberto De Zerbi foi decisiva na sua escolha. O Tottenham já tinha contratado Mateus Fernandes do West Ham por €98M. O Manchester City tentou entrar na corrida, mas Tonali escolheu o projeto de De Zerbi. O Newcastle usa o dinheiro para contratar Bazoumana Toure.",
-    summary_en: "One of the summer's biggest transfers is done! Sandro Tonali will leave Newcastle United to join Tottenham Hotspur in a €100 million deal. The Italian midfielder, who served a suspension for illegal betting, is in great form and revealed that Roberto De Zerbi's influence was decisive in his choice. Tottenham had already signed Mateus Fernandes from West Ham for €98M. Manchester City tried to enter the race, but Tonali chose De Zerbi's project. Newcastle will use the money to sign Bazoumana Toure.",
+    title: "⚡ TRANSFER: Arsenal Prepara Oferta por Christos Tzolis para Substituir Trossard",
+    title_en: "⚡ TRANSFER: Arsenal Prepares Bid for Christos Tzolis to Replace Trossard",
+    summary: "O Arsenal está a avançar com uma proposta de £35 milhões pelo extremo grego Christos Tzolis, do Club Brugge. O jogador de 24 anos, que marcou 17 golos e fez 23 assistências na última época, é visto por Mikel Arteta como o substituto ideal para Leandro Trossard, que está a ser associado ao Besiktas. Os Gunners continuam muito ativos no mercado, tendo também garantido Bruno Guimarães e aguardando a chegada de Jurrien Timber.",
+    summary_en: "Arsenal is moving forward with a £35 million bid for Greek winger Christos Tzolis from Club Brugge. The 24-year-old, who scored 17 goals and provided 23 assists last season, is seen by Mikel Arteta as the ideal replacement for Leandro Trossard, who is being linked with Besiktas. The Gunners remain very active in the market, having also secured Bruno Guimarães and awaiting the arrival of Jurrien Timber.",
     tag: "TRANSFER",
-    source: "@FabrizioRomano",
+    source: "@ESPN",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "9.7M",
+    time: "11/07/2026",
+    engagement: "9.2M",
   },
   {
     id: "t6",
-    title: "😱 SCANDAL: Karim Adeyemi ONLY Barcelona — Dortmund Recebe Oferta Oficial, Jogador Recusa Tudo!",
-    title_en: "😱 SCANDAL: Karim Adeyemi ONLY Barcelona — Dortmund Receives Official Bid, Player Refuses Everything!",
-    summary: "O caso Adeyemi está a criar um escândalo no Borussia Dortmund! O extremo alemão de 24 anos informou o clube que Barcelona é o seu único destino e recusou todas as outras propostas. O Barça enviou uma oferta oficial ao Dortmund, que tem contrato com o jogador até 2027. O BVB está furioso com a atitude do jogador e ameaça não vender. Fabrizio Romano confirmou: 'ONLY Barcelona'. O Dortmund pede €60M, o Barça oferece €45M. Joan Laporta também confirmou uma oferta formal por Julian Alvarez ao Atlético de Madrid.",
-    summary_en: "The Adeyemi case is creating a scandal at Borussia Dortmund! The 24-year-old German winger has informed the club that Barcelona is his only destination and refused all other proposals. Barça sent an official offer to Dortmund, who have the player under contract until 2027. BVB is furious with the player's attitude and threatens not to sell. Fabrizio Romano confirmed: 'ONLY Barcelona'. Dortmund demands €60M, Barça offers €45M. Joan Laporta also confirmed a formal bid for Julian Alvarez from Atletico Madrid.",
-    tag: "SCANDAL",
-    source: "@FabrizioRomano",
+    title: "🔥 HOT: Noruega vs Inglaterra — Haaland e Kane no Duelo Mais Aguardado dos Quartos!",
+    title_en: "🔥 HOT: Norway vs England — Haaland and Kane in the Most Anticipated Quarter-Final Clash!",
+    summary: "O mundo do futebol para hoje às 21:00 (GMT) para o confronto titânico entre a Noruega de Erling Haaland e a Inglaterra de Harry Kane nos quartos de final do Mundial 2026, em Miami. A Noruega chega motivada após eliminar o Brasil por 2-1, enquanto a Inglaterra superou o anfitrião México por 3-2 com apenas 10 jogadores. Haaland já avisou que a pressão está toda do lado inglês num jogo que promete ser histórico.",
+    summary_en: "The football world stops today at 21:00 (GMT) for the titanic clash between Erling Haaland's Norway and Harry Kane's England in the 2026 World Cup quarter-finals in Miami. Norway arrives motivated after eliminating Brazil 2-1, while England overcame hosts Mexico 3-2 with just 10 men. Haaland has already warned that all the pressure is on the English side in a match that promises to be historic.",
+    tag: "HOT",
+    source: "@BBCSport",
     url: "https://x.com/alivegoal",
-    time: "10/07/2026",
-    engagement: "8.9M",
+    time: "11/07/2026",
+    engagement: "18.5M",
   }
 ];
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=600");
+
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
+
   return res.status(200).json({
     source: "curated",
     count: CURATED_TRENDING.length,
