@@ -58,12 +58,15 @@ const statusMap: Record<string, string> = {
 
 function formatMatchTime(match: any): string {
   const status = match.status;
+  
   if (status === "IN_PLAY" || status === "PAUSED") {
     return "AO VIVO";
   }
+  
   if (status === "FINISHED") {
     return "FIM";
   }
+  
   if (status === "TIMED" || status === "SCHEDULED") {
     const date = new Date(match.utcDate);
     // Converter UTC para GMT+1 (Portugal/Lisboa)
@@ -71,6 +74,7 @@ function formatMatchTime(match: any): string {
     const localMinutes = date.getUTCMinutes().toString().padStart(2, "0");
     return `HOJE ${localHours}:${localMinutes}`;
   }
+  
   return statusMap[status] || status;
 }
 
@@ -79,42 +83,43 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (11/07/2026) — aparecem primeiro
+// Jogos com tips hoje (12/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Norway", "England",
-  "Noruega", "Inglaterra",
-  "Sport", "Botafogo-SP",
-  "Hegelmann", "Paide"
+  "São Bernardo", "Cuiabá",
+  "Atlético-GO", "Fortaleza",
+  "CRB", "Goiás",
+  "Criciúma", "Sport"
 ];
 
-// Fallback data com jogos reais (atualizado 11/07/2026)
-// HOJE: Quartos de Final do Mundial 2026 — Noruega vs Inglaterra + Brasileirão B + Qualificações Conference League
+// Fallback data com jogos reais (atualizado 12/07/2026)
+// HOJE: Brasileirão Série B
 const fallbackMatches: LiveMatch[] = [
-  // JOGO PRINCIPAL DO DIA — Quartos de Final Mundial 2026
-  { id: 540002, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  // JOGOS DO DIA — Brasileirão Série B
+  { id: 540301, homeTeam: "São Bernardo", awayTeam: "Cuiabá", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540302, homeTeam: "Atlético-GO", awayTeam: "Fortaleza", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 18:00", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540303, homeTeam: "CRB", awayTeam: "Goiás", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 2013 },
   
-  // Brasileirão Série B — 11/07
-  { id: 540201, homeTeam: "Sport", awayTeam: "Botafogo-SP", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série B", leagueId: 2013 },
+  // Resultados Recentes — Quartos de Final do Mundial 2026
+  { id: 540001, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 1, awayScore: 2, minute: 120, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  { id: 540002, homeTeam: "Argentina", awayTeam: "Suíça", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  { id: 540003, homeTeam: "Espanha", awayTeam: "Uruguai", homeScore: 1, awayScore: 0, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
   
-  // Qualificação Conference League — 11/07
-  { id: 540105, homeTeam: "Hegelmann", awayTeam: "Paide", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Conference League - Qualificação", leagueId: 2002 },
-  { id: 540106, homeTeam: "Dinamo Minsk", awayTeam: "Sileks", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Conference League - Qualificação", leagueId: 2002 },
-  
-  // Resultado de ontem (10/07) — Quartos de Final do Mundial 2026
-  { id: 540001, homeTeam: "Espanha", awayTeam: "Bélgica", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  
-  // Próximos jogos — Quartos e Meias-Finais
-  { id: 540003, homeTeam: "Argentina", awayTeam: "Suíça", homeScore: 0, awayScore: 0, minute: 0, status: "12/07 02:00", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  // Próximos jogos — Meias-Finais do Mundial 2026
   { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "14/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
-  { id: 540005, homeTeam: "Nor/Ing", awayTeam: "Arg/Suí", homeScore: 0, awayScore: 0, minute: 0, status: "15/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "15/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Noruega", awayTeam: "Inglaterra",
-  homeScore: 0, awayScore: 0,
+  homeTeam: "Atlético-GO", 
+  awayTeam: "Fortaleza",
+  homeScore: 0, 
+  awayScore: 0,
   stats: {
-    possession: [45, 55], shots: [0, 0], shotsOnTarget: [0, 0],
-    corners: [0, 0], fouls: [0, 0],
+    possession: [50, 50], 
+    shots: [0, 0], 
+    shotsOnTarget: [0, 0],
+    corners: [0, 0], 
+    fouls: [0, 0],
   },
 };
 
@@ -130,6 +135,7 @@ export function useLiveScores(apiKey?: string) {
 
   const fetchLiveScores = useCallback(async () => {
     const key = apiKey || import.meta.env.VITE_FOOTBALL_DATA_KEY;
+    
     if (!key) {
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
@@ -147,15 +153,17 @@ export function useLiveScores(apiKey?: string) {
       // Buscar jogos de hoje em paralelo para as competições disponíveis
       // Usamos apenas as primeiras 5 para evitar rate limiting (10 req/min)
       const compsToFetch = COMPETITION_CODES.slice(0, 5);
-
+      
       const results = await Promise.allSettled(
         compsToFetch.map(async (code) => {
           const url = `${CORS_PROXY}${encodeURIComponent(
             `${FOOTBALL_DATA_BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${today}`
           )}`;
+          
           const res = await fetch(url, {
             headers: { "X-Auth-Token": key },
           });
+          
           if (!res.ok) return [];
           const data = await res.json();
           return data.matches || [];
@@ -170,6 +178,7 @@ export function useLiveScores(apiKey?: string) {
             if (m.status === "IN_PLAY" || m.status === "PAUSED") {
               hasLive = true;
             }
+            
             allMatches.push({
               id: m.id,
               homeTeam: m.homeTeam?.shortName || m.homeTeam?.name || "Home",
@@ -191,27 +200,33 @@ export function useLiveScores(apiKey?: string) {
         // Filtrar jogos terminados — só mostrar ao vivo e agendados
         const activeMatches = allMatches.filter(m => m.status !== "FIM");
         const displayMatches = activeMatches.length > 0 ? activeMatches : allMatches;
-
+        
         // Ordenar: 1º jogos com tips, 2º ao vivo, 3º por hora
         const sorted = displayMatches.sort((a, b) => {
           const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t)) ? 0 : 1;
           const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t)) ? 0 : 1;
+          
           if (aHasTip !== bHasTip) return aHasTip - bHasTip;
+          
           const aLive = a.status === "AO VIVO" ? 0 : 1;
           const bLive = b.status === "AO VIVO" ? 0 : 1;
+          
           if (aLive !== bLive) return aLive - bLive;
+          
           // Ordenar por hora (extrair HH:MM do status)
           const aTime = a.status.match(/(\d{2}):(\d{2})/);
           const bTime = b.status.match(/(\d{2}):(\d{2})/);
+          
           if (aTime && bTime) {
             return (parseInt(aTime[1]) * 60 + parseInt(aTime[2])) - (parseInt(bTime[1]) * 60 + parseInt(bTime[2]));
           }
+          
           return 0;
         });
 
         setMatches(sorted.slice(0, 12));
         setIsLive(hasLive);
-
+        
         // Jogo em destaque: primeiro ao vivo ou primeiro do dia
         const featMatch = sorted[0];
         if (featMatch) {
@@ -241,6 +256,7 @@ export function useLiveScores(apiKey?: string) {
 
   useEffect(() => {
     fetchLiveScores();
+    
     // Atualizar a cada 60 segundos
     const interval = setInterval(fetchLiveScores, 60 * 1000);
     return () => clearInterval(interval);

@@ -1,10 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
-export const config = {
-  runtime: "nodejs",
-};
-
-interface TrendingItem {
+export interface TrendingNews {
   id: string;
   title: string;
   title_en: string;
@@ -17,78 +13,79 @@ interface TrendingItem {
   engagement: string;
 }
 
-const CURATED_TRENDING: TrendingItem[] = [
+// Fallback data
+const CURATED_TRENDING: TrendingNews[] = [
   {
     id: "t1",
-    title: "🔥 HOT: Espanha 2-1 Bélgica — Merino Marca aos 88' e Espanha Vai às Meias-Finais!",
-    title_en: "🔥 HOT: Spain 2-1 Belgium — Merino Scores at 88' and Spain Reaches Semi-Finals!",
-    summary: "Num jogo emocionante dos quartos de final do Mundial 2026, a Espanha derrotou a Bélgica por 2-1. Fabián Ruiz abriu o marcador aos 30', mas Charles De Ketelaere empatou aos 41'. Quando o jogo parecia destinado ao prolongamento, Mikel Merino, saído do banco, marcou o golo da vitória aos 88 minutos após um erro do guarda-redes belga Senne Lammens. A Espanha avança para as meias-finais onde defrontará a França num duelo de gigantes europeus.",
-    summary_en: "In a thrilling 2026 World Cup quarter-final, Spain defeated Belgium 2-1. Fabián Ruiz opened the scoring at 30', but Charles De Ketelaere equalised at 41'. When the match seemed destined for extra time, substitute Mikel Merino scored the winning goal at the 88th minute following a mistake by Belgian goalkeeper Senne Lammens. Spain advances to the semi-finals where they will face France in a clash of European giants.",
-    tag: "HOT",
-    source: "@AlJazeera",
+    title: "🚨 BREAKING: Inglaterra Elimina Noruega de Haaland no Prolongamento",
+    title_en: "🚨 BREAKING: England Eliminates Haaland's Norway in Extra Time",
+    summary: "Num jogo eletrizante dos quartos de final do Mundial 2026, a Inglaterra superou a Noruega por 2-1 no prolongamento. Jude Bellingham foi o herói da noite ao marcar os dois golos ingleses, garantindo a passagem às meias-finais, onde vão defrontar a Argentina ou a Suíça.",
+    summary_en: "In an electrifying 2026 World Cup quarter-final match, England overcame Norway 2-1 in extra time. Jude Bellingham was the hero of the night, scoring both English goals to secure a place in the semi-finals, where they will face Argentina or Switzerland.",
+    tag: "BREAKING",
+    source: "@BBCSport",
     url: "https://x.com/alivegoal",
-    time: "11/07/2026",
-    engagement: "15.2M",
+    time: "12/07/2026",
+    engagement: "25.4M",
   },
   {
     id: "t2",
-    title: "⚡ TRANSFER: Andrey Santos no Manchester United por £50M — Novo Reforço de Peso!",
-    title_en: "⚡ TRANSFER: Andrey Santos to Manchester United for £50M — Huge New Signing!",
-    summary: "O Manchester United está prestes a anunciar a contratação do médio brasileiro Andrey Santos ao Chelsea por £50 milhões. A transferência é vista como um sinal claro da nova abordagem do clube no mercado. O jovem internacional brasileiro de 22 anos vai reforçar o meio-campo de Michael Carrick para a época 2026/27. Rio Ferdinand elogiou a contratação, afirmando que é exatamente o tipo de jogador que o clube precisava há anos.",
-    summary_en: "Manchester United is set to announce the signing of Brazilian midfielder Andrey Santos from Chelsea for £50 million. The transfer is seen as a clear sign of the club's new approach in the market. The 22-year-old Brazilian international will bolster Michael Carrick's midfield for the 2026/27 season. Rio Ferdinand praised the signing, stating it is exactly the type of player the club has needed for years.",
+    title: "⚡ TRANSFER: Liverpool Perto de Fechar Contratação de £38 Milhões",
+    title_en: "⚡ TRANSFER: Liverpool Close to Sealing £38 Million Signing",
+    summary: "O Liverpool está na iminência de anunciar uma contratação de £38 milhões, segundo Fabrizio Romano. A equipa de Arne Slot continua a reforçar o plantel para a nova época, juntando-se a outros clubes ingleses muito ativos no mercado de transferências de verão.",
+    summary_en: "Liverpool is on the verge of announcing a £38 million signing, according to Fabrizio Romano. Arne Slot's team continues to strengthen their squad for the new season, joining other English clubs very active in the summer transfer window.",
     tag: "TRANSFER",
     source: "@FabrizioRomano",
     url: "https://x.com/alivegoal",
-    time: "11/07/2026",
+    time: "12/07/2026",
     engagement: "12.8M",
   },
   {
     id: "t3",
-    title: "😱 SCANDAL: Escândalo do Relvado da Final do Mundial 2026 — FIFA Vende Pedaços por $647!",
-    title_en: "😱 SCANDAL: 2026 World Cup Final Pitch Scandal — FIFA Sells Pieces for $647!",
-    summary: "A FIFA está no centro de uma nova polémica após ser revelado que está a vender pedaços do relvado do estádio de Nova Iorque/Nova Jérsia, palco da final do Mundial 2026, por 647 dólares (cerca de 600 euros) aos fãs. Esta iniciativa tem gerado fortes críticas, juntando-se às queixas sobre o preço exorbitante dos bilhetes e os atrasos nos vistos. O Presidente Gianni Infantino desvalorizou as críticas numa conferência de imprensa desafiadora.",
-    summary_en: "FIFA is at the centre of a new controversy after it was revealed they are selling pieces of the pitch from the New York/New Jersey stadium, host of the 2026 World Cup final, for $647 to fans. This initiative has generated strong criticism, adding to complaints about exorbitant ticket prices and visa delays. President Gianni Infantino dismissed the criticism in a defiant press conference.",
-    tag: "SCANDAL",
-    source: "@FoxSports",
+    title: "🔥 HOT: Argentina de Messi Supera Suíça e Marca Encontro com Inglaterra",
+    title_en: "🔥 HOT: Messi's Argentina Overcomes Switzerland and Sets Up Clash with England",
+    summary: "A Argentina confirmou o seu favoritismo ao vencer a Suíça, garantindo o apuramento para as meias-finais do Mundial 2026. Lionel Messi continua a sua caminhada de sonho rumo a mais um título mundial. O próximo adversário será a Inglaterra, num jogo que promete parar o mundo do futebol.",
+    summary_en: "Argentina confirmed their favoritism by beating Switzerland, securing qualification for the 2026 World Cup semi-finals. Lionel Messi continues his dream journey towards another world title. The next opponent will be England, in a match that promises to stop the football world.",
+    tag: "HOT",
+    source: "@SkySports",
     url: "https://x.com/alivegoal",
-    time: "11/07/2026",
-    engagement: "10.5M",
+    time: "12/07/2026",
+    engagement: "30.1M",
   },
   {
     id: "t4",
-    title: "🚨 BREAKING: Eurodeputados Exigem Investigação a Trump e Infantino por Caso Balogun",
-    title_en: "🚨 BREAKING: MEPs Demand Investigation into Trump and Infantino over Balogun Case",
-    summary: "O escândalo do cartão vermelho de Folarin Balogun continua a escalar. 72 membros do Parlamento Europeu exigiram formalmente uma investigação a Gianni Infantino após alegações de que a FIFA cedeu a pressões diretas de Donald Trump para anular a suspensão do avançado norte-americano durante o Mundial 2026. A interferência política sem precedentes na governação do futebol mundial ameaça criar uma crise institucional de grandes proporções.",
-    summary_en: "The Folarin Balogun red card scandal continues to escalate. 72 Members of the European Parliament have formally demanded an investigation into Gianni Infantino following allegations that FIFA bowed to direct pressure from Donald Trump to overturn the US striker's suspension during the 2026 World Cup. The unprecedented political interference in global football governance threatens to create a major institutional crisis.",
-    tag: "BREAKING",
-    source: "@SkySports",
-    url: "https://x.com/alivegoal",
-    time: "11/07/2026",
-    engagement: "14.1M",
-  },
-  {
-    id: "t5",
-    title: "⚡ TRANSFER: Arsenal Prepara Oferta por Christos Tzolis para Substituir Trossard",
-    title_en: "⚡ TRANSFER: Arsenal Prepares Bid for Christos Tzolis to Replace Trossard",
-    summary: "O Arsenal está a avançar com uma proposta de £35 milhões pelo extremo grego Christos Tzolis, do Club Brugge. O jogador de 24 anos, que marcou 17 golos e fez 23 assistências na última época, é visto por Mikel Arteta como o substituto ideal para Leandro Trossard, que está a ser associado ao Besiktas. Os Gunners continuam muito ativos no mercado, tendo também garantido Bruno Guimarães e aguardando a chegada de Jurrien Timber.",
-    summary_en: "Arsenal is moving forward with a £35 million bid for Greek winger Christos Tzolis from Club Brugge. The 24-year-old, who scored 17 goals and provided 23 assists last season, is seen by Mikel Arteta as the ideal replacement for Leandro Trossard, who is being linked with Besiktas. The Gunners remain very active in the market, having also secured Bruno Guimarães and awaiting the arrival of Jurrien Timber.",
+    title: "⚡ TRANSFER: Manchester City Contrata Marc Guehi por £20M",
+    title_en: "⚡ TRANSFER: Manchester City Signs Marc Guehi for £20M",
+    summary: "O Manchester City garantiu a contratação do capitão do Crystal Palace, Marc Guehi, por 20 milhões de libras. Pep Guardiola reforça a defesa dos Citizens com um jogador experiente na Premier League, num negócio considerado uma excelente oportunidade de mercado.",
+    summary_en: "Manchester City has secured the signing of Crystal Palace captain Marc Guehi for £20 million. Pep Guardiola strengthens the Citizens' defense with an experienced Premier League player, in a deal considered an excellent market opportunity.",
     tag: "TRANSFER",
     source: "@ESPN",
     url: "https://x.com/alivegoal",
-    time: "11/07/2026",
-    engagement: "9.2M",
+    time: "12/07/2026",
+    engagement: "15.3M",
+  },
+  {
+    id: "t5",
+    title: "🚨 BREAKING: Espanha Elimina Uruguai e Avança para as Meias-Finais",
+    title_en: "🚨 BREAKING: Spain Eliminates Uruguay and Advances to Semi-Finals",
+    summary: "A Espanha derrotou o Uruguai por 1-0 e garantiu o seu lugar nas meias-finais do Campeonato do Mundo de 2026. A La Roja vai agora enfrentar a França num duelo de gigantes europeus, após os franceses terem superado a Noruega na sua caminhada.",
+    summary_en: "Spain defeated Uruguay 1-0 and secured their place in the 2026 World Cup semi-finals. La Roja will now face France in a clash of European giants, after the French overcame Norway on their path.",
+    tag: "BREAKING",
+    source: "@BBCSport",
+    url: "https://x.com/alivegoal",
+    time: "12/07/2026",
+    engagement: "18.9M",
   },
   {
     id: "t6",
-    title: "🔥 HOT: Noruega vs Inglaterra — Haaland e Kane no Duelo Mais Aguardado dos Quartos!",
-    title_en: "🔥 HOT: Norway vs England — Haaland and Kane in the Most Anticipated Quarter-Final Clash!",
-    summary: "O mundo do futebol para hoje às 21:00 (GMT) para o confronto titânico entre a Noruega de Erling Haaland e a Inglaterra de Harry Kane nos quartos de final do Mundial 2026, em Miami. A Noruega chega motivada após eliminar o Brasil por 2-1, enquanto a Inglaterra superou o anfitrião México por 3-2 com apenas 10 jogadores. Haaland já avisou que a pressão está toda do lado inglês num jogo que promete ser histórico.",
-    summary_en: "The football world stops today at 21:00 (GMT) for the titanic clash between Erling Haaland's Norway and Harry Kane's England in the 2026 World Cup quarter-finals in Miami. Norway arrives motivated after eliminating Brazil 2-1, while England overcame hosts Mexico 3-2 with just 10 men. Haaland has already warned that all the pressure is on the English side in a match that promises to be historic.",
+    title: "🔥 HOT: Brasileirão Série B em Destaque Hoje com Jogos Decisivos",
+    title_en: "🔥 HOT: Brasileirão Série B in Focus Today with Decisive Matches",
+    summary: "O domingo de futebol destaca-se também pelos jogos da 17ª rodada do Brasileirão Série B. O São Bernardo enfrenta o Cuiabá, enquanto o Atlético-GO recebe o Fortaleza em jogos cruciais para as aspirações de subida das equipas envolvidas.",
+    summary_en: "Football Sunday is also highlighted by the 17th round matches of the Brasileirão Série B. São Bernardo faces Cuiabá, while Atlético-GO hosts Fortaleza in crucial games for the promotion aspirations of the teams involved.",
     tag: "HOT",
-    source: "@BBCSport",
+    source: "@GloboEsporte",
     url: "https://x.com/alivegoal",
-    time: "11/07/2026",
-    engagement: "18.5M",
+    time: "12/07/2026",
+    engagement: "8.5M",
   }
 ];
 
