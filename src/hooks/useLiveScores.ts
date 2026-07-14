@@ -83,37 +83,35 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (13/07/2026) — aparecem primeiro
+// Jogos com tips hoje (14/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "América-MG", "Londrina",
-  "Ceará", "Athletic",
-  "Treze", "CRAC",
-  "Ituano", "Ferroviária"
+  "França", "Espanha",
+  "Djurgardens", "Halmstads",
+  "América-RN", "Trem-AP",
+  "CSA", "Betim"
 ];
 
-// Fallback data com jogos reais (atualizado 13/07/2026)
-// HOJE: Brasileirão Série B e Série C
+// Fallback data com jogos reais (atualizado 14/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Brasileirão Série B e C
-  { id: 540304, homeTeam: "América-MG", awayTeam: "Londrina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540305, homeTeam: "Ceará", awayTeam: "Athletic", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540306, homeTeam: "Ituano", awayTeam: "Ferroviária", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "Brasileirão Série C", leagueId: 2014 },
-  { id: 540307, homeTeam: "Treze", awayTeam: "CRAC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:30", league: "Brasileirão Série D", leagueId: 2015 },
+  // JOGOS DO DIA — Mundial 2026, Allsvenskan, Série D
+  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  { id: 540310, homeTeam: "Djurgardens IF", awayTeam: "Halmstads BK", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "Allsvenskan", leagueId: 2016 },
+  { id: 540311, homeTeam: "América-RN", awayTeam: "Trem-AP", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
+  { id: 540312, homeTeam: "CSA", awayTeam: "Betim", homeScore: 4, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
   
-  // Resultados Recentes — Quartos de Final do Mundial 2026
-  { id: 540001, homeTeam: "Noruega", awayTeam: "Inglaterra", homeScore: 1, awayScore: 2, minute: 120, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  { id: 540002, homeTeam: "Argentina", awayTeam: "Suíça", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  { id: 540003, homeTeam: "Espanha", awayTeam: "Bélgica", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
-  { id: 540006, homeTeam: "França", awayTeam: "Marrocos", homeScore: 2, awayScore: 0, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Quartos de Final", leagueId: 2000 },
+  // Resultados Recentes — Brasileirão Série B e C
+  { id: 540304, homeTeam: "América-MG", awayTeam: "Londrina", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540305, homeTeam: "Ceará", awayTeam: "Athletic", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540308, homeTeam: "Itabaiana", awayTeam: "Brusque", homeScore: 1, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série C", leagueId: 2014 },
+  { id: 540309, homeTeam: "Figueirense", awayTeam: "Volta Redonda", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série C", leagueId: 2014 },
   
   // Próximos jogos — Meias-Finais do Mundial 2026
-  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "14/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
   { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "15/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "América-MG", 
-  awayTeam: "Londrina",
+  homeTeam: "França", 
+  awayTeam: "Espanha",
   homeScore: 0, 
   awayScore: 0,
   stats: {
