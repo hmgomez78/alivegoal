@@ -83,35 +83,37 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (14/07/2026) — aparecem primeiro
+// Jogos com tips hoje (15/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "França", "Espanha",
-  "Djurgardens", "Halmstads",
-  "América-RN", "Trem-AP",
-  "CSA", "Betim"
+  "Inglaterra", "Argentina",
+  "Náutico", "Juventude",
+  "Ypiranga-RS", "Paysandu",
+  "Sabah", "The New Saints"
 ];
 
-// Fallback data com jogos reais (atualizado 14/07/2026)
+// Fallback data com jogos reais (atualizado 15/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Mundial 2026, Allsvenskan, Série D
-  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
-  { id: 540310, homeTeam: "Djurgardens IF", awayTeam: "Halmstads BK", homeScore: 3, awayScore: 0, minute: 90, status: "FIM", league: "Allsvenskan", leagueId: 2016 },
-  { id: 540311, homeTeam: "América-RN", awayTeam: "Trem-AP", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
-  { id: 540312, homeTeam: "CSA", awayTeam: "Betim", homeScore: 4, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
+  // JOGOS DO DIA — Mundial 2026, Brasileirão, Qualificação Champions
+  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  { id: 540313, homeTeam: "Náutico", awayTeam: "Juventude", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540314, homeTeam: "Ypiranga-RS", awayTeam: "Paysandu", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série C", leagueId: 2014 },
+  { id: 540315, homeTeam: "Sabah FC", awayTeam: "The New Saints", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Qualificação Champions League", leagueId: 2001 },
   
-  // Resultados Recentes — Brasileirão Série B e C
+  // Resultados Recentes — Meia-Final do Mundial 2026
+  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 2, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  
+  // Resultados Recentes — Brasileirão Série B e D
   { id: 540304, homeTeam: "América-MG", awayTeam: "Londrina", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
   { id: 540305, homeTeam: "Ceará", awayTeam: "Athletic", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540308, homeTeam: "Itabaiana", awayTeam: "Brusque", homeScore: 1, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série C", leagueId: 2014 },
-  { id: 540309, homeTeam: "Figueirense", awayTeam: "Volta Redonda", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série C", leagueId: 2014 },
+  { id: 540311, homeTeam: "América-RN", awayTeam: "Trem-AP", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
   
-  // Próximos jogos — Meias-Finais do Mundial 2026
-  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "15/07 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  // Próximos jogos — Final do Mundial 2026
+  { id: 540006, homeTeam: "Espanha", awayTeam: "Vencedor (ING/ARG)", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "França", 
-  awayTeam: "Espanha",
+  homeTeam: "Inglaterra", 
+  awayTeam: "Argentina",
   homeScore: 0, 
   awayScore: 0,
   stats: {
