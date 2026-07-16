@@ -4,8 +4,8 @@ export interface LiveMatch {
   id: number;
   homeTeam: string;
   awayTeam: string;
-  homeScore: number;
-  awayScore: number;
+  homeScore: number | null;
+  awayScore: number | null;
   minute: number | string;
   status: string;
   league: string;
@@ -83,37 +83,33 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (15/07/2026) — aparecem primeiro
+// Jogos com tips hoje (16/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Inglaterra", "Argentina",
-  "Náutico", "Juventude",
-  "Ypiranga-RS", "Paysandu",
-  "Sabah", "The New Saints"
+  "Botafogo", "Santos",
+  "Vitória", "Vasco",
+  "Sabah FC", "The New Saints"
 ];
 
-// Fallback data com jogos reais (atualizado 15/07/2026)
+// Fallback data com jogos reais (atualizado 16/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Mundial 2026, Brasileirão, Qualificação Champions
-  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
-  { id: 540313, homeTeam: "Náutico", awayTeam: "Juventude", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 20:30", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540314, homeTeam: "Ypiranga-RS", awayTeam: "Paysandu", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série C", leagueId: 2014 },
-  { id: 540315, homeTeam: "Sabah FC", awayTeam: "The New Saints", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:00", league: "Qualificação Champions League", leagueId: 2001 },
+  // JOGOS DO DIA — Brasileirão, Qualificação Champions
+  { id: 540320, homeTeam: "Botafogo FR", awayTeam: "Santos FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540321, homeTeam: "EC Vitória", awayTeam: "CR Vasco da Gama", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540322, homeTeam: "Sabah FC", awayTeam: "The New Saints", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
+  { id: 540323, homeTeam: "Lincoln Red Imps", awayTeam: "Inter Club d'Escaldes", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
+  { id: 540324, homeTeam: "Ararat-Armenia", awayTeam: "Riga FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
   
   // Resultados Recentes — Meia-Final do Mundial 2026
+  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 1, awayScore: 2, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
   { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 2, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
   
-  // Resultados Recentes — Brasileirão Série B e D
-  { id: 540304, homeTeam: "América-MG", awayTeam: "Londrina", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540305, homeTeam: "Ceará", awayTeam: "Athletic", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540311, homeTeam: "América-RN", awayTeam: "Trem-AP", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D", leagueId: 2015 },
-  
   // Próximos jogos — Final do Mundial 2026
-  { id: 540006, homeTeam: "Espanha", awayTeam: "Vencedor (ING/ARG)", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
+  { id: 540006, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Inglaterra", 
-  awayTeam: "Argentina",
+  homeTeam: "Botafogo FR", 
+  awayTeam: "Santos FC",
   homeScore: 0, 
   awayScore: 0,
   stats: {
@@ -149,108 +145,84 @@ export function useLiveScores(apiKey?: string) {
     setLoading(true);
     try {
       const today = new Date().toISOString().split("T")[0];
-      const allMatches: LiveMatch[] = [];
-      let hasLive = false;
-
-      // Buscar jogos de hoje em paralelo para as competições disponíveis
-      // Usamos apenas as primeiras 5 para evitar rate limiting (10 req/min)
-      const compsToFetch = COMPETITION_CODES.slice(0, 5);
-      
-      const results = await Promise.allSettled(
-        compsToFetch.map(async (code) => {
-          const url = `${CORS_PROXY}${encodeURIComponent(
-            `${FOOTBALL_DATA_BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${today}`
-          )}`;
-          
-          const res = await fetch(url, {
-            headers: { "X-Auth-Token": key },
-          });
-          
-          if (!res.ok) return [];
-          const data = await res.json();
-          return data.matches || [];
-        })
+      const fetchPromises = COMPETITION_CODES.map(code => 
+        fetch(`${CORS_PROXY}${encodeURIComponent(`${FOOTBALL_DATA_BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${today}`)}`, {
+          headers: { "X-Auth-Token": key }
+        }).then(res => {
+          if (!res.ok) {
+            if (res.status === 429) throw new Error("Rate limit exceeded");
+            return null;
+          }
+          return res.json();
+        }).catch(e => null)
       );
 
-      results.forEach((result) => {
-        if (result.status === "fulfilled") {
-          const fixtures = result.value as any[];
-          fixtures.forEach((m: any) => {
-            const statusStr = formatMatchTime(m);
-            if (m.status === "IN_PLAY" || m.status === "PAUSED") {
-              hasLive = true;
-            }
-            
-            allMatches.push({
-              id: m.id,
-              homeTeam: m.homeTeam?.shortName || m.homeTeam?.name || "Home",
-              awayTeam: m.awayTeam?.shortName || m.awayTeam?.name || "Away",
-              homeScore: m.score?.fullTime?.home ?? m.score?.halfTime?.home ?? 0,
-              awayScore: m.score?.fullTime?.away ?? m.score?.halfTime?.away ?? 0,
-              minute: m.minute || 0,
-              status: statusStr,
-              league: m.competition?.name || "Football",
-              leagueId: m.competition?.id,
-              homeTeamLogo: getTeamLogo(m.homeTeam),
-              awayTeamLogo: getTeamLogo(m.awayTeam),
-            });
-          });
+      const results = await Promise.all(fetchPromises);
+      
+      let allMatches: any[] = [];
+      results.forEach(data => {
+        if (data && data.matches) {
+          allMatches = [...allMatches, ...data.matches];
         }
       });
 
-      if (allMatches.length > 0) {
-        // Filtrar jogos terminados — só mostrar ao vivo e agendados
-        const activeMatches = allMatches.filter(m => m.status !== "FIM");
-        const displayMatches = activeMatches.length > 0 ? activeMatches : allMatches;
-        
-        // Ordenar: 1º jogos com tips, 2º ao vivo, 3º por hora
-        const sorted = displayMatches.sort((a, b) => {
-          const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t)) ? 0 : 1;
-          const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t)) ? 0 : 1;
-          
-          if (aHasTip !== bHasTip) return aHasTip - bHasTip;
-          
-          const aLive = a.status === "AO VIVO" ? 0 : 1;
-          const bLive = b.status === "AO VIVO" ? 0 : 1;
-          
-          if (aLive !== bLive) return aLive - bLive;
-          
-          // Ordenar por hora (extrair HH:MM do status)
-          const aTime = a.status.match(/(\d{2}):(\d{2})/);
-          const bTime = b.status.match(/(\d{2}):(\d{2})/);
-          
-          if (aTime && bTime) {
-            return (parseInt(aTime[1]) * 60 + parseInt(aTime[2])) - (parseInt(bTime[1]) * 60 + parseInt(bTime[2]));
-          }
-          
-          return 0;
-        });
-
-        setMatches(sorted.slice(0, 12));
-        setIsLive(hasLive);
-        
-        // Jogo em destaque: primeiro ao vivo ou primeiro do dia
-        const featMatch = sorted[0];
-        if (featMatch) {
-          setFeatured({
-            homeTeam: featMatch.homeTeam,
-            awayTeam: featMatch.awayTeam,
-            homeScore: featMatch.homeScore,
-            awayScore: featMatch.awayScore,
-            stats: fallbackFeatured.stats,
-          });
-        }
-      } else {
+      if (allMatches.length === 0) {
         setMatches(fallbackMatches);
         setFeatured(fallbackFeatured);
         setIsLive(false);
+        setLoading(false);
+        return;
       }
-    } catch (err) {
+
+      const formattedMatches: LiveMatch[] = allMatches.map(m => ({
+        id: m.id,
+        homeTeam: m.homeTeam.shortName || m.homeTeam.name,
+        awayTeam: m.awayTeam.shortName || m.awayTeam.name,
+        homeScore: m.score?.fullTime?.home ?? null,
+        awayScore: m.score?.fullTime?.away ?? null,
+        minute: m.status === "IN_PLAY" ? "45'" : 0,
+        status: formatMatchTime(m),
+        league: m.competition.name,
+        leagueId: m.competition.id,
+        homeTeamLogo: getTeamLogo(m.homeTeam),
+        awayTeamLogo: getTeamLogo(m.awayTeam),
+      }));
+
+      // Ordenar: jogos das tips primeiro, depois ao vivo, depois por hora
+      formattedMatches.sort((a, b) => {
+        const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
+        const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
+        
+        if (aHasTip && !bHasTip) return -1;
+        if (!aHasTip && bHasTip) return 1;
+        
+        if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
+        if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
+        
+        return a.status.localeCompare(b.status);
+      });
+
+      setMatches(formattedMatches);
+      setIsLive(formattedMatches.some(m => m.status === "AO VIVO"));
+
+      // Set featured match (first live match or first match)
+      const featuredMatch = formattedMatches.find(m => m.status === "AO VIVO") || formattedMatches[0];
+      if (featuredMatch) {
+        setFeatured({
+          homeTeam: featuredMatch.homeTeam,
+          awayTeam: featuredMatch.awayTeam,
+          homeScore: featuredMatch.homeScore || 0,
+          awayScore: featuredMatch.awayScore || 0,
+          stats: fallbackFeatured.stats, // A API gratuita não fornece estatísticas detalhadas
+        });
+      }
+
+      setError(null);
+    } catch (err: any) {
       console.error("Error fetching live scores:", err);
-      setError("Erro ao carregar jogos");
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setIsLive(false);
+      setError(err.message === "Rate limit exceeded" ? "Limite de API excedido. A mostrar dados offline." : "Erro ao carregar resultados ao vivo.");
     } finally {
       setLoading(false);
     }
@@ -258,9 +230,8 @@ export function useLiveScores(apiKey?: string) {
 
   useEffect(() => {
     fetchLiveScores();
-    
     // Atualizar a cada 60 segundos
-    const interval = setInterval(fetchLiveScores, 60 * 1000);
+    const interval = setInterval(fetchLiveScores, 60000);
     return () => clearInterval(interval);
   }, [fetchLiveScores]);
 

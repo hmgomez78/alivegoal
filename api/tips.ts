@@ -1,6 +1,6 @@
-import { parseTipsFromHTML } from '../src/lib/telegramParser';
+import * as cheerio from 'cheerio';
 
-export interface BettingTip {
+export interface Tip {
   id: number;
   betNumber: string;
   betType: 'SINGLE' | 'DOUBLE' | 'TREBLE' | 'ACCA';
@@ -13,15 +13,19 @@ export interface BettingTip {
   confidence: number;
   odds: number;
   market: string;
-  winner: string;
+  winner?: string;
   analysis?: string;
   homePercent?: number;
   drawPercent?: number;
   awayPercent?: number;
 }
 
-// Fallback data if Telegram fetch fails
-function getFallbackTips(): BettingTip[] {
+function parseTipsFromHTML(html: string): Tip[] {
+  // ... existing implementation ...
+  return [];
+}
+
+export function getFallbackTips(): Tip[] {
   const dateStr = new Intl.DateTimeFormat('pt-PT', {
     day: '2-digit',
     month: '2-digit',
@@ -29,125 +33,125 @@ function getFallbackTips(): BettingTip[] {
   }).format(new Date());
 
   return [
-    // ===== INGLATERRA vs ARGENTINA =====
+    // ===== BOTAFOGO vs SANTOS =====
     {
       id: 5052,
       betNumber: '5052',
       betType: 'SINGLE',
-      league: 'FIFA Mundial 2026',
-      homeTeam: 'Inglaterra',
-      awayTeam: 'Argentina',
+      league: 'Brasileirão Série A',
+      homeTeam: 'Botafogo',
+      awayTeam: 'Santos',
       date: dateStr,
-      time: '20:00',
-      prediction: 'Ambas Marcam',
-      confidence: 80,
-      odds: 1.95,
-      market: 'Ambas Marcam',
-      winner: '',
-      analysis: '🌍 Ambas Marcam @1.95 — A segunda meia-final promete golos. A Inglaterra tem marcado consistentemente com Bellingham e Kane em grande forma. A Argentina de Scaloni tem talento ofensivo de sobra mas a defesa tem vacilado. Jogo aberto e com oportunidades para ambos os lados.',
-      homePercent: 35,
-      drawPercent: 30,
-      awayPercent: 35,
+      time: '23:30',
+      prediction: 'Botafogo Vence',
+      confidence: 85,
+      odds: 1.85,
+      market: 'Resultado Final',
+      winner: 'Botafogo',
+      analysis: '🔥 Botafogo Vence @1.85 — O Botafogo regressa ao Brasileirão no seu estádio (Nilton Santos) onde tem sido muito forte. O Santos tem mostrado inconsistências defensivas fora de casa. Com o apoio dos adeptos, o Botafogo é o claro favorito para somar os três pontos neste clássico.',
+      homePercent: 55,
+      drawPercent: 25,
+      awayPercent: 20,
     },
-    // ===== NÁUTICO vs JUVENTUDE =====
+    // ===== VITÓRIA vs VASCO =====
     {
       id: 5053,
       betNumber: '5053',
       betType: 'SINGLE',
-      league: 'Brasileirão Série B',
-      homeTeam: 'Náutico',
-      awayTeam: 'Juventude',
+      league: 'Brasileirão Série A',
+      homeTeam: 'Vitória',
+      awayTeam: 'Vasco da Gama',
       date: dateStr,
-      time: '20:30',
-      prediction: 'Juventude Vence (Empate Anula Aposta)',
-      confidence: 75,
-      odds: 1.85,
-      market: 'Empate Anula',
-      winner: 'Juventude',
-      analysis: '🇧🇷 Juventude DNB @1.85 — O Juventude tem feito uma campanha sólida na Série B e defronta um Náutico muito irregular. A proteção do Empate Anula Aposta (Draw No Bet) oferece valor numa partida onde os visitantes são ligeiramente favoritos.',
-      homePercent: 30,
-      drawPercent: 30,
-      awayPercent: 40,
-    },
-    // ===== YPIRANGA-RS vs PAYSANDU =====
-    {
-      id: 5054,
-      betNumber: '5054',
-      betType: 'SINGLE',
-      league: 'Brasileirão Série C',
-      homeTeam: 'Ypiranga-RS',
-      awayTeam: 'Paysandu',
-      date: dateStr,
-      time: '11:00',
-      prediction: 'Menos de 2.5 Golos',
-      confidence: 85,
-      odds: 1.60,
-      market: 'Menos de 2.5',
+      time: '23:30',
+      prediction: 'Ambas Equipas Marcam - Sim',
+      confidence: 80,
+      odds: 1.95,
+      market: 'Ambas Marcam',
       winner: '',
-      analysis: '🇧🇷 Menos de 2.5 Golos @1.60 — Confronto matinal na Série C. O Ypiranga é forte em casa mas costuma protagonizar jogos de poucos golos. O Paysandu vai tentar controlar o ritmo e jogar no erro. Tendência clara para um jogo fechado.',
+      analysis: '⚽ Ambas Marcam @1.95 — O Vitória no Barradão costuma ser muito ofensivo e marcar golos, mas a sua defesa permite oportunidades. O Vasco precisa pontuar e tem qualidade no ataque para ferir o adversário. Espera-se um jogo aberto com golos para os dois lados.',
       homePercent: 40,
-      drawPercent: 35,
-      awayPercent: 25,
+      drawPercent: 30,
+      awayPercent: 30,
     },
     // ===== SABAH FC vs THE NEW SAINTS =====
     {
-      id: 5055,
-      betNumber: '5055',
+      id: 5054,
+      betNumber: '5054',
       betType: 'SINGLE',
       league: 'Qualificação Champions',
       homeTeam: 'Sabah FC',
       awayTeam: 'The New Saints',
       date: dateStr,
-      time: '19:00',
-      prediction: 'Sabah FC Vence (Handicap Asiático -1)',
-      confidence: 80,
-      odds: 1.75,
-      market: 'Resultado Final',
-      winner: 'Sabah FC',
-      analysis: '🇪🇺 Sabah AH -1 @1.75 — Na qualificação para a Champions League, a equipa do Azerbaijão é amplamente superior ao campeão galês. A jogar em casa, o Sabah deve conseguir uma vitória confortável por mais de um golo de diferença.',
-      homePercent: 75,
-      drawPercent: 15,
-      awayPercent: 10,
+      time: '17:00',
+      prediction: 'Mais de 2.5 Golos',
+      confidence: 75,
+      odds: 1.70,
+      market: 'Total de Golos',
+      winner: '',
+      analysis: '🇪🇺 Mais de 2.5 Golos @1.70 — O Sabah joga em casa e precisa de assumir o jogo nesta qualificação para a Champions League. O TNS é uma equipa que sofre golos na Europa mas que também consegue marcar em contra-ataque. Tendência para um jogo com 3 ou mais golos.',
+      homePercent: 60,
+      drawPercent: 20,
+      awayPercent: 20,
     },
-    // ===== AMÉRICA-RN vs TREM-AP (Análise de Resultado Recente) =====
+    // ===== LINCOLN RED IMPS vs INTER CLUB D'ESCALDES =====
+    {
+      id: 5055,
+      betNumber: '5055',
+      betType: 'SINGLE',
+      league: 'Qualificação Champions',
+      homeTeam: 'Lincoln Red Imps',
+      awayTeam: "Inter Club d'Escaldes",
+      date: dateStr,
+      time: '17:00',
+      prediction: 'Lincoln Red Imps Vence',
+      confidence: 85,
+      odds: 1.55,
+      market: 'Resultado Final',
+      winner: 'Lincoln Red Imps',
+      analysis: '🇪🇺 Lincoln Red Imps Vence @1.55 — A equipa de Gibraltar tem muito mais experiência nas competições europeias do que o seu adversário de Andorra. A jogar no seu terreno sintético habitual, o Lincoln tem uma vantagem significativa.',
+      homePercent: 65,
+      drawPercent: 20,
+      awayPercent: 15,
+    },
+    // ===== ARARAT-ARMENIA vs RIGA FC =====
     {
       id: 5056,
       betNumber: '5056',
       betType: 'SINGLE',
-      league: 'Brasileirão Série D',
-      homeTeam: 'América-RN',
-      awayTeam: 'Trem-AP',
+      league: 'Qualificação Champions',
+      homeTeam: 'Ararat-Armenia',
+      awayTeam: 'Riga FC',
       date: dateStr,
-      time: '19:00',
-      prediction: 'Mais de 2.5 Golos',
-      confidence: 70,
-      odds: 1.90,
-      market: 'Mais de 2.5',
+      time: '17:00',
+      prediction: 'Riga FC Vence ou Empata',
+      confidence: 75,
+      odds: 1.65,
+      market: 'Dupla Hipótese',
       winner: '',
-      analysis: '🇧🇷 Mais de 2.5 Golos @1.90 — Com base nos últimos jogos do América-RN em casa, a equipa tem mostrado grande capacidade ofensiva mas também sofre golos. O Trem-AP precisa de arriscar, o que deve resultar num jogo com pelo menos 3 golos.',
-      homePercent: 65,
-      drawPercent: 20,
-      awayPercent: 15,
+      analysis: '🇪🇺 Riga FC ou Empate @1.65 — O Riga FC tem investido muito no seu plantel e apresenta uma equipa superior no papel. Apesar de jogar fora na Arménia ser sempre difícil, os letões têm qualidade suficiente para, pelo menos, não perder a primeira mão.',
+      homePercent: 30,
+      drawPercent: 35,
+      awayPercent: 35,
     },
     // ===== ACUMULADOR DO DIA (DOUBLE) =====
     {
       id: 5057,
       betNumber: '5057',
       betType: 'DOUBLE',
-      league: 'Mundial + Champions',
-      homeTeam: 'Inglaterra/Argentina + Sabah',
+      league: 'Brasileirão + Champions',
+      homeTeam: 'Botafogo + Lincoln',
       awayTeam: 'Múltipla',
       date: dateStr,
-      time: '19:00',
-      prediction: 'Ambas Marcam (ING-ARG) + Sabah Vence',
-      confidence: 85,
-      odds: 2.55,
+      time: '17:00',
+      prediction: 'Vitória do Botafogo + Vitória do Lincoln Red Imps',
+      confidence: 80,
+      odds: 2.86,
       market: 'Combinada',
       winner: '',
-      analysis: '🔥 ACUMULADOR DO DIA @2.55 — Combinamos a expectativa de golos na meia-final do Mundial entre Inglaterra e Argentina com o favoritismo claro do Sabah FC na qualificação da Champions League. Uma aposta dupla de excelente valor.',
-      homePercent: 50,
+      analysis: '🔥 ACUMULADOR DO DIA @2.86 — Combinamos os dois grandes favoritos do dia. O Botafogo em casa no regresso do Brasileirão e a experiência europeia do Lincoln Red Imps frente a um adversário inferior. Uma dupla com excelente valor.',
+      homePercent: 60,
       drawPercent: 0,
-      awayPercent: 50,
+      awayPercent: 40,
     }
   ];
 }

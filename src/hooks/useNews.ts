@@ -16,7 +16,6 @@ async function fetchTrendingNews(): Promise<NewsArticle[]> {
     const res = await fetch('/api/trending');
     if (!res.ok) throw new Error('Failed to fetch trending news');
     const data = await res.json();
-    
     if (data.items && Array.isArray(data.items)) {
       return data.items.map((item: any) => ({
         id: item.id,
@@ -45,55 +44,55 @@ function getFallbackNews(): NewsArticle[] {
   return [
     {
       id: 1,
-      title: 'MUNDIAL 2026: O Duelo Histórico Entre Inglaterra e Argentina',
-      excerpt: 'A segunda meia-final do Campeonato do Mundo coloca frente a frente duas seleções com um longo historial de rivalidade. Analisamos como a Inglaterra de Thomas Tuchel tentará superar o talento ofensivo da Argentina em Atlanta, num jogo que promete ser épico.',
-      category: 'ANTEVISÃO',
-      readTime: '10 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 2,
-      title: 'MERCADO DE TRANSFERÊNCIAS: A Reconstrução do Meio-Campo do Man United',
-      excerpt: 'Com a chegada de Youri Tielemans e Andrey Santos, o Manchester United prepara-se para apresentar um meio-campo totalmente renovado na próxima época. Uma análise profunda ao impacto tático destas contratações no sistema da equipa de Old Trafford.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '12 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 3,
-      title: 'ANÁLISE: A Vitória Tática de Espanha Frente à França',
-      excerpt: 'A Espanha carimbou o passaporte para a final do Mundial 2026 com uma vitória por 2-0 sobre a França. Dissecamos como a "La Roja" anulou as transições rápidas francesas e impôs o seu domínio através da posse de bola e eficácia de Oyarzabal e Pedro Porro.',
-      category: 'ANÁLISE',
+      title: 'MUNDIAL 2026: Espanha e Argentina Protagonizam a Final de Sonho',
+      excerpt: 'A Argentina operou uma reviravolta dramática para vencer a Inglaterra por 2-1 nas meias-finais, garantindo o seu lugar na final do Mundial 2026. A albiceleste vai agora defrontar a Espanha, que eliminou a França, num duelo ibero-americano muito aguardado em Nova Iorque.',
+      category: 'MUNDIAL 2026',
       readTime: '8 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 4,
-      title: 'LIGAS EUROPEIAS: O Arranque das Qualificações para a Champions League',
-      excerpt: 'A época 2026/27 já começou na Europa com a primeira pré-eliminatória da Liga dos Campeões. Destaque para as equipas que procuram o sonho milionário, incluindo o embate entre Sabah FC e The New Saints, e as primeiras surpresas da competição.',
-      category: 'FUTEBOL EUROPEU',
+      id: 2,
+      title: 'MERCADO DE TRANSFERÊNCIAS: A Revolução do Manchester City',
+      excerpt: 'O Manchester City está a agitar o mercado de transferências. Com a contratação de Elliot Anderson por um valor astronómico de £116M e a surpreendente chegada de Marc Guéhi por £20M, Pep Guardiola demonstra uma clara intenção de reforçar a equipa para a nova época.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '10 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 3,
+      title: 'BRASILEIRÃO: O Regresso Aguardado com Clássicos em Perspetiva',
+      excerpt: 'A 19ª rodada do Brasileirão Série A marca o regresso da competição após uma pausa. O grande destaque vai para o embate entre Botafogo e Santos no Estádio Nilton Santos, um jogo crucial para as aspirações de ambas as equipas no campeonato.',
+      category: 'BRASILEIRÃO',
       readTime: '7 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 5,
-      title: 'BRASILEIRÃO: Série B e C ao Rubro com Duelos Decisivos',
-      excerpt: 'O meio da semana traz emoções fortes no futebol brasileiro. Analisamos os confrontos de hoje, com destaque para o Náutico vs Juventude na Série B e o Ypiranga-RS vs Paysandu na Série C, numa fase crucial para as aspirações de subida.',
-      category: 'BRASILEIRÃO',
+      id: 4,
+      title: 'LIGAS EUROPEIAS: Tottenham Abre os Cordões à Bolsa por Sandro Tonali',
+      excerpt: 'O Tottenham Hotspur está perto de concluir uma transferência recorde para o clube, ao acordar a contratação de Sandro Tonali ao Newcastle por £92.5M. Analisamos como o médio italiano pode transformar o meio-campo dos Spurs na próxima temporada.',
+      category: 'FUTEBOL EUROPEU',
       readTime: '9 min',
       date: formatToday,
       source: 'AliveGoal',
     },
     {
-      id: 6,
-      title: 'TIPS DE APOSTAS: Inglaterra vs Argentina — Prognóstico para a Meia-Final',
-      excerpt: 'No jogo mais aguardado do dia, sugerimos as melhores abordagens para apostar no Inglaterra vs Argentina. Analisamos o mercado de golos, o desempenho recente de ambas as seleções e porque o mercado "Ambas Marcam" pode ser a aposta mais valiosa.',
-      category: 'TIPS DE APOSTAS',
+      id: 5,
+      title: 'ESCÂNDALO: Investigação à Venda Ilegal de Bilhetes no Mundial',
+      excerpt: 'As autoridades desportivas enfrentam novos desafios com alegações de venda ilegal de bilhetes para os jogos do Mundial 2026. A Associação de Futebol do Gana está no centro da polémica, levantando questões sobre a transparência na distribuição de ingressos.',
+      category: 'BASTIDORES',
       readTime: '6 min',
+      date: formatToday,
+      source: 'AliveGoal',
+    },
+    {
+      id: 6,
+      title: 'TIPS DE APOSTAS: Botafogo vs Santos — Prognóstico para o Clássico',
+      excerpt: 'Com o regresso do Brasileirão, analisamos as melhores odds e mercados para o confronto entre Botafogo e Santos. Exploramos o momento de forma das equipas e as tendências históricas para oferecer a melhor tip de aposta para este clássico.',
+      category: 'TIPS DE APOSTAS',
+      readTime: '5 min',
       date: formatToday,
       source: 'AliveGoal',
     }
@@ -126,7 +125,6 @@ export function useNews() {
 
   useEffect(() => {
     fetchNews();
-    
     // Atualizar a cada 15 minutos
     const interval = setInterval(fetchNews, 15 * 60 * 1000);
     return () => clearInterval(interval);
