@@ -83,33 +83,34 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (16/07/2026) — aparecem primeiro
+// Jogos com tips hoje (17/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Botafogo", "Santos",
-  "Vitória", "Vasco",
-  "Sabah FC", "The New Saints"
+  "Bahia", "Chapecoense",
+  "Fluminense", "Mirassol",
+  "Botafogo", "Vitória"
 ];
 
-// Fallback data com jogos reais (atualizado 16/07/2026)
+// Fallback data com jogos reais (atualizado 17/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Brasileirão, Qualificação Champions
-  { id: 540320, homeTeam: "Botafogo FR", awayTeam: "Santos FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540321, homeTeam: "EC Vitória", awayTeam: "CR Vasco da Gama", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540322, homeTeam: "Sabah FC", awayTeam: "The New Saints", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
-  { id: 540323, homeTeam: "Lincoln Red Imps", awayTeam: "Inter Club d'Escaldes", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
-  { id: 540324, homeTeam: "Ararat-Armenia", awayTeam: "Riga FC", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 17:00", league: "Qualificação Champions League", leagueId: 2001 },
+  // JOGOS DO DIA — Brasileirão Série A
+  { id: 540330, homeTeam: "EC Bahia", awayTeam: "Chapecoense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540331, homeTeam: "Fluminense FC", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540332, homeTeam: "Botafogo FR", awayTeam: "EC Vitória", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
   
-  // Resultados Recentes — Meia-Final do Mundial 2026
-  { id: 540005, homeTeam: "Inglaterra", awayTeam: "Argentina", homeScore: 1, awayScore: 2, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
-  { id: 540004, homeTeam: "França", awayTeam: "Espanha", homeScore: 0, awayScore: 2, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — Meias-Finais", leagueId: 2000 },
+  // Taça FAI (Irlanda)
+  { id: 540333, homeTeam: "Shamrock Rovers", awayTeam: "Cork City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Irish FAI Cup", leagueId: 2002 },
+  { id: 540334, homeTeam: "Waterford", awayTeam: "Cobh Ramblers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Irish FAI Cup", leagueId: 2002 },
+  
+  // Superliga Chinesa
+  { id: 540335, homeTeam: "Yunnan Yukun", awayTeam: "Shanghai Port", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Chinese Super League", leagueId: 2003 },
   
   // Próximos jogos — Final do Mundial 2026
   { id: 540006, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Botafogo FR", 
-  awayTeam: "Santos FC",
+  homeTeam: "EC Bahia", 
+  awayTeam: "Chapecoense",
   homeScore: 0, 
   awayScore: 0,
   stats: {
