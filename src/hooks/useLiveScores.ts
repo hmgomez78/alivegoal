@@ -83,34 +83,40 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (17/07/2026) — aparecem primeiro
+// Jogos com tips hoje (18/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Bahia", "Chapecoense",
-  "Fluminense", "Mirassol",
-  "Botafogo", "Vitória"
+  "França", "Inglaterra",
+  "Man Utd", "Wrexham",
+  "Ajax", "Olympiakos",
+  "Nacional", "Iguatu"
 ];
 
-// Fallback data com jogos reais (atualizado 17/07/2026)
+// Fallback data com jogos reais (atualizado 18/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Brasileirão Série A
-  { id: 540330, homeTeam: "EC Bahia", awayTeam: "Chapecoense", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540331, homeTeam: "Fluminense FC", awayTeam: "Mirassol", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540332, homeTeam: "Botafogo FR", awayTeam: "EC Vitória", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  // JOGOS DO DIA — Mundial 2026
+  { id: 540340, homeTeam: "França", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — 3º Lugar", leagueId: 2000 },
   
-  // Taça FAI (Irlanda)
-  { id: 540333, homeTeam: "Shamrock Rovers", awayTeam: "Cork City", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Irish FAI Cup", leagueId: 2002 },
-  { id: 540334, homeTeam: "Waterford", awayTeam: "Cobh Ramblers", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 19:45", league: "Irish FAI Cup", leagueId: 2002 },
+  // Amigáveis de Clubes
+  { id: 540341, homeTeam: "Man Utd", awayTeam: "Wrexham", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540342, homeTeam: "Ajax", awayTeam: "Olympiakos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540343, homeTeam: "Basel", awayTeam: "Juventus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540344, homeTeam: "PSV", awayTeam: "Union SG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:30", league: "Amigáveis de Clubes", leagueId: 2185 },
   
-  // Superliga Chinesa
-  { id: 540335, homeTeam: "Yunnan Yukun", awayTeam: "Shanghai Port", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 13:00", league: "Chinese Super League", leagueId: 2003 },
+  // Brasileirão Série D
+  { id: 540345, homeTeam: "Nacional", awayTeam: "Iguatu", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série D", leagueId: 2014 },
+  { id: 540346, homeTeam: "São José", awayTeam: "Treze", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série D", leagueId: 2014 },
+  
+  // Resultados Recentes - Brasileirão Série A (17/07)
+  { id: 540331, homeTeam: "Fluminense", awayTeam: "RB Bragantino", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540332, homeTeam: "Mirassol", awayTeam: "Grêmio", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 2013 },
   
   // Próximos jogos — Final do Mundial 2026
   { id: 540006, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "EC Bahia", 
-  awayTeam: "Chapecoense",
+  homeTeam: "França", 
+  awayTeam: "Inglaterra",
   homeScore: 0, 
   awayScore: 0,
   stats: {
