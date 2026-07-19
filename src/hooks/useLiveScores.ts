@@ -83,44 +83,44 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (18/07/2026) — aparecem primeiro
+// Jogos com tips hoje (19/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "França", "Inglaterra",
-  "Man Utd", "Wrexham",
-  "Ajax", "Olympiakos",
-  "Nacional", "Iguatu"
+  "Espanha", "Argentina",
+  "São Luiz", "CSA",
+  "América-RN", "Gama",
+  "Flamengo", "Atlético-MG"
 ];
 
-// Fallback data com jogos reais (atualizado 18/07/2026)
+// Fallback data com jogos reais (atualizado 19/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGOS DO DIA — Mundial 2026
-  { id: 540340, homeTeam: "França", awayTeam: "Inglaterra", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 22:00", league: "FIFA Mundial 2026 — 3º Lugar", leagueId: 2000 },
-  
-  // Amigáveis de Clubes
-  { id: 540341, homeTeam: "Man Utd", awayTeam: "Wrexham", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540342, homeTeam: "Ajax", awayTeam: "Olympiakos", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540343, homeTeam: "Basel", awayTeam: "Juventus", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 14:30", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540344, homeTeam: "PSV", awayTeam: "Union SG", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 11:30", league: "Amigáveis de Clubes", leagueId: 2185 },
-  
-  // Brasileirão Série D
-  { id: 540345, homeTeam: "Nacional", awayTeam: "Iguatu", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série D", leagueId: 2014 },
-  { id: 540346, homeTeam: "São José", awayTeam: "Treze", homeScore: 0, awayScore: 0, minute: 0, status: "HOJE 16:00", league: "Brasileirão Série D", leagueId: 2014 },
-  
-  // Resultados Recentes - Brasileirão Série A (17/07)
-  { id: 540331, homeTeam: "Fluminense", awayTeam: "RB Bragantino", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540332, homeTeam: "Mirassol", awayTeam: "Grêmio", homeScore: 2, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 2013 },
-  
-  // Próximos jogos — Final do Mundial 2026
-  { id: 540006, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 0, awayScore: 0, minute: 0, status: "19/07 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
+  // JOGO DO DIA — Final do Mundial 2026
+  { id: 540400, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
+
+  // Brasileirão Série D — Oitavos de Final (Jogos de Hoje)
+  { id: 540401, homeTeam: "São Luiz", awayTeam: "CSA", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
+  { id: 540402, homeTeam: "América-RN", awayTeam: "Gama", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
+
+  // Amigáveis de Pré-Época
+  { id: 540403, homeTeam: "Borussia Dortmund", awayTeam: "Oberhausen", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540404, homeTeam: "Lorient", awayTeam: "Nantes", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540405, homeTeam: "Celtic", awayTeam: "Middlesbrough", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+
+  // Resultados Recentes — 3º Lugar Copa do Mundo (18/07)
+  { id: 540350, homeTeam: "França", awayTeam: "Inglaterra", homeScore: 4, awayScore: 6, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — 3º Lugar", leagueId: 2000 },
+
+  // Resultados Recentes — Brasileirão Série B (18/07)
+  { id: 540351, homeTeam: "Atlético-GO", awayTeam: "Athletic Club", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540352, homeTeam: "Ponte Preta", awayTeam: "Goiás", homeScore: 0, awayScore: 2, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
+  { id: 540353, homeTeam: "Sport", awayTeam: "Operário-PR", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "França", 
-  awayTeam: "Inglaterra",
+  homeTeam: "Espanha", 
+  awayTeam: "Argentina",
   homeScore: 0, 
   awayScore: 0,
   stats: {
-    possession: [50, 50], 
+    possession: [64, 36], 
     shots: [0, 0], 
     shotsOnTarget: [0, 0],
     corners: [0, 0], 
