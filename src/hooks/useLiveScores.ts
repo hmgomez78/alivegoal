@@ -83,48 +83,46 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (19/07/2026) — aparecem primeiro
+// Jogos com tips hoje (20/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
   "Espanha", "Argentina",
-  "São Luiz", "CSA",
-  "América-RN", "Gama",
-  "Flamengo", "Atlético-MG"
+  "Fenerbahce", "Gornik Zabrze",
+  "Sturm Graz", "Hearts",
+  "Rangers", "Man United",
+  "Aston Villa", "Espanyol"
 ];
 
-// Fallback data com jogos reais (atualizado 19/07/2026)
+// Fallback data com jogos reais (atualizado 20/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // JOGO DO DIA — Final do Mundial 2026
-  { id: 540400, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
+  // RESULTADO DA FINAL DO MUNDIAL 2026 (Ontem, mas relevante manter como destaque)
+  { id: 540400, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 1, awayScore: 0, minute: 120, status: "FIM", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
 
-  // Brasileirão Série D — Oitavos de Final (Jogos de Hoje)
-  { id: 540401, homeTeam: "São Luiz", awayTeam: "CSA", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
-  { id: 540402, homeTeam: "América-RN", awayTeam: "Gama", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
+  // Amigáveis de Pré-Época (Hoje 20/07 e Amanhã 21/07)
+  { id: 540401, homeTeam: "Rangers", awayTeam: "Man United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540402, homeTeam: "Aston Villa", awayTeam: "Espanyol", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Amigáveis de Clubes", leagueId: 2185 },
+  { id: 540403, homeTeam: "Chelsea", awayTeam: "Crawley Town", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "Amigáveis de Clubes", leagueId: 2185 },
 
-  // Amigáveis de Pré-Época
-  { id: 540403, homeTeam: "Borussia Dortmund", awayTeam: "Oberhausen", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540404, homeTeam: "Lorient", awayTeam: "Nantes", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540405, homeTeam: "Celtic", awayTeam: "Middlesbrough", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-
-  // Resultados Recentes — 3º Lugar Copa do Mundo (18/07)
-  { id: 540350, homeTeam: "França", awayTeam: "Inglaterra", homeScore: 4, awayScore: 6, minute: 90, status: "FIM", league: "FIFA Mundial 2026 — 3º Lugar", leagueId: 2000 },
-
-  // Resultados Recentes — Brasileirão Série B (18/07)
-  { id: 540351, homeTeam: "Atlético-GO", awayTeam: "Athletic Club", homeScore: 0, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540352, homeTeam: "Ponte Preta", awayTeam: "Goiás", homeScore: 0, awayScore: 2, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
-  { id: 540353, homeTeam: "Sport", awayTeam: "Operário-PR", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série B", leagueId: 2013 },
+  // Champions League Qualifying (Amanhã 21/07 - Antecipação)
+  { id: 540404, homeTeam: "Fenerbahce", awayTeam: "Gornik Zabrze", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540405, homeTeam: "Sturm Graz", awayTeam: "Hearts", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540406, homeTeam: "Ararat Armenia", awayTeam: "Shamrock Rovers", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 17:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  
+  // Brasileirão Série D — Oitavos de Final (Jogos Recentes)
+  { id: 540407, homeTeam: "São Luiz", awayTeam: "CSA", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
+  { id: 540408, homeTeam: "América-RN", awayTeam: "Gama", homeScore: 2, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
   homeTeam: "Espanha", 
   awayTeam: "Argentina",
-  homeScore: 0, 
+  homeScore: 1, 
   awayScore: 0,
   stats: {
     possession: [64, 36], 
-    shots: [0, 0], 
-    shotsOnTarget: [0, 0],
-    corners: [0, 0], 
-    fouls: [0, 0],
+    shots: [12, 8], 
+    shotsOnTarget: [5, 3],
+    corners: [6, 4], 
+    fouls: [14, 18],
   },
 };
 
