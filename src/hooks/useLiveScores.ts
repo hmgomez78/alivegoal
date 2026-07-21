@@ -83,46 +83,46 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (20/07/2026) — aparecem primeiro
+// Jogos com tips hoje (21/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Espanha", "Argentina",
   "Fenerbahce", "Gornik Zabrze",
   "Sturm Graz", "Hearts",
-  "Rangers", "Man United",
-  "Aston Villa", "Espanyol"
+  "Mineiro", "Bahia",
+  "Santos", "Universidad Central",
+  "Nacional", "Tigre"
 ];
 
-// Fallback data com jogos reais (atualizado 20/07/2026)
+// Fallback data com jogos reais (atualizado 21/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // RESULTADO DA FINAL DO MUNDIAL 2026 (Ontem, mas relevante manter como destaque)
+  // Champions League Qualifying — 2ª Ronda (Hoje 21/07)
+  { id: 540500, homeTeam: "Fenerbahce", awayTeam: "Gornik Zabrze", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540501, homeTeam: "Sturm Graz", awayTeam: "Hearts", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540502, homeTeam: "Ararat Armenia", awayTeam: "Shamrock Rovers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540503, homeTeam: "AGF", awayTeam: "Lech Poznan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540504, homeTeam: "Larne", awayTeam: "Red Star Belgrade", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+
+  // Copa Sul-Americana — Playoffs Ida (Hoje 21/07)
+  { id: 540505, homeTeam: "Nacional", awayTeam: "Tigre", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+  { id: 540506, homeTeam: "Univ. Central", awayTeam: "Santos", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+
+  // Brasileirão Série A (Hoje 21/07)
+  { id: 540507, homeTeam: "Mineiro", awayTeam: "Bahia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+
+  // Resultado da Final do Mundial 2026 (Ontem — destaque)
   { id: 540400, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 1, awayScore: 0, minute: 120, status: "FIM", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
-
-  // Amigáveis de Pré-Época (Hoje 20/07 e Amanhã 21/07)
-  { id: 540401, homeTeam: "Rangers", awayTeam: "Man United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540402, homeTeam: "Aston Villa", awayTeam: "Espanyol", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Amigáveis de Clubes", leagueId: 2185 },
-  { id: 540403, homeTeam: "Chelsea", awayTeam: "Crawley Town", homeScore: 3, awayScore: 1, minute: 90, status: "FIM", league: "Amigáveis de Clubes", leagueId: 2185 },
-
-  // Champions League Qualifying (Amanhã 21/07 - Antecipação)
-  { id: 540404, homeTeam: "Fenerbahce", awayTeam: "Gornik Zabrze", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540405, homeTeam: "Sturm Graz", awayTeam: "Hearts", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540406, homeTeam: "Ararat Armenia", awayTeam: "Shamrock Rovers", homeScore: null, awayScore: null, minute: 0, status: "AMANHÃ 17:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  
-  // Brasileirão Série D — Oitavos de Final (Jogos Recentes)
-  { id: 540407, homeTeam: "São Luiz", awayTeam: "CSA", homeScore: 1, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
-  { id: 540408, homeTeam: "América-RN", awayTeam: "Gama", homeScore: 2, awayScore: 0, minute: 90, status: "FIM", league: "Brasileirão Série D — Oitavos", leagueId: 2014 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Espanha", 
-  awayTeam: "Argentina",
-  homeScore: 1, 
+  homeTeam: "Fenerbahce",
+  awayTeam: "Gornik Zabrze",
+  homeScore: 0,
   awayScore: 0,
   stats: {
-    possession: [64, 36], 
-    shots: [12, 8], 
-    shotsOnTarget: [5, 3],
-    corners: [6, 4], 
-    fouls: [14, 18],
+    possession: [62, 38],
+    shots: [0, 0],
+    shotsOnTarget: [0, 0],
+    corners: [0, 0],
+    fouls: [0, 0],
   },
 };
 
