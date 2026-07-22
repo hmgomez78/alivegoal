@@ -30,7 +30,6 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// Competições disponíveis no plano gratuito do football-data.org
 const COMPETITION_CODES = [
   "CL",   // UEFA Champions League
   "PL",   // Premier League
@@ -44,7 +43,6 @@ const COMPETITION_CODES = [
   "ELC",  // Championship
 ];
 
-// Mapeamento de status da football-data.org para português
 const statusMap: Record<string, string> = {
   "SCHEDULED": "POR INICIAR",
   "TIMED": "HOJE",
@@ -69,7 +67,6 @@ function formatMatchTime(match: any): string {
   
   if (status === "TIMED" || status === "SCHEDULED") {
     const date = new Date(match.utcDate);
-    // Converter UTC para GMT+1 (Portugal/Lisboa)
     const localHours = ((date.getUTCHours() + 1) % 24).toString().padStart(2, "0");
     const localMinutes = date.getUTCMinutes().toString().padStart(2, "0");
     return `HOJE ${localHours}:${localMinutes}`;
@@ -78,47 +75,43 @@ function formatMatchTime(match: any): string {
   return statusMap[status] || status;
 }
 
-// Logos dos clubes via football-data.org crests
 function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-// Jogos com tips hoje (21/07/2026) — aparecem primeiro
 const TODAYS_TIP_TEAMS = [
-  "Fenerbahce", "Gornik Zabrze",
-  "Sturm Graz", "Hearts",
-  "Mineiro", "Bahia",
-  "Santos", "Universidad Central",
-  "Nacional", "Tigre"
+  "Coritiba", "Palmeiras",
+  "São Paulo", "Athletico-PR",
+  "Vasco", "Independiente Medellín",
+  "Bragantino", "Sporting Cristal",
+  "Omonia Nicosia", "FC Kairat"
 ];
 
-// Fallback data com jogos reais (atualizado 21/07/2026)
 const fallbackMatches: LiveMatch[] = [
-  // Champions League Qualifying — 2ª Ronda (Hoje 21/07)
-  { id: 540500, homeTeam: "Fenerbahce", awayTeam: "Gornik Zabrze", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540501, homeTeam: "Sturm Graz", awayTeam: "Hearts", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540502, homeTeam: "Ararat Armenia", awayTeam: "Shamrock Rovers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540503, homeTeam: "AGF", awayTeam: "Lech Poznan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540504, homeTeam: "Larne", awayTeam: "Red Star Belgrade", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  // Brasileirão Série A (Hoje 22/07)
+  { id: 540508, homeTeam: "Coritiba", awayTeam: "Palmeiras", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540509, homeTeam: "São Paulo", awayTeam: "Athletico-PR", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540510, homeTeam: "Internacional", awayTeam: "Cruzeiro", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 540511, homeTeam: "Chapecoense", awayTeam: "Flamengo", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
 
-  // Copa Sul-Americana — Playoffs Ida (Hoje 21/07)
-  { id: 540505, homeTeam: "Nacional", awayTeam: "Tigre", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
-  { id: 540506, homeTeam: "Univ. Central", awayTeam: "Santos", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+  // Copa Sul-Americana — Playoffs Ida (Hoje 22/07)
+  { id: 540601, homeTeam: "Ind. Medellín", awayTeam: "Vasco", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+  { id: 540602, homeTeam: "Sporting Cristal", awayTeam: "Bragantino", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+  { id: 540603, homeTeam: "Lanús", awayTeam: "Cienciano", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
 
-  // Brasileirão Série A (Hoje 21/07)
-  { id: 540507, homeTeam: "Mineiro", awayTeam: "Bahia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-
-  // Resultado da Final do Mundial 2026 (Ontem — destaque)
-  { id: 540400, homeTeam: "Espanha", awayTeam: "Argentina", homeScore: 1, awayScore: 0, minute: 120, status: "FIM", league: "FIFA Mundial 2026 — Final", leagueId: 2000 },
+  // Champions League Qualifying — 2ª Ronda (Hoje 22/07)
+  { id: 540701, homeTeam: "Omonia Nicosia", awayTeam: "FC Kairat", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540702, homeTeam: "Levski Sofia", awayTeam: "Univ. Craiova", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  { id: 540703, homeTeam: "KF Egnatia", awayTeam: "CM Celje", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Fenerbahce",
-  awayTeam: "Gornik Zabrze",
+  homeTeam: "Coritiba",
+  awayTeam: "Palmeiras",
   homeScore: 0,
   awayScore: 0,
   stats: {
-    possession: [62, 38],
+    possession: [50, 50],
     shots: [0, 0],
     shotsOnTarget: [0, 0],
     corners: [0, 0],
@@ -193,7 +186,6 @@ export function useLiveScores(apiKey?: string) {
         awayTeamLogo: getTeamLogo(m.awayTeam),
       }));
 
-      // Ordenar: jogos das tips primeiro, depois ao vivo, depois por hora
       formattedMatches.sort((a, b) => {
         const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
         const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
@@ -210,7 +202,6 @@ export function useLiveScores(apiKey?: string) {
       setMatches(formattedMatches);
       setIsLive(formattedMatches.some(m => m.status === "AO VIVO"));
 
-      // Set featured match (first live match or first match)
       const featuredMatch = formattedMatches.find(m => m.status === "AO VIVO") || formattedMatches[0];
       if (featuredMatch) {
         setFeatured({
@@ -218,7 +209,7 @@ export function useLiveScores(apiKey?: string) {
           awayTeam: featuredMatch.awayTeam,
           homeScore: featuredMatch.homeScore || 0,
           awayScore: featuredMatch.awayScore || 0,
-          stats: fallbackFeatured.stats, // A API gratuita não fornece estatísticas detalhadas
+          stats: fallbackFeatured.stats,
         });
       }
 
@@ -235,7 +226,6 @@ export function useLiveScores(apiKey?: string) {
 
   useEffect(() => {
     fetchLiveScores();
-    // Atualizar a cada 60 segundos
     const interval = setInterval(fetchLiveScores, 60000);
     return () => clearInterval(interval);
   }, [fetchLiveScores]);
