@@ -11,91 +11,64 @@ export interface NewsArticle {
   imageUrl?: string;
 }
 
-async function fetchTrendingNews(): Promise<NewsArticle[]> {
-  try {
-    const res = await fetch('/api/trending');
-    if (!res.ok) throw new Error('Failed to fetch trending news');
-    const data = await res.json();
-    if (data.items && Array.isArray(data.items)) {
-      return data.items.map((item: any) => ({
-        id: item.id,
-        title: item.title,
-        excerpt: item.summary,
-        category: item.tag === 'TRANSFER' ? 'TRANSFERÊNCIAS' : item.tag === 'BREAKING' ? 'ÚLTIMA HORA' : item.tag === 'SCANDAL' ? 'ESCÂNDALO' : 'DESTAQUE',
-        readTime: '3 min',
-        date: item.time,
-        source: item.source,
-      }));
-    }
-    return [];
-  } catch (error) {
-    console.error('Error fetching trending news for hook:', error);
-    return [];
-  }
-}
-
 function getFallbackNews(): NewsArticle[] {
-  const formatToday = new Intl.DateTimeFormat('pt-PT', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric'
-  }).format(new Date());
+  const publicationDate = '23 jul. 2026';
 
   return [
     {
-      id: 1,
-      title: 'ANÁLISE: O Impacto da Investigação do FBI na AFA e no Futebol Argentino',
-      excerpt: 'A recente abertura de uma investigação do FBI sobre a Associação de Futebol da Argentina (AFA) levanta sérias questões sobre a transparência financeira no futebol sul-americano. Analisamos como as alegações de fraude e lavagem de dinheiro, envolvendo mais de 300 milhões de dólares, podem afetar a reputação da seleção recém-coroada campeã mundial e a estabilidade da federação.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '7 min',
-      date: formatToday,
-      source: 'AliveGoal',
+      id: 'context-1',
+      title: 'EUROPA LEAGUE: Dynamo Kyiv–PAOK abre uma noite de eliminatórias de alto nível',
+      excerpt: 'A segunda pré-eliminatória da UEFA Europa League coloca Dynamo Kyiv e PAOK frente a frente às 18:00. Mais do que um jogo isolado, é o primeiro passo de uma eliminatória a duas mãos que pode definir o calendário europeu das duas equipas no início da época 2026/27.',
+      category: 'ANÁLISE EUROPEIA',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'BBC Sport',
     },
     {
-      id: 2,
-      title: 'MERCADO: O Investimento Contínuo do Chelsea e a Chegada de Morgan Rogers',
-      excerpt: 'O Chelsea continua a sua agressiva estratégia de mercado com a contratação recorde de Morgan Rogers por £117 milhões. Exploramos como o avançado inglês se encaixa no sistema tático de Stamford Bridge, o impacto financeiro deste negócio e o que significa para o projeto a longo prazo do clube sob a atual direção.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '8 min',
-      date: formatToday,
-      source: 'AliveGoal',
+      id: 'context-2',
+      title: 'CONTEXTO: Hammarby–Anderlecht mede ambição sueca contra experiência belga',
+      excerpt: 'Hammarby recebe o Anderlecht na segunda ronda de qualificação da Europa League. O emparelhamento ilustra o equilíbrio desta fase: equipas em plena dinâmica competitiva enfrentam clubes habituados a palcos continentais e a gerir eliminatórias sob pressão.',
+      category: 'ANÁLISE EUROPEIA',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'BBC Sport',
     },
     {
-      id: 3,
-      title: "BASTIDORES: A Guerra Aberta entre Javier Tebas e Gianni Infantino",
-      excerpt: 'As declarações explosivas do presidente da La Liga, Javier Tebas, exigindo a demissão de Gianni Infantino, marcam um novo ponto baixo nas relações entre as ligas europeias e a FIFA. Discutimos as razões por trás desta disputa, centrada na expansão do calendário internacional, e as possíveis consequências para o futuro das competições de clubes.',
-      category: 'BASTIDORES',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    },
-    {
-      id: 4,
-      title: 'CHAMPIONS LEAGUE: Omonia Nicosia e Levski Sofia Entram em Ação na Qualificação',
-      excerpt: 'A segunda ronda de qualificação da Liga dos Campeões continua hoje. O Omonia Nicosia enfrenta o FC Kairat, enquanto o Levski Sofia joga contra a Universitatea Craiova. Analisamos as perspetivas destas equipas na sua jornada rumo à fase de grupos da competição de clubes mais prestigiada da Europa.',
-      category: 'LIGA DOS CAMPEÕES',
+      id: 'context-3',
+      title: 'EUROPA LEAGUE: Beşiktaş–Midtjylland, um duelo de perfis táticos contrastantes',
+      excerpt: 'O Beşiktaş recebe o Midtjylland às 19:00 numa das partidas mais interessantes da segunda pré-eliminatória. O jogo coloca um clube turco de grande massa adepta perante uma estrutura dinamarquesa conhecida pelo recrutamento orientado por dados e pela intensidade competitiva.',
+      category: 'LEITURA TÁTICA',
       readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
+      date: publicationDate,
+      source: 'BBC Sport',
     },
     {
-      id: 5,
-      title: 'SUL-AMERICANA: Vasco e Bragantino em Destaque nos Playoffs Desta Noite',
-      excerpt: 'Os playoffs da Copa Sul-Americana aquecem com o Vasco a visitar o Independiente Medellín e o Bragantino a enfrentar o Sporting Cristal. Avaliamos as hipóteses das equipas brasileiras nestes confrontos cruciais e o que precisam de fazer para garantir a passagem aos oitavos de final do torneio continental.',
-      category: 'SUL-AMERICANA',
-      readTime: '5 min',
-      date: formatToday,
-      source: 'AliveGoal',
+      id: 'context-4',
+      title: 'BRASILEIRÃO: Botafogo–Vitória fecha a agenda de hoje com pontos importantes em jogo',
+      excerpt: 'Botafogo e Vitória têm pontapé de saída marcado para as 23:30 no calendário de Série A listado pela BBC Sport. Em plena sequência de jogos domésticos, a gestão de energia, rotações e eficácia nas duas áreas ganha peso numa fase em que cada resultado pode alterar o ritmo da campanha.',
+      category: 'FUTEBOL BRASILEIRO',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'BBC Sport',
     },
     {
-      id: 6,
-      title: 'TIPS DE APOSTAS: Brasileirão e Sul-Americana — As Melhores Oportunidades de Hoje',
-      excerpt: 'Com uma noite repleta de ação no Brasileirão (Coritiba x Palmeiras, São Paulo x Athletico) e na Copa Sul-Americana, identificamos as apostas com maior valor. Analisamos as estatísticas recentes, o momento de forma das equipas e as odds para lhe trazer as melhores dicas para maximizar os seus retornos.',
-      category: 'TIPS DE APOSTAS',
-      readTime: '6 min',
-      date: formatToday,
-      source: 'AliveGoal',
-    }
+      id: 'context-5',
+      title: 'BRASILEIRÃO: Corinthians–Remo junta tradição e urgência competitiva',
+      excerpt: 'O Corinthians recebe o Remo às 23:30, de acordo com a página de jogos da BBC Sport. Para além do valor histórico dos emblemas, o encontro oferece uma leitura útil sobre a capacidade de adaptação das equipas a um calendário intenso e a contextos competitivos distintos.',
+      category: 'FUTEBOL BRASILEIRO',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'BBC Sport',
+    },
+    {
+      id: 'context-6',
+      title: 'PRÉ-ÉPOCA: Rio Ave–Nottingham Forest no radar, com horário ainda por confirmar',
+      excerpt: 'O Rio Ave e o Nottingham Forest têm um amigável previsto para hoje, embora a hora de início permanecesse por confirmar na listagem da BBC Sport. Estes encontros de preparação ajudam a testar dinâmicas, dar minutos a novos elementos e afinar processos antes do arranque oficial.',
+      category: 'PRÉ-ÉPOCA',
+      readTime: '3 min',
+      date: publicationDate,
+      source: 'BBC Sport',
+    },
   ];
 }
 
@@ -106,17 +79,10 @@ export function useNews() {
   const fetchNews = async () => {
     setLoading(true);
     try {
-      const trendingNews = await fetchTrendingNews();
-      
-      if (trendingNews.length >= 4) {
-        setNews(trendingNews.slice(0, 6));
-      } else {
-        const fallback = getFallbackNews();
-        const mixed = [...trendingNews, ...fallback].slice(0, 6);
-        setNews(mixed);
-      }
+      // O feed editorial de contexto é deliberadamente distinto do feed de tendências.
+      setNews(getFallbackNews());
     } catch (error) {
-      console.error('Error fetching news:', error);
+      console.error('Error loading contextual news:', error);
       setNews(getFallbackNews());
     } finally {
       setLoading(false);
@@ -125,7 +91,6 @@ export function useNews() {
 
   useEffect(() => {
     fetchNews();
-    // Atualizar a cada 15 minutos
     const interval = setInterval(fetchNews, 15 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);

@@ -79,35 +79,40 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-const TODAYS_TIP_TEAMS = [
-  "Coritiba", "Palmeiras",
-  "São Paulo", "Athletico-PR",
-  "Vasco", "Independiente Medellín",
-  "Bragantino", "Sporting Cristal",
-  "Omonia Nicosia", "FC Kairat"
+const TODAYS_FEATURED_TEAMS = [
+  "St.Gallen", "Benfica",
+  "Dynamo Kyiv", "PAOK",
+  "Beşiktaş", "Midtjylland",
+  "Vojvodina", "Ajax",
+  "Paks", "Panathinaikos",
+  "Botafogo", "Vitória",
+  "Corinthians", "Remo"
 ];
 
 const fallbackMatches: LiveMatch[] = [
-  // Brasileirão Série A (Hoje 22/07)
-  { id: 540508, homeTeam: "Coritiba", awayTeam: "Palmeiras", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540509, homeTeam: "São Paulo", awayTeam: "Athletico-PR", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540510, homeTeam: "Internacional", awayTeam: "Cruzeiro", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 540511, homeTeam: "Chapecoense", awayTeam: "Flamengo", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Brasileirão Série A", leagueId: 2013 },
+  // UEFA Europa League — 2ª Pré-eliminatória (23/07/2026)
+  { id: 7262301, homeTeam: "Dynamo Kyiv", awayTeam: "PAOK", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
+  { id: 7262302, homeTeam: "Hammarby", awayTeam: "Anderlecht", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
+  { id: 7262303, homeTeam: "Beşiktaş", awayTeam: "Midtjylland", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
+  { id: 7262304, homeTeam: "St.Gallen", awayTeam: "Benfica", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
 
-  // Copa Sul-Americana — Playoffs Ida (Hoje 22/07)
-  { id: 540601, homeTeam: "Ind. Medellín", awayTeam: "Vasco", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
-  { id: 540602, homeTeam: "Sporting Cristal", awayTeam: "Bragantino", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
-  { id: 540603, homeTeam: "Lanús", awayTeam: "Cienciano", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:30", league: "Copa Sul-Americana — Playoffs", leagueId: 2152 },
+  // UEFA Conference League — 2ª Pré-eliminatória (23/07/2026)
+  { id: 7262401, homeTeam: "Malisheva", awayTeam: "Hibernian", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:30", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
+  { id: 7262402, homeTeam: "Paks", awayTeam: "Panathinaikos", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
+  { id: 7262403, homeTeam: "Vojvodina", awayTeam: "Ajax", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
+  { id: 7262404, homeTeam: "Rijeka", awayTeam: "Derry City", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
 
-  // Champions League Qualifying — 2ª Ronda (Hoje 22/07)
-  { id: 540701, homeTeam: "Omonia Nicosia", awayTeam: "FC Kairat", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540702, homeTeam: "Levski Sofia", awayTeam: "Univ. Craiova", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
-  { id: 540703, homeTeam: "KF Egnatia", awayTeam: "CM Celje", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2001 },
+  // Brasileirão Série A (23/07/2026)
+  { id: 7262501, homeTeam: "Botafogo", awayTeam: "Vitória", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  { id: 7262502, homeTeam: "Corinthians", awayTeam: "Remo", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+
+  // Amigável de clubes — horário ainda não confirmado pela fonte
+  { id: 7262601, homeTeam: "Rio Ave", awayTeam: "Nottingham Forest", homeScore: null, awayScore: null, minute: 0, status: "HORÁRIO A CONFIRMAR", league: "Amigável de Clubes", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Coritiba",
-  awayTeam: "Palmeiras",
+  homeTeam: "St.Gallen",
+  awayTeam: "Benfica",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -187,11 +192,11 @@ export function useLiveScores(apiKey?: string) {
       }));
 
       formattedMatches.sort((a, b) => {
-        const aHasTip = TODAYS_TIP_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
-        const bHasTip = TODAYS_TIP_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
+        const aIsFeatured = TODAYS_FEATURED_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
+        const bIsFeatured = TODAYS_FEATURED_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
         
-        if (aHasTip && !bHasTip) return -1;
-        if (!aHasTip && bHasTip) return 1;
+        if (aIsFeatured && !bIsFeatured) return -1;
+        if (!aIsFeatured && bIsFeatured) return 1;
         
         if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
         if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
