@@ -56,22 +56,22 @@ const statusMap: Record<string, string> = {
 
 function formatMatchTime(match: any): string {
   const status = match.status;
-  
+
   if (status === "IN_PLAY" || status === "PAUSED") {
     return "AO VIVO";
   }
-  
+
   if (status === "FINISHED") {
     return "FIM";
   }
-  
+
   if (status === "TIMED" || status === "SCHEDULED") {
     const date = new Date(match.utcDate);
     const localHours = ((date.getUTCHours() + 1) % 24).toString().padStart(2, "0");
     const localMinutes = date.getUTCMinutes().toString().padStart(2, "0");
     return `HOJE ${localHours}:${localMinutes}`;
   }
-  
+
   return statusMap[status] || status;
 }
 
@@ -80,39 +80,38 @@ function getTeamLogo(team: any): string {
 }
 
 const TODAYS_FEATURED_TEAMS = [
-  "St.Gallen", "Benfica",
-  "Dynamo Kyiv", "PAOK",
-  "Beşiktaş", "Midtjylland",
-  "Vojvodina", "Ajax",
-  "Paks", "Panathinaikos",
-  "Botafogo", "Vitória",
-  "Corinthians", "Remo"
+  "St Patrick's", "Dundalk",
+  "Viborg", "OB",
+  "Pogoń Szczecin", "Legia Warszawa",
+  "Västerås", "Örgryte",
+  "Rosenborg", "Manchester United",
+  "Galatasaray", "Monza"
 ];
 
 const fallbackMatches: LiveMatch[] = [
-  // UEFA Europa League — 2ª Pré-eliminatória (23/07/2026)
-  { id: 7262301, homeTeam: "Dynamo Kyiv", awayTeam: "PAOK", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
-  { id: 7262302, homeTeam: "Hammarby", awayTeam: "Anderlecht", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
-  { id: 7262303, homeTeam: "Beşiktaş", awayTeam: "Midtjylland", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
-  { id: 7262304, homeTeam: "St.Gallen", awayTeam: "Benfica", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Europa League — Qualificação", leagueId: 2002 },
+  // Irish Premier Division
+  { id: 7262401, homeTeam: "St Patrick's Athletic", awayTeam: "Dundalk", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Irish Premier Division", leagueId: 2000 },
 
-  // UEFA Conference League — 2ª Pré-eliminatória (23/07/2026)
-  { id: 7262401, homeTeam: "Malisheva", awayTeam: "Hibernian", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:30", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
-  { id: 7262402, homeTeam: "Paks", awayTeam: "Panathinaikos", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
-  { id: 7262403, homeTeam: "Vojvodina", awayTeam: "Ajax", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
-  { id: 7262404, homeTeam: "Rijeka", awayTeam: "Derry City", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "UEFA Conference League — Qualificação", leagueId: 2021 },
+  // Danish Superligaen
+  { id: 7262402, homeTeam: "Viborg", awayTeam: "OB", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Danish Superligaen", leagueId: 2000 },
 
-  // Brasileirão Série A (23/07/2026)
-  { id: 7262501, homeTeam: "Botafogo", awayTeam: "Vitória", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
-  { id: 7262502, homeTeam: "Corinthians", awayTeam: "Remo", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:30", league: "Brasileirão Série A", leagueId: 2013 },
+  // Polish Ekstraklasa
+  { id: 7262403, homeTeam: "Pogoń Szczecin", awayTeam: "Legia Warszawa", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Polish Ekstraklasa", leagueId: 2000 },
+  { id: 7262404, homeTeam: "Radomiak Radom", awayTeam: "Wieczysta Kraków", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Polish Ekstraklasa", leagueId: 2000 },
 
-  // Amigável de clubes — horário ainda não confirmado pela fonte
-  { id: 7262601, homeTeam: "Rio Ave", awayTeam: "Nottingham Forest", homeScore: null, awayScore: null, minute: 0, status: "HORÁRIO A CONFIRMAR", league: "Amigável de Clubes", leagueId: 0 },
+  // Swedish Allsvenskan
+  { id: 7262405, homeTeam: "Västerås", awayTeam: "Örgryte", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Swedish Allsvenskan", leagueId: 2000 },
+
+  // Amigáveis de clubes
+  { id: 7262406, homeTeam: "Rosenborg", awayTeam: "Manchester United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262407, homeTeam: "Galatasaray", awayTeam: "Monza", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262408, homeTeam: "Benfica", awayTeam: "CF Os Belenenses", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262409, homeTeam: "St. Pauli", awayTeam: "Bournemouth", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigável de Clubes", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "St.Gallen",
-  awayTeam: "Benfica",
+  homeTeam: "Rosenborg",
+  awayTeam: "Manchester United",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -136,7 +135,7 @@ export function useLiveScores(apiKey?: string) {
 
   const fetchLiveScores = useCallback(async () => {
     const key = apiKey || import.meta.env.VITE_FOOTBALL_DATA_KEY;
-    
+
     if (!key) {
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
@@ -161,7 +160,7 @@ export function useLiveScores(apiKey?: string) {
       );
 
       const results = await Promise.all(fetchPromises);
-      
+
       let allMatches: any[] = [];
       results.forEach(data => {
         if (data && data.matches) {
@@ -194,13 +193,13 @@ export function useLiveScores(apiKey?: string) {
       formattedMatches.sort((a, b) => {
         const aIsFeatured = TODAYS_FEATURED_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
         const bIsFeatured = TODAYS_FEATURED_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
-        
+
         if (aIsFeatured && !bIsFeatured) return -1;
         if (!aIsFeatured && bIsFeatured) return 1;
-        
+
         if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
         if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
-        
+
         return a.status.localeCompare(b.status);
       });
 

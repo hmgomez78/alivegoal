@@ -12,13 +12,13 @@ export interface NewsArticle {
 }
 
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '23 jul. 2026';
+  const publicationDate = '24 jul. 2026';
 
   return [
     {
       id: 'context-1',
-      title: 'EUROPA LEAGUE: Dynamo Kyiv–PAOK abre uma noite de eliminatórias de alto nível',
-      excerpt: 'A segunda pré-eliminatória da UEFA Europa League coloca Dynamo Kyiv e PAOK frente a frente às 18:00. Mais do que um jogo isolado, é o primeiro passo de uma eliminatória a duas mãos que pode definir o calendário europeu das duas equipas no início da época 2026/27.',
+      title: 'EUROPA LEAGUE: Reviravolta do St.Gallen frente ao Benfica deixa tudo em aberto',
+      excerpt: 'A vitória do St.Gallen por 2-1 na receção ao Benfica sublinha a exigência das eliminatórias europeias precoces. O resultado transfere a pressão para o jogo da segunda mão, exigindo uma resposta tática clara da equipa encarnada perante o seu público.',
       category: 'ANÁLISE EUROPEIA',
       readTime: '4 min',
       date: publicationDate,
@@ -26,48 +26,48 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 'context-2',
-      title: 'CONTEXTO: Hammarby–Anderlecht mede ambição sueca contra experiência belga',
-      excerpt: 'Hammarby recebe o Anderlecht na segunda ronda de qualificação da Europa League. O emparelhamento ilustra o equilíbrio desta fase: equipas em plena dinâmica competitiva enfrentam clubes habituados a palcos continentais e a gerir eliminatórias sob pressão.',
-      category: 'ANÁLISE EUROPEIA',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'BBC Sport',
-    },
-    {
-      id: 'context-3',
-      title: 'EUROPA LEAGUE: Beşiktaş–Midtjylland, um duelo de perfis táticos contrastantes',
-      excerpt: 'O Beşiktaş recebe o Midtjylland às 19:00 numa das partidas mais interessantes da segunda pré-eliminatória. O jogo coloca um clube turco de grande massa adepta perante uma estrutura dinamarquesa conhecida pelo recrutamento orientado por dados e pela intensidade competitiva.',
+      title: 'CONFERENCE LEAGUE: Estreia positiva de Alfred Johansson no Motherwell',
+      excerpt: 'O Motherwell venceu o HB Tórshavn por 2-0, num jogo marcado por oito estreias absolutas na equipa escocesa. A abordagem corajosa com bola e o envolvimento de vários jovens talentos deixam boas perspetivas para a era Johansson.',
       category: 'LEITURA TÁTICA',
       readTime: '5 min',
       date: publicationDate,
       source: 'BBC Sport',
     },
     {
-      id: 'context-4',
-      title: 'BRASILEIRÃO: Botafogo–Vitória fecha a agenda de hoje com pontos importantes em jogo',
-      excerpt: 'Botafogo e Vitória têm pontapé de saída marcado para as 23:30 no calendário de Série A listado pela BBC Sport. Em plena sequência de jogos domésticos, a gestão de energia, rotações e eficácia nas duas áreas ganha peso numa fase em que cada resultado pode alterar o ritmo da campanha.',
-      category: 'FUTEBOL BRASILEIRO',
+      id: 'context-3',
+      title: 'CONFERENCE LEAGUE: Hibernian surpreendido na deslocação ao Kosovo',
+      excerpt: 'A derrota por 2-0 do Hibernian frente ao Malisheva serve de aviso para os perigos das rondas de qualificação continentais. O emblema escocês terá de apresentar uma versão muito mais contundente na segunda mão para evitar uma eliminação precoce.',
+      category: 'ANÁLISE EUROPEIA',
       readTime: '4 min',
       date: publicationDate,
       source: 'BBC Sport',
     },
     {
+      id: 'context-4',
+      title: 'CONFERENCE LEAGUE: Ajax impõe hierarquia com goleada na Sérvia',
+      excerpt: 'O triunfo claro do Ajax por 4-1 no terreno do Vojvodina demonstra a diferença de argumentos competitivos entre as duas formações. A equipa de Amesterdão deixou a eliminatória praticamente resolvida antes do jogo de volta nos Países Baixos.',
+      category: 'ANÁLISE EUROPEIA',
+      readTime: '3 min',
+      date: publicationDate,
+      source: 'BBC Sport',
+    },
+    {
       id: 'context-5',
-      title: 'BRASILEIRÃO: Corinthians–Remo junta tradição e urgência competitiva',
-      excerpt: 'O Corinthians recebe o Remo às 23:30, de acordo com a página de jogos da BBC Sport. Para além do valor histórico dos emblemas, o encontro oferece uma leitura útil sobre a capacidade de adaptação das equipas a um calendário intenso e a contextos competitivos distintos.',
-      category: 'FUTEBOL BRASILEIRO',
+      title: 'FUTEBOL DE FORMAÇÃO: FA desvaloriza incidente nos Sub-16 como "assunto interno"',
+      excerpt: 'A federação inglesa de futebol encerrou rapidamente a polémica gerada pela divulgação de um vídeo de 2025 que mostrava um confronto entre jogadores da seleção de Sub-16 durante um estágio na Turquia, considerando a situação resolvida no momento.',
+      category: 'FUTEBOL INGLÊS',
       readTime: '4 min',
       date: publicationDate,
       source: 'BBC Sport',
     },
     {
       id: 'context-6',
-      title: 'PRÉ-ÉPOCA: Rio Ave–Nottingham Forest no radar, com horário ainda por confirmar',
-      excerpt: 'O Rio Ave e o Nottingham Forest têm um amigável previsto para hoje, embora a hora de início permanecesse por confirmar na listagem da BBC Sport. Estes encontros de preparação ajudam a testar dinâmicas, dar minutos a novos elementos e afinar processos antes do arranque oficial.',
-      category: 'PRÉ-ÉPOCA',
-      readTime: '3 min',
+      title: 'MERCADO FEMININO: Transferências cruciais ofuscadas pelo Mundial Masculino',
+      excerpt: 'Enquanto as atenções globais se focavam no Mundial 2026, o mercado de transferências feminino registou movimentos de grande impacto. Nomes como Alexandra Popp (Dortmund) e Kadidiatou Diani (London City) mudaram de ares, redesenhando as forças na Europa.',
+      category: 'FUTEBOL FEMININO',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'The Guardian',
     },
   ];
 }
