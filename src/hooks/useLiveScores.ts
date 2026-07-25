@@ -79,39 +79,29 @@ function getTeamLogo(team: any): string {
   return team?.crest || "";
 }
 
-const TODAYS_FEATURED_TEAMS = [
-  "St Patrick's", "Dundalk",
-  "Viborg", "OB",
-  "Pogoń Szczecin", "Legia Warszawa",
-  "Västerås", "Örgryte",
-  "Rosenborg", "Manchester United",
-  "Galatasaray", "Monza"
+export const TODAYS_TIP_TEAMS = [
+  "Borussia Dortmund",
+  "AC Milan",
+  "Bayern Munich",
+  "PSV",
+  "Juventus",
+  "Liverpool"
 ];
 
+const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
+
 const fallbackMatches: LiveMatch[] = [
-  // Irish Premier Division
-  { id: 7262401, homeTeam: "St Patrick's Athletic", awayTeam: "Dundalk", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Irish Premier Division", leagueId: 2000 },
-
-  // Danish Superligaen
-  { id: 7262402, homeTeam: "Viborg", awayTeam: "OB", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Danish Superligaen", leagueId: 2000 },
-
-  // Polish Ekstraklasa
-  { id: 7262403, homeTeam: "Pogoń Szczecin", awayTeam: "Legia Warszawa", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Polish Ekstraklasa", leagueId: 2000 },
-  { id: 7262404, homeTeam: "Radomiak Radom", awayTeam: "Wieczysta Kraków", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Polish Ekstraklasa", leagueId: 2000 },
-
-  // Swedish Allsvenskan
-  { id: 7262405, homeTeam: "Västerås", awayTeam: "Örgryte", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Swedish Allsvenskan", leagueId: 2000 },
-
-  // Amigáveis de clubes
-  { id: 7262406, homeTeam: "Rosenborg", awayTeam: "Manchester United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262407, homeTeam: "Galatasaray", awayTeam: "Monza", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262408, homeTeam: "Benfica", awayTeam: "CF Os Belenenses", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262409, homeTeam: "St. Pauli", awayTeam: "Bournemouth", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262401, homeTeam: "Fortuna Düsseldorf", awayTeam: "Borussia Dortmund", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262402, homeTeam: "Wehen Wiesbaden", awayTeam: "Bayern Munich", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:30", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262403, homeTeam: "Celtic", awayTeam: "AC Milan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262404, homeTeam: "PSV", awayTeam: "Villarreal", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262405, homeTeam: "Standard Liège", awayTeam: "Juventus", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 7262406, homeTeam: "Liverpool", awayTeam: "Sunderland", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:00", league: "Amigável de Clubes", leagueId: 0 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Rosenborg",
-  awayTeam: "Manchester United",
+  homeTeam: "Fortuna Düsseldorf",
+  awayTeam: "Borussia Dortmund",
   homeScore: 0,
   awayScore: 0,
   stats: {
