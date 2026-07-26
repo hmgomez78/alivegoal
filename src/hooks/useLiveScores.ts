@@ -80,28 +80,34 @@ function getTeamLogo(team: any): string {
 }
 
 export const TODAYS_TIP_TEAMS = [
-  "Borussia Dortmund",
-  "AC Milan",
-  "Bayern Munich",
-  "PSV",
-  "Juventus",
-  "Liverpool"
+  "FC Seoul",
+  "Ulsan Hyundai FC",
+  "Incheon United",
+  "Bucheon FC 1995",
+  "FC Anyang",
+  "Gangwon FC",
+  "Gwangju FC",
+  "Jeju United",
+  "Estudiantes L.P.",
+  "Independiente",
+  "Deportivo Riestra",
+  "Boca Juniors",
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
 const fallbackMatches: LiveMatch[] = [
-  { id: 7262401, homeTeam: "Fortuna Düsseldorf", awayTeam: "Borussia Dortmund", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262402, homeTeam: "Wehen Wiesbaden", awayTeam: "Bayern Munich", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:30", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262403, homeTeam: "Celtic", awayTeam: "AC Milan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262404, homeTeam: "PSV", awayTeam: "Villarreal", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262405, homeTeam: "Standard Liège", awayTeam: "Juventus", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 0 },
-  { id: 7262406, homeTeam: "Liverpool", awayTeam: "Sunderland", homeScore: null, awayScore: null, minute: 0, status: "HOJE 23:00", league: "Amigável de Clubes", leagueId: 0 },
+  { id: 1507015, homeTeam: "FC Seoul", awayTeam: "Ulsan Hyundai FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
+  { id: 1507014, homeTeam: "Incheon United", awayTeam: "Bucheon FC 1995", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
+  { id: 1507012, homeTeam: "FC Anyang", awayTeam: "Gangwon FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
+  { id: 1507013, homeTeam: "Gwangju FC", awayTeam: "Jeju United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
+  { id: 1493006, homeTeam: "Estudiantes L.P.", awayTeam: "Independiente", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:15", league: "Liga Profesional de Fútbol", leagueId: 128 },
+  { id: 1493005, homeTeam: "Deportivo Riestra", awayTeam: "Boca Juniors", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Liga Profesional de Fútbol", leagueId: 128 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Fortuna Düsseldorf",
-  awayTeam: "Borussia Dortmund",
+  homeTeam: "Estudiantes L.P.",
+  awayTeam: "Independiente",
   homeScore: 0,
   awayScore: 0,
   stats: {
