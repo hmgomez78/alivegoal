@@ -1,4 +1,4 @@
-import * as cheerio from 'cheerio';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
 export interface Tip {
   id: number;
@@ -20,127 +20,123 @@ export interface Tip {
   awayPercent?: number;
 }
 
-function parseTipsFromHTML(html: string): Tip[] {
-  return [];
-}
-
 const RESPONSIBLE_GAMBLING_NOTE =
-  'Conteúdo informativo e não uma garantia de resultado. As odds são uma referência de mercado observada antes do jogo e podem variar; aposta apenas se tiveres idade legal e dentro de limites responsáveis.';
+  'Aposte com responsabilidade. As odds podem sofrer alterações.';
 
-export function getFallbackTips(): Tip[] {
-  const dateStr = '26/07/2026';
+function getFallbackTips(): Tip[] {
+  const dateStr = '27/07/2026';
 
   return [
     {
-      id: 6001,
-      betNumber: '6001',
+      id: 7001,
+      betNumber: '7001',
       betType: 'SINGLE',
-      league: 'K League 1',
-      homeTeam: 'FC Seoul',
-      awayTeam: 'Ulsan Hyundai FC',
+      league: 'WAFCON',
+      homeTeam: 'África do Sul',
+      awayTeam: 'Tanzânia',
       date: dateStr,
-      time: '10:30',
-      prediction: 'Ambas as equipas marcam — Sim',
+      time: '17:00',
+      prediction: 'Vitória África do Sul',
+      confidence: 79,
+      odds: 1.17,
+      market: 'Resultado final',
+      winner: 'África do Sul',
+      analysis: `Cotação consultada: 1.17. As probabilidades implícitas normalizadas pelas odds 1X2 apontam 79% para a África do Sul, 15% para o empate e 6% para a Tanzânia. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 79,
+      drawPercent: 15,
+      awayPercent: 6,
+    },
+    {
+      id: 7002,
+      betNumber: '7002',
+      betType: 'SINGLE',
+      league: 'WAFCON',
+      homeTeam: 'Costa do Marfim',
+      awayTeam: 'Burkina Faso',
+      date: dateStr,
+      time: '20:00',
+      prediction: 'Vitória Costa do Marfim',
       confidence: 60,
-      odds: 1.73,
-      market: 'Ambas marcam',
-      winner: '',
-      analysis: `Cotação de referência: 1.73 (Bet365, via WinComparator). O FC Seoul chega com 13 pontos nos últimos cinco jogos e o Ulsan marcou em quatro dos cinco mais recentes; a prévia de mercado estimava 61,67% para ambas marcarem. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 45,
-      drawPercent: 34,
+      odds: 1.50,
+      market: 'Resultado final',
+      winner: 'Costa do Marfim',
+      analysis: `Cotação consultada: 1.50. As probabilidades implícitas normalizadas pelas odds 1X2 apontam 60% para a Costa do Marfim, 26% para o empate e 15% para o Burkina Faso. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 60,
+      drawPercent: 26,
+      awayPercent: 15,
+    },
+    {
+      id: 7003,
+      betNumber: '7003',
+      betType: 'SINGLE',
+      league: 'Brasileirão Série B',
+      homeTeam: 'Sport Recife',
+      awayTeam: 'Cuiabá',
+      date: dateStr,
+      time: '22:30',
+      prediction: 'Vitória Sport Recife',
+      confidence: 50,
+      odds: 1.86,
+      market: 'Resultado final',
+      winner: 'Sport Recife',
+      analysis: `Cotação consultada: 1.86. As probabilidades implícitas normalizadas pelas odds 1X2 apontam 50% para o Sport Recife, 30% para o empate e 21% para o Cuiabá. O Sport joga em casa e surge acima do Cuiabá na classificação mostrada na prévia. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 50,
+      drawPercent: 30,
       awayPercent: 21,
     },
     {
-      id: 6002,
-      betNumber: '6002',
+      id: 7004,
+      betNumber: '7004',
       betType: 'SINGLE',
-      league: 'K League 1',
-      homeTeam: 'Incheon United',
-      awayTeam: 'Bucheon FC 1995',
-      date: dateStr,
-      time: '10:30',
-      prediction: 'Vitória Incheon United',
-      confidence: 52,
-      odds: 1.67,
-      market: 'Resultado final',
-      winner: 'Incheon United',
-      analysis: `Cotação de referência: 1.67 (Bet365, via Oddslot). O Incheon venceu três dos últimos cinco encontros e marcou sete golos nesse período, enquanto o Bucheon sofreu nove. É uma seleção de favoritismo moderado, não de certeza. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 55,
-      drawPercent: 27,
-      awayPercent: 18,
-    },
-    {
-      id: 6003,
-      betNumber: '6003',
-      betType: 'SINGLE',
-      league: 'Liga Profesional de Fútbol',
-      homeTeam: 'Estudiantes L.P.',
-      awayTeam: 'Independiente',
-      date: dateStr,
-      time: '20:15',
-      prediction: 'Vitória Estudiantes L.P.',
-      confidence: 52,
-      odds: 2.1,
-      market: 'Resultado final',
-      winner: 'Estudiantes L.P.',
-      analysis: `Cotação de referência: 2.10 (+110 na BetMGM, via SportsGambler). O Estudiantes soma 31 pontos em 16 jogos, sofreu apenas sete golos na liga e venceu três dos últimos cinco; o Independiente perdeu três dos últimos cinco fora. A fonte avalia o mercado perto de 47,6%, com projeção editorial de 50–55%. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 52,
-      drawPercent: 25,
-      awayPercent: 23,
-    },
-    {
-      id: 6004,
-      betNumber: '6004',
-      betType: 'SINGLE',
-      league: 'Liga Profesional de Fútbol',
-      homeTeam: 'Deportivo Riestra',
-      awayTeam: 'Boca Juniors',
+      league: 'Brasileirão Série B',
+      homeTeam: 'CRB',
+      awayTeam: 'Vila Nova',
       date: dateStr,
       time: '22:30',
-      prediction: 'Vitória Boca Juniors',
-      confidence: 53,
-      odds: 1.93,
+      prediction: 'Vitória CRB',
+      confidence: 49,
+      odds: 1.86,
       market: 'Resultado final',
-      winner: 'Boca Juniors',
-      analysis: `Cotação de referência: 1.93 (-108 na BetMGM, via SportsGambler; sujeita a oscilação). O Boca venceu quatro deslocações seguidas e tem 22–9 em golos no campeonato, enquanto o Riestra tem cinco golos marcados em 16 jogos. A vantagem estatística não elimina o risco de um jogo fora. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 20,
-      drawPercent: 27,
-      awayPercent: 53,
+      winner: 'CRB',
+      analysis: `Cotação consultada: 1.86. As probabilidades implícitas normalizadas pelas odds 1X2 apontam 49% para o CRB, 26% para o empate e 24% para o Vila Nova. A seleção assume risco: o CRB joga no Estádio Rei Pelé, mas o Vila Nova aparece acima na classificação pré-jogo. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 49,
+      drawPercent: 26,
+      awayPercent: 24,
     },
     {
-      id: 6005,
-      betNumber: '6005',
+      id: 7005,
+      betNumber: '7005',
       betType: 'SINGLE',
-      league: 'K League 1',
-      homeTeam: 'Gwangju FC',
-      awayTeam: 'Jeju United',
+      league: 'Brasileirão Série B',
+      homeTeam: 'Atlético-GO',
+      awayTeam: 'Operário-PR',
       date: dateStr,
-      time: '10:30',
-      prediction: 'Menos de 2,5 golos',
-      confidence: 62,
-      odds: 1.75,
-      market: 'Total de golos',
-      winner: '',
-      analysis: `Cotação de referência: 1.75 (Bet365, via WinComparator). O modelo de comparação atribuiu 70,79% ao cenário de menos de 2,5 golos, apoiado na média ofensiva recente do Gwangju (0,5 golos) e em cinco dos últimos seis duelos diretos com no máximo dois golos. A confiança publicada é deliberadamente mais conservadora do que essa projeção. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 23,
-      drawPercent: 33,
-      awayPercent: 44,
+      time: '22:30',
+      prediction: 'Vitória Atlético-GO',
+      confidence: 45,
+      odds: 2.05,
+      market: 'Resultado final',
+      winner: 'Atlético-GO',
+      analysis: `Cotação consultada: 2.05. As probabilidades implícitas normalizadas pelas odds 1X2 apontam 45% para o Atlético-GO, 29% para o empate e 26% para o Operário-PR. É uma seleção de valor mais agressiva, apesar do melhor momento classificativo do Operário-PR. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 45,
+      drawPercent: 29,
+      awayPercent: 26,
     },
     {
-      id: 6006,
-      betNumber: '6006',
+      id: 7006,
+      betNumber: '7006',
       betType: 'DOUBLE',
-      league: 'K League 1',
-      homeTeam: 'FC Seoul + FC Anyang',
-      awayTeam: 'Ulsan Hyundai FC + Gangwon FC',
+      league: 'WAFCON',
+      homeTeam: 'África do Sul + Costa do Marfim',
+      awayTeam: 'Tanzânia + Burkina Faso',
       date: dateStr,
       time: 'Múltipla',
-      prediction: 'FC Seoul vence + Gangwon FC ou empate (X2)',
-      confidence: 45,
-      odds: 2.14,
+      prediction: 'África do Sul vence + Costa do Marfim vence',
+      confidence: 47,
+      odds: 1.76,
       market: 'Combinada',
       winner: '',
-      analysis: `Cotação combinada indicativa: 2.14, calculada a partir de FC Seoul vence a 1.75 e Gangwon X2 a 1.22 (linhas Bet365 consultadas via WinComparator e Oddslot). O Seoul lidera a K League com 42 pontos, e o Gangwon chega com apenas três derrotas em 19 jogos; numa dupla, ambas as condições precisam de se verificar e o risco é superior ao de uma seleção simples. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      analysis: `Cotação combinada indicativa: 1.76, obtida pela multiplicação das odds individuais consultadas (1.17 × 1.50). A probabilidade implícita combinada é de aproximadamente 47%; a múltipla aumenta o risco, mesmo com duas favoritas. ${RESPONSIBLE_GAMBLING_NOTE}`,
       homePercent: 0,
       drawPercent: 0,
       awayPercent: 0,
@@ -148,50 +144,63 @@ export function getFallbackTips(): Tip[] {
   ];
 }
 
-export default async function handler(req: Request) {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Content-Type': 'application/json',
-    'Cache-Control': 's-maxage=600, stale-while-revalidate=300',
-  };
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=300');
 
   if (req.method === 'OPTIONS') {
-    return new Response(null, { status: 200, headers });
+    return res.status(200).end();
   }
 
   try {
-    const channelId = process.env.TELEGRAM_CHANNEL_ID || 'alivegoal_tips';
-    const response = await fetch(`https://t.me/s/${channelId}`);
+    const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
+    const channelId = process.env.TELEGRAM_CHANNEL_ID;
 
-    if (!response.ok) {
-      console.warn('Failed to fetch from Telegram, using fallback tips');
-      return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'fallback' }), {
-        status: 200,
-        headers,
+    if (!telegramToken || !channelId) {
+      return res.status(200).json({
+        source: 'fallback',
+        count: 6,
+        updated: new Date().toISOString(),
+        items: getFallbackTips(),
       });
     }
 
-    const html = await response.text();
-    const tips = parseTipsFromHTML(html);
+    const tgResponse = await fetch(
+      `https://api.telegram.org/bot${telegramToken}/getUpdates?limit=10`
+    );
 
-    if (tips.length > 0) {
-      return new Response(JSON.stringify({ tips, source: 'telegram' }), {
-        status: 200,
-        headers,
+    if (!tgResponse.ok) {
+      throw new Error(`Telegram API responded with status: ${tgResponse.status}`);
+    }
+
+    const data = await tgResponse.json();
+
+    if (!data.ok || !data.result || data.result.length === 0) {
+      return res.status(200).json({
+        source: 'fallback',
+        count: 6,
+        updated: new Date().toISOString(),
+        items: getFallbackTips(),
       });
     }
 
-    return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'fallback_no_tips_today' }), {
-      status: 200,
-      headers,
+    return res.status(200).json({
+      source: 'fallback',
+      count: 6,
+      updated: new Date().toISOString(),
+      items: getFallbackTips(),
     });
   } catch (error) {
-    console.error('Error in tips API:', error);
-    return new Response(JSON.stringify({ tips: getFallbackTips(), source: 'error_fallback' }), {
-      status: 200,
-      headers,
+    console.error('Error fetching from Telegram:', error);
+    return res.status(200).json({
+      source: 'fallback',
+      count: 6,
+      updated: new Date().toISOString(),
+      items: getFallbackTips(),
     });
   }
 }

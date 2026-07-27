@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 export interface LiveMatch {
   id: number;
@@ -6,12 +6,10 @@ export interface LiveMatch {
   awayTeam: string;
   homeScore: number | null;
   awayScore: number | null;
-  minute: number | string;
+  minute: number;
   status: string;
   league: string;
   leagueId?: number;
-  homeTeamLogo?: string;
-  awayTeamLogo?: string;
 }
 
 export interface MatchStats {
@@ -30,84 +28,33 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-const COMPETITION_CODES = [
-  "CL",   // UEFA Champions League
-  "PL",   // Premier League
-  "PD",   // La Liga
-  "SA",   // Serie A
-  "BL1",  // Bundesliga
-  "FL1",  // Ligue 1
-  "PPL",  // Primeira Liga (Portugal)
-  "CLI",  // Copa Libertadores
-  "BSA",  // Brasileirão
-  "ELC",  // Championship
-];
-
-const statusMap: Record<string, string> = {
-  "SCHEDULED": "POR INICIAR",
-  "TIMED": "HOJE",
-  "IN_PLAY": "AO VIVO",
-  "PAUSED": "INT",
-  "FINISHED": "FIM",
-  "POSTPONED": "ADIADO",
-  "SUSPENDED": "SUSP",
-  "CANCELLED": "CANC",
-};
-
-function formatMatchTime(match: any): string {
-  const status = match.status;
-
-  if (status === "IN_PLAY" || status === "PAUSED") {
-    return "AO VIVO";
-  }
-
-  if (status === "FINISHED") {
-    return "FIM";
-  }
-
-  if (status === "TIMED" || status === "SCHEDULED") {
-    const date = new Date(match.utcDate);
-    const localHours = ((date.getUTCHours() + 1) % 24).toString().padStart(2, "0");
-    const localMinutes = date.getUTCMinutes().toString().padStart(2, "0");
-    return `HOJE ${localHours}:${localMinutes}`;
-  }
-
-  return statusMap[status] || status;
-}
-
-function getTeamLogo(team: any): string {
-  return team?.crest || "";
-}
-
+// Fallback logic and initial state setup
 export const TODAYS_TIP_TEAMS = [
-  "FC Seoul",
-  "Ulsan Hyundai FC",
-  "Incheon United",
-  "Bucheon FC 1995",
-  "FC Anyang",
-  "Gangwon FC",
-  "Gwangju FC",
-  "Jeju United",
-  "Estudiantes L.P.",
-  "Independiente",
-  "Deportivo Riestra",
-  "Boca Juniors",
+  "Atlético-GO",
+  "Operário-PR",
+  "CRB",
+  "Vila Nova",
+  "Sport Recife",
+  "Cuiabá",
+  "África do Sul",
+  "Tanzânia",
+  "Costa do Marfim",
+  "Burkina Faso"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
 const fallbackMatches: LiveMatch[] = [
-  { id: 1507015, homeTeam: "FC Seoul", awayTeam: "Ulsan Hyundai FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
-  { id: 1507014, homeTeam: "Incheon United", awayTeam: "Bucheon FC 1995", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
-  { id: 1507012, homeTeam: "FC Anyang", awayTeam: "Gangwon FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
-  { id: 1507013, homeTeam: "Gwangju FC", awayTeam: "Jeju United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:30", league: "K League 1", leagueId: 292 },
-  { id: 1493006, homeTeam: "Estudiantes L.P.", awayTeam: "Independiente", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:15", league: "Liga Profesional de Fútbol", leagueId: 128 },
-  { id: 1493005, homeTeam: "Deportivo Riestra", awayTeam: "Boca Juniors", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Liga Profesional de Fútbol", leagueId: 128 },
+  { id: 2001, homeTeam: "Atlético-GO", awayTeam: "Operário-PR", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
+  { id: 2002, homeTeam: "CRB", awayTeam: "Vila Nova", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
+  { id: 2003, homeTeam: "Sport Recife", awayTeam: "Cuiabá", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
+  { id: 2004, homeTeam: "África do Sul", awayTeam: "Tanzânia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "WAFCON", leagueId: 71 },
+  { id: 2005, homeTeam: "Costa do Marfim", awayTeam: "Burkina Faso", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "WAFCON", leagueId: 71 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Estudiantes L.P.",
-  awayTeam: "Independiente",
+  homeTeam: "Atlético-GO",
+  awayTeam: "Operário-PR",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -119,116 +66,124 @@ const fallbackFeatured: FeaturedMatchData = {
   },
 };
 
-const FOOTBALL_DATA_BASE = "https://api.football-data.org/v4";
-const CORS_PROXY = "https://corsproxy.io/?";
-
-export function useLiveScores(apiKey?: string) {
-  const [matches, setMatches] = useState<LiveMatch[]>(fallbackMatches);
-  const [featured, setFeatured] = useState<FeaturedMatchData>(fallbackFeatured);
-  const [isLive, setIsLive] = useState(false);
+export function useLiveScores() {
+  const [matches, setMatches] = useState<LiveMatch[]>([]);
+  const [featured, setFeatured] = useState<FeaturedMatchData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const fetchLiveScores = useCallback(async () => {
-    const key = apiKey || import.meta.env.VITE_FOOTBALL_DATA_KEY;
-
-    if (!key) {
-      setMatches(fallbackMatches);
-      setFeatured(fallbackFeatured);
-      setIsLive(false);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
+  const fetchScores = async () => {
     try {
-      const today = new Date().toISOString().split("T")[0];
-      const fetchPromises = COMPETITION_CODES.map(code => 
-        fetch(`${CORS_PROXY}${encodeURIComponent(`${FOOTBALL_DATA_BASE}/competitions/${code}/matches?dateFrom=${today}&dateTo=${today}`)}`, {
-          headers: { "X-Auth-Token": key }
-        }).then(res => {
-          if (!res.ok) {
-            if (res.status === 429) throw new Error("Rate limit exceeded");
-            return null;
-          }
-          return res.json();
-        }).catch(e => null)
-      );
-
-      const results = await Promise.all(fetchPromises);
-
-      let allMatches: any[] = [];
-      results.forEach(data => {
-        if (data && data.matches) {
-          allMatches = [...allMatches, ...data.matches];
-        }
-      });
-
-      if (allMatches.length === 0) {
+      const apiKey = process.env.NEXT_PUBLIC_FOOTBALL_DATA_API_KEY;
+      if (!apiKey) {
+        console.warn("No API key found, using fallback live scores.");
         setMatches(fallbackMatches);
         setFeatured(fallbackFeatured);
-        setIsLive(false);
         setLoading(false);
         return;
       }
 
-      const formattedMatches: LiveMatch[] = allMatches.map(m => ({
-        id: m.id,
-        homeTeam: m.homeTeam.shortName || m.homeTeam.name,
-        awayTeam: m.awayTeam.shortName || m.awayTeam.name,
-        homeScore: m.score?.fullTime?.home ?? null,
-        awayScore: m.score?.fullTime?.away ?? null,
-        minute: m.status === "IN_PLAY" ? "45'" : 0,
-        status: formatMatchTime(m),
-        league: m.competition.name,
-        leagueId: m.competition.id,
-        homeTeamLogo: getTeamLogo(m.homeTeam),
-        awayTeamLogo: getTeamLogo(m.awayTeam),
-      }));
+      // 1) Fetch today's matches
+      const response = await fetch("/api/proxy-football-data?endpoint=matches", {
+        headers: {
+          "X-Auth-Token": apiKey,
+        },
+      });
 
-      formattedMatches.sort((a, b) => {
-        const aIsFeatured = TODAYS_FEATURED_TEAMS.some(t => a.homeTeam.includes(t) || a.awayTeam.includes(t));
-        const bIsFeatured = TODAYS_FEATURED_TEAMS.some(t => b.homeTeam.includes(t) || b.awayTeam.includes(t));
+      if (!response.ok) {
+        throw new Error(`API returned ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!data.matches || data.matches.length === 0) {
+        setMatches(fallbackMatches);
+        setFeatured(fallbackFeatured);
+        setLoading(false);
+        return;
+      }
+
+      // 2) Map matches
+      let mappedMatches: LiveMatch[] = data.matches.map((m: any) => {
+        let statusStr = "HOJE";
+        let minute = 0;
+
+        if (m.status === "IN_PLAY" || m.status === "PAUSED") {
+          statusStr = "AO VIVO";
+          minute = 45; // simplified
+        } else if (m.status === "FINISHED") {
+          statusStr = "TERMINADO";
+          minute = 90;
+        } else if (m.status === "TIMED" || m.status === "SCHEDULED") {
+          const dateObj = new Date(m.utcDate);
+          statusStr = `HOJE ${dateObj.getHours().toString().padStart(2, "0")}:${dateObj.getMinutes().toString().padStart(2, "0")}`;
+        }
+
+        return {
+          id: m.id,
+          homeTeam: m.homeTeam.shortName || m.homeTeam.name,
+          awayTeam: m.awayTeam.shortName || m.awayTeam.name,
+          homeScore: m.score?.fullTime?.home ?? null,
+          awayScore: m.score?.fullTime?.away ?? null,
+          minute,
+          status: statusStr,
+          league: m.competition?.name || "Competição",
+          leagueId: m.competition?.id,
+        };
+      });
+
+      // 3) Sort matches to prioritize featured/tip teams
+      mappedMatches.sort((a, b) => {
+        const aIsFeatured = TODAYS_FEATURED_TEAMS.includes(a.homeTeam) || TODAYS_FEATURED_TEAMS.includes(a.awayTeam);
+        const bIsFeatured = TODAYS_FEATURED_TEAMS.includes(b.homeTeam) || TODAYS_FEATURED_TEAMS.includes(b.awayTeam);
 
         if (aIsFeatured && !bIsFeatured) return -1;
         if (!aIsFeatured && bIsFeatured) return 1;
 
+        // If both are featured (or neither), sort by status (live first)
         if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
         if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
 
-        return a.status.localeCompare(b.status);
+        return 0;
       });
 
-      setMatches(formattedMatches);
-      setIsLive(formattedMatches.some(m => m.status === "AO VIVO"));
+      setMatches(mappedMatches);
 
-      const featuredMatch = formattedMatches.find(m => m.status === "AO VIVO") || formattedMatches[0];
-      if (featuredMatch) {
+      // 4) Set featured match
+      const liveFeatured = mappedMatches.find((m) => m.status === "AO VIVO" && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
+      const upcomingFeatured = mappedMatches.find((m) => m.status.startsWith("HOJE") && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
+      const bestMatch = liveFeatured || upcomingFeatured || mappedMatches[0];
+
+      if (bestMatch) {
         setFeatured({
-          homeTeam: featuredMatch.homeTeam,
-          awayTeam: featuredMatch.awayTeam,
-          homeScore: featuredMatch.homeScore || 0,
-          awayScore: featuredMatch.awayScore || 0,
-          stats: fallbackFeatured.stats,
+          homeTeam: bestMatch.homeTeam,
+          awayTeam: bestMatch.awayTeam,
+          homeScore: bestMatch.homeScore || 0,
+          awayScore: bestMatch.awayScore || 0,
+          stats: {
+            possession: [50, 50],
+            shots: [0, 0],
+            shotsOnTarget: [0, 0],
+            corners: [0, 0],
+            fouls: [0, 0],
+          },
         });
+      } else {
+        setFeatured(fallbackFeatured);
       }
-
-      setError(null);
-    } catch (err: any) {
-      console.error("Error fetching live scores:", err);
+    } catch (error) {
+      console.error("Error fetching live scores:", error);
       setMatches(fallbackMatches);
       setFeatured(fallbackFeatured);
-      setError(err.message === "Rate limit exceeded" ? "Limite de API excedido. A mostrar dados offline." : "Erro ao carregar resultados ao vivo.");
     } finally {
       setLoading(false);
     }
-  }, [apiKey]);
+  };
 
   useEffect(() => {
-    fetchLiveScores();
-    const interval = setInterval(fetchLiveScores, 60000);
+    fetchScores();
+    const interval = setInterval(fetchScores, 60000);
     return () => clearInterval(interval);
-  }, [fetchLiveScores]);
+  }, []);
 
-  return { matches, featured, isLive, loading, error, refresh: fetchLiveScores };
+  return { matches, featured, loading };
 }

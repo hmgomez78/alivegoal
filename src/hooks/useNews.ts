@@ -12,31 +12,31 @@ export interface NewsArticle {
 }
 
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '26 jul. 2026';
+  const publicationDate = '27 jul. 2026';
 
   return [
     {
       id: 101,
-      title: 'ANÁLISE TÁTICA: O desafio de Maresca ao suceder Guardiola no Manchester City',
-      excerpt: 'Enzo Maresca assume o Manchester City depois de uma década de Pep Guardiola e admite a dimensão do desafio. A continuidade de ideias, a pressão por resultados imediatos e a gestão de um balneário vencedor serão decisivas para a nova era no Etihad.',
+      title: 'MERCADO: O impacto da possível saída de Barcola no projeto do PSG',
+      excerpt: 'A fixação do preço de Bradley Barcola em 145 milhões de libras pelo Paris Saint-Germain expõe as movimentações estratégicas do clube. A possível saída do extremo francês obrigaria a repensar a dinâmica ofensiva da equipa, enquanto Arsenal e Liverpool avaliam o encaixe tático do jogador nos seus sistemas.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'ESPN',
+      source: 'BBC Sport',
     },
     {
       id: 102,
-      title: 'PLANTEL: A cirurgia de Rodri obriga o City a planear sem o seu pêndulo',
-      excerpt: 'Rodri será operado às costas e o Manchester City terá de gerir cuidadosamente a recuperação do médio depois do Mundial. Apesar do ruído sobre o Real Madrid, Maresca espera contar com o espanhol na próxima época, tornando o timing do regresso uma questão central.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'ESTRATÉGIA: A avaliação de Vinícius Júnior pelo Real Madrid',
+      excerpt: 'A etiqueta de 160 milhões de euros atribuída a Vinícius Júnior demonstra a determinação do Real Madrid em proteger a sua estrela. O valor reflete o estatuto do brasileiro e funciona como dissuasor perante o interesse do Arsenal, reforçando a prioridade da renovação do contrato.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '4 min',
       date: publicationDate,
-      source: 'ESPN',
+      source: 'BBC Sport',
     },
     {
       id: 103,
-      title: 'MERCADO: O que o recorde de £117M por Morgan Rogers exige ao Chelsea',
-      excerpt: 'O Chelsea pagou £117M ao Aston Villa por Morgan Rogers, estabelecendo uma nova referência no mercado britânico. O investimento aumenta o nível de exigência sobre o jovem inglês e reforça o debate sobre o equilíbrio entre talento, encaixe tático e preço.',
+      title: 'MERCADO: O Tottenham de De Zerbi e a gestão de Cristian Romero',
+      excerpt: 'O interesse do Inter de Milão em Cristian Romero coloca um desafio à defesa do Tottenham. A possível saída do capitão obrigaria Roberto De Zerbi a procurar um novo líder defensivo, num momento em que a equipa procura consolidar processos após a vitória de pré-época frente ao Auckland FC.',
       category: 'TRANSFERÊNCIAS',
       readTime: '4 min',
       date: publicationDate,
@@ -44,30 +44,30 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 104,
-      title: 'MERCADO: Newcastle aposta em Aladji Bamba para acrescentar energia ao meio-campo',
-      excerpt: 'O Newcastle confirmou Aladji Bamba como a quarta contratação do verão. A chegada do médio de 20 anos vindo do Monaco encaixa numa estratégia que combina margem de progressão, intensidade competitiva e renovação gradual do plantel.',
+      title: 'PLANEAMENTO: Arsenal foca-se em Bruno Guimarães',
+      excerpt: 'A aceleração das conversações por Bruno Guimarães evidencia a estratégia de Mikel Arteta em construir um meio-campo dominador. A operação antecipa uma renovação no eixo do terreno, procurando garantir a peça fundamental antes do regresso aos trabalhos do Newcastle.',
       category: 'TRANSFERÊNCIAS',
       readTime: '3 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BBC Sport',
     },
     {
       id: 105,
-      title: 'MERCADO SAUDITA: A ida de Crysencio Summerville para o Al-Hilal mantém a pressão sobre a Premier League',
-      excerpt: 'A transferência de Crysencio Summerville do West Ham para o Al-Hilal é mais um sinal de força financeira do futebol saudita. Para os clubes ingleses, a operação sublinha a necessidade de proteger ativos e antecipar substitutos em posições de extremo.',
+      title: 'MERCADO SAUDITA: Al-Hilal testa a resiliência do Everton por Ndiaye',
+      excerpt: 'A abordagem formal do Al-Hilal por Iliman Ndiaye sublinha a contínua pressão financeira da liga saudita sobre os clubes da Premier League. Para o Everton, a possível venda representaria um encaixe financeiro, mas exigiria uma rápida reestruturação do ataque de Sean Dyche.',
       category: 'TRANSFERÊNCIAS',
       readTime: '4 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BBC Sport',
     },
     {
       id: 106,
-      title: 'PLANEAMENTO: Christos Tzolis completa a terceira adição do Arsenal no verão',
-      excerpt: 'A contratação de Christos Tzolis por cerca de £34M, depois de Piero Hincapié e Illan Meslier, mostra que o Arsenal já tem uma base de reforços antes das decisões mais ambiciosas do mercado. A versatilidade ofensiva do grego amplia as opções de Arteta.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '3 min',
+      title: 'ANÁLISE: O Fulham como incubadora para o talento de Mastantuono',
+      excerpt: 'A possível cedência de Franco Mastantuono ao Fulham ilustra a estratégia do Real Madrid de rodar jovens promessas na Premier League. A equipa londrina posiciona-se como o ambiente ideal para o desenvolvimento do médio argentino de 18 anos no exigente futebol europeu.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BBC Sport',
     },
   ];
 }
