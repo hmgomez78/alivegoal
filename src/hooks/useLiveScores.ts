@@ -30,31 +30,31 @@ export interface FeaturedMatchData {
 
 // Fallback logic and initial state setup
 export const TODAYS_TIP_TEAMS = [
-  "Atlético-GO",
-  "Operário-PR",
-  "CRB",
-  "Vila Nova",
-  "Sport Recife",
-  "Cuiabá",
-  "África do Sul",
-  "Tanzânia",
-  "Costa do Marfim",
-  "Burkina Faso"
+  "Lincoln Red Imps",
+  "Mjällby AIF",
+  "Apollon Limassol",
+  "Dila Gori",
+  "Riga FC",
+  "Vardar",
+  "Dinamo Zagreb",
+  "FC Thun",
+  "NK Celje",
+  "Egnatia"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "Atlético-GO", awayTeam: "Operário-PR", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
-  { id: 2002, homeTeam: "CRB", awayTeam: "Vila Nova", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
-  { id: 2003, homeTeam: "Sport Recife", awayTeam: "Cuiabá", homeScore: null, awayScore: null, minute: 0, status: "HOJE 22:30", league: "Brasileirão Série B", leagueId: 71 },
-  { id: 2004, homeTeam: "África do Sul", awayTeam: "Tanzânia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "WAFCON", leagueId: 71 },
-  { id: 2005, homeTeam: "Costa do Marfim", awayTeam: "Burkina Faso", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "WAFCON", leagueId: 71 }
+  { id: 2001, homeTeam: "Lincoln Red Imps", awayTeam: "Mjällby AIF", homeScore: null, awayScore: null, minute: 0, status: "HOJE 16:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
+  { id: 2002, homeTeam: "Apollon Limassol", awayTeam: "Dila Gori", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
+  { id: 2003, homeTeam: "Riga FC", awayTeam: "Vardar", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
+  { id: 2004, homeTeam: "Dinamo Zagreb", awayTeam: "FC Thun", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
+  { id: 2005, homeTeam: "NK Celje", awayTeam: "Egnatia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:15", league: "Liga dos Campeões (Q)", leagueId: 2 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Atlético-GO",
-  awayTeam: "Operário-PR",
+  homeTeam: "Dinamo Zagreb",
+  awayTeam: "FC Thun",
   homeScore: 0,
   awayScore: 0,
   stats: {
