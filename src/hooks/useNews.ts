@@ -11,63 +11,64 @@ export interface NewsArticle {
   imageUrl?: string;
 }
 
+// Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '28 jul. 2026';
+  const publicationDate = '29 jul. 2026';
 
   return [
     {
       id: 101,
-      title: 'MERCADO: O impacto da possível contratação de Stones pelo Inter',
-      excerpt: 'A provável transferência de John Stones para o Inter de Milão reflete a estratégia do clube italiano em reforçar a defesa com experiência ao mais alto nível. A saída a custo zero do Manchester City após o Mundial 2026 sublinha uma mudança geracional na equipa de Guardiola.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
+      title: 'ANÁLISE: O Barcelona entra num verão decisivo na procura do novo número 9',
+      excerpt: 'A sucessão de Robert Lewandowski tornou-se o maior dossiê ofensivo do Barcelona. Com Julián Álvarez fora de alcance, João Pedro bloqueado pelo Chelsea e Bournemouth resistente por Junior Kroupi, o clube precisa de reavaliar preço, perfil e calendário sem comprometer o próximo ciclo.',
+      category: 'PLANEAMENTO',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BeSoccer',
     },
     {
       id: 102,
-      title: 'ANÁLISE: O que Yan Diomande traz ao ataque do Real Madrid',
-      excerpt: 'Com a desistência do PSG, o Real Madrid ganha via aberta para Yan Diomande. O jovem extremo marfinense promete acrescentar explosão e verticalidade às alas merengues, integrando-se na política de recrutamento de jovens talentos de alto potencial.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '5 min',
+      title: 'ESTRATÉGIA: A renovação de Kane e o que muda no ataque do Bayern',
+      excerpt: 'A perspetiva de Harry Kane prolongar o vínculo com o Bayern fecha, por agora, a porta a Barcelona e Al-Hilal. Mais do que reter golos, a decisão dá previsibilidade ao planeamento bávaro: a prioridade pode deslocar-se para criadores e equilíbrio defensivo em vez de uma substituição imediata de elite.',
+      category: 'MERCADO',
+      readTime: '4 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BeSoccer',
     },
     {
       id: 103,
-      title: 'PLANEAMENTO: A renovação do balneário do Chelsea',
-      excerpt: 'A exploração de negócios por Danny Welbeck e Jordan Henderson pelo Chelsea revela uma intenção clara de introduzir liderança e experiência num plantel jovem. A estratégia sugere uma procura por estabilidade para apoiar o desenvolvimento da equipa.',
+      title: 'MERCADO: Porque o Chelsea trata Pedro Neto como peça central',
+      excerpt: 'Apesar das especulações de saída, o Chelsea mantém Pedro Neto como elemento nuclear do projeto. A posição do clube ajuda a explicar por que as grandes equipas procuram alas prontos para decidir: trocar um desequilibrador consolidado exige mais do que uma proposta financeiramente atraente.',
       category: 'TRANSFERÊNCIAS',
-      readTime: '3 min',
+      readTime: '4 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BeSoccer',
     },
     {
       id: 104,
-      title: 'MERCADO: O efeito dominó do colapso de Kolo Muani na Juventus',
-      excerpt: 'A falha nas negociações por Randal Kolo Muani forçou a Juventus a redirecionar atenções para Joshua Zirkzee. O avançado do Manchester United apresenta um perfil diferente, prometendo maior capacidade de ligação de jogo no sistema tático dos italianos.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
+      title: 'SELEÇÕES: Klopp na Alemanha e o valor de um ciclo até 2030',
+      excerpt: 'A nomeação oficial de Jürgen Klopp para a Alemanha até ao Mundial de 2030 dá à federação uma rara janela de planeamento longo. O desafio não será apenas recuperar resultados: será criar uma identidade estável, integrar a nova geração e gerir a expectativa inevitável em torno de um treinador de perfil global.',
+      category: 'FUTEBOL INTERNACIONAL',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'BeSoccer',
     },
     {
       id: 105,
-      title: 'ESTRATÉGIA: A batalha pela renovação de Rodri',
-      excerpt: 'A tentativa do Manchester City em renovar com Rodri é crucial para a estabilidade do seu meio-campo. A sombra do interesse do Real Madrid pressiona a estrutura inglesa a garantir o seu maestro, essencial no equilíbrio tático da equipa.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
+      title: 'ANÁLISE: O interesse do Real Madrid por Rodri testa o centro do projeto City',
+      excerpt: 'Os relatos sobre o desejo de Rodri por um novo desafio e o interesse do Real Madrid colocam foco no papel estrutural do médio. Para o Manchester City, a questão não é apenas preço: substituir um jogador que organiza a posse, controla transições e define o ritmo altera toda a arquitetura da equipa.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'BeSoccer',
     },
     {
       id: 106,
-      title: 'INSTITUCIONAL: As consequências da demissão de Maldini e Leonardo',
-      excerpt: 'As saídas de Paolo Maldini e Leonardo instalam uma crise na federação italiana. O colapso da nomeação de Andrea Pirlo expõe fraturas na visão estratégica, exigindo uma rápida reestruturação para garantir a estabilidade do projeto desportivo nacional.',
-      category: 'INSTITUCIONAL',
-      readTime: '5 min',
+      title: 'EUROPA: Como a segunda pré-eliminatória muda a rota para a Champions',
+      excerpt: 'A segunda mão da segunda pré-eliminatória decide muito mais do que uma vaga na ronda seguinte. Os vencedores avançam na sua respetiva via; os derrotados transitam para a terceira pré-eliminatória da Liga Europa. É por isso que cada golo tem impacto simultâneo na ambição desportiva e no calendário da época.',
+      category: 'COMPETIÇÕES UEFA',
+      readTime: '4 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'UEFA',
     },
   ];
 }
@@ -79,7 +80,6 @@ export function useNews() {
   const fetchNews = async () => {
     setLoading(true);
     try {
-      // O feed editorial de contexto é deliberadamente distinto do feed de tendências.
       setNews(getFallbackNews());
     } catch (error) {
       console.error('Error loading contextual news:', error);

@@ -24,146 +24,146 @@ export interface Prediction {
   betType?: string;
 }
 
-// Fallback tips caso a API falhe (hardcoded para o dia) — atualizadas 21/07/2026
+const RESPONSIBLE_NOTE =
+  'Aposte com responsabilidade. Odds consultadas antes do jogo podem mudar e não garantem resultados.';
+
+// Fallback local alinhado com /api/tips para 29/07/2026.
 function getFallbackTips(): Prediction[] {
-  const dateStr = new Intl.DateTimeFormat('pt-PT', {
-    day: '2-digit',
-    month: '2-digit'
-  }).format(new Date());
+  const dateStr = '29/07/2026';
+  const league = 'Liga dos Campeões — Qualificação';
 
   return [
     {
-      id: 5088,
-      league: 'Liga dos Campeões — Qualificação 2ª Ronda',
-      homeTeam: 'Fenerbahce',
-      awayTeam: 'Gornik Zabrze',
+      id: 7001,
+      league,
+      homeTeam: 'Crvena Zvezda',
+      awayTeam: 'Larne',
       date: dateStr,
       time: '20:00',
-      prediction: 'Fenerbahce Vence e Mais de 1.5 Golos',
-      confidence: 78,
-      odds: 1.62,
-      market: 'Resultado e Total de Golos',
-      winner: 'Fenerbahce',
-      homePercent: 68,
-      drawPercent: 18,
-      awayPercent: 14,
-      betNumber: '5088',
+      prediction: 'Vitória Crvena Zvezda',
+      confidence: 88,
+      odds: 1.06,
+      market: 'Resultado final',
+      winner: 'Crvena Zvezda',
+      homePercent: 88,
+      drawPercent: 8,
+      awayPercent: 4,
+      betNumber: '7001',
       betType: 'SINGLE',
-      analysis: '🇹🇷 Fenerbahce & Over 1.5 @1.62 — O Fenerbahce joga em casa no Şükrü Saracoğlu, onde é historicamente dominante nas competições europeias. O Gornik Zabrze, da Ekstraklasa polaca, é claramente inferior em qualidade de plantel. Com a motivação de chegar à fase de grupos e o apoio do seu inflamado público, o Fener deve vencer confortavelmente num jogo com golos.',
+      analysis: `O Crvena Zvezda entra com 4-0 de vantagem depois de dominar a primeira mão. A odd pré-jogo de 1.06 traduz favoritismo muito elevado. ${RESPONSIBLE_NOTE}`,
     },
     {
-      id: 5089,
-      league: 'Liga dos Campeões — Qualificação 2ª Ronda',
-      homeTeam: 'Sturm Graz',
-      awayTeam: 'Hearts',
+      id: 7002,
+      league,
+      homeTeam: 'Lech Poznań',
+      awayTeam: 'Aarhus',
       date: dateStr,
-      time: '20:30',
-      prediction: 'Sturm Graz Vence',
-      confidence: 70,
-      odds: 1.78,
-      market: 'Resultado Final',
-      winner: 'Sturm Graz',
-      homePercent: 57,
-      drawPercent: 24,
-      awayPercent: 19,
-      betNumber: '5089',
+      time: '19:00',
+      prediction: 'Vitória Lech Poznań',
+      confidence: 58,
+      odds: 1.73,
+      market: 'Resultado final',
+      winner: 'Lech Poznań',
+      homePercent: 58,
+      drawPercent: 27,
+      awayPercent: 15,
+      betNumber: '7002',
       betType: 'SINGLE',
-      analysis: '🇦🇹 Sturm Graz Vence @1.78 — O Sturm Graz tem sido uma das equipas austríacas mais sólidas nas qualificações europeias nos últimos anos. A jogar em casa contra um Hearts que tem dificuldades históricas fora da Escócia, os austríacos têm vantagem clara. O Hearts perdeu os seus melhores jogadores no verão e chega a Graz sem grande forma.',
+      analysis: `O Lech venceu a primeira mão por 4-1 e joga em Poznań. A cotação de 1.73 corresponde a aproximadamente 58% de probabilidade implícita. ${RESPONSIBLE_NOTE}`,
     },
     {
-      id: 5090,
-      league: 'Brasileirão Série A',
-      homeTeam: 'Mineiro',
-      awayTeam: 'Bahia',
+      id: 7003,
+      league,
+      homeTeam: 'Kairat Almaty',
+      awayTeam: 'Omonia',
       date: dateStr,
-      time: '23:30',
-      prediction: 'Atlético-MG Vence ou Empata (Dupla Hipótese)',
-      confidence: 68,
-      odds: 1.65,
-      market: 'Dupla Hipótese',
-      winner: 'Mineiro',
-      homePercent: 48,
-      drawPercent: 28,
-      awayPercent: 24,
-      betNumber: '5090',
+      time: '17:00',
+      prediction: 'Vitória Kairat Almaty',
+      confidence: 45,
+      odds: 2.23,
+      market: 'Resultado final',
+      winner: 'Kairat Almaty',
+      homePercent: 45,
+      drawPercent: 30,
+      awayPercent: 25,
+      betNumber: '7003',
       betType: 'SINGLE',
-      analysis: '🇧🇷 Atlético-MG 1X @1.65 — O Atlético Mineiro joga em casa na Arena MRV, onde tem sido muito forte nesta temporada. O Bahia é uma equipa competente, mas viaja para Belo Horizonte com desvantagem de fator campo. A dupla hipótese oferece segurança com boa odd para um jogo de alto nível do Brasileirão.',
+      analysis: `A perder 1-0 na eliminatória, o Kairat precisa de assumir o jogo em Almaty. A odd 2.23 indica uma seleção de valor, não uma escolha de baixa variância. ${RESPONSIBLE_NOTE}`,
     },
     {
-      id: 5091,
-      league: 'Copa Sul-Americana — Playoffs',
-      homeTeam: 'Univ. Central',
-      awayTeam: 'Santos',
+      id: 7004,
+      league,
+      homeTeam: 'Kauno Žalgiris',
+      awayTeam: 'Klaksvík',
       date: dateStr,
-      time: '22:30',
-      prediction: 'Menos de 2.5 Golos',
-      confidence: 72,
-      odds: 1.58,
-      market: 'Total Golos',
+      time: '18:00',
+      prediction: 'Klaksvík ou Empate (X2)',
+      confidence: 61,
+      odds: 2.20,
+      market: 'Dupla hipótese',
+      winner: 'Klaksvík',
+      homePercent: 39,
+      drawPercent: 25,
+      awayPercent: 36,
+      betNumber: '7004',
+      betType: 'SINGLE',
+      analysis: `Com 0-0 da primeira mão, o Klaksvík pode gerir uma eliminatória aberta. O modelo de mercado consultado atribuiu 61% ao X2, a 2.20. ${RESPONSIBLE_NOTE}`,
+    },
+    {
+      id: 7005,
+      league,
+      homeTeam: 'Universitatea Craiova',
+      awayTeam: 'Levski Sofia',
+      date: dateStr,
+      time: '19:30',
+      prediction: 'Menos de 2.5 golos',
+      confidence: 58,
+      odds: 1.73,
+      market: 'Total de golos',
       winner: '',
-      homePercent: 38,
-      drawPercent: 32,
-      awayPercent: 30,
-      betNumber: '5091',
+      homePercent: 42,
+      drawPercent: 31,
+      awayPercent: 27,
+      betNumber: '7005',
       betType: 'SINGLE',
-      analysis: '🛡️ Menos de 2.5 Golos @1.58 — Jogo de ida dos playoffs da Sul-Americana na Venezuela. Em jogos de mata-mata de primeira mão, as equipas tendem a ser mais cautelosas, especialmente fora de casa. O Santos vai privilegiar não sofrer golos para a segunda mão no Brasil. Esperamos um jogo tático e fechado.',
+      analysis: `O Levski defende uma vantagem de 1-0 e o Under 2.5 foi cotado a 1.73. O contexto de segunda mão aponta para uma partida controlada. ${RESPONSIBLE_NOTE}`,
     },
     {
-      id: 5092,
-      league: 'Liga dos Campeões — Qualificação 2ª Ronda',
-      homeTeam: 'Larne',
-      awayTeam: 'Red Star Belgrade',
+      id: 7006,
+      league,
+      homeTeam: 'Crvena Zvezda + Lech Poznań',
+      awayTeam: 'Larne + Aarhus',
       date: dateStr,
-      time: '21:00',
-      prediction: 'Red Star Belgrade Vence',
-      confidence: 80,
-      odds: 1.45,
-      market: 'Resultado Final',
-      winner: 'Red Star Belgrade',
-      homePercent: 18,
-      drawPercent: 22,
-      awayPercent: 60,
-      betNumber: '5092',
-      betType: 'SINGLE',
-      analysis: '🇷🇸 Red Star Belgrade Vence @1.45 — O Estrela Vermelha de Belgrado é um dos gigantes históricos do futebol europeu e tem uma qualidade muito superior ao Larne da Irlanda do Norte. Apesar de jogar fora, o Red Star tem plantel, experiência europeia e motivação para avançar. Uma das apostas mais seguras do dia.',
-    },
-    {
-      id: 5093,
-      league: 'Champions League Qualificação',
-      homeTeam: 'Fenerbahce & Red Star',
-      awayTeam: 'Opositores',
-      date: dateStr,
-      time: '20:00',
-      prediction: 'Vitória Fenerbahce + Vitória Red Star Belgrade',
-      confidence: 72,
-      odds: 2.35,
+      time: '19:00',
+      prediction: 'Crvena Zvezda vence + Lech Poznań vence',
+      confidence: 55,
+      odds: 1.83,
       market: 'Combinada',
       winner: '',
       homePercent: 0,
       drawPercent: 0,
       awayPercent: 0,
-      betNumber: '5093',
+      betNumber: '7006',
       betType: 'DOUBLE',
-      analysis: '🔥 ACUMULADOR DO DIA @2.35 — Combinamos os dois favoritos mais sólidos das qualificações da Liga dos Campeões desta noite. O Fenerbahce em casa contra o Gornik Zabrze tem qualidade muito superior. O Red Star Belgrade, apesar de jogar fora, é claramente superior ao Larne da Irlanda do Norte. Uma dupla com excelente valor para a noite europeia.',
+      analysis: `Odd combinada calculada a partir de 1.06 × 1.73 = 1.83; probabilidade implícita aproximada de 55%. Numa dupla, uma falha perde toda a aposta. ${RESPONSIBLE_NOTE}`,
     },
   ];
 }
 
 async function fetchTipsFromAPI(): Promise<Prediction[]> {
   try {
-    // Fetch from our own Vercel Edge Function (no CORS issues)
     const response = await fetch('/api/tips');
     if (!response.ok) {
       throw new Error(`API returned ${response.status}`);
     }
-    
+
     const data = await response.json();
-    
-    if (!data.tips || !Array.isArray(data.tips)) {
+
+    if (!data.items || !Array.isArray(data.items)) {
       throw new Error('Invalid API response format');
     }
 
-    return data.tips.map((tip: any) => ({
+    return data.items.map((tip: any) => ({
       id: tip.id,
       league: tip.league,
       homeTeam: tip.homeTeam,
@@ -197,7 +197,7 @@ export function usePredictions() {
     setLoading(true);
     try {
       const apiTips = await fetchTipsFromAPI();
-      
+
       if (apiTips.length > 0) {
         setPredictions(apiTips);
       } else {
@@ -215,7 +215,6 @@ export function usePredictions() {
 
   useEffect(() => {
     fetchPredictions();
-    // Atualizar a cada 30 minutos
     const interval = setInterval(fetchPredictions, 30 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);

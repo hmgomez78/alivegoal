@@ -28,33 +28,43 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// Fallback logic and initial state setup
+// Jogos oficiais de 29/07/2026 — segunda mão da 2.ª pré-eliminatória da Liga dos Campeões.
+// Horários em CEST, conforme o calendário da UEFA.
 export const TODAYS_TIP_TEAMS = [
-  "Lincoln Red Imps",
-  "Mjällby AIF",
-  "Apollon Limassol",
-  "Dila Gori",
-  "Riga FC",
-  "Vardar",
-  "Dinamo Zagreb",
-  "FC Thun",
-  "NK Celje",
-  "Egnatia"
+  "Kairat Almaty",
+  "Omonia",
+  "Kauno Žalgiris",
+  "Klaksvík",
+  "Lech Poznań",
+  "Aarhus",
+  "Universitatea Craiova",
+  "Levski Sofia",
+  "Hapoel Beer-Sheva",
+  "Víkingur Reykjavík",
+  "Crvena Zvezda",
+  "Larne",
+  "Górnik Zabrze",
+  "Fenerbahçe",
+  "Slovan Bratislava",
+  "Iberia Tbilisi"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "Lincoln Red Imps", awayTeam: "Mjällby AIF", homeScore: null, awayScore: null, minute: 0, status: "HOJE 16:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
-  { id: 2002, homeTeam: "Apollon Limassol", awayTeam: "Dila Gori", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
-  { id: 2003, homeTeam: "Riga FC", awayTeam: "Vardar", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
-  { id: 2004, homeTeam: "Dinamo Zagreb", awayTeam: "FC Thun", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões (Q)", leagueId: 2 },
-  { id: 2005, homeTeam: "NK Celje", awayTeam: "Egnatia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:15", league: "Liga dos Campeões (Q)", leagueId: 2 }
+  { id: 2001, homeTeam: "Kairat Almaty", awayTeam: "Omonia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2002, homeTeam: "Kauno Žalgiris", awayTeam: "Klaksvík", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2003, homeTeam: "Lech Poznań", awayTeam: "Aarhus", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2004, homeTeam: "Universitatea Craiova", awayTeam: "Levski Sofia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2005, homeTeam: "Hapoel Beer-Sheva", awayTeam: "Víkingur Reykjavík", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2006, homeTeam: "Crvena Zvezda", awayTeam: "Larne", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2007, homeTeam: "Górnik Zabrze", awayTeam: "Fenerbahçe", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
+  { id: 2008, homeTeam: "Slovan Bratislava", awayTeam: "Iberia Tbilisi", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:15", league: "Liga dos Campeões — Qualificação", leagueId: 2 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Dinamo Zagreb",
-  awayTeam: "FC Thun",
+  homeTeam: "Crvena Zvezda",
+  awayTeam: "Larne",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -82,7 +92,6 @@ export function useLiveScores() {
         return;
       }
 
-      // 1) Fetch today's matches
       const response = await fetch("/api/proxy-football-data?endpoint=matches", {
         headers: {
           "X-Auth-Token": apiKey,
@@ -102,14 +111,13 @@ export function useLiveScores() {
         return;
       }
 
-      // 2) Map matches
-      let mappedMatches: LiveMatch[] = data.matches.map((m: any) => {
+      const mappedMatches: LiveMatch[] = data.matches.map((m: any) => {
         let statusStr = "HOJE";
         let minute = 0;
 
         if (m.status === "IN_PLAY" || m.status === "PAUSED") {
           statusStr = "AO VIVO";
-          minute = 45; // simplified
+          minute = 45;
         } else if (m.status === "FINISHED") {
           statusStr = "TERMINADO";
           minute = 90;
@@ -131,24 +139,19 @@ export function useLiveScores() {
         };
       });
 
-      // 3) Sort matches to prioritize featured/tip teams
       mappedMatches.sort((a, b) => {
         const aIsFeatured = TODAYS_FEATURED_TEAMS.includes(a.homeTeam) || TODAYS_FEATURED_TEAMS.includes(a.awayTeam);
         const bIsFeatured = TODAYS_FEATURED_TEAMS.includes(b.homeTeam) || TODAYS_FEATURED_TEAMS.includes(b.awayTeam);
 
         if (aIsFeatured && !bIsFeatured) return -1;
         if (!aIsFeatured && bIsFeatured) return 1;
-
-        // If both are featured (or neither), sort by status (live first)
         if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
         if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
-
         return 0;
       });
 
       setMatches(mappedMatches);
 
-      // 4) Set featured match
       const liveFeatured = mappedMatches.find((m) => m.status === "AO VIVO" && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
       const upcomingFeatured = mappedMatches.find((m) => m.status.startsWith("HOJE") && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
       const bestMatch = liveFeatured || upcomingFeatured || mappedMatches[0];
