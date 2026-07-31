@@ -28,43 +28,42 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// Jogos oficiais de 29/07/2026 — segunda mão da 2.ª pré-eliminatória da Liga dos Campeões.
-// Horários em CEST, conforme o calendário da UEFA.
+// Jogos reais confirmados para 31/07/2026.
 export const TODAYS_TIP_TEAMS = [
-  "Kairat Almaty",
-  "Omonia",
-  "Kauno Žalgiris",
-  "Klaksvík",
-  "Lech Poznań",
-  "Aarhus",
-  "Universitatea Craiova",
-  "Levski Sofia",
-  "Hapoel Beer-Sheva",
-  "Víkingur Reykjavík",
-  "Crvena Zvezda",
-  "Larne",
-  "Górnik Zabrze",
-  "Fenerbahçe",
-  "Slovan Bratislava",
-  "Iberia Tbilisi"
+  "Juventus",
+  "Nice",
+  "Sporting CP",
+  "Nottingham Forest",
+  "Dundee United",
+  "Rangers",
+  "LASK",
+  "Grazer AK",
+  "Bodø/Glimt",
+  "Lillestrøm",
+  "Birmingham City",
+  "Barcelona",
+  "Coritiba",
+  "Cruzeiro",
+  "Sunderland",
+  "Leeds United"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "Kairat Almaty", awayTeam: "Omonia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2002, homeTeam: "Kauno Žalgiris", awayTeam: "Klaksvík", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2003, homeTeam: "Lech Poznań", awayTeam: "Aarhus", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2004, homeTeam: "Universitatea Craiova", awayTeam: "Levski Sofia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2005, homeTeam: "Hapoel Beer-Sheva", awayTeam: "Víkingur Reykjavík", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2006, homeTeam: "Crvena Zvezda", awayTeam: "Larne", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2007, homeTeam: "Górnik Zabrze", awayTeam: "Fenerbahçe", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Liga dos Campeões — Qualificação", leagueId: 2 },
-  { id: 2008, homeTeam: "Slovan Bratislava", awayTeam: "Iberia Tbilisi", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:15", league: "Liga dos Campeões — Qualificação", leagueId: 2 }
+  { id: 2001, homeTeam: "Juventus", awayTeam: "Nice", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 99 },
+  { id: 2002, homeTeam: "LASK", awayTeam: "Grazer AK", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Austrian Bundesliga", leagueId: 44 },
+  { id: 2003, homeTeam: "Sporting CP", awayTeam: "Nottingham Forest", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 99 },
+  { id: 2004, homeTeam: "Birmingham City", awayTeam: "Barcelona", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "Amigável de Clubes", leagueId: 99 },
+  { id: 2005, homeTeam: "Dundee United", awayTeam: "Rangers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Scottish Premiership", leagueId: 55 },
+  { id: 2006, homeTeam: "Bodø/Glimt", awayTeam: "Lillestrøm", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Norwegian Eliteserien", leagueId: 66 },
+  { id: 2007, homeTeam: "Coritiba", awayTeam: "Cruzeiro", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 71 },
+  { id: 2008, homeTeam: "Sunderland", awayTeam: "Leeds United", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Amigável de Clubes", leagueId: 99 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Crvena Zvezda",
-  awayTeam: "Larne",
+  homeTeam: "Dundee United",
+  awayTeam: "Rangers",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -119,7 +118,7 @@ export function useLiveScores() {
           statusStr = "AO VIVO";
           minute = 45;
         } else if (m.status === "FINISHED") {
-          statusStr = "TERMINADO";
+          statusStr = "FIM";
           minute = 90;
         } else if (m.status === "TIMED" || m.status === "SCHEDULED") {
           const dateObj = new Date(m.utcDate);
