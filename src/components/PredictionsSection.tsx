@@ -6,7 +6,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 
 const PredictionsSection = () => {
   const lang = useLanguage();
-  const { predictions, loading, refresh } = usePredictions("Hoje");
+  const { predictions, loading, refresh } = usePredictions();
 
   const getConfidenceColor = (confidence: number) => {
     if (confidence >= 75) return "bg-green-500";

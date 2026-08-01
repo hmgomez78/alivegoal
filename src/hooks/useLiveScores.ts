@@ -10,6 +10,8 @@ export interface LiveMatch {
   status: string;
   league: string;
   leagueId?: number;
+  homeTeamLogo?: string;
+  awayTeamLogo?: string;
 }
 
 export interface MatchStats {
@@ -28,42 +30,54 @@ export interface FeaturedMatchData {
   stats: MatchStats;
 }
 
-// Jogos reais confirmados para 31/07/2026.
+interface FootballDataMatch {
+  id: number;
+  status: string;
+  utcDate: string;
+  homeTeam: { shortName?: string; name: string };
+  awayTeam: { shortName?: string; name: string };
+  score?: { fullTime?: { home?: number | null; away?: number | null } };
+  competition?: { name?: string; id?: number };
+}
+
+interface FootballDataResponse {
+  matches?: FootballDataMatch[];
+}
+
+// Equipas em destaque e com tips de apostas (1 de agosto de 2026)
 export const TODAYS_TIP_TEAMS = [
-  "Juventus",
-  "Nice",
-  "Sporting CP",
-  "Nottingham Forest",
-  "Dundee United",
-  "Rangers",
-  "LASK",
-  "Grazer AK",
-  "Bodø/Glimt",
-  "Lillestrøm",
-  "Birmingham City",
-  "Barcelona",
-  "Coritiba",
-  "Cruzeiro",
-  "Sunderland",
-  "Leeds United"
+  "Inter Miami",
+  "Arsenal",
+  "Manchester City",
+  "Falkirk",
+  "FC Cincinnati",
+  "Chicago Fire",
+  "Girona",
+  "Inter Milan",
+  "Columbus Crew"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
+// Jogos reais de 1 de agosto de 2026 baseados na agenda BBC/ESPN
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "Juventus", awayTeam: "Nice", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Amigável de Clubes", leagueId: 99 },
-  { id: 2002, homeTeam: "LASK", awayTeam: "Grazer AK", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Austrian Bundesliga", leagueId: 44 },
-  { id: 2003, homeTeam: "Sporting CP", awayTeam: "Nottingham Forest", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Amigável de Clubes", leagueId: 99 },
-  { id: 2004, homeTeam: "Birmingham City", awayTeam: "Barcelona", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "Amigável de Clubes", leagueId: 99 },
-  { id: 2005, homeTeam: "Dundee United", awayTeam: "Rangers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Scottish Premiership", leagueId: 55 },
-  { id: 2006, homeTeam: "Bodø/Glimt", awayTeam: "Lillestrøm", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Norwegian Eliteserien", leagueId: 66 },
-  { id: 2007, homeTeam: "Coritiba", awayTeam: "Cruzeiro", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Brasileirão Série A", leagueId: 71 },
-  { id: 2008, homeTeam: "Sunderland", awayTeam: "Leeds United", homeScore: 0, awayScore: 1, minute: 90, status: "FIM", league: "Amigável de Clubes", leagueId: 99 }
+  { id: 2001, homeTeam: "Chicago Fire", awayTeam: "Charlotte FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 01:30", league: "MLS", leagueId: 25 },
+  { id: 2002, homeTeam: "Inter Miami", awayTeam: "Columbus Crew", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
+  { id: 2003, homeTeam: "Girona", awayTeam: "Arsenal", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2004, homeTeam: "Manchester City", awayTeam: "Inter Milan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:30", league: "Club Friendly", leagueId: 99 },
+  { id: 2005, homeTeam: "FC Cincinnati", awayTeam: "San Jose Earthquakes", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
+  { id: 2006, homeTeam: "Falkirk", awayTeam: "St Mirren", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Scottish Premiership", leagueId: 55 },
+  { id: 2007, homeTeam: "Philadelphia Union", awayTeam: "Atlanta United FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
+  { id: 2008, homeTeam: "Aberdeen", awayTeam: "Heart of Midlothian", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Scottish Premiership", leagueId: 55 },
+  { id: 2009, homeTeam: "Real Madrid", awayTeam: "Fiorentina", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2010, homeTeam: "Manchester United", awayTeam: "Atlético Madrid", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2011, homeTeam: "Chelsea", awayTeam: "Tottenham Hotspur", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:45", league: "Sydney Super Cup", leagueId: 99 },
+  { id: 2012, homeTeam: "Tranmere Rovers", awayTeam: "Rochdale", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "English League Cup", leagueId: 61 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Dundee United",
-  awayTeam: "Rangers",
+  homeTeam: "Girona",
+  awayTeam: "Arsenal",
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -101,7 +115,7 @@ export function useLiveScores() {
         throw new Error(`API returned ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = (await response.json()) as FootballDataResponse;
 
       if (!data.matches || data.matches.length === 0) {
         setMatches(fallbackMatches);
@@ -110,7 +124,7 @@ export function useLiveScores() {
         return;
       }
 
-      const mappedMatches: LiveMatch[] = data.matches.map((m: any) => {
+      const mappedMatches: LiveMatch[] = data.matches.map((m) => {
         let statusStr = "HOJE";
         let minute = 0;
 
@@ -187,5 +201,7 @@ export function useLiveScores() {
     return () => clearInterval(interval);
   }, []);
 
-  return { matches, featured, loading };
+  const isLive = matches.some((match) => match.status === "AO VIVO");
+
+  return { matches, featured, loading, isLive, refresh: fetchScores };
 }
