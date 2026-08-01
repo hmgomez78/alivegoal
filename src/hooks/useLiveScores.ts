@@ -52,6 +52,7 @@ export const TODAYS_TIP_TEAMS = [
   "Falkirk",
   "FC Cincinnati",
   "Chicago Fire",
+  "Vancouver Whitecaps",
   "Girona",
   "Inter Milan",
   "Columbus Crew"
@@ -72,7 +73,8 @@ const fallbackMatches: LiveMatch[] = [
   { id: 2009, homeTeam: "Real Madrid", awayTeam: "Fiorentina", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Club Friendly", leagueId: 99 },
   { id: 2010, homeTeam: "Manchester United", awayTeam: "Atlético Madrid", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Club Friendly", leagueId: 99 },
   { id: 2011, homeTeam: "Chelsea", awayTeam: "Tottenham Hotspur", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:45", league: "Sydney Super Cup", leagueId: 99 },
-  { id: 2012, homeTeam: "Tranmere Rovers", awayTeam: "Rochdale", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "English League Cup", leagueId: 61 }
+  { id: 2012, homeTeam: "Tranmere Rovers", awayTeam: "Rochdale", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "English League Cup", leagueId: 61 },
+  { id: 2013, homeTeam: "Vancouver Whitecaps", awayTeam: "LAFC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 03:30", league: "MLS", leagueId: 25 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
