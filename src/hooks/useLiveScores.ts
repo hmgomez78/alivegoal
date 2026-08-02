@@ -44,42 +44,39 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (1 de agosto de 2026)
+// Equipas em destaque e com tips de apostas (2 de agosto de 2026)
 export const TODAYS_TIP_TEAMS = [
-  "Inter Miami",
-  "Arsenal",
-  "Manchester City",
-  "Falkirk",
-  "FC Cincinnati",
-  "Chicago Fire",
-  "Vancouver Whitecaps",
-  "Girona",
-  "Inter Milan",
-  "Columbus Crew"
+  "St Johnstone",
+  "Kilmarnock",
+  "Hibernian",
+  "Motherwell",
+  "Ajax",
+  "Feyenoord",
+  "Atalanta",
+  "Liverpool",
+  "Leeds United",
+  "Galatasaray",
+  "Stade Rennais"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
-// Jogos reais de 1 de agosto de 2026 baseados na agenda BBC/ESPN
+// Jogos de 2 de agosto de 2026 verificados em BBC Sport e ESPN. Horas em Portugal continental.
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "Chicago Fire", awayTeam: "Charlotte FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 01:30", league: "MLS", leagueId: 25 },
-  { id: 2002, homeTeam: "Inter Miami", awayTeam: "Columbus Crew", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
-  { id: 2003, homeTeam: "Girona", awayTeam: "Arsenal", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2004, homeTeam: "Manchester City", awayTeam: "Inter Milan", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:30", league: "Club Friendly", leagueId: 99 },
-  { id: 2005, homeTeam: "FC Cincinnati", awayTeam: "San Jose Earthquakes", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
-  { id: 2006, homeTeam: "Falkirk", awayTeam: "St Mirren", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Scottish Premiership", leagueId: 55 },
-  { id: 2007, homeTeam: "Philadelphia Union", awayTeam: "Atlanta United FC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 00:30", league: "MLS", leagueId: 25 },
-  { id: 2008, homeTeam: "Aberdeen", awayTeam: "Heart of Midlothian", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Scottish Premiership", leagueId: 55 },
-  { id: 2009, homeTeam: "Real Madrid", awayTeam: "Fiorentina", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2010, homeTeam: "Manchester United", awayTeam: "Atlético Madrid", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2011, homeTeam: "Chelsea", awayTeam: "Tottenham Hotspur", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:45", league: "Sydney Super Cup", leagueId: 99 },
-  { id: 2012, homeTeam: "Tranmere Rovers", awayTeam: "Rochdale", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "English League Cup", leagueId: 61 },
-  { id: 2013, homeTeam: "Vancouver Whitecaps", awayTeam: "LAFC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 03:30", league: "MLS", leagueId: 25 }
+  { id: 2001, homeTeam: "FC Volendam", awayTeam: "Ajax", homeScore: null, awayScore: null, minute: 0, status: "HOJE 13:30", league: "Club Friendly", leagueId: 99 },
+  { id: 2002, homeTeam: "St Johnstone", awayTeam: "Kilmarnock", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Scottish Premiership", leagueId: 55 },
+  { id: 2003, homeTeam: "Feyenoord", awayTeam: "Atalanta", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2004, homeTeam: "Trabzonspor", awayTeam: "Udinese", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:30", league: "Club Friendly", leagueId: 99 },
+  { id: 2005, homeTeam: "Hibernian", awayTeam: "Motherwell", homeScore: null, awayScore: null, minute: 0, status: "HOJE 16:30", league: "Scottish Premiership", leagueId: 55 },
+  { id: 2006, homeTeam: "Sunderland", awayTeam: "Wrexham", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2007, homeTeam: "Galatasaray", awayTeam: "Stade Rennais", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Club Friendly", leagueId: 99 },
+  { id: 2008, homeTeam: "Washington Spirit", awayTeam: "San Diego Wave", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "NWSL", leagueId: 27 },
+  { id: 2009, homeTeam: "Liverpool", awayTeam: "Leeds United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "Club Friendly", leagueId: 99 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Girona",
-  awayTeam: "Arsenal",
+  homeTeam: "St Johnstone",
+  awayTeam: "Kilmarnock",
   homeScore: 0,
   awayScore: 0,
   stats: {

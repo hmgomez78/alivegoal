@@ -13,22 +13,22 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '1 ago. 2026';
+  const publicationDate = '2 ago. 2026';
 
   return [
     {
       id: 101,
-      title: 'ANÁLISE TÁTICA: O impacto do cansaço pós-Mundial nas contas da Premier League',
-      excerpt: 'Com a Premier League a arrancar a 21 de agosto, apenas 33 dias após a final do Mundial, equipas como Arsenal e Manchester City enfrentam uma pré-época atrofiada. A fadiga acumulada e os regressos tardios prometem nivelar o primeiro mês de competição, exigindo rotações drásticas.',
+      title: 'PROPRIEDADE: A entrada do consórcio Staveley no West Ham e o novo equilíbrio de poder',
+      excerpt: 'O acordo para a compra dos 25,1% detidos pela família Gold coloca Amanda Staveley novamente no centro da Premier League. Mais do que uma mudança acionista, o movimento pode alterar a capacidade de investimento, a estratégia de recrutamento e a ambição desportiva do West Ham nos próximos anos.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'The Guardian',
     },
     {
       id: 102,
-      title: 'PLANEAMENTO: Como a revolução silenciosa no Newcastle redefine a ambição do clube',
-      excerpt: 'A saída de Eddie Howe expôs uma mudança estrutural no Newcastle. Longe das promessas de domínio imediato, a atual direção desportiva foca-se na valorização de jovens promessas na casa dos £20m-£40m. É um modelo sustentável, mas que esfria o sonho imediato de títulos.',
+      title: 'LIVERPOOL: A pré-época de Iraola e a urgência de corrigir as lacunas do campeão',
+      excerpt: 'Andoni Iraola acelera a preparação do Liverpool antes do arranque da Premier League, com intensidade e organização sem bola no centro do trabalho. A questão decisiva é perceber se o novo treinador consegue fechar rapidamente os espaços que ficaram expostos na reta final da época passada.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: publicationDate,
@@ -36,39 +36,39 @@ function getFallbackNews(): NewsArticle[] {
     },
     {
       id: 103,
-      title: 'TRANSFERÊNCIAS: O risco das contratações acima dos £100m num mercado inflacionado',
-      excerpt: 'A janela de verão de 2026 reafirmou o poderio financeiro da Premier League, com o Tottenham a quebrar a barreira dos £100m por Sandro Tonali. A história, contudo, alerta: a pressão do preço afeta o rendimento imediato e exige paciência num ecossistema mediático impiedoso.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'AliveGoal Editorial',
-    },
-    {
-      id: 104,
-      title: 'BASTIDORES: A ameaça de boicote europeu e o braço de ferro pelos lucros do Mundial',
-      excerpt: 'A oposição frontal da UEFA ao plano de comercialização dos torneios da FIFA ameaça paralisar o calendário internacional. Se a crise não for resolvida, o futebol feminino, cuja dependência das receitas do Mundial é crítica, poderá ser o maior dano colateral deste conflito institucional.',
+      title: 'NEWCASTLE: O que muda após a confirmação da saída de Eddie Howe',
+      excerpt: 'A saída de Eddie Howe obriga o Newcastle a redefinir a sua identidade no momento em que o plantel entra na pré-época. A sucessão terá de equilibrar exigência europeia, controlo salarial e a expectativa de manter um estilo competitivo sem perder os pilares que sustentaram a evolução recente.',
       category: 'ÚLTIMA HORA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'ESPN',
+      source: 'BBC Sport',
+    },
+    {
+      id: 104,
+      title: 'BOURNEMOUTH: Por que Antonio Silva pode ser a contratação estrutural do verão',
+      excerpt: 'A chegada do defesa português Antonio Silva oferece ao Bournemouth uma combinação rara de idade, experiência internacional e qualidade de construção. A adaptação à intensidade da Premier League será determinante, mas o perfil sugere uma contratação pensada para valorizar dentro e fora do relvado.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'BBC Sport',
     },
     {
       id: 105,
-      title: 'TIPS DE APOSTAS: Navegar na incerteza dos amigáveis de pré-época',
-      excerpt: 'Apostar em jogos de preparação exige cautela redobrada. As múltiplas substituições ao intervalo, o foco na condição física em detrimento do resultado e as experiências táticas subvertem as probabilidades tradicionais. A aposta de valor reside frequentemente nos golos ou em handicaps positivos dos underdogs.',
-      category: 'TIPS DE APOSTAS',
+      title: 'CELTIC: A recusa por Engels revela a estratégia de retenção de talento',
+      excerpt: 'A recusa do Celtic a uma abordagem do West Ham por Arne Engels sinaliza que o clube não pretende desmantelar o núcleo competitivo antes das eliminatórias europeias. O interesse simultâneo em reforçar o plantel ilustra uma política de mercado que privilegia continuidade e margem de negociação.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '4 min',
       date: publicationDate,
-      source: 'AliveGoal Editorial',
+      source: 'BBC Sport',
     },
     {
       id: 106,
-      title: 'INGLATERRA: O arranque madrugador da EFL e as surpresas da Carabao Cup',
-      excerpt: 'A temporada inglesa 2026-27 começou de forma discreta com a ronda preliminar da Carabao Cup. O embate entre Tranmere Rovers e Rochdale marcou o pontapé de saída de um calendário que, mais uma vez, testará a profundidade dos plantéis nas divisões inferiores.',
-      category: 'ÚLTIMA HORA',
-      readTime: '3 min',
+      title: 'TOTTENHAM: O futuro de Richarlison como teste à gestão de De Zerbi',
+      excerpt: 'Roberto De Zerbi admitiu que Richarlison pode ponderar sair, mas deixou clara a vontade de manter o avançado. A decisão será um teste imediato à gestão do treinador: entre valorizar um jogador de grande impacto físico e abrir espaço para uma reformulação ofensiva, os Spurs têm de escolher o timing certo.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'BBC Sport / The Guardian',
     },
   ];
 }
