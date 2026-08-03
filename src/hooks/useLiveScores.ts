@@ -44,39 +44,36 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (2 de agosto de 2026)
+// Equipas em destaque e com tips de apostas (3 de agosto de 2026)
 export const TODAYS_TIP_TEAMS = [
-  "St Johnstone",
-  "Kilmarnock",
-  "Hibernian",
-  "Motherwell",
-  "Ajax",
-  "Feyenoord",
-  "Atalanta",
-  "Liverpool",
-  "Leeds United",
-  "Galatasaray",
-  "Stade Rennais"
+  "Celtic",
+  "Dundee",
+  "Shakhtar Donetsk",
+  "Kudrivka",
+  "SJK",
+  "HJK",
+  "Djurgården",
+  "Västerås"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
-// Jogos de 2 de agosto de 2026 verificados em BBC Sport e ESPN. Horas em Portugal continental.
+// Jogos de 3 de agosto de 2026 verificados em BBC Sport e Soccerbase. Horas em Portugal continental.
 const fallbackMatches: LiveMatch[] = [
-  { id: 2001, homeTeam: "FC Volendam", awayTeam: "Ajax", homeScore: null, awayScore: null, minute: 0, status: "HOJE 13:30", league: "Club Friendly", leagueId: 99 },
-  { id: 2002, homeTeam: "St Johnstone", awayTeam: "Kilmarnock", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Scottish Premiership", leagueId: 55 },
-  { id: 2003, homeTeam: "Feyenoord", awayTeam: "Atalanta", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2004, homeTeam: "Trabzonspor", awayTeam: "Udinese", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:30", league: "Club Friendly", leagueId: 99 },
-  { id: 2005, homeTeam: "Hibernian", awayTeam: "Motherwell", homeScore: null, awayScore: null, minute: 0, status: "HOJE 16:30", league: "Scottish Premiership", leagueId: 55 },
-  { id: 2006, homeTeam: "Sunderland", awayTeam: "Wrexham", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2007, homeTeam: "Galatasaray", awayTeam: "Stade Rennais", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "Club Friendly", leagueId: 99 },
-  { id: 2008, homeTeam: "Washington Spirit", awayTeam: "San Diego Wave", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "NWSL", leagueId: 27 },
-  { id: 2009, homeTeam: "Liverpool", awayTeam: "Leeds United", homeScore: null, awayScore: null, minute: 0, status: "HOJE 21:00", league: "Club Friendly", leagueId: 99 }
+  { id: 3001, homeTeam: "Celtic", awayTeam: "Dundee", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "Scottish Premiership", leagueId: 55 },
+  { id: 3002, homeTeam: "Shakhtar Donetsk", awayTeam: "Kudrivka", homeScore: null, awayScore: null, minute: 0, status: "HOJE 16:00", league: "Ukrainian Premier League", leagueId: 88 },
+  { id: 3003, homeTeam: "SJK", awayTeam: "HJK", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "Veikkausliiga", leagueId: 244 },
+  { id: 3004, homeTeam: "Djurgården", awayTeam: "Västerås", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Swedish Allsvenskan", leagueId: 113 },
+  { id: 3005, homeTeam: "Halmstad", awayTeam: "Sirius", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Swedish Allsvenskan", leagueId: 113 },
+  { id: 3006, homeTeam: "OB", awayTeam: "Sønderjyske", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Danish Superliga", leagueId: 119 },
+  { id: 3007, homeTeam: "Cracovia", awayTeam: "Pogoń Szczecin", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Polish Ekstraklasa", leagueId: 106 },
+  { id: 3008, homeTeam: "York City", awayTeam: "Crawley Town", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:30", league: "English League Cup", leagueId: 20 },
+  { id: 3009, homeTeam: "Železničar Pančevo", awayTeam: "Mladost Lučani", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Serbian Super Liga", leagueId: 57 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "St Johnstone",
-  awayTeam: "Kilmarnock",
+  homeTeam: "Celtic",
+  awayTeam: "Dundee",
   homeScore: 0,
   awayScore: 0,
   stats: {
