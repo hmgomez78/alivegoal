@@ -44,41 +44,34 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (4 de agosto de 2026)
+// Equipas em destaque e com tips de apostas (5 de agosto de 2026)
 export const TODAYS_TIP_TEAMS = [
-  "Sparta Prague",
-  "Lyon",
-  "Union SG",
-  "Bodø/Glimt",
-  "Dinamo Zagreb",
-  "Kauno Žalgiris",
-  "Hapoel Be'er Sheva",
-  "Red Star",
-  "Mjällby",
-  "Slovan Bratislava",
-  "Levski Sofia",
-  "Kairat"
+  "Fenerbahçe",
+  "Sturm Graz",
+  "AGF Aarhus",
+  "Sabah",
+  "Ferencváros",
+  "Górnik Zabrze",
+  "Panathinaikos",
+  "CSKA 1948",
+  "SK Brann",
+  "Apollon Limassol"
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
-// Jogos de 4 de agosto de 2026 verificados. Horas de início de acordo com a BBC (hora do Reino Unido / Lisboa).
+// Jogos de 5 de agosto de 2026 verificados.
 const fallbackMatches: LiveMatch[] = [
-  { id: 4001, homeTeam: "Sparta Prague", awayTeam: "Lyon", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4002, homeTeam: "Union SG", awayTeam: "Bodø/Glimt", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4003, homeTeam: "Dinamo Zagreb", awayTeam: "Kauno Žalgiris", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4004, homeTeam: "Hapoel Be'er Sheva", awayTeam: "Red Star", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4005, homeTeam: "Mjällby", awayTeam: "Slovan Bratislava", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4006, homeTeam: "Levski Sofia", awayTeam: "Kairat", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4007, homeTeam: "Olympiakos", awayTeam: "NEC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4008, homeTeam: "Ararat-Armenia", awayTeam: "Celje", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
-  { id: 4009, homeTeam: "Shamrock Rovers", awayTeam: "Egnatia", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "UEFA Europa League (Q)", leagueId: 2014 },
-  { id: 4010, homeTeam: "Jeju FC", awayTeam: "Bayern Munich", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "Club Friendlies", leagueId: 0 }
+  { id: 4101, homeTeam: "Fenerbahçe", awayTeam: "Sturm Graz", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
+  { id: 4102, homeTeam: "AGF Aarhus", awayTeam: "Sabah", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Champions League (Q)", leagueId: 2001 },
+  { id: 4103, homeTeam: "Ferencváros", awayTeam: "Górnik Zabrze", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:00", league: "UEFA Europa League (Q)", leagueId: 2014 },
+  { id: 4104, homeTeam: "Panathinaikos", awayTeam: "CSKA 1948", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "UEFA Conference League (Q)", leagueId: 2015 },
+  { id: 4105, homeTeam: "SK Brann", awayTeam: "Apollon Limassol", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:00", league: "UEFA Conference League (Q)", leagueId: 2015 }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Sparta Prague",
-  awayTeam: "Lyon",
+  homeTeam: "Fenerbahçe",
+  awayTeam: "Sturm Graz",
   homeScore: 0,
   awayScore: 0,
   stats: {

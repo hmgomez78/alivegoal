@@ -13,62 +13,62 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '4 ago. 2026';
+  const publicationDate = '5 ago. 2026';
 
   return [
     {
       id: 101,
-      title: 'CHAMPIONS LEAGUE: Sparta Praga e Lyon medem forças no limite do erro',
-      excerpt: 'A receção do Sparta Praga ao Lyon marca um dos duelos mais equilibrados da 3.ª pré-eliminatória. A formação francesa procura afirmar o seu estatuto continental, mas a solidez caseira dos checos promete uma eliminatória resolvida nos detalhes táticos.',
+      title: 'CHAMPIONS LEAGUE: Fenerbahçe e Sturm Graz no principal embate da ronda',
+      excerpt: 'A formação turca procura consolidar a vantagem na eliminatória sob a batuta de José Mourinho, enquanto o Sturm Graz tenta surpreender fora de portas. A capacidade ofensiva do Fenerbahçe promete ditar o ritmo da partida.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport / Fox Sports',
+      source: 'BBC Sport / SportsGambler',
     },
     {
       id: 102,
-      title: 'MERCADO: O impacto inflacionário das transferências britânicas',
-      excerpt: 'A ultrapassagem da fasquia dos mil milhões de libras na Premier League, impulsionada por negócios como os de Morgan Rogers e Elliot Anderson, consolida o fosso financeiro entre o mercado inglês e as restantes ligas europeias.',
+      title: 'MERCADO: O efeito dominó da venda de Julián Álvarez',
+      excerpt: 'A iminente saída de Álvarez para o Atlético de Madrid por £81.5M não só quebra o recorde de vendas do Manchester City como promete inflacionar o mercado de avançados nas semanas finais da janela de transferências.',
       category: 'MERCADO',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport / AliveGoal',
+      source: 'The Guardian / AliveGoal',
     },
     {
       id: 103,
-      title: 'CHAMPIONS LEAGUE: Union Saint-Gilloise tenta travar o ritmo do Bodø/Glimt',
-      excerpt: 'O embate entre Union SG e Bodø/Glimt coloca frente a frente a organização belga e a intensidade ofensiva norueguesa. A expectativa de golos é alta, refletindo a propensão de ambas as equipas para um futebol vertical e de transições rápidas.',
+      title: 'CONFERENCE LEAGUE: Brann e Apollon Limassol medem forças em Bergen',
+      excerpt: 'O Brann chega ao encontro com um registo ofensivo impressionante em casa, enquanto o Apollon Limassol aposta na solidez defensiva que tem demonstrado nos jogos fora. Um duelo de contrastes táticos.',
       category: 'ANÁLISE TÁTICA',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport / Oddslot',
+      source: 'SoccerVital / UEFA',
     },
     {
       id: 104,
-      title: 'CHAMPIONS LEAGUE: Dinamo Zagreb assume favoritismo absoluto perante o Kauno Žalgiris',
-      excerpt: 'O campeão croata recebe a formação lituana com a clara intenção de resolver a eliminatória na primeira mão. A disparidade de argumentos técnicos e orçamentais coloca o Dinamo na obrigação de apresentar um futebol dominante e traduzido em golos.',
+      title: 'CHAMPIONS LEAGUE: AGF Aarhus recebe o embalado FC Sabah',
+      excerpt: 'A equipa dinamarquesa tenta contrariar o momento positivo do Sabah, que venceu as quatro eliminatórias europeias recentes. A permeabilidade defensiva dos visitantes fora de casa pode ser a chave para o AGF.',
       category: 'PREVISÃO',
       readTime: '3 min',
       date: publicationDate,
-      source: 'BBC Sport / YesPlay',
+      source: 'Football Whispers',
     },
     {
       id: 105,
-      title: 'MLS: Inter Miami recupera a liderança no rescaldo do regresso das estrelas',
-      excerpt: 'O empate frente ao Columbus Crew quebrou a série vitoriosa, mas o regresso de Lionel Messi e o impacto imediato de Luis Suárez e Rodrigo De Paul recolocaram o Inter Miami no topo do Power Ranking, confirmando a profundidade do plantel.',
+      title: 'LIGA EUROPA: Ferencváros tenta confirmar superioridade perante o Górnik Zabrze',
+      excerpt: 'Os húngaros chegam a este confronto com o histórico favorável de marcar em todos os jogos de qualificação até ao momento, enfrentando um Górnik que tem demonstrado capacidade para ferir as defesas contrárias.',
       category: 'ANÁLISE',
       readTime: '4 min',
       date: publicationDate,
-      source: 'ESPN',
+      source: 'Football Whispers',
     },
     {
       id: 106,
-      title: 'SCOTTISH PREMIERSHIP: Celtic arranca defesa do título com vitória pragmática',
-      excerpt: 'O golo solitário de Benjamin Nygren na segunda parte permitiu ao Celtic superar o Dundee na jornada inaugural. Um triunfo que não disfarça a necessidade de afinar processos ofensivos, mas que garante a tranquilidade inicial exigida a um campeão.',
+      title: 'CONFERENCE LEAGUE: Panathinaikos com teste exigente frente ao CSKA 1948',
+      excerpt: 'A formação grega superou o Paks com dificuldade e enfrenta agora um CSKA 1948 Sofia moralizado após eliminar o Spartak Trnava. A margem de erro para o Panathinaikos em Atenas é mínima.',
       category: 'RESUMO',
       readTime: '3 min',
       date: publicationDate,
-      source: 'The Guardian / ESPN',
+      source: 'SportsGambler',
     },
   ];
 }
