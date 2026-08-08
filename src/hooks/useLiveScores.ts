@@ -44,37 +44,39 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (7 de agosto de 2026).
+// Equipas em destaque e com tips de apostas (8 de agosto de 2026).
 export const TODAYS_TIP_TEAMS = [
-  "Derry City",
-  "Sligo Rovers",
-  "Shamrock Rovers",
-  "Dundalk",
-  "Sandefjord",
-  "KFUM",
-  "Club Brugge",
-  "Kortrijk",
-  "Estoril",
-  "Famalicão",
-  "Yokohama F. Marinos",
-  "Kashima Antlers"
+  "Cambridge United",
+  "Barnet",
+  "Queens Park Rangers",
+  "Millwall",
+  "Avispa Fukuoka",
+  "Vissel Kobe",
+  "Kashiwa Reysol",
+  "Mito HollyHock",
+  "SV Darmstadt 98",
+  "Holstein Kiel",
+  "AFC Wimbledon",
+  "Newport County AFC",
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
-// Jogos de 7 de agosto de 2026 verificados na agenda da BBC Sport.
+// Jogos de 8 de agosto de 2026 verificados na agenda da Sky Sports.
 const fallbackMatches: LiveMatch[] = [
-  { id: 4101, homeTeam: "Derry City", awayTeam: "Sligo Rovers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "Irish Premier Division", leagueId: 2015 },
-  { id: 4102, homeTeam: "Shamrock Rovers", awayTeam: "Dundalk", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:00", league: "Irish Premier Division", leagueId: 2015 },
-  { id: 4103, homeTeam: "Sandefjord", awayTeam: "KFUM", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:00", league: "Norwegian Eliteserien", leagueId: 2016 },
-  { id: 4104, homeTeam: "Club Brugge", awayTeam: "Kortrijk", homeScore: null, awayScore: null, minute: 0, status: "HOJE 19:45", league: "Belgian Pro League", leagueId: 2017 },
-  { id: 4105, homeTeam: "Estoril", awayTeam: "Famalicão", homeScore: null, awayScore: null, minute: 0, status: "HOJE 20:15", league: "Liga Portugal", leagueId: 2018 },
-  { id: 4106, homeTeam: "Yokohama F. Marinos", awayTeam: "Kashima Antlers", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:25", league: "J1 League", leagueId: 2019 }
+  { id: 4201, homeTeam: "Cambridge United", awayTeam: "Barnet", homeScore: null, awayScore: null, minute: 0, status: "HOJE 13:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
+  { id: 4202, homeTeam: "Queens Park Rangers", awayTeam: "Millwall", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
+  { id: 4203, homeTeam: "AFC Wimbledon", awayTeam: "Newport County AFC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
+  { id: 4204, homeTeam: "Barnsley", awayTeam: "Wigan Athletic", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
+  { id: 4205, homeTeam: "Avispa Fukuoka", awayTeam: "Vissel Kobe", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "J1 League", leagueId: 2022 },
+  { id: 4206, homeTeam: "Kashiwa Reysol", awayTeam: "Mito HollyHock", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "J1 League", leagueId: 2022 },
+  { id: 4207, homeTeam: "SV Darmstadt 98", awayTeam: "Holstein Kiel", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "2. Bundesliga", leagueId: 2023 },
+  { id: 4208, homeTeam: "1. FC Heidenheim 1846", awayTeam: "VfL Osnabruck", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "2. Bundesliga", leagueId: 2023 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Shamrock Rovers",
-  awayTeam: "Dundalk",
+  homeTeam: "Kashiwa Reysol",
+  awayTeam: "Mito HollyHock",
   homeScore: 0,
   awayScore: 0,
   stats: {
