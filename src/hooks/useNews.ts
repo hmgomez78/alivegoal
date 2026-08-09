@@ -13,62 +13,62 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '8 ago. 2026';
+  const publicationDate = '9 ago. 2026';
 
   return [
     {
       id: 101,
-      title: 'MERCADO: Porque Højbjerg é uma opção monitorizada pelo Newcastle',
-      excerpt: 'O Newcastle explora uma possível abordagem por Pierre-Emile Højbjerg, segundo a atualização de mercado da Sky Sports. Analisamos como a experiência, a leitura defensiva e a capacidade de liderança do médio poderiam acrescentar controlo ao meio-campo.',
+      title: 'MERCADO: Pio Esposito é o novo alvo para o ataque do Arsenal',
+      excerpt: 'A ESPN coloca Arsenal e Manchester United entre os clubes atentos a Pio Esposito, avançado do Inter. Para o Arsenal, o perfil físico e a presença de área podem representar uma alternativa de futuro caso Gabriel Jesus saia; o preço apontado, porém, sugere uma operação exigente.',
       category: 'MERCADO',
       readTime: '5 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN',
     },
     {
       id: 102,
-      title: 'ANÁLISE TÁTICA: O empréstimo de Buonanotte e a oportunidade no Elche',
-      excerpt: 'Facundo Buonanotte junta-se ao Elche por empréstimo. O enquadramento na LaLiga pode oferecer ao criativo minutos entre linhas e responsabilidade ofensiva, num passo pensado para acelerar o desenvolvimento fora do ambiente competitivo do Brighton.',
+      title: 'ANÁLISE TÁTICA: O que Lewis Hall acrescentaria ao Manchester United',
+      excerpt: 'O Manchester United terá perguntado pelo lateral-esquerdo Lewis Hall, embora o Newcastle o considere inegociável. O interesse evidencia a procura por amplitude, progressão com bola e uma opção natural para a esquerda, numa zona onde as alternativas são limitadas.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN / Sky Sports',
     },
     {
       id: 103,
-      title: 'MERCADO: O investimento do Coventry em Yirenkyi sob análise',
-      excerpt: 'O Coventry fechou a chegada do médio ganês Yirenkyi por um negócio reportado em 26 milhões de libras. Contextualizamos o peso financeiro da operação e o perfil de um reforço chamado a aumentar energia, condução e progressão com bola.',
+      title: 'MERCADO: Ayyoub Bouaddi e a sucessão de Rodri no Manchester City',
+      excerpt: 'O Manchester City está, segundo a ESPN, na fase final das conversações por Ayyoub Bouaddi, do Lille. Aos 18 anos, o médio é visto como uma aposta de futuro para renovar a zona central, num contexto em que o futuro de Rodri domina o mercado do clube.',
       category: 'TRANSFERÊNCIAS',
       readTime: '6 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN',
     },
     {
       id: 104,
-      title: 'MERCADO: O que um empréstimo de Araújo poderia mudar no Liverpool',
-      excerpt: 'A atualização do Liverpool da Sky Sports coloca Ronald Araújo entre os temas em observação. Um empréstimo do central acrescentaria agressividade no duelo, jogo aéreo e cobertura preventiva, mas dependeria da viabilidade negocial com o Barcelona.',
+      title: 'MERCADO: Matteo Ruggeri pode equilibrar o corredor esquerdo do Aston Villa',
+      excerpt: 'O Aston Villa aproxima-se de um acordo por Matteo Ruggeri, lateral do Atlético de Madrid. O perfil do italiano combina profundidade ofensiva e disponibilidade física, podendo criar concorrência e abrir cenários para a composição do setor defensivo de Unai Emery.',
       category: 'MERCADO',
-      readTime: '7 min',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN',
     },
     {
       id: 105,
-      title: 'ANÁLISE: Fulham testa Garcia e Palacios num arranque exigente',
-      excerpt: 'Garcia e Palacios tiveram estreias marcadas por uma derrota do Fulham frente ao Crystal Palace. Mais do que o resultado isolado, a leitura passa pela adaptação ao ritmo da equipa e pelas alternativas que ambos podem trazer durante a época.',
+      title: 'ANÁLISE: Højbjerg como solução de experiência para o Newcastle',
+      excerpt: 'Pierre-Emile Højbjerg é apontado como alvo do Newcastle para reorganizar o meio-campo. A experiência do dinamarquês na Premier League e a disciplina sem bola poderiam oferecer uma resposta imediata a uma eventual necessidade de liderança e controlo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN / Footmercato',
     },
     {
       id: 106,
-      title: 'INSTITUCIONAL: A pressão sobre West Ham fora das quatro linhas',
-      excerpt: 'A agenda do West Ham também é dominada por uma atualização sobre David Sullivan e a possibilidade de assistir aos jogos apesar de aconselhamento em sentido contrário. A situação reforça como a estabilidade institucional pode condicionar a narrativa à volta do clube.',
-      category: 'INSTITUCIONAL',
+      title: 'MERCADO: Rafael Leão mantém o foco no AC Milan e na Europa',
+      excerpt: 'Rafael Leão não está a considerar uma mudança para a Saudi Pro League apesar de duas propostas avultadas, segundo a atualização de mercado da ESPN. A decisão preserva uma peça-chave do Milan e mantém o extremo português no centro da competição europeia.',
+      category: 'MERCADO',
       readTime: '4 min',
       date: publicationDate,
-      source: 'Sky Sports',
+      source: 'ESPN / Nicolò Schira',
     },
   ];
 }

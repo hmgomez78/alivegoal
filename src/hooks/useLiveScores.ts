@@ -44,39 +44,37 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (8 de agosto de 2026).
+// Equipas em destaque e com tips de apostas (9 de agosto de 2026).
 export const TODAYS_TIP_TEAMS = [
-  "Cambridge United",
-  "Barnet",
-  "Queens Park Rangers",
-  "Millwall",
-  "Avispa Fukuoka",
-  "Vissel Kobe",
-  "Kashiwa Reysol",
-  "Mito HollyHock",
-  "SV Darmstadt 98",
-  "Holstein Kiel",
-  "AFC Wimbledon",
-  "Newport County AFC",
+  "Cruzeiro",
+  "Mirassol",
+  "Bahia",
+  "Vasco da Gama",
+  "Palmeiras",
+  "Internacional",
+  "Red Bull Bragantino",
+  "Corinthians",
+  "Santos",
+  "Athletico Paranaense",
+  "Flamengo",
+  "Vitória",
 ];
 
 const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
 
-// Jogos de 8 de agosto de 2026 verificados na agenda da Sky Sports.
+// Jogos de 9 de agosto de 2026 verificados na agenda da ESPN.
 const fallbackMatches: LiveMatch[] = [
-  { id: 4201, homeTeam: "Cambridge United", awayTeam: "Barnet", homeScore: null, awayScore: null, minute: 0, status: "HOJE 13:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
-  { id: 4202, homeTeam: "Queens Park Rangers", awayTeam: "Millwall", homeScore: null, awayScore: null, minute: 0, status: "HOJE 14:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
-  { id: 4203, homeTeam: "AFC Wimbledon", awayTeam: "Newport County AFC", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
-  { id: 4204, homeTeam: "Barnsley", awayTeam: "Wigan Athletic", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Carabao Cup — 1.ª ronda", leagueId: 2021 },
-  { id: 4205, homeTeam: "Avispa Fukuoka", awayTeam: "Vissel Kobe", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "J1 League", leagueId: 2022 },
-  { id: 4206, homeTeam: "Kashiwa Reysol", awayTeam: "Mito HollyHock", homeScore: null, awayScore: null, minute: 0, status: "HOJE 11:00", league: "J1 League", leagueId: 2022 },
-  { id: 4207, homeTeam: "SV Darmstadt 98", awayTeam: "Holstein Kiel", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "2. Bundesliga", leagueId: 2023 },
-  { id: 4208, homeTeam: "1. FC Heidenheim 1846", awayTeam: "VfL Osnabruck", homeScore: null, awayScore: null, minute: 0, status: "HOJE 12:00", league: "2. Bundesliga", leagueId: 2023 },
+  { id: 4301, homeTeam: "Cruzeiro", awayTeam: "Mirassol", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:00", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 4302, homeTeam: "Bahia", awayTeam: "Vasco da Gama", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 4303, homeTeam: "Palmeiras", awayTeam: "Internacional", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 4304, homeTeam: "Red Bull Bragantino", awayTeam: "Corinthians", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 4305, homeTeam: "Santos", awayTeam: "Athletico Paranaense", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 4306, homeTeam: "Flamengo", awayTeam: "Vitória", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Brasileirão Série A", leagueId: 2025 },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Kashiwa Reysol",
-  awayTeam: "Mito HollyHock",
+  homeTeam: "Palmeiras",
+  awayTeam: "Internacional",
   homeScore: 0,
   awayScore: 0,
   stats: {
