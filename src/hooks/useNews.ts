@@ -13,63 +13,63 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '9 ago. 2026';
+  const publicationDate = '10 ago. 2026';
 
   return [
     {
       id: 101,
-      title: 'MERCADO: Pio Esposito é o novo alvo para o ataque do Arsenal',
-      excerpt: 'A ESPN coloca Arsenal e Manchester United entre os clubes atentos a Pio Esposito, avançado do Inter. Para o Arsenal, o perfil físico e a presença de área podem representar uma alternativa de futuro caso Gabriel Jesus saia; o preço apontado, porém, sugere uma operação exigente.',
-      category: 'MERCADO',
-      readTime: '5 min',
-      date: publicationDate,
-      source: 'ESPN',
-    },
-    {
-      id: 102,
-      title: 'ANÁLISE TÁTICA: O que Lewis Hall acrescentaria ao Manchester United',
-      excerpt: 'O Manchester United terá perguntado pelo lateral-esquerdo Lewis Hall, embora o Newcastle o considere inegociável. O interesse evidencia a procura por amplitude, progressão com bola e uma opção natural para a esquerda, numa zona onde as alternativas são limitadas.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
-      date: publicationDate,
-      source: 'ESPN / Sky Sports',
-    },
-    {
-      id: 103,
-      title: 'MERCADO: Ayyoub Bouaddi e a sucessão de Rodri no Manchester City',
-      excerpt: 'O Manchester City está, segundo a ESPN, na fase final das conversações por Ayyoub Bouaddi, do Lille. Aos 18 anos, o médio é visto como uma aposta de futuro para renovar a zona central, num contexto em que o futuro de Rodri domina o mercado do clube.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '6 min',
-      date: publicationDate,
-      source: 'ESPN',
-    },
-    {
-      id: 104,
-      title: 'MERCADO: Matteo Ruggeri pode equilibrar o corredor esquerdo do Aston Villa',
-      excerpt: 'O Aston Villa aproxima-se de um acordo por Matteo Ruggeri, lateral do Atlético de Madrid. O perfil do italiano combina profundidade ofensiva e disponibilidade física, podendo criar concorrência e abrir cenários para a composição do setor defensivo de Unai Emery.',
-      category: 'MERCADO',
-      readTime: '5 min',
-      date: publicationDate,
-      source: 'ESPN',
-    },
-    {
-      id: 105,
-      title: 'ANÁLISE: Højbjerg como solução de experiência para o Newcastle',
-      excerpt: 'Pierre-Emile Højbjerg é apontado como alvo do Newcastle para reorganizar o meio-campo. A experiência do dinamarquês na Premier League e a disciplina sem bola poderiam oferecer uma resposta imediata a uma eventual necessidade de liderança e controlo.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '5 min',
-      date: publicationDate,
-      source: 'ESPN / Footmercato',
-    },
-    {
-      id: 106,
-      title: 'MERCADO: Rafael Leão mantém o foco no AC Milan e na Europa',
-      excerpt: 'Rafael Leão não está a considerar uma mudança para a Saudi Pro League apesar de duas propostas avultadas, segundo a atualização de mercado da ESPN. A decisão preserva uma peça-chave do Milan e mantém o extremo português no centro da competição europeia.',
+      title: 'MERCADO: O impacto de Lucas Digne no regresso ao Paris Saint-Germain',
+      excerpt: 'Dez anos depois de ter deixado a capital francesa, Lucas Digne volta ao PSG. A transferência de £6M-£7M, após duas épocas de destaque no Aston Villa, oferece a Luis Enrique um perfil experiente para a rotação nos corredores laterais.',
       category: 'MERCADO',
       readTime: '4 min',
       date: publicationDate,
-      source: 'ESPN / Nicolò Schira',
+      source: 'The Guardian',
     },
+    {
+      id: 102,
+      title: 'ANÁLISE TÁTICA: O que a pré-temporada revelou sobre o Chelsea de Xabi Alonso',
+      excerpt: 'O empate a três golos com o Johor Darul Ta’zim evidenciou lacunas disciplinares e excesso de opções ofensivas no Chelsea. Com 41 jogadores no plantel, Xabi Alonso tem apenas duas semanas para definir a estrutura tática e equilibrar a equipa.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: publicationDate,
+      source: 'The Guardian',
+    },
+    {
+      id: 103,
+      title: 'MERCADO: Aston Villa estuda empréstimo do jovem Endrick',
+      excerpt: 'Com a forte concorrência no ataque do Real Madrid após as contratações de verão, o Aston Villa surge como um dos interessados no empréstimo de Endrick. O modelo de Unai Emery pode oferecer o contexto competitivo que o avançado procura na Premier League.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '5 min',
+      date: publicationDate,
+      source: 'BBC Sport / AS',
+    },
+    {
+      id: 104,
+      title: 'MERCADO: O Nottingham Forest aposta forte na defesa com Ousmane Diomande',
+      excerpt: 'A iminente contratação de Ousmane Diomande ao Sporting CP por €40M sublinha a ambição do Nottingham Forest. O central marfinense é visto como a peça-chave para o sistema de três defesas desenhado por Oliver Glasner.',
+      category: 'MERCADO',
+      readTime: '5 min',
+      date: publicationDate,
+      source: 'ESPN / The Athletic',
+    },
+    {
+      id: 105,
+      title: 'MERCADO: Como e a atração de Cesc Fàbregas convencem Trevoh Chalobah',
+      excerpt: 'A mudança de Trevoh Chalobah para o Como, por £25.7M, ilustra o poder de atração do projeto de Cesc Fàbregas. O defesa inglês procura relançar a carreira na Serie A, assumindo-se como um dos líderes da equipa recém-promovida.',
+      category: 'MERCADO',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'The Guardian',
+    },
+    {
+      id: 106,
+      title: 'ANÁLISE TÁTICA: As dinâmicas ofensivas do Manchester City na Ásia',
+      excerpt: 'Apesar de algumas oscilações defensivas, Enzo Maresca retira notas positivas da digressão asiática. As combinações entre Antoine Semenyo e Omar Marmoush, bem como o impacto de Savinho, indicam que o City manterá a imprevisibilidade nos corredores.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
+      date: publicationDate,
+      source: 'The Guardian',
+    }
   ];
 }
 
@@ -78,11 +78,13 @@ export function useNews() {
   const [loading, setLoading] = useState(true);
 
   const fetchNews = async () => {
-    setLoading(true);
     try {
+      setLoading(true);
+      // Simulação de delay
+      await new Promise(resolve => setTimeout(resolve, 600));
       setNews(getFallbackNews());
     } catch (error) {
-      console.error('Error loading contextual news:', error);
+      console.error('Error fetching news:', error);
       setNews(getFallbackNews());
     } finally {
       setLoading(false);

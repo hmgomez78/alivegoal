@@ -21,151 +21,152 @@ export interface Tip {
 }
 
 const RESPONSIBLE_GAMBLING_NOTE =
-  'Conteúdo informativo para maiores de 18 anos. Aposte apenas o que pode perder; as odds de referência foram consultadas em 09/08/2026, podem mudar ou ser suspensas antes do pontapé de saída e não constituem aconselhamento garantido.';
+  'Conteúdo informativo para maiores de 18 anos. Aposte apenas o que pode perder; as odds de referência foram consultadas em 10/08/2026, podem mudar ou ser suspensas antes do pontapé de saída e não constituem aconselhamento garantido.';
 
 function getFallbackTips(): Tip[] {
-  const dateStr = '09/08/2026';
+  const dateStr = '10/08/2026';
 
   return [
     {
-      id: 8301,
-      betNumber: '8301',
+      id: 8401,
+      betNumber: '8401',
       betType: 'SINGLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Cruzeiro',
-      awayTeam: 'Mirassol',
+      league: 'Carabao Cup',
+      homeTeam: 'Plymouth',
+      awayTeam: 'Exeter',
       date: dateStr,
-      time: '10:00',
-      prediction: 'Vitória Cruzeiro',
-      confidence: 58,
-      odds: 1.72,
+      time: '20:00',
+      prediction: 'Vitória Plymouth',
+      confidence: 70,
+      odds: 1.36,
       market: 'Resultado Final',
-      winner: 'Cruzeiro',
-      analysis: `O Cruzeiro é favorito em casa contra o Mirassol. A referência de 1.72 equivale a uma probabilidade implícita próxima de 58%, antes da margem da casa, e é coerente com a linha -150 apresentada na agenda da ESPN. Fonte da odd: Tips.GG; calendário: ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 58,
-      drawPercent: 25,
-      awayPercent: 17,
+      winner: 'Plymouth',
+      analysis: `O Plymouth Argyle recebe o Exeter City como claro favorito nesta eliminatória da Taça da Liga. A cotação de 1.36 (4/11) na Sporting Life reflete o favoritismo caseiro, com a linha da ESPN a apontar -235. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 70,
+      drawPercent: 20,
+      awayPercent: 10,
     },
     {
-      id: 8302,
-      betNumber: '8302',
+      id: 8402,
+      betNumber: '8402',
       betType: 'SINGLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Palmeiras',
-      awayTeam: 'Internacional',
+      league: 'Primeira Liga',
+      homeTeam: 'Santa Clara',
+      awayTeam: 'Nacional',
       date: dateStr,
-      time: '15:00',
-      prediction: 'Vitória Palmeiras',
-      confidence: 64,
-      odds: 1.57,
+      time: '20:15',
+      prediction: 'Vitória Santa Clara',
+      confidence: 52,
+      odds: 1.83,
       market: 'Resultado Final',
-      winner: 'Palmeiras',
-      analysis: `O Palmeiras surge como o favorito mais claro da jornada entre as seleções publicadas. A linha -175 disponível na agenda da ESPN corresponde a cerca de 1.57 em formato decimal e a uma probabilidade implícita de 64%. Mesmo em casa, continua a existir risco de empate ou surpresa visitante. Fonte da odd e do calendário: ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 64,
-      drawPercent: 22,
-      awayPercent: 14,
-    },
-    {
-      id: 8303,
-      betNumber: '8303',
-      betType: 'SINGLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Bahia',
-      awayTeam: 'Vasco da Gama',
-      date: dateStr,
-      time: '15:00',
-      prediction: 'Vitória Bahia',
-      confidence: 51,
-      odds: 1.95,
-      market: 'Resultado Final',
-      winner: 'Bahia',
-      analysis: `O Bahia joga na Arena Fonte Nova e a linha -105 listada pela ESPN traduz-se em aproximadamente 1.95 decimal, com probabilidade implícita próxima de 51%. É uma seleção de equilíbrio moderado, não uma aposta de elevada segurança; a cotação deixa espaço material para empate ou vitória do Vasco. Fonte da odd e do calendário: ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 51,
-      drawPercent: 27,
-      awayPercent: 22,
-    },
-    {
-      id: 8304,
-      betNumber: '8304',
-      betType: 'SINGLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Santos',
-      awayTeam: 'Athletico Paranaense',
-      date: dateStr,
-      time: '17:30',
-      prediction: 'Vitória Santos',
-      confidence: 47,
-      odds: 2.12,
-      market: 'Resultado Final',
-      winner: 'Santos',
-      analysis: `O Santos é apontado como favorito marginal no mercado 1X2 para receber o Athletico Paranaense, com +112 (cerca de 2.12) e uma probabilidade implícita de 47%. A cotação evidencia um encontro competitivo, pelo que esta é uma seleção de risco mais elevado do que Cruzeiro ou Palmeiras. Fonte da odd: SportsGambler; calendário: ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 47,
+      winner: 'Santa Clara',
+      analysis: `No embate insular da Primeira Liga, o Santa Clara tem o fator casa a seu favor. A odd de 1.83 (5/6) sinaliza uma probabilidade implícita em torno dos 54%, sendo uma opção com valor interessante. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 52,
       drawPercent: 28,
-      awayPercent: 25,
+      awayPercent: 20,
     },
     {
-      id: 8305,
-      betNumber: '8305',
+      id: 8403,
+      betNumber: '8403',
       betType: 'SINGLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Flamengo',
-      awayTeam: 'Vitória',
+      league: 'Allsvenskan',
+      homeTeam: 'Sirius',
+      awayTeam: 'Brommapojkarna',
       date: dateStr,
-      time: '18:30',
-      prediction: 'Flamengo -1.0 Handicap Asiático',
-      confidence: 54,
-      odds: 1.70,
-      market: 'Handicap Asiático',
-      winner: 'Flamengo',
-      analysis: `O Flamengo recebe o Vitória no Maracanã e a linha -1.0 oferece devolução da aposta se vencer por exatamente um golo. A odd de referência de 1.70 foi publicada para esse handicap; a seleção vence integralmente apenas com triunfo por dois ou mais golos. Fonte da odd: RatingBet; calendário: ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 54,
-      drawPercent: 0,
-      awayPercent: 46,
+      time: '18:00',
+      prediction: 'Vitória Sirius',
+      confidence: 75,
+      odds: 1.29,
+      market: 'Resultado Final',
+      winner: 'Sirius',
+      analysis: `O Sirius (13V-2E-0D em casa segundo os registos da ESPN) é fortemente favorito contra o Brommapojkarna. A odd de 1.29 (2/7) espelha esta superioridade e a consistência da equipa da casa. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 75,
+      drawPercent: 15,
+      awayPercent: 10,
     },
     {
-      id: 8306,
-      betNumber: '8306',
-      betType: 'DOUBLE',
-      league: 'Brasileirão Série A',
-      homeTeam: 'Cruzeiro + Palmeiras',
-      awayTeam: 'Mirassol + Internacional',
+      id: 8404,
+      betNumber: '8404',
+      betType: 'SINGLE',
+      league: 'Allsvenskan',
+      homeTeam: 'Västerås',
+      awayTeam: 'Djurgården',
       date: dateStr,
-      time: 'Vários',
-      prediction: 'Cruzeiro vence + Palmeiras vence',
-      confidence: 37,
-      odds: 2.70,
-      market: 'Dupla Combinada',
-      winner: '',
-      analysis: `A dupla combina as vitórias de Cruzeiro (1.72) e Palmeiras (1.57), produzindo uma odd combinada aproximada de 2.70. As duas equipas são favoritas nos respetivos mercados, mas a acumuladora perde se uma delas não vencer; por isso, o risco é superior ao de cada seleção simples. Fontes das odds: Tips.GG e ESPN. ${RESPONSIBLE_GAMBLING_NOTE}`,
-      homePercent: 0,
-      drawPercent: 0,
-      awayPercent: 0,
+      time: '18:00',
+      prediction: 'Vitória Djurgården',
+      confidence: 55,
+      odds: 1.70,
+      market: 'Resultado Final',
+      winner: 'Djurgården',
+      analysis: `Apesar de jogar fora, o Djurgården defronta um Västerås com dificuldades de regularidade. A odd de 1.70 (7/10) representa um risco calculado com base na superioridade técnica dos visitantes. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 25,
+      drawPercent: 20,
+      awayPercent: 55,
     },
+    {
+      id: 8405,
+      betNumber: '8405',
+      betType: 'SINGLE',
+      league: 'Brasileirão Série B',
+      homeTeam: 'Goiás',
+      awayTeam: 'Londrina',
+      date: dateStr,
+      time: '22:30',
+      prediction: 'Vitória Goiás',
+      confidence: 54,
+      odds: 1.77,
+      market: 'Resultado Final',
+      winner: 'Goiás',
+      analysis: `O Goiás recebe o Londrina e procura impor o fator casa na Série B. A linha da ESPN em -130 (aprox. 1.77) confere favoritismo à equipa da casa, numa liga tradicionalmente forte para os visitados. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 54,
+      drawPercent: 28,
+      awayPercent: 18,
+    },
+    {
+      id: 8406,
+      betNumber: '8406',
+      betType: 'DOUBLE',
+      league: 'Múltipla',
+      homeTeam: 'Plymouth + Sirius',
+      awayTeam: 'Dupla',
+      date: dateStr,
+      time: '18:00',
+      prediction: 'Dupla: Plymouth & Sirius',
+      confidence: 65,
+      odds: 1.75,
+      market: 'Acumulador (1X2)',
+      winner: 'Ambos',
+      analysis: `Combinar as vitórias de Plymouth (1.36) e Sirius (1.29) resulta numa odd acumulada de aproximadamente 1.75. Ambas as equipas são fortes favoritas nos respetivos jogos em casa, criando uma aposta dupla sólida. ${RESPONSIBLE_GAMBLING_NOTE}`,
+      homePercent: 65,
+      drawPercent: 0,
+      awayPercent: 35,
+    }
   ];
 }
 
-function fallbackResponse() {
+export default function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
+
   const tips = getFallbackTips();
-  return {
-    source: 'curated-pre-match',
+
+  return res.status(200).json({
+    source: "fallback",
     count: tips.length,
     updated: new Date().toISOString(),
     items: tips,
-    tips,
-  };
-}
-
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=300');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  return res.status(200).json(fallbackResponse());
+    tips: tips
+  });
 }

@@ -13,95 +13,102 @@ export interface TrendingNews {
   engagement: string;
 }
 
-// Conteúdo editorial verificado e atualizado em 09/08/2026.
+// Conteúdo editorial verificado e atualizado em 10/08/2026.
 const CURATED_TRENDING: TrendingNews[] = [
   {
     id: "t1",
-    title: "SCANDAL: Infantino nega alegações sobre pagamento da UEFA",
-    title_en: "SCANDAL: Infantino denies allegations over UEFA payment",
-    summary: "Gianni Infantino negou de forma categórica alegações de que a UEFA efetuou um pagamento de saída a uma antiga colaboradora com quem teria mantido uma relação durante o seu período como secretário-geral. A UEFA confirmou que houve um pagamento de saída, mas a FIFA classificou quaisquer alegações de conduta imprópria como falsas.",
-    summary_en: "Gianni Infantino has categorically denied allegations that UEFA made a departure payment to a former employee with whom he was alleged to have had a relationship during his time as general secretary. UEFA confirmed that a departure payment was made, while FIFA described any suggestion of improper conduct as untrue.",
-    tag: "SCANDAL",
-    source: "The Guardian / Al Jazeera",
-    url: "https://www.aljazeera.com/sports/2026/8/8/fifa-president-gianni-infantino-denies-claims-uefa-paid-off-alleged-lover",
-    time: "09/08/2026",
-    engagement: "~52.3M estimado",
+    title: "TRANSFER: Mohamed Salah junta-se ao Trabzonspor em mudança histórica",
+    title_en: "TRANSFER: Mohamed Salah joins Trabzonspor in historic move",
+    summary: "O antigo avançado do Liverpool assinou por duas épocas com o Trabzonspor, rejeitando opções em Istambul. O acordo inclui salário-base de 10 milhões de euros e 7 milhões de prémio de assinatura anual. O clube vendeu mais de 17 mil lugares anuais em 24 horas.",
+    summary_en: "The former Liverpool striker has signed a two-year deal with Trabzonspor, rejecting Istanbul options. The agreement includes a €10m base salary and €7m annual signing bonus. The club sold over 17,000 season tickets within 24 hours.",
+    tag: "TRANSFER",
+    source: "The Guardian",
+    url: "https://www.theguardian.com/football/2026/aug/09/mohamed-salah-trabzonspor-turkish-rivals-istanbul",
+    time: "10/08/2026",
+    engagement: "~85.4M estimado",
   },
   {
     id: "t2",
-    title: "BREAKING: Arsenal confirma Bruno Guimarães por £75 milhões",
-    title_en: "BREAKING: Arsenal confirm Bruno Guimaraes in £75m deal",
-    summary: "O Arsenal confirmou a contratação de Bruno Guimarães ao Newcastle United. Segundo fontes da ESPN, o valor fixo é de 75 milhões de libras e o internacional brasileiro assinou por quatro épocas, com opção por mais uma.",
-    summary_en: "Arsenal have confirmed the signing of Bruno Guimaraes from Newcastle United. According to ESPN sources, the fixed fee is £75m and the Brazil international has signed a four-year deal with an option for a further season.",
-    tag: "BREAKING",
-    source: "ESPN",
-    url: "https://www.espn.com/soccer/story/_/id/49559004/transfer-rumors-news-arsenal-manchester-united-inter-milan-pio-esposito",
-    time: "09/08/2026",
-    engagement: "~48.1M estimado",
+    title: "SCANDAL: Presidente da La Liga exige saída de Infantino da FIFA",
+    title_en: "SCANDAL: La Liga president demands Infantino's exit from FIFA",
+    summary: "Javier Tebas acusou Gianni Infantino de destruir a essência do futebol e declarou o fim da sua era na FIFA. As declarações aumentam a pressão europeia sobre o presidente da FIFA, com a UEFA a ponderar um possível boicote aos torneios.",
+    summary_en: "Javier Tebas has accused Gianni Infantino of destroying the essence of football, declaring his era at FIFA is over. The remarks add to mounting European pressure on the FIFA president, with UEFA considering a possible boycott of tournaments.",
+    tag: "SCANDAL",
+    source: "The Guardian",
+    url: "https://www.theguardian.com/football/2026/aug/09/la-liga-president-javier-tebas-gianni-infantino-fifa-uefa",
+    time: "10/08/2026",
+    engagement: "~62.1M estimado",
   },
   {
     id: "t3",
-    title: "TRANSFER: Barcelona sobe a oferta por Rodri para £51,4 milhões",
-    title_en: "TRANSFER: Barcelona raise Rodri offer to £51.4m",
-    summary: "O Barcelona aumentou para 51,4 milhões de libras a proposta por Rodri e continua em conversações com o Manchester City. O clube inglês já recusou uma oferta anterior, pelo que o processo continua dependente de acordo entre os clubes.",
-    summary_en: "Barcelona have raised their offer for Rodri to £51.4m and remain in talks with Manchester City. The English club already rejected an earlier bid, so the move still depends on an agreement between the clubs.",
-    tag: "TRANSFER",
-    source: "BBC Sport",
-    url: "https://www.bbc.com/sport/football/articles/c05qvj0yj46o",
-    time: "09/08/2026",
-    engagement: "~44.8M estimado",
+    title: "HOT: Bruno Guimarães apresentado no Arsenal por £75 milhões",
+    title_en: "HOT: Bruno Guimarães unveiled at Arsenal in £75m deal",
+    summary: "Mikel Arteta espera que Bruno Guimarães 'acenda' o Arsenal após a sua transferência do Newcastle. O médio brasileiro foi apresentado antes da derrota no Emirates Cup, sendo descrito pelo treinador como o 'guerreiro' que faltava ao meio-campo.",
+    summary_en: "Mikel Arteta expects Bruno Guimarães to 'ignite' Arsenal following his £75m move from Newcastle. The Brazilian midfielder was unveiled before their Emirates Cup defeat, described by the manager as the missing 'warrior' in midfield.",
+    tag: "HOT",
+    source: "The Guardian",
+    url: "https://www.theguardian.com/football/2026/aug/09/arteta-guimaraes-ignite-arsenal-maresca-manchester-city",
+    time: "10/08/2026",
+    engagement: "~55.8M estimado",
   },
   {
     id: "t4",
-    title: "HOT: Liverpool prepara empréstimo de Ronald Araújo",
-    title_en: "HOT: Liverpool prepare Ronald Araujo loan move",
-    summary: "O Liverpool está perto de assegurar Ronald Araújo por empréstimo de uma época junto do Barcelona, segundo fontes da ESPN. A operação inclui uma opção de compra, mas deve ser tratada como acordo em desenvolvimento enquanto não houver anúncio oficial.",
-    summary_en: "Liverpool are close to securing Ronald Araujo on a season-long loan from Barcelona, according to ESPN sources. The move includes an option to make the transfer permanent, but should be treated as a developing agreement until officially announced.",
-    tag: "HOT",
-    source: "ESPN",
-    url: "https://www.espn.com/soccer/story/_/id/49559004/transfer-rumors-news-arsenal-manchester-united-inter-milan-pio-esposito",
-    time: "09/08/2026",
-    engagement: "~41.5M estimado",
+    title: "TRANSFER: Fulham contrata Shea Charles por £30 milhões",
+    title_en: "TRANSFER: Fulham sign Shea Charles for £30 million",
+    summary: "O Fulham assegurou a contratação de Shea Charles ao Southampton, numa operação que pode atingir 30 milhões de libras. O médio norte-irlandês assinará por cinco anos e deverá ser a âncora do meio-campo da equipa de Álvaro Arbeloa.",
+    summary_en: "Fulham have secured the signing of Shea Charles from Southampton in a deal worth up to £30m. The Northern Ireland midfielder will sign a five-year contract and is expected to anchor Álvaro Arbeloa's midfield.",
+    tag: "TRANSFER",
+    source: "The Guardian",
+    url: "https://www.theguardian.com/football/2026/aug/09/transfer-roundup-fulham-agree-deal-shea-charles-southampton-trevoh-chalobah-como",
+    time: "10/08/2026",
+    engagement: "~34.2M estimado",
   },
   {
     id: "t5",
-    title: "TRANSFER: Ferran Torres pede ao Barcelona para negociar com o PSG",
-    title_en: "TRANSFER: Ferran Torres asks Barcelona to negotiate with PSG",
-    summary: "Ferran Torres informou o Barcelona de que pretende juntar-se ao Paris Saint-Germain, depois de alegadamente ter chegado a entendimento pessoal com o campeão europeu. A ESPN indica que o clube catalão não deverá bloquear a saída se surgir um acordo financeiro.",
-    summary_en: "Ferran Torres has told Barcelona that he wants to join Paris Saint-Germain after reportedly agreeing personal terms with the European champions. ESPN reports that the Catalan club are not expected to stand in his way if a financial agreement is reached.",
-    tag: "TRANSFER",
-    source: "ESPN",
-    url: "https://www.espn.com/soccer/story/_/id/49559004/transfer-rumors-news-arsenal-manchester-united-inter-milan-pio-esposito",
-    time: "09/08/2026",
-    engagement: "~36.2M estimado",
+    title: "BREAKING: Mourinho confessa que assinou pelo Man Utd em 2013",
+    title_en: "BREAKING: Mourinho admits he signed for Man Utd in 2013",
+    summary: "José Mourinho revelou ter assinado contrato para suceder a Sir Alex Ferguson no Manchester United em 2013, antes de recuar em lágrimas para regressar ao Chelsea. Ferguson confirmou a versão no novo documentário da Netflix.",
+    summary_en: "José Mourinho has revealed he signed a contract to succeed Sir Alex Ferguson at Manchester United in 2013, before tearfully backing out to return to Chelsea. Ferguson confirmed the account in a new Netflix documentary.",
+    tag: "BREAKING",
+    source: "The Guardian",
+    url: "https://www.theguardian.com/football/2026/aug/10/jose-mourinho-signed-contract-succeed-alex-ferguson-manchester-united-2013-netflix",
+    time: "10/08/2026",
+    engagement: "~91.5M estimado",
   },
   {
     id: "t6",
-    title: "HOT: Sergi Roberto assina pelos LA Galaxy até 2028",
-    title_en: "HOT: Sergi Roberto signs for LA Galaxy through 2028",
-    summary: "O LA Galaxy anunciou a contratação de Sergi Roberto, ex-Barcelona e Como, como jogador livre. O médio espanhol assinou até ao final de 2027-28, com opção para 2028-29, acrescentando experiência europeia a uma equipa que procura recuperar terreno na MLS.",
-    summary_en: "LA Galaxy have announced the signing of Sergi Roberto, formerly of Barcelona and Como, as a free agent. The Spanish midfielder signed through the end of 2027-28 with an option for 2028-29, adding European experience to a side aiming to regain ground in MLS.",
+    title: "HOT: Barcelona prepara nova ofensiva por Rodri",
+    title_en: "HOT: Barcelona prepare fresh approach for Rodri",
+    summary: "O Barcelona está a preparar uma nova oferta por Rodri. Segundo a ESPN e fontes do mercado, o médio espanhol está recetivo a deixar o Manchester City caso o clube catalão apresente os valores exigidos pelos campeões ingleses.",
+    summary_en: "Barcelona are preparing a fresh bid for Rodri. According to ESPN and market sources, the Spanish midfielder is open to leaving Manchester City if the Catalan club meets the valuation demanded by the English champions.",
     tag: "HOT",
     source: "ESPN",
-    url: "https://www.espn.com/soccer/story/_/id/49559004/transfer-rumors-news-arsenal-manchester-united-inter-milan-pio-esposito",
-    time: "09/08/2026",
-    engagement: "~28.4M estimado",
-  },
+    url: "https://www.espn.com/soccer/story/_/id/49566333/transfer-rumors-news-barcelona-step-rodri-chase-man-city",
+    time: "10/08/2026",
+    engagement: "~72.3M estimado",
+  }
 ];
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-  res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=600");
+export default function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
   }
+
+  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
 
   return res.status(200).json({
     source: "curated",
     count: CURATED_TRENDING.length,
     updated: new Date().toISOString(),
-    items: CURATED_TRENDING,
+    items: CURATED_TRENDING
   });
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export interface LiveMatch {
   id: number;
@@ -44,37 +44,35 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (9 de agosto de 2026).
+// Equipas em destaque e com tips de apostas (10 de agosto de 2026).
 export const TODAYS_TIP_TEAMS = [
-  "Cruzeiro",
-  "Mirassol",
-  "Bahia",
-  "Vasco da Gama",
-  "Palmeiras",
-  "Internacional",
-  "Red Bull Bragantino",
-  "Corinthians",
-  "Santos",
-  "Athletico Paranaense",
-  "Flamengo",
-  "Vitória",
+  "Plymouth",
+  "Exeter",
+  "Santa Clara",
+  "Nacional",
+  "Silkeborg",
+  "OB",
+  "Sirius",
+  "Brommapojkarna",
+  "Västerås",
+  "Djurgården",
+  "Goiás",
+  "Londrina"
 ];
 
-const TODAYS_FEATURED_TEAMS = TODAYS_TIP_TEAMS;
-
-// Jogos de 9 de agosto de 2026 verificados na agenda da ESPN.
+// 10 de agosto de 2026
 const fallbackMatches: LiveMatch[] = [
-  { id: 4301, homeTeam: "Cruzeiro", awayTeam: "Mirassol", homeScore: null, awayScore: null, minute: 0, status: "HOJE 10:00", league: "Brasileirão Série A", leagueId: 2025 },
-  { id: 4302, homeTeam: "Bahia", awayTeam: "Vasco da Gama", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Brasileirão Série A", leagueId: 2025 },
-  { id: 4303, homeTeam: "Palmeiras", awayTeam: "Internacional", homeScore: null, awayScore: null, minute: 0, status: "HOJE 15:00", league: "Brasileirão Série A", leagueId: 2025 },
-  { id: 4304, homeTeam: "Red Bull Bragantino", awayTeam: "Corinthians", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Brasileirão Série A", leagueId: 2025 },
-  { id: 4305, homeTeam: "Santos", awayTeam: "Athletico Paranaense", homeScore: null, awayScore: null, minute: 0, status: "HOJE 17:30", league: "Brasileirão Série A", leagueId: 2025 },
-  { id: 4306, homeTeam: "Flamengo", awayTeam: "Vitória", homeScore: null, awayScore: null, minute: 0, status: "HOJE 18:30", league: "Brasileirão Série A", leagueId: 2025 },
+  { id: 9001, homeTeam: 'Plymouth', awayTeam: 'Exeter', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Carabao Cup' },
+  { id: 9002, homeTeam: 'Santa Clara', awayTeam: 'Nacional', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Primeira Liga' },
+  { id: 9003, homeTeam: 'Silkeborg', awayTeam: 'OB', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Superliga' },
+  { id: 9004, homeTeam: 'Sirius', awayTeam: 'Brommapojkarna', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
+  { id: 9005, homeTeam: 'Västerås', awayTeam: 'Djurgården', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
+  { id: 9006, homeTeam: 'Goiás', awayTeam: 'Londrina', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:30', league: 'Brasileirão Série B' },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: "Palmeiras",
-  awayTeam: "Internacional",
+  homeTeam: 'Santa Clara',
+  awayTeam: 'Nacional',
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -82,58 +80,52 @@ const fallbackFeatured: FeaturedMatchData = {
     shots: [0, 0],
     shotsOnTarget: [0, 0],
     corners: [0, 0],
-    fouls: [0, 0],
-  },
+    fouls: [0, 0]
+  }
 };
 
 export function useLiveScores() {
   const [matches, setMatches] = useState<LiveMatch[]>([]);
-  const [featured, setFeatured] = useState<FeaturedMatchData | null>(null);
+  const [featuredMatch, setFeaturedMatch] = useState<FeaturedMatchData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const fetchScores = async () => {
+  const fetchScores = useCallback(async () => {
     try {
-      const apiKey = process.env.NEXT_PUBLIC_FOOTBALL_DATA_API_KEY;
-      if (!apiKey) {
-        console.warn("No API key found, using fallback live scores.");
+      const API_KEY = process.env.NEXT_PUBLIC_FOOTBALL_DATA_API_KEY;
+      if (!API_KEY) {
         setMatches(fallbackMatches);
-        setFeatured(fallbackFeatured);
+        setFeaturedMatch(fallbackFeatured);
         setLoading(false);
         return;
       }
 
-      const response = await fetch("/api/proxy-football-data?endpoint=matches", {
-        headers: {
-          "X-Auth-Token": apiKey,
-        },
+      const response = await fetch('/api/football-data', {
+        headers: { 'X-Auth-Token': API_KEY }
       });
 
       if (!response.ok) {
-        throw new Error(`API returned ${response.status}`);
+        throw new Error('API request failed');
       }
 
-      const data = (await response.json()) as FootballDataResponse;
+      const data: FootballDataResponse = await response.json();
 
       if (!data.matches || data.matches.length === 0) {
         setMatches(fallbackMatches);
-        setFeatured(fallbackFeatured);
+        setFeaturedMatch(fallbackFeatured);
         setLoading(false);
         return;
       }
 
-      const mappedMatches: LiveMatch[] = data.matches.map((m) => {
-        let statusStr = "HOJE";
-        let minute = 0;
-
-        if (m.status === "IN_PLAY" || m.status === "PAUSED") {
-          statusStr = "AO VIVO";
-          minute = 45;
-        } else if (m.status === "FINISHED") {
-          statusStr = "FIM";
-          minute = 90;
-        } else if (m.status === "TIMED" || m.status === "SCHEDULED") {
-          const dateObj = new Date(m.utcDate);
-          statusStr = `HOJE ${dateObj.getHours().toString().padStart(2, "0")}:${dateObj.getMinutes().toString().padStart(2, "0")}`;
+      const liveMatches: LiveMatch[] = data.matches.map(m => {
+        let status = 'AGENDADO';
+        if (m.status === 'IN_PLAY' || m.status === 'PAUSED') {
+          status = 'AO VIVO';
+        } else if (m.status === 'FINISHED') {
+          status = 'TERMINADO';
+        } else if (m.status === 'TIMED' || m.status === 'SCHEDULED') {
+          const date = new Date(m.utcDate);
+          status = `HOJE ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
         }
 
         return {
@@ -142,63 +134,63 @@ export function useLiveScores() {
           awayTeam: m.awayTeam.shortName || m.awayTeam.name,
           homeScore: m.score?.fullTime?.home ?? null,
           awayScore: m.score?.fullTime?.away ?? null,
-          minute,
-          status: statusStr,
-          league: m.competition?.name || "Competição",
-          leagueId: m.competition?.id,
+          minute: 0,
+          status,
+          league: m.competition?.name || 'Competição',
+          leagueId: m.competition?.id
         };
       });
 
-      mappedMatches.sort((a, b) => {
-        const aIsFeatured = TODAYS_FEATURED_TEAMS.includes(a.homeTeam) || TODAYS_FEATURED_TEAMS.includes(a.awayTeam);
-        const bIsFeatured = TODAYS_FEATURED_TEAMS.includes(b.homeTeam) || TODAYS_FEATURED_TEAMS.includes(b.awayTeam);
+      const featuredTeamsSet = new Set(TODAYS_TIP_TEAMS.map(t => t.toLowerCase()));
+
+      const sortedMatches = liveMatches.sort((a, b) => {
+        const aIsFeatured = featuredTeamsSet.has(a.homeTeam.toLowerCase()) || featuredTeamsSet.has(a.awayTeam.toLowerCase());
+        const bIsFeatured = featuredTeamsSet.has(b.homeTeam.toLowerCase()) || featuredTeamsSet.has(b.awayTeam.toLowerCase());
 
         if (aIsFeatured && !bIsFeatured) return -1;
         if (!aIsFeatured && bIsFeatured) return 1;
-        if (a.status === "AO VIVO" && b.status !== "AO VIVO") return -1;
-        if (a.status !== "AO VIVO" && b.status === "AO VIVO") return 1;
         return 0;
       });
 
-      setMatches(mappedMatches);
+      setMatches(sortedMatches.length > 0 ? sortedMatches : fallbackMatches);
 
-      const liveFeatured = mappedMatches.find((m) => m.status === "AO VIVO" && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
-      const upcomingFeatured = mappedMatches.find((m) => m.status.startsWith("HOJE") && (TODAYS_FEATURED_TEAMS.includes(m.homeTeam) || TODAYS_FEATURED_TEAMS.includes(m.awayTeam)));
-      const bestMatch = liveFeatured || upcomingFeatured || mappedMatches[0];
+      const activeMatch = sortedMatches.find(m => m.status === 'AO VIVO') ||
+                          sortedMatches.find(m => m.status.startsWith('HOJE')) ||
+                          sortedMatches[0];
 
-      if (bestMatch) {
-        setFeatured({
-          homeTeam: bestMatch.homeTeam,
-          awayTeam: bestMatch.awayTeam,
-          homeScore: bestMatch.homeScore || 0,
-          awayScore: bestMatch.awayScore || 0,
+      if (activeMatch) {
+        setFeaturedMatch({
+          homeTeam: activeMatch.homeTeam,
+          awayTeam: activeMatch.awayTeam,
+          homeScore: activeMatch.homeScore || 0,
+          awayScore: activeMatch.awayScore || 0,
           stats: {
             possession: [50, 50],
             shots: [0, 0],
             shotsOnTarget: [0, 0],
             corners: [0, 0],
-            fouls: [0, 0],
-          },
+            fouls: [0, 0]
+          }
         });
       } else {
-        setFeatured(fallbackFeatured);
+        setFeaturedMatch(fallbackFeatured);
       }
-    } catch (error) {
-      console.error("Error fetching live scores:", error);
+
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching live scores:', err);
       setMatches(fallbackMatches);
-      setFeatured(fallbackFeatured);
+      setFeaturedMatch(fallbackFeatured);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchScores();
     const interval = setInterval(fetchScores, 60000);
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchScores]);
 
-  const isLive = matches.some((match) => match.status === "AO VIVO");
-
-  return { matches, featured, loading, isLive, refresh: fetchScores };
+  return { matches, featuredMatch, loading, error, refresh: fetchScores };
 }
