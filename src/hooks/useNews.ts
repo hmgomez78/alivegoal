@@ -13,62 +13,62 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '10 ago. 2026';
+  const publicationDate = '11 ago. 2026';
 
   return [
     {
       id: 101,
-      title: 'MERCADO: O impacto de Lucas Digne no regresso ao Paris Saint-Germain',
-      excerpt: 'Dez anos depois de ter deixado a capital francesa, Lucas Digne volta ao PSG. A transferência de £6M-£7M, após duas épocas de destaque no Aston Villa, oferece a Luis Enrique um perfil experiente para a rotação nos corredores laterais.',
+      title: 'MERCADO: O impacto da troca entre Brennan Johnson e Dwight McNeil',
+      excerpt: 'A rara troca direta entre jogadores na Premier League levanta questões sobre o planeamento a longo prazo. Analisamos como as características de Johnson e McNeil se adaptam aos novos sistemas táticos e o que isto significa para o mercado interno inglês.',
       category: 'MERCADO',
-      readTime: '4 min',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'ESPN',
     },
     {
       id: 102,
-      title: 'ANÁLISE TÁTICA: O que a pré-temporada revelou sobre o Chelsea de Xabi Alonso',
-      excerpt: 'O empate a três golos com o Johor Darul Ta’zim evidenciou lacunas disciplinares e excesso de opções ofensivas no Chelsea. Com 41 jogadores no plantel, Xabi Alonso tem apenas duas semanas para definir a estrutura tática e equilibrar a equipa.',
+      title: 'ANÁLISE TÁTICA: O encaixe de Ayyoub Bouaddi no esquema de Pep Guardiola',
+      excerpt: 'O Manchester City assegurou um dos médios mais promissores da Europa. Dissecamos o perfil de Ayyoub Bouaddi e como a sua capacidade de retenção de bola sob pressão o torna o sucessor natural no meio-campo dos "Cityzens".',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'BBC Sport',
     },
     {
       id: 103,
-      title: 'MERCADO: Aston Villa estuda empréstimo do jovem Endrick',
-      excerpt: 'Com a forte concorrência no ataque do Real Madrid após as contratações de verão, o Aston Villa surge como um dos interessados no empréstimo de Endrick. O modelo de Unai Emery pode oferecer o contexto competitivo que o avançado procura na Premier League.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '5 min',
+      title: 'ÚLTIMA HORA: O escândalo de apostas que abala o futebol turco',
+      excerpt: 'Com mais de 1.000 jogadores suspensos, a Federação Turca enfrenta a maior crise da sua história. Explicamos as ramificações deste escândalo para as competições europeias e as medidas de emergência que estão a ser implementadas.',
+      category: 'ÚLTIMA HORA',
+      readTime: '7 min',
       date: publicationDate,
-      source: 'BBC Sport / AS',
+      source: 'The Guardian',
     },
     {
       id: 104,
-      title: 'MERCADO: O Nottingham Forest aposta forte na defesa com Ousmane Diomande',
-      excerpt: 'A iminente contratação de Ousmane Diomande ao Sporting CP por €40M sublinha a ambição do Nottingham Forest. O central marfinense é visto como a peça-chave para o sistema de três defesas desenhado por Oliver Glasner.',
-      category: 'MERCADO',
-      readTime: '5 min',
+      title: 'TRANSFERÊNCIAS: A estratégia do Liverpool ao garantir Araujo por empréstimo',
+      excerpt: 'A chegada de Araujo a Anfield Road oferece uma solução imediata para as lacunas defensivas do Liverpool. Uma análise aos termos do empréstimo do Barcelona e ao que o internacional uruguaio traz à linha recuada dos Reds.',
+      category: 'TRANSFERÊNCIAS',
+      readTime: '4 min',
       date: publicationDate,
-      source: 'ESPN / The Athletic',
+      source: 'Yahoo Sports',
     },
     {
       id: 105,
-      title: 'MERCADO: Como e a atração de Cesc Fàbregas convencem Trevoh Chalobah',
-      excerpt: 'A mudança de Trevoh Chalobah para o Como, por £25.7M, ilustra o poder de atração do projeto de Cesc Fàbregas. O defesa inglês procura relançar a carreira na Serie A, assumindo-se como um dos líderes da equipa recém-promovida.',
+      title: 'MERCADO: A corrida a dois por Joaquin Seys aquece',
+      excerpt: 'Manchester United e Arsenal identificaram no jovem do Club Brugge a resposta para os problemas no lado esquerdo da defesa. Comparamos as propostas financeiras e o projeto desportivo que cada clube tem para oferecer a Seys.',
       category: 'MERCADO',
       readTime: '4 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'Sky Sports',
     },
     {
       id: 106,
-      title: 'ANÁLISE TÁTICA: As dinâmicas ofensivas do Manchester City na Ásia',
-      excerpt: 'Apesar de algumas oscilações defensivas, Enzo Maresca retira notas positivas da digressão asiática. As combinações entre Antoine Semenyo e Omar Marmoush, bem como o impacto de Savinho, indicam que o City manterá a imprevisibilidade nos corredores.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'TIPS DE APOSTAS: Como o mercado reage aos movimentos de Rodri',
+      excerpt: 'A presença de Rodri em Barcelona fez disparar as odds para o título da La Liga. Analisamos o impacto que uma eventual transferência do médio espanhol teria nas probabilidades das principais casas de apostas europeias.',
+      category: 'TIPS DE APOSTAS',
       readTime: '5 min',
       date: publicationDate,
-      source: 'The Guardian',
+      source: 'AliveGoal Analytics',
     }
   ];
 }

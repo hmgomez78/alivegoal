@@ -44,35 +44,32 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (10 de agosto de 2026).
+// Equipas em destaque e com tips de apostas (11 de agosto de 2026).
 export const TODAYS_TIP_TEAMS = [
-  "Plymouth",
-  "Exeter",
-  "Santa Clara",
-  "Nacional",
-  "Silkeborg",
-  "OB",
-  "Sirius",
-  "Brommapojkarna",
-  "Västerås",
-  "Djurgården",
-  "Goiás",
-  "Londrina"
+  "Fluminense RJ",
+  "Independiente Rivadavia",
+  "Sheffield Wednesday",
+  "Wrexham",
+  "Stoke City",
+  "Hull City",
+  "Swansea City",
+  "Preston",
+  "Cardiff City",
+  "Bristol City"
 ];
 
-// 10 de agosto de 2026
+// 11 de agosto de 2026
 const fallbackMatches: LiveMatch[] = [
-  { id: 9001, homeTeam: 'Plymouth', awayTeam: 'Exeter', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Carabao Cup' },
-  { id: 9002, homeTeam: 'Santa Clara', awayTeam: 'Nacional', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Primeira Liga' },
-  { id: 9003, homeTeam: 'Silkeborg', awayTeam: 'OB', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Superliga' },
-  { id: 9004, homeTeam: 'Sirius', awayTeam: 'Brommapojkarna', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
-  { id: 9005, homeTeam: 'Västerås', awayTeam: 'Djurgården', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
-  { id: 9006, homeTeam: 'Goiás', awayTeam: 'Londrina', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:30', league: 'Brasileirão Série B' },
+  { id: 9101, homeTeam: 'Fluminense RJ', awayTeam: 'Independiente Rivadavia', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 23:00', league: 'Amigável' },
+  { id: 9102, homeTeam: 'Sheffield Wednesday', awayTeam: 'Wrexham', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
+  { id: 9103, homeTeam: 'Stoke City', awayTeam: 'Hull City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
+  { id: 9104, homeTeam: 'Swansea City', awayTeam: 'Preston', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
+  { id: 9105, homeTeam: 'Cardiff City', awayTeam: 'Bristol City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Santa Clara',
-  awayTeam: 'Nacional',
+  homeTeam: 'Sheffield Wednesday',
+  awayTeam: 'Wrexham',
   homeScore: 0,
   awayScore: 0,
   stats: {
