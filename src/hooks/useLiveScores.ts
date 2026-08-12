@@ -44,32 +44,26 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (11 de agosto de 2026).
+// Equipas em destaque e com tips de apostas (12 de agosto de 2026).
 export const TODAYS_TIP_TEAMS = [
-  "Fluminense RJ",
-  "Independiente Rivadavia",
-  "Sheffield Wednesday",
-  "Wrexham",
-  "Stoke City",
-  "Hull City",
-  "Swansea City",
-  "Preston",
-  "Cardiff City",
-  "Bristol City"
+  "Paris Saint-Germain",
+  "Aston Villa",
+  "Palmeiras",
+  "Cerro Porteño",
+  "Platense",
+  "Coquimbo Unido"
 ];
 
-// 11 de agosto de 2026
+// Jogos confirmados para 12 de agosto de 2026. Horas apresentadas como referência do calendário editorial.
 const fallbackMatches: LiveMatch[] = [
-  { id: 9101, homeTeam: 'Fluminense RJ', awayTeam: 'Independiente Rivadavia', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 23:00', league: 'Amigável' },
-  { id: 9102, homeTeam: 'Sheffield Wednesday', awayTeam: 'Wrexham', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
-  { id: 9103, homeTeam: 'Stoke City', awayTeam: 'Hull City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
-  { id: 9104, homeTeam: 'Swansea City', awayTeam: 'Preston', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
-  { id: 9105, homeTeam: 'Cardiff City', awayTeam: 'Bristol City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Carabao Cup' },
+  { id: 9201, homeTeam: 'Paris Saint-Germain', awayTeam: 'Aston Villa', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:00', league: 'Supertaça Europeia' },
+  { id: 9202, homeTeam: 'Palmeiras', awayTeam: 'Cerro Porteño', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:00', league: 'CONMEBOL Libertadores — Oitavos, 1.ª mão' },
+  { id: 9203, homeTeam: 'Platense', awayTeam: 'Coquimbo Unido', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:00', league: 'CONMEBOL Libertadores — Oitavos, 1.ª mão' },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Sheffield Wednesday',
-  awayTeam: 'Wrexham',
+  homeTeam: 'Paris Saint-Germain',
+  awayTeam: 'Aston Villa',
   homeScore: 0,
   awayScore: 0,
   stats: {
