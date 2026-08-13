@@ -13,62 +13,62 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '12 ago. 2026';
+  const publicationDate = '13 ago. 2026';
 
   return [
     {
       id: 201,
-      title: 'ANÁLISE TÁTICA: Wirtz quer assumir o papel de número 10 no novo Liverpool',
-      excerpt: 'Depois de uma primeira época de adaptação, Florian Wirtz diz estar mais preparado para a intensidade inglesa. Os sete golos e 10 assistências deixam uma base concreta, mas a chave para a evolução dos Reds será a ligação do alemão ao avançado no sistema de Andoni Iraola.',
-      category: 'ANÁLISE TÁTICA',
+      title: 'PREMIER LEAGUE: Arsenal compra liderança imediata com Bruno Guimarães',
+      excerpt: 'A entrada de Bruno Guimarães por £75 milhões não é apenas uma troca de camisola: dá ao Arsenal um médio capaz de organizar a primeira fase de construção e acelerar a pressão após perda. O desafio será integrar esse volume de jogo sem retirar influência aos criativos que já ocupam os corredores interiores.',
+      category: 'PREMIER LEAGUE',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'ESPN',
     },
     {
       id: 202,
-      title: 'PREMIER LEAGUE: O equilíbrio delicado do Brighton entre Europa e renovação',
-      excerpt: 'O Brighton entra na nova época com futebol europeu, mas sem Danny Welbeck e Jan Paul van Hecke. A capacidade de Fabian Hürzeler para distribuir minutos e acelerar a integração de jovens como Luka Vuskovic e Charalampos Kostoulas pode definir o teto competitivo da equipa.',
-      category: 'PREMIER LEAGUE',
-      readTime: '6 min',
-      date: publicationDate,
-      source: 'The Guardian',
-    },
-    {
-      id: 203,
-      title: 'MERCADO: O que muda no Newcastle de Matthias Jaissle após um verão de rutura',
-      excerpt: 'A saída de Bruno Guimarães, Sandro Tonali e Anthony Gordon retirou liderança e experiência ao Newcastle. Matthias Jaissle assume uma equipa que aposta em perfis sub-22; mais do que resultados imediatos, o desafio passa por construir referências dentro de um balneário profundamente renovado.',
+      title: 'MERCADO: Morgan Rogers transforma a escala de ambição do Chelsea',
+      excerpt: 'O Chelsea investiu £117 milhões em Morgan Rogers, uma verba que eleva a fasquia para um jogador chamado a ligar meio-campo e ataque. A contratação recompensa a progressão do inglês, mas também exige um plano claro para que o seu transporte de bola e chegada à área não se confundam com as funções dos restantes avançados.',
       category: 'MERCADO',
       readTime: '6 min',
       date: publicationDate,
       source: 'ESPN',
     },
     {
+      id: 203,
+      title: 'ANÁLISE TÁTICA: Elliot Anderson pode redesenhar o meio-campo do Manchester City',
+      excerpt: 'A aquisição de Elliot Anderson por £116 milhões aponta para uma solução de energia e condução no centro do campo do City. Mais do que procurar um substituto direto de Rodri, Pep Guardiola poderá usar o novo médio para tornar a equipa mais móvel entre linhas e mais agressiva na recuperação.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: publicationDate,
+      source: 'ESPN',
+    },
+    {
       id: 204,
-      title: 'LIBERTADORES: Palmeiras-Cerro Porteño coloca favoritismo contra resistência',
-      excerpt: 'O Palmeiras chega aos oitavos em casa como líder do Brasileirão, mas o Cerro Porteño já venceu no Allianz Parque na fase de grupos. A primeira mão pede gestão de risco: os brasileiros têm mais produção ofensiva, enquanto os paraguaios sofreram apenas dois golos na campanha continental até aqui.',
-      category: 'LIBERTADORES',
+      title: 'TRANSFERÊNCIAS: Tottenham aposta no controlo com Sandro Tonali',
+      excerpt: 'Sandro Tonali chega ao Tottenham por £100 milhões numa mudança que privilegia capacidade de circulação, intensidade sem bola e experiência de alto nível. O encaixe com os médios de chegada será determinante: se o italiano receber linhas de passe cedo, os Spurs podem ganhar estabilidade sem perder aceleração.',
+      category: 'TRANSFERÊNCIAS',
       readTime: '5 min',
       date: publicationDate,
-      source: 'ESPN / BetMines',
+      source: 'ESPN',
     },
     {
       id: 205,
-      title: 'LIBERTADORES: Platense e Coquimbo procuram vantagem mínima antes da segunda mão',
-      excerpt: 'O Platense recebe o Coquimbo Unido em Buenos Aires num duelo com sinais de equilíbrio. A equipa argentina vem de vitória fora sobre o Independiente, enquanto os chilenos marcaram em cinco dos seus últimos seis jogos; o controlo das transições pode ser o detalhe decisivo desta eliminatória.',
-      category: 'LIBERTADORES',
-      readTime: '4 min',
+      title: 'PREMIER LEAGUE: Manchester United reconstrói o eixo com Santos e Tielemans',
+      excerpt: 'Andrey Santos e Youri Tielemans acrescentam qualidades complementares ao Manchester United: o primeiro oferece raio de ação e recuperação, o segundo controlo do ritmo e passe vertical. Com várias saídas no plantel, o valor desta dupla dependerá menos dos nomes e mais da rapidez com que cria referências de jogo.',
+      category: 'PREMIER LEAGUE',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'ESPN / FootballPredictions',
+      source: 'ESPN',
     },
     {
       id: 206,
-      title: 'PREMIER LEAGUE: Porque Brennan Johnson pode ganhar nova vida no Everton de Moyes',
-      excerpt: 'Brennan Johnson chega ao Everton com a missão de transformar volume ofensivo em golos. A leitura de Lee Trundle é que a aceleração do galês pode encaixar tanto na ala como por dentro, aproveitando uma equipa que cria oportunidades mas tem sentido dificuldades na finalização.',
-      category: 'PREMIER LEAGUE',
-      readTime: '4 min',
+      title: 'MERCADO: Liverpool equilibra presente e sucessão na defesa',
+      excerpt: 'Jérémy Jacquet, por £55 milhões, e o empréstimo de Ronald Araújo mostram um Liverpool a atacar duas necessidades diferentes: talento com margem de evolução e uma resposta imediata para a profundidade defensiva. A época dirá se a coexistência de perfis é uma solução transitória ou a base de uma nova linha de defesa.',
+      category: 'MERCADO',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport Wales',
+      source: 'ESPN',
     }
   ];
 }

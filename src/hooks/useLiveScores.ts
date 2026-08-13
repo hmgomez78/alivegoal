@@ -44,26 +44,27 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips de apostas (12 de agosto de 2026).
+// Equipas em destaque e com tips editoriais de 13 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Paris Saint-Germain",
-  "Aston Villa",
-  "Palmeiras",
-  "Cerro Porteño",
-  "Platense",
-  "Coquimbo Unido"
+  "FC Midtjylland",
+  "Bohemians",
+  "FC Nordsjælland",
+  "Valur Reykjavík",
+  "Hammarby IF",
+  "Raków Częstochowa"
 ];
 
-// Jogos confirmados para 12 de agosto de 2026. Horas apresentadas como referência do calendário editorial.
+// Jogos confirmados para 13 de agosto de 2026. Horas de Portugal continental.
+// Não existem jogos agendados nas cinco grandes ligas neste dia; o destaque editorial recai nas eliminatórias europeias.
 const fallbackMatches: LiveMatch[] = [
-  { id: 9201, homeTeam: 'Paris Saint-Germain', awayTeam: 'Aston Villa', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:00', league: 'Supertaça Europeia' },
-  { id: 9202, homeTeam: 'Palmeiras', awayTeam: 'Cerro Porteño', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:00', league: 'CONMEBOL Libertadores — Oitavos, 1.ª mão' },
-  { id: 9203, homeTeam: 'Platense', awayTeam: 'Coquimbo Unido', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 22:00', league: 'CONMEBOL Libertadores — Oitavos, 1.ª mão' },
+  { id: 9301, homeTeam: 'FC Midtjylland', awayTeam: 'Bohemians', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (2-0)' },
+  { id: 9302, homeTeam: 'FC Nordsjælland', awayTeam: 'Valur Reykjavík', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (2-0)' },
+  { id: 9303, homeTeam: 'Hammarby IF', awayTeam: 'Raków Częstochowa', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (0-0)' },
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Paris Saint-Germain',
-  awayTeam: 'Aston Villa',
+  homeTeam: 'FC Midtjylland',
+  awayTeam: 'Bohemians',
   homeScore: 0,
   awayScore: 0,
   stats: {
