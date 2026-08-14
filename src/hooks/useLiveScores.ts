@@ -44,27 +44,35 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 13 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 14 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "FC Midtjylland",
-  "Bohemians",
-  "FC Nordsjælland",
-  "Valur Reykjavík",
-  "Hammarby IF",
-  "Raków Częstochowa"
+  "Wolverhampton Wanderers",
+  "Blackburn Rovers",
+  "KÍ Klaksvík",
+  "Lech Poznań",
+  "Dagenham & Redbridge",
+  "Farnham Town",
+  "Sporting CP",
+  "Vitória SC",
+  "Parma",
+  "Catania"
 ];
 
-// Jogos confirmados para 13 de agosto de 2026. Horas de Portugal continental.
-// Não existem jogos agendados nas cinco grandes ligas neste dia; o destaque editorial recai nas eliminatórias europeias.
+// Jogos confirmados para 14 de agosto de 2026. Horas de Portugal continental.
+// Fonte de agenda: BBC Sport. A página de origem avisa que os horários podem sofrer alterações.
 const fallbackMatches: LiveMatch[] = [
-  { id: 9301, homeTeam: 'FC Midtjylland', awayTeam: 'Bohemians', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (2-0)' },
-  { id: 9302, homeTeam: 'FC Nordsjælland', awayTeam: 'Valur Reykjavík', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (2-0)' },
-  { id: 9303, homeTeam: 'Hammarby IF', awayTeam: 'Raków Częstochowa', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'UEFA Conference League — 3.ª pré-eliminatória, 2.ª mão (0-0)' },
+  { id: 9401, homeTeam: 'KÍ Klaksvík', awayTeam: 'Lech Poznań', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'UEFA Europa League — 3.ª pré-eliminatória, 2.ª mão (0-1)' },
+  { id: 9402, homeTeam: 'Wolverhampton Wanderers', awayTeam: 'Blackburn Rovers', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:00', league: 'EFL Championship — Jornada 1' },
+  { id: 9403, homeTeam: 'Dagenham & Redbridge', awayTeam: 'Farnham Town', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:00', league: 'National League South — Jornada 1' },
+  { id: 9404, homeTeam: 'Parma', awayTeam: 'Catania', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Coppa Italia — 1.ª eliminatória' },
+  { id: 9405, homeTeam: 'Sporting CP', awayTeam: 'Vitória SC', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:15', league: 'Liga Portugal — Jornada 1' },
+  { id: 9406, homeTeam: 'Fiorentina', awayTeam: 'Benevento', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 21:15', league: 'Coppa Italia — 1.ª eliminatória' },
+  { id: 9407, homeTeam: 'Galatasaray', awayTeam: 'Çorum', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:30', league: 'Süper Lig — Jornada 1' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'FC Midtjylland',
-  awayTeam: 'Bohemians',
+  homeTeam: 'Sporting CP',
+  awayTeam: 'Vitória SC',
   homeScore: 0,
   awayScore: 0,
   stats: {
