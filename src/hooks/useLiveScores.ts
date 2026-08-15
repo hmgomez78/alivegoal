@@ -44,35 +44,36 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 14 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 15 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Wolverhampton Wanderers",
-  "Blackburn Rovers",
-  "KÍ Klaksvík",
-  "Lech Poznań",
-  "Dagenham & Redbridge",
-  "Farnham Town",
-  "Sporting CP",
-  "Vitória SC",
-  "Parma",
-  "Catania"
+  "Deportivo Alavés",
+  "Getafe",
+  "Sevilla",
+  "Rayo Vallecano",
+  "Nashville SC",
+  "Inter Miami",
+  "Bolton Wanderers",
+  "Preston North End",
+  "Sheffield United",
+  "Birmingham City"
 ];
 
-// Jogos confirmados para 14 de agosto de 2026. Horas de Portugal continental.
-// Fonte de agenda: BBC Sport. A página de origem avisa que os horários podem sofrer alterações.
+// Jogos confirmados para 15 de agosto de 2026. Horas de Portugal continental.
+// Fontes de agenda: Sky Sports, Soccerbase, ESPN e Football Whispers. Os horários podem sofrer alterações.
 const fallbackMatches: LiveMatch[] = [
-  { id: 9401, homeTeam: 'KÍ Klaksvík', awayTeam: 'Lech Poznań', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:00', league: 'UEFA Europa League — 3.ª pré-eliminatória, 2.ª mão (0-1)' },
-  { id: 9402, homeTeam: 'Wolverhampton Wanderers', awayTeam: 'Blackburn Rovers', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'EFL Championship — Jornada 1' },
-  { id: 9403, homeTeam: 'Dagenham & Redbridge', awayTeam: 'Farnham Town', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'National League South — Jornada 1' },
-  { id: 9404, homeTeam: 'Parma', awayTeam: 'Catania', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:00', league: 'Coppa Italia — 1.ª eliminatória' },
-  { id: 9405, homeTeam: 'Sporting CP', awayTeam: 'Vitória SC', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Liga Portugal — Jornada 1' },
-  { id: 9406, homeTeam: 'Fiorentina', awayTeam: 'Benevento', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Coppa Italia — 1.ª eliminatória' },
-  { id: 9407, homeTeam: 'Galatasaray', awayTeam: 'Çorum', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:30', league: 'Süper Lig — Jornada 1' }
+  { id: 9501, homeTeam: 'Bolton Wanderers', awayTeam: 'Preston North End', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:30', league: 'EFL Championship — Jornada 1' },
+  { id: 9502, homeTeam: 'Charlton Athletic', awayTeam: 'Derby County', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'EFL Championship — Jornada 1' },
+  { id: 9503, homeTeam: 'Middlesbrough', awayTeam: 'Lincoln City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'EFL Championship — Jornada 1' },
+  { id: 9504, homeTeam: 'Sheffield United', awayTeam: 'Birmingham City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:30', league: 'EFL Championship — Jornada 1' },
+  { id: 9505, homeTeam: 'Deportivo Alavés', awayTeam: 'Getafe', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:30', league: 'La Liga — Jornada 1' },
+  { id: 9506, homeTeam: 'Sevilla', awayTeam: 'Rayo Vallecano', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:30', league: 'La Liga — Jornada 1' },
+  { id: 9507, homeTeam: 'Nashville SC', awayTeam: 'Inter Miami', homeScore: null, awayScore: null, minute: 0, status: '16 AGO 01:30', league: 'MLS — Conferência Este' },
+  { id: 9508, homeTeam: 'LAFC', awayTeam: 'San Diego FC', homeScore: null, awayScore: null, minute: 0, status: '16 AGO 03:30', league: 'MLS — Conferência Oeste' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Sporting CP',
-  awayTeam: 'Vitória SC',
+  homeTeam: 'Deportivo Alavés',
+  awayTeam: 'Getafe',
   homeScore: 0,
   awayScore: 0,
   stats: {
