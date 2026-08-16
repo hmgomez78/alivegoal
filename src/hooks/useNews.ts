@@ -13,62 +13,62 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '15 ago. 2026';
+  const publicationDate = '16 ago. 2026';
 
   return [
     {
-      id: 401,
-      title: 'PREMIER LEAGUE: O que muda com os novos limites de tempo e o VAR revisto',
-      excerpt: 'A liga inglesa vai importar do Mundial de 2026 a saída obrigatória de um minuto após tratamento em campo, contagens de cinco segundos para reposições e um limite de dez segundos nas substituições. O VAR também poderá corrigir factos em segundos amarelos e casos de identidade trocada, mas não vai intervir em cantos assinalados por erro. A primeira leitura não deve ser sobre espetáculo: é sobre como as equipas vão gerir inferioridades temporárias, transições e o tempo útil de jogo.',
+      id: 501,
+      title: 'MANCHESTER UNITED: O 4-2 com o Milan expõe o trabalho defensivo que ainda falta',
+      excerpt: 'A derrota por 4-2 frente ao AC Milan fechou a pré-época do Manchester United com um aviso claro para Michael Carrick. A BBC identificou dificuldades na cobertura do corredor esquerdo, espaços entre setores e fragilidade perante movimentos de rutura; três dos quatro golos do Milan nasceram à curta distância. A lição não é apenas sobre um amigável: com a estreia da liga à porta, a coordenação entre lateral, médio e central passa a ser a prioridade competitiva.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '6 min',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'ESPN',
+      source: 'BBC Sport',
     },
     {
-      id: 402,
-      title: 'CHAMPIONSHIP: Novo modelo de play-offs altera o valor de cada ponto desde agosto',
-      excerpt: 'A BBC Sport detalhou a mudança nos play-offs do Championship para 2026–27. Num campeonato em que a diferença entre entrar na luta pela subida e ficar fora pode ser mínima, a alteração desloca parte da pressão para a consistência: começar bem, limitar sequências sem vencer e proteger o saldo de golos passam a ter peso ainda maior na construção de uma candidatura.',
+      id: 502,
+      title: 'RASHFORD: O regresso abre uma decisão de plantel, não uma conclusão',
+      excerpt: 'Marcus Rashford voltou a jogar pelo Manchester United pela primeira vez desde dezembro de 2024 e respondeu com uma entrada serena, incluindo um lance técnico junto à linha. A presença com a camisola 9, porém, não fecha a discussão sobre o futuro: o clube sublinhou que o número não é permanente e a janela ainda está aberta. Para Carrick, a questão é tática e estratégica: como integrar um avançado de largura sem comprometer o equilíbrio da equipa.',
       category: 'ANÁLISE TÁTICA',
       readTime: '4 min',
       date: publicationDate,
       source: 'BBC Sport',
     },
     {
-      id: 403,
-      title: 'MIDDLESBROUGH–LINCOLN: O teste do modelo com dois treinadores diante de um favorito de mercado',
-      excerpt: 'Tom Shaw e Chris Cohen iniciam o regresso do Lincoln ao segundo escalão com uma liderança partilhada, um modelo raro no futebol inglês. Do outro lado, o Middlesbrough investiu mais de £20 milhões no verão, segundo o The Guardian. O jogo oferece um contraste nítido entre continuidade interna e capacidade financeira: a organização sem bola do Lincoln terá de compensar uma diferença substancial de recursos.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '5 min',
-      date: publicationDate,
-      source: 'The Guardian',
-    },
-    {
-      id: 404,
-      title: 'BOLTON–PRESTON: A chegada de Leroy dá uma nova variável ao primeiro jogo',
-      excerpt: 'O Preston confirmou a contratação do médio Leroy ao Basileia na véspera da deslocação a Bolton. Mais do que uma notícia de mercado, a chegada coloca uma questão operacional para a estreia: integração imediata ou adaptação progressiva? Num encontro inaugural, o equilíbrio entre energia competitiva e automatismos tende a decidir mais do que o estatuto do reforço.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'The Guardian',
-    },
-    {
-      id: 405,
-      title: 'SHEFFIELD UNITED–BIRMINGHAM: Max Bird regressa a casa e aumenta as opções do meio-campo',
-      excerpt: 'Max Bird assinou por três anos pelo Birmingham depois de deixar o Bristol City, acrescentando ligação, disponibilidade para pressionar e uma narrativa especial ao arranque da campanha. A visita ao Sheffield United será uma primeira oportunidade para medir a velocidade de integração. A análise vai além da estreia: o sucesso da operação dependerá da forma como o novo médio melhora a saída de bola sem abrir espaços em transição.',
-      category: 'TRANSFERÊNCIAS',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'The Guardian',
-    },
-    {
-      id: 406,
-      title: 'NASHVILLE–INTER MIAMI: Duas potências do Este, duas formas de chegar ao golo',
-      excerpt: 'Nashville lidera a Conferência Este com 40 pontos em 18 jogos e construiu em casa um registo de oito vitórias e um empate; o Inter Miami vem logo atrás, com 38 pontos e o melhor ataque do duelo, 45 golos. O contexto favorece um jogo de contrastes: Nashville procura controlar o espaço e as bolas paradas, enquanto Miami tende a criar mais volume em posse e transição. A batalha pelo ritmo pode valer tanto como a qualidade individual no último terço.',
+      id: 503,
+      title: 'MANCHESTER CITY: A primeira prova sem Guardiola mede mais do que uma taça',
+      excerpt: 'O Community Shield diante do Arsenal é a primeira partida competitiva do Manchester City sem Pep Guardiola no comando. A prévia da DraftKings Network enquadra Enzo Maresca num contexto de mudança profunda: Bernardo Silva saiu, Rodri é dúvida física e Elliot Anderson chegou para renovar o meio-campo. O resultado não definirá a época, mas a capacidade de reproduzir os princípios de pressão e posse será observada com especial atenção.',
       category: 'ANÁLISE TÁTICA',
       readTime: '6 min',
       date: publicationDate,
-      source: 'ESPN / SportsGambler',
+      source: 'DraftKings Network',
+    },
+    {
+      id: 504,
+      title: 'ARSENAL: Continuidade, Bruno Guimarães e a oportunidade de começar com um sinal forte',
+      excerpt: 'O Arsenal chega ao Community Shield com uma base reconhecível, mas com Bruno Guimarães como adição relevante ao centro do terreno e Christos Tzolis a compensar a saída de Leandro Trossard. A estabilidade pode ser uma vantagem num jogo de abertura contra um adversário em transição técnica. Mais do que o troféu, o desafio dos Gunners é transformar familiaridade coletiva em controlo de ritmo quando o jogo exigir resposta à pressão alta do City.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '5 min',
+      date: publicationDate,
+      source: 'DraftKings Network',
+    },
+    {
+      id: 505,
+      title: 'LA LIGA: Racing–Villarreal coloca um promovido perante o teste da primeira jornada',
+      excerpt: 'O Racing Santander recebe o Villarreal no primeiro domingo da La Liga, num confronto que ilustra a exigência imediata do regresso ao escalão principal. Em semanas inaugurais, o risco está menos no volume de informação e mais na incerteza dos automatismos: o visitante tentará impor qualidade e controlo territorial, enquanto o Racing procurará transformar a energia do seu estádio em intensidade e transições. A gestão dos primeiros 20 minutos pode definir o guião.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'The Guardian',
+    },
+    {
+      id: 506,
+      title: 'BRASILEIRÃO: Atlético-MG–Grêmio e Mirassol–Flamengo concentram pressão no domingo',
+      excerpt: 'A ronda de domingo do Brasileirão reúne dois contextos competitivos diferentes. O Atlético-MG recebe o Grêmio em Belo Horizonte com favoritismo de mercado, enquanto o Flamengo visita o Mirassol num teste de controlo fora de casa. A agenda da ESPN também inclui Vasco–Santos, Vitória–Botafogo e Corinthians–Cruzeiro; com seis jogos no mesmo bloco, pequenos detalhes de rotação, viagem e intensidade podem alterar a leitura pré-jogo.',
+      category: 'JOGOS DO DIA',
+      readTime: '4 min',
+      date: publicationDate,
+      source: 'ESPN',
     }
   ];
 }

@@ -44,36 +44,37 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 15 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 16 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Deportivo Alavés",
-  "Getafe",
-  "Sevilla",
-  "Rayo Vallecano",
-  "Nashville SC",
-  "Inter Miami",
-  "Bolton Wanderers",
-  "Preston North End",
-  "Sheffield United",
-  "Birmingham City"
+  "Arsenal",
+  "Manchester City",
+  "Atlético-MG",
+  "Grêmio",
+  "Vasco da Gama",
+  "Santos",
+  "Mirassol",
+  "Flamengo",
+  "Corinthians",
+  "Cruzeiro"
 ];
 
-// Jogos confirmados para 15 de agosto de 2026. Horas de Portugal continental.
-// Fontes de agenda: Sky Sports, Soccerbase, ESPN e Football Whispers. Os horários podem sofrer alterações.
+// Jogos confirmados para 16 de agosto de 2026. Horas de Portugal continental.
+// Fontes de agenda: The Guardian (La Liga), ESPN (Brasileirão) e Manchester City (Community Shield).
 const fallbackMatches: LiveMatch[] = [
-  { id: 9501, homeTeam: 'Bolton Wanderers', awayTeam: 'Preston North End', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:30', league: 'EFL Championship — Jornada 1' },
-  { id: 9502, homeTeam: 'Charlton Athletic', awayTeam: 'Derby County', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'EFL Championship — Jornada 1' },
-  { id: 9503, homeTeam: 'Middlesbrough', awayTeam: 'Lincoln City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'EFL Championship — Jornada 1' },
-  { id: 9504, homeTeam: 'Sheffield United', awayTeam: 'Birmingham City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:30', league: 'EFL Championship — Jornada 1' },
-  { id: 9505, homeTeam: 'Deportivo Alavés', awayTeam: 'Getafe', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:30', league: 'La Liga — Jornada 1' },
-  { id: 9506, homeTeam: 'Sevilla', awayTeam: 'Rayo Vallecano', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:30', league: 'La Liga — Jornada 1' },
-  { id: 9507, homeTeam: 'Nashville SC', awayTeam: 'Inter Miami', homeScore: null, awayScore: null, minute: 0, status: '16 AGO 01:30', league: 'MLS — Conferência Este' },
-  { id: 9508, homeTeam: 'LAFC', awayTeam: 'San Diego FC', homeScore: null, awayScore: null, minute: 0, status: '16 AGO 03:30', league: 'MLS — Conferência Oeste' }
+  { id: 9601, homeTeam: 'Arsenal', awayTeam: 'Manchester City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'FA Community Shield — Final' },
+  { id: 9602, homeTeam: 'Racing Santander', awayTeam: 'Villarreal', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 16:00', league: 'La Liga — Jornada 1' },
+  { id: 9603, homeTeam: 'Espanyol', awayTeam: 'Levante', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'La Liga — Jornada 1' },
+  { id: 9604, homeTeam: 'Chapecoense', awayTeam: 'Bahia', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:00', league: 'Brasileirão Série A' },
+  { id: 9605, homeTeam: 'Atlético-MG', awayTeam: 'Grêmio', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 00:00', league: 'Brasileirão Série A' },
+  { id: 9606, homeTeam: 'Vasco da Gama', awayTeam: 'Santos', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 00:00', league: 'Brasileirão Série A' },
+  { id: 9607, homeTeam: 'Mirassol', awayTeam: 'Flamengo', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 02:30', league: 'Brasileirão Série A' },
+  { id: 9608, homeTeam: 'Vitória', awayTeam: 'Botafogo', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 02:30', league: 'Brasileirão Série A' },
+  { id: 9609, homeTeam: 'Corinthians', awayTeam: 'Cruzeiro', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 03:30', league: 'Brasileirão Série A' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Deportivo Alavés',
-  awayTeam: 'Getafe',
+  homeTeam: 'Arsenal',
+  awayTeam: 'Manchester City',
   homeScore: 0,
   awayScore: 0,
   stats: {
