@@ -44,37 +44,39 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 16 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 17 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Arsenal",
-  "Manchester City",
-  "Atlético-MG",
-  "Grêmio",
-  "Vasco da Gama",
-  "Santos",
-  "Mirassol",
-  "Flamengo",
-  "Corinthians",
-  "Cruzeiro"
+  "Casa Pia",
+  "Benfica",
+  "Sassuolo",
+  "Cesena",
+  "Brøndby",
+  "Sønderjyske",
+  "Häcken",
+  "Halmstad",
+  "Pisa",
+  "Empoli"
 ];
 
-// Jogos confirmados para 16 de agosto de 2026. Horas de Portugal continental.
-// Fontes de agenda: The Guardian (La Liga), ESPN (Brasileirão) e Manchester City (Community Shield).
+// Jogos confirmados para 17 de agosto de 2026. Horas de Portugal continental.
+// Fontes de agenda: BBC Sport, Sporting Life e ESPN Brasil (Primeira Liga).
 const fallbackMatches: LiveMatch[] = [
-  { id: 9601, homeTeam: 'Arsenal', awayTeam: 'Manchester City', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 15:00', league: 'FA Community Shield — Final' },
-  { id: 9602, homeTeam: 'Racing Santander', awayTeam: 'Villarreal', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 16:00', league: 'La Liga — Jornada 1' },
-  { id: 9603, homeTeam: 'Espanyol', awayTeam: 'Levante', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'La Liga — Jornada 1' },
-  { id: 9604, homeTeam: 'Chapecoense', awayTeam: 'Bahia', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:00', league: 'Brasileirão Série A' },
-  { id: 9605, homeTeam: 'Atlético-MG', awayTeam: 'Grêmio', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 00:00', league: 'Brasileirão Série A' },
-  { id: 9606, homeTeam: 'Vasco da Gama', awayTeam: 'Santos', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 00:00', league: 'Brasileirão Série A' },
-  { id: 9607, homeTeam: 'Mirassol', awayTeam: 'Flamengo', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 02:30', league: 'Brasileirão Série A' },
-  { id: 9608, homeTeam: 'Vitória', awayTeam: 'Botafogo', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 02:30', league: 'Brasileirão Série A' },
-  { id: 9609, homeTeam: 'Corinthians', awayTeam: 'Cruzeiro', homeScore: null, awayScore: null, minute: 0, status: '17 AGO 03:30', league: 'Brasileirão Série A' }
+  { id: 9701, homeTeam: 'Casa Pia', awayTeam: 'Benfica', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Primeira Liga — Jornada 2' },
+  { id: 9702, homeTeam: 'Deportivo de La Coruña', awayTeam: 'Elche', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'La Liga — Jornada 1' },
+  { id: 9703, homeTeam: 'Cardiff City', awayTeam: 'Wrexham', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Championship' },
+  { id: 9704, homeTeam: 'Pisa', awayTeam: 'Empoli', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:00', league: 'Coppa Italia — 1.ª Ronda' },
+  { id: 9705, homeTeam: 'Sassuolo', awayTeam: 'Cesena', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:30', league: 'Coppa Italia — 1.ª Ronda' },
+  { id: 9706, homeTeam: 'Cremonese', awayTeam: 'Sampdoria', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Coppa Italia — 1.ª Ronda' },
+  { id: 9707, homeTeam: 'Palermo', awayTeam: 'Lecce', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Coppa Italia — 1.ª Ronda' },
+  { id: 9708, homeTeam: 'Brøndby', awayTeam: 'Sønderjyske', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Superliga Dinamarquesa' },
+  { id: 9709, homeTeam: 'Häcken', awayTeam: 'Halmstad', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
+  { id: 9710, homeTeam: 'Samsunspor', awayTeam: 'Göztepe', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:30', league: 'Süper Lig' },
+  { id: 9711, homeTeam: 'Gnistan', awayTeam: 'Ilves', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 16:00', league: 'Veikkausliiga' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Arsenal',
-  awayTeam: 'Manchester City',
+  homeTeam: 'Casa Pia',
+  awayTeam: 'Benfica',
   homeScore: 0,
   awayScore: 0,
   stats: {
