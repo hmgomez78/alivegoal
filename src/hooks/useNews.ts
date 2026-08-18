@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 export interface NewsArticle {
   id: number;
   title: string;
@@ -13,60 +11,60 @@ export interface NewsArticle {
 
 // Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '17 ago. 2026';
+  const publicationDate = '18 ago. 2026';
 
   return [
     {
-      id: 601,
-      title: 'PRIMEIRA LIGA: Casa Pia–Benfica abre uma noite de contraste de ambições',
-      excerpt: 'O Benfica visita o Casa Pia em Rio Maior numa partida que, pela hierarquia histórica, coloca maior pressão sobre o candidato ao topo. A agenda da ESPN confirma o pontapé de saída para as 20:15 locais. Para o Casa Pia, o ponto de partida é reduzir o espaço entre linhas e transformar cada recuperação numa transição controlada; para o Benfica, o desafio é não confundir volume de posse com controlo real do risco. A forma como os encarnados reagirem à primeira perda de bola pode definir a narrativa do encontro.',
-      category: 'JOGOS DO DIA',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'ESPN Brasil',
-    },
-    {
-      id: 602,
-      title: 'LA LIGA: Deportivo–Elche é um teste de maturidade logo na jornada inaugural',
-      excerpt: 'Deportivo de La Coruña e Elche entram em campo às 20:00 do Reino Unido num jogo que a BBC inclui na abertura da La Liga. Em estreias de campeonato, a informação sobre automatismos ainda é limitada e as margens tendem a ser pequenas. O Deportivo pode procurar transformar o apoio em casa em pressão territorial, enquanto o Elche terá incentivo para baixar o ritmo e escolher com cuidado os momentos de aceleração. A gestão emocional dos primeiros minutos ganha peso acrescido neste contexto.',
+      id: 701,
+      title: 'CHAMPIONS: Fenerbahçe–Lyon mede a força do fator casa no primeiro acto',
+      excerpt: 'O Fenerbahçe recebe o Olympique Lyonnais às 20:00 (hora do Reino Unido) no play-off da Liga dos Campeões. O mercado 1X2 consultado coloca os turcos como favoritos moderados, não como favoritos esmagadores: o contexto pede equilíbrio entre agressividade territorial e controlo das transições. Para o Lyon, sobreviver ao arranque e sair da pressão com qualidade pode ser tão valioso quanto acumular posse. É uma primeira mão em que a gestão da vantagem ou do empate terá peso estratégico imediato.',
       category: 'ANÁLISE TÁTICA',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'BBC Sport / FanDuel',
     },
     {
-      id: 603,
-      title: 'CHAMPIONSHIP: Cardiff–Wrexham mede a capacidade de impor o jogo em casa',
-      excerpt: 'Cardiff City recebe o Wrexham às 20:00 do Reino Unido, segundo a lista de jogos da BBC. O encontro coloca frente a frente dois emblemas galeses num cenário em que o fator casa pode pesar cedo: iniciar em bloco alto é diferente de conseguir sustentar essa intensidade ao longo de 90 minutos. O Wrexham, por sua vez, terá interesse em sobreviver ao primeiro ímpeto e procurar zonas de cruzamento ou segunda bola. Mais do que o favoritismo prévio, importa observar quem conquista o meio-campo.',
-      category: 'JOGOS DO DIA',
+      id: 702,
+      title: 'CHAMPIONS: Dinamo Zagreb chega embalado, mas o Viking é um teste de maturidade',
+      excerpt: 'Dinamo Zagreb–Viking começa às 20:00 do Reino Unido, segundo a agenda da BBC, e abre uma eliminatória que decide presença na fase principal da Champions. O Dinamo passou pelo Kauno Žalgiris com triunfos por 5-0 e 2-1 nas duas partidas mais recentes da qualificação, dados que explicam o favoritismo caseiro. Ainda assim, uma eliminatória de duas mãos não recompensa apenas a iniciativa: o anfitrião terá de proteger-se contra uma equipa norueguesa que chega com capacidade ofensiva reconhecida pela prévia do encontro.',
+      category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'BBC Sport / Legalbet',
     },
     {
-      id: 604,
-      title: 'COPPA ITALIA: Pisa–Empoli traz um dérbi de margem curta para a ronda inaugural',
-      excerpt: 'Pisa e Empoli jogam às 17:00 do Reino Unido na primeira ronda da Coppa Italia, num dos quatro jogos italianos desta segunda-feira identificados pela BBC. Em eliminatórias a uma mão, o contexto altera a tomada de decisão: a equipa que se adianta no marcador pode gerir o risco, enquanto quem sofre primeiro fica exposto a acelerar antes do momento ideal. A presença de dois clubes da mesma região acrescenta um componente emocional a uma eliminatória em que o detalhe defensivo pode valer mais do que a iniciativa constante.',
-      category: 'TAÇAS',
+      id: 703,
+      title: 'CHAMPIONS: Levski–AEK é uma eliminatória onde o preço prevê pouca margem',
+      excerpt: 'Levski Sofia e AEK Athens entram em campo às 20:00 do Reino Unido, num play-off em que a cotação de referência dá uma vantagem curta aos gregos. Essa diferença reduzida muda a leitura do jogo: o Levski não precisa de se expor cedo para ser competitivo, enquanto a AEK terá de evitar que o favoritismo se transforme em precipitação. O primeiro golo pode alterar radicalmente a estrutura de risco, sobretudo se a equipa que marca conseguir baixar o ritmo e defender com bloco compacto.',
+      category: 'JOGOS DO DIA',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'BBC Sport / FanDuel',
     },
     {
-      id: 605,
-      title: 'DINAMARCA: Brøndby–Sønderjyske coloca o favorito perante a obrigação de controlar',
-      excerpt: 'O Brøndby recebe o Sønderjyske às 18:00 do Reino Unido na Superliga dinamarquesa. A agenda do dia oferece um duelo útil para avaliar como um favorito transforma expectativa em domínio sustentável: ter mais bola só cria valor competitivo se a equipa encontrar entradas entre a linha média e a defesa adversária. O Sønderjyske deverá beneficiar de um jogo mais fragmentado, por isso a qualidade do Brøndby na recuperação imediata e nas bolas paradas merece atenção.',
+      id: 704,
+      title: 'LIBERTADORES: Rivadavia–Fluminense reabre um duelo que ainda não encontrou vencedor',
+      excerpt: 'Independiente Rivadavia recebe o Fluminense às 23:00 do Reino Unido nos oitavos da Libertadores. O marcador agregado está em 0-0 depois da primeira mão e o histórico recente do confronto reforça a ideia de equilíbrio: em 2026, as equipas já registaram um 0-0, um 1-1 e uma vitória argentina por 2-1. Com pouco para separar os lados, a disciplina sem bola e a eficiência nas bolas paradas podem pesar mais do que o volume de ataques.',
+      category: 'TAÇAS',
+      readTime: '5 min',
+      date: publicationDate,
+      source: 'BBC Sport / Legalbet',
+    },
+    {
+      id: 705,
+      title: 'CHINA: Shanghai Shenhua–Beijing Guoan promete um duelo de probabilidades apertadas',
+      excerpt: 'Shanghai Shenhua e Beijing Guoan jogam às 12:35 do Reino Unido na Superliga Chinesa. A referência de mercado coloca o Shenhua como favorito curto em casa, com o Beijing suficientemente próximo para que um jogo de transições tenha valor competitivo real. Para o anfitrião, a prioridade é evitar perdas no corredor central que ofereçam contra-ataques; para o visitante, impedir que a posse territorial do Shenhua se converta em cruzamentos repetidos será o primeiro objectivo.',
       category: 'ANÁLISE TÁTICA',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'BBC Sport / FanDuel',
     },
     {
-      id: 606,
-      title: 'SUÉCIA: Häcken–Halmstad testa a diferença entre pressão e eficácia',
-      excerpt: 'Häcken e Halmstad defrontam-se às 18:00 do Reino Unido na Allsvenskan, conforme o calendário da BBC. Para o Häcken, jogar em casa cria a expectativa de comandar o território; para o Halmstad, cada passagem ofensiva terá mais valor se for capaz de fixar a bola e ganhar faltas. É um encontro que recompensa uma leitura paciente: uma pressão inicial sem critério pode abrir espaços, mas um bloco bem coordenado pode transformar recuperações em oportunidades de transição.',
+      id: 706,
+      title: 'AMIGÁVEL: Heidenheim–Bayern é mais sobre rotinas do que sobre o resultado',
+      excerpt: 'O Bayern Munique visita o Heidenheim às 17:00 do Reino Unido num amigável de pré-temporada. Num contexto sem pontos ou eliminação em jogo, a informação mais útil estará nos comportamentos: a altura da pressão, a ligação entre sectores e o volume de minutos dos jogadores chamados a ter protagonismo na época. Para o Heidenheim, enfrentar um adversário de elite permite testar a organização defensiva sob pressão contínua; para o Bayern, é uma oportunidade de afinar mecanismos sem o peso de uma competição oficial.',
       category: 'JOGOS DO DIA',
-      readTime: '4 min',
+      readTime: '3 min',
       date: publicationDate,
       source: 'BBC Sport',
     }

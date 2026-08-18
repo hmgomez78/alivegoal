@@ -44,39 +44,34 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 17 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 18 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Casa Pia",
-  "Benfica",
-  "Sassuolo",
-  "Cesena",
-  "Brøndby",
-  "Sønderjyske",
-  "Häcken",
-  "Halmstad",
-  "Pisa",
-  "Empoli"
+  "Shanghai Shenhua",
+  "Beijing Guoan",
+  "Dinamo Zagreb",
+  "Viking",
+  "Fenerbahçe",
+  "Olympique Lyonnais",
+  "Levski Sofia",
+  "AEK Athens",
+  "Independiente Rivadavia",
+  "Fluminense"
 ];
 
-// Jogos confirmados para 17 de agosto de 2026. Horas de Portugal continental.
-// Fontes de agenda: BBC Sport, Sporting Life e ESPN Brasil (Primeira Liga).
+// Jogos confirmados para 18 de agosto de 2026. Horas do Reino Unido.
+// Fonte de agenda: BBC Sport.
 const fallbackMatches: LiveMatch[] = [
-  { id: 9701, homeTeam: 'Casa Pia', awayTeam: 'Benfica', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Primeira Liga — Jornada 2' },
-  { id: 9702, homeTeam: 'Deportivo de La Coruña', awayTeam: 'Elche', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'La Liga — Jornada 1' },
-  { id: 9703, homeTeam: 'Cardiff City', awayTeam: 'Wrexham', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Championship' },
-  { id: 9704, homeTeam: 'Pisa', awayTeam: 'Empoli', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:00', league: 'Coppa Italia — 1.ª Ronda' },
-  { id: 9705, homeTeam: 'Sassuolo', awayTeam: 'Cesena', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:30', league: 'Coppa Italia — 1.ª Ronda' },
-  { id: 9706, homeTeam: 'Cremonese', awayTeam: 'Sampdoria', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Coppa Italia — 1.ª Ronda' },
-  { id: 9707, homeTeam: 'Palermo', awayTeam: 'Lecce', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:15', league: 'Coppa Italia — 1.ª Ronda' },
-  { id: 9708, homeTeam: 'Brøndby', awayTeam: 'Sønderjyske', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Superliga Dinamarquesa' },
-  { id: 9709, homeTeam: 'Häcken', awayTeam: 'Halmstad', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'Allsvenskan' },
-  { id: 9710, homeTeam: 'Samsunspor', awayTeam: 'Göztepe', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:30', league: 'Süper Lig' },
-  { id: 9711, homeTeam: 'Gnistan', awayTeam: 'Ilves', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 16:00', league: 'Veikkausliiga' }
+  { id: 9801, homeTeam: 'Shanghai Shenhua', awayTeam: 'Beijing Guoan', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:35', league: 'Superliga Chinesa' },
+  { id: 9802, homeTeam: 'Heidenheim', awayTeam: 'Bayern Munique', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:00', league: 'Amigável de Clubes' },
+  { id: 9803, homeTeam: 'Dinamo Zagreb', awayTeam: 'Viking', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
+  { id: 9804, homeTeam: 'Fenerbahçe', awayTeam: 'Olympique Lyonnais', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
+  { id: 9805, homeTeam: 'Levski Sofia', awayTeam: 'AEK Athens', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
+  { id: 9806, homeTeam: 'Independiente Rivadavia', awayTeam: 'Fluminense', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 23:00', league: 'CONMEBOL Libertadores — Oitavos-de-final' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Casa Pia',
-  awayTeam: 'Benfica',
+  homeTeam: 'Fenerbahçe',
+  awayTeam: 'Olympique Lyonnais',
   homeScore: 0,
   awayScore: 0,
   stats: {
