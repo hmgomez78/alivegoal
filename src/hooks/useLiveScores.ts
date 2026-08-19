@@ -44,34 +44,35 @@ interface FootballDataResponse {
   matches?: FootballDataMatch[];
 }
 
-// Equipas em destaque e com tips editoriais de 18 de agosto de 2026.
+// Equipas em destaque e com tips editoriais de 19 de agosto de 2026.
 export const TODAYS_TIP_TEAMS = [
-  "Shanghai Shenhua",
-  "Beijing Guoan",
-  "Dinamo Zagreb",
-  "Viking",
-  "Fenerbahçe",
-  "Olympique Lyonnais",
-  "Levski Sofia",
-  "AEK Athens",
-  "Independiente Rivadavia",
-  "Fluminense"
+  'Atlético de Madrid',
+  'Málaga',
+  'Celtic',
+  'LASK',
+  'NEC Nijmegen',
+  'Bodø/Glimt',
+  'Hapoel Beer-Sheva',
+  'Sabah FK',
+  'Slovan Bratislava',
+  'Celje',
+  'Shanghai Port',
+  'Dalian Yingbo'
 ];
 
-// Jogos confirmados para 18 de agosto de 2026. Horas do Reino Unido.
-// Fonte de agenda: BBC Sport.
+// Jogos confirmados para 19 de agosto de 2026. Horas apresentadas pela Sky Sports (Reino Unido).
 const fallbackMatches: LiveMatch[] = [
-  { id: 9801, homeTeam: 'Shanghai Shenhua', awayTeam: 'Beijing Guoan', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:35', league: 'Superliga Chinesa' },
-  { id: 9802, homeTeam: 'Heidenheim', awayTeam: 'Bayern Munique', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 17:00', league: 'Amigável de Clubes' },
-  { id: 9803, homeTeam: 'Dinamo Zagreb', awayTeam: 'Viking', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
-  { id: 9804, homeTeam: 'Fenerbahçe', awayTeam: 'Olympique Lyonnais', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
-  { id: 9805, homeTeam: 'Levski Sofia', awayTeam: 'AEK Athens', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off' },
-  { id: 9806, homeTeam: 'Independiente Rivadavia', awayTeam: 'Fluminense', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 23:00', league: 'CONMEBOL Libertadores — Oitavos-de-final' }
+  { id: 9901, homeTeam: 'Shanghai Port', awayTeam: 'Dalian Yingbo', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:35', league: 'Superliga Chinesa' },
+  { id: 9902, homeTeam: 'Celtic', awayTeam: 'LASK', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
+  { id: 9903, homeTeam: 'NEC Nijmegen', awayTeam: 'Bodø/Glimt', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
+  { id: 9904, homeTeam: 'Hapoel Beer-Sheva', awayTeam: 'Sabah FK', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
+  { id: 9905, homeTeam: 'Slovan Bratislava', awayTeam: 'Celje', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
+  { id: 9906, homeTeam: 'Atlético de Madrid', awayTeam: 'Málaga', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'La Liga' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Fenerbahçe',
-  awayTeam: 'Olympique Lyonnais',
+  homeTeam: 'Celtic',
+  awayTeam: 'LASK',
   homeScore: 0,
   awayScore: 0,
   stats: {
