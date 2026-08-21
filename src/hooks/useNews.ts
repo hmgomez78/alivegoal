@@ -7,68 +7,66 @@ export interface NewsArticle {
   category: string;
   readTime: string;
   date: string;
-  source: string;
-  imageUrl?: string;
+  source?: string;
 }
 
-// Conteúdo de análise e contexto, distinto das manchetes do feed de tendências.
 function getFallbackNews(): NewsArticle[] {
-  const publicationDate = '19 ago. 2026';
-
+  const publicationDate = '21/08/2026';
+  
   return [
     {
-      id: 801,
-      title: 'NEWCASTLE: Sean Steur chega cedo, mas a adaptação pode definir o impacto',
-      excerpt: 'A BBC destaca Sean Steur como um nome a seguir depois de o Newcastle o ter contratado ao Ajax num negócio que pode chegar a £23 milhões. Aos 18 anos, o neerlandês pode jogar como médio defensivo ou mais adiantado, com qualidade de passe e capacidade para usar os dois pés. O contexto pede moderação: a subida da Eredivisie para a Premier League e a integração num clube em transição tornam os primeiros minutos mais relevantes do que uma exigência imediata de titularidade.',
-      category: 'ANÁLISE TÁTICA',
-      readTime: '4 min',
-      date: publicationDate,
-      source: 'BBC Sport',
-    },
-    {
-      id: 802,
-      title: 'COVENTRY: Yirenkyi acrescenta energia e versatilidade a um recém-promovido',
-      excerpt: 'Caleb Yirenkyi é apresentado pela BBC como uma contratação de potencial elevado para o Coventry, que terá investido cerca de £25 milhões no médio do Nordsjælland. O ganês, de 20 anos, pode jogar no centro ou pelo lado direito de uma linha de cinco, e já teve exposição internacional. Para uma equipa recém-promovida, essa mobilidade pode ajudar a alternar entre pressão alta, cobertura defensiva e saídas mais diretas sem mudar radicalmente a estrutura.',
+      id: 807,
+      title: 'ANÁLISE: Como Curtis Jones pode revolucionar o meio-campo do Inter',
+      excerpt: 'A potencial mudança de Curtis Jones para o Inter de Milão levanta questões táticas interessantes. O médio do Liverpool traz uma capacidade de progressão de bola que encaixa no esquema de Simone Inzaghi. Analisamos como a sua chegada pode libertar Barella para zonas mais avançadas e dar uma nova dimensão ao jogo interior dos Nerazzurri, numa operação que pode redefinir o mercado.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'ESPN',
     },
     {
-      id: 803,
-      title: 'CRYSTAL PALACE: Mingueza oferece uma solução de baixo custo e alto encaixe',
-      excerpt: 'Oscar Mingueza chega ao Crystal Palace a custo zero após o fim do contrato com o Celta Vigo, segundo a análise da BBC. Formado no Barcelona, o defesa tem experiência tanto na construção como na cobertura de várias posições da linha recuada. A sua versatilidade ganha especial relevância se Daniel Muñoz sair: o Palace pode proteger a continuidade do jogo pelos corredores sem depender de uma adaptação longa a uma nova ideia tática.',
+      id: 808,
+      title: 'BRIGHTON: A fábrica de talentos e a iminente saída de Baleba',
+      excerpt: 'Com Carlos Baleba a pressionar para rumar ao Manchester United, o Brighton volta a provar a eficácia do seu modelo de scouting. O médio camaronês adaptou-se rapidamente à Premier League e o seu perfil combativo e dinâmico é exatamente o que o United procura. Resta saber como os Seagulls vão reinvestir o valor de mais uma venda avultada.',
       category: 'TRANSFERÊNCIAS',
       readTime: '4 min',
       date: publicationDate,
       source: 'BBC Sport',
     },
     {
-      id: 804,
-      title: 'ASTON VILLA: Brian Madjo é um projeto de impacto, não uma solução para sobrecarregar',
-      excerpt: 'Brian Madjo, avançado de 17 anos, marcou na Supertaça frente ao PSG e entra na época com atenção acrescida depois de vários golos na pré-temporada. A BBC salienta a força física e o potencial do jovem, mas também o contexto que o protege: Ollie Watkins e Tammy Abraham oferecem referências experientes no ataque. A oportunidade está na rotação de uma época com Champions, não numa comparação apressada nem numa responsabilidade excessiva sobre um adolescente.',
+      id: 809,
+      title: 'YANKUBA MINTEH: O perfil ideal para a sucessão de Salah?',
+      excerpt: 'A proposta de £50M do Liverpool por Yankuba Minteh demonstra a intenção de Arne Slot em garantir o futuro do corredor direito. O jovem extremo tem mostrado velocidade e capacidade de desequilíbrio, características que o assemelham ao perfil procurado pelos Reds. Uma análise ao impacto que pode ter numa equipa que procura rejuvenescer a sua linha avançada.',
+      category: 'ANÁLISE TÁTICA',
+      readTime: '6 min',
+      date: publicationDate,
+      source: 'The Guardian',
+    },
+    {
+      id: 810,
+      title: 'ARSENAL: O impacto tático de Bruno Guimarães no sistema de Arteta',
+      excerpt: 'Com os exames médicos agendados, a chegada de Bruno Guimarães ao Arsenal promete transformar a dinâmica do meio-campo. O brasileiro oferece uma combinação rara de agressividade defensiva e qualidade de passe, permitindo a Declan Rice atuar mais solto. Exploramos como esta contratação pode ser a peça que faltava para a conquista do título.',
       category: 'ANÁLISE TÁTICA',
       readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'Sky Sports',
     },
     {
-      id: 805,
-      title: 'LIVERPOOL: a pré-época de Trey Nyoni pode mudar o debate sobre um empréstimo',
-      excerpt: 'Trey Nyoni foi um dos destaques do Liverpool na pré-temporada, recorda a BBC, depois de já ter somado minutos na liga e nas taças na época anterior. Num meio-campo com margem limitada de profundidade, a sua evolução pode levar a equipa técnica a reavaliar uma eventual saída por empréstimo. A questão central não é antecipar um lugar fixo, mas perceber se a capacidade de receber, progredir e pressionar suporta uma presença mais regular no plantel.',
-      category: 'ANÁLISE TÁTICA',
+      id: 811,
+      title: 'PEDRO NETO: O dilema entre a competitividade europeia e a Arábia Saudita',
+      excerpt: 'A proposta financeira do Al Hilal coloca Pedro Neto perante uma decisão crucial na sua carreira. Aos 26 anos, o extremo do Chelsea tem de escolher entre continuar no projeto de Stamford Bridge ou aceitar um contrato milionário no Médio Oriente. Uma reflexão sobre as tendências do mercado e o impacto destas ofertas nos jogadores em pico de forma.',
+      category: 'OPINIÃO',
       readTime: '4 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'The Athletic',
     },
     {
-      id: 806,
-      title: 'MANCHESTER UNITED: Shea Lacey pode beneficiar de uma ala com menos bloqueios',
-      excerpt: 'A BBC coloca Shea Lacey entre os jovens com condições para ganhar espaço no Manchester United depois de uma pré-temporada positiva. Aos 19 anos, o extremo ultrapassou problemas físicos iniciais e já conhece o ambiente do clube, enquanto Michael Carrick tem referências diretas do seu desenvolvimento. O teste será transformar a espontaneidade no um-para-um em decisões consistentes sem bola e em último passe, os dois requisitos que mais aceleram a passagem da academia para a rotação sénior.',
+      id: 812,
+      title: 'ENZO FERNÁNDEZ: Por que Guardiola quer o médio do Chelsea',
+      excerpt: 'O interesse surpresa do Manchester City em Enzo Fernández não é obra do acaso. Pep Guardiola procura um construtor de jogo capaz de ditar o ritmo a partir de trás, e o argentino encaixa nesse perfil. Analisamos os motivos táticos que levam o City a considerar uma investida no rival londrino e como Enzo poderia potenciar o ataque dos Cityzens.',
       category: 'ANÁLISE TÁTICA',
-      readTime: '4 min',
+      readTime: '5 min',
       date: publicationDate,
-      source: 'BBC Sport',
+      source: 'The Independent',
     }
   ];
 }

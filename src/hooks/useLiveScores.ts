@@ -10,16 +10,6 @@ export interface LiveMatch {
   status: string;
   league: string;
   leagueId?: number;
-  homeTeamLogo?: string;
-  awayTeamLogo?: string;
-}
-
-export interface MatchStats {
-  possession: [number, number];
-  shots: [number, number];
-  shotsOnTarget: [number, number];
-  corners: [number, number];
-  fouls: [number, number];
 }
 
 export interface FeaturedMatchData {
@@ -27,52 +17,43 @@ export interface FeaturedMatchData {
   awayTeam: string;
   homeScore: number;
   awayScore: number;
-  stats: MatchStats;
-}
-
-interface FootballDataMatch {
-  id: number;
-  status: string;
-  utcDate: string;
-  homeTeam: { shortName?: string; name: string };
-  awayTeam: { shortName?: string; name: string };
-  score?: { fullTime?: { home?: number | null; away?: number | null } };
-  competition?: { name?: string; id?: number };
+  stats: {
+    possession: [number, number];
+    shots: [number, number];
+    shotsOnTarget: [number, number];
+    corners: [number, number];
+    fouls: [number, number];
+  };
 }
 
 interface FootballDataResponse {
-  matches?: FootballDataMatch[];
+  matches: Array<{
+    id: number;
+    competition?: { id: number; name: string };
+    homeTeam: { name: string; shortName?: string };
+    awayTeam: { name: string; shortName?: string };
+    status: string;
+    utcDate: string;
+    score?: {
+      fullTime?: { home: number | null; away: number | null };
+    };
+  }>;
 }
 
-// Equipas em destaque e com tips editoriais de 19 de agosto de 2026.
-export const TODAYS_TIP_TEAMS = [
-  'Atlético de Madrid',
-  'Málaga',
-  'Celtic',
-  'LASK',
-  'NEC Nijmegen',
-  'Bodø/Glimt',
-  'Hapoel Beer-Sheva',
-  'Sabah FK',
-  'Slovan Bratislava',
-  'Celje',
-  'Shanghai Port',
-  'Dalian Yingbo'
-];
+const TODAYS_TIP_TEAMS = ['Villarreal', 'Celta Vigo', 'Borussia M.Gladbach', 'Bayer Leverkusen', 'PSG', 'Montpellier', 'Sevilla', 'Valencia', 'Getafe', 'Real Sociedad'];
 
-// Jogos confirmados para 19 de agosto de 2026. Horas apresentadas pela Sky Sports (Reino Unido).
 const fallbackMatches: LiveMatch[] = [
-  { id: 9901, homeTeam: 'Shanghai Port', awayTeam: 'Dalian Yingbo', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 12:35', league: 'Superliga Chinesa' },
-  { id: 9902, homeTeam: 'Celtic', awayTeam: 'LASK', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
-  { id: 9903, homeTeam: 'NEC Nijmegen', awayTeam: 'Bodø/Glimt', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
-  { id: 9904, homeTeam: 'Hapoel Beer-Sheva', awayTeam: 'Sabah FK', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
-  { id: 9905, homeTeam: 'Slovan Bratislava', awayTeam: 'Celje', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Liga dos Campeões — Play-off (1.ª mão)' },
-  { id: 9906, homeTeam: 'Atlético de Madrid', awayTeam: 'Málaga', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'La Liga' }
+  { id: 9901, homeTeam: 'Villarreal', awayTeam: 'Celta Vigo', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:30', league: 'La Liga' },
+  { id: 9902, homeTeam: 'Borussia M.Gladbach', awayTeam: 'Bayer Leverkusen', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:30', league: 'Bundesliga' },
+  { id: 9903, homeTeam: 'PSG', awayTeam: 'Montpellier', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 19:45', league: 'Ligue 1' },
+  { id: 9904, homeTeam: 'Sevilla', awayTeam: 'Villarreal', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:30', league: 'La Liga' },
+  { id: 9905, homeTeam: 'Getafe', awayTeam: 'Real Sociedad', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 18:00', league: 'La Liga' },
+  { id: 9906, homeTeam: 'Sheffield Wednesday', awayTeam: 'Leeds United', homeScore: null, awayScore: null, minute: 0, status: 'HOJE 20:00', league: 'Championship' }
 ];
 
 const fallbackFeatured: FeaturedMatchData = {
-  homeTeam: 'Celtic',
-  awayTeam: 'LASK',
+  homeTeam: 'Villarreal',
+  awayTeam: 'Celta Vigo',
   homeScore: 0,
   awayScore: 0,
   stats: {
@@ -109,7 +90,7 @@ export function useLiveScores() {
       }
 
       const data: FootballDataResponse = await response.json();
-
+      
       if (!data.matches || data.matches.length === 0) {
         setMatches(fallbackMatches);
         setFeaturedMatch(fallbackFeatured);
@@ -142,11 +123,9 @@ export function useLiveScores() {
       });
 
       const featuredTeamsSet = new Set(TODAYS_TIP_TEAMS.map(t => t.toLowerCase()));
-
       const sortedMatches = liveMatches.sort((a, b) => {
         const aIsFeatured = featuredTeamsSet.has(a.homeTeam.toLowerCase()) || featuredTeamsSet.has(a.awayTeam.toLowerCase());
         const bIsFeatured = featuredTeamsSet.has(b.homeTeam.toLowerCase()) || featuredTeamsSet.has(b.awayTeam.toLowerCase());
-
         if (aIsFeatured && !bIsFeatured) return -1;
         if (!aIsFeatured && bIsFeatured) return 1;
         return 0;
